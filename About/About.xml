@@ -3,16 +3,16 @@
   <name>Arcanum Ascendant - Magic &amp; Classes</name>
   <author>onionboyo</author>
   <packageId>onionboyo.arcanumascendant</packageId>
-  <modVersion>1.0.0</modVersion>
+  <modVersion>1.1.0</modVersion>
   <url>https://github.com/onionboyo/rimworld-magic-mod</url>
   <supportedVersions>
     <li>1.6</li>
   </supportedVersions>
   <description>A deep magic and class system for RimWorld. No other mods required (no Harmony needed).
 
-[ 9 CLASSES · 27 SUBCLASSES · 207 SPELLS · 658 SKILL TREE NODES ]
+[ 9 CLASSES · 27 SUBCLASSES · 252 SPELLS · 705 SKILL TREE NODES ]
 
-Awaken a colonist's magic and choose a path:
+Awaken a colonist's magic and choose a path. Awakening works like gaining a psylink: scribe a grimoire from arcane crystals, then study at an arcane lectern until the gift wakes.
  - Pyromancer: Inferno Lord, Ashen Phoenix, Forgeheart
  - Tempest: Stormcaller, Frostwarden, Skybreaker
  - Necromancer: Lich, Bonelord, Plaguebringer
@@ -26,10 +26,11 @@ Awaken a colonist's magic and choose a path:
 FEATURES
  - Five attributes (Potency, Focus, Celerity, Resilience, Attunement) that gate deeper skill tree rows.
  - Every class and subclass has its own skill tree: spells, augments that change how spells work, multi-rank passives, mutually exclusive keystones and an ultimate.
- - Level 50 cap plus endless paragon levels.
+ - Five arcane circles. Levels 1-30 rise through combat, casting, healing and study; at levels 6, 12, 18 and 24 a mage must shatter an ascension sigil to break through to the next circle.
+ - Arcane crystals: mine them from ley crystal veins, drill for them, trade for them, or take them from fallen enemy mages.
  - Mana and an arcane ward that absorbs damage.
  - Endgame spells built to fight heavily armored mods: true damage, % vitality damage, executes, shield-shattering, mechanoid shutdown, black holes, time stop, mind control.
- - Utility and quirky spells: make it rain, clear toxic fallout, turn rocks into silver or steel, enrich soil, grow crops, tame animals, recruit prisoners, speak with the dead, turn back age, polymorph raiders into chickens, custard pies.
+ - Utility and quirky spells: make it rain, clear toxic fallout, turn rocks into silver or steel, enrich soil, grow crops, tame animals, recruit prisoners, speak with the dead, make colonists young again (curing the ailments of age and regrowing limbs over several castings), age enemies to dust, repair and un-rot items, raise item quality, turn enemies to gold, call down ore meteorites, steal skills, polymorph raiders into chickens, custard pies and banana peels.
  - Summons: risen dead, wolves, bears, a thrumbo, megascarabs, turrets, golem constructs, walls of ice, bone and thorns.
  - Custom visual effects (projectiles with trails, beams, chain lightning, meteors, pillars of light, rune circles, shockwaves, black holes) and custom sound effects.
  - Autocast for drafted mages, enemy mages in raids, a grimoire UI with zoomable skill trees, a spellbook and a codex.

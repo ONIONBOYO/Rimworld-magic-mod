@@ -153,7 +153,9 @@ class V
         if (ft.IsEnum)
         {
             var names = ft.GetFields(BindingFlags.Public | BindingFlags.Static).Select(f => f.Name).ToHashSet();
-            foreach (var part in c.InnerText.Split(',')) if (!names.Contains(part.Trim())) Err(file, $"{ctx}: '{c.InnerText}' is not a {ft.Name} ({string.Join("|", names)})");
+            var lis = c.ChildNodes.OfType<XmlElement>().Where(e => e.Name == "li").ToList();
+            var parts = lis.Count > 0 ? lis.Select(e => e.InnerText) : c.InnerText.Split(',');
+            foreach (var part in parts) if (!names.Contains(part.Trim())) Err(file, $"{ctx}: '{part}' is not a {ft.Name} ({string.Join("|", names)})");
             return;
         }
         if (ft.IsPrimitive || ft.FullName == "System.String") 

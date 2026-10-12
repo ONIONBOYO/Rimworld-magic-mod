@@ -41,7 +41,7 @@ namespace ArcanumAscendant
             Text.Font = GameFont.Tiny;
             Text.Anchor = TextAnchor.UpperLeft;
             var labelRect = new Rect(iconRect.xMax + 5f, inner.y - 2f, inner.width - 45f, 18f);
-            Widgets.Label(labelRect, (cls.LabelCap + " " + "AA_LevelShort".Translate(comp.level)).Colorize(cls.color));
+            Widgets.Label(labelRect, (cls.LabelCap + " " + "AA_LevelShort".Translate(comp.level) + " · " + "AA_CircleShort".Translate(comp.circle)).Colorize(cls.color));
             if (comp.paragon > 0)
             {
                 Text.Anchor = TextAnchor.UpperRight;
@@ -60,20 +60,21 @@ namespace ArcanumAscendant
             if (wardMax > 0.5f) Widgets.FillableBar(wardRect, comp.ward / wardMax, ArcaneTex.WardFill, ArcaneTex.BarBg, false);
 
             var xpRect = new Rect(inner.x, inner.yMax - 18f, inner.width, 5f);
-            Widgets.FillableBar(xpRect, Mathf.Clamp01(comp.xp / comp.XpToNextLevel), ArcaneTex.XpFill, ArcaneTex.BarBg, false);
+            Widgets.FillableBar(xpRect, Mathf.Clamp01(comp.xp / comp.XpToNextLevel), comp.ReadyToAscend ? ArcaneTex.WardFill : ArcaneTex.XpFill, ArcaneTex.BarBg, false);
             var bottom = new Rect(inner.x, inner.yMax - 13f, inner.width, 14f);
             Text.Anchor = TextAnchor.MiddleLeft;
             string pts = "";
             if (comp.perkPoints > 0) pts += "AA_PerkPointsShort".Translate(comp.perkPoints) + "  ";
             if (comp.attributePoints > 0) pts += "AA_AttrPointsShort".Translate(comp.attributePoints) + "  ";
             if (comp.CanChooseSubclass) pts += "AA_SubclassReadyShort".Translate();
+            if (comp.ReadyToAscend) pts += "AA_ReadyToAscendShort".Translate();
             Widgets.Label(bottom, pts.NullOrEmpty() ? "AA_OpenGrimoireShort".Translate().Colorize(ColoredText.SubtleGrayColor) : pts.Colorize(new Color(1f, 0.85f, 0.4f)));
             Text.Anchor = TextAnchor.UpperLeft;
             Text.Font = GameFont.Small;
 
             TooltipHandler.TipRegion(rect, () => "AA_StatusTip".Translate(comp.Pawn.LabelShort, cls.label, comp.level, comp.xp.ToString("F0"), comp.XpToNextLevel.ToString("F0"),
                 comp.mana.ToString("F0"), comp.ManaMax.ToString("F0"), comp.ManaRegenPerSecond.ToString("F1"), comp.ward.ToString("F0"), wardMax.ToString("F0"),
-                comp.SpellPower.ToStringPercent()), 77123411);
+                comp.SpellPower.ToStringPercent()) + "\n\n" + ArcaneUtility.CircleTip(comp), 77123411);
             if (Mouse.IsOver(rect)) Widgets.DrawHighlight(rect);
             if (Widgets.ButtonInvisible(rect))
             {

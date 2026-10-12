@@ -16,7 +16,7 @@
     </schoolTags>
     <primaryAttribute>AA_Celerity</primaryAttribute>
     <secondaryAttribute>AA_Attunement</secondaryAttribute>
-    <subclassUnlockLevel>10</subclassUnlockLevel>
+    <subclassUnlockLevel>7</subclassUnlockLevel>
     <innateStatOffsets>
       <AA_CooldownReduction>0.05</AA_CooldownReduction>
     </innateStatOffsets>
@@ -172,7 +172,7 @@
     <x>0</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>3</requiredLevel>
+    <requiredLevel>2</requiredLevel>
     <prerequisites>
       <li>AA_Node_Chronomancer_Haste</li>
     </prerequisites>
@@ -193,7 +193,7 @@
     <kind>Spell</kind>
     <x>2</x>
     <y>2</y>
-    <requiredLevel>3</requiredLevel>
+    <requiredLevel>2</requiredLevel>
     <prerequisites>
       <li>AA_Node_Chronomancer_Haste</li>
       <li>AA_Node_Chronomancer_Slow</li>
@@ -208,7 +208,7 @@
     <x>4</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>3</requiredLevel>
+    <requiredLevel>2</requiredLevel>
     <prerequisites>
       <li>AA_Node_Chronomancer_Slow</li>
     </prerequisites>
@@ -231,7 +231,7 @@
     <x>6</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>3</requiredLevel>
+    <requiredLevel>2</requiredLevel>
     <prerequisites>
       <li>AA_Node_Chronomancer_Blink</li>
     </prerequisites>
@@ -252,9 +252,9 @@
     <kind>Spell</kind>
     <x>1</x>
     <y>3</y>
-    <requiredLevel>6</requiredLevel>
+    <requiredLevel>3</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>6</requiredAttributeValue>
+    <requiredAttributeValue>5</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Chronomancer_Quickening</li>
       <li>AA_Node_Chronomancer_RewindWounds</li>
@@ -270,9 +270,9 @@
     <x>3</x>
     <y>3</y>
     <maxRank>2</maxRank>
-    <requiredLevel>6</requiredLevel>
+    <requiredLevel>3</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>6</requiredAttributeValue>
+    <requiredAttributeValue>5</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Chronomancer_RewindWounds</li>
       <li>AA_Node_Chronomancer_Viscosity</li>
@@ -291,9 +291,9 @@
     <kind>Spell</kind>
     <x>5</x>
     <y>3</y>
-    <requiredLevel>6</requiredLevel>
+    <requiredLevel>3</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>6</requiredAttributeValue>
+    <requiredAttributeValue>5</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Chronomancer_Viscosity</li>
       <li>AA_Node_Chronomancer_Flicker</li>
@@ -308,7 +308,7 @@
     <x>0</x>
     <y>4</y>
     <maxRank>3</maxRank>
-    <requiredLevel>9</requiredLevel>
+    <requiredLevel>5</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
     <requiredAttributeValue>6</requiredAttributeValue>
     <prerequisites>
@@ -327,7 +327,7 @@
     <x>2</x>
     <y>4</y>
     <maxRank>2</maxRank>
-    <requiredLevel>9</requiredLevel>
+    <requiredLevel>5</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
     <requiredAttributeValue>6</requiredAttributeValue>
     <prerequisites>
@@ -348,7 +348,7 @@
     <x>4</x>
     <y>4</y>
     <maxRank>3</maxRank>
-    <requiredLevel>9</requiredLevel>
+    <requiredLevel>5</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
     <requiredAttributeValue>6</requiredAttributeValue>
     <prerequisites>
@@ -370,7 +370,7 @@
     <x>6</x>
     <y>4</y>
     <maxRank>3</maxRank>
-    <requiredLevel>9</requiredLevel>
+    <requiredLevel>5</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
     <requiredAttributeValue>6</requiredAttributeValue>
     <prerequisites>
@@ -390,9 +390,9 @@
     <kind>Notable</kind>
     <x>1</x>
     <y>5</y>
-    <requiredLevel>13</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Chronomancer_Paradigm</li>
       <li>AA_Node_Chronomancer_Timekeeper</li>
@@ -423,9 +423,9 @@
     <x>3</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>13</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Chronomancer_Timekeeper</li>
       <li>AA_Node_Chronomancer_Recursion</li>
@@ -444,9 +444,9 @@
     <x>5</x>
     <y>5</y>
     <maxRank>2</maxRank>
-    <requiredLevel>13</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Chronomancer_Recursion</li>
       <li>AA_Node_Chronomancer_LongNow</li>
@@ -464,9 +464,9 @@
     <kind>Spell</kind>
     <x>3</x>
     <y>6</y>
-    <requiredLevel>17</requiredLevel>
+    <requiredLevel>9</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Chronomancer_Dilation</li>
       <li>AA_Node_Chronomancer_Agility</li>
@@ -482,9 +482,9 @@
     <kind>Keystone</kind>
     <x>2</x>
     <y>7</y>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>11</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Chronomancer_TimeStop</li>
     </prerequisites>
@@ -509,9 +509,9 @@
     <kind>Keystone</kind>
     <x>4</x>
     <y>7</y>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>11</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Chronomancer_TimeStop</li>
     </prerequisites>
@@ -530,9 +530,9 @@
     <kind>Keystone</kind>
     <x>3</x>
     <y>8</y>
-    <requiredLevel>30</requiredLevel>
+    <requiredLevel>15</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>18</requiredAttributeValue>
+    <requiredAttributeValue>13</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Chronomancer_Stasis</li>
       <li>AA_Node_Chronomancer_Acceleration</li>
@@ -552,12 +552,82 @@
     <iconPath>ArcanumAscendant/Nodes/Chronomancer_MasterOfTime</iconPath>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Chronomancer_Rejuvenate</defName>
+    <tree>AA_Class_Chronomancer</tree>
+    <kind>Spell</kind>
+    <x>2</x>
+    <y>3</y>
+    <requiredLevel>3</requiredLevel>
+    <requiredAttribute>AA_Celerity</requiredAttribute>
+    <requiredAttributeValue>5</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Chronomancer_RewindWounds</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_Rejuvenate</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Chronomancer_Senescence</defName>
+    <tree>AA_Class_Chronomancer</tree>
+    <kind>Spell</kind>
+    <x>4</x>
+    <y>3</y>
+    <requiredLevel>3</requiredLevel>
+    <requiredAttribute>AA_Celerity</requiredAttribute>
+    <requiredAttributeValue>5</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Chronomancer_Viscosity</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_Senescence</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Chronomancer_Centenarian</defName>
+    <label>centenarian</label>
+    <description>Senescence ages harder and Rejuvenate restores more years; both return sooner.</description>
+    <tree>AA_Class_Chronomancer</tree>
+    <kind>Augment</kind>
+    <x>6</x>
+    <y>5</y>
+    <maxRank>2</maxRank>
+    <requiredLevel>7</requiredLevel>
+    <requiredAttribute>AA_Celerity</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Chronomancer_LongNow</li>
+    </prerequisites>
+    <spellMods>
+      <li>
+        <spells>
+          <li>AA_Spell_Senescence</li>
+          <li>AA_Spell_Rejuvenate</li>
+        </spells>
+        <cooldown>-0.2</cooldown>
+        <healing>0.25</healing>
+        <damage>0.25</damage>
+      </li>
+    </spellMods>
+    <iconPath>ArcanumAscendant/Nodes/Chronomancer_Centenarian</iconPath>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Chronomancer_ReverseEntropy</defName>
+    <tree>AA_Class_Chronomancer</tree>
+    <kind>Spell</kind>
+    <x>0</x>
+    <y>5</y>
+    <requiredLevel>7</requiredLevel>
+    <requiredAttribute>AA_Celerity</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Chronomancer_Paradigm</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_ReverseEntropy</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Timeweaver_MassHaste</defName>
     <tree>AA_Class_Timeweaver</tree>
     <kind>Spell</kind>
     <x>2</x>
     <y>0</y>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <unlockSpell>AA_Spell_MassHaste</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
@@ -568,7 +638,7 @@
     <x>4</x>
     <y>0</y>
     <maxRank>3</maxRank>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <statPercentPerRank>
       <AA_DurationFactor>0.05</AA_DurationFactor>
     </statPercentPerRank>
@@ -580,7 +650,7 @@
     <kind>Spell</kind>
     <x>1</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Timeweaver_MassHaste</li>
     </prerequisites>
@@ -594,7 +664,7 @@
     <x>3</x>
     <y>1</y>
     <maxRank>3</maxRank>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Timeweaver_MassHaste</li>
       <li>AA_Node_Timeweaver_Chronoweave</li>
@@ -610,7 +680,7 @@
     <kind>Spell</kind>
     <x>5</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Timeweaver_Chronoweave</li>
     </prerequisites>
@@ -624,7 +694,7 @@
     <x>1</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -649,7 +719,7 @@
     <x>3</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -673,7 +743,7 @@
     <kind>Spell</kind>
     <x>5</x>
     <y>2</y>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -689,9 +759,9 @@
     <kind>Notable</kind>
     <x>2</x>
     <y>3</y>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Timeweaver_Centuries</li>
       <li>AA_Node_Timeweaver_Overclock</li>
@@ -713,9 +783,9 @@
     <x>4</x>
     <y>3</y>
     <maxRank>2</maxRank>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Timeweaver_Overclock</li>
       <li>AA_Node_Timeweaver_EchoOfMoments</li>
@@ -739,9 +809,9 @@
     <x>3</x>
     <y>4</y>
     <maxRank>2</maxRank>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>14</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>12</requiredAttributeValue>
+    <requiredAttributeValue>10</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Timeweaver_TemporalPrison</li>
       <li>AA_Node_Timeweaver_Reverberate</li>
@@ -768,9 +838,9 @@
     <x>1</x>
     <y>5</y>
     <maxRank>2</maxRank>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Timeweaver_Ageless</li>
     </prerequisites>
@@ -792,9 +862,9 @@
     <x>5</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Timeweaver_Ageless</li>
     </prerequisites>
@@ -811,9 +881,9 @@
     <kind>Keystone</kind>
     <x>2</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Timeweaver_Momentum</li>
       <li>AA_Node_Timeweaver_Timeless</li>
@@ -838,9 +908,9 @@
     <kind>Keystone</kind>
     <x>4</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Timeweaver_Momentum</li>
       <li>AA_Node_Timeweaver_Timeless</li>
@@ -870,9 +940,9 @@
     <kind>Ultimate</kind>
     <x>3</x>
     <y>7</y>
-    <requiredLevel>40</requiredLevel>
+    <requiredLevel>25</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>18</requiredAttributeValue>
+    <requiredAttributeValue>16</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Timeweaver_Loom</li>
       <li>AA_Node_Timeweaver_Accelerando</li>
@@ -885,7 +955,7 @@
     <kind>Spell</kind>
     <x>2</x>
     <y>0</y>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <unlockSpell>AA_Spell_VoidBolt</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
@@ -896,7 +966,7 @@
     <x>4</x>
     <y>0</y>
     <maxRank>3</maxRank>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <spellMods>
       <li>
         <tag>Void</tag>
@@ -911,7 +981,7 @@
     <kind>Spell</kind>
     <x>1</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Voidwalker_VoidBolt</li>
     </prerequisites>
@@ -925,7 +995,7 @@
     <x>3</x>
     <y>1</y>
     <maxRank>3</maxRank>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Voidwalker_VoidBolt</li>
       <li>AA_Node_Voidwalker_Nullspace</li>
@@ -944,7 +1014,7 @@
     <kind>Spell</kind>
     <x>5</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Voidwalker_Nullspace</li>
     </prerequisites>
@@ -958,7 +1028,7 @@
     <x>1</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -983,7 +1053,7 @@
     <x>3</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1008,7 +1078,7 @@
     <x>5</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1031,9 +1101,9 @@
     <kind>Spell</kind>
     <x>2</x>
     <y>3</y>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Voidwalker_Crush</li>
       <li>AA_Node_Voidwalker_Rift</li>
@@ -1049,9 +1119,9 @@
     <x>4</x>
     <y>3</y>
     <maxRank>2</maxRank>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Voidwalker_Rift</li>
       <li>AA_Node_Voidwalker_Ghostwalk</li>
@@ -1072,9 +1142,9 @@
     <x>3</x>
     <y>4</y>
     <maxRank>3</maxRank>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>14</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>12</requiredAttributeValue>
+    <requiredAttributeValue>10</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Voidwalker_Recall</li>
       <li>AA_Node_Voidwalker_Unravel</li>
@@ -1095,9 +1165,9 @@
     <x>1</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Voidwalker_Abyssal</li>
     </prerequisites>
@@ -1114,9 +1184,9 @@
     <kind>Notable</kind>
     <x>5</x>
     <y>5</y>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Voidwalker_Abyssal</li>
     </prerequisites>
@@ -1137,9 +1207,9 @@
     <kind>Keystone</kind>
     <x>2</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Voidwalker_VoidHeart</li>
       <li>AA_Node_Voidwalker_Displacement</li>
@@ -1167,9 +1237,9 @@
     <kind>Keystone</kind>
     <x>4</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Voidwalker_VoidHeart</li>
       <li>AA_Node_Voidwalker_Displacement</li>
@@ -1190,9 +1260,9 @@
     <kind>Ultimate</kind>
     <x>3</x>
     <y>7</y>
-    <requiredLevel>40</requiredLevel>
+    <requiredLevel>25</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>18</requiredAttributeValue>
+    <requiredAttributeValue>16</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Voidwalker_Devourer</li>
       <li>AA_Node_Voidwalker_Annihilation</li>
@@ -1200,12 +1270,26 @@
     <unlockSpell>AA_Spell_Singularity</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Voidwalker_Transposition</defName>
+    <tree>AA_Class_Voidwalker</tree>
+    <kind>Spell</kind>
+    <x>0</x>
+    <y>2</y>
+    <requiredLevel>10</requiredLevel>
+    <requiredAttribute>AA_Potency</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Voidwalker_GravityWell</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_Transposition</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Paradox_CausalityLoop</defName>
     <tree>AA_Class_Paradox</tree>
     <kind>Spell</kind>
     <x>2</x>
     <y>0</y>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <unlockSpell>AA_Spell_CausalityLoop</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
@@ -1216,7 +1300,7 @@
     <x>4</x>
     <y>0</y>
     <maxRank>3</maxRank>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <statOffsetsPerRank>
       <AA_CritChance>0.02</AA_CritChance>
     </statOffsetsPerRank>
@@ -1228,7 +1312,7 @@
     <kind>Spell</kind>
     <x>1</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Paradox_CausalityLoop</li>
     </prerequisites>
@@ -1242,7 +1326,7 @@
     <x>3</x>
     <y>1</y>
     <maxRank>3</maxRank>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Paradox_CausalityLoop</li>
       <li>AA_Node_Paradox_Contradiction</li>
@@ -1259,7 +1343,7 @@
     <kind>Spell</kind>
     <x>5</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Paradox_Contradiction</li>
     </prerequisites>
@@ -1273,7 +1357,7 @@
     <x>1</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Attunement</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1298,7 +1382,7 @@
     <x>3</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Attunement</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1323,7 +1407,7 @@
     <x>5</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Attunement</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1346,9 +1430,9 @@
     <kind>Spell</kind>
     <x>2</x>
     <y>3</y>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Attunement</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Paradox_InfiniteLoop</li>
       <li>AA_Node_Paradox_Riftborn</li>
@@ -1364,9 +1448,9 @@
     <x>4</x>
     <y>3</y>
     <maxRank>2</maxRank>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Attunement</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Paradox_Riftborn</li>
       <li>AA_Node_Paradox_Multiverse</li>
@@ -1391,9 +1475,9 @@
     <x>3</x>
     <y>4</y>
     <maxRank>3</maxRank>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>14</requiredLevel>
     <requiredAttribute>AA_Attunement</requiredAttribute>
-    <requiredAttributeValue>12</requiredAttributeValue>
+    <requiredAttributeValue>10</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Paradox_Undo</li>
       <li>AA_Node_Paradox_Butterfly</li>
@@ -1413,9 +1497,9 @@
     <x>1</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Attunement</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Paradox_DejaVu</li>
     </prerequisites>
@@ -1431,9 +1515,9 @@
     <kind>Notable</kind>
     <x>5</x>
     <y>5</y>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Attunement</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Paradox_DejaVu</li>
     </prerequisites>
@@ -1454,9 +1538,9 @@
     <kind>Keystone</kind>
     <x>2</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Attunement</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Paradox_Paradoxical</li>
       <li>AA_Node_Paradox_Unwritten</li>
@@ -1485,9 +1569,9 @@
     <kind>Keystone</kind>
     <x>4</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Attunement</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Paradox_Paradoxical</li>
       <li>AA_Node_Paradox_Unwritten</li>
@@ -1512,14 +1596,28 @@
     <kind>Ultimate</kind>
     <x>3</x>
     <y>7</y>
-    <requiredLevel>40</requiredLevel>
+    <requiredLevel>25</requiredLevel>
     <requiredAttribute>AA_Attunement</requiredAttribute>
-    <requiredAttributeValue>18</requiredAttributeValue>
+    <requiredAttributeValue>16</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Paradox_Erasure</li>
       <li>AA_Node_Paradox_Ouroboros</li>
     </prerequisites>
     <unlockSpell>AA_Spell_GrandfatherParadox</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Paradox_FateAnchor</defName>
+    <tree>AA_Class_Paradox</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>2</y>
+    <requiredLevel>10</requiredLevel>
+    <requiredAttribute>AA_Attunement</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Paradox_SplitTimeline</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_FateAnchor</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_TemporalBolt</defName>
@@ -2253,6 +2351,314 @@
     <targetRequired>false</targetRequired>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_Rejuvenate</defName>
+    <label>rejuvenate</label>
+    <description>Unwind an ally's personal time. Each casting takes three years off their body, cures one age-related condition (bad back, cataracts, frailty, dementia and the like) and fades one scar. Keep casting to restore them fully.</description>
+    <iconPath>ArcanumAscendant/Spells/Rejuvenate</iconPath>
+    <cooldownTicksRange>15000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>3</range>
+      <warmupTime>6</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>60</manaCost>
+        <tags>
+          <li>Time</li>
+          <li>Healing</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_AgeShift">
+            <years>-3</years>
+            <cureConditions>1</cureConditions>
+            <healScars>1</healScars>
+          </li>
+        </effects>
+        <color>(0.498, 0.961, 0.894, 1)</color>
+        <color2>(1, 1, 1, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Mote</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Rune</type>
+            <scale>1.4</scale>
+            <scaleEnd>1.47</scaleEnd>
+            <ticks>90</ticks>
+            <tex>ArcanumAscendant/Vfx/Clock</tex>
+          </li>
+          <li>
+            <type>Spiral</type>
+            <fleck>AA_Fleck_Clock</fleck>
+            <count>18</count>
+            <speed>-2.5</speed>
+            <scale>0.6</scale>
+          </li>
+          <li>
+            <type>Pillar</type>
+            <scale>1.2</scale>
+            <ticks>50</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Time</castSound>
+        <impactSound>AA_Impact_Time</impactSound>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_Senescence</defName>
+    <label>senescence</label>
+    <description>Force years of age onto a target in an instant. Each casting adds about eight years, wracks the body with time-ravaged weakness, and may bring on the ailments of old age. Push someone far enough past their natural lifespan and they crumble to dust.</description>
+    <iconPath>ArcanumAscendant/Spells/Senescence</iconPath>
+    <cooldownTicksRange>900</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>24</range>
+      <warmupTime>0.8</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>34</manaCost>
+        <tags>
+          <li>Time</li>
+        </tags>
+        <tier>2</tier>
+        <role>Attack</role>
+        <autocastByDefault>true</autocastByDefault>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_AgeShift">
+            <years>8</years>
+            <ailmentChance>0.5</ailmentChance>
+            <lethalAgeFactor>1.6</lethalAgeFactor>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_TimeRavaged</hediff>
+            <severity>1</severity>
+            <stack>true</stack>
+            <maxSeverity>5</maxSeverity>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Damage">
+            <amount>10</amount>
+            <damageDef>AA_Temporal</damageDef>
+          </li>
+        </effects>
+        <color>(0.498, 0.961, 0.894, 1)</color>
+        <color2>(1, 1, 1, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Mote</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>2</scale>
+            <scaleEnd>2.4</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Clock</fleck>
+            <count>4</count>
+            <speed>1</speed>
+            <scale>0.6</scale>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Mote</fleck>
+            <count>8</count>
+            <speed>2</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.2</scale>
+            <scaleEnd>2</scaleEnd>
+            <ticks>20</ticks>
+            <useColor2>true</useColor2>
+          </li>
+          <li>
+            <type>Smoke</type>
+            <count>3</count>
+            <scale>1</scale>
+            <speed>1</speed>
+          </li>
+          <li>
+            <type>Spiral</type>
+            <fleck>AA_Fleck_Clock</fleck>
+            <count>10</count>
+            <speed>2</speed>
+            <scale>0.5</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Time</castSound>
+        <impactSound>AA_Impact_Time</impactSound>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_ReverseEntropy</defName>
+    <label>reverse entropy</label>
+    <description>Run time backwards for everything in an area: damaged items are repaired, spoiled food is fresh again, and clothes taken from the dead lose their taint. Allies' worn gear is restored too.</description>
+    <iconPath>ArcanumAscendant/Spells/ReverseEntropy</iconPath>
+    <cooldownTicksRange>5000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>20</range>
+      <warmupTime>3</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetItems>true</canTargetItems>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>45</manaCost>
+        <tags>
+          <li>Time</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <radius>4</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_RestoreItems">
+            <repairFraction>1</repairFraction>
+          </li>
+        </effects>
+        <color>(0.498, 0.961, 0.894, 1)</color>
+        <color2>(1, 1, 1, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Mote</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Shockwave</type>
+            <scale>1</scale>
+            <scaleEnd>0.1</scaleEnd>
+            <ticks>40</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Spiral</type>
+            <fleck>AA_Fleck_Clock</fleck>
+            <count>20</count>
+            <speed>-3</speed>
+            <scale>0.6</scale>
+          </li>
+          <li>
+            <type>Rune</type>
+            <scale>1</scale>
+            <scaleEnd>1.05</scaleEnd>
+            <ticks>60</ticks>
+            <scaleByRadius>true</scaleByRadius>
+            <tex>ArcanumAscendant/Vfx/Clock</tex>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Time</castSound>
+        <impactSound>AA_Impact_Time</impactSound>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_MassHaste</defName>
     <label>mass haste</label>
     <description>Every ally around you is hastened.</description>
@@ -2338,7 +2744,7 @@
   <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_AgesOfDust</defName>
     <label>ages of dust</label>
-    <description>Age a target decades in a heartbeat: heavy damage that ignores armor, and a withering curse.</description>
+    <description>Age everything in an area by years in a heartbeat. Enemies take damage that ignores armor, wither, suffer the ailments of old age, and the very old crumble to dust.</description>
     <iconPath>ArcanumAscendant/Spells/AgesOfDust</iconPath>
     <cooldownTicksRange>720</cooldownTicksRange>
     <hostile>true</hostile>
@@ -2352,8 +2758,8 @@
       <drawAimPie>true</drawAimPie>
       <targetParams>
         <canTargetPawns>true</canTargetPawns>
-        <canTargetLocations>false</canTargetLocations>
-        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>true</canTargetBuildings>
         <canTargetAnimals>true</canTargetAnimals>
         <canTargetMechs>true</canTargetMechs>
         <canTargetHumans>true</canTargetHumans>
@@ -2368,23 +2774,32 @@
         <tier>1</tier>
         <role>Attack</role>
         <autocastByDefault>true</autocastByDefault>
+        <aiMinEnemiesInRadius>2</aiMinEnemiesInRadius>
       </li>
     </modExtensions>
     <comps>
       <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
         <delivery>Instant</delivery>
         <affects>Enemies</affects>
+        <radius>3</radius>
         <effects>
+          <li Class="ArcanumAscendant.Effect_AgeShift">
+            <years>6</years>
+            <ailmentChance>0.35</ailmentChance>
+            <lethalAgeFactor>1.8</lethalAgeFactor>
+          </li>
           <li Class="ArcanumAscendant.Effect_Damage">
-            <amount>42</amount>
+            <amount>30</amount>
             <damageDef>AA_Temporal</damageDef>
           </li>
           <li Class="ArcanumAscendant.Effect_Hediff">
-            <hediff>AA_Withering</hediff>
+            <hediff>AA_TimeRavaged</hediff>
             <severity>1</severity>
+            <stack>true</stack>
+            <maxSeverity>5</maxSeverity>
           </li>
           <li Class="ArcanumAscendant.Effect_Hediff">
-            <hediff>AA_Weakened</hediff>
+            <hediff>AA_Withering</hediff>
             <severity>1</severity>
           </li>
         </effects>
@@ -2435,9 +2850,23 @@
           </li>
           <li>
             <type>Smoke</type>
-            <count>4</count>
-            <scale>1.2</scale>
+            <count>5</count>
+            <scale>1.4</scale>
             <speed>1</speed>
+          </li>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.2</scale>
+            <scaleEnd>1</scaleEnd>
+            <ticks>30</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Spiral</type>
+            <fleck>AA_Fleck_Clock</fleck>
+            <count>14</count>
+            <speed>2.5</speed>
+            <scale>0.6</scale>
           </li>
         </impactVfx>
         <castSound>AA_Cast_Time</castSound>
@@ -2530,9 +2959,9 @@
   <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_FountainOfYouth</defName>
     <label>fountain of youth</label>
-    <description>Turn back an ally's age by five years. Their joints thank you.</description>
+    <description>Open a fountain of youth around an ally. Everyone touched loses two years, sheds an age-related condition and a scar, and regrows a lost limb or organ. Repeated castings can restore even the oldest body.</description>
     <iconPath>ArcanumAscendant/Spells/FountainOfYouth</iconPath>
-    <cooldownTicksRange>180000</cooldownTicksRange>
+    <cooldownTicksRange>20000</cooldownTicksRange>
     <hostile>false</hostile>
     <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
     <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
@@ -2545,7 +2974,7 @@
       <targetParams>
         <canTargetPawns>true</canTargetPawns>
         <canTargetSelf>true</canTargetSelf>
-        <canTargetLocations>false</canTargetLocations>
+        <canTargetLocations>true</canTargetLocations>
         <canTargetBuildings>false</canTargetBuildings>
         <canTargetAnimals>true</canTargetAnimals>
         <canTargetMechs>true</canTargetMechs>
@@ -2567,10 +2996,14 @@
     <comps>
       <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
         <delivery>Instant</delivery>
-        <affects>Enemies</affects>
+        <affects>Allies</affects>
+        <radius>3</radius>
         <effects>
-          <li Class="ArcanumAscendant.Effect_Age">
-            <years>-5</years>
+          <li Class="ArcanumAscendant.Effect_AgeShift">
+            <years>-2</years>
+            <cureConditions>1</cureConditions>
+            <healScars>1</healScars>
+            <regrowParts>1</regrowParts>
           </li>
         </effects>
         <color>(0.624, 0.941, 1, 1)</color>
@@ -2599,9 +3032,24 @@
           <li>
             <type>Spiral</type>
             <fleck>AA_Fleck_Clock</fleck>
-            <count>20</count>
+            <count>24</count>
             <speed>-2</speed>
             <scale>0.6</scale>
+          </li>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.2</scale>
+            <scaleEnd>1</scaleEnd>
+            <ticks>40</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Glow</fleck>
+            <count>16</count>
+            <speed>1.5</speed>
+            <scale>0.6</scale>
+            <scaleByRadius>true</scaleByRadius>
           </li>
         </impactVfx>
         <castSound>AA_Cast_Time</castSound>
@@ -3198,6 +3646,95 @@
     <warmupStartSound>AA_Charge</warmupStartSound>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_Transposition</defName>
+    <label>transposition</label>
+    <description>Fold space so that you and a target trade places instantly. Pull an ally out of danger, or drop an enemy into it.</description>
+    <iconPath>ArcanumAscendant/Spells/Transposition</iconPath>
+    <cooldownTicksRange>900</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>30</range>
+      <warmupTime>0</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>24</manaCost>
+        <tags>
+          <li>Space</li>
+          <li>Mobility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Mobility</role>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Teleport">
+            <mode>Swap</mode>
+          </li>
+        </effects>
+        <color>(0.753, 0.376, 1, 1)</color>
+        <color2>(0.165, 0.039, 0.29, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Smoke</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>2</scale>
+            <scaleEnd>2.4</scaleEnd>
+            <ticks>12</ticks>
+            <color>(0.878, 0.69, 1, 1)</color>
+          </li>
+          <li>
+            <type>Spiral</type>
+            <fleck>AA_Fleck_Mote</fleck>
+            <count>10</count>
+            <speed>2</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.4</scale>
+            <scaleEnd>0.4</scaleEnd>
+            <ticks>24</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Void</castSound>
+        <impactSound>AA_Impact_Void</impactSound>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_CausalityLoop</defName>
     <label>causality loop</label>
     <description>Trap a target in a loop: the same moment of pain repeats over and over.</description>
@@ -3703,6 +4240,96 @@
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
   </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_FateAnchor</defName>
+    <label>fate anchor</label>
+    <description>Anchor an ally's fate to this moment. If they die within the next four hours, time snaps back and they live, whole and unhurt. Works once.</description>
+    <iconPath>ArcanumAscendant/Spells/FateAnchor</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>20</range>
+      <warmupTime>2</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>90</manaCost>
+        <tags>
+          <li>Time</li>
+        </tags>
+        <tier>4</tier>
+        <role>Buff</role>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_FateAnchor</hediff>
+            <severity>1</severity>
+          </li>
+        </effects>
+        <color>(1, 0.478, 0.851, 1)</color>
+        <color2>(0.498, 0.961, 0.894, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Spark</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Rune</type>
+            <scale>1.2</scale>
+            <scaleEnd>1.26</scaleEnd>
+            <ticks>80</ticks>
+            <tex>ArcanumAscendant/Vfx/Clock</tex>
+          </li>
+          <li>
+            <type>Spiral</type>
+            <fleck>AA_Fleck_Clock</fleck>
+            <count>16</count>
+            <speed>-2.5</speed>
+            <scale>0.6</scale>
+          </li>
+          <li>
+            <type>Flash</type>
+            <scale>3</scale>
+            <scaleEnd>3.6</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Void</castSound>
+        <impactSound>AA_Impact_Void</impactSound>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
   <HediffDef>
     <defName>AA_CausalityLoop</defName>
     <label>causality loop</label>
@@ -3727,6 +4354,180 @@
         <color>(1, 0.478, 0.851, 0.9)</color>
         <texPath>ArcanumAscendant/Vfx/Clock</texPath>
         <size>1.4</size>
+        <fleckInterval>20</fleckInterval>
+      </li>
+    </comps>
+    <stages>
+      <li />
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_TimeRavaged</defName>
+    <label>time-ravaged</label>
+    <description>Decades forced onto the body in moments. Muscles waste, joints seize and the mind fogs. Stacks with each casting.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>true</isBad>
+    <defaultLabelColor>(0.659, 0.627, 0.565, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <maxSeverity>5</maxSeverity>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>60000~60000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(0.659, 0.627, 0.565, 0.9)</color>
+        <texPath>ArcanumAscendant/Vfx/Clock</texPath>
+        <size>1.4</size>
+        <fleck>AA_Fleck_Clock</fleck>
+        <fleckInterval>50</fleckInterval>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>aged</label>
+        <statFactors>
+          <MoveSpeed>0.9</MoveSpeed>
+          <MeleeDamageFactor>0.9</MeleeDamageFactor>
+          <WorkSpeedGlobal>0.9</WorkSpeedGlobal>
+        </statFactors>
+        <capMods>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.05</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>2</minSeverity>
+        <label>withered</label>
+        <statFactors>
+          <MoveSpeed>0.8</MoveSpeed>
+          <MeleeDamageFactor>0.75</MeleeDamageFactor>
+          <WorkSpeedGlobal>0.8</WorkSpeedGlobal>
+          <ImmunityGainSpeed>0.8</ImmunityGainSpeed>
+        </statFactors>
+        <capMods>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.12</offset>
+          </li>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.05</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>3</minSeverity>
+        <label>decrepit</label>
+        <statFactors>
+          <MoveSpeed>0.65</MoveSpeed>
+          <MeleeDamageFactor>0.6</MeleeDamageFactor>
+          <WorkSpeedGlobal>0.65</WorkSpeedGlobal>
+          <ImmunityGainSpeed>0.6</ImmunityGainSpeed>
+        </statFactors>
+        <capMods>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.2</offset>
+          </li>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.1</offset>
+          </li>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>-0.1</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>4</minSeverity>
+        <label>ancient</label>
+        <statFactors>
+          <MoveSpeed>0.5</MoveSpeed>
+          <MeleeDamageFactor>0.45</MeleeDamageFactor>
+          <WorkSpeedGlobal>0.5</WorkSpeedGlobal>
+          <ImmunityGainSpeed>0.4</ImmunityGainSpeed>
+          <IncomingDamageFactor>1.15</IncomingDamageFactor>
+        </statFactors>
+        <capMods>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.3</offset>
+          </li>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.15</offset>
+          </li>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>-0.2</offset>
+          </li>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>-0.2</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>5</minSeverity>
+        <label>dust-dry</label>
+        <statFactors>
+          <MoveSpeed>0.35</MoveSpeed>
+          <MeleeDamageFactor>0.3</MeleeDamageFactor>
+          <WorkSpeedGlobal>0.35</WorkSpeedGlobal>
+          <ImmunityGainSpeed>0.25</ImmunityGainSpeed>
+          <IncomingDamageFactor>1.3</IncomingDamageFactor>
+        </statFactors>
+        <capMods>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.4</offset>
+          </li>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.2</offset>
+          </li>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>-0.3</offset>
+          </li>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>-0.3</offset>
+          </li>
+          <li>
+            <capacity>Breathing</capacity>
+            <offset>-0.15</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_FateAnchor</defName>
+    <label>fate anchor</label>
+    <description>This person's fate is anchored. If they die while it lasts, time snaps back and they live.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(1, 0.478, 0.851, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>10000~10000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_DeathWard">
+        <color>(1, 0.478, 0.851, 1)</color>
+        <labelKey>AA_FateDenied</labelKey>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(1, 0.478, 0.851, 0.9)</color>
+        <texPath>ArcanumAscendant/Vfx/Clock</texPath>
+        <size>1.3</size>
         <fleckInterval>20</fleckInterval>
       </li>
     </comps>

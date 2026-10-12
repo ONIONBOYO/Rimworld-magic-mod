@@ -632,6 +632,41 @@ def make_items_ui():
         img = over(img, solid(S, WHITE, hl.point(lambda v: int(v * 0.7))))
         return img
 
+    def crystal(c):
+        shards = [(-0.32, -0.15, 0.2, 0.62, -12), (0.08, -0.05, 0.24, 0.85, 4), (0.4, -0.2, 0.18, 0.55, 16)]
+        img = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+        for cx, cy, w, h, tilt in shards:
+            t = math.radians(tilt)
+
+            def rot(x, y):
+                return (cx + x * math.cos(t) - y * math.sin(t), cy + x * math.sin(t) + y * math.cos(t))
+            body = pen_mask(S, lambda p: p.poly([rot(-w, -0.55), rot(w, -0.55), rot(w, h - 0.75), rot(0, h - 0.5), rot(-w, h - 0.75)]))
+            img = over(img, solid(S, c, blur(body, 8).point(lambda v: int(v * 0.6))))
+            img = over(img, to_rgba(radial(S, mix(c, WHITE, 0.6), mix(c, BLACK, 0.25), 1.0, 0.5, 0.8), arr(body) * 255))
+            facet = pen_mask(S, lambda p: p.poly([rot(-w * 0.15, -0.5), rot(w * 0.7, -0.5), rot(w * 0.7, h - 0.78), rot(0, h - 0.55)]))
+            img = over(img, solid(S, mix(c, WHITE, 0.55), facet.point(lambda v: int(v * 0.55))))
+        return img
+
+    save(crystal(hexc("#a77bff")), "Items/ArcaneCrystal")
+
+    def sigil(c, n):
+        disc = pen_mask(S, lambda p: p.circle(0, 0, 0.82))
+        img = sprite(disc, mix(c, BLACK, 0.7), S)
+        ring = pen_mask(S, lambda p: [p.ring(0, 0, 0.72, 0.05), p.ring(0, 0, 0.5, 0.03)] +
+                        [p.circle(0.61 * math.cos(math.radians(90 + k * 360 / (n + 1))), 0.61 * math.sin(math.radians(90 + k * 360 / (n + 1))), 0.07) for k in range(n + 1)])
+        img = over(img, solid(S, c, blur(ring, 4)))
+        img = over(img, solid(S, mix(c, WHITE, 0.4), ring))
+        pts = [(0.42 * math.cos(math.radians(90 + k * 360 / (n + 1))), 0.42 * math.sin(math.radians(90 + k * 360 / (n + 1)))) for k in range(n + 1)]
+        star = pen_mask(S, lambda p: p.line([pts[(k * 2) % len(pts)] for k in range(len(pts) + 1)] if len(pts) % 2 else pts + [pts[0]], 0.03))
+        img = over(img, solid(S, mix(c, WHITE, 0.3), star))
+        core = pen_mask(S, lambda p: p.circle(0, 0, 0.14))
+        img = over(img, solid(S, c, blur(core, 8)))
+        img = over(img, solid(S, WHITE, core))
+        return img
+
+    for n, col in [(2, "#5ab0ff"), (3, "#4fffc0"), (4, "#ffd35a"), (5, "#ff4fa8")]:
+        save(sigil(hexc(col), n), "Items/Sigil%d" % n)
+
     save(potion(hexc("#3a7bff")), "Items/ManaPotion")
     save(potion(hexc("#9a5aff"), True), "Items/GreaterManaPotion")
     # arcane lectern

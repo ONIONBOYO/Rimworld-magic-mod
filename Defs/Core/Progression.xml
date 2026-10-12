@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ===================== Arcane crystal: the resource that fuels awakening and ascension ===================== -->
+  <ThingDef ParentName="AA_ArcaneItemBase">
+    <defName>AA_ArcaneCrystal</defName>
+    <label>arcane crystal</label>
+    <description>A shard of crystallised ley energy that hums faintly in the hand. Arcane crystals are needed to scribe grimoires of awakening and the sigils that let mages ascend to higher circles.\n\nFound in ley crystal veins in mountains, deep underground, in the stock of exotic traders, and on the bodies of fallen enemy mages.</description>
+    <graphicData>
+      <texPath>ArcanumAscendant/Items/ArcaneCrystal</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stackLimit>75</stackLimit>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <MarketValue>14</MarketValue>
+      <Mass>0.25</Mass>
+      <Flammability>0</Flammability>
+      <Beauty>4</Beauty>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <deepCommonality>0.5</deepCommonality>
+    <deepCountPerPortion>10</deepCountPerPortion>
+    <deepLumpSizeRange>3~8</deepLumpSizeRange>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>2</glowRadius>
+        <glowColor>(170,120,255,0)</glowColor>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>AA_MineableLeyCrystal</defName>
+    <label>ley crystal vein</label>
+    <description>Rock shot through with violet arcane crystal where a ley line runs close to the surface. Mine it to extract arcane crystals.</description>
+    <thingClass>Mineable</thingClass>
+    <category>Building</category>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>1</fillPercent>
+    <coversFloor>true</coversFloor>
+    <neverMultiSelect>true</neverMultiSelect>
+    <rotatable>false</rotatable>
+    <saveCompressible>true</saveCompressible>
+    <holdsRoof>true</holdsRoof>
+    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+    <blockLight>true</blockLight>
+    <mineable>true</mineable>
+    <drawerType>MapMeshOnly</drawerType>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <graphicData>
+      <texPath>Things/Building/Linked/RockFlecked_Atlas</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <color>(78,70,90)</color>
+      <colorTwo>(190,130,255)</colorTwo>
+      <linkType>CornerFiller</linkType>
+      <linkFlags>
+        <li>Rock</li>
+        <li>MapEdge</li>
+      </linkFlags>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>1800</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Beauty>-2</Beauty>
+    </statBases>
+    <building>
+      <isInert>true</isInert>
+      <isResourceRock>true</isResourceRock>
+      <claimable>false</claimable>
+      <deconstructible>false</deconstructible>
+      <mineableThing>AA_ArcaneCrystal</mineableThing>
+      <mineableYield>6</mineableYield>
+      <mineableScatterCommonality>0.1</mineableScatterCommonality>
+      <mineableScatterLumpSizeRange>3~7</mineableScatterLumpSizeRange>
+      <veinMineable>true</veinMineable>
+    </building>
+  </ThingDef>
+
+  <!-- ===================== Ascension sigils (the arcane equivalent of a neuroformer) ===================== -->
+  <ThingDef ParentName="AA_ArcaneItemBase">
+    <defName>AA_Sigil_Circle2</defName>
+    <label>sigil of the second circle</label>
+    <description>A disc of arcane glass etched with a second-circle seal. A mage who has reached level 6 can shatter it to break through to the Second Circle: their level cap rises by six, and they gain three skill points and an attribute point at once. Reaching the Second Circle also unlocks the mage's subclass.</description>
+    <graphicData>
+      <texPath>ArcanumAscendant/Items/Sigil2</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stackLimit>5</stackLimit>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <MarketValue>700</MarketValue>
+      <Mass>0.4</Mass>
+      <Flammability>0</Flammability>
+      <Beauty>6</Beauty>
+      <DeteriorationRate>0.5</DeteriorationRate>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>Shatter {0_label} and ascend</useLabel>
+        <useDuration>900</useDuration>
+      </li>
+      <li Class="ArcanumAscendant.CompProperties_UseEffectAscend">
+        <circle>2</circle>
+      </li>
+      <li Class="CompProperties_UseEffectDestroySelf" />
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="AA_ArcaneItemBase">
+    <defName>AA_Sigil_Circle3</defName>
+    <label>sigil of the third circle</label>
+    <description>A disc of arcane glass etched with a third-circle seal. A mage who has reached level 12 can shatter it to break through to the Third Circle: their level cap rises by six, and they gain three skill points and an attribute point at once.</description>
+    <graphicData>
+      <texPath>ArcanumAscendant/Items/Sigil3</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stackLimit>5</stackLimit>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <MarketValue>1500</MarketValue>
+      <Mass>0.4</Mass>
+      <Flammability>0</Flammability>
+      <Beauty>6</Beauty>
+      <DeteriorationRate>0.5</DeteriorationRate>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>Shatter {0_label} and ascend</useLabel>
+        <useDuration>900</useDuration>
+      </li>
+      <li Class="ArcanumAscendant.CompProperties_UseEffectAscend">
+        <circle>3</circle>
+      </li>
+      <li Class="CompProperties_UseEffectDestroySelf" />
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="AA_ArcaneItemBase">
+    <defName>AA_Sigil_Circle4</defName>
+    <label>sigil of the fourth circle</label>
+    <description>A disc of arcane glass etched with a fourth-circle seal. A mage who has reached level 18 can shatter it to break through to the Fourth Circle: their level cap rises by six, and they gain three skill points and an attribute point at once.</description>
+    <graphicData>
+      <texPath>ArcanumAscendant/Items/Sigil4</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stackLimit>5</stackLimit>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <MarketValue>2600</MarketValue>
+      <Mass>0.4</Mass>
+      <Flammability>0</Flammability>
+      <Beauty>6</Beauty>
+      <DeteriorationRate>0.5</DeteriorationRate>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>Shatter {0_label} and ascend</useLabel>
+        <useDuration>900</useDuration>
+      </li>
+      <li Class="ArcanumAscendant.CompProperties_UseEffectAscend">
+        <circle>4</circle>
+      </li>
+      <li Class="CompProperties_UseEffectDestroySelf" />
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="AA_ArcaneItemBase">
+    <defName>AA_Sigil_Circle5</defName>
+    <label>sigil of the fifth circle</label>
+    <description>A disc of arcane glass etched with a fifth-circle seal. A mage who has reached level 24 can shatter it to break through to the Fifth Circle: their level cap rises by six, and they gain three skill points and an attribute point at once.</description>
+    <graphicData>
+      <texPath>ArcanumAscendant/Items/Sigil5</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stackLimit>5</stackLimit>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <MarketValue>4200</MarketValue>
+      <Mass>0.4</Mass>
+      <Flammability>0</Flammability>
+      <Beauty>6</Beauty>
+      <DeteriorationRate>0.5</DeteriorationRate>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>Shatter {0_label} and ascend</useLabel>
+        <useDuration>900</useDuration>
+      </li>
+      <li Class="ArcanumAscendant.CompProperties_UseEffectAscend">
+        <circle>5</circle>
+      </li>
+      <li Class="CompProperties_UseEffectDestroySelf" />
+    </comps>
+  </ThingDef>
+
+  <!-- ===================== Recipes ===================== -->
+  <RecipeDef ParentName="AA_ArcaneRecipeBase">
+    <defName>AA_Make_Sigil2</defName>
+    <label>etch sigil of the second circle</label>
+    <description>Etch a sigil of the second circle.</description>
+    <jobString>Etching a sigil.</jobString>
+    <workAmount>8000</workAmount>
+    <ingredients>
+      <li>
+        <filter><thingDefs><li>AA_ArcaneCrystal</li></thingDefs></filter>
+        <count>12</count>
+      </li>
+      <li>
+        <filter><thingDefs><li>Silver</li></thingDefs></filter>
+        <count>80</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>AA_ArcaneCrystal</li>
+        <li>Silver</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <AA_Sigil_Circle2>1</AA_Sigil_Circle2>
+    </products>
+    <skillRequirements>
+      <Intellectual>6</Intellectual>
+    </skillRequirements>
+    <researchPrerequisite>AA_Arcanology</researchPrerequisite>
+  </RecipeDef>
+
+  <RecipeDef ParentName="AA_ArcaneRecipeBase">
+    <defName>AA_Make_Sigil3</defName>
+    <label>etch sigil of the third circle</label>
+    <description>Etch a sigil of the third circle.</description>
+    <jobString>Etching a sigil.</jobString>
+    <workAmount>12000</workAmount>
+    <ingredients>
+      <li>
+        <filter><thingDefs><li>AA_ArcaneCrystal</li></thingDefs></filter>
+        <count>25</count>
+      </li>
+      <li>
+        <filter><thingDefs><li>Gold</li></thingDefs></filter>
+        <count>15</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>AA_ArcaneCrystal</li>
+        <li>Gold</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <AA_Sigil_Circle3>1</AA_Sigil_Circle3>
+    </products>
+    <skillRequirements>
+      <Intellectual>8</Intellectual>
+    </skillRequirements>
+    <researchPrerequisite>AA_HigherArcana</researchPrerequisite>
+  </RecipeDef>
+
+  <RecipeDef ParentName="AA_ArcaneRecipeBase">
+    <defName>AA_Make_Sigil4</defName>
+    <label>etch sigil of the fourth circle</label>
+    <description>Etch a sigil of the fourth circle.</description>
+    <jobString>Etching a sigil.</jobString>
+    <workAmount>18000</workAmount>
+    <ingredients>
+      <li>
+        <filter><thingDefs><li>AA_ArcaneCrystal</li></thingDefs></filter>
+        <count>40</count>
+      </li>
+      <li>
+        <filter><thingDefs><li>Gold</li></thingDefs></filter>
+        <count>35</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>AA_ArcaneCrystal</li>
+        <li>Gold</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <AA_Sigil_Circle4>1</AA_Sigil_Circle4>
+    </products>
+    <skillRequirements>
+      <Intellectual>10</Intellectual>
+    </skillRequirements>
+    <researchPrerequisite>AA_ArcaneMastery</researchPrerequisite>
+  </RecipeDef>
+
+  <RecipeDef ParentName="AA_ArcaneRecipeBase">
+    <defName>AA_Make_Sigil5</defName>
+    <label>etch sigil of the fifth circle</label>
+    <description>Etch a sigil of the fifth circle.</description>
+    <jobString>Etching a sigil.</jobString>
+    <workAmount>26000</workAmount>
+    <ingredients>
+      <li>
+        <filter><thingDefs><li>AA_ArcaneCrystal</li></thingDefs></filter>
+        <count>60</count>
+      </li>
+      <li>
+        <filter><thingDefs><li>Gold</li></thingDefs></filter>
+        <count>60</count>
+      </li>
+      <li>
+        <filter><thingDefs><li>Plasteel</li></thingDefs></filter>
+        <count>20</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>AA_ArcaneCrystal</li>
+        <li>Gold</li>
+        <li>Plasteel</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <AA_Sigil_Circle5>1</AA_Sigil_Circle5>
+    </products>
+    <skillRequirements>
+      <Intellectual>12</Intellectual>
+    </skillRequirements>
+    <researchPrerequisite>AA_Archmagic</researchPrerequisite>
+  </RecipeDef>
+
+  <!-- ===================== Study ===================== -->
+  <JobDef>
+    <defName>AA_ArcaneStudy</defName>
+    <driverClass>ArcanumAscendant.JobDriver_ArcaneStudy</driverClass>
+    <reportString>studying the arcane.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JoyKindDef>
+    <defName>AA_ArcaneStudy</defName>
+    <label>arcane study</label>
+  </JoyKindDef>
+
+  <JobDef>
+    <defName>AA_ArcaneStudyJoy</defName>
+    <driverClass>ArcanumAscendant.JobDriver_ArcaneStudy</driverClass>
+    <reportString>studying the arcane.</reportString>
+    <joyDuration>4000</joyDuration>
+    <joyMaxParticipants>1</joyMaxParticipants>
+    <joyKind>AA_ArcaneStudy</joyKind>
+    <joySkill>Intellectual</joySkill>
+    <joyXpPerTick>0.002</joyXpPerTick>
+  </JobDef>
+
+  <JoyGiverDef>
+    <defName>AA_ArcaneStudy</defName>
+    <giverClass>ArcanumAscendant.JoyGiver_ArcaneStudy</giverClass>
+    <baseChance>3.5</baseChance>
+    <thingDefs>
+      <li>AA_ArcaneAltar</li>
+    </thingDefs>
+    <jobDef>AA_ArcaneStudyJoy</jobDef>
+    <joyKind>AA_ArcaneStudy</joyKind>
+    <requiredCapacities>
+      <li>Sight</li>
+    </requiredCapacities>
+  </JoyGiverDef>
+
+  <!-- ===================== Spontaneous awakening ===================== -->
+  <IncidentDef>
+    <defName>AA_LatentAwakening</defName>
+    <label>latent awakening</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>ArcanumAscendant.IncidentWorker_LatentAwakening</workerClass>
+    <baseChance>0.25</baseChance>
+    <minRefireDays>45</minRefireDays>
+    <earliestDay>20</earliestDay>
+    <letterLabel>Latent awakening: {PAWN_labelShort}</letterLabel>
+    <letterText>{PAWN_labelShort}'s latent gift has woken on its own. Without a grimoire or a single hour of study, {PAWN_pronoun} can feel the weave of magic under the world.\n\n{PAWN_labelShort} can now awaken and choose an arcane class. Select {PAWN_objective} and click "Awaken magic".</letterText>
+    <letterDef>PositiveEvent</letterDef>
+  </IncidentDef>
+
+</Defs>

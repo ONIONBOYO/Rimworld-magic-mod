@@ -318,6 +318,7 @@ TARGETS = {
     "ally_area": dict(canTargetPawns=True, canTargetSelf=True, canTargetLocations=True, canTargetBuildings=False, canTargetAnimals=True, canTargetMechs=True, canTargetHumans=True),
     "cell": dict(canTargetPawns=True, canTargetLocations=True, canTargetBuildings=True, canTargetItems=True, canTargetSelf=True, canTargetAnimals=True, canTargetMechs=True, canTargetHumans=True),
     "corpse": dict(canTargetPawns=False, canTargetLocations=True, canTargetItems=True, canTargetCorpses=True, canTargetBuildings=False),
+    "item": dict(canTargetPawns=True, canTargetSelf=True, canTargetItems=True, canTargetLocations=False, canTargetBuildings=False, canTargetAnimals=False, canTargetMechs=False, canTargetHumans=True),
     "any_pawn": dict(canTargetPawns=True, canTargetSelf=True, canTargetLocations=False, canTargetAnimals=True, canTargetMechs=True, canTargetHumans=True),
 }
 
@@ -391,6 +392,8 @@ class Spell:
             affects = {"Heal": "Allies", "Buff": "Allies"}.get(self.role, "Enemies")
             if self.target == "self" and self.role in ("Heal", "Buff", "Utility", "Mobility") and self.radius <= 0:
                 affects = "Self"
+            elif self.target in ("ally", "ally_area", "item") and self.role not in ("Attack", "Control"):
+                affects = "Allies"
         comp = O("CompProperties_ArcaneSpell",
                  delivery=self.delivery,
                  affects=affects,
@@ -516,7 +519,7 @@ ATTR = {"POT": "AA_Potency", "FOC": "AA_Focus", "CEL": "AA_Celerity", "RES": "AA
 
 class ClassSpec:
     def __init__(self, cid, label, *, color, color2, icon, tagline, desc, playstyle, lore, primary, secondary, tags,
-                 starting=(), innate=None, order=0, parent=None, school=None, width=7, height=9, unlock=10):
+                 starting=(), innate=None, order=0, parent=None, school=None, width=7, height=9, unlock=7):
         self.cid = cid
         self.defName = "AA_Class_" + cid
         self.label = label
@@ -583,11 +586,15 @@ class ClassSpec:
 
 
 def gate_for(cls, node):
-    """Default level / attribute requirement by row."""
+    """Default level / attribute requirement by row.
+
+    Levels run 1-30 across five circles (caps at 6, 12, 18, 24 and 30). A class tree's capstone row needs the
+    Third Circle; a subclass opens at the Second Circle and its ultimate needs the Fifth.
+    """
     if cls.parent is None:
-        rows = {0: (1, None), 1: (1, None), 2: (3, None), 3: (6, 6), 4: (9, 6), 5: (13, 10), 6: (17, 10), 7: (22, 14), 8: (30, 18)}
+        rows = {0: (1, None), 1: (1, None), 2: (2, None), 3: (3, 5), 4: (5, 6), 5: (7, 8), 6: (9, 9), 7: (12, 11), 8: (15, 13)}
     else:
-        rows = {0: (10, None), 1: (12, None), 2: (15, 8), 3: (18, 10), 4: (22, 12), 5: (26, 14), 6: (32, 16), 7: (40, 18)}
+        rows = {0: (7, None), 1: (8, None), 2: (10, 8), 3: (12, 9), 4: (14, 10), 5: (17, 12), 6: (21, 14), 7: (25, 16)}
     return rows.get(node.y, (1, None))
 
 

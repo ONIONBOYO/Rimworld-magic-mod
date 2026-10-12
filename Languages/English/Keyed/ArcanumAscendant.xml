@@ -20,11 +20,11 @@
   <AA_ParagonUp>Paragon {0}!</AA_ParagonUp>
   <AA_LevelUpMote>Level {0}!</AA_LevelUpMote>
   <AA_SubclassReadyLabel>{0}: subclass ready</AA_SubclassReadyLabel>
-  <AA_SubclassReadyText>{0} has reached level 10 as a {1} and can now choose a subclass.
+  <AA_SubclassReadyText>{0} has reached the Second Circle as a {1} and can now choose a subclass.
 
 Select {0} and click the arcane status panel to open the grimoire, then open the Subclass tab.</AA_SubclassReadyText>
   <AA_MaxLevelLabel>{0} mastered the arcane</AA_MaxLevelLabel>
-  <AA_MaxLevelText>{0} has reached level 50. From now on, experience grants paragon levels: each one adds spell power and mana, and every fifth grants a perk point.</AA_MaxLevelText>
+  <AA_MaxLevelText>{0} has reached level 30 and the Fifth Circle: an archmage. From now on, experience grants paragon levels. Each one adds spell power and mana, and every second one grants a perk point.</AA_MaxLevelText>
   <AA_Reason_ChooseSubclass>Choose this subclass first.</AA_Reason_ChooseSubclass>
   <AA_Reason_OtherTree>This node belongs to another path.</AA_Reason_OtherTree>
   <AA_Reason_MaxRank>Already at maximum rank.</AA_Reason_MaxRank>
@@ -34,7 +34,9 @@ Select {0} and click the arcane status panel to open the grimoire, then open the
   <AA_Reason_Prereq>Learn a connected node first.</AA_Reason_Prereq>
   <AA_Reason_Exclusive>Mutually exclusive with {0}.</AA_Reason_Exclusive>
   <AA_AwakenCommand>Awaken magic</AA_AwakenCommand>
-  <AA_AwakenCommandDesc>Awaken this colonist's latent magic and choose an arcane class. Each class has a deep skill tree and three subclasses.</AA_AwakenCommandDesc>
+  <AA_AwakenCommandDesc>Awaken this colonist's latent magic and choose an arcane class. Each class has a deep skill tree and three subclasses.
+
+(Free awakening is on in the mod settings. Normally a colonist must read a grimoire of awakening and then study at an arcane lectern.)</AA_AwakenCommandDesc>
   <AA_InspectLine>{0} level {1} - mana {2}/{3}</AA_InspectLine>
   <AA_WardShort>ward {0}/{1}</AA_WardShort>
   <AA_CoreLabel>arcane path: {0}</AA_CoreLabel>
@@ -222,14 +224,14 @@ Click to open the grimoire: skill trees, attributes and spellbook.</AA_StatusTip
   <AA_Playstyle>Playstyle</AA_Playstyle>
   <AA_KeyAttributes>Key attributes: {0} and {1}.</AA_KeyAttributes>
   <AA_StartingSpells>Starting spell</AA_StartingSpells>
-  <AA_Subclasses>Subclasses (unlock at level {0})</AA_Subclasses>
+  <AA_Subclasses>Subclasses (unlock at the Second Circle, level {0})</AA_Subclasses>
   <AA_Lore>Lore</AA_Lore>
   <AA_AwakenAs>Awaken as {0}</AA_AwakenAs>
   <AA_LevelLong>Level {0} / {1}</AA_LevelLong>
   <AA_ParagonLabel>Paragon {0}</AA_ParagonLabel>
   <AA_XpTip>Experience: {0} / {1}
 
-Gain experience by casting spells, damaging and killing enemies, and healing allies.</AA_XpTip>
+Gain experience by casting spells, damaging and killing hostile enemies, healing allies, and studying at an arcane lectern.</AA_XpTip>
   <AA_PerkPoints>Perk points</AA_PerkPoints>
   <AA_AttributePoints>Attribute points</AA_AttributePoints>
   <AA_TreeWord>tree</AA_TreeWord>
@@ -246,11 +248,11 @@ Gain experience by casting spells, damaging and killing enemies, and healing all
   <AA_PreviewingTree>Previewing the {0} tree</AA_PreviewingTree>
   <AA_BackToChoices>Back</AA_BackToChoices>
   <AA_ChooseSubclassNow>Choose your subclass. This choice is permanent.</AA_ChooseSubclassNow>
-  <AA_SubclassLocked>Subclasses unlock at level {0}. You can preview their trees now.</AA_SubclassLocked>
+  <AA_SubclassLocked>Subclasses unlock when this mage ascends to the {0} (level {1}). You can preview their trees now.</AA_SubclassLocked>
   <AA_PreviewTree>Preview skill tree</AA_PreviewTree>
   <AA_BecomeSubclass>Become {0}</AA_BecomeSubclass>
   <AA_ConfirmSubclass>Become a {0}? {1} will follow this path permanently.</AA_ConfirmSubclass>
-  <AA_ReachLevel>Reach level {0}</AA_ReachLevel>
+  <AA_ReachLevel>Reach level {0} (Second Circle)</AA_ReachLevel>
   <AA_KnownSpells>Known spells ({0})</AA_KnownSpells>
   <AA_LockedSpells>Not yet learned ({0})</AA_LockedSpells>
   <AA_SpellMeta>{0} mana · {1} cooldown · {2}</AA_SpellMeta>
@@ -313,7 +315,7 @@ Gain experience by casting spells, damaging and killing enemies, and healing all
   <AA_Set_ManaRegen>Mana regeneration: {0}</AA_Set_ManaRegen>
   <AA_Set_Power>Spell power: {0}</AA_Set_Power>
   <AA_Set_FreeAwaken>Free awakening</AA_Set_FreeAwaken>
-  <AA_Set_FreeAwakenDesc>Any colonist can awaken their magic with a button. Turn off to require a grimoire of awakening (crafted at the arcane lectern).</AA_Set_FreeAwakenDesc>
+  <AA_Set_FreeAwakenDesc>Any colonist can awaken their magic with a button. Off by default: normally a colonist must read a grimoire of awakening (made from arcane crystals) and then study at an arcane lectern until their magic awakens, much like gaining a psylink.</AA_Set_FreeAwakenDesc>
   <AA_Set_AwakenStart>Starting colonists begin awakened</AA_Set_AwakenStart>
   <AA_Set_AwakenStartDesc>New games start with every colonist already awakened in a random class.</AA_Set_AwakenStartDesc>
   <AA_Set_Autocast>Allow autocast</AA_Set_Autocast>
@@ -327,4 +329,79 @@ Gain experience by casting spells, damaging and killing enemies, and healing all
   <AA_Set_Reset>Reset to defaults</AA_Set_Reset>
   <AA_RandomInspiration>random</AA_RandomInspiration>
   <AA_RandomSkill>a random skill</AA_RandomSkill>
+  <AA_AwakenReadyDesc>This colonist's attunement is complete. Choose the arcane class they will follow.</AA_AwakenReadyDesc>
+  <AA_PsychicallyDeaf>{0} is psychically deaf and cannot attune to the arcane</AA_PsychicallyDeaf>
+  <AA_AlreadyAttuning>{0} is already attuning</AA_AlreadyAttuning>
+  <AA_AttunementBegunLabel>{0} begins attuning</AA_AttunementBegunLabel>
+  <AA_AttunementBegunText>{0} has read the grimoire and felt the first stirring of the weave.
+
+To finish awakening, {0} must study at an arcane lectern. That takes about {1} hours for an average person; {0} studies at {2} speed (psychic sensitivity and Intellectual skill help). {0} will study in their free time, or you can right-click a lectern to order it.
+
+When attunement completes, {0} chooses an arcane class.</AA_AttunementBegunText>
+  <AA_AttunedLabel>{0} has awakened</AA_AttunedLabel>
+  <AA_AttunedText>{0}'s attunement is complete. The weave of magic answers when {0} calls.
+
+Select {0} and click "Awaken magic" to choose an arcane class.</AA_AttunedText>
+  <AA_AttuningCommand>Attuning: {0}</AA_AttuningCommand>
+  <AA_AttuningCommandDesc>{0} is attuning to the arcane ({1} complete). Study at an arcane lectern to progress; {0} studies at {2} speed.</AA_AttuningCommandDesc>
+  <AA_AttuningInspect>Attuning to the arcane: {0}</AA_AttuningInspect>
+  <AA_AwakenReadyInspect>Attuned: ready to awaken</AA_AwakenReadyInspect>
+  <AA_Circle1>First Circle</AA_Circle1>
+  <AA_Circle2>Second Circle</AA_Circle2>
+  <AA_Circle3>Third Circle</AA_Circle3>
+  <AA_Circle4>Fourth Circle</AA_Circle4>
+  <AA_Circle5>Fifth Circle</AA_Circle5>
+  <AA_CircleShort>C{0}</AA_CircleShort>
+  <AA_CircleTipHead>{0}: level cap {1}.</AA_CircleTipHead>
+  <AA_CircleTipNext>At level {2}, experience stops until this mage shatters a {1} to ascend to the {0}.</AA_CircleTipNext>
+  <AA_CircleTipReady>Ready to ascend. Shatter a {1} (made at the arcane lectern) to reach the {0}.</AA_CircleTipReady>
+  <AA_CircleTipMax>This mage has reached the highest circle.</AA_CircleTipMax>
+  <AA_ReadyToAscendShort>Ready to ascend</AA_ReadyToAscendShort>
+  <AA_AscendReadyLabel>{0} can ascend</AA_AscendReadyLabel>
+  <AA_AscendReadyText>{0} has learned everything this circle can teach. Further experience is held back until {0} ascends to the {1}.
+
+Etch a {2} at an arcane lectern (or buy one from an exotic trader), then have {0} shatter it.</AA_AscendReadyText>
+  <AA_AscendedLabel>{0} reached the {1}</AA_AscendedLabel>
+  <AA_AscendedText>{0} shattered the sigil and broke through to the {1}. Their level cap is now {2}, and they gained 3 perk points and an attribute point.</AA_AscendedText>
+  <AA_AscendedSubclass>{PAWN_labelShort} can now choose a subclass in the grimoire.</AA_AscendedSubclass>
+  <AA_AscendedMote>{0}!</AA_AscendedMote>
+  <AA_AlreadyCircle>Already at the {0}</AA_AlreadyCircle>
+  <AA_NeedPreviousCircle>Must reach the {0} first</AA_NeedPreviousCircle>
+  <AA_NeedLevelForAscension>Must reach level {0} first</AA_NeedLevelForAscension>
+  <AA_Migrated>{0}'s arcane progression was converted to the new circle system: level {1}, {2}. All skill and attribute points were refunded.</AA_Migrated>
+  <AA_StudyAttune>Attune to the arcane ({0})</AA_StudyAttune>
+  <AA_StudyXp>Study the arcane</AA_StudyXp>
+  <AA_StudyCapped>must ascend to the {0} first</AA_StudyCapped>
+  <AA_StudyMaxed>nothing left to learn</AA_StudyMaxed>
+  <AA_StudyReport>studying the arcane.</AA_StudyReport>
+  <AA_StudyReportAttune>attuning to the arcane ({0}).</AA_StudyReportAttune>
+  <AA_CuredX>cured {0}</AA_CuredX>
+  <AA_ScarsFaded>{0} scar(s) faded</AA_ScarsFaded>
+  <AA_PartsRegrown>{0} part(s) regrown</AA_PartsRegrown>
+  <AA_AgedToDust>Crumbled to dust!</AA_AgedToDust>
+  <AA_All>all</AA_All>
+  <AA_Desc_CureConditions>Cures {0} chronic or age-related condition(s)</AA_Desc_CureConditions>
+  <AA_Desc_HealScars>Fades {0} scar(s) or old wound(s)</AA_Desc_HealScars>
+  <AA_Desc_RegrowParts>Regrows {0} missing body part(s)</AA_Desc_RegrowParts>
+  <AA_Desc_CureAddictions>Breaks every addiction</AA_Desc_CureAddictions>
+  <AA_Desc_AgeAilment>Up to {0} chance to inflict an ailment of old age (higher for the old)</AA_Desc_AgeAilment>
+  <AA_Desc_AgeLethal>Kills anything aged past {0} of its natural lifespan</AA_Desc_AgeLethal>
+  <AA_ItemsRestored>{0} restored</AA_ItemsRestored>
+  <AA_Desc_RestoreItems>Repairs {0} of each item's hit points</AA_Desc_RestoreItems>
+  <AA_Desc_Unrot>Makes spoiled food fresh</AA_Desc_Unrot>
+  <AA_Desc_Untaint>Removes the taint from clothes taken from the dead</AA_Desc_Untaint>
+  <AA_NoQualityItem>Nothing to improve here</AA_NoQualityItem>
+  <AA_QualityMaxed>{0} is already as fine as it can be</AA_QualityMaxed>
+  <AA_QualityRaised>{0} is now {1}!</AA_QualityRaised>
+  <AA_Desc_ImproveQuality>Raises an item's quality by {0} step(s), up to {1}</AA_Desc_ImproveQuality>
+  <AA_TurnedToGold>Turned to gold!</AA_TurnedToGold>
+  <AA_Desc_Midas>Creatures at or below {0} health (or small ones) turn into about {1} gold per body size; others take {2} true damage and are gilded</AA_Desc_Midas>
+  <AA_NoRoomForMeteor>No open sky nearby</AA_NoRoomForMeteor>
+  <AA_Desc_CallMeteorite>Calls down a meteorite of {0}</AA_Desc_CallMeteorite>
+  <AA_RandomOre>random ore</AA_RandomOre>
+  <AA_Desc_ConsumeCorpses>Consumes up to {0} corpses: each heals {1} and restores {2} mana per body size</AA_Desc_ConsumeCorpses>
+  <AA_SkillStolen>{0} stolen!</AA_SkillStolen>
+  <AA_Desc_StealSkill>Steals up to {0} experience from the target's best skill</AA_Desc_StealSkill>
+  <AA_FateDenied>Fate denied!</AA_FateDenied>
+  <AA_NotYet>Not yet!</AA_NotYet>
 </LanguageData>

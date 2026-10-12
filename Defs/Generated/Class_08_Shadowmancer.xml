@@ -16,7 +16,7 @@
     </schoolTags>
     <primaryAttribute>AA_Celerity</primaryAttribute>
     <secondaryAttribute>AA_Potency</secondaryAttribute>
-    <subclassUnlockLevel>10</subclassUnlockLevel>
+    <subclassUnlockLevel>7</subclassUnlockLevel>
     <innateStatOffsets>
       <AA_CritChance>0.04</AA_CritChance>
     </innateStatOffsets>
@@ -174,7 +174,7 @@
     <x>0</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>3</requiredLevel>
+    <requiredLevel>2</requiredLevel>
     <prerequisites>
       <li>AA_Node_Shadowmancer_HexOfDoom</li>
     </prerequisites>
@@ -196,7 +196,7 @@
     <kind>Spell</kind>
     <x>2</x>
     <y>2</y>
-    <requiredLevel>3</requiredLevel>
+    <requiredLevel>2</requiredLevel>
     <prerequisites>
       <li>AA_Node_Shadowmancer_HexOfDoom</li>
       <li>AA_Node_Shadowmancer_Leech</li>
@@ -211,7 +211,7 @@
     <x>4</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>3</requiredLevel>
+    <requiredLevel>2</requiredLevel>
     <prerequisites>
       <li>AA_Node_Shadowmancer_Leech</li>
     </prerequisites>
@@ -234,7 +234,7 @@
     <x>6</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>3</requiredLevel>
+    <requiredLevel>2</requiredLevel>
     <prerequisites>
       <li>AA_Node_Shadowmancer_Shadowstep</li>
     </prerequisites>
@@ -257,9 +257,9 @@
     <kind>Notable</kind>
     <x>1</x>
     <y>3</y>
-    <requiredLevel>6</requiredLevel>
+    <requiredLevel>3</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>6</requiredAttributeValue>
+    <requiredAttributeValue>5</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Shadowmancer_Malice</li>
       <li>AA_Node_Shadowmancer_NightTerror</li>
@@ -286,9 +286,9 @@
     <kind>Spell</kind>
     <x>3</x>
     <y>3</y>
-    <requiredLevel>6</requiredLevel>
+    <requiredLevel>3</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>6</requiredAttributeValue>
+    <requiredAttributeValue>5</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Shadowmancer_NightTerror</li>
       <li>AA_Node_Shadowmancer_Bloodsucker</li>
@@ -303,9 +303,9 @@
     <x>5</x>
     <y>3</y>
     <maxRank>2</maxRank>
-    <requiredLevel>6</requiredLevel>
+    <requiredLevel>3</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>6</requiredAttributeValue>
+    <requiredAttributeValue>5</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Shadowmancer_Bloodsucker</li>
       <li>AA_Node_Shadowmancer_Phantom</li>
@@ -326,7 +326,7 @@
     <x>0</x>
     <y>4</y>
     <maxRank>3</maxRank>
-    <requiredLevel>9</requiredLevel>
+    <requiredLevel>5</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
     <requiredAttributeValue>6</requiredAttributeValue>
     <prerequisites>
@@ -348,7 +348,7 @@
     <x>2</x>
     <y>4</y>
     <maxRank>2</maxRank>
-    <requiredLevel>9</requiredLevel>
+    <requiredLevel>5</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
     <requiredAttributeValue>6</requiredAttributeValue>
     <prerequisites>
@@ -375,7 +375,7 @@
     <kind>Spell</kind>
     <x>4</x>
     <y>4</y>
-    <requiredLevel>9</requiredLevel>
+    <requiredLevel>5</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
     <requiredAttributeValue>6</requiredAttributeValue>
     <prerequisites>
@@ -392,7 +392,7 @@
     <x>6</x>
     <y>4</y>
     <maxRank>3</maxRank>
-    <requiredLevel>9</requiredLevel>
+    <requiredLevel>5</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
     <requiredAttributeValue>6</requiredAttributeValue>
     <prerequisites>
@@ -411,9 +411,9 @@
     <kind>Notable</kind>
     <x>1</x>
     <y>5</y>
-    <requiredLevel>13</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Shadowmancer_Exploit</li>
       <li>AA_Node_Shadowmancer_Assassinate</li>
@@ -436,9 +436,9 @@
     <x>3</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>13</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Shadowmancer_Assassinate</li>
       <li>AA_Node_Shadowmancer_ShadowSight</li>
@@ -455,9 +455,9 @@
     <kind>Notable</kind>
     <x>5</x>
     <y>5</y>
-    <requiredLevel>13</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Shadowmancer_ShadowSight</li>
       <li>AA_Node_Shadowmancer_Nightfall</li>
@@ -476,9 +476,9 @@
     <kind>Spell</kind>
     <x>3</x>
     <y>6</y>
-    <requiredLevel>17</requiredLevel>
+    <requiredLevel>9</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Shadowmancer_Torment</li>
       <li>AA_Node_Shadowmancer_Darkness</li>
@@ -494,9 +494,9 @@
     <kind>Keystone</kind>
     <x>2</x>
     <y>7</y>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>11</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Shadowmancer_UmbralEruption</li>
     </prerequisites>
@@ -533,9 +533,9 @@
     <kind>Keystone</kind>
     <x>4</x>
     <y>7</y>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>11</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Shadowmancer_UmbralEruption</li>
     </prerequisites>
@@ -554,9 +554,9 @@
     <kind>Keystone</kind>
     <x>3</x>
     <y>8</y>
-    <requiredLevel>30</requiredLevel>
+    <requiredLevel>15</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>18</requiredAttributeValue>
+    <requiredAttributeValue>13</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Shadowmancer_Nightmare</li>
       <li>AA_Node_Shadowmancer_Silhouette</li>
@@ -576,12 +576,40 @@
     <iconPath>ArcanumAscendant/Nodes/Shadowmancer_Shadowlord</iconPath>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Shadowmancer_Eclipse</defName>
+    <tree>AA_Class_Shadowmancer</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>3</y>
+    <requiredLevel>3</requiredLevel>
+    <requiredAttribute>AA_Celerity</requiredAttribute>
+    <requiredAttributeValue>5</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Shadowmancer_Phantom</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_Eclipse</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Shadowmancer_ShadowBind</defName>
+    <tree>AA_Class_Shadowmancer</tree>
+    <kind>Spell</kind>
+    <x>0</x>
+    <y>3</y>
+    <requiredLevel>3</requiredLevel>
+    <requiredAttribute>AA_Celerity</requiredAttribute>
+    <requiredAttributeValue>5</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Shadowmancer_Malice</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_ShadowBind</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Assassin_Backstab</defName>
     <tree>AA_Class_Assassin</tree>
     <kind>Spell</kind>
     <x>2</x>
     <y>0</y>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <unlockSpell>AA_Spell_Backstab</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
@@ -592,7 +620,7 @@
     <x>4</x>
     <y>0</y>
     <maxRank>3</maxRank>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <statOffsetsPerRank>
       <AA_CritDamage>0.08</AA_CritDamage>
     </statOffsetsPerRank>
@@ -604,7 +632,7 @@
     <kind>Spell</kind>
     <x>1</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Assassin_Backstab</li>
     </prerequisites>
@@ -618,7 +646,7 @@
     <x>3</x>
     <y>1</y>
     <maxRank>3</maxRank>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Assassin_Backstab</li>
       <li>AA_Node_Assassin_Lethality</li>
@@ -634,7 +662,7 @@
     <kind>Spell</kind>
     <x>5</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Assassin_Lethality</li>
     </prerequisites>
@@ -648,7 +676,7 @@
     <x>1</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -673,7 +701,7 @@
     <x>3</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -698,7 +726,7 @@
     <x>5</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -721,9 +749,9 @@
     <kind>Spell</kind>
     <x>2</x>
     <y>3</y>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Assassin_Venom</li>
       <li>AA_Node_Assassin_Cutthroat</li>
@@ -738,9 +766,9 @@
     <x>4</x>
     <y>3</y>
     <maxRank>2</maxRank>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Assassin_Cutthroat</li>
       <li>AA_Node_Assassin_Hunted</li>
@@ -763,9 +791,9 @@
     <kind>Notable</kind>
     <x>3</x>
     <y>4</y>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>14</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>12</requiredAttributeValue>
+    <requiredAttributeValue>10</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Assassin_SmokeBomb</li>
       <li>AA_Node_Assassin_Poisoner</li>
@@ -787,9 +815,9 @@
     <kind>Notable</kind>
     <x>1</x>
     <y>5</y>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Assassin_Bladedancer</li>
     </prerequisites>
@@ -810,9 +838,9 @@
     <x>5</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Assassin_Bladedancer</li>
     </prerequisites>
@@ -832,9 +860,9 @@
     <kind>Keystone</kind>
     <x>2</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Assassin_Ghost</li>
       <li>AA_Node_Assassin_Killer</li>
@@ -856,9 +884,9 @@
     <kind>Keystone</kind>
     <x>4</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Assassin_Ghost</li>
       <li>AA_Node_Assassin_Killer</li>
@@ -882,9 +910,9 @@
     <kind>Ultimate</kind>
     <x>3</x>
     <y>7</y>
-    <requiredLevel>40</requiredLevel>
+    <requiredLevel>25</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>18</requiredAttributeValue>
+    <requiredAttributeValue>16</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Assassin_Executioner</li>
       <li>AA_Node_Assassin_Shadowdance</li>
@@ -892,12 +920,26 @@
     <unlockSpell>AA_Spell_DeathLotus</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Assassin_ShadowDance</defName>
+    <tree>AA_Class_Assassin</tree>
+    <kind>Spell</kind>
+    <x>0</x>
+    <y>2</y>
+    <requiredLevel>10</requiredLevel>
+    <requiredAttribute>AA_Celerity</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Assassin_ToxicFan</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_ShadowDance</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Hexer_CurseOfAgony</defName>
     <tree>AA_Class_Hexer</tree>
     <kind>Spell</kind>
     <x>2</x>
     <y>0</y>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <unlockSpell>AA_Spell_CurseOfAgony</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
@@ -908,7 +950,7 @@
     <x>4</x>
     <y>0</y>
     <maxRank>3</maxRank>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <spellMods>
       <li>
         <tag>Curse</tag>
@@ -924,7 +966,7 @@
     <kind>Spell</kind>
     <x>1</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Hexer_CurseOfAgony</li>
     </prerequisites>
@@ -938,7 +980,7 @@
     <x>3</x>
     <y>1</y>
     <maxRank>3</maxRank>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Hexer_CurseOfAgony</li>
       <li>AA_Node_Hexer_Spite</li>
@@ -955,7 +997,7 @@
     <kind>Spell</kind>
     <x>5</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Hexer_Spite</li>
     </prerequisites>
@@ -969,7 +1011,7 @@
     <x>1</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Attunement</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -992,7 +1034,7 @@
     <kind>Spell</kind>
     <x>3</x>
     <y>2</y>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Attunement</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1008,7 +1050,7 @@
     <x>5</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Attunement</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1033,9 +1075,9 @@
     <x>2</x>
     <y>3</y>
     <maxRank>2</maxRank>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Attunement</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Hexer_Hush</li>
       <li>AA_Node_Hexer_HexSwarm</li>
@@ -1059,9 +1101,9 @@
     <x>4</x>
     <y>3</y>
     <maxRank>2</maxRank>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Attunement</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Hexer_HexSwarm</li>
       <li>AA_Node_Hexer_Featherbrain</li>
@@ -1083,9 +1125,9 @@
     <kind>Notable</kind>
     <x>3</x>
     <y>4</y>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>14</requiredLevel>
     <requiredAttribute>AA_Attunement</requiredAttribute>
-    <requiredAttributeValue>12</requiredAttributeValue>
+    <requiredAttributeValue>10</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Hexer_Witchcraft</li>
       <li>AA_Node_Hexer_EvilEye</li>
@@ -1103,9 +1145,9 @@
     <kind>Notable</kind>
     <x>1</x>
     <y>5</y>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Attunement</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Hexer_Covenant</li>
     </prerequisites>
@@ -1126,9 +1168,9 @@
     <x>5</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Attunement</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Hexer_Covenant</li>
     </prerequisites>
@@ -1146,9 +1188,9 @@
     <kind>Keystone</kind>
     <x>2</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Attunement</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Hexer_Voodoo</li>
       <li>AA_Node_Hexer_Jinx</li>
@@ -1171,9 +1213,9 @@
     <kind>Keystone</kind>
     <x>4</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Attunement</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Hexer_Voodoo</li>
       <li>AA_Node_Hexer_Jinx</li>
@@ -1205,9 +1247,9 @@
     <kind>Ultimate</kind>
     <x>3</x>
     <y>7</y>
-    <requiredLevel>40</requiredLevel>
+    <requiredLevel>25</requiredLevel>
     <requiredAttribute>AA_Attunement</requiredAttribute>
-    <requiredAttributeValue>18</requiredAttributeValue>
+    <requiredAttributeValue>16</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Hexer_CurseLord</li>
       <li>AA_Node_Hexer_Barnyard</li>
@@ -1215,12 +1257,26 @@
     <unlockSpell>AA_Spell_Malediction</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Hexer_StoneGaze</defName>
+    <tree>AA_Class_Hexer</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>2</y>
+    <requiredLevel>10</requiredLevel>
+    <requiredAttribute>AA_Attunement</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Hexer_Polymorph</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_StoneGaze</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Hemomancer_BloodLance</defName>
     <tree>AA_Class_Hemomancer</tree>
     <kind>Spell</kind>
     <x>2</x>
     <y>0</y>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <unlockSpell>AA_Spell_BloodLance</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
@@ -1231,7 +1287,7 @@
     <x>4</x>
     <y>0</y>
     <maxRank>3</maxRank>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <statOffsetsPerRank>
       <AA_Lifesteal>0.03</AA_Lifesteal>
     </statOffsetsPerRank>
@@ -1243,7 +1299,7 @@
     <kind>Spell</kind>
     <x>1</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Hemomancer_BloodLance</li>
     </prerequisites>
@@ -1257,7 +1313,7 @@
     <x>3</x>
     <y>1</y>
     <maxRank>3</maxRank>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Hemomancer_BloodLance</li>
       <li>AA_Node_Hemomancer_Sanguine</li>
@@ -1276,7 +1332,7 @@
     <kind>Spell</kind>
     <x>5</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Hemomancer_Sanguine</li>
     </prerequisites>
@@ -1290,7 +1346,7 @@
     <x>1</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1315,7 +1371,7 @@
     <kind>Notable</kind>
     <x>3</x>
     <y>2</y>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1337,7 +1393,7 @@
     <x>5</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1360,9 +1416,9 @@
     <kind>Spell</kind>
     <x>2</x>
     <y>3</y>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Hemomancer_Exsanguinate</li>
       <li>AA_Node_Hemomancer_BloodPact</li>
@@ -1377,9 +1433,9 @@
     <x>4</x>
     <y>3</y>
     <maxRank>2</maxRank>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Hemomancer_BloodPact</li>
       <li>AA_Node_Hemomancer_Berserker</li>
@@ -1405,9 +1461,9 @@
     <kind>Notable</kind>
     <x>3</x>
     <y>4</y>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>14</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>12</requiredAttributeValue>
+    <requiredAttributeValue>10</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Hemomancer_Transfusion</li>
       <li>AA_Node_Hemomancer_Vampirism</li>
@@ -1428,9 +1484,9 @@
     <x>1</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Hemomancer_Hemophage</li>
     </prerequisites>
@@ -1450,9 +1506,9 @@
     <x>5</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Hemomancer_Hemophage</li>
     </prerequisites>
@@ -1477,9 +1533,9 @@
     <kind>Keystone</kind>
     <x>2</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Hemomancer_Bloodbound</li>
       <li>AA_Node_Hemomancer_Clotting</li>
@@ -1504,9 +1560,9 @@
     <kind>Keystone</kind>
     <x>4</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Hemomancer_Bloodbound</li>
       <li>AA_Node_Hemomancer_Clotting</li>
@@ -1531,14 +1587,28 @@
     <kind>Ultimate</kind>
     <x>3</x>
     <y>7</y>
-    <requiredLevel>40</requiredLevel>
+    <requiredLevel>25</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>18</requiredAttributeValue>
+    <requiredAttributeValue>16</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Hemomancer_Sanguinarch</li>
       <li>AA_Node_Hemomancer_Immortal</li>
     </prerequisites>
     <unlockSpell>AA_Spell_CrimsonTide</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Hemomancer_BloodHarvest</defName>
+    <tree>AA_Class_Hemomancer</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>2</y>
+    <requiredLevel>10</requiredLevel>
+    <requiredAttribute>AA_Potency</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Hemomancer_BloodFrenzy</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_BloodHarvest</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_ShadowBolt</defName>
@@ -2299,6 +2369,216 @@
     <targetRequired>false</targetRequired>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_Eclipse</defName>
+    <label>eclipse</label>
+    <description>Swallow the sun. Darkness falls across the map for six hours, and every enemy near you is blinded by the sudden night.</description>
+    <iconPath>ArcanumAscendant/Spells/Eclipse</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>0</range>
+      <warmupTime>3</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <drawAimPie>false</drawAimPie>
+      <targetable>false</targetable>
+      <nonInterruptingSelfCast>false</nonInterruptingSelfCast>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>80</manaCost>
+        <tags>
+          <li>Shadow</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Nova</delivery>
+        <affects>Enemies</affects>
+        <radius>12</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_GameCondition">
+            <condition>Eclipse</condition>
+            <durationTicks>15000</durationTicks>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_Blinded</hediff>
+            <severity>1</severity>
+            <durationTicks>600</durationTicks>
+            <affects>Enemies</affects>
+          </li>
+        </effects>
+        <color>(0.541, 0.424, 1, 1)</color>
+        <color2>(0.102, 0.059, 0.2, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Smoke</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>6</scale>
+            <scaleEnd>7.2</scaleEnd>
+            <ticks>12</ticks>
+            <color>(0.227, 0.165, 0.416, 1)</color>
+          </li>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.05</scale>
+            <scaleEnd>1</scaleEnd>
+            <ticks>50</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Spiral</type>
+            <fleck>AA_Fleck_Mote</fleck>
+            <count>30</count>
+            <speed>3</speed>
+            <scale>0.7</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Shadow</castSound>
+        <impactSound>AA_Impact_Shadow</impactSound>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+    <targetRequired>false</targetRequired>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_ShadowBind</defName>
+    <label>shadow bind</label>
+    <description>Shadows lash out from the ground and drag every enemy in the area toward the center, holding them in place.</description>
+    <iconPath>ArcanumAscendant/Spells/ShadowBind</iconPath>
+    <cooldownTicksRange>1080</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>26</range>
+      <warmupTime>0.6</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>32</manaCost>
+        <tags>
+          <li>Shadow</li>
+        </tags>
+        <tier>2</tier>
+        <role>Control</role>
+        <autocastByDefault>true</autocastByDefault>
+        <aiMinEnemiesInRadius>2</aiMinEnemiesInRadius>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <radius>4</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Knockback">
+            <distance>3</distance>
+            <pull>true</pull>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Stun">
+            <ticks>150</ticks>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_Entangled</hediff>
+            <severity>1</severity>
+            <durationTicks>300</durationTicks>
+          </li>
+        </effects>
+        <color>(0.541, 0.424, 1, 1)</color>
+        <color2>(0.102, 0.059, 0.2, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Smoke</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>1.8</scale>
+            <scaleEnd>2.16</scaleEnd>
+            <ticks>12</ticks>
+            <color>(0.753, 0.659, 1, 1)</color>
+          </li>
+          <li>
+            <type>Spiral</type>
+            <fleck>AA_Fleck_Mote</fleck>
+            <count>8</count>
+            <speed>2</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Smoke</fleck>
+            <count>3</count>
+            <speed>0.6</speed>
+            <scale>0.8</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.2</scale>
+            <scaleEnd>0.5</scaleEnd>
+            <ticks>22</ticks>
+          </li>
+          <li>
+            <type>Shockwave</type>
+            <scale>1</scale>
+            <scaleEnd>0.1</scaleEnd>
+            <ticks>26</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Shadow</castSound>
+        <impactSound>AA_Impact_Shadow</impactSound>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_Backstab</defName>
     <label>backstab</label>
     <description>Blink behind the target and drive a shadow blade into it. Executes the badly wounded.</description>
@@ -2793,6 +3073,106 @@
         <chainRange>8</chainRange>
         <chainFalloff>1</chainFalloff>
         <chainDelay>8</chainDelay>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_ShadowDance</defName>
+    <label>shadow dance</label>
+    <description>Flicker from enemy to enemy, appearing behind each one for a single killing cut.</description>
+    <iconPath>ArcanumAscendant/Spells/ShadowDance</iconPath>
+    <cooldownTicksRange>1440</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>20</range>
+      <warmupTime>0.2</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>40</manaCost>
+        <tags>
+          <li>Shadow</li>
+        </tags>
+        <tier>3</tier>
+        <role>Attack</role>
+        <autocastByDefault>true</autocastByDefault>
+        <aiMinEnemiesInRadius>2</aiMinEnemiesInRadius>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Chain</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Teleport">
+            <mode>CasterToTarget</mode>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Damage">
+            <amount>24</amount>
+            <damageDef>Cut</damageDef>
+            <armorPen>0.45</armorPen>
+          </li>
+        </effects>
+        <color>(0.69, 0.478, 1, 1)</color>
+        <color2>(1, 0.29, 0.541, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Spark</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>1.6</scale>
+            <scaleEnd>1.92</scaleEnd>
+            <ticks>12</ticks>
+            <color>(0.753, 0.659, 1, 1)</color>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Blood</fleck>
+            <count>8</count>
+            <speed>3</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Spiral</type>
+            <fleck>AA_Fleck_Mote</fleck>
+            <count>6</count>
+            <speed>2</speed>
+            <scale>0.4</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Shadow</castSound>
+        <impactSound>AA_Impact_Shadow</impactSound>
+        <chainCount>5</chainCount>
+        <chainRange>8</chainRange>
+        <chainFalloff>0.95</chainFalloff>
+        <chainDelay>10</chainDelay>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3336,6 +3716,100 @@
     <warmupStartSound>AA_Charge</warmupStartSound>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_StoneGaze</defName>
+    <label>stone gaze</label>
+    <description>Meet their eyes with the gaze of the gorgon. They turn to stone for ten seconds: helpless, but hard to hurt.</description>
+    <iconPath>ArcanumAscendant/Spells/StoneGaze</iconPath>
+    <cooldownTicksRange>1800</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>24</range>
+      <warmupTime>0.6</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>40</manaCost>
+        <tags>
+          <li>Shadow</li>
+          <li>Hex</li>
+        </tags>
+        <tier>3</tier>
+        <role>Control</role>
+        <autocastByDefault>true</autocastByDefault>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Stun">
+            <ticks>600</ticks>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_Petrified</hediff>
+            <severity>1</severity>
+          </li>
+        </effects>
+        <color>(0.816, 0.424, 1, 1)</color>
+        <color2>(0.227, 0.039, 0.29, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Smoke</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>2.5</scale>
+            <scaleEnd>3</scaleEnd>
+            <ticks>12</ticks>
+            <color>(0.847, 0.816, 0.753, 1)</color>
+          </li>
+          <li>
+            <type>Smoke</type>
+            <count>4</count>
+            <scale>1</scale>
+            <speed>1</speed>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Shard</fleck>
+            <count>12</count>
+            <speed>2</speed>
+            <scale>0.6</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Shadow</castSound>
+        <impactSound>AA_Impact_Shadow</impactSound>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_BloodLance</defName>
     <label>blood lance</label>
     <description>Form a spear of your own blood and hurl it. Costs health.</description>
@@ -3804,6 +4278,121 @@
     <warmupStartSound>AA_Charge</warmupStartSound>
     <targetRequired>false</targetRequired>
   </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_BloodHarvest</defName>
+    <label>blood harvest</label>
+    <description>Pull the blood out of every enemy in an area through their skin. You drink a third of what you take.</description>
+    <iconPath>ArcanumAscendant/Spells/BloodHarvest</iconPath>
+    <cooldownTicksRange>1200</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>24</range>
+      <warmupTime>0.7</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>45</manaCost>
+        <healthCost>4</healthCost>
+        <tags>
+          <li>Blood</li>
+        </tags>
+        <tier>3</tier>
+        <role>Attack</role>
+        <autocastByDefault>true</autocastByDefault>
+        <aiMinEnemiesInRadius>2</aiMinEnemiesInRadius>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <radius>3.5</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Damage">
+            <amount>24</amount>
+            <damageDef>AA_Blood</damageDef>
+            <armorPen>0.4</armorPen>
+            <healCasterFraction>0.33</healCasterFraction>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_Bleeding</hediff>
+            <severity>1</severity>
+            <stack>true</stack>
+            <maxSeverity>5</maxSeverity>
+          </li>
+        </effects>
+        <color>(1, 0.188, 0.282, 1)</color>
+        <color2>(0.353, 0, 0.063, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Mote</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>1.8</scale>
+            <scaleEnd>2.16</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Blood</fleck>
+            <count>10</count>
+            <speed>3</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.2</scale>
+            <scaleEnd>2</scaleEnd>
+            <ticks>20</ticks>
+            <useColor2>true</useColor2>
+          </li>
+          <li>
+            <type>Shockwave</type>
+            <scale>1</scale>
+            <scaleEnd>0.1</scaleEnd>
+            <ticks>26</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Spiral</type>
+            <fleck>AA_Fleck_Blood</fleck>
+            <count>14</count>
+            <speed>-2.5</speed>
+            <scale>0.5</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Blood</castSound>
+        <impactSound>AA_Impact_Blood</impactSound>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
   <HediffDef>
     <defName>AA_Agony</defName>
     <label>agony</label>
@@ -3837,6 +4426,35 @@
           <PainShockThreshold>-0.1</PainShockThreshold>
         </statOffsets>
         <painOffset>0.15</painOffset>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_Petrified</defName>
+    <label>petrified</label>
+    <description>Turned to stone. Cannot move, but stone is hard to break.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>true</isBad>
+    <defaultLabelColor>(0.722, 0.69, 0.627, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>600~600</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(0.722, 0.69, 0.627, 0.9)</color>
+        <texPath>ArcanumAscendant/Vfx/RuneCircle</texPath>
+        <size>1.4</size>
+        <fleckInterval>20</fleckInterval>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <MoveSpeed>0.05</MoveSpeed>
+          <IncomingDamageFactor>0.5</IncomingDamageFactor>
+        </statFactors>
       </li>
     </stages>
   </HediffDef>

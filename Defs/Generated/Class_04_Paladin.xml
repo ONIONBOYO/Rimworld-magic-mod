@@ -16,7 +16,7 @@
     </schoolTags>
     <primaryAttribute>AA_Resilience</primaryAttribute>
     <secondaryAttribute>AA_Potency</secondaryAttribute>
-    <subclassUnlockLevel>10</subclassUnlockLevel>
+    <subclassUnlockLevel>7</subclassUnlockLevel>
     <innateStatOffsets>
       <AA_WardMax>15</AA_WardMax>
       <AA_HealingPower>0.1</AA_HealingPower>
@@ -176,7 +176,7 @@
     <x>0</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>3</requiredLevel>
+    <requiredLevel>2</requiredLevel>
     <prerequisites>
       <li>AA_Node_Paladin_HammerOfJustice</li>
     </prerequisites>
@@ -197,7 +197,7 @@
     <kind>Spell</kind>
     <x>2</x>
     <y>2</y>
-    <requiredLevel>3</requiredLevel>
+    <requiredLevel>2</requiredLevel>
     <prerequisites>
       <li>AA_Node_Paladin_HammerOfJustice</li>
       <li>AA_Node_Paladin_DivineShield</li>
@@ -210,7 +210,7 @@
     <kind>Spell</kind>
     <x>4</x>
     <y>2</y>
-    <requiredLevel>3</requiredLevel>
+    <requiredLevel>2</requiredLevel>
     <prerequisites>
       <li>AA_Node_Paladin_DivineShield</li>
       <li>AA_Node_Paladin_LayOnHands</li>
@@ -225,7 +225,7 @@
     <x>6</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>3</requiredLevel>
+    <requiredLevel>2</requiredLevel>
     <prerequisites>
       <li>AA_Node_Paladin_LayOnHands</li>
     </prerequisites>
@@ -250,9 +250,9 @@
     <x>1</x>
     <y>3</y>
     <maxRank>2</maxRank>
-    <requiredLevel>6</requiredLevel>
+    <requiredLevel>3</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>6</requiredAttributeValue>
+    <requiredAttributeValue>5</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Paladin_Gavel</li>
       <li>AA_Node_Paladin_Consecration</li>
@@ -275,9 +275,9 @@
     <x>3</x>
     <y>3</y>
     <maxRank>3</maxRank>
-    <requiredLevel>6</requiredLevel>
+    <requiredLevel>3</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>6</requiredAttributeValue>
+    <requiredAttributeValue>5</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Paladin_Consecration</li>
       <li>AA_Node_Paladin_Blessing</li>
@@ -295,9 +295,9 @@
     <kind>Spell</kind>
     <x>5</x>
     <y>3</y>
-    <requiredLevel>6</requiredLevel>
+    <requiredLevel>3</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>6</requiredAttributeValue>
+    <requiredAttributeValue>5</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Paladin_Blessing</li>
       <li>AA_Node_Paladin_HealingHands</li>
@@ -312,7 +312,7 @@
     <x>2</x>
     <y>4</y>
     <maxRank>2</maxRank>
-    <requiredLevel>9</requiredLevel>
+    <requiredLevel>5</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
     <requiredAttributeValue>6</requiredAttributeValue>
     <prerequisites>
@@ -338,7 +338,7 @@
     <kind>Notable</kind>
     <x>4</x>
     <y>4</y>
-    <requiredLevel>9</requiredLevel>
+    <requiredLevel>5</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
     <requiredAttributeValue>6</requiredAttributeValue>
     <prerequisites>
@@ -368,7 +368,7 @@
     <x>0</x>
     <y>4</y>
     <maxRank>3</maxRank>
-    <requiredLevel>9</requiredLevel>
+    <requiredLevel>5</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
     <requiredAttributeValue>6</requiredAttributeValue>
     <prerequisites>
@@ -390,7 +390,7 @@
     <x>6</x>
     <y>4</y>
     <maxRank>2</maxRank>
-    <requiredLevel>9</requiredLevel>
+    <requiredLevel>5</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
     <requiredAttributeValue>6</requiredAttributeValue>
     <prerequisites>
@@ -413,9 +413,9 @@
     <x>1</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>13</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Paladin_Steadfast</li>
       <li>AA_Node_Paladin_HolyGround</li>
@@ -435,9 +435,9 @@
     <x>3</x>
     <y>5</y>
     <maxRank>2</maxRank>
-    <requiredLevel>13</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Paladin_HolyGround</li>
       <li>AA_Node_Paladin_Radiance</li>
@@ -459,9 +459,9 @@
     <kind>Notable</kind>
     <x>5</x>
     <y>5</y>
-    <requiredLevel>13</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Paladin_Radiance</li>
       <li>AA_Node_Paladin_Retribution</li>
@@ -485,9 +485,9 @@
     <kind>Spell</kind>
     <x>3</x>
     <y>6</y>
-    <requiredLevel>17</requiredLevel>
+    <requiredLevel>9</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Paladin_Benediction</li>
     </prerequisites>
@@ -501,9 +501,9 @@
     <x>1</x>
     <y>6</y>
     <maxRank>3</maxRank>
-    <requiredLevel>17</requiredLevel>
+    <requiredLevel>9</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Paladin_Crusader</li>
       <li>AA_Node_Paladin_Benediction</li>
@@ -525,9 +525,9 @@
     <x>5</x>
     <y>6</y>
     <maxRank>3</maxRank>
-    <requiredLevel>17</requiredLevel>
+    <requiredLevel>9</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Paladin_Benediction</li>
       <li>AA_Node_Paladin_Martyr</li>
@@ -546,9 +546,9 @@
     <kind>Keystone</kind>
     <x>2</x>
     <y>7</y>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>11</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Paladin_HolyNova</li>
     </prerequisites>
@@ -579,9 +579,9 @@
     <kind>Keystone</kind>
     <x>4</x>
     <y>7</y>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>11</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Paladin_HolyNova</li>
     </prerequisites>
@@ -604,9 +604,9 @@
     <kind>Keystone</kind>
     <x>3</x>
     <y>8</y>
-    <requiredLevel>30</requiredLevel>
+    <requiredLevel>15</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>18</requiredAttributeValue>
+    <requiredAttributeValue>13</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Paladin_Wrath</li>
       <li>AA_Node_Paladin_Sanctity</li>
@@ -629,12 +629,40 @@
     <iconPath>ArcanumAscendant/Nodes/Paladin_Exalted</iconPath>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Paladin_DivineIntervention</defName>
+    <tree>AA_Class_Paladin</tree>
+    <kind>Spell</kind>
+    <x>4</x>
+    <y>5</y>
+    <requiredLevel>7</requiredLevel>
+    <requiredAttribute>AA_Resilience</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Paladin_Radiance</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_DivineIntervention</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Paladin_HeavensLance</defName>
+    <tree>AA_Class_Paladin</tree>
+    <kind>Spell</kind>
+    <x>0</x>
+    <y>5</y>
+    <requiredLevel>7</requiredLevel>
+    <requiredAttribute>AA_Resilience</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Paladin_Steadfast</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_HeavensLance</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Templar_Judgment</defName>
     <tree>AA_Class_Templar</tree>
     <kind>Spell</kind>
     <x>2</x>
     <y>0</y>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <unlockSpell>AA_Spell_Judgment</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
@@ -645,7 +673,7 @@
     <x>4</x>
     <y>0</y>
     <maxRank>3</maxRank>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <statOffsetsPerRank>
       <ArmorRating_Sharp>0.05</ArmorRating_Sharp>
       <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
@@ -658,7 +686,7 @@
     <kind>Spell</kind>
     <x>1</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Templar_Judgment</li>
     </prerequisites>
@@ -672,7 +700,7 @@
     <x>3</x>
     <y>1</y>
     <maxRank>3</maxRank>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Templar_Judgment</li>
       <li>AA_Node_Templar_Plate</li>
@@ -689,7 +717,7 @@
     <kind>Spell</kind>
     <x>5</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Templar_Plate</li>
     </prerequisites>
@@ -703,7 +731,7 @@
     <x>1</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -726,7 +754,7 @@
     <kind>Spell</kind>
     <x>3</x>
     <y>2</y>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -742,7 +770,7 @@
     <x>5</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -767,9 +795,9 @@
     <x>2</x>
     <y>3</y>
     <maxRank>2</maxRank>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Templar_Onslaught</li>
       <li>AA_Node_Templar_RighteousFury</li>
@@ -793,9 +821,9 @@
     <x>4</x>
     <y>3</y>
     <maxRank>3</maxRank>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Templar_RighteousFury</li>
       <li>AA_Node_Templar_Bastion</li>
@@ -817,9 +845,9 @@
     <x>3</x>
     <y>4</y>
     <maxRank>2</maxRank>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>14</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>12</requiredAttributeValue>
+    <requiredAttributeValue>10</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Templar_Sentence</li>
       <li>AA_Node_Templar_Unbreakable</li>
@@ -843,9 +871,9 @@
     <x>1</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Templar_HolyBlade</li>
     </prerequisites>
@@ -863,9 +891,9 @@
     <x>5</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Templar_HolyBlade</li>
     </prerequisites>
@@ -883,9 +911,9 @@
     <kind>Keystone</kind>
     <x>2</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Templar_Indomitable</li>
       <li>AA_Node_Templar_Lionheart</li>
@@ -912,9 +940,9 @@
     <kind>Keystone</kind>
     <x>4</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Templar_Indomitable</li>
       <li>AA_Node_Templar_Lionheart</li>
@@ -938,9 +966,9 @@
     <kind>Ultimate</kind>
     <x>3</x>
     <y>7</y>
-    <requiredLevel>40</requiredLevel>
+    <requiredLevel>25</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>18</requiredAttributeValue>
+    <requiredAttributeValue>16</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Templar_Juggernaut</li>
       <li>AA_Node_Templar_Crusade</li>
@@ -948,12 +976,26 @@
     <unlockSpell>AA_Spell_AvatarOfLight</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Templar_UnbreakableVow</defName>
+    <tree>AA_Class_Templar</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>3</y>
+    <requiredLevel>12</requiredLevel>
+    <requiredAttribute>AA_Resilience</requiredAttribute>
+    <requiredAttributeValue>9</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Templar_Bastion</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_UnbreakableVow</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Cleric_GreaterHeal</defName>
     <tree>AA_Class_Cleric</tree>
     <kind>Spell</kind>
     <x>2</x>
     <y>0</y>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <unlockSpell>AA_Spell_GreaterHeal</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
@@ -964,7 +1006,7 @@
     <x>4</x>
     <y>0</y>
     <maxRank>3</maxRank>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <statPercentPerRank>
       <AA_HealingPower>0.07</AA_HealingPower>
     </statPercentPerRank>
@@ -976,7 +1018,7 @@
     <kind>Spell</kind>
     <x>1</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Cleric_GreaterHeal</li>
     </prerequisites>
@@ -990,7 +1032,7 @@
     <x>3</x>
     <y>1</y>
     <maxRank>3</maxRank>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Cleric_GreaterHeal</li>
       <li>AA_Node_Cleric_Grace</li>
@@ -1009,7 +1051,7 @@
     <kind>Spell</kind>
     <x>5</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Cleric_Grace</li>
     </prerequisites>
@@ -1023,7 +1065,7 @@
     <x>1</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1048,7 +1090,7 @@
     <x>3</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1073,7 +1115,7 @@
     <x>5</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1096,9 +1138,9 @@
     <kind>Spell</kind>
     <x>3</x>
     <y>3</y>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Cleric_Restoration</li>
     </prerequisites>
@@ -1113,9 +1155,9 @@
     <x>1</x>
     <y>3</y>
     <maxRank>2</maxRank>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Cleric_Rejuvenate</li>
       <li>AA_Node_Cleric_Restoration</li>
@@ -1139,9 +1181,9 @@
     <x>5</x>
     <y>3</y>
     <maxRank>2</maxRank>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Cleric_HallowedDome</li>
       <li>AA_Node_Cleric_Restoration</li>
@@ -1162,9 +1204,9 @@
     <kind>Notable</kind>
     <x>3</x>
     <y>4</y>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>14</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>12</requiredAttributeValue>
+    <requiredAttributeValue>10</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Cleric_Resurrection</li>
       <li>AA_Node_Cleric_Triage</li>
@@ -1197,9 +1239,9 @@
     <x>1</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Cleric_Lifebinder</li>
     </prerequisites>
@@ -1216,9 +1258,9 @@
     <x>5</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Cleric_Lifebinder</li>
     </prerequisites>
@@ -1236,9 +1278,9 @@
     <kind>Keystone</kind>
     <x>2</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Cleric_Saint</li>
       <li>AA_Node_Cleric_Pilgrim</li>
@@ -1263,9 +1305,9 @@
     <kind>Keystone</kind>
     <x>4</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Cleric_Saint</li>
       <li>AA_Node_Cleric_Pilgrim</li>
@@ -1288,9 +1330,9 @@
     <kind>Ultimate</kind>
     <x>3</x>
     <y>7</y>
-    <requiredLevel>40</requiredLevel>
+    <requiredLevel>25</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>18</requiredAttributeValue>
+    <requiredAttributeValue>16</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Cleric_Ascension</li>
       <li>AA_Node_Cleric_Overflow</li>
@@ -1298,12 +1340,26 @@
     <unlockSpell>AA_Spell_Miracle</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Cleric_GreaterRestoration</defName>
+    <tree>AA_Class_Cleric</tree>
+    <kind>Spell</kind>
+    <x>0</x>
+    <y>4</y>
+    <requiredLevel>14</requiredLevel>
+    <requiredAttribute>AA_Resilience</requiredAttribute>
+    <requiredAttributeValue>10</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Cleric_Triage</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_GreaterRestoration</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Inquisitor_HolyFire</defName>
     <tree>AA_Class_Inquisitor</tree>
     <kind>Spell</kind>
     <x>2</x>
     <y>0</y>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <unlockSpell>AA_Spell_HolyFire</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
@@ -1314,7 +1370,7 @@
     <x>4</x>
     <y>0</y>
     <maxRank>3</maxRank>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <spellMods>
       <li>
         <tag>Holy</tag>
@@ -1329,7 +1385,7 @@
     <kind>Spell</kind>
     <x>1</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Inquisitor_HolyFire</li>
     </prerequisites>
@@ -1343,7 +1399,7 @@
     <x>3</x>
     <y>1</y>
     <maxRank>3</maxRank>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Inquisitor_HolyFire</li>
       <li>AA_Node_Inquisitor_Zeal</li>
@@ -1359,7 +1415,7 @@
     <kind>Spell</kind>
     <x>5</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Inquisitor_Zeal</li>
     </prerequisites>
@@ -1373,7 +1429,7 @@
     <x>1</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1398,7 +1454,7 @@
     <x>3</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1423,7 +1479,7 @@
     <x>5</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1446,9 +1502,9 @@
     <kind>Spell</kind>
     <x>2</x>
     <y>3</y>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Inquisitor_Cleansing</li>
       <li>AA_Node_Inquisitor_Pyre</li>
@@ -1464,9 +1520,9 @@
     <x>4</x>
     <y>3</y>
     <maxRank>2</maxRank>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Inquisitor_Pyre</li>
       <li>AA_Node_Inquisitor_Gag</li>
@@ -1492,9 +1548,9 @@
     <x>3</x>
     <y>4</y>
     <maxRank>3</maxRank>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>14</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>12</requiredAttributeValue>
+    <requiredAttributeValue>10</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Inquisitor_Banishment</li>
       <li>AA_Node_Inquisitor_WitchHunter</li>
@@ -1515,9 +1571,9 @@
     <x>1</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Inquisitor_Godslayer</li>
     </prerequisites>
@@ -1537,9 +1593,9 @@
     <x>5</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Inquisitor_Godslayer</li>
     </prerequisites>
@@ -1557,9 +1613,9 @@
     <kind>Keystone</kind>
     <x>2</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Inquisitor_Tribunal</li>
       <li>AA_Node_Inquisitor_IronWill</li>
@@ -1589,9 +1645,9 @@
     <kind>Keystone</kind>
     <x>4</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Inquisitor_Tribunal</li>
       <li>AA_Node_Inquisitor_IronWill</li>
@@ -1617,14 +1673,28 @@
     <kind>Ultimate</kind>
     <x>3</x>
     <y>7</y>
-    <requiredLevel>40</requiredLevel>
+    <requiredLevel>25</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>18</requiredAttributeValue>
+    <requiredAttributeValue>16</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Inquisitor_Heresy</li>
       <li>AA_Node_Inquisitor_Inquest</li>
     </prerequisites>
     <unlockSpell>AA_Spell_FinalJudgment</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Inquisitor_MirrorOfJudgment</defName>
+    <tree>AA_Class_Inquisitor</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>3</y>
+    <requiredLevel>12</requiredLevel>
+    <requiredAttribute>AA_Potency</requiredAttribute>
+    <requiredAttributeValue>9</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Inquisitor_Gag</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_MirrorOfJudgment</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_Smite</defName>
@@ -2140,7 +2210,7 @@
     <comps>
       <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
         <delivery>Instant</delivery>
-        <affects>Enemies</affects>
+        <affects>Allies</affects>
         <effects>
           <li Class="ArcanumAscendant.Effect_Cleanse">
             <drugs>true</drugs>
@@ -2397,6 +2467,200 @@
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
     <targetRequired>false</targetRequired>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_DivineIntervention</defName>
+    <label>divine intervention</label>
+    <description>The heavens reach down and hold an ally. For eight seconds nothing can harm them.</description>
+    <iconPath>ArcanumAscendant/Spells/DivineIntervention</iconPath>
+    <cooldownTicksRange>7200</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>24</range>
+      <warmupTime>0</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>60</manaCost>
+        <tags>
+          <li>Holy</li>
+        </tags>
+        <tier>3</tier>
+        <role>Buff</role>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_DivineIntervention</hediff>
+            <severity>1</severity>
+          </li>
+        </effects>
+        <color>(1, 0.886, 0.541, 1)</color>
+        <color2>(1, 1, 1, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Feather</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Pillar</type>
+            <scale>1.8</scale>
+            <ticks>50</ticks>
+          </li>
+          <li>
+            <type>Flash</type>
+            <scale>3.5</scale>
+            <scaleEnd>4.2</scaleEnd>
+            <ticks>12</ticks>
+            <color>(1, 0.973, 0.816, 1)</color>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Feather</fleck>
+            <count>16</count>
+            <speed>2</speed>
+            <scale>0.6</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Holy</castSound>
+        <impactSound>AA_Impact_Holy</impactSound>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_HeavensLance</defName>
+    <label>heaven's lance</label>
+    <description>Call a procession of holy pillars that march out from you in a line, searing and judging everything in their path.</description>
+    <iconPath>ArcanumAscendant/Spells/HeavensLance</iconPath>
+    <cooldownTicksRange>1200</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>20</range>
+      <warmupTime>0.8</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>48</manaCost>
+        <tags>
+          <li>Holy</li>
+        </tags>
+        <tier>3</tier>
+        <role>Attack</role>
+        <autocastByDefault>true</autocastByDefault>
+        <aiMinEnemiesInRadius>2</aiMinEnemiesInRadius>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Line</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Damage">
+            <amount>28</amount>
+            <damageDef>AA_Holy</damageDef>
+            <armorPen>0.4</armorPen>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_Marked</hediff>
+            <severity>1</severity>
+          </li>
+        </effects>
+        <color>(1, 0.886, 0.541, 1)</color>
+        <color2>(1, 1, 1, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Feather</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Pillar</type>
+            <scale>1</scale>
+            <ticks>26</ticks>
+          </li>
+          <li>
+            <type>Flash</type>
+            <scale>2.5</scale>
+            <scaleEnd>3</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>8</count>
+            <speed>2</speed>
+            <scale>0.6</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.4</scale>
+            <scaleEnd>2.4</scaleEnd>
+            <ticks>20</ticks>
+            <useColor2>true</useColor2>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Holy</castSound>
+        <impactSound>AA_Impact_Holy</impactSound>
+        <shake>1</shake>
+        <lineLength>16</lineLength>
+        <strikeRadius>1.3</strikeRadius>
+        <lineStepDelay>3</lineStepDelay>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_Judgment</defName>
@@ -2880,6 +3144,92 @@
         <castSound>AA_Cast_Holy</castSound>
         <impactSound>AA_Impact_Holy</impactSound>
         <shake>2.5</shake>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+    <targetRequired>false</targetRequired>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_UnbreakableVow</defName>
+    <label>unbreakable vow</label>
+    <description>Swear to stand your ground. For fifteen seconds you take far less damage and a third of every blow is turned back on the attacker.</description>
+    <iconPath>ArcanumAscendant/Spells/UnbreakableVow</iconPath>
+    <cooldownTicksRange>3600</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>0</range>
+      <warmupTime>0</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <drawAimPie>false</drawAimPie>
+      <targetable>false</targetable>
+      <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>45</manaCost>
+        <tags>
+          <li>Holy</li>
+        </tags>
+        <tier>3</tier>
+        <role>Buff</role>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Self</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_UnbreakableVow</hediff>
+            <severity>1</severity>
+          </li>
+        </effects>
+        <color>(1, 0.812, 0.353, 1)</color>
+        <color2>(1, 0.965, 0.847, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Spark</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Hex</type>
+            <scale>2.6</scale>
+            <scaleEnd>2.34</scaleEnd>
+            <ticks>50</ticks>
+          </li>
+          <li>
+            <type>Flash</type>
+            <scale>2.5</scale>
+            <scaleEnd>3</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>12</count>
+            <speed>2</speed>
+            <scale>0.6</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Holy</castSound>
+        <impactSound>AA_Impact_Holy</impactSound>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3389,6 +3739,111 @@
     <targetRequired>false</targetRequired>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_GreaterRestoration</defName>
+    <label>greater restoration</label>
+    <description>A long, exhausting prayer that makes the body whole: every chronic illness cured, every scar erased, every lost limb and organ regrown, every addiction broken.</description>
+    <iconPath>ArcanumAscendant/Spells/GreaterRestoration</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>3</range>
+      <warmupTime>12</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>140</manaCost>
+        <tags>
+          <li>Holy</li>
+          <li>Healing</li>
+        </tags>
+        <tier>4</tier>
+        <role>Heal</role>
+        <aiHealthThreshold>0</aiHealthThreshold>
+        <aiAllowedUndrafted>true</aiAllowedUndrafted>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Heal">
+            <amount>60</amount>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Restore">
+            <chronic>-1</chronic>
+            <scars>-1</scars>
+            <regrowParts>-1</regrowParts>
+            <addictions>true</addictions>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Cleanse" />
+        </effects>
+        <color>(0.722, 1, 0.847, 1)</color>
+        <color2>(1, 1, 1, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Pillar</type>
+            <scale>2.2</scale>
+            <ticks>90</ticks>
+          </li>
+          <li>
+            <type>Flash</type>
+            <scale>4</scale>
+            <scaleEnd>4.8</scaleEnd>
+            <ticks>12</ticks>
+            <color>(1, 1, 1, 1)</color>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Feather</fleck>
+            <count>30</count>
+            <speed>2.5</speed>
+            <scale>0.7</scale>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>20</count>
+            <speed>2</speed>
+            <scale>0.5</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Holy</castSound>
+        <impactSound>AA_Impact_Holy</impactSound>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_Purge</defName>
     <label>purge</label>
     <description>Strip away the target's magic: buffs, wards and energy shields are destroyed.</description>
@@ -3875,6 +4330,93 @@
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
   </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_MirrorOfJudgment</defName>
+    <label>mirror of judgment</label>
+    <description>For ten seconds, every blow struck against you is judged: you take half of it, and the attacker takes all of it.</description>
+    <iconPath>ArcanumAscendant/Spells/MirrorOfJudgment</iconPath>
+    <cooldownTicksRange>3600</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>0</range>
+      <warmupTime>0</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <drawAimPie>false</drawAimPie>
+      <targetable>false</targetable>
+      <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>50</manaCost>
+        <tags>
+          <li>Holy</li>
+        </tags>
+        <tier>3</tier>
+        <role>Buff</role>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Self</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_MirrorOfJudgment</hediff>
+            <severity>1</severity>
+          </li>
+        </effects>
+        <color>(1, 0.604, 0.235, 1)</color>
+        <color2>(1, 0.941, 0.753, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Ember</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Hex</type>
+            <scale>2.4</scale>
+            <scaleEnd>2.16</scaleEnd>
+            <ticks>40</ticks>
+          </li>
+          <li>
+            <type>Flash</type>
+            <scale>2.5</scale>
+            <scaleEnd>3</scaleEnd>
+            <ticks>12</ticks>
+            <color>(1, 0.816, 0.627, 1)</color>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>10</count>
+            <speed>2</speed>
+            <scale>0.6</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Fire</castSound>
+        <impactSound>AA_Impact_Fire</impactSound>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+    <targetRequired>false</targetRequired>
+  </AbilityDef>
   <HediffDef>
     <defName>AA_RighteousFury</defName>
     <label>righteous fury</label>
@@ -3908,6 +4450,98 @@
           <MeleeCooldownFactor>0.8</MeleeCooldownFactor>
         </statFactors>
       </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_DivineIntervention</defName>
+    <label>divine intervention</label>
+    <description>Held in the hand of the divine. Immune to all harm.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(1, 0.886, 0.541, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>480~480</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_DamageShell">
+        <damageFactor>0</damageFactor>
+        <color>(1, 0.886, 0.541, 1)</color>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(1, 0.886, 0.541, 0.9)</color>
+        <texPath>ArcanumAscendant/Vfx/Shield</texPath>
+        <size>2</size>
+        <fleck>AA_Fleck_Feather</fleck>
+        <fleckInterval>20</fleckInterval>
+      </li>
+    </comps>
+    <stages>
+      <li />
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_UnbreakableVow</defName>
+    <label>unbreakable vow</label>
+    <description>Sworn not to fall. Takes 60% less damage and reflects a third of every blow.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(1, 0.886, 0.541, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>900~900</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_DamageShell">
+        <damageFactor>0.4</damageFactor>
+        <reflectFraction>0.33</reflectFraction>
+        <reflectDamageDef>AA_Holy</reflectDamageDef>
+        <color>(1, 0.812, 0.353, 1)</color>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(1, 0.812, 0.353, 0.9)</color>
+        <texPath>ArcanumAscendant/Vfx/Shield</texPath>
+        <size>1.8</size>
+        <fleckInterval>20</fleckInterval>
+      </li>
+    </comps>
+    <stages>
+      <li />
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_MirrorOfJudgment</defName>
+    <label>mirror of judgment</label>
+    <description>Every attack is judged. Takes half damage and reflects the full blow at the attacker.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(1, 0.604, 0.235, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>600~600</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_DamageShell">
+        <damageFactor>0.5</damageFactor>
+        <reflectFraction>1</reflectFraction>
+        <reflectDamageDef>AA_Holy</reflectDamageDef>
+        <color>(1, 0.604, 0.235, 1)</color>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(1, 0.604, 0.235, 0.9)</color>
+        <texPath>ArcanumAscendant/Vfx/Hex</texPath>
+        <size>1.8</size>
+        <fleckInterval>20</fleckInterval>
+      </li>
+    </comps>
+    <stages>
+      <li />
     </stages>
   </HediffDef>
 </Defs>

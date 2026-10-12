@@ -19,7 +19,7 @@ namespace ArcanumAscendant
         public List<string> schoolTags = new List<string>();
         public ArcaneAttributeDef primaryAttribute;
         public ArcaneAttributeDef secondaryAttribute;
-        public int subclassUnlockLevel = 10;
+        public int subclassUnlockLevel = 7;
         public List<StatModifier> innateStatOffsets = new List<StatModifier>();
         public List<AbilityDef> startingSpells = new List<AbilityDef>();
         public int treeWidth = 7;
@@ -270,6 +270,8 @@ namespace ArcanumAscendant
     public static class ArcaneDefOf
     {
         public static HediffDef AA_ArcaneCore;
+        public static ThingDef AA_ArcaneCrystal;
+        public static JobDef AA_ArcaneStudy;
         public static HediffDef AA_Summoned;
         public static HediffDef AA_Polymorphed;
         public static HediffDef AA_Dominated;

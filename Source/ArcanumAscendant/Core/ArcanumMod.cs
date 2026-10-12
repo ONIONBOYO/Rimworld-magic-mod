@@ -14,7 +14,7 @@ namespace ArcanumAscendant
         public float enemyMageChance = 0.06f;
         public float enemyLevelScale = 1f;
         public bool enemyMagesCast = true;
-        public bool freeAwakening = true;
+        public bool freeAwakening;
         public bool awakenStartingColonists;
         public float vfxIntensity = 1f;
         public bool screenShake = true;
@@ -30,7 +30,7 @@ namespace ArcanumAscendant
             Scribe_Values.Look(ref enemyMageChance, "enemyMageChance", 0.06f);
             Scribe_Values.Look(ref enemyLevelScale, "enemyLevelScale", 1f);
             Scribe_Values.Look(ref enemyMagesCast, "enemyMagesCast", true);
-            Scribe_Values.Look(ref freeAwakening, "freeAwakening", true);
+            Scribe_Values.Look(ref freeAwakening, "freeAwakeningV2");
             Scribe_Values.Look(ref awakenStartingColonists, "awakenStartingColonists");
             Scribe_Values.Look(ref vfxIntensity, "vfxIntensity", 1f);
             Scribe_Values.Look(ref screenShake, "screenShake", true);
@@ -155,6 +155,9 @@ namespace ArcanumAscendant
         {
             if (!c.IsMage)
             {
+                if (!c.attuning && !c.awakenReady) yield return new FloatMenuOption("Begin attunement", () => c.StartAttunement());
+                if (c.attuning) yield return new FloatMenuOption("+25% attunement", () => c.AddAttunement(0.25f));
+                if (!c.awakenReady) yield return new FloatMenuOption("Complete attunement", () => { c.StartAttunement(); c.CompleteAttunement(); });
                 foreach (var cls in DefDatabase<ArcaneClassDef>.AllDefs.Where(d => !d.IsSubclass).OrderBy(d => d.order))
                 {
                     var cc = cls;
@@ -162,8 +165,15 @@ namespace ArcanumAscendant
                 }
                 yield break;
             }
-            yield return new FloatMenuOption("+1 level", () => c.GainXp(c.XpToNextLevel - c.xp + 0.1f, false));
-            yield return new FloatMenuOption("+10 levels", () => { for (int i = 0; i < 10; i++) c.GainXp(c.XpToNextLevel - c.xp + 0.1f, false); });
+            yield return new FloatMenuOption("+1 level (respects circle cap)", () => c.GainXp(c.XpToNextLevel - c.xp + 0.1f, false));
+            yield return new FloatMenuOption("+1 level (ignores cap)", () => c.SetLevelDirect(c.level + 1));
+            yield return new FloatMenuOption("+5 levels (ignores cap)", () => c.SetLevelDirect(c.level + 5));
+            if (c.circle < CompArcane.MaxCircle)
+                yield return new FloatMenuOption("Ascend to next circle", () =>
+                {
+                    if (c.level < c.LevelCap) c.SetLevelDirect(c.LevelCap);
+                    c.Ascend();
+                });
             yield return new FloatMenuOption("Max level", () => c.SetLevelDirect(CompArcane.MaxLevel));
             yield return new FloatMenuOption("+10 perk points", () => c.perkPoints += 10);
             yield return new FloatMenuOption("+10 attribute points", () => c.attributePoints += 10);

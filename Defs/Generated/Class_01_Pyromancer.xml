@@ -16,7 +16,7 @@
     </schoolTags>
     <primaryAttribute>AA_Potency</primaryAttribute>
     <secondaryAttribute>AA_Focus</secondaryAttribute>
-    <subclassUnlockLevel>10</subclassUnlockLevel>
+    <subclassUnlockLevel>7</subclassUnlockLevel>
     <innateStatOffsets>
       <ArmorRating_Heat>0.2</ArmorRating_Heat>
     </innateStatOffsets>
@@ -176,7 +176,7 @@
     <x>0</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>3</requiredLevel>
+    <requiredLevel>2</requiredLevel>
     <prerequisites>
       <li>AA_Node_Pyromancer_Fireball</li>
     </prerequisites>
@@ -199,7 +199,7 @@
     <x>2</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>3</requiredLevel>
+    <requiredLevel>2</requiredLevel>
     <prerequisites>
       <li>AA_Node_Pyromancer_Fireball</li>
     </prerequisites>
@@ -222,7 +222,7 @@
     <kind>Notable</kind>
     <x>3</x>
     <y>2</y>
-    <requiredLevel>3</requiredLevel>
+    <requiredLevel>2</requiredLevel>
     <prerequisites>
       <li>AA_Node_Pyromancer_Fireball</li>
       <li>AA_Node_Pyromancer_Cauterize</li>
@@ -243,7 +243,7 @@
     <kind>Spell</kind>
     <x>5</x>
     <y>2</y>
-    <requiredLevel>3</requiredLevel>
+    <requiredLevel>2</requiredLevel>
     <prerequisites>
       <li>AA_Node_Pyromancer_FireWard</li>
     </prerequisites>
@@ -255,9 +255,9 @@
     <kind>Spell</kind>
     <x>1</x>
     <y>3</y>
-    <requiredLevel>6</requiredLevel>
+    <requiredLevel>3</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>6</requiredAttributeValue>
+    <requiredAttributeValue>5</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Pyromancer_SearingBolts</li>
       <li>AA_Node_Pyromancer_Conflagration</li>
@@ -272,9 +272,9 @@
     <kind>Notable</kind>
     <x>3</x>
     <y>3</y>
-    <requiredLevel>6</requiredLevel>
+    <requiredLevel>3</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>6</requiredAttributeValue>
+    <requiredAttributeValue>5</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Pyromancer_ScorchedEarth</li>
     </prerequisites>
@@ -297,9 +297,9 @@
     <x>5</x>
     <y>3</y>
     <maxRank>3</maxRank>
-    <requiredLevel>6</requiredLevel>
+    <requiredLevel>3</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>6</requiredAttributeValue>
+    <requiredAttributeValue>5</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Pyromancer_KindleHearth</li>
     </prerequisites>
@@ -316,7 +316,7 @@
     <x>0</x>
     <y>4</y>
     <maxRank>2</maxRank>
-    <requiredLevel>9</requiredLevel>
+    <requiredLevel>5</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
     <requiredAttributeValue>6</requiredAttributeValue>
     <prerequisites>
@@ -340,7 +340,7 @@
     <kind>Spell</kind>
     <x>2</x>
     <y>4</y>
-    <requiredLevel>9</requiredLevel>
+    <requiredLevel>5</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
     <requiredAttributeValue>6</requiredAttributeValue>
     <prerequisites>
@@ -357,7 +357,7 @@
     <x>4</x>
     <y>4</y>
     <maxRank>2</maxRank>
-    <requiredLevel>9</requiredLevel>
+    <requiredLevel>5</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
     <requiredAttributeValue>6</requiredAttributeValue>
     <prerequisites>
@@ -380,7 +380,7 @@
     <x>6</x>
     <y>4</y>
     <maxRank>2</maxRank>
-    <requiredLevel>9</requiredLevel>
+    <requiredLevel>5</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
     <requiredAttributeValue>6</requiredAttributeValue>
     <prerequisites>
@@ -403,9 +403,9 @@
     <x>1</x>
     <y>5</y>
     <maxRank>2</maxRank>
-    <requiredLevel>13</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Pyromancer_LivingBomb</li>
       <li>AA_Node_Pyromancer_Backdraft</li>
@@ -430,9 +430,9 @@
     <x>3</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>13</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Pyromancer_LivingBomb</li>
       <li>AA_Node_Pyromancer_FuelTheFire</li>
@@ -456,9 +456,9 @@
     <x>5</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>13</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Pyromancer_FuelTheFire</li>
       <li>AA_Node_Pyromancer_EmberShield</li>
@@ -478,9 +478,9 @@
     <x>0</x>
     <y>6</y>
     <maxRank>2</maxRank>
-    <requiredLevel>17</requiredLevel>
+    <requiredLevel>9</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Pyromancer_CombustionMastery</li>
     </prerequisites>
@@ -501,9 +501,9 @@
     <kind>Spell</kind>
     <x>2</x>
     <y>6</y>
-    <requiredLevel>17</requiredLevel>
+    <requiredLevel>9</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Pyromancer_CombustionMastery</li>
       <li>AA_Node_Pyromancer_Firestarter</li>
@@ -518,9 +518,9 @@
     <x>4</x>
     <y>6</y>
     <maxRank>3</maxRank>
-    <requiredLevel>17</requiredLevel>
+    <requiredLevel>9</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Pyromancer_Firestarter</li>
       <li>AA_Node_Pyromancer_Pyromania</li>
@@ -542,9 +542,9 @@
     <x>6</x>
     <y>6</y>
     <maxRank>2</maxRank>
-    <requiredLevel>17</requiredLevel>
+    <requiredLevel>9</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Pyromancer_Pyromania</li>
     </prerequisites>
@@ -564,9 +564,9 @@
     <kind>Keystone</kind>
     <x>2</x>
     <y>7</y>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>11</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Pyromancer_Meteor</li>
     </prerequisites>
@@ -589,9 +589,9 @@
     <kind>Keystone</kind>
     <x>4</x>
     <y>7</y>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>11</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Pyromancer_Meteor</li>
       <li>AA_Node_Pyromancer_BlazingSoul</li>
@@ -619,9 +619,9 @@
     <kind>Keystone</kind>
     <x>3</x>
     <y>8</y>
-    <requiredLevel>30</requiredLevel>
+    <requiredLevel>15</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>18</requiredAttributeValue>
+    <requiredAttributeValue>13</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Pyromancer_AvatarOfRuin</li>
       <li>AA_Node_Pyromancer_EternalFlame</li>
@@ -648,12 +648,66 @@
     <iconPath>ArcanumAscendant/Nodes/Pyromancer_HeartOfTheSun</iconPath>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Pyromancer_DragonsBreath</defName>
+    <tree>AA_Class_Pyromancer</tree>
+    <kind>Spell</kind>
+    <x>4</x>
+    <y>3</y>
+    <requiredLevel>3</requiredLevel>
+    <requiredAttribute>AA_Potency</requiredAttribute>
+    <requiredAttributeValue>5</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Pyromancer_ScorchedEarth</li>
+      <li>AA_Node_Pyromancer_KindleHearth</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_DragonsBreath</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Pyromancer_Wyrmfire</defName>
+    <label>wyrmfire</label>
+    <tree>AA_Class_Pyromancer</tree>
+    <kind>Augment</kind>
+    <x>4</x>
+    <y>5</y>
+    <maxRank>2</maxRank>
+    <requiredLevel>7</requiredLevel>
+    <requiredAttribute>AA_Potency</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Pyromancer_DragonsBreath</li>
+    </prerequisites>
+    <spellMods>
+      <li>
+        <spells>
+          <li>AA_Spell_DragonsBreath</li>
+        </spells>
+        <damage>0.2</damage>
+        <radius>0.15</radius>
+      </li>
+    </spellMods>
+    <iconPath>ArcanumAscendant/Nodes/Pyromancer_Wyrmfire</iconPath>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Pyromancer_Firewall</defName>
+    <tree>AA_Class_Pyromancer</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>5</y>
+    <requiredLevel>7</requiredLevel>
+    <requiredAttribute>AA_Potency</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Pyromancer_EmberShield</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_Firewall</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_InfernoLord_FireRain</defName>
     <tree>AA_Class_InfernoLord</tree>
     <kind>Spell</kind>
     <x>2</x>
     <y>0</y>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <unlockSpell>AA_Spell_FireRain</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
@@ -664,7 +718,7 @@
     <x>4</x>
     <y>0</y>
     <maxRank>3</maxRank>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <spellMods>
       <li>
         <tag>Fire</tag>
@@ -679,7 +733,7 @@
     <kind>Spell</kind>
     <x>1</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_InfernoLord_FireRain</li>
     </prerequisites>
@@ -693,7 +747,7 @@
     <x>3</x>
     <y>1</y>
     <maxRank>3</maxRank>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_InfernoLord_FireRain</li>
       <li>AA_Node_InfernoLord_InfernalMight</li>
@@ -709,7 +763,7 @@
     <kind>Spell</kind>
     <x>5</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_InfernoLord_InfernalMight</li>
     </prerequisites>
@@ -724,7 +778,7 @@
     <x>0</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -748,7 +802,7 @@
     <kind>Notable</kind>
     <x>2</x>
     <y>2</y>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -774,7 +828,7 @@
     <x>5</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -797,9 +851,9 @@
     <kind>Spell</kind>
     <x>1</x>
     <y>3</y>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_InfernoLord_RainOfRuin</li>
       <li>AA_Node_InfernoLord_MoltenCore</li>
@@ -813,9 +867,9 @@
     <kind>Notable</kind>
     <x>3</x>
     <y>3</y>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_InfernoLord_MoltenCore</li>
     </prerequisites>
@@ -838,9 +892,9 @@
     <x>5</x>
     <y>3</y>
     <maxRank>3</maxRank>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_InfernoLord_Brimstone</li>
     </prerequisites>
@@ -861,9 +915,9 @@
     <x>2</x>
     <y>4</y>
     <maxRank>2</maxRank>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>14</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>12</requiredAttributeValue>
+    <requiredAttributeValue>10</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_InfernoLord_InfernalPact</li>
       <li>AA_Node_InfernoLord_Pyroclasm</li>
@@ -885,9 +939,9 @@
     <x>4</x>
     <y>4</y>
     <maxRank>3</maxRank>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>14</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>12</requiredAttributeValue>
+    <requiredAttributeValue>10</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_InfernoLord_Pyroclasm</li>
       <li>AA_Node_InfernoLord_FirestormMastery</li>
@@ -908,9 +962,9 @@
     <kind>Notable</kind>
     <x>3</x>
     <y>5</y>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_InfernoLord_Annihilator</li>
       <li>AA_Node_InfernoLord_SearingPrecision</li>
@@ -934,9 +988,9 @@
     <kind>Keystone</kind>
     <x>2</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_InfernoLord_ChainDetonation</li>
     </prerequisites>
@@ -974,9 +1028,9 @@
     <kind>Keystone</kind>
     <x>4</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_InfernoLord_ChainDetonation</li>
     </prerequisites>
@@ -999,9 +1053,9 @@
     <kind>Ultimate</kind>
     <x>3</x>
     <y>7</y>
-    <requiredLevel>40</requiredLevel>
+    <requiredLevel>25</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>18</requiredAttributeValue>
+    <requiredAttributeValue>16</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_InfernoLord_Doctrine</li>
       <li>AA_Node_InfernoLord_RuinousPrecision</li>
@@ -1009,12 +1063,26 @@
     <unlockSpell>AA_Spell_Cataclysm</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_InfernoLord_Supernova</defName>
+    <tree>AA_Class_InfernoLord</tree>
+    <kind>Spell</kind>
+    <x>1</x>
+    <y>5</y>
+    <requiredLevel>17</requiredLevel>
+    <requiredAttribute>AA_Potency</requiredAttribute>
+    <requiredAttributeValue>12</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_InfernoLord_Annihilator</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_Supernova</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_AshenPhoenix_PhoenixDive</defName>
     <tree>AA_Class_AshenPhoenix</tree>
     <kind>Spell</kind>
     <x>2</x>
     <y>0</y>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <unlockSpell>AA_Spell_PhoenixDive</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
@@ -1025,7 +1093,7 @@
     <x>4</x>
     <y>0</y>
     <maxRank>3</maxRank>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <statOffsetsPerRank>
       <MoveSpeed>0.15</MoveSpeed>
     </statOffsetsPerRank>
@@ -1037,7 +1105,7 @@
     <kind>Spell</kind>
     <x>1</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_AshenPhoenix_PhoenixDive</li>
     </prerequisites>
@@ -1051,7 +1119,7 @@
     <x>3</x>
     <y>1</y>
     <maxRank>3</maxRank>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_AshenPhoenix_PhoenixDive</li>
       <li>AA_Node_AshenPhoenix_CinderFeathers</li>
@@ -1067,7 +1135,7 @@
     <kind>Spell</kind>
     <x>5</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_AshenPhoenix_CinderFeathers</li>
     </prerequisites>
@@ -1081,7 +1149,7 @@
     <x>2</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1107,7 +1175,7 @@
     <x>5</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1130,9 +1198,9 @@
     <kind>Spell</kind>
     <x>1</x>
     <y>3</y>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_AshenPhoenix_BlazingTrail</li>
     </prerequisites>
@@ -1147,9 +1215,9 @@
     <x>3</x>
     <y>3</y>
     <maxRank>2</maxRank>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_AshenPhoenix_BlazingTrail</li>
       <li>AA_Node_AshenPhoenix_Swarmheart</li>
@@ -1171,9 +1239,9 @@
     <x>5</x>
     <y>3</y>
     <maxRank>3</maxRank>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_AshenPhoenix_Swarmheart</li>
     </prerequisites>
@@ -1190,9 +1258,9 @@
     <kind>Keystone</kind>
     <x>3</x>
     <y>4</y>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>14</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>12</requiredAttributeValue>
+    <requiredAttributeValue>10</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_AshenPhoenix_KindledSpirit</li>
     </prerequisites>
@@ -1215,9 +1283,9 @@
     <kind>Notable</kind>
     <x>1</x>
     <y>5</y>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_AshenPhoenix_PhoenixHeart</li>
     </prerequisites>
@@ -1246,9 +1314,9 @@
     <x>5</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_AshenPhoenix_PhoenixHeart</li>
     </prerequisites>
@@ -1265,9 +1333,9 @@
     <kind>Keystone</kind>
     <x>2</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_AshenPhoenix_SunfireHalo</li>
       <li>AA_Node_AshenPhoenix_Ashfall</li>
@@ -1292,9 +1360,9 @@
     <kind>Keystone</kind>
     <x>4</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_AshenPhoenix_SunfireHalo</li>
       <li>AA_Node_AshenPhoenix_Ashfall</li>
@@ -1317,9 +1385,9 @@
     <kind>Ultimate</kind>
     <x>3</x>
     <y>7</y>
-    <requiredLevel>40</requiredLevel>
+    <requiredLevel>25</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>18</requiredAttributeValue>
+    <requiredAttributeValue>16</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_AshenPhoenix_SolarFlare</li>
       <li>AA_Node_AshenPhoenix_AshenCovenant</li>
@@ -1327,12 +1395,26 @@
     <unlockSpell>AA_Spell_RebirthEternal</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_AshenPhoenix_Rekindle</defName>
+    <tree>AA_Class_AshenPhoenix</tree>
+    <kind>Spell</kind>
+    <x>0</x>
+    <y>2</y>
+    <requiredLevel>10</requiredLevel>
+    <requiredAttribute>AA_Potency</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_AshenPhoenix_HealingFlames</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_Rekindle</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Forgeheart_MoltenArmor</defName>
     <tree>AA_Class_Forgeheart</tree>
     <kind>Spell</kind>
     <x>2</x>
     <y>0</y>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <unlockSpell>AA_Spell_MoltenArmor</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
@@ -1343,7 +1425,7 @@
     <x>4</x>
     <y>0</y>
     <maxRank>3</maxRank>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <statPercentPerRank>
       <AA_SummonPower>0.08</AA_SummonPower>
     </statPercentPerRank>
@@ -1355,7 +1437,7 @@
     <kind>Spell</kind>
     <x>1</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Forgeheart_MoltenArmor</li>
     </prerequisites>
@@ -1369,7 +1451,7 @@
     <x>3</x>
     <y>1</y>
     <maxRank>3</maxRank>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Forgeheart_MoltenArmor</li>
       <li>AA_Node_Forgeheart_Smithsoul</li>
@@ -1386,7 +1468,7 @@
     <kind>Spell</kind>
     <x>5</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Forgeheart_Smithsoul</li>
     </prerequisites>
@@ -1400,7 +1482,7 @@
     <x>1</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1423,7 +1505,7 @@
     <kind>Spell</kind>
     <x>3</x>
     <y>2</y>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1439,7 +1521,7 @@
     <x>5</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1466,9 +1548,9 @@
     <x>2</x>
     <y>3</y>
     <maxRank>2</maxRank>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Forgeheart_Slagbreaker</li>
       <li>AA_Node_Forgeheart_PyroclasticSmelt</li>
@@ -1492,9 +1574,9 @@
     <x>4</x>
     <y>3</y>
     <maxRank>3</maxRank>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Forgeheart_PyroclasticSmelt</li>
       <li>AA_Node_Forgeheart_Bellows</li>
@@ -1515,9 +1597,9 @@
     <x>3</x>
     <y>4</y>
     <maxRank>2</maxRank>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>14</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>12</requiredAttributeValue>
+    <requiredAttributeValue>10</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Forgeheart_ForgeMastery</li>
       <li>AA_Node_Forgeheart_Anvilheart</li>
@@ -1539,9 +1621,9 @@
     <kind>Augment</kind>
     <x>1</x>
     <y>5</y>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Forgeheart_Reforged</li>
     </prerequisites>
@@ -1563,9 +1645,9 @@
     <x>5</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Forgeheart_Reforged</li>
     </prerequisites>
@@ -1585,9 +1667,9 @@
     <kind>Keystone</kind>
     <x>2</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Forgeheart_Overheat</li>
       <li>AA_Node_Forgeheart_Crucible</li>
@@ -1619,9 +1701,9 @@
     <kind>Keystone</kind>
     <x>4</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Forgeheart_Overheat</li>
       <li>AA_Node_Forgeheart_Crucible</li>
@@ -1645,14 +1727,28 @@
     <kind>Ultimate</kind>
     <x>3</x>
     <y>7</y>
-    <requiredLevel>40</requiredLevel>
+    <requiredLevel>25</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>18</requiredAttributeValue>
+    <requiredAttributeValue>16</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Forgeheart_LivingForge</li>
       <li>AA_Node_Forgeheart_Mechbane</li>
     </prerequisites>
     <unlockSpell>AA_Spell_TitanForge</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Forgeheart_Reforge</defName>
+    <tree>AA_Class_Forgeheart</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>3</y>
+    <requiredLevel>12</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>9</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Forgeheart_Bellows</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_Reforge</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_Firebolt</defName>
@@ -2479,6 +2575,219 @@
     <warmupStartSound>AA_Charge</warmupStartSound>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_DragonsBreath</defName>
+    <label>dragon's breath</label>
+    <description>Exhale a roaring cone of dragonfire. Everything in front of you burns.</description>
+    <iconPath>ArcanumAscendant/Spells/DragonsBreath</iconPath>
+    <cooldownTicksRange>840</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>8</range>
+      <warmupTime>0.6</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>34</manaCost>
+        <tags>
+          <li>Fire</li>
+        </tags>
+        <tier>2</tier>
+        <role>Attack</role>
+        <autocastByDefault>true</autocastByDefault>
+        <aiMinEnemiesInRadius>2</aiMinEnemiesInRadius>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Cone</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Damage">
+            <amount>22</amount>
+            <damageDef>Flame</damageDef>
+            <armorPen>0.25</armorPen>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_Burning</hediff>
+            <severity>1.5</severity>
+            <stack>true</stack>
+            <maxSeverity>5</maxSeverity>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Ignite">
+            <cellChance>0.5</cellChance>
+            <fireSize>0.6</fireSize>
+            <igniteTargets>true</igniteTargets>
+          </li>
+        </effects>
+        <color>(1, 0.478, 0.165, 1)</color>
+        <color2>(1, 0.827, 0.42, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Spark</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>2</scale>
+            <scaleEnd>2.4</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Ember</fleck>
+            <count>10</count>
+            <speed>3.5</speed>
+            <scale>0.8</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Smoke</type>
+            <count>3</count>
+            <scale>1.2</scale>
+            <speed>1</speed>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Fire</castSound>
+        <impactSound>AA_Impact_Fire</impactSound>
+        <shake>0.8</shake>
+        <coneAngle>55</coneAngle>
+        <coneRange>8.5</coneRange>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_Firewall</defName>
+    <label>wall of fire</label>
+    <description>Draw a line of fire across the battlefield. It burns for half a minute and scorches anything that crosses it.</description>
+    <iconPath>ArcanumAscendant/Spells/Firewall</iconPath>
+    <cooldownTicksRange>1800</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>22</range>
+      <warmupTime>0.8</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>40</manaCost>
+        <tags>
+          <li>Fire</li>
+        </tags>
+        <tier>3</tier>
+        <role>Control</role>
+        <autocastByDefault>true</autocastByDefault>
+        <aiMinEnemiesInRadius>2</aiMinEnemiesInRadius>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Line</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Field">
+            <fieldRadius>0.9</fieldRadius>
+            <durationTicks>1800</durationTicks>
+            <pulseInterval>60</pulseInterval>
+            <pulseEffects>
+              <li Class="ArcanumAscendant.Effect_Damage">
+                <amount>9</amount>
+                <damageDef>Flame</damageDef>
+                <affects>Enemies</affects>
+              </li>
+              <li Class="ArcanumAscendant.Effect_Hediff">
+                <hediff>AA_Burning</hediff>
+                <severity>1</severity>
+                <affects>Enemies</affects>
+              </li>
+            </pulseEffects>
+            <groundTex>ArcanumAscendant/Vfx/Glow</groundTex>
+            <groundSpin>0</groundSpin>
+            <groundAlpha>0.65</groundAlpha>
+            <ambientFleck>AA_Fleck_Ember</ambientFleck>
+            <ambientDensity>2</ambientDensity>
+            <ambientSpeed>1.5</ambientSpeed>
+            <ambientAngle>0</ambientAngle>
+          </li>
+        </effects>
+        <color>(1, 0.478, 0.165, 1)</color>
+        <color2>(1, 0.827, 0.42, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Spark</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Ember</fleck>
+            <count>6</count>
+            <speed>2</speed>
+            <scale>0.7</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.4</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>30</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Fire</castSound>
+        <impactSound>AA_Impact_Fire</impactSound>
+        <lineLength>12</lineLength>
+        <strikeRadius>1</strikeRadius>
+        <lineStepDelay>1</lineStepDelay>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_FireRain</defName>
     <label>fire rain</label>
     <description>Call a storm of small meteors over an area. Each strike burns and scorches.</description>
@@ -3015,6 +3324,127 @@
     <warmupStartSound>AA_Charge</warmupStartSound>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_Supernova</defName>
+    <label>supernova</label>
+    <description>Become a dying star. A blinding blast of fire tears outward from you, burning even through armor. It costs you some of your own blood.</description>
+    <iconPath>ArcanumAscendant/Spells/Supernova</iconPath>
+    <cooldownTicksRange>7200</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>0</range>
+      <warmupTime>2</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <drawAimPie>false</drawAimPie>
+      <targetable>false</targetable>
+      <nonInterruptingSelfCast>false</nonInterruptingSelfCast>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>120</manaCost>
+        <healthCost>12</healthCost>
+        <tags>
+          <li>Fire</li>
+        </tags>
+        <tier>4</tier>
+        <role>Attack</role>
+        <autocastByDefault>true</autocastByDefault>
+        <aiMinEnemiesInRadius>4</aiMinEnemiesInRadius>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Nova</delivery>
+        <affects>Enemies</affects>
+        <radius>9</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Damage">
+            <amount>70</amount>
+            <damageDef>Flame</damageDef>
+            <armorPen>0.6</armorPen>
+            <falloff>true</falloff>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_Burning</hediff>
+            <severity>3</severity>
+            <stack>true</stack>
+            <maxSeverity>5</maxSeverity>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Ignite">
+            <cellChance>0.4</cellChance>
+            <fireSize>0.6</fireSize>
+            <igniteTargets>true</igniteTargets>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Knockback">
+            <distance>3</distance>
+          </li>
+        </effects>
+        <color>(1, 0.231, 0.122, 1)</color>
+        <color2>(1, 0.702, 0.278, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Spark</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>9</scale>
+            <scaleEnd>10.8</scaleEnd>
+            <ticks>24</ticks>
+            <color>(1, 0.957, 0.816, 1)</color>
+          </li>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.05</scale>
+            <scaleEnd>1.15</scaleEnd>
+            <ticks>50</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Ember</fleck>
+            <count>50</count>
+            <speed>6</speed>
+            <scale>1</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Smoke</type>
+            <count>10</count>
+            <scale>2</scale>
+            <speed>1</speed>
+          </li>
+          <li>
+            <type>Pillar</type>
+            <scale>3</scale>
+            <ticks>40</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Fire</castSound>
+        <impactSound>AA_Impact_Fire</impactSound>
+        <shake>3</shake>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+    <targetRequired>false</targetRequired>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_PhoenixDive</defName>
     <label>phoenix dive</label>
     <description>Become a streak of flame: dash to the target location, burning everything along the path, then explode on landing.</description>
@@ -3544,6 +3974,107 @@
     <targetRequired>false</targetRequired>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_Rekindle</defName>
+    <label>rekindle</label>
+    <description>Phoenix fire burns away what is broken. Heals an ally, fades two scars and regrows a lost limb or organ with each casting.</description>
+    <iconPath>ArcanumAscendant/Spells/Rekindle</iconPath>
+    <cooldownTicksRange>10000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>6</range>
+      <warmupTime>4</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>70</manaCost>
+        <tags>
+          <li>Fire</li>
+          <li>Healing</li>
+        </tags>
+        <tier>1</tier>
+        <role>Heal</role>
+        <aiHealthThreshold>0</aiHealthThreshold>
+        <aiAllowedUndrafted>true</aiAllowedUndrafted>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Heal">
+            <amount>40</amount>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Restore">
+            <scars>2</scars>
+            <regrowParts>1</regrowParts>
+          </li>
+        </effects>
+        <color>(1, 0.69, 0.188, 1)</color>
+        <color2>(1, 0.945, 0.659, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Ember</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Pillar</type>
+            <scale>1.6</scale>
+            <ticks>60</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Feather</fleck>
+            <count>18</count>
+            <speed>2</speed>
+            <scale>0.6</scale>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Ember</fleck>
+            <count>14</count>
+            <speed>2.5</speed>
+            <scale>0.6</scale>
+          </li>
+          <li>
+            <type>Flash</type>
+            <scale>3</scale>
+            <scaleEnd>3.6</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Holy</castSound>
+        <impactSound>AA_Impact_Holy</impactSound>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_MoltenArmor</defName>
     <label>molten armor</label>
     <description>Coat an ally in a shell of glowing metal: heavy armor, fire immunity and a ward.</description>
@@ -4035,6 +4566,104 @@
         <castSound>AA_Cast_Rune</castSound>
         <impactSound>AA_Impact_Rune</impactSound>
         <shake>2</shake>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_Reforge</defName>
+    <label>reforge</label>
+    <description>Pour soul-fire into a weapon or piece of gear and hammer it anew. Its quality rises by one step, up to legendary.</description>
+    <iconPath>ArcanumAscendant/Spells/Reforge</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>3</range>
+      <warmupTime>10</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetItems>true</canTargetItems>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetMechs>false</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>90</manaCost>
+        <tags>
+          <li>Fire</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_ImproveQuality">
+            <steps>1</steps>
+            <maxQuality>Legendary</maxQuality>
+          </li>
+        </effects>
+        <color>(1, 0.549, 0.259, 1)</color>
+        <color2>(0.847, 0.847, 0.878, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Ember</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>3</scale>
+            <scaleEnd>3.6</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Spark</fleck>
+            <count>30</count>
+            <speed>4</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Ember</fleck>
+            <count>12</count>
+            <speed>2</speed>
+            <scale>0.6</scale>
+          </li>
+          <li>
+            <type>Pillar</type>
+            <scale>1</scale>
+            <ticks>40</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Rune</castSound>
+        <impactSound>AA_Impact_Rune</impactSound>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>

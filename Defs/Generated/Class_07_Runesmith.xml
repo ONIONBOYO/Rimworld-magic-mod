@@ -16,7 +16,7 @@
     </schoolTags>
     <primaryAttribute>AA_Focus</primaryAttribute>
     <secondaryAttribute>AA_Celerity</secondaryAttribute>
-    <subclassUnlockLevel>10</subclassUnlockLevel>
+    <subclassUnlockLevel>7</subclassUnlockLevel>
     <innateStatOffsets>
       <ConstructionSpeed>0.15</ConstructionSpeed>
       <AA_SummonPower>0.05</AA_SummonPower>
@@ -174,7 +174,7 @@
     <x>0</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>3</requiredLevel>
+    <requiredLevel>2</requiredLevel>
     <prerequisites>
       <li>AA_Node_Runesmith_ExplosiveRune</li>
     </prerequisites>
@@ -195,7 +195,7 @@
     <kind>Spell</kind>
     <x>2</x>
     <y>2</y>
-    <requiredLevel>3</requiredLevel>
+    <requiredLevel>2</requiredLevel>
     <prerequisites>
       <li>AA_Node_Runesmith_ExplosiveRune</li>
       <li>AA_Node_Runesmith_RuneOfWarding</li>
@@ -210,7 +210,7 @@
     <x>4</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>3</requiredLevel>
+    <requiredLevel>2</requiredLevel>
     <prerequisites>
       <li>AA_Node_Runesmith_RuneOfWarding</li>
     </prerequisites>
@@ -233,7 +233,7 @@
     <x>6</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>3</requiredLevel>
+    <requiredLevel>2</requiredLevel>
     <prerequisites>
       <li>AA_Node_Runesmith_ArcaneTurret</li>
     </prerequisites>
@@ -257,9 +257,9 @@
     <x>1</x>
     <y>3</y>
     <maxRank>2</maxRank>
-    <requiredLevel>6</requiredLevel>
+    <requiredLevel>3</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>6</requiredAttributeValue>
+    <requiredAttributeValue>5</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Runesmith_Volatile</li>
       <li>AA_Node_Runesmith_EnchantWeapon</li>
@@ -279,9 +279,9 @@
     <kind>Spell</kind>
     <x>3</x>
     <y>3</y>
-    <requiredLevel>6</requiredLevel>
+    <requiredLevel>3</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>6</requiredAttributeValue>
+    <requiredAttributeValue>5</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Runesmith_EnchantWeapon</li>
       <li>AA_Node_Runesmith_Bulwark</li>
@@ -296,9 +296,9 @@
     <kind>Augment</kind>
     <x>5</x>
     <y>3</y>
-    <requiredLevel>6</requiredLevel>
+    <requiredLevel>3</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>6</requiredAttributeValue>
+    <requiredAttributeValue>5</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Runesmith_Bulwark</li>
       <li>AA_Node_Runesmith_Battery</li>
@@ -322,7 +322,7 @@
     <x>0</x>
     <y>4</y>
     <maxRank>2</maxRank>
-    <requiredLevel>9</requiredLevel>
+    <requiredLevel>5</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
     <requiredAttributeValue>6</requiredAttributeValue>
     <prerequisites>
@@ -349,7 +349,7 @@
     <x>2</x>
     <y>4</y>
     <maxRank>3</maxRank>
-    <requiredLevel>9</requiredLevel>
+    <requiredLevel>5</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
     <requiredAttributeValue>6</requiredAttributeValue>
     <prerequisites>
@@ -368,7 +368,7 @@
     <kind>Spell</kind>
     <x>4</x>
     <y>4</y>
-    <requiredLevel>9</requiredLevel>
+    <requiredLevel>5</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
     <requiredAttributeValue>6</requiredAttributeValue>
     <prerequisites>
@@ -385,7 +385,7 @@
     <x>6</x>
     <y>4</y>
     <maxRank>3</maxRank>
-    <requiredLevel>9</requiredLevel>
+    <requiredLevel>5</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
     <requiredAttributeValue>6</requiredAttributeValue>
     <prerequisites>
@@ -405,9 +405,9 @@
     <x>1</x>
     <y>5</y>
     <maxRank>2</maxRank>
-    <requiredLevel>13</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Runesmith_Runeblade</li>
       <li>AA_Node_Runesmith_Artificer</li>
@@ -428,9 +428,9 @@
     <kind>Notable</kind>
     <x>3</x>
     <y>5</y>
-    <requiredLevel>13</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Runesmith_Artificer</li>
       <li>AA_Node_Runesmith_Transmutation</li>
@@ -449,9 +449,9 @@
     <kind>Notable</kind>
     <x>5</x>
     <y>5</y>
-    <requiredLevel>13</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Runesmith_Transmutation</li>
       <li>AA_Node_Runesmith_Ironskin</li>
@@ -473,9 +473,9 @@
     <kind>Spell</kind>
     <x>3</x>
     <y>6</y>
-    <requiredLevel>17</requiredLevel>
+    <requiredLevel>9</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Runesmith_RuneLord</li>
       <li>AA_Node_Runesmith_Masterwork</li>
@@ -491,9 +491,9 @@
     <kind>Keystone</kind>
     <x>2</x>
     <y>7</y>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>11</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Runesmith_RunicBarrage</li>
     </prerequisites>
@@ -515,9 +515,9 @@
     <kind>Keystone</kind>
     <x>4</x>
     <y>7</y>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>11</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Runesmith_RunicBarrage</li>
     </prerequisites>
@@ -540,9 +540,9 @@
     <kind>Keystone</kind>
     <x>3</x>
     <y>8</y>
-    <requiredLevel>30</requiredLevel>
+    <requiredLevel>15</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>18</requiredAttributeValue>
+    <requiredAttributeValue>13</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Runesmith_Overcharge</li>
       <li>AA_Node_Runesmith_Foundry</li>
@@ -562,12 +562,40 @@
     <iconPath>ArcanumAscendant/Nodes/Runesmith_GrandArchitect</iconPath>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Runesmith_MidasTouch</defName>
+    <tree>AA_Class_Runesmith</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>3</y>
+    <requiredLevel>3</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>5</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Runesmith_Battery</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_MidasTouch</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Runesmith_RuneCannonade</defName>
+    <tree>AA_Class_Runesmith</tree>
+    <kind>Spell</kind>
+    <x>0</x>
+    <y>5</y>
+    <requiredLevel>7</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Runesmith_Runeblade</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_RuneCannonade</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Golemancer_IronSentry</defName>
     <tree>AA_Class_Golemancer</tree>
     <kind>Spell</kind>
     <x>2</x>
     <y>0</y>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <unlockSpell>AA_Spell_IronSentry</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
@@ -578,7 +606,7 @@
     <x>4</x>
     <y>0</y>
     <maxRank>3</maxRank>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <statPercentPerRank>
       <AA_SummonPower>0.08</AA_SummonPower>
     </statPercentPerRank>
@@ -590,7 +618,7 @@
     <kind>Spell</kind>
     <x>1</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Golemancer_IronSentry</li>
     </prerequisites>
@@ -604,7 +632,7 @@
     <x>3</x>
     <y>1</y>
     <maxRank>3</maxRank>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Golemancer_IronSentry</li>
       <li>AA_Node_Golemancer_Rivets</li>
@@ -621,7 +649,7 @@
     <kind>Spell</kind>
     <x>5</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Golemancer_Rivets</li>
     </prerequisites>
@@ -635,7 +663,7 @@
     <x>1</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -660,7 +688,7 @@
     <x>3</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -685,7 +713,7 @@
     <x>5</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -708,9 +736,9 @@
     <kind>Spell</kind>
     <x>2</x>
     <y>3</y>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Golemancer_Ramparts</li>
       <li>AA_Node_Golemancer_Calibration</li>
@@ -726,9 +754,9 @@
     <x>4</x>
     <y>3</y>
     <maxRank>2</maxRank>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Golemancer_Calibration</li>
       <li>AA_Node_Golemancer_Capacitors</li>
@@ -748,9 +776,9 @@
     <kind>Notable</kind>
     <x>3</x>
     <y>4</y>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>14</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>12</requiredAttributeValue>
+    <requiredAttributeValue>10</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Golemancer_MaintenanceProtocol</li>
       <li>AA_Node_Golemancer_Assembly</li>
@@ -768,9 +796,9 @@
     <x>1</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Golemancer_Overseer</li>
     </prerequisites>
@@ -788,9 +816,9 @@
     <x>5</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Golemancer_Overseer</li>
     </prerequisites>
@@ -811,9 +839,9 @@
     <kind>Keystone</kind>
     <x>2</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Golemancer_Plating</li>
       <li>AA_Node_Golemancer_Logistics</li>
@@ -832,9 +860,9 @@
     <kind>Keystone</kind>
     <x>4</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Golemancer_Plating</li>
       <li>AA_Node_Golemancer_Logistics</li>
@@ -855,9 +883,9 @@
     <kind>Ultimate</kind>
     <x>3</x>
     <y>7</y>
-    <requiredLevel>40</requiredLevel>
+    <requiredLevel>25</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>18</requiredAttributeValue>
+    <requiredAttributeValue>16</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Golemancer_Warforged</li>
       <li>AA_Node_Golemancer_Factory</li>
@@ -865,12 +893,26 @@
     <unlockSpell>AA_Spell_ColossusProtocol</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Golemancer_OverdriveProtocol</defName>
+    <tree>AA_Class_Golemancer</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>2</y>
+    <requiredLevel>10</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Golemancer_ArcPylon</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_OverdriveProtocol</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Spellforger_EmpowerAllies</defName>
     <tree>AA_Class_Spellforger</tree>
     <kind>Spell</kind>
     <x>2</x>
     <y>0</y>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <unlockSpell>AA_Spell_EmpowerAllies</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
@@ -881,7 +923,7 @@
     <x>4</x>
     <y>0</y>
     <maxRank>3</maxRank>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <statPercentPerRank>
       <AA_HealingPower>0.07</AA_HealingPower>
     </statPercentPerRank>
@@ -893,7 +935,7 @@
     <kind>Spell</kind>
     <x>1</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Spellforger_EmpowerAllies</li>
     </prerequisites>
@@ -907,7 +949,7 @@
     <x>3</x>
     <y>1</y>
     <maxRank>3</maxRank>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Spellforger_EmpowerAllies</li>
       <li>AA_Node_Spellforger_Attuned</li>
@@ -924,7 +966,7 @@
     <kind>Spell</kind>
     <x>5</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Spellforger_Attuned</li>
     </prerequisites>
@@ -938,7 +980,7 @@
     <x>1</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -961,7 +1003,7 @@
     <kind>Spell</kind>
     <x>3</x>
     <y>2</y>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -977,7 +1019,7 @@
     <x>5</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1002,9 +1044,9 @@
     <x>2</x>
     <y>3</y>
     <maxRank>2</maxRank>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Spellforger_Nullify</li>
       <li>AA_Node_Spellforger_ManaBattery</li>
@@ -1028,9 +1070,9 @@
     <x>4</x>
     <y>3</y>
     <maxRank>2</maxRank>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Spellforger_ManaBattery</li>
       <li>AA_Node_Spellforger_Aegis</li>
@@ -1053,9 +1095,9 @@
     <kind>Notable</kind>
     <x>3</x>
     <y>4</y>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>14</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>12</requiredAttributeValue>
+    <requiredAttributeValue>10</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Spellforger_Amplify</li>
       <li>AA_Node_Spellforger_Conduit</li>
@@ -1074,9 +1116,9 @@
     <x>1</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Spellforger_Enchanter</li>
     </prerequisites>
@@ -1094,9 +1136,9 @@
     <x>5</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Spellforger_Enchanter</li>
     </prerequisites>
@@ -1113,9 +1155,9 @@
     <kind>Keystone</kind>
     <x>2</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Spellforger_Spellward</li>
       <li>AA_Node_Spellforger_Wellspring</li>
@@ -1150,9 +1192,9 @@
     <kind>Keystone</kind>
     <x>4</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Spellforger_Spellward</li>
       <li>AA_Node_Spellforger_Wellspring</li>
@@ -1182,9 +1224,9 @@
     <kind>Ultimate</kind>
     <x>3</x>
     <y>7</y>
-    <requiredLevel>40</requiredLevel>
+    <requiredLevel>25</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>18</requiredAttributeValue>
+    <requiredAttributeValue>16</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Spellforger_Paragon</li>
       <li>AA_Node_Spellforger_ArcaneWell</li>
@@ -1192,12 +1234,26 @@
     <unlockSpell>AA_Spell_GrandEnchantment</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Spellforger_MasterworkRune</defName>
+    <tree>AA_Class_Spellforger</tree>
+    <kind>Spell</kind>
+    <x>0</x>
+    <y>2</y>
+    <requiredLevel>10</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Spellforger_Disenchant</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_MasterworkRune</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Gunslinger_Quickdraw</defName>
     <tree>AA_Class_Gunslinger</tree>
     <kind>Spell</kind>
     <x>2</x>
     <y>0</y>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <unlockSpell>AA_Spell_Quickdraw</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
@@ -1208,7 +1264,7 @@
     <x>4</x>
     <y>0</y>
     <maxRank>3</maxRank>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <statOffsetsPerRank>
       <ShootingAccuracyPawn>0.04</ShootingAccuracyPawn>
       <AimingDelayFactor>-0.04</AimingDelayFactor>
@@ -1221,7 +1277,7 @@
     <kind>Spell</kind>
     <x>1</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Gunslinger_Quickdraw</li>
     </prerequisites>
@@ -1236,7 +1292,7 @@
     <x>3</x>
     <y>1</y>
     <maxRank>3</maxRank>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Gunslinger_Quickdraw</li>
       <li>AA_Node_Gunslinger_SteadyHand</li>
@@ -1257,7 +1313,7 @@
     <kind>Spell</kind>
     <x>5</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Gunslinger_SteadyHand</li>
     </prerequisites>
@@ -1271,7 +1327,7 @@
     <x>1</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1296,7 +1352,7 @@
     <x>3</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1325,7 +1381,7 @@
     <x>5</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1348,9 +1404,9 @@
     <kind>Spell</kind>
     <x>2</x>
     <y>3</y>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Gunslinger_Trickshot</li>
       <li>AA_Node_Gunslinger_Hollowpoint</li>
@@ -1365,9 +1421,9 @@
     <x>4</x>
     <y>3</y>
     <maxRank>2</maxRank>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Gunslinger_Hollowpoint</li>
       <li>AA_Node_Gunslinger_Sniper</li>
@@ -1388,9 +1444,9 @@
     <kind>Notable</kind>
     <x>3</x>
     <y>4</y>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>14</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>12</requiredAttributeValue>
+    <requiredAttributeValue>10</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Gunslinger_BulletStorm</li>
       <li>AA_Node_Gunslinger_Gunkata</li>
@@ -1414,9 +1470,9 @@
     <x>1</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Gunslinger_SixthSense</li>
     </prerequisites>
@@ -1434,9 +1490,9 @@
     <x>5</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Gunslinger_SixthSense</li>
     </prerequisites>
@@ -1454,9 +1510,9 @@
     <kind>Keystone</kind>
     <x>2</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Gunslinger_Marksman</li>
       <li>AA_Node_Gunslinger_Gunfighter</li>
@@ -1488,9 +1544,9 @@
     <kind>Keystone</kind>
     <x>4</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Gunslinger_Marksman</li>
       <li>AA_Node_Gunslinger_Gunfighter</li>
@@ -1513,14 +1569,28 @@
     <kind>Ultimate</kind>
     <x>3</x>
     <y>7</y>
-    <requiredLevel>40</requiredLevel>
+    <requiredLevel>25</requiredLevel>
     <requiredAttribute>AA_Celerity</requiredAttribute>
-    <requiredAttributeValue>18</requiredAttributeValue>
+    <requiredAttributeValue>16</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Gunslinger_Executioner</li>
       <li>AA_Node_Gunslinger_Akimbo</li>
     </prerequisites>
     <unlockSpell>AA_Spell_FinalShot</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Gunslinger_FanTheHammer</defName>
+    <tree>AA_Class_Gunslinger</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>2</y>
+    <requiredLevel>10</requiredLevel>
+    <requiredAttribute>AA_Celerity</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Gunslinger_Deadeye</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_FanTheHammer</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_RuneBolt</defName>
@@ -2310,6 +2380,213 @@
     <warmupStartSound>AA_Charge</warmupStartSound>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_MidasTouch</defName>
+    <label>midas touch</label>
+    <description>Inscribe a rune of gold on a creature. If it is weakened or small, it turns to solid gold where it stands. The mighty are only gilded, slowed and burned.</description>
+    <iconPath>ArcanumAscendant/Spells/MidasTouch</iconPath>
+    <cooldownTicksRange>3600</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>6</range>
+      <warmupTime>1.5</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>55</manaCost>
+        <tags>
+          <li>Rune</li>
+        </tags>
+        <tier>3</tier>
+        <role>Attack</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Midas">
+            <healthThreshold>0.5</healthThreshold>
+            <goldPerBodySize>40</goldPerBodySize>
+            <damage>30</damage>
+            <gildedHediff>AA_Gilded</gildedHediff>
+          </li>
+        </effects>
+        <color>(1, 0.667, 0.235, 1)</color>
+        <color2>(1, 0.941, 0.784, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Gear</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>3</scale>
+            <scaleEnd>3.6</scaleEnd>
+            <ticks>12</ticks>
+            <color>(1, 0.878, 0.502, 1)</color>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Spark</fleck>
+            <count>24</count>
+            <speed>3</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.6</scaleEnd>
+            <ticks>30</ticks>
+            <color>(1, 0.816, 0.251, 1)</color>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Rune</castSound>
+        <impactSound>AA_Impact_Rune</impactSound>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_RuneCannonade</defName>
+    <label>rune cannonade</label>
+    <description>Inscribe a firing solution in the air. A battery of runic shells rains down on the target area, each one exploding and shredding armor.</description>
+    <iconPath>ArcanumAscendant/Spells/RuneCannonade</iconPath>
+    <cooldownTicksRange>2400</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>34</range>
+      <warmupTime>1.2</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>65</manaCost>
+        <tags>
+          <li>Rune</li>
+        </tags>
+        <tier>3</tier>
+        <role>Attack</role>
+        <autocastByDefault>true</autocastByDefault>
+        <aiMinEnemiesInRadius>2</aiMinEnemiesInRadius>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Barrage</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Damage">
+            <amount>20</amount>
+            <damageDef>AA_Rune</damageDef>
+            <armorPen>0.5</armorPen>
+            <damageBuildings>true</damageBuildings>
+            <buildingFactor>0.5</buildingFactor>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_ArmorShred</hediff>
+            <severity>1</severity>
+            <stack>true</stack>
+            <maxSeverity>4</maxSeverity>
+          </li>
+        </effects>
+        <color>(1, 0.667, 0.235, 1)</color>
+        <color2>(1, 0.941, 0.784, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Gear</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>2</scale>
+            <scaleEnd>2.4</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Rune</fleck>
+            <count>4</count>
+            <speed>2</speed>
+            <scale>0.6</scale>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Spark</fleck>
+            <count>10</count>
+            <speed>4</speed>
+            <scale>0.4</scale>
+          </li>
+          <li>
+            <type>Smoke</type>
+            <count>2</count>
+            <scale>0.8</scale>
+            <speed>1</speed>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Rune</castSound>
+        <impactSound>AA_Impact_Rune</impactSound>
+        <shake>0.6</shake>
+        <barrageCount>10</barrageCount>
+        <barrageInterval>6</barrageInterval>
+        <barrageRadius>4.5</barrageRadius>
+        <strikeRadius>1.8</strikeRadius>
+        <strikeStyle>Meteor</strikeStyle>
+        <projectileScale>0.6</projectileScale>
+        <projectileTex>ArcanumAscendant/Vfx/RuneBolt</projectileTex>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_IronSentry</defName>
     <label>iron sentry</label>
     <description>Assemble a heavy runic sentry gun that fires piercing rune shells.</description>
@@ -2788,6 +3065,99 @@
     <warmupStartSound>AA_Charge</warmupStartSound>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_OverdriveProtocol</defName>
+    <label>overdrive protocol</label>
+    <description>Broadcast an overdrive glyph. Every ally nearby moves and fights faster and is patched up.</description>
+    <iconPath>ArcanumAscendant/Spells/OverdriveProtocol</iconPath>
+    <cooldownTicksRange>3600</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>0</range>
+      <warmupTime>0.5</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <drawAimPie>false</drawAimPie>
+      <targetable>false</targetable>
+      <nonInterruptingSelfCast>false</nonInterruptingSelfCast>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>50</manaCost>
+        <tags>
+          <li>Rune</li>
+        </tags>
+        <tier>3</tier>
+        <role>Buff</role>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Nova</delivery>
+        <affects>Allies</affects>
+        <radius>8</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_Haste</hediff>
+            <severity>1</severity>
+            <durationTicks>900</durationTicks>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Heal">
+            <amount>15</amount>
+          </li>
+        </effects>
+        <color>(0.878, 0.627, 0.376, 1)</color>
+        <color2>(0.784, 0.816, 0.878, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Spark</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.1</scale>
+            <scaleEnd>1</scaleEnd>
+            <ticks>36</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Gear</fleck>
+            <count>20</count>
+            <speed>3</speed>
+            <scale>0.6</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Flash</type>
+            <scale>2.5</scale>
+            <scaleEnd>3</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Rune</castSound>
+        <impactSound>AA_Impact_Rune</impactSound>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+    <targetRequired>false</targetRequired>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_EmpowerAllies</defName>
     <label>empower allies</label>
     <description>Every ally nearby is enchanted: rune-charged weapons and empowered magic.</description>
@@ -3087,7 +3457,7 @@
     <comps>
       <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
         <delivery>Instant</delivery>
-        <affects>Enemies</affects>
+        <affects>Allies</affects>
         <effects>
           <li Class="ArcanumAscendant.Effect_RestoreMana">
             <amount>0</amount>
@@ -3245,6 +3615,97 @@
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
     <targetRequired>false</targetRequired>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_MasterworkRune</defName>
+    <label>masterwork rune</label>
+    <description>Carve a rune of perfection into an item or the weapon a pawn is holding. Its quality rises by one step, up to legendary.</description>
+    <iconPath>ArcanumAscendant/Spells/MasterworkRune</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>3</range>
+      <warmupTime>8</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetItems>true</canTargetItems>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetMechs>false</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>80</manaCost>
+        <tags>
+          <li>Rune</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_ImproveQuality">
+            <steps>1</steps>
+            <maxQuality>Legendary</maxQuality>
+          </li>
+        </effects>
+        <color>(0.478, 0.816, 1, 1)</color>
+        <color2>(1, 0.941, 0.784, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>3</scale>
+            <scaleEnd>3.6</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Rune</fleck>
+            <count>16</count>
+            <speed>2</speed>
+            <scale>0.6</scale>
+          </li>
+          <li>
+            <type>Pillar</type>
+            <scale>1</scale>
+            <ticks>40</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Arcane</castSound>
+        <impactSound>AA_Impact_Arcane</impactSound>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_Quickdraw</defName>
@@ -3713,6 +4174,111 @@
         <shake>3</shake>
         <beamWidth>0.8</beamWidth>
         <beamTicks>30</beamTicks>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_FanTheHammer</defName>
+    <label>fan the hammer</label>
+    <description>Six runic shots in the blink of an eye, spread across the nearest enemies.</description>
+    <iconPath>ArcanumAscendant/Spells/FanTheHammer</iconPath>
+    <cooldownTicksRange>720</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>26</range>
+      <warmupTime>0.3</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>30</manaCost>
+        <tags>
+          <li>Rune</li>
+          <li>Gun</li>
+        </tags>
+        <tier>1</tier>
+        <role>Attack</role>
+        <autocastByDefault>true</autocastByDefault>
+        <aiMinEnemiesInRadius>1</aiMinEnemiesInRadius>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Projectile</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Damage">
+            <amount>13</amount>
+            <damageDef>Bullet</damageDef>
+            <armorPen>0.35</armorPen>
+          </li>
+        </effects>
+        <color>(1, 0.816, 0.29, 1)</color>
+        <color2>(1, 1, 1, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Rune</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>2</scale>
+            <scaleEnd>2.4</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Rune</fleck>
+            <count>4</count>
+            <speed>1.2</speed>
+            <scale>0.6</scale>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Spark</fleck>
+            <count>8</count>
+            <speed>3</speed>
+            <scale>0.4</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.2</scale>
+            <scaleEnd>2</scaleEnd>
+            <ticks>18</ticks>
+            <useColor2>true</useColor2>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Rune</castSound>
+        <impactSound>AA_Impact_Rune</impactSound>
+        <projectileCount>6</projectileCount>
+        <projectileSpeed>60</projectileSpeed>
+        <projectileScale>0.5</projectileScale>
+        <multiTargetRadius>6</multiTargetRadius>
+        <projectileTex>ArcanumAscendant/Vfx/Bullet</projectileTex>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -4245,4 +4811,35 @@
       </li>
     </comps>
   </ThingDef>
+  <HediffDef>
+    <defName>AA_Gilded</defName>
+    <label>gilded</label>
+    <description>Partly turned to gold. Heavy, stiff and slow.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>true</isBad>
+    <defaultLabelColor>(1, 0.816, 0.251, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>600~600</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(1, 0.816, 0.251, 0.9)</color>
+        <texPath>ArcanumAscendant/Vfx/RuneCircle</texPath>
+        <size>1.3</size>
+        <fleck>AA_Fleck_Spark</fleck>
+        <fleckInterval>30</fleckInterval>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <MoveSpeed>0.5</MoveSpeed>
+          <MeleeCooldownFactor>1.4</MeleeCooldownFactor>
+          <AimingDelayFactor>1.4</AimingDelayFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
 </Defs>

@@ -23,10 +23,17 @@ namespace ArcanumAscendant
     /// </summary>
     public class CompArcane : ThingComp
     {
-        public const int MaxLevel = 50;
+        public const int MaxLevel = 30;
+        public const int MaxCircle = 5;
         public const int AttributeBase = 3;
         public const int AttributeMax = 20;
-        public const float ParagonXp = 6000f;
+        public const float ParagonXp = 20000f;
+        public const int ProgressionVersion = 2;
+        /// <summary>Highest level reachable in each circle. Going past it needs an ascension sigil.</summary>
+        public static readonly int[] CircleLevelCap = { 0, 6, 12, 18, 24, 30 };
+        /// <summary>Hours of study at a lectern needed to finish attuning, for an average pawn.</summary>
+        public const float AttunementHours = 16f;
+        public const float StudyXpPerHour = 60f;
 
         public ArcaneClassDef classDef;
         public ArcaneClassDef subclassDef;
@@ -39,6 +46,18 @@ namespace ArcanumAscendant
         public float ward;
         public int respecsUsed;
         private bool rolledEnemyMage;
+
+        /// <summary>Arcane circle (1-5). Each circle caps the level until the mage ascends with a sigil.</summary>
+        public int circle = 1;
+        /// <summary>True between reading a grimoire and finishing attunement.</summary>
+        public bool attuning;
+        /// <summary>Attunement progress, 0 to 1.</summary>
+        public float attunement;
+        /// <summary>Attunement is complete: the pawn can choose a class.</summary>
+        public bool awakenReady;
+        private bool ascendNotified;
+        private int progressionVersion = ProgressionVersion;
+        [Unsaved] private bool migratedThisLoad;
 
         private Dictionary<ArcaneAttributeDef, int> attributes = new Dictionary<ArcaneAttributeDef, int>();
         private Dictionary<ArcaneNodeDef, int> ranks = new Dictionary<ArcaneNodeDef, int>();
@@ -107,7 +126,40 @@ namespace ArcanumAscendant
 
         public float ManaRegenPerSecond => Pawn.GetStatValue(ArcaneDefOf.AA_ManaRegen) * ArcanumMod.Settings.manaRegenMultiplier;
 
-        public float LevelPowerFactor => (1f + 0.035f * (level - 1)) * (1f + 0.015f * paragon);
+        public float LevelPowerFactor => (1f + 0.06f * (level - 1)) * (1f + 0.01f * paragon);
+
+        public int LevelCap => CircleLevelCap[Mathf.Clamp(circle, 1, MaxCircle)];
+
+        /// <summary>The mage has hit their circle's level cap and needs to ascend before levelling further.</summary>
+        public bool AtCircleCap => IsMage && circle < MaxCircle && level >= LevelCap;
+
+        public bool ReadyToAscend => AtCircleCap && xp >= XpToNextLevel - 0.01f;
+
+        public static int CircleForLevel(int lvl)
+        {
+            for (int c = 1; c <= MaxCircle; c++)
+                if (lvl <= CircleLevelCap[c]) return c;
+            return MaxCircle;
+        }
+
+        public static int PerkPointsFor(int lvl, int circ) => 2 + (lvl - 1) + lvl / 3 + 3 * (circ - 1);
+        public static int AttributePointsFor(int lvl, int circ) => 3 + (lvl - 1) + (circ - 1);
+
+        /// <summary>How quickly this pawn studies and attunes. Psychic sensitivity and intellect both help.</summary>
+        public static float StudyFactor(Pawn p)
+        {
+            if (p == null) return 0f;
+            float sens = Mathf.Clamp(p.GetStatValue(StatDefOf.PsychicSensitivity), 0f, 2.5f);
+            int intellect = p.skills?.GetSkill(SkillDefOf.Intellectual)?.Level ?? 4;
+            return sens * (0.75f + 0.025f * intellect);
+        }
+
+        public static AcceptanceReport CanAttune(Pawn p)
+        {
+            if (p == null || !p.RaceProps.Humanlike) return "AA_CannotAwaken".Translate();
+            if (p.GetStatValue(StatDefOf.PsychicSensitivity) <= 0.05f) return "AA_PsychicallyDeaf".Translate(p.LabelShort, p.Named("PAWN"));
+            return true;
+        }
 
         /// <summary>Overall multiplier applied to spell damage, healing and shields.</summary>
         public float SpellPower
@@ -125,7 +177,7 @@ namespace ArcanumAscendant
         public static float XpRequiredFor(int lvl)
         {
             if (lvl >= MaxLevel) return ParagonXp;
-            return Mathf.Round(40f + 18f * Mathf.Pow(lvl, 1.45f));
+            return Mathf.Round(100f + 140f * Mathf.Pow(lvl, 1.5f));
         }
 
         public int Attribute(ArcaneAttributeDef def)
@@ -202,10 +254,16 @@ namespace ArcanumAscendant
             classDef = def;
             subclassDef = null;
             level = 1;
+            circle = 1;
             xp = 0;
             paragon = 0;
-            perkPoints = 2;
-            attributePoints = 4;
+            perkPoints = PerkPointsFor(1, 1);
+            attributePoints = AttributePointsFor(1, 1);
+            attuning = false;
+            attunement = 1f;
+            awakenReady = false;
+            ascendNotified = false;
+            progressionVersion = ProgressionVersion;
             attributes.Clear();
             ranks.Clear();
             hiddenSpells.Clear();
@@ -237,7 +295,76 @@ namespace ArcanumAscendant
             }
         }
 
-        public bool CanChooseSubclass => IsMage && subclassDef == null && level >= classDef.subclassUnlockLevel && classDef.subclasses.Count > 0;
+        public bool CanChooseSubclass => IsMage && subclassDef == null && circle >= 2 && level >= classDef.subclassUnlockLevel && classDef.subclasses.Count > 0;
+
+        #region Attunement & ascension
+
+        public void StartAttunement()
+        {
+            if (IsMage || attuning || awakenReady) return;
+            attuning = true;
+            attunement = 0f;
+        }
+
+        /// <summary>Adds attunement progress (0-1 scale). Completing it lets the pawn choose a class.</summary>
+        public void AddAttunement(float amount)
+        {
+            if (!attuning || amount <= 0f) return;
+            attunement = Mathf.Min(1f, attunement + amount);
+            if (attunement >= 1f) CompleteAttunement();
+        }
+
+        public void CompleteAttunement(bool silent = false)
+        {
+            attuning = false;
+            attunement = 1f;
+            awakenReady = true;
+            var p = Pawn;
+            if (p == null || silent) return;
+            if (p.Faction != Faction.OfPlayer)
+            {
+                Awaken(DefDatabase<ArcaneClassDef>.AllDefs.Where(d => !d.IsSubclass).RandomElement(), true);
+                return;
+            }
+            if (p.Spawned)
+            {
+                ArcaneDefOf.AA_Awaken?.PlayOneShot(new TargetInfo(p.Position, p.Map));
+                ArcaneFx.LevelUpBurst(p, new Color(0.75f, 0.55f, 1f), big: true);
+            }
+            Find.LetterStack.ReceiveLetter("AA_AttunedLabel".Translate(p.LabelShort, p.Named("PAWN")),
+                "AA_AttunedText".Translate(p.LabelShort, p.Named("PAWN")), LetterDefOf.PositiveEvent, p);
+        }
+
+        /// <summary>Advance to the next circle. Called by ascension sigils.</summary>
+        public void Ascend()
+        {
+            if (!IsMage || circle >= MaxCircle) return;
+            circle++;
+            perkPoints += 3;
+            attributePoints += 1;
+            ascendNotified = false;
+            MarkDirty();
+            mana = ManaMax;
+            ward = Mathf.Max(ward, WardMax);
+            var p = Pawn;
+            if (p.Spawned)
+            {
+                ArcaneDefOf.AA_Awaken?.PlayOneShot(new TargetInfo(p.Position, p.Map));
+                ArcaneFx.LevelUpBurst(p, DisplayClass.color, big: true);
+                ArcaneFx.Shake(p.Map, 1.5f);
+                MoteMaker.ThrowText(p.DrawPos + new Vector3(0, 0, 0.8f), p.Map, "AA_AscendedMote".Translate(CircleLabel(circle)), DisplayClass.color, 5f);
+            }
+            if (p.Faction == Faction.OfPlayer)
+            {
+                string text = "AA_AscendedText".Translate(p.LabelShort, CircleLabel(circle), LevelCap, p.Named("PAWN"));
+                Find.LetterStack.ReceiveLetter("AA_AscendedLabel".Translate(p.LabelShort, CircleLabel(circle), p.Named("PAWN")), text, LetterDefOf.PositiveEvent, p);
+            }
+            ProcessLevelUps();
+        }
+
+        public static string CircleLabel(int c) => ("AA_Circle" + Mathf.Clamp(c, 1, MaxCircle)).Translate();
+
+        #endregion
 
         public void Unawaken()
         {
@@ -256,27 +383,47 @@ namespace ArcanumAscendant
             if (!IsMage || amount <= 0f || Pawn.Dead) return;
             if (applyGainStat) amount *= Pawn.GetStatValue(ArcaneDefOf.AA_XpGain) * ArcanumMod.Settings.xpMultiplier;
             xp += amount;
+            ProcessLevelUps();
+        }
+
+        private void ProcessLevelUps()
+        {
             int guard = 0;
             while (xp >= XpToNextLevel && guard++ < 200)
             {
+                if (AtCircleCap)
+                {
+                    xp = XpToNextLevel;
+                    if (!ascendNotified)
+                    {
+                        ascendNotified = true;
+                        if (Pawn.Faction == Faction.OfPlayer)
+                            Find.LetterStack.ReceiveLetter("AA_AscendReadyLabel".Translate(Pawn.LabelShort, Pawn.Named("PAWN")),
+                                "AA_AscendReadyText".Translate(Pawn.LabelShort, CircleLabel(circle + 1), SigilFor(circle + 1)?.label ?? "?", Pawn.Named("PAWN")),
+                                LetterDefOf.PositiveEvent, Pawn);
+                    }
+                    return;
+                }
                 xp -= XpToNextLevel;
                 LevelUp();
             }
         }
+
+        public static ThingDef SigilFor(int targetCircle) => DefDatabase<ThingDef>.GetNamedSilentFail("AA_Sigil_Circle" + targetCircle);
 
         private void LevelUp()
         {
             if (level >= MaxLevel)
             {
                 paragon++;
-                perkPoints += paragon % 5 == 0 ? 1 : 0;
+                perkPoints += paragon % 2 == 0 ? 1 : 0;
                 MarkDirty();
                 if (Pawn.Spawned && Pawn.Faction == Faction.OfPlayer)
                     MoteMaker.ThrowText(Pawn.DrawPos + new Vector3(0, 0, 0.6f), Pawn.Map, "AA_ParagonUp".Translate(paragon), DisplayClass.color, 3.5f);
                 return;
             }
             level++;
-            perkPoints += 1 + (level % 5 == 0 ? 1 : 0);
+            perkPoints += 1 + (level % 3 == 0 ? 1 : 0);
             attributePoints += 1;
             MarkDirty();
             mana = ManaMax;
@@ -288,7 +435,7 @@ namespace ArcanumAscendant
             }
             if (Pawn.Faction == Faction.OfPlayer)
             {
-                if (level == classDef.subclassUnlockLevel && subclassDef == null)
+                if (level == classDef.subclassUnlockLevel && subclassDef == null && circle >= 2)
                     Find.LetterStack.ReceiveLetter("AA_SubclassReadyLabel".Translate(Pawn.LabelShort, Pawn.Named("PAWN")),
                         "AA_SubclassReadyText".Translate(Pawn.LabelShort, classDef.label, Pawn.Named("PAWN")), LetterDefOf.PositiveEvent, Pawn);
                 else if (level == MaxLevel)
@@ -301,10 +448,16 @@ namespace ArcanumAscendant
         public void SetLevelDirect(int newLevel)
         {
             newLevel = Mathf.Clamp(newLevel, 1, MaxLevel);
+            while (circle < MaxCircle && CircleLevelCap[circle] < newLevel)
+            {
+                circle++;
+                perkPoints += 3;
+                attributePoints += 1;
+            }
             while (level < newLevel)
             {
                 level++;
-                perkPoints += 1 + (level % 5 == 0 ? 1 : 0);
+                perkPoints += 1 + (level % 3 == 0 ? 1 : 0);
                 attributePoints += 1;
             }
             xp = 0;
@@ -472,8 +625,8 @@ namespace ArcanumAscendant
                     int pts = Attribute(attr);
                     foreach (var sm in attr.statOffsetsPerPoint) AddOff(sm.stat, sm.value * pts);
                 }
-                AddOff(ArcaneDefOf.AA_ManaMax, 3f * (level - 1) + 4f * paragon);
-                AddOff(ArcaneDefOf.AA_WardMax, 1.5f * (level - 1));
+                AddOff(ArcaneDefOf.AA_ManaMax, 5f * (level - 1) + 10f * (circle - 1) + 3f * paragon);
+                AddOff(ArcaneDefOf.AA_WardMax, 2.5f * (level - 1) + 5f * (circle - 1));
                 foreach (var sm in classDef.innateStatOffsets) AddOff(sm.stat, sm.value);
                 if (subclassDef != null) foreach (var sm in subclassDef.innateStatOffsets) AddOff(sm.stat, sm.value);
                 foreach (var kv in ranks)
@@ -530,6 +683,13 @@ namespace ArcanumAscendant
                     ward = Mathf.Max(0f, ward - (1f + ward * 0.02f));
                 return;
             }
+            if (migratedThisLoad)
+            {
+                migratedThisLoad = false;
+                if (Pawn.Faction == Faction.OfPlayer)
+                    Messages.Message("AA_Migrated".Translate(Pawn.LabelShort, level, CircleLabel(circle), Pawn.Named("PAWN")), Pawn, MessageTypeDefOf.NeutralEvent);
+                SyncAbilities();
+            }
             int now = Find.TickManager.TicksGame;
             if (lastArcaneTick < 0) lastArcaneTick = now;
             int elapsed = now - lastArcaneTick;
@@ -570,6 +730,11 @@ namespace ArcanumAscendant
             absorbed = false;
             if (Pawn == null || Pawn.Dead) return;
             if (dinfo.Def == null || !dinfo.Def.harmsHealth) return;
+            if (HediffComp_DamageShell.Apply(Pawn, ref dinfo))
+            {
+                absorbed = true;
+                return;
+            }
             if (!IsMage && ward <= 0.5f) return;
             lastHarmTick = Find.TickManager.TicksGame;
             if (IsMage)
@@ -623,8 +788,8 @@ namespace ArcanumAscendant
         {
             if (!IsMage || victim == null) return;
             float cp = victim.kindDef?.combatPower ?? 40f;
-            if (victim.Faction != null && Pawn.Faction != null && !victim.Faction.HostileTo(Pawn.Faction)) cp *= 0.2f;
-            GainXp(Mathf.Clamp(cp, 10f, 2000f) * 0.8f);
+            if (!victim.HostileTo(Pawn)) cp *= 0.1f;
+            GainXp(Mathf.Clamp(cp, 4f, 2000f));
             foreach (var (passive, rank, _) in Passives) passive.Kill(this, rank, victim, ctx);
         }
 
@@ -670,12 +835,26 @@ namespace ArcanumAscendant
             if (cls == null) return;
             Awaken(cls, true);
             float days = GenDate.DaysPassedSinceSettleFloat;
-            int lvl = Mathf.RoundToInt((3f + days / 5f) * s.enemyLevelScale + Rand.Range(-3f, 3f));
-            if (p.kindDef != null && p.kindDef.combatPower > 150f) lvl += 4;
+            int lvl = Mathf.RoundToInt((2f + days / 6f) * s.enemyLevelScale + Rand.Range(-2f, 2f));
+            if (p.kindDef != null && p.kindDef.combatPower > 150f) lvl += 3;
             SetLevelDirect(Mathf.Clamp(lvl, 1, MaxLevel));
             ArcaneUtility.AutoAllocate(this);
             mana = ManaMax;
             ward = WardMax;
+        }
+
+        public override void Notify_Killed(Map prevMap, DamageInfo? dinfo = null)
+        {
+            base.Notify_Killed(prevMap, dinfo);
+            var p = Pawn;
+            if (!IsMage || prevMap == null || p.Faction == Faction.OfPlayer || ArcaneDefOf.AA_ArcaneCrystal == null) return;
+            if (p.Faction != null && !p.Faction.HostileTo(Faction.OfPlayer)) return;
+            int count = Rand.RangeInclusive(1, 2) + circle * 2;
+            var cell = p.PositionHeld;
+            if (!cell.IsValid) return;
+            var crystals = ThingMaker.MakeThing(ArcaneDefOf.AA_ArcaneCrystal);
+            crystals.stackCount = count;
+            GenPlace.TryPlaceThing(crystals, cell, prevMap, ThingPlaceMode.Near);
         }
 
         [Unsaved] private int lastDownedTick = -1;
@@ -706,14 +885,26 @@ namespace ArcanumAscendant
                 if (controllable || DebugSettings.ShowDevGizmos)
                     yield return new Gizmo_ArcaneStatus(this);
             }
-            else if (controllable && p.RaceProps.Humanlike && ArcanumMod.Settings.freeAwakening)
+            else if (controllable && p.RaceProps.Humanlike && (awakenReady || ArcanumMod.Settings.freeAwakening))
             {
                 yield return new Command_Action
                 {
                     defaultLabel = "AA_AwakenCommand".Translate(),
-                    defaultDesc = "AA_AwakenCommandDesc".Translate(),
+                    defaultDesc = (awakenReady ? "AA_AwakenReadyDesc" : "AA_AwakenCommandDesc").Translate(),
                     icon = ArcaneTex.AwakenIcon,
                     action = () => Find.WindowStack.Add(new Dialog_ChooseClass(this)),
+                };
+            }
+            else if (controllable && attuning)
+            {
+                yield return new Command_Action
+                {
+                    defaultLabel = "AA_AttuningCommand".Translate(attunement.ToStringPercent("F0")),
+                    defaultDesc = "AA_AttuningCommandDesc".Translate(p.LabelShort, attunement.ToStringPercent("F0"), StudyFactor(p).ToStringPercent(), p.Named("PAWN")),
+                    icon = ArcaneTex.AwakenIcon,
+                    action = () => { },
+                    Disabled = true,
+                    disabledReason = "AA_AttuningCommandDesc".Translate(p.LabelShort, attunement.ToStringPercent("F0"), StudyFactor(p).ToStringPercent(), p.Named("PAWN")),
                 };
             }
             if (DebugSettings.ShowDevGizmos && p.RaceProps.Humanlike)
@@ -730,9 +921,15 @@ namespace ArcanumAscendant
 
         public override string CompInspectStringExtra()
         {
-            if (!IsMage) return null;
+            if (!IsMage)
+            {
+                if (attuning) return "AA_AttuningInspect".Translate(attunement.ToStringPercent("F0"));
+                if (awakenReady) return "AA_AwakenReadyInspect".Translate();
+                return null;
+            }
             var sb = new StringBuilder();
             sb.Append("AA_InspectLine".Translate(DisplayClass.LabelCap, level, mana.ToString("F0"), ManaMax.ToString("F0")));
+            if (ReadyToAscend) sb.Append(" · " + "AA_ReadyToAscendShort".Translate());
             if (WardMax > 0.5f) sb.Append(" · " + "AA_WardShort".Translate(ward.ToString("F0"), WardMax.ToString("F0")));
             return sb.ToString();
         }
@@ -752,6 +949,12 @@ namespace ArcanumAscendant
             Scribe_Values.Look(ref respecsUsed, "respecsUsed");
             Scribe_Values.Look(ref rolledEnemyMage, "rolledEnemyMage");
             Scribe_Values.Look(ref lastHarmTick, "lastHarmTick", -99999);
+            Scribe_Values.Look(ref circle, "circle", 1);
+            Scribe_Values.Look(ref attuning, "attuning");
+            Scribe_Values.Look(ref attunement, "attunement");
+            Scribe_Values.Look(ref awakenReady, "awakenReady");
+            Scribe_Values.Look(ref ascendNotified, "ascendNotified");
+            Scribe_Values.Look(ref progressionVersion, "progressionVersion", 1);
             Scribe_Collections.Look(ref attributes, "attributes", LookMode.Def, LookMode.Value, ref tmpAttrKeys, ref tmpAttrVals);
             Scribe_Collections.Look(ref ranks, "ranks", LookMode.Def, LookMode.Value, ref tmpNodeKeys, ref tmpNodeVals);
             Scribe_Collections.Look(ref hiddenSpells, "hiddenSpells", LookMode.Def);
@@ -769,8 +972,35 @@ namespace ArcanumAscendant
                 hiddenSpells.RemoveWhere(d => d == null);
                 autocastSpells.RemoveWhere(d => d == null);
                 if (subclassDef != null && subclassDef.parentClass != classDef) subclassDef = null;
+                if (progressionVersion < ProgressionVersion) MigrateProgression();
                 cacheDirty = true;
             }
+        }
+
+        /// <summary>
+        /// Saves from before the circle system used a 50-level cap and a faster point curve. Rescale the level,
+        /// keep the class and subclass, and refund every point under the new budget.
+        /// </summary>
+        private void MigrateProgression()
+        {
+            progressionVersion = ProgressionVersion;
+            if (!IsMage) return;
+            int newLevel = Mathf.Clamp(Mathf.CeilToInt(level * 0.6f), 1, MaxLevel);
+            int newCircle = CircleForLevel(newLevel);
+            if (subclassDef != null && newCircle < 2)
+            {
+                newCircle = 2;
+                newLevel = Mathf.Max(newLevel, CircleLevelCap[1] + 1);
+            }
+            level = newLevel;
+            circle = newCircle;
+            xp = 0f;
+            paragon = 0;
+            ranks.Clear();
+            attributes.Clear();
+            perkPoints = PerkPointsFor(level, circle);
+            attributePoints = AttributePointsFor(level, circle);
+            migratedThisLoad = true;
         }
 
         #endregion

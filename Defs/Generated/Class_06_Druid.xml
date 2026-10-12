@@ -16,7 +16,7 @@
     </schoolTags>
     <primaryAttribute>AA_Focus</primaryAttribute>
     <secondaryAttribute>AA_Resilience</secondaryAttribute>
-    <subclassUnlockLevel>10</subclassUnlockLevel>
+    <subclassUnlockLevel>7</subclassUnlockLevel>
     <innateStatOffsets>
       <AA_HealingPower>0.05</AA_HealingPower>
       <PlantWorkSpeed>0.15</PlantWorkSpeed>
@@ -174,7 +174,7 @@
     <x>0</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>3</requiredLevel>
+    <requiredLevel>2</requiredLevel>
     <prerequisites>
       <li>AA_Node_Druid_Entangle</li>
     </prerequisites>
@@ -197,7 +197,7 @@
     <x>2</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>3</requiredLevel>
+    <requiredLevel>2</requiredLevel>
     <prerequisites>
       <li>AA_Node_Druid_Entangle</li>
       <li>AA_Node_Druid_Barkskin</li>
@@ -219,7 +219,7 @@
     <kind>Spell</kind>
     <x>4</x>
     <y>2</y>
-    <requiredLevel>3</requiredLevel>
+    <requiredLevel>2</requiredLevel>
     <prerequisites>
       <li>AA_Node_Druid_Barkskin</li>
       <li>AA_Node_Druid_Rejuvenation</li>
@@ -234,7 +234,7 @@
     <x>6</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>3</requiredLevel>
+    <requiredLevel>2</requiredLevel>
     <prerequisites>
       <li>AA_Node_Druid_Rejuvenation</li>
     </prerequisites>
@@ -255,9 +255,9 @@
     <kind>Spell</kind>
     <x>1</x>
     <y>3</y>
-    <requiredLevel>6</requiredLevel>
+    <requiredLevel>3</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>6</requiredAttributeValue>
+    <requiredAttributeValue>5</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Druid_Bramble</li>
       <li>AA_Node_Druid_Volley</li>
@@ -272,9 +272,9 @@
     <x>3</x>
     <y>3</y>
     <maxRank>3</maxRank>
-    <requiredLevel>6</requiredLevel>
+    <requiredLevel>3</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>6</requiredAttributeValue>
+    <requiredAttributeValue>5</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Druid_Volley</li>
       <li>AA_Node_Druid_Bloom</li>
@@ -291,9 +291,9 @@
     <kind>Spell</kind>
     <x>5</x>
     <y>3</y>
-    <requiredLevel>6</requiredLevel>
+    <requiredLevel>3</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>6</requiredAttributeValue>
+    <requiredAttributeValue>5</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Druid_Bloom</li>
       <li>AA_Node_Druid_Lifebloom</li>
@@ -309,7 +309,7 @@
     <x>0</x>
     <y>4</y>
     <maxRank>2</maxRank>
-    <requiredLevel>9</requiredLevel>
+    <requiredLevel>5</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
     <requiredAttributeValue>6</requiredAttributeValue>
     <prerequisites>
@@ -335,7 +335,7 @@
     <x>2</x>
     <y>4</y>
     <maxRank>2</maxRank>
-    <requiredLevel>9</requiredLevel>
+    <requiredLevel>5</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
     <requiredAttributeValue>6</requiredAttributeValue>
     <prerequisites>
@@ -359,7 +359,7 @@
     <kind>Notable</kind>
     <x>4</x>
     <y>4</y>
-    <requiredLevel>9</requiredLevel>
+    <requiredLevel>5</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
     <requiredAttributeValue>6</requiredAttributeValue>
     <prerequisites>
@@ -380,7 +380,7 @@
     <x>6</x>
     <y>4</y>
     <maxRank>3</maxRank>
-    <requiredLevel>9</requiredLevel>
+    <requiredLevel>5</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
     <requiredAttributeValue>6</requiredAttributeValue>
     <prerequisites>
@@ -402,9 +402,9 @@
     <x>1</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>13</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Druid_PackLeader</li>
       <li>AA_Node_Druid_Thornmail</li>
@@ -425,9 +425,9 @@
     <kind>Notable</kind>
     <x>3</x>
     <y>5</y>
-    <requiredLevel>13</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Druid_Thornmail</li>
       <li>AA_Node_Druid_Harvestmoon</li>
@@ -458,9 +458,9 @@
     <x>5</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>13</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Druid_Harvestmoon</li>
       <li>AA_Node_Druid_Wildheart</li>
@@ -478,9 +478,9 @@
     <kind>Spell</kind>
     <x>3</x>
     <y>6</y>
-    <requiredLevel>17</requiredLevel>
+    <requiredLevel>9</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Druid_Verdance</li>
       <li>AA_Node_Druid_Photosynthesis</li>
@@ -496,9 +496,9 @@
     <kind>Keystone</kind>
     <x>2</x>
     <y>7</y>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>11</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Druid_WrathOfNature</li>
     </prerequisites>
@@ -525,9 +525,9 @@
     <kind>Keystone</kind>
     <x>4</x>
     <y>7</y>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>11</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Druid_WrathOfNature</li>
     </prerequisites>
@@ -551,9 +551,9 @@
     <kind>Keystone</kind>
     <x>3</x>
     <y>8</y>
-    <requiredLevel>30</requiredLevel>
+    <requiredLevel>15</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>18</requiredAttributeValue>
+    <requiredAttributeValue>13</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Druid_Overgrowth</li>
       <li>AA_Node_Druid_Lifewell</li>
@@ -575,12 +575,40 @@
     <iconPath>ArcanumAscendant/Nodes/Druid_Archdruid</iconPath>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Druid_Earthquake</defName>
+    <tree>AA_Class_Druid</tree>
+    <kind>Spell</kind>
+    <x>2</x>
+    <y>5</y>
+    <requiredLevel>7</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Druid_Thornmail</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_Earthquake</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Druid_NaturesRenewal</defName>
+    <tree>AA_Class_Druid</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>3</y>
+    <requiredLevel>3</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>5</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Druid_Lifebloom</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_NaturesRenewal</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Beastmaster_SummonBear</defName>
     <tree>AA_Class_Beastmaster</tree>
     <kind>Spell</kind>
     <x>2</x>
     <y>0</y>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <unlockSpell>AA_Spell_SummonBear</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
@@ -591,7 +619,7 @@
     <x>4</x>
     <y>0</y>
     <maxRank>3</maxRank>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <statOffsetsPerRank>
       <AA_DurationFactor>0.03</AA_DurationFactor>
     </statOffsetsPerRank>
@@ -606,7 +634,7 @@
     <kind>Spell</kind>
     <x>1</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Beastmaster_SummonBear</li>
     </prerequisites>
@@ -620,7 +648,7 @@
     <x>3</x>
     <y>1</y>
     <maxRank>3</maxRank>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Beastmaster_SummonBear</li>
       <li>AA_Node_Beastmaster_Packbond</li>
@@ -637,7 +665,7 @@
     <kind>Spell</kind>
     <x>5</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Beastmaster_Packbond</li>
     </prerequisites>
@@ -651,7 +679,7 @@
     <x>1</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -674,7 +702,7 @@
     <kind>Spell</kind>
     <x>3</x>
     <y>2</y>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -690,7 +718,7 @@
     <x>5</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -716,9 +744,9 @@
     <x>2</x>
     <y>3</y>
     <maxRank>2</maxRank>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Beastmaster_Herd</li>
       <li>AA_Node_Beastmaster_TameBeast</li>
@@ -741,9 +769,9 @@
     <kind>Notable</kind>
     <x>4</x>
     <y>3</y>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Beastmaster_TameBeast</li>
       <li>AA_Node_Beastmaster_Alpha</li>
@@ -763,9 +791,9 @@
     <x>3</x>
     <y>4</y>
     <maxRank>2</maxRank>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>14</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>12</requiredAttributeValue>
+    <requiredAttributeValue>10</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Beastmaster_Grizzly</li>
       <li>AA_Node_Beastmaster_Whisperer</li>
@@ -784,9 +812,9 @@
     <x>1</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Beastmaster_Menagerie</li>
     </prerequisites>
@@ -806,9 +834,9 @@
     <kind>Notable</kind>
     <x>5</x>
     <y>5</y>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Beastmaster_Menagerie</li>
     </prerequisites>
@@ -831,9 +859,9 @@
     <kind>Keystone</kind>
     <x>2</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Beastmaster_Hunter</li>
       <li>AA_Node_Beastmaster_Howl</li>
@@ -865,9 +893,9 @@
     <kind>Keystone</kind>
     <x>4</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Beastmaster_Hunter</li>
       <li>AA_Node_Beastmaster_Howl</li>
@@ -888,9 +916,9 @@
     <kind>Ultimate</kind>
     <x>3</x>
     <y>7</y>
-    <requiredLevel>40</requiredLevel>
+    <requiredLevel>25</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>18</requiredAttributeValue>
+    <requiredAttributeValue>16</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Beastmaster_PrimalPack</li>
       <li>AA_Node_Beastmaster_KingOfBeasts</li>
@@ -898,12 +926,26 @@
     <unlockSpell>AA_Spell_ThrumboCall</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Beastmaster_AlphasCall</defName>
+    <tree>AA_Class_Beastmaster</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>2</y>
+    <requiredLevel>10</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Beastmaster_FeralCommand</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_AlphasCall</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_VerdantWarden_HealingGrove</defName>
     <tree>AA_Class_VerdantWarden</tree>
     <kind>Spell</kind>
     <x>2</x>
     <y>0</y>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <unlockSpell>AA_Spell_HealingGrove</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
@@ -914,7 +956,7 @@
     <x>4</x>
     <y>0</y>
     <maxRank>3</maxRank>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <statOffsetsPerRank>
       <AA_WardMax>8</AA_WardMax>
       <ArmorRating_Sharp>0.03</ArmorRating_Sharp>
@@ -927,7 +969,7 @@
     <kind>Spell</kind>
     <x>1</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_VerdantWarden_HealingGrove</li>
     </prerequisites>
@@ -941,7 +983,7 @@
     <x>3</x>
     <y>1</y>
     <maxRank>3</maxRank>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_VerdantWarden_HealingGrove</li>
       <li>AA_Node_VerdantWarden_Deeproots</li>
@@ -957,7 +999,7 @@
     <kind>Spell</kind>
     <x>5</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_VerdantWarden_Deeproots</li>
     </prerequisites>
@@ -971,7 +1013,7 @@
     <x>1</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -996,7 +1038,7 @@
     <x>3</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1021,7 +1063,7 @@
     <x>5</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1044,9 +1086,9 @@
     <kind>Spell</kind>
     <x>2</x>
     <y>3</y>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_VerdantWarden_Briar</li>
       <li>AA_Node_VerdantWarden_Grovetender</li>
@@ -1061,9 +1103,9 @@
     <x>4</x>
     <y>3</y>
     <maxRank>2</maxRank>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_VerdantWarden_Grovetender</li>
       <li>AA_Node_VerdantWarden_Sporecap</li>
@@ -1083,9 +1125,9 @@
     <kind>Notable</kind>
     <x>3</x>
     <y>4</y>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>14</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>12</requiredAttributeValue>
+    <requiredAttributeValue>10</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_VerdantWarden_NaturesGrasp</li>
       <li>AA_Node_VerdantWarden_Heartwood</li>
@@ -1115,9 +1157,9 @@
     <x>1</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_VerdantWarden_Sentinel</li>
     </prerequisites>
@@ -1134,9 +1176,9 @@
     <x>5</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_VerdantWarden_Sentinel</li>
     </prerequisites>
@@ -1154,9 +1196,9 @@
     <kind>Keystone</kind>
     <x>2</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_VerdantWarden_Evergreen</li>
       <li>AA_Node_VerdantWarden_Pollinate</li>
@@ -1183,9 +1225,9 @@
     <kind>Keystone</kind>
     <x>4</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_VerdantWarden_Evergreen</li>
       <li>AA_Node_VerdantWarden_Pollinate</li>
@@ -1209,9 +1251,9 @@
     <kind>Ultimate</kind>
     <x>3</x>
     <y>7</y>
-    <requiredLevel>40</requiredLevel>
+    <requiredLevel>25</requiredLevel>
     <requiredAttribute>AA_Focus</requiredAttribute>
-    <requiredAttributeValue>18</requiredAttributeValue>
+    <requiredAttributeValue>16</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_VerdantWarden_Bastion</li>
       <li>AA_Node_VerdantWarden_Gardener</li>
@@ -1219,12 +1261,26 @@
     <unlockSpell>AA_Spell_WorldTree</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_VerdantWarden_VerdantSurge</defName>
+    <tree>AA_Class_VerdantWarden</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>2</y>
+    <requiredLevel>10</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_VerdantWarden_SporeCloud</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_VerdantSurge</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Shapeshifter_BearForm</defName>
     <tree>AA_Class_Shapeshifter</tree>
     <kind>Spell</kind>
     <x>2</x>
     <y>0</y>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <unlockSpell>AA_Spell_BearForm</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
@@ -1235,7 +1291,7 @@
     <x>4</x>
     <y>0</y>
     <maxRank>3</maxRank>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <statOffsetsPerRank>
       <ArmorRating_Sharp>0.04</ArmorRating_Sharp>
       <ArmorRating_Blunt>0.04</ArmorRating_Blunt>
@@ -1248,7 +1304,7 @@
     <kind>Spell</kind>
     <x>1</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Shapeshifter_BearForm</li>
     </prerequisites>
@@ -1262,7 +1318,7 @@
     <x>3</x>
     <y>1</y>
     <maxRank>3</maxRank>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Shapeshifter_BearForm</li>
       <li>AA_Node_Shapeshifter_Hide</li>
@@ -1278,7 +1334,7 @@
     <kind>Spell</kind>
     <x>5</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Shapeshifter_Hide</li>
     </prerequisites>
@@ -1292,7 +1348,7 @@
     <x>1</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1317,7 +1373,7 @@
     <x>3</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1341,7 +1397,7 @@
     <x>5</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1364,9 +1420,9 @@
     <kind>Spell</kind>
     <x>2</x>
     <y>3</y>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Shapeshifter_Rend</li>
       <li>AA_Node_Shapeshifter_Instinct</li>
@@ -1381,9 +1437,9 @@
     <x>4</x>
     <y>3</y>
     <maxRank>3</maxRank>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Shapeshifter_Instinct</li>
       <li>AA_Node_Shapeshifter_Lope</li>
@@ -1402,9 +1458,9 @@
     <kind>Notable</kind>
     <x>3</x>
     <y>4</y>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>14</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>12</requiredAttributeValue>
+    <requiredAttributeValue>10</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Shapeshifter_PrimalRoar</li>
       <li>AA_Node_Shapeshifter_Bloodlust</li>
@@ -1430,9 +1486,9 @@
     <x>1</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Shapeshifter_Apex</li>
     </prerequisites>
@@ -1450,9 +1506,9 @@
     <x>5</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Shapeshifter_Apex</li>
     </prerequisites>
@@ -1470,9 +1526,9 @@
     <kind>Keystone</kind>
     <x>2</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Shapeshifter_Ironfur</li>
       <li>AA_Node_Shapeshifter_Swiftclaw</li>
@@ -1502,9 +1558,9 @@
     <kind>Keystone</kind>
     <x>4</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Shapeshifter_Ironfur</li>
       <li>AA_Node_Shapeshifter_Swiftclaw</li>
@@ -1530,14 +1586,28 @@
     <kind>Ultimate</kind>
     <x>3</x>
     <y>7</y>
-    <requiredLevel>40</requiredLevel>
+    <requiredLevel>25</requiredLevel>
     <requiredAttribute>AA_Resilience</requiredAttribute>
-    <requiredAttributeValue>18</requiredAttributeValue>
+    <requiredAttributeValue>16</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Shapeshifter_Ursoc</li>
       <li>AA_Node_Shapeshifter_Fenris</li>
     </prerequisites>
     <unlockSpell>AA_Spell_ThrumboAvatar</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Shapeshifter_Pounce</defName>
+    <tree>AA_Class_Shapeshifter</tree>
+    <kind>Spell</kind>
+    <x>0</x>
+    <y>2</y>
+    <requiredLevel>10</requiredLevel>
+    <requiredAttribute>AA_Resilience</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Shapeshifter_Maul</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_Pounce</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_ThornVolley</defName>
@@ -2299,6 +2369,208 @@
     <warmupStartSound>AA_Charge</warmupStartSound>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_Earthquake</defName>
+    <label>earthquake</label>
+    <description>Stamp, and the earth answers. The ground heaves around you, knocking enemies flat and battering them with stone.</description>
+    <iconPath>ArcanumAscendant/Spells/Earthquake</iconPath>
+    <cooldownTicksRange>2400</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>0</range>
+      <warmupTime>1</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <drawAimPie>false</drawAimPie>
+      <targetable>false</targetable>
+      <nonInterruptingSelfCast>false</nonInterruptingSelfCast>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>60</manaCost>
+        <tags>
+          <li>Nature</li>
+        </tags>
+        <tier>3</tier>
+        <role>Control</role>
+        <autocastByDefault>true</autocastByDefault>
+        <aiMinEnemiesInRadius>3</aiMinEnemiesInRadius>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Nova</delivery>
+        <affects>Enemies</affects>
+        <radius>7</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Damage">
+            <amount>20</amount>
+            <damageDef>Blunt</damageDef>
+            <falloff>true</falloff>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Stun">
+            <ticks>150</ticks>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Knockback">
+            <distance>2</distance>
+          </li>
+        </effects>
+        <color>(0.498, 0.878, 0.353, 1)</color>
+        <color2>(0.894, 1, 0.784, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Petal</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.1</scale>
+            <scaleEnd>1.1</scaleEnd>
+            <ticks>40</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Leaf</fleck>
+            <count>10</count>
+            <speed>2</speed>
+            <scale>0.6</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Smoke</type>
+            <count>10</count>
+            <scale>2</scale>
+            <speed>1</speed>
+          </li>
+          <li>
+            <type>Flash</type>
+            <scale>3</scale>
+            <scaleEnd>3.6</scaleEnd>
+            <ticks>12</ticks>
+            <color>(0.784, 0.659, 0.471, 1)</color>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Nature</castSound>
+        <impactSound>AA_Impact_Nature</impactSound>
+        <shake>3</shake>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+    <targetRequired>false</targetRequired>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_NaturesRenewal</defName>
+    <label>nature's renewal</label>
+    <description>Pour the patient strength of the forest into an ally: heals, cures an age-related or chronic condition and fades two scars with each casting.</description>
+    <iconPath>ArcanumAscendant/Spells/NaturesRenewal</iconPath>
+    <cooldownTicksRange>7500</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>6</range>
+      <warmupTime>4</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>50</manaCost>
+        <tags>
+          <li>Nature</li>
+          <li>Healing</li>
+        </tags>
+        <tier>1</tier>
+        <role>Heal</role>
+        <aiHealthThreshold>0</aiHealthThreshold>
+        <aiAllowedUndrafted>true</aiAllowedUndrafted>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Heal">
+            <amount>30</amount>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Restore">
+            <chronic>1</chronic>
+            <scars>2</scars>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Cleanse" />
+        </effects>
+        <color>(0.498, 0.878, 0.353, 1)</color>
+        <color2>(0.894, 1, 0.784, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Petal</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Pillar</type>
+            <scale>1.2</scale>
+            <ticks>50</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Leaf</fleck>
+            <count>20</count>
+            <speed>1.5</speed>
+            <scale>0.6</scale>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Petal</fleck>
+            <count>12</count>
+            <speed>1.5</speed>
+            <scale>0.5</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Nature</castSound>
+        <impactSound>AA_Impact_Nature</impactSound>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_SummonBear</defName>
     <label>summon bear</label>
     <description>A grizzly bear lumbers out of the wilderness to fight for you for two minutes.</description>
@@ -2765,6 +3037,98 @@
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_AlphasCall</defName>
+    <label>alpha's call</label>
+    <description>Let out the call of the pack leader. Every animal in a wide area that isn't too wild comes to your side for good.</description>
+    <iconPath>ArcanumAscendant/Spells/AlphasCall</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>0</range>
+      <warmupTime>3</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <drawAimPie>false</drawAimPie>
+      <targetable>false</targetable>
+      <nonInterruptingSelfCast>false</nonInterruptingSelfCast>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>100</manaCost>
+        <tags>
+          <li>Nature</li>
+          <li>Beast</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Nova</delivery>
+        <affects>Enemies</affects>
+        <radius>12</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Recruit">
+            <animalsOnly>true</animalsOnly>
+            <maxWildness>0.85</maxWildness>
+            <affects>AllButSelf</affects>
+          </li>
+        </effects>
+        <color>(0.847, 0.627, 0.314, 1)</color>
+        <color2>(1, 0.941, 0.816, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Mote</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.05</scale>
+            <scaleEnd>1</scaleEnd>
+            <ticks>50</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Leaf</fleck>
+            <count>20</count>
+            <speed>2.5</speed>
+            <scale>0.6</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Flash</type>
+            <scale>3</scale>
+            <scaleEnd>3.6</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Nature</castSound>
+        <impactSound>AA_Impact_Nature</impactSound>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+    <targetRequired>false</targetRequired>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_ThornWall</defName>
@@ -3263,6 +3627,107 @@
     <warmupStartSound>AA_Charge</warmupStartSound>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_VerdantSurge</defName>
+    <label>verdant surge</label>
+    <description>A wave of green life rolls over your allies, healing them, purging poisons and fading a scar from each.</description>
+    <iconPath>ArcanumAscendant/Spells/VerdantSurge</iconPath>
+    <cooldownTicksRange>3600</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>20</range>
+      <warmupTime>1.5</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>55</manaCost>
+        <tags>
+          <li>Nature</li>
+          <li>Healing</li>
+        </tags>
+        <tier>1</tier>
+        <role>Heal</role>
+        <autocastByDefault>true</autocastByDefault>
+        <aiHealthThreshold>0.6</aiHealthThreshold>
+        <aiAllowedUndrafted>true</aiAllowedUndrafted>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <radius>4.5</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Heal">
+            <amount>30</amount>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Cleanse" />
+          <li Class="ArcanumAscendant.Effect_Restore">
+            <scars>1</scars>
+          </li>
+        </effects>
+        <color>(0.247, 0.847, 0.565, 1)</color>
+        <color2>(0.816, 1, 0.91, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Leaf</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.2</scale>
+            <scaleEnd>1</scaleEnd>
+            <ticks>34</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Leaf</fleck>
+            <count>24</count>
+            <speed>2</speed>
+            <scale>0.6</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Petal</fleck>
+            <count>12</count>
+            <speed>1.5</speed>
+            <scale>0.5</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Nature</castSound>
+        <impactSound>AA_Impact_Nature</impactSound>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_BearForm</defName>
     <label>bear form</label>
     <description>Become a great bear for a minute: thick hide, crushing blows.</description>
@@ -3741,6 +4206,106 @@
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
     <targetRequired>false</targetRequired>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_Pounce</defName>
+    <label>pounce</label>
+    <description>Leap like a great cat onto a distant enemy, mauling them and knocking them off their feet.</description>
+    <iconPath>ArcanumAscendant/Spells/Pounce</iconPath>
+    <cooldownTicksRange>600</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>14</range>
+      <warmupTime>0.2</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>22</manaCost>
+        <tags>
+          <li>Nature</li>
+          <li>Beast</li>
+        </tags>
+        <tier>2</tier>
+        <role>Attack</role>
+        <autocastByDefault>true</autocastByDefault>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Teleport">
+            <mode>CasterToTarget</mode>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Damage">
+            <amount>26</amount>
+            <damageDef>Scratch</damageDef>
+            <armorPen>0.3</armorPen>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Stun">
+            <ticks>90</ticks>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Knockback">
+            <distance>2</distance>
+          </li>
+        </effects>
+        <color>(0.784, 0.541, 0.353, 1)</color>
+        <color2>(1, 0.878, 0.753, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Leaf</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>2</scale>
+            <scaleEnd>2.4</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Blood</fleck>
+            <count>10</count>
+            <speed>3</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Smoke</type>
+            <count>2</count>
+            <scale>0.8</scale>
+            <speed>1</speed>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Blood</castSound>
+        <impactSound>AA_Impact_Blood</impactSound>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
   </AbilityDef>
   <HediffDef>
     <defName>AA_Feral</defName>

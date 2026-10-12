@@ -64,8 +64,8 @@
   <ResearchProjectDef>
     <defName>AA_Arcanology</defName>
     <label>arcanology</label>
-    <description>Study the weave of magic that runs beneath the rim. Unlocks the arcane lectern, grimoires of awakening and mana draughts.</description>
-    <baseCost>300</baseCost>
+    <description>Study the weave of magic that runs beneath the rim. Unlocks the arcane lectern, grimoires of awakening, sigils of the Second Circle and mana draughts.\n\nMagic is fuelled by arcane crystals: mine them from ley crystal veins in mountains, drill for them, buy them from exotic traders, or take them from fallen enemy mages.</description>
+    <baseCost>600</baseCost>
     <techLevel>Neolithic</techLevel>
     <tab>AA_ArcaneResearch</tab>
     <researchViewX>0</researchViewX>
@@ -75,8 +75,8 @@
   <ResearchProjectDef>
     <defName>AA_HigherArcana</defName>
     <label>higher arcana</label>
-    <description>Master the theory of arcane paths. Unlocks the tome of unmaking, which lets a mage relearn their skill tree, and greater mana draughts.</description>
-    <baseCost>1200</baseCost>
+    <description>Master the theory of arcane paths. Unlocks sigils of the Third Circle, the tome of unmaking (which lets a mage relearn their skill tree), and greater mana draughts.</description>
+    <baseCost>1500</baseCost>
     <techLevel>Medieval</techLevel>
     <tab>AA_ArcaneResearch</tab>
     <prerequisites>
@@ -86,11 +86,39 @@
     <researchViewY>0</researchViewY>
   </ResearchProjectDef>
 
+  <ResearchProjectDef>
+    <defName>AA_ArcaneMastery</defName>
+    <label>arcane mastery</label>
+    <description>Bind a mage's soul to the deeper currents of the weave. Unlocks sigils of the Fourth Circle.</description>
+    <baseCost>3000</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>AA_ArcaneResearch</tab>
+    <prerequisites>
+      <li>AA_HigherArcana</li>
+    </prerequisites>
+    <researchViewX>2</researchViewX>
+    <researchViewY>0</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>AA_Archmagic</defName>
+    <label>archmagic</label>
+    <description>The last secrets of the weave: how a mortal becomes an archmage. Unlocks sigils of the Fifth Circle.</description>
+    <baseCost>5000</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>AA_ArcaneResearch</tab>
+    <prerequisites>
+      <li>AA_ArcaneMastery</li>
+    </prerequisites>
+    <researchViewX>3</researchViewX>
+    <researchViewY>0</researchViewY>
+  </ResearchProjectDef>
+
   <!-- ===================== Workbench ===================== -->
   <ThingDef>
     <defName>AA_ArcaneAltar</defName>
     <label>arcane lectern</label>
-    <description>A lectern inscribed with glowing runes. Mages and scholars use it to scribe grimoires, tomes and mana draughts.</description>
+    <description>A lectern inscribed with glowing runes. Scholars use it to scribe grimoires, sigils, tomes and mana draughts.\n\nPawns attuning to the arcane study here until their magic awakens, and mages study here to gain experience. They do both in their free time, or you can order them to study.</description>
     <thingClass>Building_WorkTable</thingClass>
     <category>Building</category>
     <graphicData>
@@ -133,6 +161,7 @@
         <glowRadius>4</glowRadius>
         <glowColor>(170,120,255,0)</glowColor>
       </li>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneLectern" />
     </comps>
   </ThingDef>
 
@@ -168,7 +197,7 @@
   <ThingDef ParentName="AA_ArcaneItemBase">
     <defName>AA_Grimoire</defName>
     <label>grimoire of awakening</label>
-    <description>A heavy book bound in silver and runes. Reading it awakens the reader's latent magic and lets them choose an arcane class.\n\n(If "free awakening" is enabled in the mod settings, colonists can also awaken without one.)</description>
+    <description>A heavy book bound in silver and runes, its pages laced with powdered arcane crystal. Reading it begins the reader's attunement to the arcane. They must then study at an arcane lectern (about 16 hours for an average person; psychic sensitivity and intellect speed it up) until their magic awakens and they choose a class.\n\nPsychically deaf people cannot attune.</description>
     <graphicData>
       <texPath>ArcanumAscendant/Items/Grimoire</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -336,8 +365,12 @@
     <label>scribe grimoire of awakening</label>
     <description>Scribe a grimoire of awakening.</description>
     <jobString>Scribing a grimoire.</jobString>
-    <workAmount>4000</workAmount>
+    <workAmount>6000</workAmount>
     <ingredients>
+      <li>
+        <filter><thingDefs><li>AA_ArcaneCrystal</li></thingDefs></filter>
+        <count>8</count>
+      </li>
       <li>
         <filter><thingDefs><li>Silver</li></thingDefs></filter>
         <count>60</count>
@@ -349,6 +382,7 @@
     </ingredients>
     <fixedIngredientFilter>
       <thingDefs>
+        <li>AA_ArcaneCrystal</li>
         <li>Silver</li>
         <li>Cloth</li>
       </thingDefs>
@@ -357,7 +391,7 @@
       <AA_Grimoire>1</AA_Grimoire>
     </products>
     <skillRequirements>
-      <Intellectual>4</Intellectual>
+      <Intellectual>6</Intellectual>
     </skillRequirements>
     <researchPrerequisite>AA_Arcanology</researchPrerequisite>
   </RecipeDef>

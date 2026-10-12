@@ -49,3 +49,57 @@ def speak_dead(xp=2000, **kw):
 
 def dispel(**kw):
     return O("Effect_Dispel", **kw)
+
+
+# ------------------------------------------------------------------------------------------------
+# Newer mechanics
+# ------------------------------------------------------------------------------------------------
+
+def agesh(years, **kw):
+    """Shift biological age. Negative years can also cure age conditions, fade scars and regrow parts; positive years can
+    inflict old-age ailments and kill past lethalAgeFactor x life expectancy."""
+    return O("Effect_AgeShift", years=float(years), **kw)
+
+
+def restore(chronic=0, scars=0, regrowParts=0, addictions=False, **kw):
+    return O("Effect_Restore", chronic=chronic or None, scars=scars or None, regrowParts=regrowParts or None, addictions=addictions or None, **kw)
+
+
+def restore_items(repair=1.0, **kw):
+    return O("Effect_RestoreItems", repairFraction=float(repair), **kw)
+
+
+def improve_quality(steps=1, maxQuality="Legendary", **kw):
+    return O("Effect_ImproveQuality", steps=steps, maxQuality=maxQuality, **kw)
+
+
+def midas(threshold=0.5, gold=40.0, damage=30.0, gilded="AA_Gilded", **kw):
+    return O("Effect_Midas", healthThreshold=float(threshold), goldPerBodySize=float(gold), damage=float(damage), gildedHediff=gilded, **kw)
+
+
+def meteorite(mineable=None, **kw):
+    return O("Effect_CallMeteorite", mineable=mineable, **kw)
+
+
+def devour(heal=25.0, mana=20.0, maxCorpses=6, **kw):
+    return O("Effect_ConsumeCorpses", healPerBodySize=float(heal), manaPerBodySize=float(mana), maxCorpses=maxCorpses, **kw)
+
+
+def steal_skill(xp=4000, **kw):
+    return O("Effect_StealSkill", xp=float(xp), **kw)
+
+
+def shell(factor=1.0, reflect=0.0, color="#ffffff", reflectDef=None):
+    """Hediff comp: multiplies incoming damage and optionally reflects part of it."""
+    return O("ArcanumAscendant.HediffCompProperties_DamageShell", damageFactor=float(factor), reflectFraction=float(reflect) if reflect else None,
+             reflectDamageDef=reflectDef, color=rgb(color) + (1.0,))
+
+
+def death_ward(color, labelKey=None):
+    """Hediff comp: if the bearer dies while it lasts, they come back to life."""
+    return O("ArcanumAscendant.HediffCompProperties_DeathWard", color=rgb(color) + (1.0,), labelKey=labelKey)
+
+
+def raise_on_death(duration=DAY, undead=None):
+    """Hediff comp: if the bearer dies, they rise as the caster's undead."""
+    return O("ArcanumAscendant.HediffCompProperties_RaiseOnDeath", durationTicks=int(duration), undeadHediff=undead)

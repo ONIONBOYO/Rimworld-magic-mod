@@ -12,6 +12,7 @@ from arcgen import write_defs, write_json, node_xml  # noqa: E402
 import core_content  # noqa: E402
 import things  # noqa: E402
 import sounds_flecks  # noqa: E402
+from classes import expansion  # noqa: E402
 
 CLASS_MODULES = [
     "c_pyromancer", "c_tempest", "c_necromancer", "c_paladin", "c_chronomancer",
@@ -69,6 +70,7 @@ def main():
             raise
         things.THING_ICONS.clear()
         root, subs, extra = mod.build()
+        expansion.extend(modname, root, subs, extra)
         trees = [root] + subs
         compendium.append(trees)
         spells_by_id = {}
@@ -162,6 +164,14 @@ def check_unique_def_names():
                 seen[key] = os.path.relpath(path, ROOT)
 
 
+SMALL_WORDS = {"of", "the", "a", "an", "and", "in", "on", "to", "for"}
+
+
+def title(label):
+    words = label.split(" ")
+    return " ".join(w if (i and w in SMALL_WORDS) else w[:1].upper() + w[1:] for i, w in enumerate(words))
+
+
 def write_compendium(all_trees):
     ATTR_NAMES = {"POT": "Potency", "FOC": "Focus", "CEL": "Celerity", "RES": "Resilience", "ATT": "Attunement"}
     lines = ["# Arcanum Ascendant - Compendium", "",
@@ -172,7 +182,7 @@ def write_compendium(all_trees):
     lines += ["## Contents", ""]
     for trees in all_trees:
         r = trees[0]
-        lines.append("- [%s](#%s): %s" % (r.label.title(), r.label.replace(" ", "-"), ", ".join(t.label.title() for t in trees[1:])))
+        lines.append("- [%s](#%s): %s" % (title(r.label), r.label.replace(" ", "-"), ", ".join(title(t.label) for t in trees[1:])))
     lines.append("")
 
     def spell_table(t):
@@ -185,26 +195,26 @@ def write_compendium(all_trees):
                 cds = "%g h" % round(ticks / 2500, 1)
             else:
                 cds = "%g day%s" % (round(ticks / 60000, 1), "" if round(ticks / 60000, 1) == 1 else "s")
-            name = sp.label.title() + (" (ultimate)" if sp.ultimate else "") + (" *" if sp.quirky else "")
+            name = title(sp.label) + (" (ultimate)" if sp.ultimate else "") + (" *" if sp.quirky else "")
             out.append("| %s | %g | %s | %s | %s |" % (name, sp.mana, cds, sp.role.lower(), sp.desc.replace("|", "/")))
         return out
 
     for trees in all_trees:
         r = trees[0]
-        lines += ["## %s" % r.label.title(), "", "*%s*" % r.tagline, "", r.desc, "",
+        lines += ["## %s" % title(r.label), "", "*%s*" % r.tagline, "", r.desc, "",
                   "**Playstyle:** " + r.playstyle, "", "**Key attributes:** %s, %s" % (ATTR_NAMES[r.primary], ATTR_NAMES[r.secondary]), "",
-                  "### %s spells" % r.label.title(), ""]
+                  "### %s spells" % title(r.label), ""]
         lines += spell_table(r)
         ks = [n for n in r.nodes if n.kind == "Keystone"]
         if ks:
-            lines += ["", "**Keystones:** " + "; ".join("*%s* - %s" % (n.label.title(), n.desc or "") for n in ks)]
+            lines += ["", "**Keystones:** " + "; ".join("*%s* - %s" % (title(n.label), n.desc or "") for n in ks)]
         lines.append("")
         for t in trees[1:]:
-            lines += ["### %s (subclass)" % t.label.title(), "", "*%s*" % t.tagline, "", t.desc, "", "**Playstyle:** " + t.playstyle, ""]
+            lines += ["### %s (subclass)" % title(t.label), "", "*%s*" % t.tagline, "", t.desc, "", "**Playstyle:** " + t.playstyle, ""]
             lines += spell_table(t)
             ks = [n for n in t.nodes if n.kind == "Keystone"]
             if ks:
-                lines += ["", "**Keystones:** " + "; ".join("*%s* - %s" % (n.label.title(), n.desc or "") for n in ks)]
+                lines += ["", "**Keystones:** " + "; ".join("*%s* - %s" % (title(n.label), n.desc or "") for n in ks)]
             lines.append("")
     lines += ["", "Spells marked * are utility or quirky spells."]
     os.makedirs(os.path.join(ROOT, "docs"), exist_ok=True)

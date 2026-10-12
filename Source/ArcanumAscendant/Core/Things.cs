@@ -298,7 +298,10 @@ namespace ArcanumAscendant
         public float impactHediffSeverity = 0.5f;
     }
 
-    /// <summary>Reading a grimoire awakens a pawn's magic and lets the player pick a class.</summary>
+    /// <summary>
+    /// Reading a grimoire begins attunement: the reader must then study at an arcane lectern until their magic wakes.
+    /// With "free awakening" on, it awakens them immediately instead.
+    /// </summary>
     public class CompUseEffect_Awaken : CompUseEffect
     {
         public override void DoEffect(Pawn usedBy)
@@ -306,10 +309,21 @@ namespace ArcanumAscendant
             base.DoEffect(usedBy);
             var c = usedBy.TryGetComp<CompArcane>();
             if (c == null) return;
-            if (usedBy.Faction == Faction.OfPlayer)
-                Find.WindowStack.Add(new Dialog_ChooseClass(c, mustChoose: true));
-            else
+            if (usedBy.Faction != Faction.OfPlayer)
+            {
                 c.Awaken(DefDatabase<ArcaneClassDef>.AllDefs.Where(d => !d.IsSubclass).RandomElement());
+                return;
+            }
+            if (ArcanumMod.Settings.freeAwakening)
+            {
+                Find.WindowStack.Add(new Dialog_ChooseClass(c, mustChoose: true));
+                return;
+            }
+            c.StartAttunement();
+            if (usedBy.Spawned) ArcaneFx.LevelUpBurst(usedBy, new Color(0.75f, 0.55f, 1f), big: false);
+            Find.LetterStack.ReceiveLetter("AA_AttunementBegunLabel".Translate(usedBy.LabelShort, usedBy.Named("PAWN")),
+                "AA_AttunementBegunText".Translate(usedBy.LabelShort, CompArcane.AttunementHours.ToString("F0"), CompArcane.StudyFactor(usedBy).ToStringPercent(), usedBy.Named("PAWN")),
+                LetterDefOf.PositiveEvent, usedBy);
         }
 
         public override AcceptanceReport CanBeUsedBy(Pawn p)
@@ -317,6 +331,9 @@ namespace ArcanumAscendant
             var c = p.TryGetComp<CompArcane>();
             if (c == null || !p.RaceProps.Humanlike) return "AA_CannotAwaken".Translate();
             if (c.IsMage) return "AA_AlreadyAwakened".Translate();
+            if (c.attuning || c.awakenReady) return "AA_AlreadyAttuning".Translate(p.LabelShort, p.Named("PAWN"));
+            var ok = CompArcane.CanAttune(p);
+            if (!ok.Accepted) return ok;
             return base.CanBeUsedBy(p);
         }
     }

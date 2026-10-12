@@ -17,7 +17,7 @@
     </schoolTags>
     <primaryAttribute>AA_Potency</primaryAttribute>
     <secondaryAttribute>AA_Celerity</secondaryAttribute>
-    <subclassUnlockLevel>10</subclassUnlockLevel>
+    <subclassUnlockLevel>7</subclassUnlockLevel>
     <innateStatOffsets>
       <AA_CastSpeed>0.05</AA_CastSpeed>
     </innateStatOffsets>
@@ -177,7 +177,7 @@
     <x>0</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>3</requiredLevel>
+    <requiredLevel>2</requiredLevel>
     <prerequisites>
       <li>AA_Node_Tempest_ChainLightning</li>
     </prerequisites>
@@ -201,7 +201,7 @@
     <kind>Notable</kind>
     <x>2</x>
     <y>2</y>
-    <requiredLevel>3</requiredLevel>
+    <requiredLevel>2</requiredLevel>
     <prerequisites>
       <li>AA_Node_Tempest_ChainLightning</li>
       <li>AA_Node_Tempest_FrostLance</li>
@@ -232,7 +232,7 @@
     <x>4</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>3</requiredLevel>
+    <requiredLevel>2</requiredLevel>
     <prerequisites>
       <li>AA_Node_Tempest_FrostLance</li>
     </prerequisites>
@@ -253,7 +253,7 @@
     <kind>Spell</kind>
     <x>6</x>
     <y>2</y>
-    <requiredLevel>3</requiredLevel>
+    <requiredLevel>2</requiredLevel>
     <prerequisites>
       <li>AA_Node_Tempest_GaleBurst</li>
     </prerequisites>
@@ -265,9 +265,9 @@
     <kind>Spell</kind>
     <x>3</x>
     <y>3</y>
-    <requiredLevel>6</requiredLevel>
+    <requiredLevel>3</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>6</requiredAttributeValue>
+    <requiredAttributeValue>5</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Tempest_Overcurrent</li>
       <li>AA_Node_Tempest_Brittle</li>
@@ -282,9 +282,9 @@
     <x>5</x>
     <y>3</y>
     <maxRank>2</maxRank>
-    <requiredLevel>6</requiredLevel>
+    <requiredLevel>3</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>6</requiredAttributeValue>
+    <requiredAttributeValue>5</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Tempest_GaleBurst</li>
       <li>AA_Node_Tempest_FrostArmor</li>
@@ -309,9 +309,9 @@
     <x>1</x>
     <y>3</y>
     <maxRank>3</maxRank>
-    <requiredLevel>6</requiredLevel>
+    <requiredLevel>3</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>6</requiredAttributeValue>
+    <requiredAttributeValue>5</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Tempest_Conductor</li>
       <li>AA_Node_Tempest_Overcurrent</li>
@@ -330,7 +330,7 @@
     <kind>Spell</kind>
     <x>6</x>
     <y>4</y>
-    <requiredLevel>9</requiredLevel>
+    <requiredLevel>5</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
     <requiredAttributeValue>6</requiredAttributeValue>
     <prerequisites>
@@ -346,7 +346,7 @@
     <x>4</x>
     <y>4</y>
     <maxRank>2</maxRank>
-    <requiredLevel>9</requiredLevel>
+    <requiredLevel>5</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
     <requiredAttributeValue>6</requiredAttributeValue>
     <prerequisites>
@@ -375,7 +375,7 @@
     <x>2</x>
     <y>4</y>
     <maxRank>3</maxRank>
-    <requiredLevel>9</requiredLevel>
+    <requiredLevel>5</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
     <requiredAttributeValue>6</requiredAttributeValue>
     <prerequisites>
@@ -396,7 +396,7 @@
     <kind>Notable</kind>
     <x>0</x>
     <y>4</y>
-    <requiredLevel>9</requiredLevel>
+    <requiredLevel>5</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
     <requiredAttributeValue>6</requiredAttributeValue>
     <prerequisites>
@@ -421,9 +421,9 @@
     <kind>Notable</kind>
     <x>5</x>
     <y>5</y>
-    <requiredLevel>13</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Tempest_Permafrost</li>
       <li>AA_Node_Tempest_Rainmaker</li>
@@ -447,9 +447,9 @@
     <x>1</x>
     <y>5</y>
     <maxRank>2</maxRank>
-    <requiredLevel>13</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Tempest_Stormheart</li>
       <li>AA_Node_Tempest_Lightningrod</li>
@@ -473,9 +473,9 @@
     <x>3</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>13</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Tempest_Stormheart</li>
       <li>AA_Node_Tempest_Permafrost</li>
@@ -492,9 +492,9 @@
     <kind>Spell</kind>
     <x>2</x>
     <y>6</y>
-    <requiredLevel>17</requiredLevel>
+    <requiredLevel>9</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Tempest_SuperConductor</li>
       <li>AA_Node_Tempest_WindRider</li>
@@ -509,9 +509,9 @@
     <kind>Notable</kind>
     <x>4</x>
     <y>6</y>
-    <requiredLevel>17</requiredLevel>
+    <requiredLevel>9</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Tempest_WindRider</li>
       <li>AA_Node_Tempest_ColdSnap</li>
@@ -535,9 +535,9 @@
     <kind>Keystone</kind>
     <x>2</x>
     <y>7</y>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>11</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Tempest_Thunderstorm</li>
     </prerequisites>
@@ -565,9 +565,9 @@
     <kind>Keystone</kind>
     <x>4</x>
     <y>7</y>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>11</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Tempest_Thunderstorm</li>
       <li>AA_Node_Tempest_Shatterpoint</li>
@@ -611,9 +611,9 @@
     <kind>Keystone</kind>
     <x>3</x>
     <y>8</y>
-    <requiredLevel>30</requiredLevel>
+    <requiredLevel>15</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>18</requiredAttributeValue>
+    <requiredAttributeValue>13</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Tempest_Maelstrom</li>
       <li>AA_Node_Tempest_HeartOfWinter</li>
@@ -635,12 +635,40 @@
     <iconPath>ArcanumAscendant/Nodes/Tempest_StormSovereign</iconPath>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Tempest_FrostNova</defName>
+    <tree>AA_Class_Tempest</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>3</y>
+    <requiredLevel>3</requiredLevel>
+    <requiredAttribute>AA_Potency</requiredAttribute>
+    <requiredAttributeValue>5</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Tempest_FrostArmor</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_FrostNova</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Tempest_StormLance</defName>
+    <tree>AA_Class_Tempest</tree>
+    <kind>Spell</kind>
+    <x>0</x>
+    <y>5</y>
+    <requiredLevel>7</requiredLevel>
+    <requiredAttribute>AA_Potency</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Tempest_Lightningrod</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_StormLance</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Stormcaller_BallLightning</defName>
     <tree>AA_Class_Stormcaller</tree>
     <kind>Spell</kind>
     <x>2</x>
     <y>0</y>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <unlockSpell>AA_Spell_BallLightning</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
@@ -651,7 +679,7 @@
     <x>4</x>
     <y>0</y>
     <maxRank>3</maxRank>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <spellMods>
       <li>
         <tag>Lightning</tag>
@@ -666,7 +694,7 @@
     <kind>Spell</kind>
     <x>1</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Stormcaller_BallLightning</li>
     </prerequisites>
@@ -680,7 +708,7 @@
     <x>3</x>
     <y>1</y>
     <maxRank>3</maxRank>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Stormcaller_BallLightning</li>
       <li>AA_Node_Stormcaller_HighVoltage</li>
@@ -699,7 +727,7 @@
     <kind>Spell</kind>
     <x>5</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Stormcaller_HighVoltage</li>
     </prerequisites>
@@ -713,7 +741,7 @@
     <x>1</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -736,7 +764,7 @@
     <kind>Spell</kind>
     <x>3</x>
     <y>2</y>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -752,7 +780,7 @@
     <x>5</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -777,9 +805,9 @@
     <kind>Notable</kind>
     <x>2</x>
     <y>3</y>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Stormcaller_Plasma</li>
       <li>AA_Node_Stormcaller_TeslaCoil</li>
@@ -808,9 +836,9 @@
     <x>4</x>
     <y>3</y>
     <maxRank>2</maxRank>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Stormcaller_TeslaCoil</li>
       <li>AA_Node_Stormcaller_Blackout</li>
@@ -834,9 +862,9 @@
     <x>3</x>
     <y>4</y>
     <maxRank>3</maxRank>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>14</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>12</requiredAttributeValue>
+    <requiredAttributeValue>10</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Stormcaller_ArcFlash</li>
       <li>AA_Node_Stormcaller_GridLink</li>
@@ -858,9 +886,9 @@
     <x>1</x>
     <y>5</y>
     <maxRank>2</maxRank>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Stormcaller_Machinebreaker</li>
     </prerequisites>
@@ -883,9 +911,9 @@
     <x>5</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Stormcaller_Machinebreaker</li>
     </prerequisites>
@@ -903,9 +931,9 @@
     <kind>Keystone</kind>
     <x>2</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Stormcaller_StaticShell</li>
       <li>AA_Node_Stormcaller_Thunderlord</li>
@@ -928,9 +956,9 @@
     <kind>Keystone</kind>
     <x>4</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Stormcaller_StaticShell</li>
       <li>AA_Node_Stormcaller_Thunderlord</li>
@@ -954,9 +982,9 @@
     <kind>Ultimate</kind>
     <x>3</x>
     <y>7</y>
-    <requiredLevel>40</requiredLevel>
+    <requiredLevel>25</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>18</requiredAttributeValue>
+    <requiredAttributeValue>16</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Stormcaller_Ascendant</li>
       <li>AA_Node_Stormcaller_LivingCurrent</li>
@@ -964,12 +992,26 @@
     <unlockSpell>AA_Spell_WrathOfTheSky</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Stormcaller_IonStorm</defName>
+    <tree>AA_Class_Stormcaller</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>4</y>
+    <requiredLevel>14</requiredLevel>
+    <requiredAttribute>AA_Potency</requiredAttribute>
+    <requiredAttributeValue>10</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Stormcaller_GridLink</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_IonStorm</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Frostwarden_FlashFreeze</defName>
     <tree>AA_Class_Frostwarden</tree>
     <kind>Spell</kind>
     <x>2</x>
     <y>0</y>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <unlockSpell>AA_Spell_FlashFreeze</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
@@ -980,7 +1022,7 @@
     <x>4</x>
     <y>0</y>
     <maxRank>3</maxRank>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <spellMods>
       <li>
         <tag>Frost</tag>
@@ -995,7 +1037,7 @@
     <kind>Spell</kind>
     <x>1</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Frostwarden_FlashFreeze</li>
     </prerequisites>
@@ -1009,7 +1051,7 @@
     <x>3</x>
     <y>1</y>
     <maxRank>3</maxRank>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Frostwarden_FlashFreeze</li>
       <li>AA_Node_Frostwarden_Rime</li>
@@ -1026,7 +1068,7 @@
     <kind>Spell</kind>
     <x>5</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Frostwarden_Rime</li>
     </prerequisites>
@@ -1040,7 +1082,7 @@
     <x>1</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1065,7 +1107,7 @@
     <x>3</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1090,7 +1132,7 @@
     <x>5</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1113,9 +1155,9 @@
     <kind>Spell</kind>
     <x>2</x>
     <y>3</y>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Frostwarden_Splinter</li>
       <li>AA_Node_Frostwarden_DeepFreeze</li>
@@ -1131,9 +1173,9 @@
     <x>4</x>
     <y>3</y>
     <maxRank>2</maxRank>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Frostwarden_DeepFreeze</li>
       <li>AA_Node_Frostwarden_Glacier</li>
@@ -1153,9 +1195,9 @@
     <kind>Notable</kind>
     <x>3</x>
     <y>4</y>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>14</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>12</requiredAttributeValue>
+    <requiredAttributeValue>10</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Frostwarden_Cryostasis</li>
       <li>AA_Node_Frostwarden_IceBound</li>
@@ -1179,9 +1221,9 @@
     <x>1</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Frostwarden_FrozenTomb</li>
     </prerequisites>
@@ -1199,9 +1241,9 @@
     <x>5</x>
     <y>5</y>
     <maxRank>2</maxRank>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Frostwarden_FrozenTomb</li>
     </prerequisites>
@@ -1228,9 +1270,9 @@
     <kind>Keystone</kind>
     <x>2</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Frostwarden_Hoarfrost</li>
       <li>AA_Node_Frostwarden_WinterKnight</li>
@@ -1265,9 +1307,9 @@
     <kind>Keystone</kind>
     <x>4</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Frostwarden_Hoarfrost</li>
       <li>AA_Node_Frostwarden_WinterKnight</li>
@@ -1291,9 +1333,9 @@
     <kind>Ultimate</kind>
     <x>3</x>
     <y>7</y>
-    <requiredLevel>40</requiredLevel>
+    <requiredLevel>25</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>18</requiredAttributeValue>
+    <requiredAttributeValue>16</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Frostwarden_Glaciation</li>
       <li>AA_Node_Frostwarden_EternalWinter</li>
@@ -1301,12 +1343,26 @@
     <unlockSpell>AA_Spell_AbsoluteZero</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Frostwarden_GlacialTomb</defName>
+    <tree>AA_Class_Frostwarden</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>3</y>
+    <requiredLevel>12</requiredLevel>
+    <requiredAttribute>AA_Potency</requiredAttribute>
+    <requiredAttributeValue>9</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Frostwarden_Glacier</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_GlacialTomb</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Skybreaker_Tornado</defName>
     <tree>AA_Class_Skybreaker</tree>
     <kind>Spell</kind>
     <x>2</x>
     <y>0</y>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <unlockSpell>AA_Spell_Tornado</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
@@ -1317,7 +1373,7 @@
     <x>4</x>
     <y>0</y>
     <maxRank>3</maxRank>
-    <requiredLevel>10</requiredLevel>
+    <requiredLevel>7</requiredLevel>
     <statOffsetsPerRank>
       <MoveSpeed>0.15</MoveSpeed>
       <AA_CooldownReduction>0.01</AA_CooldownReduction>
@@ -1330,7 +1386,7 @@
     <kind>Spell</kind>
     <x>1</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Skybreaker_Tornado</li>
     </prerequisites>
@@ -1344,7 +1400,7 @@
     <x>3</x>
     <y>1</y>
     <maxRank>3</maxRank>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Skybreaker_Tornado</li>
       <li>AA_Node_Skybreaker_Tailwind</li>
@@ -1360,7 +1416,7 @@
     <kind>Spell</kind>
     <x>5</x>
     <y>1</y>
-    <requiredLevel>12</requiredLevel>
+    <requiredLevel>8</requiredLevel>
     <prerequisites>
       <li>AA_Node_Skybreaker_Tailwind</li>
     </prerequisites>
@@ -1375,7 +1431,7 @@
     <x>1</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1400,7 +1456,7 @@
     <x>3</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1425,7 +1481,7 @@
     <x>5</x>
     <y>2</y>
     <maxRank>2</maxRank>
-    <requiredLevel>15</requiredLevel>
+    <requiredLevel>10</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
     <requiredAttributeValue>8</requiredAttributeValue>
     <prerequisites>
@@ -1448,9 +1504,9 @@
     <kind>Spell</kind>
     <x>2</x>
     <y>3</y>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Skybreaker_Downburst</li>
       <li>AA_Node_Skybreaker_Vortex</li>
@@ -1466,9 +1522,9 @@
     <x>4</x>
     <y>3</y>
     <maxRank>2</maxRank>
-    <requiredLevel>18</requiredLevel>
+    <requiredLevel>12</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>10</requiredAttributeValue>
+    <requiredAttributeValue>9</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Skybreaker_Vortex</li>
       <li>AA_Node_Skybreaker_Zephyr</li>
@@ -1489,9 +1545,9 @@
     <kind>Notable</kind>
     <x>3</x>
     <y>4</y>
-    <requiredLevel>22</requiredLevel>
+    <requiredLevel>14</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>12</requiredAttributeValue>
+    <requiredAttributeValue>10</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Skybreaker_ClearSkies</li>
       <li>AA_Node_Skybreaker_Crosswind</li>
@@ -1516,9 +1572,9 @@
     <x>1</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Skybreaker_Skyfall</li>
     </prerequisites>
@@ -1542,9 +1598,9 @@
     <x>5</x>
     <y>5</y>
     <maxRank>3</maxRank>
-    <requiredLevel>26</requiredLevel>
+    <requiredLevel>17</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>14</requiredAttributeValue>
+    <requiredAttributeValue>12</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Skybreaker_Skyfall</li>
     </prerequisites>
@@ -1562,9 +1618,9 @@
     <kind>Keystone</kind>
     <x>2</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Skybreaker_FrontLine</li>
       <li>AA_Node_Skybreaker_JetStream</li>
@@ -1589,9 +1645,9 @@
     <kind>Keystone</kind>
     <x>4</x>
     <y>6</y>
-    <requiredLevel>32</requiredLevel>
+    <requiredLevel>21</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>16</requiredAttributeValue>
+    <requiredAttributeValue>14</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Skybreaker_FrontLine</li>
       <li>AA_Node_Skybreaker_JetStream</li>
@@ -1615,14 +1671,28 @@
     <kind>Ultimate</kind>
     <x>3</x>
     <y>7</y>
-    <requiredLevel>40</requiredLevel>
+    <requiredLevel>25</requiredLevel>
     <requiredAttribute>AA_Potency</requiredAttribute>
-    <requiredAttributeValue>18</requiredAttributeValue>
+    <requiredAttributeValue>16</requiredAttributeValue>
     <prerequisites>
       <li>AA_Node_Skybreaker_EyeOfGod</li>
       <li>AA_Node_Skybreaker_Untouchable</li>
     </prerequisites>
     <unlockSpell>AA_Spell_Hurricane</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Skybreaker_Starfall</defName>
+    <tree>AA_Class_Skybreaker</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>3</y>
+    <requiredLevel>12</requiredLevel>
+    <requiredAttribute>AA_Potency</requiredAttribute>
+    <requiredAttributeValue>9</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Skybreaker_Zephyr</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_Starfall</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_Spark</defName>
@@ -2426,6 +2496,218 @@
     <warmupStartSound>AA_Charge</warmupStartSound>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_FrostNova</defName>
+    <label>frost nova</label>
+    <description>A ring of killing frost bursts from you, freezing everything close by.</description>
+    <iconPath>ArcanumAscendant/Spells/FrostNova</iconPath>
+    <cooldownTicksRange>1080</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>0</range>
+      <warmupTime>0.3</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <drawAimPie>false</drawAimPie>
+      <targetable>false</targetable>
+      <nonInterruptingSelfCast>false</nonInterruptingSelfCast>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>30</manaCost>
+        <tags>
+          <li>Frost</li>
+        </tags>
+        <tier>2</tier>
+        <role>Control</role>
+        <autocastByDefault>true</autocastByDefault>
+        <aiMinEnemiesInRadius>2</aiMinEnemiesInRadius>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Nova</delivery>
+        <affects>Enemies</affects>
+        <radius>4.5</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Damage">
+            <amount>16</amount>
+            <damageDef>AA_Frost</damageDef>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_Frozen</hediff>
+            <severity>1</severity>
+            <durationTicks>240</durationTicks>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_Chilled</hediff>
+            <severity>2</severity>
+            <stack>true</stack>
+            <maxSeverity>3</maxSeverity>
+          </li>
+        </effects>
+        <color>(0.561, 0.847, 1, 1)</color>
+        <color2>(1, 1, 1, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Snow</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>4</scale>
+            <scaleEnd>4.8</scaleEnd>
+            <ticks>12</ticks>
+            <color>(0.91, 0.984, 1, 1)</color>
+          </li>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.1</scale>
+            <scaleEnd>1.1</scaleEnd>
+            <ticks>30</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Shard</fleck>
+            <count>30</count>
+            <speed>4</speed>
+            <scale>0.7</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Snow</fleck>
+            <count>20</count>
+            <speed>1.5</speed>
+            <scale>0.6</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Frost</castSound>
+        <impactSound>AA_Impact_Frost</impactSound>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+    <targetRequired>false</targetRequired>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_StormLance</defName>
+    <label>storm lance</label>
+    <description>Hurl a lance of lightning that splits the sky: bolts strike every few steps along its path.</description>
+    <iconPath>ArcanumAscendant/Spells/StormLance</iconPath>
+    <cooldownTicksRange>960</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>20</range>
+      <warmupTime>0.7</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>42</manaCost>
+        <tags>
+          <li>Storm</li>
+        </tags>
+        <tier>3</tier>
+        <role>Attack</role>
+        <autocastByDefault>true</autocastByDefault>
+        <aiMinEnemiesInRadius>2</aiMinEnemiesInRadius>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Line</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Damage">
+            <amount>26</amount>
+            <damageDef>AA_Lightning</damageDef>
+            <armorPen>0.4</armorPen>
+            <vsMechanoids>1.5</vsMechanoids>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_Shocked</hediff>
+            <severity>1</severity>
+            <stack>true</stack>
+            <maxSeverity>3</maxSeverity>
+          </li>
+        </effects>
+        <color>(0.435, 0.659, 1, 1)</color>
+        <color2>(0.902, 0.949, 1, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Spark</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Lightning</type>
+            <scale>1.4</scale>
+            <ticks>14</ticks>
+          </li>
+          <li>
+            <type>Flash</type>
+            <scale>2.5</scale>
+            <scaleEnd>3</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Spark</fleck>
+            <count>10</count>
+            <speed>4</speed>
+            <scale>0.4</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Storm</castSound>
+        <impactSound>AA_Impact_Storm</impactSound>
+        <shake>1.2</shake>
+        <lineLength>18</lineLength>
+        <strikeRadius>1.4</strikeRadius>
+        <lineStepDelay>2</lineStepDelay>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_BallLightning</defName>
     <label>ball lightning</label>
     <description>A slow, enormous orb of plasma drifts toward the target and detonates violently.</description>
@@ -2947,6 +3229,122 @@
         <strikeRadius>1.8</strikeRadius>
         <strikeStyle>Lightning</strikeStyle>
         <projectileTex>ArcanumAscendant/Vfx/Orb</projectileTex>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_IonStorm</defName>
+    <label>ion storm</label>
+    <description>Call down a storm of ionised air. For twenty seconds it fries electronics, collapses shields and locks up mechanoids.</description>
+    <iconPath>ArcanumAscendant/Spells/IonStorm</iconPath>
+    <cooldownTicksRange>5400</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>30</range>
+      <warmupTime>1.5</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>110</manaCost>
+        <tags>
+          <li>Storm</li>
+        </tags>
+        <tier>4</tier>
+        <role>Control</role>
+        <autocastByDefault>true</autocastByDefault>
+        <aiMinEnemiesInRadius>2</aiMinEnemiesInRadius>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_ShieldBreak">
+            <mechStunTicks>300</mechStunTicks>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Field">
+            <fieldRadius>6.5</fieldRadius>
+            <durationTicks>1200</durationTicks>
+            <pulseInterval>60</pulseInterval>
+            <pulseEffects>
+              <li Class="ArcanumAscendant.Effect_Damage">
+                <amount>10</amount>
+                <damageDef>EMP</damageDef>
+                <affects>Enemies</affects>
+              </li>
+              <li Class="ArcanumAscendant.Effect_Damage">
+                <amount>8</amount>
+                <damageDef>AA_Lightning</damageDef>
+                <vsMechanoids>2.5</vsMechanoids>
+                <affects>Enemies</affects>
+              </li>
+              <li Class="ArcanumAscendant.Effect_ShieldBreak">
+                <mechStunTicks>90</mechStunTicks>
+                <affects>Enemies</affects>
+              </li>
+            </pulseEffects>
+            <groundTex>ArcanumAscendant/Vfx/RuneCircle</groundTex>
+            <groundSpin>3</groundSpin>
+            <groundAlpha>0.5</groundAlpha>
+            <ambientFleck>AA_Fleck_Bolt</ambientFleck>
+            <ambientDensity>3</ambientDensity>
+            <ambientSpeed>2</ambientSpeed>
+          </li>
+        </effects>
+        <color>(0.435, 0.659, 1, 1)</color>
+        <color2>(0.902, 0.949, 1, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Spark</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>5</scale>
+            <scaleEnd>6</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.1</scale>
+            <scaleEnd>1.1</scaleEnd>
+            <ticks>40</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Lightning</type>
+            <scale>2</scale>
+            <ticks>18</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Storm</castSound>
+        <impactSound>AA_Impact_Storm</impactSound>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3488,6 +3886,109 @@
     <targetRequired>false</targetRequired>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_GlacialTomb</defName>
+    <label>glacial tomb</label>
+    <description>Encase a target in a tomb of ice ringed by frozen walls. It can do nothing for ten seconds, and the ice makes it brittle.</description>
+    <iconPath>ArcanumAscendant/Spells/GlacialTomb</iconPath>
+    <cooldownTicksRange>2400</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>24</range>
+      <warmupTime>0.8</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>55</manaCost>
+        <tags>
+          <li>Frost</li>
+        </tags>
+        <tier>3</tier>
+        <role>Control</role>
+        <autocastByDefault>true</autocastByDefault>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <radius>2.2</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Stun">
+            <ticks>600</ticks>
+            <radius>0</radius>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_Frozen</hediff>
+            <severity>1</severity>
+            <durationTicks>600</durationTicks>
+            <radius>0</radius>
+          </li>
+          <li Class="ArcanumAscendant.Effect_SpawnThing">
+            <thing>AA_Construct_IceWall</thing>
+            <count>1</count>
+            <ring>true</ring>
+            <lifetimeTicks>900</lifetimeTicks>
+          </li>
+        </effects>
+        <color>(0.561, 0.847, 1, 1)</color>
+        <color2>(1, 1, 1, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Snow</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>3</scale>
+            <scaleEnd>3.6</scaleEnd>
+            <ticks>12</ticks>
+            <color>(0.91, 0.984, 1, 1)</color>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Shard</fleck>
+            <count>24</count>
+            <speed>3</speed>
+            <scale>0.7</scale>
+          </li>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.2</scale>
+            <scaleEnd>0.8</scaleEnd>
+            <ticks>26</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Frost</castSound>
+        <impactSound>AA_Impact_Frost</impactSound>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_Tornado</defName>
     <label>tornado</label>
     <description>Conjure a raging tornado that drags enemies inward and batters them for eight seconds.</description>
@@ -3993,6 +4494,89 @@
         <castSound>AA_Cast_Storm</castSound>
         <impactSound>AA_Impact_Storm</impactSound>
         <shake>2.5</shake>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_Starfall</defName>
+    <label>starfall</label>
+    <description>Reach into the sky and pull down a falling star. It crashes nearby as a meteorite packed with ore.</description>
+    <iconPath>ArcanumAscendant/Spells/Starfall</iconPath>
+    <cooldownTicksRange>120000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>40</range>
+      <warmupTime>6</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetItems>true</canTargetItems>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>90</manaCost>
+        <tags>
+          <li>Storm</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_CallMeteorite" />
+        </effects>
+        <color>(0.722, 0.831, 1, 1)</color>
+        <color2>(1, 1, 1, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Spark</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.3</scale>
+            <scaleEnd>1</scaleEnd>
+            <ticks>40</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>20</count>
+            <speed>3</speed>
+            <scale>0.6</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Storm</castSound>
+        <impactSound>AA_Impact_Storm</impactSound>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>

@@ -106,12 +106,14 @@ namespace ArcanumAscendant
             Widgets.Label(new Rect(icon.xMax + 12f, r.y + 6f, r.width - 500f, 32f), title.Colorize(cls.color));
             Text.Font = GameFont.Small;
             var lvlRect = new Rect(icon.xMax + 12f, r.y + 38f, 420f, 22f);
-            string lvl = "AA_LevelLong".Translate(comp.level, CompArcane.MaxLevel);
+            string lvl = "AA_LevelLong".Translate(comp.level, comp.LevelCap) + "  ·  " + CompArcane.CircleLabel(comp.circle).Colorize(cls.color);
+            if (comp.ReadyToAscend) lvl += "  " + "AA_ReadyToAscendShort".Translate().Colorize(Gold);
             if (comp.paragon > 0) lvl += "  " + "AA_ParagonLabel".Translate(comp.paragon).Colorize(Gold);
             Widgets.Label(lvlRect, lvl);
             var xpRect = new Rect(icon.xMax + 12f, r.y + 60f, 420f, 8f);
-            Widgets.FillableBar(xpRect, Mathf.Clamp01(comp.xp / comp.XpToNextLevel), ArcaneTex.XpFill, ArcaneTex.BarBg, false);
-            TooltipHandler.TipRegion(xpRect.ExpandedBy(0f, 6f), "AA_XpTip".Translate(comp.xp.ToString("F0"), comp.XpToNextLevel.ToString("F0")));
+            Widgets.FillableBar(xpRect, Mathf.Clamp01(comp.xp / comp.XpToNextLevel), comp.ReadyToAscend ? ArcaneTex.WardFill : ArcaneTex.XpFill, ArcaneTex.BarBg, false);
+            TooltipHandler.TipRegion(new Rect(lvlRect.x, lvlRect.y, lvlRect.width, xpRect.yMax - lvlRect.y + 6f),
+                "AA_XpTip".Translate(comp.xp.ToString("F0"), comp.XpToNextLevel.ToString("F0")) + "\n\n" + ArcaneUtility.CircleTip(comp));
 
             float bx = r.xMax - 470f;
             DrawBadge(new Rect(bx, r.y + 10f, 150f, 54f), "AA_PerkPoints".Translate(), comp.perkPoints.ToString(), comp.perkPoints > 0 ? Gold : Color.gray);
@@ -436,7 +438,7 @@ namespace ArcanumAscendant
             var subs = comp.classDef.subclasses;
             Text.Font = GameFont.Medium;
             Text.Anchor = TextAnchor.UpperCenter;
-            string head = comp.CanChooseSubclass ? "AA_ChooseSubclassNow".Translate() : "AA_SubclassLocked".Translate(comp.classDef.subclassUnlockLevel);
+            string head = comp.CanChooseSubclass ? "AA_ChooseSubclassNow".Translate() : "AA_SubclassLocked".Translate(CompArcane.CircleLabel(2), comp.classDef.subclassUnlockLevel);
             Widgets.Label(new Rect(r.x, r.y + 8f, r.width, 34f), head);
             Text.Anchor = TextAnchor.UpperLeft;
             Text.Font = GameFont.Small;

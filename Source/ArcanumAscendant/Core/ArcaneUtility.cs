@@ -84,6 +84,9 @@ namespace ArcanumAscendant
                 if (dis != null && durationTicks > 0) dis.ticksToDisappear = Mathf.Max(dis.ticksToDisappear, durationTicks);
                 else if (dis != null && ctx != null && ctx.DurationFactor != 1f && h.ageTicks < 2)
                     dis.ticksToDisappear = Mathf.RoundToInt(dis.ticksToDisappear * ctx.DurationFactor);
+                if (ctx != null)
+                    foreach (var comp in hc.comps)
+                        if (comp is IArcaneSourced src) src.SetSource(ctx);
                 var dot = hc.TryGetComp<HediffComp_ArcaneDot>();
                 if (dot != null && ctx?.caster != null)
                 {
@@ -273,6 +276,21 @@ namespace ArcanumAscendant
         #endregion
 
         #region Tooltips
+
+        /// <summary>Explains the mage's circle, its level cap and what the next ascension needs.</summary>
+        public static string CircleTip(CompArcane c)
+        {
+            var sb = new System.Text.StringBuilder();
+            sb.Append("AA_CircleTipHead".Translate(CompArcane.CircleLabel(c.circle), c.LevelCap));
+            if (c.circle < CompArcane.MaxCircle)
+            {
+                var sigil = CompArcane.SigilFor(c.circle + 1);
+                sb.Append("\n");
+                sb.Append((c.ReadyToAscend ? "AA_CircleTipReady" : "AA_CircleTipNext").Translate(CompArcane.CircleLabel(c.circle + 1), sigil?.label ?? "?", c.LevelCap));
+            }
+            else sb.Append("\n" + "AA_CircleTipMax".Translate());
+            return sb.ToString();
+        }
 
         public static string SpellTooltip(AbilityDef def, Pawn caster)
         {
