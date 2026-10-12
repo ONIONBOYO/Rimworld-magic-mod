@@ -137,9 +137,29 @@ def main():
                     if dn in all_def_names:
                         raise ValueError("duplicate defName " + dn)
                     all_def_names.add(dn)
+    check_unique_def_names()
     write_json(os.path.join(HERE, "out", "icons.json"), icons)
     write_compendium(compendium)
     print("Generated: %(classes)d classes, %(subclasses)d subclasses, %(spells)d spells, %(nodes)d nodes" % stats)
+
+
+def check_unique_def_names():
+    """RimWorld rejects two defs of the same type with the same defName, so check every XML file, hand-written ones included."""
+    import xml.etree.ElementTree as ET
+    seen = {}
+    for folder, _, files in os.walk(os.path.join(ROOT, "Defs")):
+        for f in sorted(files):
+            if not f.endswith(".xml"):
+                continue
+            path = os.path.join(folder, f)
+            for el in ET.parse(path).getroot():
+                dn = el.findtext("defName")
+                if dn is None:
+                    continue
+                key = (el.tag, dn)
+                if key in seen:
+                    raise ValueError("duplicate %s %s in %s and %s" % (el.tag, dn, seen[key], os.path.relpath(path, ROOT)))
+                seen[key] = os.path.relpath(path, ROOT)
 
 
 def write_compendium(all_trees):

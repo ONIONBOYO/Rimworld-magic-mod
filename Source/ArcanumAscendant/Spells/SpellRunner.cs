@@ -27,6 +27,8 @@ namespace ArcanumAscendant
             var map = ctx.map;
             if (props == null || map == null || caster == null) return;
             if (!target.IsValid) target = caster;
+            if (target.Thing is Pawn aimed && aimed != caster && (props.affects == TargetFilter.Enemies || props.affects == TargetFilter.Inherit))
+                ctx.forcedTarget = aimed;
 
             Vector3 origin = caster.DrawPos;
             ArcaneFx.PlayAll(props.castVfx, map, origin, ctx, 0f);

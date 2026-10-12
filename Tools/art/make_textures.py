@@ -635,7 +635,7 @@ def make_items_ui():
     save(potion(hexc("#3a7bff")), "Items/ManaPotion")
     save(potion(hexc("#9a5aff"), True), "Items/GreaterManaPotion")
     # arcane lectern
-    S2 = 192
+    S2 = 256
     lec = pen_mask(S2, lambda p: [p.poly([(-0.7, 0.1), (0.7, 0.1), (0.55, 0.55), (-0.55, 0.55)]), p.rect(-0.12, -0.75, 0.12, 0.1), p.rect(-0.5, -0.85, 0.5, -0.7)])
     img = sprite(lec, np.array([110, 80, 55], np.float32), S2)
     pages = pen_mask(S2, lambda p: [p.poly([(-0.55, 0.18), (-0.04, 0.22), (-0.04, 0.5), (-0.48, 0.46)]), p.poly([(0.55, 0.18), (0.04, 0.22), (0.04, 0.5), (0.48, 0.46)])])

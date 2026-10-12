@@ -628,9 +628,9 @@
     <buildingDamageFactor>1</buildingDamageFactor>
   </DamageDef>
   <HediffDef>
-    <defName>AA_Withering</defName>
-    <label>withering</label>
-    <labelNoun>a withering</labelNoun>
+    <defName>AA_EntropyWound</defName>
+    <label>entropic decay</label>
+    <labelNoun>an entropic decay</labelNoun>
     <description>A wound left by entropy magic.</description>
     <hediffClass>Hediff_Injury</hediffClass>
     <tendable>true</tendable>
@@ -647,7 +647,7 @@
         <infectionChance>0.1</infectionChance>
       </li>
       <li Class="HediffCompProperties_GetsPermanent">
-        <permanentLabel>withering scar</permanentLabel>
+        <permanentLabel>entropic decay scar</permanentLabel>
       </li>
     </comps>
     <injuryProps>
@@ -664,7 +664,7 @@
     <workerClass>DamageWorker_AddInjury</workerClass>
     <externalViolence>true</externalViolence>
     <deathMessage>{0} aged to dust.</deathMessage>
-    <hediff>AA_Withering</hediff>
+    <hediff>AA_EntropyWound</hediff>
     <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
     <defaultDamage>10</defaultDamage>
     <defaultArmorPenetration>0</defaultArmorPenetration>

@@ -19,7 +19,7 @@ DAMAGES = [
     ("AA_Thorn", "thorns", "AA_ThornWound", "thorn wound", "Sharp", 0.2, "#7fe05a", "Nature", 0.05, "{0} was impaled by thorns."),
     ("AA_Sonic", "sonic", "AA_Concussion", "sonic concussion", "Blunt", 0.3, "#ffb3e6", "Song", 0.0, "{0} was shaken apart by sound."),
     ("AA_Void", "void", "AA_VoidScar", "void scar", "Heat", 0.8, "#c060ff", "Void", 0.0, "{0} was consumed by the void."),
-    ("AA_Temporal", "entropy", "AA_Withering", "withering", None, 0.0, "#7ff5e4", "Time", 0.0, "{0} aged to dust."),
+    ("AA_Temporal", "entropy", "AA_EntropyWound", "entropic decay", None, 0.0, "#7ff5e4", "Time", 0.0, "{0} aged to dust."),
     ("AA_Rune", "runic", "AA_RuneBurn", "rune burn", "Sharp", 0.45, "#ffaa3c", "Rune", 0.0, "{0} was dismantled by runes."),
 ]
 

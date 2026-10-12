@@ -47,6 +47,12 @@
     </colorSpectrum>
     <permanentEnemy>false</permanentEnemy>
     <naturalEnemy>false</naturalEnemy>
+    <raidLootValueFromPointsCurve>
+      <points>
+        <li>(0, 0)</li>
+        <li>(100000, 0)</li>
+      </points>
+    </raidLootValueFromPointsCurve>
   </FactionDef>
 
   <!-- ===================== Research ===================== -->
@@ -145,6 +151,7 @@
     <altitudeLayer>Item</altitudeLayer>
     <alwaysHaulable>true</alwaysHaulable>
     <selectable>true</selectable>
+    <drawGUIOverlay>true</drawGUIOverlay>
     <useHitPoints>true</useHitPoints>
     <pathCost>14</pathCost>
     <rotatable>false</rotatable>

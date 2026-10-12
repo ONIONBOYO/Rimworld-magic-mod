@@ -134,6 +134,9 @@ namespace ArcanumAscendant
         public Color Color => props?.color ?? Color.white;
         public Color Color2 => props?.color2 ?? Color.white;
         public HashSet<Thing> hitThisCast = new HashSet<Thing>();
+        /// <summary>The pawn the caster deliberately aimed an offensive spell at. It counts as an enemy even when it isn't
+        /// hostile (hunting a wild animal, punishing a colonist), the same way a forced attack works in vanilla.</summary>
+        public Pawn forcedTarget;
         public Faction Faction => caster?.Faction;
 
         public float DamageFactor => basePower * Mathf.Max(0.1f, 1f + mods.damage);
@@ -197,7 +200,7 @@ namespace ArcanumAscendant
                 case TargetFilter.Self: return p == caster;
                 case TargetFilter.All: return true;
                 case TargetFilter.AllButSelf: return p != caster;
-                case TargetFilter.Enemies: return p != caster && IsEnemy(p);
+                case TargetFilter.Enemies: return p != caster && (p == forcedTarget || IsEnemy(p));
                 case TargetFilter.Allies: return p == caster || IsAlly(p);
                 case TargetFilter.AlliesNotSelf: return p != caster && IsAlly(p);
             }
