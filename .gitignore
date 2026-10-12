@@ -1,0 +1,10 @@
+Source/**/obj/
+Source/**/bin/
+Tools/**/bin/
+Tools/**/obj/
+Tools/gen/out/
+*.user
+.vs/
+.idea/
+__pycache__/
+*.pyc
