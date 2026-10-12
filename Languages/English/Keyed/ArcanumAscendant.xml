@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <AA_ModDamage>damage</AA_ModDamage>
+  <AA_ModHealing>healing</AA_ModHealing>
+  <AA_ModRadius>area</AA_ModRadius>
+  <AA_ModDuration>duration</AA_ModDuration>
+  <AA_ModManaCost>mana cost</AA_ModManaCost>
+  <AA_ModCooldown>cooldown</AA_ModCooldown>
+  <AA_ModRange>range</AA_ModRange>
+  <AA_ModCrit>critical chance</AA_ModCrit>
+  <AA_ModArmorPen>armor penetration</AA_ModArmorPen>
+  <AA_ModLifesteal>lifesteal</AA_ModLifesteal>
+  <AA_ModSummon>summon power</AA_ModSummon>
+  <AA_ModExtraTargets>extra targets / projectiles / summons</AA_ModExtraTargets>
+  <AA_ModApplies>{0} chance to apply {1}</AA_ModApplies>
+  <AA_TaggedSpells>{0} spells</AA_TaggedSpells>
+  <AA_AllSpells>All spells</AA_AllSpells>
+  <AA_Awakened>{0} has awakened as a {1}!</AA_Awakened>
+  <AA_SubclassChosen>{0} has become a {1}!</AA_SubclassChosen>
+  <AA_ParagonUp>Paragon {0}!</AA_ParagonUp>
+  <AA_LevelUpMote>Level {0}!</AA_LevelUpMote>
+  <AA_SubclassReadyLabel>{0}: subclass ready</AA_SubclassReadyLabel>
+  <AA_SubclassReadyText>{0} has reached level 10 as a {1} and can now choose a subclass.
+
+Select {0} and click the arcane status panel to open the grimoire, then open the Subclass tab.</AA_SubclassReadyText>
+  <AA_MaxLevelLabel>{0} mastered the arcane</AA_MaxLevelLabel>
+  <AA_MaxLevelText>{0} has reached level 50. From now on, experience grants paragon levels: each one adds spell power and mana, and every fifth grants a perk point.</AA_MaxLevelText>
+  <AA_Reason_ChooseSubclass>Choose this subclass first.</AA_Reason_ChooseSubclass>
+  <AA_Reason_OtherTree>This node belongs to another path.</AA_Reason_OtherTree>
+  <AA_Reason_MaxRank>Already at maximum rank.</AA_Reason_MaxRank>
+  <AA_Reason_NoPoints>Not enough perk points.</AA_Reason_NoPoints>
+  <AA_Reason_Level>Requires level {0}.</AA_Reason_Level>
+  <AA_Reason_Attribute>Requires {0} {1}.</AA_Reason_Attribute>
+  <AA_Reason_Prereq>Learn a connected node first.</AA_Reason_Prereq>
+  <AA_Reason_Exclusive>Mutually exclusive with {0}.</AA_Reason_Exclusive>
+  <AA_AwakenCommand>Awaken magic</AA_AwakenCommand>
+  <AA_AwakenCommandDesc>Awaken this colonist's latent magic and choose an arcane class. Each class has a deep skill tree and three subclasses.</AA_AwakenCommandDesc>
+  <AA_InspectLine>{0} level {1} - mana {2}/{3}</AA_InspectLine>
+  <AA_WardShort>ward {0}/{1}</AA_WardShort>
+  <AA_CoreLabel>arcane path: {0}</AA_CoreLabel>
+  <AA_LevelShort>Lv {0}</AA_LevelShort>
+  <AA_SpellPowerLine>Spell power: {0}</AA_SpellPowerLine>
+  <AA_ManaLine>Mana: {0}/{1} (+{2}/s)</AA_ManaLine>
+  <AA_WardLine>Ward: {0}/{1}</AA_WardLine>
+  <AA_NotEnoughMana>Not enough mana</AA_NotEnoughMana>
+  <AA_NotEnoughManaDetail>Not enough mana ({0} needed, {1} available).</AA_NotEnoughManaDetail>
+  <AA_Downed>Cannot cast while downed.</AA_Downed>
+  <AA_SilencedReason>Silenced: cannot cast spells.</AA_SilencedReason>
+  <AA_DisableAutocast>Disable autocast</AA_DisableAutocast>
+  <AA_EnableAutocast>Enable autocast</AA_EnableAutocast>
+  <AA_HideSpell>Hide from the command bar (restore it in the spellbook)</AA_HideSpell>
+  <AA_OpenGrimoire>Open grimoire</AA_OpenGrimoire>
+  <AA_Executed>Executed!</AA_Executed>
+  <AA_Crit>Critical! {0}</AA_Crit>
+  <AA_Regrown>{0} regrown!</AA_Regrown>
+  <AA_ShieldShattered>Shield shattered!</AA_ShieldShattered>
+  <AA_SpellReason>the spell {0}</AA_SpellReason>
+  <AA_Desc_Damage>Deals {0} {1} damage</AA_Desc_Damage>
+  <AA_Desc_Hits>(split into {0} hits)</AA_Desc_Hits>
+  <AA_Desc_IgnoresArmor>(ignores armor)</AA_Desc_IgnoresArmor>
+  <AA_Desc_Lethal>Tears away an extra {0} of the target's vitality as true damage</AA_Desc_Lethal>
+  <AA_Desc_Execute>Executes non-boss targets below {0} health</AA_Desc_Execute>
+  <AA_Desc_VsMech>{0} damage against mechanoids</AA_Desc_VsMech>
+  <AA_Desc_Stun>Stuns for {0}s</AA_Desc_Stun>
+  <AA_Desc_Buildings>Also damages enemy structures</AA_Desc_Buildings>
+  <AA_Desc_Drain>Heals you for {0} of the damage dealt</AA_Desc_Drain>
+  <AA_Desc_BonusVs>{0} damage against targets that are {1} (consumes it)</AA_Desc_BonusVs>
+  <AA_Desc_Heal>Heals {0}</AA_Desc_Heal>
+  <AA_Desc_Tend>Tends every wound</AA_Desc_Tend>
+  <AA_Desc_Regrow>{0} chance to regrow a lost body part</AA_Desc_Regrow>
+  <AA_Desc_Cure>Cures diseases, infections and toxins</AA_Desc_Cure>
+  <AA_Desc_Hediff>Applies {0}</AA_Desc_Hediff>
+  <AA_Desc_For>for {0}</AA_Desc_For>
+  <AA_Desc_Knockback>Knocks targets back {0} cells</AA_Desc_Knockback>
+  <AA_Desc_Pull>Pulls targets {0} cells</AA_Desc_Pull>
+  <AA_Desc_Explosion>Explodes for {0} {1} damage in a {2}-cell radius</AA_Desc_Explosion>
+  <AA_Desc_Ignite>Sets things on fire</AA_Desc_Ignite>
+  <AA_Desc_Extinguish>Extinguishes fires</AA_Desc_Extinguish>
+  <AA_Desc_ShieldBreak>Shatters personal energy shields and projectile shields</AA_Desc_ShieldBreak>
+  <AA_Desc_MechStun>Shuts down mechanoids for {0}s</AA_Desc_MechStun>
+  <AA_Desc_Ward>Grants {0} ward</AA_Desc_Ward>
+  <AA_Desc_ManaPct>Restores {0} of maximum mana</AA_Desc_ManaPct>
+  <AA_Desc_Mana>Restores {0} mana</AA_Desc_Mana>
+  <AA_Desc_Cleanse>Cleanses sickness, toxins, harmful magic and minor mental breaks</AA_Desc_Cleanse>
+  <AA_Desc_Mental>Inflicts {0}</AA_Desc_Mental>
+  <AA_Desc_Field>Creates a {0}-cell field for {1}, pulsing every {2}s:</AA_Desc_Field>
+  <AA_Desc_Vortex>Drags enemies toward its center</AA_Desc_Vortex>
+  <AA_Desc_Summon>Summons {0}x {1} for {2}</AA_Desc_Summon>
+  <AA_Desc_RaiseDead>Raises up to {0} corpses as thralls for {1}</AA_Desc_RaiseDead>
+  <AA_Desc_Spawn>Conjures {0}</AA_Desc_Spawn>
+  <AA_Desc_Conjure>Conjures {0} {1}</AA_Desc_Conjure>
+  <AA_Desc_Teleport_CasterToTarget>Teleports you to the target</AA_Desc_Teleport_CasterToTarget>
+  <AA_Desc_Teleport_TargetToCaster>Pulls the target to your side</AA_Desc_Teleport_TargetToCaster>
+  <AA_Desc_Teleport_Swap>Swaps places with the target</AA_Desc_Teleport_Swap>
+  <AA_Desc_Teleport_Banish>Hurls targets far across the map</AA_Desc_Teleport_Banish>
+  <AA_Desc_Teleport_AlliesToCaster>Teleports allies to your side</AA_Desc_Teleport_AlliesToCaster>
+  <AA_Desc_Resurrect>Resurrects dead allies</AA_Desc_Resurrect>
+  <AA_Desc_Dominate>Takes control of targets for {0} (bosses resist)</AA_Desc_Dominate>
+  <AA_Desc_Polymorph>Turns targets into a {0} for {1}. If it dies, they die.</AA_Desc_Polymorph>
+  <AA_Desc_Condition>Brings {0} for {1}</AA_Desc_Condition>
+  <AA_Desc_EndConditions>Ends: {0}</AA_Desc_EndConditions>
+  <AA_Desc_Weather>Changes the weather to {0}</AA_Desc_Weather>
+  <AA_Desc_Lightning>Calls down a lightning strike</AA_Desc_Lightning>
+  <AA_Desc_Need>Restores {1} {0}</AA_Desc_Need>
+  <AA_Desc_Thought>Mood: {0}</AA_Desc_Thought>
+  <AA_Desc_Inspire>Grants an inspiration ({0})</AA_Desc_Inspire>
+  <AA_Desc_SkillXp>Grants {0} experience in {1}</AA_Desc_SkillXp>
+  <AA_Desc_Growth>Grows plants by {0}</AA_Desc_Growth>
+  <AA_Desc_Repair>Repairs up to {0} hit points of every structure and item</AA_Desc_Repair>
+  <AA_Desc_Transmute>Transmutes stone chunks into {1} {0} each</AA_Desc_Transmute>
+  <AA_Desc_Heat>Releases a wave of heat</AA_Desc_Heat>
+  <AA_Desc_Cool>Releases a wave of cold</AA_Desc_Cool>
+  <AA_Desc_Mine>Shatters rock and mines it</AA_Desc_Mine>
+  <AA_Desc_Terraform>Turns the ground into {0}</AA_Desc_Terraform>
+  <AA_Desc_Tame>Tames an animal</AA_Desc_Tame>
+  <AA_Desc_Recruit>Recruits a prisoner, downed enemy or visitor, or tames an animal</AA_Desc_Recruit>
+  <AA_Desc_Reveal>Reveals everything within {0} cells</AA_Desc_Reveal>
+  <AA_Desc_Younger>Makes the target {0} years younger</AA_Desc_Younger>
+  <AA_Desc_Older>Ages the target {0} years</AA_Desc_Older>
+  <AA_Desc_Rewind>Undoes every wound suffered in the last {0}</AA_Desc_Rewind>
+  <AA_Desc_CdReset>Refunds {0} of ability cooldowns</AA_Desc_CdReset>
+  <AA_Desc_Random>Each target suffers one random effect:</AA_Desc_Random>
+  <AA_Desc_CorpseExplosion>Detonates up to {1} corpses for {0} damage each</AA_Desc_CorpseExplosion>
+  <AA_Desc_SpeakWithDead>Learn from the dead person's best skill</AA_Desc_SpeakWithDead>
+  <AA_Desc_Dispel>Strips magical buffs, wards and energy shields</AA_Desc_Dispel>
+  <AA_Dominated>Dominated!</AA_Dominated>
+  <AA_DominationEnds>Breaks free!</AA_DominationEnds>
+  <AA_Polymorphed>Polymorphed into a {0}!</AA_Polymorphed>
+  <AA_Resurrected>Resurrected!</AA_Resurrected>
+  <AA_Rewound>{0} wounds undone</AA_Rewound>
+  <AA_Risen>Risen!</AA_Risen>
+  <AA_Younger>{0} years younger!</AA_Younger>
+  <AA_Older>{0} years older!</AA_Older>
+  <AA_SpokeWithDead>{0} shared their {1}</AA_SpokeWithDead>
+  <AA_Dispelled>Dispelled!</AA_Dispelled>
+  <AA_DissipatesIn>Dissipates in {0}</AA_DissipatesIn>
+  <AA_Dodged>Dodged!</AA_Dodged>
+  <AA_Echo>Echo!</AA_Echo>
+  <AA_Reborn>Reborn from the ashes!</AA_Reborn>
+  <AA_Undying>Undying!</AA_Undying>
+  <AA_MartyrRise>The light refuses!</AA_MartyrRise>
+  <AA_Rewound2>Rewound!</AA_Rewound2>
+  <AA_BearRises>The bear rises!</AA_BearRises>
+  <AA_BloodRises>Blood flows anew!</AA_BloodRises>
+  <AA_SkaldRises>The song is not over!</AA_SkaldRises>
+  <AA_ManaWord>mana</AA_ManaWord>
+  <AA_WardWord>ward</AA_WardWord>
+  <AA_Respecced>{0} has unlearned their training. Every perk and attribute point has been refunded.</AA_Respecced>
+  <AA_CannotAwaken>Only people can awaken magic</AA_CannotAwaken>
+  <AA_AlreadyAwakened>Already awakened</AA_AlreadyAwakened>
+  <AA_NotAMage>Not a mage</AA_NotAMage>
+  <AA_P_ManaOnKill>Restore {0} mana on kill</AA_P_ManaOnKill>
+  <AA_P_ManaOnHit>Spell hits have a {1} chance to restore {0} mana</AA_P_ManaOnHit>
+  <AA_P_ManaOnWeaponHit>Weapon hits have a {1} chance to restore {0} mana</AA_P_ManaOnWeaponHit>
+  <AA_P_Echo>{0} chance for a spell to refund its mana and cooldown</AA_P_Echo>
+  <AA_P_KillExplosion>Kills have a {0} chance to explode for {1} {2} damage (radius {3})</AA_P_KillExplosion>
+  <AA_P_Rebirth>When downed: rise fully healed and explode for {0} damage (radius {1})</AA_P_Rebirth>
+  <AA_P_Thorns>Reflect {0} of damage taken as {1} damage</AA_P_Thorns>
+  <AA_MeleeOnly>(melee only)</AA_MeleeOnly>
+  <AA_P_DamageReduction>Take {0} less damage from {1}</AA_P_DamageReduction>
+  <AA_AllDamage>all sources</AA_AllDamage>
+  <AA_Ranged>ranged attacks</AA_Ranged>
+  <AA_Melee>melee attacks</AA_Melee>
+  <AA_P_LowHealthPower>+{0} spell power while below {1} health</AA_P_LowHealthPower>
+  <AA_P_FullManaPower>+{0} spell power while above {1} mana</AA_P_FullManaPower>
+  <AA_P_OnHitHediff>{1} have a {0} chance to inflict {2}</AA_P_OnHitHediff>
+  <AA_P_OnHitSelfHediff>{1} have a {0} chance to grant you {2}</AA_P_OnHitSelfHediff>
+  <AA_SrcAny>Spells and weapon hits</AA_SrcAny>
+  <AA_SrcSpell>Spell hits</AA_SrcSpell>
+  <AA_SrcWeapon>Weapon hits</AA_SrcWeapon>
+  <AA_P_SelfBuffOnCast>Casting grants you {0}</AA_P_SelfBuffOnCast>
+  <AA_P_Execute>Spell hits execute non-boss targets below {0} health</AA_P_Execute>
+  <AA_P_DodgeBlink>{0} chance to blink away from an attack</AA_P_DodgeBlink>
+  <AA_P_ManaShield>{0} of damage taken is paid with mana instead ({1} mana per point)</AA_P_ManaShield>
+  <AA_P_BloodPact>When out of mana, spells cost health instead ({0} health per mana)</AA_P_BloodPact>
+  <AA_P_DamageVs>+{0} spell damage against {1}</AA_P_DamageVs>
+  <AA_Creature_Mechanoid>mechanoids</AA_Creature_Mechanoid>
+  <AA_Creature_Humanlike>people</AA_Creature_Humanlike>
+  <AA_Creature_Animal>animals</AA_Creature_Animal>
+  <AA_Creature_Entity>entities and abominations</AA_Creature_Entity>
+  <AA_Creature_Boss>bosses and large creatures</AA_Creature_Boss>
+  <AA_Creature_Insect>insects</AA_Creature_Insect>
+  <AA_P_ShieldBreaker>Spell hits have a {0} chance to shatter energy shields</AA_P_ShieldBreaker>
+  <AA_P_RaiseOnKill>Kills have a {0} chance to rise as thralls for {1}</AA_P_RaiseOnKill>
+  <AA_P_WardOnCast>Gain {0} ward whenever you cast</AA_P_WardOnCast>
+  <AA_P_HealOnCast>Heal yourself for {0} whenever you cast</AA_P_HealOnCast>
+  <AA_P_HealAlliesOnCast>Heal allies within {1} cells for {0} whenever you cast</AA_P_HealAlliesOnCast>
+  <AA_P_CooldownOnKill>Kills reduce all spell cooldowns by {0}s</AA_P_CooldownOnKill>
+  <AA_Trigger_OnHitTaken>When hit: {0} chance to cast {1} for free</AA_Trigger_OnHitTaken>
+  <AA_Trigger_OnKill>On kill: {0} chance to cast {1} for free</AA_Trigger_OnKill>
+  <AA_Trigger_OnSpellCast>When casting: {0} chance to also cast {1} for free</AA_Trigger_OnSpellCast>
+  <AA_Trigger_OnWeaponHit>On weapon hit: {0} chance to cast {1} for free</AA_Trigger_OnWeaponHit>
+  <AA_Trigger_Periodic>In combat: casts {1} for free every {2}s</AA_Trigger_Periodic>
+  <AA_Trigger_OnSpellHit>On spell hit: {0} chance to cast {1} for free</AA_Trigger_OnSpellHit>
+  <AA_Trigger_OnDowned>When downed: {0} chance to cast {1}</AA_Trigger_OnDowned>
+  <AA_P_Aura>Aura: every {1}s, {2} within {0} cells receive:</AA_P_Aura>
+  <AA_Filter_Enemies>enemies</AA_Filter_Enemies>
+  <AA_Filter_Allies>allies</AA_Filter_Allies>
+  <AA_Filter_AlliesNotSelf>other allies</AA_Filter_AlliesNotSelf>
+  <AA_Filter_Self>you</AA_Filter_Self>
+  <AA_Filter_All>everyone</AA_Filter_All>
+  <AA_Filter_AllButSelf>everyone else</AA_Filter_AllButSelf>
+  <AA_Filter_Corpses>corpses</AA_Filter_Corpses>
+  <AA_Filter_Inherit>targets</AA_Filter_Inherit>
+  <AA_P_StatPerAttr>{0} +{1} per point of {2}</AA_P_StatPerAttr>
+  <AA_P_StatPerLevel>{0} +{1} per level</AA_P_StatPerLevel>
+  <AA_PassiveCooldown>(cooldown {0})</AA_PassiveCooldown>
+  <AA_PassiveTag>({0} spells)</AA_PassiveTag>
+  <AA_StatusTip>{0} - {1}, level {2}
+Experience: {3} / {4}
+Mana: {5} / {6} (+{7}/s)
+Ward: {8} / {9}
+Spell power: {10}
+
+Click to open the grimoire: skill trees, attributes and spellbook.</AA_StatusTip>
+  <AA_PerkPointsShort>{0} perk</AA_PerkPointsShort>
+  <AA_AttrPointsShort>{0} attr</AA_AttrPointsShort>
+  <AA_SubclassReadyShort>subclass!</AA_SubclassReadyShort>
+  <AA_OpenGrimoireShort>click: grimoire</AA_OpenGrimoireShort>
+  <AA_ChooseClassTitle>Awaken {0}'s magic</AA_ChooseClassTitle>
+  <AA_ChooseClassSub>Choose an arcane path. Each class has its own skill tree and three subclasses that unlock at level 10.</AA_ChooseClassSub>
+  <AA_Playstyle>Playstyle</AA_Playstyle>
+  <AA_KeyAttributes>Key attributes: {0} and {1}.</AA_KeyAttributes>
+  <AA_StartingSpells>Starting spell</AA_StartingSpells>
+  <AA_Subclasses>Subclasses (unlock at level {0})</AA_Subclasses>
+  <AA_Lore>Lore</AA_Lore>
+  <AA_AwakenAs>Awaken as {0}</AA_AwakenAs>
+  <AA_LevelLong>Level {0} / {1}</AA_LevelLong>
+  <AA_ParagonLabel>Paragon {0}</AA_ParagonLabel>
+  <AA_XpTip>Experience: {0} / {1}
+
+Gain experience by casting spells, damaging and killing enemies, and healing allies.</AA_XpTip>
+  <AA_PerkPoints>Perk points</AA_PerkPoints>
+  <AA_AttributePoints>Attribute points</AA_AttributePoints>
+  <AA_TreeWord>tree</AA_TreeWord>
+  <AA_SubclassTab>Subclass</AA_SubclassTab>
+  <AA_SpellbookTab>Spellbook</AA_SpellbookTab>
+  <AA_CodexTab>Codex</AA_CodexTab>
+  <AA_Attributes>Attributes</AA_Attributes>
+  <AA_ArcaneStats>Arcane statistics</AA_ArcaneStats>
+  <AA_SpellPowerShort>Spell power (total)</AA_SpellPowerShort>
+  <AA_AutoAllocate>Auto-allocate points</AA_AutoAllocate>
+  <AA_AutoAllocateConfirm>Spend every unspent perk and attribute point automatically?</AA_AutoAllocateConfirm>
+  <AA_PerPoint>Per point:</AA_PerPoint>
+  <AA_AttrGates>Deeper rows of every skill tree require a minimum value in the class's primary attribute (shown at the left of each row).</AA_AttrGates>
+  <AA_PreviewingTree>Previewing the {0} tree</AA_PreviewingTree>
+  <AA_BackToChoices>Back</AA_BackToChoices>
+  <AA_ChooseSubclassNow>Choose your subclass. This choice is permanent.</AA_ChooseSubclassNow>
+  <AA_SubclassLocked>Subclasses unlock at level {0}. You can preview their trees now.</AA_SubclassLocked>
+  <AA_PreviewTree>Preview skill tree</AA_PreviewTree>
+  <AA_BecomeSubclass>Become {0}</AA_BecomeSubclass>
+  <AA_ConfirmSubclass>Become a {0}? {1} will follow this path permanently.</AA_ConfirmSubclass>
+  <AA_ReachLevel>Reach level {0}</AA_ReachLevel>
+  <AA_KnownSpells>Known spells ({0})</AA_KnownSpells>
+  <AA_LockedSpells>Not yet learned ({0})</AA_LockedSpells>
+  <AA_SpellMeta>{0} mana · {1} cooldown · {2}</AA_SpellMeta>
+  <AA_Autocast>Autocast</AA_Autocast>
+  <AA_ShowOnBar>Show on bar</AA_ShowOnBar>
+  <AA_CodexTips>Tips</AA_CodexTips>
+  <AA_CodexTipsBody>- Every level grants 1 perk point (2 on every fifth level) and 1 attribute point.
+- Nodes need a connected, learned node above them. Deeper rows also need levels and your primary attribute.
+- Keystones in the same row are mutually exclusive: pick one.
+- Right-click any spell button to toggle autocast or hide it. Autocast only fires while drafted (healing also works undrafted).
+- Ward is an arcane barrier that absorbs damage before health and regenerates after 5 seconds out of combat.
+- A tome of unmaking (Higher Arcana research) refunds all your points.
+- Mana draughts restore mana instantly. Brew them at the arcane lectern.</AA_CodexTipsBody>
+  <AA_Kind_Minor>minor</AA_Kind_Minor>
+  <AA_Kind_Notable>notable</AA_Kind_Notable>
+  <AA_Kind_Spell>spell</AA_Kind_Spell>
+  <AA_Kind_Augment>augment</AA_Kind_Augment>
+  <AA_Kind_Keystone>keystone</AA_Kind_Keystone>
+  <AA_Kind_Ultimate>ultimate</AA_Kind_Ultimate>
+  <AA_RankOf>Rank {0} / {1}</AA_RankOf>
+  <AA_CurrentRank>Current rank:</AA_CurrentRank>
+  <AA_FirstRank>First rank:</AA_FirstRank>
+  <AA_NextRank>Next rank:</AA_NextRank>
+  <AA_ReqLevel>Requires level {0}</AA_ReqLevel>
+  <AA_ReqAttr>Requires {0} {1}</AA_ReqAttr>
+  <AA_ReqExclusive>Mutually exclusive</AA_ReqExclusive>
+  <AA_ReqCost>Costs {0} points per rank</AA_ReqCost>
+  <AA_ClickToLearn>Click to learn.</AA_ClickToLearn>
+  <AA_UltimateTag>[ULTIMATE]</AA_UltimateTag>
+  <AA_Role_Attack>attack</AA_Role_Attack>
+  <AA_Role_Heal>healing</AA_Role_Heal>
+  <AA_Role_Buff>buff</AA_Role_Buff>
+  <AA_Role_Control>control</AA_Role_Control>
+  <AA_Role_Summon>summon</AA_Role_Summon>
+  <AA_Role_Utility>utility</AA_Role_Utility>
+  <AA_Role_Mobility>mobility</AA_Role_Mobility>
+  <AA_Tip_Mana>Mana: {0}</AA_Tip_Mana>
+  <AA_Tip_Cooldown>Cooldown: {0}</AA_Tip_Cooldown>
+  <AA_Tip_Range>Range: {0}</AA_Tip_Range>
+  <AA_Tip_Cast>Cast time: {0}s</AA_Tip_Cast>
+  <AA_Tip_Delivery>Delivery: {0}</AA_Tip_Delivery>
+  <AA_Delivery_Instant>instant</AA_Delivery_Instant>
+  <AA_Delivery_Projectile>projectile</AA_Delivery_Projectile>
+  <AA_Delivery_Meteor>falls from the sky</AA_Delivery_Meteor>
+  <AA_Delivery_Beam>beam</AA_Delivery_Beam>
+  <AA_Delivery_Chain>chains between targets</AA_Delivery_Chain>
+  <AA_Delivery_Cone>cone</AA_Delivery_Cone>
+  <AA_Delivery_Nova>nova around you</AA_Delivery_Nova>
+  <AA_Delivery_Self>self</AA_Delivery_Self>
+  <AA_Delivery_Barrage>barrage</AA_Delivery_Barrage>
+  <AA_Delivery_Line>wave along the ground</AA_Delivery_Line>
+  <AA_Tip_Radius>Radius: {0}</AA_Tip_Radius>
+  <AA_Tip_Chains>Jumps: {0}</AA_Tip_Chains>
+  <AA_Tip_Strikes>Strikes: {0}</AA_Tip_Strikes>
+  <AA_Tip_Projectiles>Projectiles: {0}</AA_Tip_Projectiles>
+  <AA_Tip_Self>On you: </AA_Tip_Self>
+  <AA_Tip_Power>Your power multiplier: {0}</AA_Tip_Power>
+  <AA_Set_Header>Arcanum Ascendant</AA_Set_Header>
+  <AA_Set_Xp>Experience gain: {0}</AA_Set_Xp>
+  <AA_Set_ManaRegen>Mana regeneration: {0}</AA_Set_ManaRegen>
+  <AA_Set_Power>Spell power: {0}</AA_Set_Power>
+  <AA_Set_FreeAwaken>Free awakening</AA_Set_FreeAwaken>
+  <AA_Set_FreeAwakenDesc>Any colonist can awaken their magic with a button. Turn off to require a grimoire of awakening (crafted at the arcane lectern).</AA_Set_FreeAwakenDesc>
+  <AA_Set_AwakenStart>Starting colonists begin awakened</AA_Set_AwakenStart>
+  <AA_Set_AwakenStartDesc>New games start with every colonist already awakened in a random class.</AA_Set_AwakenStartDesc>
+  <AA_Set_Autocast>Allow autocast</AA_Set_Autocast>
+  <AA_Set_AutocastDesc>Drafted mages automatically cast spells you have marked for autocast.</AA_Set_AutocastDesc>
+  <AA_Set_AutocastNew>Newly learned combat spells start with autocast enabled</AA_Set_AutocastNew>
+  <AA_Set_EnemyChance>Chance for hostile people to be mages: {0}</AA_Set_EnemyChance>
+  <AA_Set_EnemyLevel>Enemy mage level scaling: {0}</AA_Set_EnemyLevel>
+  <AA_Set_EnemyCast>Enemy mages cast spells</AA_Set_EnemyCast>
+  <AA_Set_Vfx>Visual effect intensity: {0}</AA_Set_Vfx>
+  <AA_Set_Shake>Screen shake</AA_Set_Shake>
+  <AA_Set_Reset>Reset to defaults</AA_Set_Reset>
+  <AA_RandomInspiration>random</AA_RandomInspiration>
+  <AA_RandomSkill>a random skill</AA_RandomSkill>
+</LanguageData>

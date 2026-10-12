@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ArcanumAscendant.ArcaneAttributeDef>
+    <defName>AA_Potency</defName>
+    <label>potency</label>
+    <abbreviation>POT</abbreviation>
+    <description>Raw arcane might. Potency makes every spell hit harder and heal more, and it gates the most destructive nodes of damage-focused trees.</description>
+    <iconPath>ArcanumAscendant/UI/Attr_Potency</iconPath>
+    <color>(1, 0.42, 0.32)</color>
+    <order>0</order>
+    <statOffsetsPerPoint>
+      <AA_SpellPower>0.04</AA_SpellPower>
+      <AA_HealingPower>0.03</AA_HealingPower>
+      <AA_AreaFactor>0.005</AA_AreaFactor>
+    </statOffsetsPerPoint>
+  </ArcanumAscendant.ArcaneAttributeDef>
+
+  <ArcanumAscendant.ArcaneAttributeDef>
+    <defName>AA_Focus</defName>
+    <label>focus</label>
+    <abbreviation>FOC</abbreviation>
+    <description>Mental discipline. Focus deepens the mana pool, speeds mana regeneration and strengthens anything the mage conjures or commands.</description>
+    <iconPath>ArcanumAscendant/UI/Attr_Focus</iconPath>
+    <color>(0.35, 0.6, 1)</color>
+    <order>1</order>
+    <statOffsetsPerPoint>
+      <AA_ManaMax>12</AA_ManaMax>
+      <AA_ManaRegen>0.08</AA_ManaRegen>
+      <AA_SummonPower>0.02</AA_SummonPower>
+    </statOffsetsPerPoint>
+  </ArcanumAscendant.ArcaneAttributeDef>
+
+  <ArcanumAscendant.ArcaneAttributeDef>
+    <defName>AA_Celerity</defName>
+    <label>celerity</label>
+    <abbreviation>CEL</abbreviation>
+    <description>Speed of thought and body. Celerity shortens cooldowns, quickens casting and lightens the step.</description>
+    <iconPath>ArcanumAscendant/UI/Attr_Celerity</iconPath>
+    <color>(0.4, 1, 0.65)</color>
+    <order>2</order>
+    <statOffsetsPerPoint>
+      <AA_CooldownReduction>0.015</AA_CooldownReduction>
+      <AA_CastSpeed>0.02</AA_CastSpeed>
+      <MoveSpeed>0.04</MoveSpeed>
+      <AimingDelayFactor>-0.008</AimingDelayFactor>
+    </statOffsetsPerPoint>
+  </ArcanumAscendant.ArcaneAttributeDef>
+
+  <ArcanumAscendant.ArcaneAttributeDef>
+    <defName>AA_Resilience</defName>
+    <label>resilience</label>
+    <abbreviation>RES</abbreviation>
+    <description>Arcane fortitude. Resilience thickens the mage's ward, hardens the skin and steadies the mind.</description>
+    <iconPath>ArcanumAscendant/UI/Attr_Resilience</iconPath>
+    <color>(1, 0.82, 0.35)</color>
+    <order>3</order>
+    <statOffsetsPerPoint>
+      <AA_WardMax>5</AA_WardMax>
+      <AA_WardRegen>0.15</AA_WardRegen>
+      <ArmorRating_Sharp>0.01</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.01</ArmorRating_Blunt>
+      <MentalBreakThreshold>-0.005</MentalBreakThreshold>
+    </statOffsetsPerPoint>
+  </ArcanumAscendant.ArcaneAttributeDef>
+
+  <ArcanumAscendant.ArcaneAttributeDef>
+    <defName>AA_Attunement</defName>
+    <label>attunement</label>
+    <abbreviation>ATT</abbreviation>
+    <description>Harmony with the weave. Attunement grants critical strikes, longer-lasting magic and faster arcane learning.</description>
+    <iconPath>ArcanumAscendant/UI/Attr_Attunement</iconPath>
+    <color>(0.78, 0.45, 1)</color>
+    <order>4</order>
+    <statOffsetsPerPoint>
+      <AA_CritChance>0.01</AA_CritChance>
+      <AA_CritDamage>0.03</AA_CritDamage>
+      <AA_DurationFactor>0.01</AA_DurationFactor>
+      <AA_XpGain>0.01</AA_XpGain>
+    </statOffsetsPerPoint>
+  </ArcanumAscendant.ArcaneAttributeDef>
+</Defs>

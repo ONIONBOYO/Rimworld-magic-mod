@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ===================== Spell base ===================== -->
+  <AbilityCategoryDef>
+    <defName>AA_Spells</defName>
+    <displayOrder>300</displayOrder>
+  </AbilityCategoryDef>
+
+  <AbilityDef Name="AA_SpellBase" Abstract="True">
+    <abilityClass>ArcanumAscendant.ArcaneAbility</abilityClass>
+    <gizmoClass>ArcanumAscendant.Command_ArcaneSpell</gizmoClass>
+    <category>AA_Spells</category>
+    <aiCanUse>false</aiCanUse>
+    <stunTargetWhileCasting>false</stunTargetWhileCasting>
+    <showPsycastEffects>false</showPsycastEffects>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <writeCombatLog>false</writeCombatLog>
+    <showOnCharacterCard>true</showOnCharacterCard>
+    <showCastingProgressBar>true</showCastingProgressBar>
+  </AbilityDef>
+
+  <!-- ===================== Hidden faction for summons ===================== -->
+  <FactionDef>
+    <defName>AA_ArcaneThralls</defName>
+    <label>arcane thralls</label>
+    <description>Spirits, constructs, risen dead and dominated minds bound to the colony's mages.</description>
+    <pawnSingular>thrall</pawnSingular>
+    <pawnsPlural>thralls</pawnsPlural>
+    <fixedName>Arcane Thralls</fixedName>
+    <hidden>true</hidden>
+    <humanlikeFaction>false</humanlikeFaction>
+    <requiredCountAtGameStart>0</requiredCountAtGameStart>
+    <maxConfigurableAtWorldCreation>0</maxConfigurableAtWorldCreation>
+    <displayInFactionSelection>false</displayInFactionSelection>
+    <canMakeRandomly>false</canMakeRandomly>
+    <autoFlee>false</autoFlee>
+    <canSiege>false</canSiege>
+    <canStageAttacks>false</canStageAttacks>
+    <raidsForbidden>true</raidsForbidden>
+    <rescueesCanJoin>false</rescueesCanJoin>
+    <settlementGenerationWeight>0</settlementGenerationWeight>
+    <techLevel>Medieval</techLevel>
+    <factionIconPath>ArcanumAscendant/UI/ThrallFaction</factionIconPath>
+    <colorSpectrum>
+      <li>(0.6, 0.45, 1)</li>
+    </colorSpectrum>
+    <permanentEnemy>false</permanentEnemy>
+    <naturalEnemy>false</naturalEnemy>
+  </FactionDef>
+
+  <!-- ===================== Research ===================== -->
+  <ResearchTabDef>
+    <defName>AA_ArcaneResearch</defName>
+    <label>arcana</label>
+  </ResearchTabDef>
+
+  <ResearchProjectDef>
+    <defName>AA_Arcanology</defName>
+    <label>arcanology</label>
+    <description>Study the weave of magic that runs beneath the rim. Unlocks the arcane lectern, grimoires of awakening and mana draughts.</description>
+    <baseCost>300</baseCost>
+    <techLevel>Neolithic</techLevel>
+    <tab>AA_ArcaneResearch</tab>
+    <researchViewX>0</researchViewX>
+    <researchViewY>0</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>AA_HigherArcana</defName>
+    <label>higher arcana</label>
+    <description>Master the theory of arcane paths. Unlocks the tome of unmaking, which lets a mage relearn their skill tree, and greater mana draughts.</description>
+    <baseCost>1200</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tab>AA_ArcaneResearch</tab>
+    <prerequisites>
+      <li>AA_Arcanology</li>
+    </prerequisites>
+    <researchViewX>1</researchViewX>
+    <researchViewY>0</researchViewY>
+  </ResearchProjectDef>
+
+  <!-- ===================== Workbench ===================== -->
+  <ThingDef>
+    <defName>AA_ArcaneAltar</defName>
+    <label>arcane lectern</label>
+    <description>A lectern inscribed with glowing runes. Mages and scholars use it to scribe grimoires, tomes and mana draughts.</description>
+    <thingClass>Building_WorkTable</thingClass>
+    <category>Building</category>
+    <graphicData>
+      <texPath>ArcanumAscendant/Things/ArcaneAltar</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.5, 1.5)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.5</fillPercent>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <rotatable>true</rotatable>
+    <size>(1,1)</size>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <WorkToBuild>2200</WorkToBuild>
+      <Flammability>1</Flammability>
+      <Beauty>6</Beauty>
+      <Mass>20</Mass>
+    </statBases>
+    <costList>
+      <WoodLog>60</WoodLog>
+      <Silver>40</Silver>
+    </costList>
+    <designationCategory>Production</designationCategory>
+    <hasInteractionCell>true</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <surfaceType>Item</surfaceType>
+    <inspectorTabs>
+      <li>ITab_Bills</li>
+    </inspectorTabs>
+    <researchPrerequisites>
+      <li>AA_Arcanology</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>3</constructionSkillPrerequisite>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>4</glowRadius>
+        <glowColor>(170,120,255,0)</glowColor>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- ===================== Items ===================== -->
+  <ThingCategoryDef>
+    <defName>AA_ArcaneItems</defName>
+    <label>arcane items</label>
+    <parent>Items</parent>
+    <iconPath>ArcanumAscendant/UI/Grimoire</iconPath>
+  </ThingCategoryDef>
+
+  <ThingDef Name="AA_ArcaneItemBase" Abstract="True">
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <drawerType>MapMeshOnly</drawerType>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>true</alwaysHaulable>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <pathCost>14</pathCost>
+    <rotatable>false</rotatable>
+    <tradeability>All</tradeability>
+    <techLevel>Medieval</techLevel>
+    <thingCategories>
+      <li>AA_ArcaneItems</li>
+    </thingCategories>
+    <comps>
+      <li Class="CompProperties_Forbiddable" />
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="AA_ArcaneItemBase">
+    <defName>AA_Grimoire</defName>
+    <label>grimoire of awakening</label>
+    <description>A heavy book bound in silver and runes. Reading it awakens the reader's latent magic and lets them choose an arcane class.\n\n(If "free awakening" is enabled in the mod settings, colonists can also awaken without one.)</description>
+    <graphicData>
+      <texPath>ArcanumAscendant/Items/Grimoire</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stackLimit>5</stackLimit>
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <MarketValue>900</MarketValue>
+      <Mass>1.2</Mass>
+      <Flammability>1</Flammability>
+      <Beauty>3</Beauty>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>Read {0_label}</useLabel>
+        <useDuration>600</useDuration>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>ArcanumAscendant.CompUseEffect_Awaken</compClass>
+      </li>
+      <li Class="CompProperties_UseEffectDestroySelf" />
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="AA_ArcaneItemBase">
+    <defName>AA_TomeOfUnmaking</defName>
+    <label>tome of unmaking</label>
+    <description>A book that teaches a mage to forget. Reading it refunds every skill tree point and attribute point the reader has spent, letting them rebuild from scratch.</description>
+    <graphicData>
+      <texPath>ArcanumAscendant/Items/TomeOfUnmaking</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stackLimit>5</stackLimit>
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <MarketValue>1200</MarketValue>
+      <Mass>1.0</Mass>
+      <Flammability>1</Flammability>
+      <Beauty>2</Beauty>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>Read {0_label}</useLabel>
+        <useDuration>600</useDuration>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>ArcanumAscendant.CompUseEffect_Respec</compClass>
+      </li>
+      <li Class="CompProperties_UseEffectDestroySelf" />
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="AA_ArcaneItemBase">
+    <defName>AA_ManaPotion</defName>
+    <label>mana draught</label>
+    <description>A shimmering blue draught. Drinking it restores 150 mana to a mage. Does nothing for the unawakened, except taste of blueberries.</description>
+    <graphicData>
+      <texPath>ArcanumAscendant/Items/ManaPotion</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stackLimit>25</stackLimit>
+    <statBases>
+      <MaxHitPoints>40</MaxHitPoints>
+      <MarketValue>60</MarketValue>
+      <Mass>0.2</Mass>
+      <Flammability>0.2</Flammability>
+      <DeteriorationRate>2</DeteriorationRate>
+    </statBases>
+    <ingestible>
+      <preferability>NeverForNutrition</preferability>
+      <foodType>Processed, Fluid</foodType>
+      <maxNumToIngestAtOnce>1</maxNumToIngestAtOnce>
+      <baseIngestTicks>90</baseIngestTicks>
+      <chairSearchRadius>0</chairSearchRadius>
+      <outcomeDoers>
+        <li Class="ArcanumAscendant.IngestionOutcomeDoer_RestoreMana">
+          <amount>150</amount>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+  </ThingDef>
+
+  <ThingDef ParentName="AA_ArcaneItemBase">
+    <defName>AA_GreaterManaPotion</defName>
+    <label>greater mana draught</label>
+    <description>A dense, glowing draught. Drinking it restores 500 mana to a mage.</description>
+    <graphicData>
+      <texPath>ArcanumAscendant/Items/GreaterManaPotion</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stackLimit>25</stackLimit>
+    <statBases>
+      <MaxHitPoints>40</MaxHitPoints>
+      <MarketValue>180</MarketValue>
+      <Mass>0.2</Mass>
+      <Flammability>0.2</Flammability>
+      <DeteriorationRate>2</DeteriorationRate>
+    </statBases>
+    <ingestible>
+      <preferability>NeverForNutrition</preferability>
+      <foodType>Processed, Fluid</foodType>
+      <maxNumToIngestAtOnce>1</maxNumToIngestAtOnce>
+      <baseIngestTicks>90</baseIngestTicks>
+      <chairSearchRadius>0</chairSearchRadius>
+      <outcomeDoers>
+        <li Class="ArcanumAscendant.IngestionOutcomeDoer_RestoreMana">
+          <amount>500</amount>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>AA_ArcaneLight</defName>
+    <label>arcane light</label>
+    <description>A floating orb of soft arcane light. It fades after a few days.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>ArcanumAscendant/Things/ArcaneLight</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(0.9, 0.9)</drawSize>
+    </graphicData>
+    <passability>Standable</passability>
+    <selectable>true</selectable>
+    <useHitPoints>false</useHitPoints>
+    <rotatable>false</rotatable>
+    <building>
+      <isEdifice>false</isEdifice>
+      <claimable>false</claimable>
+    </building>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>12</glowRadius>
+        <glowColor>(200,210,255,0)</glowColor>
+      </li>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneConstruct">
+        <defaultLifetimeTicks>180000</defaultLifetimeTicks>
+        <glowColor>(0.75, 0.8, 1, 1)</glowColor>
+        <glowSize>2.2</glowSize>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- ===================== Recipes ===================== -->
+  <RecipeDef Name="AA_ArcaneRecipeBase" Abstract="True">
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <workSkill>Intellectual</workSkill>
+    <effectWorking>Research</effectWorking>
+    <recipeUsers>
+      <li>AA_ArcaneAltar</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef ParentName="AA_ArcaneRecipeBase">
+    <defName>AA_Make_Grimoire</defName>
+    <label>scribe grimoire of awakening</label>
+    <description>Scribe a grimoire of awakening.</description>
+    <jobString>Scribing a grimoire.</jobString>
+    <workAmount>4000</workAmount>
+    <ingredients>
+      <li>
+        <filter><thingDefs><li>Silver</li></thingDefs></filter>
+        <count>60</count>
+      </li>
+      <li>
+        <filter><thingDefs><li>Cloth</li></thingDefs></filter>
+        <count>25</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Silver</li>
+        <li>Cloth</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <AA_Grimoire>1</AA_Grimoire>
+    </products>
+    <skillRequirements>
+      <Intellectual>4</Intellectual>
+    </skillRequirements>
+    <researchPrerequisite>AA_Arcanology</researchPrerequisite>
+  </RecipeDef>
+
+  <RecipeDef ParentName="AA_ArcaneRecipeBase">
+    <defName>AA_Make_ManaPotion</defName>
+    <label>brew mana draughts</label>
+    <description>Brew two mana draughts from herbal medicine and silver dust.</description>
+    <jobString>Brewing mana draughts.</jobString>
+    <workAmount>1200</workAmount>
+    <ingredients>
+      <li>
+        <filter><thingDefs><li>MedicineHerbal</li></thingDefs></filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter><thingDefs><li>Silver</li></thingDefs></filter>
+        <count>8</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>MedicineHerbal</li>
+        <li>Silver</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <AA_ManaPotion>2</AA_ManaPotion>
+    </products>
+    <researchPrerequisite>AA_Arcanology</researchPrerequisite>
+  </RecipeDef>
+
+  <RecipeDef ParentName="AA_ArcaneRecipeBase">
+    <defName>AA_Make_GreaterManaPotion</defName>
+    <label>brew greater mana draught</label>
+    <description>Brew a greater mana draught.</description>
+    <jobString>Brewing a greater mana draught.</jobString>
+    <workAmount>2000</workAmount>
+    <ingredients>
+      <li>
+        <filter><thingDefs><li>MedicineIndustrial</li></thingDefs></filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter><thingDefs><li>Gold</li></thingDefs></filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>MedicineIndustrial</li>
+        <li>Gold</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <AA_GreaterManaPotion>1</AA_GreaterManaPotion>
+    </products>
+    <researchPrerequisite>AA_HigherArcana</researchPrerequisite>
+  </RecipeDef>
+
+  <RecipeDef ParentName="AA_ArcaneRecipeBase">
+    <defName>AA_Make_TomeOfUnmaking</defName>
+    <label>scribe tome of unmaking</label>
+    <description>Scribe a tome of unmaking.</description>
+    <jobString>Scribing a tome of unmaking.</jobString>
+    <workAmount>6000</workAmount>
+    <ingredients>
+      <li>
+        <filter><thingDefs><li>Gold</li></thingDefs></filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter><thingDefs><li>Cloth</li></thingDefs></filter>
+        <count>30</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Gold</li>
+        <li>Cloth</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <AA_TomeOfUnmaking>1</AA_TomeOfUnmaking>
+    </products>
+    <skillRequirements>
+      <Intellectual>8</Intellectual>
+    </skillRequirements>
+    <researchPrerequisite>AA_HigherArcana</researchPrerequisite>
+  </RecipeDef>
+</Defs>

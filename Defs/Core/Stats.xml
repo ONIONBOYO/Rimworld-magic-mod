@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <StatCategoryDef>
+    <defName>AA_ArcanaStats</defName>
+    <label>arcana</label>
+    <displayOrder>46</displayOrder>
+  </StatCategoryDef>
+
+  <StatDef>
+    <defName>AA_SpellPower</defName>
+    <label>spell power</label>
+    <description>Multiplier on the damage, healing and shielding of this mage's spells. Raised by Potency, level, paragon ranks and skill tree nodes.</description>
+    <category>AA_ArcanaStats</category>
+    <workerClass>ArcanumAscendant.StatWorker_Arcane</workerClass>
+    <defaultBaseValue>1.0</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showOnNonWildManHumanlikes>true</showOnNonWildManHumanlikes>
+    <displayPriorityInCategory>100</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef>
+    <defName>AA_ManaMax</defName>
+    <label>maximum mana</label>
+    <description>How much mana this mage can store. Raised by Focus and by leveling up.</description>
+    <category>AA_ArcanaStats</category>
+    <workerClass>ArcanumAscendant.StatWorker_Arcane</workerClass>
+    <defaultBaseValue>60</defaultBaseValue>
+    <minValue>10</minValue>
+    <toStringStyle>FloatOne</toStringStyle>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showOnNonWildManHumanlikes>true</showOnNonWildManHumanlikes>
+    <displayPriorityInCategory>99</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef>
+    <defName>AA_ManaRegen</defName>
+    <label>mana regeneration</label>
+    <description>Mana regenerated per second. Raised by Focus.</description>
+    <category>AA_ArcanaStats</category>
+    <workerClass>ArcanumAscendant.StatWorker_Arcane</workerClass>
+    <defaultBaseValue>1.0</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>FloatTwo</toStringStyle>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showOnNonWildManHumanlikes>true</showOnNonWildManHumanlikes>
+    <displayPriorityInCategory>98</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef>
+    <defName>AA_CooldownReduction</defName>
+    <label>cooldown reduction</label>
+    <description>Reduces the cooldown of every spell. Capped at 75%.</description>
+    <category>AA_ArcanaStats</category>
+    <workerClass>ArcanumAscendant.StatWorker_Arcane</workerClass>
+    <defaultBaseValue>0.0</defaultBaseValue>
+    <minValue>0</minValue>
+    <maxValue>0.75</maxValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showOnNonWildManHumanlikes>true</showOnNonWildManHumanlikes>
+    <displayPriorityInCategory>97</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef>
+    <defName>AA_CastSpeed</defName>
+    <label>casting speed</label>
+    <description>How quickly this mage finishes channeling spells.</description>
+    <category>AA_ArcanaStats</category>
+    <workerClass>ArcanumAscendant.StatWorker_Arcane</workerClass>
+    <defaultBaseValue>1.0</defaultBaseValue>
+    <minValue>0.25</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showOnNonWildManHumanlikes>true</showOnNonWildManHumanlikes>
+    <displayPriorityInCategory>96</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef>
+    <defName>AA_CritChance</defName>
+    <label>spell critical chance</label>
+    <description>Chance for damage and healing spells to critically strike.</description>
+    <category>AA_ArcanaStats</category>
+    <workerClass>ArcanumAscendant.StatWorker_Arcane</workerClass>
+    <defaultBaseValue>0.05</defaultBaseValue>
+    <minValue>0</minValue>
+    <maxValue>1</maxValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showOnNonWildManHumanlikes>true</showOnNonWildManHumanlikes>
+    <displayPriorityInCategory>95</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef>
+    <defName>AA_CritDamage</defName>
+    <label>spell critical multiplier</label>
+    <description>Damage and healing multiplier on critical strikes.</description>
+    <category>AA_ArcanaStats</category>
+    <workerClass>ArcanumAscendant.StatWorker_Arcane</workerClass>
+    <defaultBaseValue>1.5</defaultBaseValue>
+    <minValue>1</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showOnNonWildManHumanlikes>true</showOnNonWildManHumanlikes>
+    <displayPriorityInCategory>94</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef>
+    <defName>AA_ManaCostFactor</defName>
+    <label>mana cost</label>
+    <description>Multiplier on the mana cost of every spell.</description>
+    <category>AA_ArcanaStats</category>
+    <workerClass>ArcanumAscendant.StatWorker_Arcane</workerClass>
+    <defaultBaseValue>1.0</defaultBaseValue>
+    <minValue>0.2</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showOnNonWildManHumanlikes>true</showOnNonWildManHumanlikes>
+    <displayPriorityInCategory>93</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef>
+    <defName>AA_WardMax</defName>
+    <label>maximum ward</label>
+    <description>An arcane barrier that absorbs incoming damage before health. Regenerates after 5 seconds without taking damage. Raised by Resilience and level.</description>
+    <category>AA_ArcanaStats</category>
+    <workerClass>ArcanumAscendant.StatWorker_Arcane</workerClass>
+    <defaultBaseValue>0</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>FloatOne</toStringStyle>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showOnNonWildManHumanlikes>true</showOnNonWildManHumanlikes>
+    <displayPriorityInCategory>92</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef>
+    <defName>AA_WardRegen</defName>
+    <label>ward regeneration</label>
+    <description>Ward regenerated per second once the mage has not been harmed for 5 seconds.</description>
+    <category>AA_ArcanaStats</category>
+    <workerClass>ArcanumAscendant.StatWorker_Arcane</workerClass>
+    <defaultBaseValue>2.0</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>FloatOne</toStringStyle>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showOnNonWildManHumanlikes>true</showOnNonWildManHumanlikes>
+    <displayPriorityInCategory>91</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef>
+    <defName>AA_AreaFactor</defName>
+    <label>spell area</label>
+    <description>Multiplier on the radius of area spells and fields.</description>
+    <category>AA_ArcanaStats</category>
+    <workerClass>ArcanumAscendant.StatWorker_Arcane</workerClass>
+    <defaultBaseValue>1.0</defaultBaseValue>
+    <minValue>0.3</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showOnNonWildManHumanlikes>true</showOnNonWildManHumanlikes>
+    <displayPriorityInCategory>90</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef>
+    <defName>AA_DurationFactor</defName>
+    <label>spell duration</label>
+    <description>Multiplier on the duration of spell buffs, debuffs, fields and summons.</description>
+    <category>AA_ArcanaStats</category>
+    <workerClass>ArcanumAscendant.StatWorker_Arcane</workerClass>
+    <defaultBaseValue>1.0</defaultBaseValue>
+    <minValue>0.3</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showOnNonWildManHumanlikes>true</showOnNonWildManHumanlikes>
+    <displayPriorityInCategory>89</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef>
+    <defName>AA_SummonPower</defName>
+    <label>summon power</label>
+    <description>Multiplier on the strength of conjured constructs and on summon counts for some spells.</description>
+    <category>AA_ArcanaStats</category>
+    <workerClass>ArcanumAscendant.StatWorker_Arcane</workerClass>
+    <defaultBaseValue>1.0</defaultBaseValue>
+    <minValue>0.2</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showOnNonWildManHumanlikes>true</showOnNonWildManHumanlikes>
+    <displayPriorityInCategory>88</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef>
+    <defName>AA_HealingPower</defName>
+    <label>healing power</label>
+    <description>Multiplier on healing and wards cast by this mage.</description>
+    <category>AA_ArcanaStats</category>
+    <workerClass>ArcanumAscendant.StatWorker_Arcane</workerClass>
+    <defaultBaseValue>1.0</defaultBaseValue>
+    <minValue>0.1</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showOnNonWildManHumanlikes>true</showOnNonWildManHumanlikes>
+    <displayPriorityInCategory>87</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef>
+    <defName>AA_Lifesteal</defName>
+    <label>spell lifesteal</label>
+    <description>Fraction of spell damage dealt that heals the caster.</description>
+    <category>AA_ArcanaStats</category>
+    <workerClass>ArcanumAscendant.StatWorker_Arcane</workerClass>
+    <defaultBaseValue>0.0</defaultBaseValue>
+    <minValue>0</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showOnNonWildManHumanlikes>true</showOnNonWildManHumanlikes>
+    <displayPriorityInCategory>86</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef>
+    <defName>AA_XpGain</defName>
+    <label>arcane learning</label>
+    <description>Multiplier on arcane experience gained.</description>
+    <category>AA_ArcanaStats</category>
+    <workerClass>ArcanumAscendant.StatWorker_Arcane</workerClass>
+    <defaultBaseValue>1.0</defaultBaseValue>
+    <minValue>0.1</minValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showOnAnimals>false</showOnAnimals>
+    <showOnMechanoids>false</showOnMechanoids>
+    <showOnNonWildManHumanlikes>true</showOnNonWildManHumanlikes>
+    <displayPriorityInCategory>85</displayPriorityInCategory>
+  </StatDef>
+
+</Defs>
