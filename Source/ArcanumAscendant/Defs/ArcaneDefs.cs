@@ -271,6 +271,11 @@ namespace ArcanumAscendant
     {
         public static HediffDef AA_ArcaneCore;
         public static ThingDef AA_ArcaneCrystal;
+        public static ThingDef AA_LightFlash;
+        public static HediffDef AA_ArcaneStrain;
+        public static HediffDef AA_ArcaneBurnout;
+        public static HediffDef AA_Haste;
+        public static JobDef AA_ArcaneChannel;
         public static JobDef AA_ArcaneStudy;
         public static HediffDef AA_Summoned;
         public static HediffDef AA_Polymorphed;

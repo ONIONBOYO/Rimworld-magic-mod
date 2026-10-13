@@ -12,7 +12,9 @@ from arcgen import write_defs, write_json, node_xml  # noqa: E402
 import core_content  # noqa: E402
 import things  # noqa: E402
 import sounds_flecks  # noqa: E402
+import systems  # noqa: E402
 from classes import expansion  # noqa: E402
+from classes import expansion2  # noqa: E402
 
 CLASS_MODULES = [
     "c_pyromancer", "c_tempest", "c_necromancer", "c_paladin", "c_chronomancer",
@@ -55,6 +57,7 @@ def main():
     write_defs(os.path.join(out_defs, "Core_Status.xml"), core_content.status_xml())
     write_defs(os.path.join(out_defs, "Core_Sounds.xml"), sounds_flecks.sound_xml())
     write_defs(os.path.join(out_defs, "Core_Flecks.xml"), sounds_flecks.fleck_xml())
+    write_defs(os.path.join(out_defs, "Core_Systems.xml"), systems.strain_xml() + systems.reactions_xml() + systems.familiars_xml())
 
     icons = []
     compendium = []
@@ -71,6 +74,7 @@ def main():
         things.THING_ICONS.clear()
         root, subs, extra = mod.build()
         expansion.extend(modname, root, subs, extra)
+        expansion2.extend(modname, root, subs, extra)
         trees = [root] + subs
         compendium.append(trees)
         spells_by_id = {}

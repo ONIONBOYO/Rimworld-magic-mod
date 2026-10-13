@@ -603,6 +603,20 @@
     <unlockSpell>AA_Spell_NaturesRenewal</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Druid_HornetSwarm</defName>
+    <tree>AA_Class_Druid</tree>
+    <kind>Spell</kind>
+    <x>4</x>
+    <y>5</y>
+    <requiredLevel>7</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Druid_Harvestmoon</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_HornetSwarm</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Beastmaster_SummonBear</defName>
     <tree>AA_Class_Beastmaster</tree>
     <kind>Spell</kind>
@@ -1702,6 +1716,7 @@
         </impactVfx>
         <castSound>AA_Cast_Nature</castSound>
         <impactSound>AA_Impact_Nature</impactSound>
+        <style>Nature</style>
         <projectileCount>3</projectileCount>
         <projectileSpeed>30</projectileSpeed>
         <projectileScale>0.6</projectileScale>
@@ -1799,6 +1814,7 @@
         </impactVfx>
         <castSound>AA_Cast_Nature</castSound>
         <impactSound>AA_Impact_Nature</impactSound>
+        <style>Nature</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -1904,6 +1920,7 @@
         </impactVfx>
         <castSound>AA_Cast_Nature</castSound>
         <impactSound>AA_Impact_Nature</impactSound>
+        <style>Nature</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -1994,6 +2011,7 @@
         </impactVfx>
         <castSound>AA_Cast_Nature</castSound>
         <impactSound>AA_Impact_Nature</impactSound>
+        <style>Nature</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2083,6 +2101,7 @@
         </impactVfx>
         <castSound>AA_Cast_Nature</castSound>
         <impactSound>AA_Impact_Nature</impactSound>
+        <style>Nature</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2170,6 +2189,7 @@
         </impactVfx>
         <castSound>AA_Cast_Nature</castSound>
         <impactSound>AA_Impact_Nature</impactSound>
+        <style>Nature</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2266,6 +2286,7 @@
         </impactVfx>
         <castSound>AA_Cast_Nature</castSound>
         <impactSound>AA_Impact_Nature</impactSound>
+        <style>Nature</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2361,6 +2382,7 @@
         </impactVfx>
         <castSound>AA_Cast_Nature</castSound>
         <impactSound>AA_Impact_Nature</impactSound>
+        <style>Nature</style>
         <lineLength>16</lineLength>
         <strikeRadius>1.5</strikeRadius>
         <lineStepDelay>2</lineStepDelay>
@@ -2469,6 +2491,7 @@
         <castSound>AA_Cast_Nature</castSound>
         <impactSound>AA_Impact_Nature</impactSound>
         <shake>3</shake>
+        <style>Nature</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2566,6 +2589,110 @@
         </impactVfx>
         <castSound>AA_Cast_Nature</castSound>
         <impactSound>AA_Impact_Nature</impactSound>
+        <style>Nature</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_HornetSwarm</defName>
+    <label>hornet swarm</label>
+    <description>Loose a swarm of eight giant hornets. They chase down enemies and sting them with venom.</description>
+    <iconPath>ArcanumAscendant/Spells/HornetSwarm</iconPath>
+    <cooldownTicksRange>720</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>26</range>
+      <warmupTime>0.5</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>30</manaCost>
+        <tags>
+          <li>Nature</li>
+        </tags>
+        <tier>2</tier>
+        <role>Attack</role>
+        <autocastByDefault>true</autocastByDefault>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Missiles</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Damage">
+            <amount>5</amount>
+            <damageDef>AA_Thorn</damageDef>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_Poisoned</hediff>
+            <severity>0.5</severity>
+            <stack>true</stack>
+            <maxSeverity>4</maxSeverity>
+          </li>
+        </effects>
+        <color>(0.498, 0.878, 0.353, 1)</color>
+        <color2>(0.894, 1, 0.784, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Petal</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>1.8</scale>
+            <scaleEnd>2.16</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Leaf</fleck>
+            <count>8</count>
+            <speed>2.2</speed>
+            <scale>0.55</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.2</scale>
+            <scaleEnd>2</scaleEnd>
+            <ticks>20</ticks>
+            <useColor2>true</useColor2>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Nature</castSound>
+        <impactSound>AA_Impact_Nature</impactSound>
+        <style>Nature</style>
+        <projectileCount>8</projectileCount>
+        <projectileSpeed>12</projectileSpeed>
+        <projectileTex>ArcanumAscendant/Vfx/Thorn</projectileTex>
+        <projectileScale>0.35</projectileScale>
+        <missileSpread>150</missileSpread>
+        <multiTargetRadius>7</multiTargetRadius>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2659,6 +2786,7 @@
         </impactVfx>
         <castSound>AA_Cast_Nature</castSound>
         <impactSound>AA_Impact_Nature</impactSound>
+        <style>Nature</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2742,6 +2870,7 @@
         </impactVfx>
         <castSound>AA_Cast_Nature</castSound>
         <impactSound>AA_Impact_Nature</impactSound>
+        <style>Nature</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2827,6 +2956,7 @@
         </impactVfx>
         <castSound>AA_Cast_Nature</castSound>
         <impactSound>AA_Impact_Nature</impactSound>
+        <style>Nature</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2925,6 +3055,7 @@
         </impactVfx>
         <castSound>AA_Cast_Nature</castSound>
         <impactSound>AA_Impact_Nature</impactSound>
+        <style>Nature</style>
         <lineLength>16</lineLength>
         <strikeRadius>1.6</strikeRadius>
         <lineStepDelay>1</lineStepDelay>
@@ -3034,6 +3165,7 @@
         <castSound>AA_Cast_Nature</castSound>
         <impactSound>AA_Impact_Nature</impactSound>
         <shake>2</shake>
+        <style>Nature</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3125,6 +3257,7 @@
         </impactVfx>
         <castSound>AA_Cast_Nature</castSound>
         <impactSound>AA_Impact_Nature</impactSound>
+        <style>Nature</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3216,6 +3349,7 @@
         </impactVfx>
         <castSound>AA_Cast_Nature</castSound>
         <impactSound>AA_Impact_Nature</impactSound>
+        <style>Nature</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3304,6 +3438,7 @@
         </impactVfx>
         <castSound>AA_Cast_Nature</castSound>
         <impactSound>AA_Impact_Nature</impactSound>
+        <style>Nature</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3415,6 +3550,7 @@
         </impactVfx>
         <castSound>AA_Cast_Nature</castSound>
         <impactSound>AA_Impact_Nature</impactSound>
+        <style>Nature</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3507,6 +3643,7 @@
         </impactVfx>
         <castSound>AA_Cast_Nature</castSound>
         <impactSound>AA_Impact_Nature</impactSound>
+        <style>Nature</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3622,6 +3759,7 @@
         <castSound>AA_Cast_Nature</castSound>
         <impactSound>AA_Impact_Nature</impactSound>
         <shake>1.5</shake>
+        <style>Nature</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3723,6 +3861,7 @@
         </impactVfx>
         <castSound>AA_Cast_Nature</castSound>
         <impactSound>AA_Impact_Nature</impactSound>
+        <style>Nature</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3809,6 +3948,7 @@
         </impactVfx>
         <castSound>AA_Cast_Blood</castSound>
         <impactSound>AA_Impact_Blood</impactSound>
+        <style>Nature</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3896,6 +4036,7 @@
         </impactVfx>
         <castSound>AA_Cast_Blood</castSound>
         <impactSound>AA_Impact_Blood</impactSound>
+        <style>Nature</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3997,6 +4138,7 @@
         </impactVfx>
         <castSound>AA_Cast_Blood</castSound>
         <impactSound>AA_Impact_Blood</impactSound>
+        <style>Nature</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -4086,6 +4228,7 @@
         <castSound>AA_Cast_Blood</castSound>
         <impactSound>AA_Impact_Blood</impactSound>
         <shake>1.5</shake>
+        <style>Nature</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -4202,6 +4345,7 @@
         <castSound>AA_Cast_Blood</castSound>
         <impactSound>AA_Impact_Blood</impactSound>
         <shake>3</shake>
+        <style>Nature</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -4303,6 +4447,7 @@
         </impactVfx>
         <castSound>AA_Cast_Blood</castSound>
         <impactSound>AA_Impact_Blood</impactSound>
+        <style>Nature</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>

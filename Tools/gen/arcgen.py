@@ -324,13 +324,29 @@ TARGETS = {
 
 ROLE_UNDRAFTED = {"Heal", "Buff", "Utility", "Summon", "Mobility"}
 
+# Visual style of a spell, from its tags (highest priority first) and then from its school.
+STYLE_TAGS = [("Plague", "Plague"), ("Frost", "Frost"), ("Fire", "Fire"), ("Storm", "Storm"), ("Holy", "Holy"), ("Time", "Time"),
+              ("Void", "Void"), ("Space", "Void"), ("Blood", "Blood"), ("Song", "Song"), ("Chaos", "Song"), ("Necromancy", "Necro"),
+              ("Nature", "Nature"), ("Beast", "Nature"), ("Rune", "Rune"), ("Gun", "Rune"), ("Shadow", "Shadow"), ("Hex", "Shadow")]
+STYLE_SCHOOLS = {"Fire": "Fire", "Frost": "Frost", "Storm": "Storm", "Necro": "Necro", "Holy": "Holy", "Time": "Time", "Void": "Void",
+                 "Nature": "Nature", "Rune": "Rune", "Shadow": "Shadow", "Blood": "Blood", "Song": "Song"}
+
+
+def style_for(spell):
+    if spell.style:
+        return spell.style
+    for tag, st in STYLE_TAGS:
+        if tag in spell.tags:
+            return st
+    return STYLE_SCHOOLS.get(spell.school.name if spell.school else "", "Arcane")
+
 
 class Spell:
     def __init__(self, sid, label, desc, *, icon, mana, cd, range=24.0, warmup=0.8, tags=(), role="Attack",
                  target="enemy", delivery="Instant", radius=0.0, effects=(), caster_effects=(), affects=None,
                  cast_vfx=None, impact_vfx=None, caster_vfx=None, school=None, sound_cast=None, sound_impact=None,
                  shake=0.0, ultimate=False, quirky=False, flavor=None, tier=1, xp=1.0, autocast=None,
-                 ai_min=0.0, ai_hp=0.6, los=True, health_cost=0.0, hostile=None, **delivery_kw):
+                 ai_min=0.0, ai_hp=0.6, los=True, health_cost=0.0, hostile=None, style=None, **delivery_kw):
         self.sid = sid
         self.defName = "AA_Spell_" + sid
         self.label = label
@@ -366,6 +382,7 @@ class Spell:
         self.los = los
         self.health_cost = health_cost
         self.hostile = hostile
+        self.style = style
         self.delivery_kw = delivery_kw
         self.owner = None
 
@@ -407,6 +424,7 @@ class Spell:
                  castSound=self.sound_cast or sc.sound_cast,
                  impactSound=self.sound_impact or sc.sound_impact,
                  shake=float(self.shake) if self.shake else None,
+                 style=style_for(self),
                  **self.delivery_kw)
         if self.delivery in ("Projectile", "Meteor", "Barrage") and "projectileTex" not in self.delivery_kw:
             comp.fields["projectileTex"] = sc.projectile

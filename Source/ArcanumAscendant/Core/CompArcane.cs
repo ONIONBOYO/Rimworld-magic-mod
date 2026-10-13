@@ -59,6 +59,16 @@ namespace ArcanumAscendant
         private int progressionVersion = ProgressionVersion;
         [Unsaved] private bool migratedThisLoad;
 
+        /// <summary>Mastery points per spell. See <see cref="Mastery"/>.</summary>
+        private Dictionary<AbilityDef, int> mastery = new Dictionary<AbilityDef, int>();
+        private List<AbilityDef> tmpMasteryKeys;
+        private List<int> tmpMasteryVals;
+        /// <summary>When on, spells can be cast without enough mana by paying the difference in strain.</summary>
+        public bool overchannel;
+        public float strain;
+        public FamiliarDef familiar;
+        public int familiarCooldown;
+
         private Dictionary<ArcaneAttributeDef, int> attributes = new Dictionary<ArcaneAttributeDef, int>();
         private Dictionary<ArcaneNodeDef, int> ranks = new Dictionary<ArcaneNodeDef, int>();
         private HashSet<AbilityDef> hiddenSpells = new HashSet<AbilityDef>();
@@ -234,9 +244,64 @@ namespace ArcanumAscendant
                         if (m.Matches(def, ext)) sum.Add(m, kv.Value);
                 }
                 foreach (var (passive, rank, _) in passiveCache) passive.ModifySpell(this, def, ext, sum, rank);
+                Mastery.Apply(MasteryRank(def), sum);
                 modCache[def] = sum;
             }
             return sum;
+        }
+
+        public int MasteryPoints(AbilityDef def) => def != null && mastery.TryGetValue(def, out int v) ? v : 0;
+        public int MasteryRank(AbilityDef def) => Mastery.RankFor(MasteryPoints(def));
+
+        public void GainMastery(AbilityDef def, int points)
+        {
+            if (def == null || points <= 0 || !IsMage) return;
+            int before = MasteryRank(def);
+            mastery[def] = MasteryPoints(def) + points;
+            int after = MasteryRank(def);
+            if (after > before)
+            {
+                modCache.Remove(def);
+                if (Pawn.Faction == Faction.OfPlayer) Mastery.RankUpFx(Pawn, def, after);
+            }
+        }
+
+        public void Notify_Reaction(ArcaneReactionDef r)
+        {
+            if (Pawn?.Faction == Faction.OfPlayer) Current.Game?.GetComponent<GameComponent_Arcanum>()?.Discover(r, Pawn);
+        }
+
+        public bool BurnedOut => ArcaneDefOf.AA_ArcaneBurnout != null && Pawn?.health?.hediffSet?.HasHediff(ArcaneDefOf.AA_ArcaneBurnout) == true;
+
+        /// <summary>Pays for a spell with strain instead of missing mana. Returns false if overchanneling is not possible.</summary>
+        public bool CanOverchannel => IsMage && overchannel && !BurnedOut;
+
+        public void AddStrain(float amount)
+        {
+            if (amount <= 0f) return;
+            strain += amount * ArcaneStrain.StrainPerMana;
+            UpdateStrainHediff();
+            if (strain >= ArcaneStrain.BurnoutThreshold) ArcaneStrain.Burnout(this);
+            else if (Rand.Chance(ArcaneStrain.SurgeChance(strain))) ArcaneStrain.WildSurge(this);
+        }
+
+        private void UpdateStrainHediff()
+        {
+            var def = ArcaneDefOf.AA_ArcaneStrain;
+            var p = Pawn;
+            if (def == null || p?.health == null || p.Dead) return;
+            var h = p.health.hediffSet.GetFirstHediffOfDef(def);
+            if (strain < 1f)
+            {
+                if (h != null) p.health.RemoveHediff(h);
+                return;
+            }
+            if (h == null)
+            {
+                h = HediffMaker.MakeHediff(def, p);
+                p.health.AddHediff(h);
+            }
+            h.Severity = Mathf.Clamp(strain / 100f, 0.01f, 1.2f);
         }
 
         public bool PassiveReady(string key) => !passiveCooldowns.TryGetValue(key, out int until) || Find.TickManager.TicksGame >= until;
@@ -373,6 +438,8 @@ namespace ArcanumAscendant
             subclassDef = null;
             ranks.Clear();
             attributes.Clear();
+            mastery.Clear();
+            familiar = null;
             var h = Pawn.health?.hediffSet?.GetFirstHediffOfDef(ArcaneDefOf.AA_ArcaneCore);
             if (h != null) Pawn.health.RemoveHediff(h);
             MarkDirty();
@@ -640,6 +707,8 @@ namespace ArcanumAscendant
                     foreach (var p in node.passives) passiveCache.Add((p, kv.Value, node));
                 }
                 foreach (var (passive, rank, _) in passiveCache) passive.ModifyStats(this, rank, AddOff, AddPct);
+                if (familiar != null)
+                    foreach (var sm in familiar.statOffsets) AddOff(sm.stat, sm.value);
             }
 
             stageCache = new HediffStage
@@ -701,8 +770,22 @@ namespace ArcanumAscendant
             float seconds = elapsed / 60f;
 
             float max = ManaMax;
-            if (mana < max) mana = Mathf.Min(max, mana + ManaRegenPerSecond * seconds);
+            float regen = ManaRegenPerSecond;
+            if (p.Spawned)
+            {
+                var font = ArcaneVfxManager.For(p.Map)?.FontNear(p.Position);
+                if (font != null) regen += font.Props.manaPerSecond;
+            }
+            if (BurnedOut) regen = 0f;
+            if (mana < max) mana = Mathf.Min(max, mana + regen * seconds);
             else if (mana > max) mana = max;
+            if (strain > 0f)
+            {
+                bool calm = now - lastCombatTick > 900;
+                strain = Mathf.Max(0f, strain - (calm ? 1.2f : 0.4f) * seconds);
+                if (p.IsHashIntervalTick(60) || strain <= 0f) UpdateStrainHediff();
+            }
+            if (familiar != null) Familiars.Tick(this, elapsed);
 
             float wmax = WardMax;
             if (ward > wmax) ward = Mathf.Max(wmax, ward - (0.5f + (ward - wmax) * 0.04f) * seconds);
@@ -821,6 +904,7 @@ namespace ArcanumAscendant
             {
                 EnsureCoreHediff();
                 if (respawningAfterLoad) SyncAbilities();
+                if (familiar != null) ArcaneVfxManager.For(Pawn.Map)?.RegisterFamiliar(this);
             }
         }
 
@@ -883,7 +967,17 @@ namespace ArcanumAscendant
             if (IsMage)
             {
                 if (controllable || DebugSettings.ShowDevGizmos)
+                {
                     yield return new Gizmo_ArcaneStatus(this);
+                    yield return new Command_Toggle
+                    {
+                        defaultLabel = "AA_Overchannel".Translate(),
+                        defaultDesc = "AA_OverchannelDesc".Translate(strain.ToString("F0"), ArcaneStrain.BurnoutThreshold.ToString("F0")),
+                        icon = ArcaneTex.OverchannelIcon,
+                        isActive = () => overchannel,
+                        toggleAction = () => overchannel = !overchannel,
+                    };
+                }
             }
             else if (controllable && p.RaceProps.Humanlike && (awakenReady || ArcanumMod.Settings.freeAwakening))
             {
@@ -955,6 +1049,11 @@ namespace ArcanumAscendant
             Scribe_Values.Look(ref awakenReady, "awakenReady");
             Scribe_Values.Look(ref ascendNotified, "ascendNotified");
             Scribe_Values.Look(ref progressionVersion, "progressionVersion", 1);
+            Scribe_Collections.Look(ref mastery, "mastery", LookMode.Def, LookMode.Value, ref tmpMasteryKeys, ref tmpMasteryVals);
+            Scribe_Values.Look(ref overchannel, "overchannel");
+            Scribe_Values.Look(ref strain, "strain");
+            Scribe_Defs.Look(ref familiar, "familiar");
+            Scribe_Values.Look(ref familiarCooldown, "familiarCooldown");
             Scribe_Collections.Look(ref attributes, "attributes", LookMode.Def, LookMode.Value, ref tmpAttrKeys, ref tmpAttrVals);
             Scribe_Collections.Look(ref ranks, "ranks", LookMode.Def, LookMode.Value, ref tmpNodeKeys, ref tmpNodeVals);
             Scribe_Collections.Look(ref hiddenSpells, "hiddenSpells", LookMode.Def);
@@ -967,6 +1066,8 @@ namespace ArcanumAscendant
                 hiddenSpells ??= new HashSet<AbilityDef>();
                 autocastSpells ??= new HashSet<AbilityDef>();
                 passiveCooldowns ??= new Dictionary<string, int>();
+                mastery ??= new Dictionary<AbilityDef, int>();
+                mastery.RemoveAll(kv => kv.Key == null);
                 attributes.RemoveAll(kv => kv.Key == null);
                 ranks.RemoveAll(kv => kv.Key == null);
                 hiddenSpells.RemoveWhere(d => d == null);

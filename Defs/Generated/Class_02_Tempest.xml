@@ -663,6 +663,20 @@
     <unlockSpell>AA_Spell_StormLance</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Tempest_GlacialSpike</defName>
+    <tree>AA_Class_Tempest</tree>
+    <kind>Spell</kind>
+    <x>2</x>
+    <y>3</y>
+    <requiredLevel>3</requiredLevel>
+    <requiredAttribute>AA_Potency</requiredAttribute>
+    <requiredAttributeValue>5</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Tempest_Overcurrent</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_GlacialSpike</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Stormcaller_BallLightning</defName>
     <tree>AA_Class_Stormcaller</tree>
     <kind>Spell</kind>
@@ -1004,6 +1018,20 @@
       <li>AA_Node_Stormcaller_GridLink</li>
     </prerequisites>
     <unlockSpell>AA_Spell_IonStorm</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Stormcaller_ArcMissiles</defName>
+    <tree>AA_Class_Stormcaller</tree>
+    <kind>Spell</kind>
+    <x>5</x>
+    <y>3</y>
+    <requiredLevel>12</requiredLevel>
+    <requiredAttribute>AA_Potency</requiredAttribute>
+    <requiredAttributeValue>9</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Stormcaller_Blackout</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_ArcMissiles</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Frostwarden_FlashFreeze</defName>
@@ -1357,6 +1385,20 @@
     <unlockSpell>AA_Spell_GlacialTomb</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Frostwarden_IceHalo</defName>
+    <tree>AA_Class_Frostwarden</tree>
+    <kind>Spell</kind>
+    <x>1</x>
+    <y>4</y>
+    <requiredLevel>14</requiredLevel>
+    <requiredAttribute>AA_Potency</requiredAttribute>
+    <requiredAttributeValue>10</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Frostwarden_Cryostasis</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_IceHalo</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Skybreaker_Tornado</defName>
     <tree>AA_Class_Skybreaker</tree>
     <kind>Spell</kind>
@@ -1694,6 +1736,20 @@
     </prerequisites>
     <unlockSpell>AA_Spell_Starfall</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Skybreaker_CycloneBlades</defName>
+    <tree>AA_Class_Skybreaker</tree>
+    <kind>Spell</kind>
+    <x>1</x>
+    <y>4</y>
+    <requiredLevel>14</requiredLevel>
+    <requiredAttribute>AA_Potency</requiredAttribute>
+    <requiredAttributeValue>10</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Skybreaker_ClearSkies</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_CycloneBlades</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
   <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_Spark</defName>
     <label>spark</label>
@@ -1793,6 +1849,7 @@
         </impactVfx>
         <castSound>AA_Cast_Storm</castSound>
         <impactSound>AA_Impact_Storm</impactSound>
+        <style>Storm</style>
         <chainCount>1</chainCount>
         <chainRange>5</chainRange>
       </li>
@@ -1897,6 +1954,7 @@
         </impactVfx>
         <castSound>AA_Cast_Frost</castSound>
         <impactSound>AA_Impact_Frost</impactSound>
+        <style>Frost</style>
         <projectileSpeed>34</projectileSpeed>
         <projectileScale>0.9</projectileScale>
         <projectileTex>ArcanumAscendant/Vfx/Shard</projectileTex>
@@ -2002,6 +2060,7 @@
         </impactVfx>
         <castSound>AA_Cast_Storm</castSound>
         <impactSound>AA_Impact_Storm</impactSound>
+        <style>Storm</style>
         <chainCount>4</chainCount>
         <chainRange>6.5</chainRange>
         <chainFalloff>0.85</chainFalloff>
@@ -2098,6 +2157,7 @@
         </impactVfx>
         <castSound>AA_Cast_Storm</castSound>
         <impactSound>AA_Impact_Storm</impactSound>
+        <style>Storm</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2193,6 +2253,7 @@
         </impactVfx>
         <castSound>AA_Cast_Frost</castSound>
         <impactSound>AA_Impact_Frost</impactSound>
+        <style>Frost</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2277,6 +2338,7 @@
         </impactVfx>
         <castSound>AA_Cast_Storm</castSound>
         <impactSound>AA_Impact_Storm</impactSound>
+        <style>Storm</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2386,6 +2448,7 @@
         </impactVfx>
         <castSound>AA_Cast_Frost</castSound>
         <impactSound>AA_Impact_Frost</impactSound>
+        <style>Frost</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2485,6 +2548,7 @@
         <castSound>AA_Cast_Storm</castSound>
         <impactSound>AA_Impact_Storm</impactSound>
         <shake>1.5</shake>
+        <style>Storm</style>
         <barrageCount>10</barrageCount>
         <barrageInterval>8</barrageInterval>
         <barrageRadius>5</barrageRadius>
@@ -2601,6 +2665,7 @@
         </impactVfx>
         <castSound>AA_Cast_Frost</castSound>
         <impactSound>AA_Impact_Frost</impactSound>
+        <style>Frost</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2700,9 +2765,125 @@
         <castSound>AA_Cast_Storm</castSound>
         <impactSound>AA_Impact_Storm</impactSound>
         <shake>1.2</shake>
+        <style>Storm</style>
         <lineLength>18</lineLength>
         <strikeRadius>1.4</strikeRadius>
         <lineStepDelay>2</lineStepDelay>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_GlacialSpike</defName>
+    <label>glacial spike</label>
+    <description>A spike of ice erupts from the ground a moment after you mark the spot, freezing whatever stands there. Frozen enemies shatter when struck with fire or force.</description>
+    <iconPath>ArcanumAscendant/Spells/GlacialSpike</iconPath>
+    <cooldownTicksRange>600</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>28</range>
+      <warmupTime>0.6</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>28</manaCost>
+        <tags>
+          <li>Frost</li>
+        </tags>
+        <tier>2</tier>
+        <role>Attack</role>
+        <autocastByDefault>true</autocastByDefault>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Delayed</delivery>
+        <affects>Enemies</affects>
+        <radius>1.2</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Damage">
+            <amount>30</amount>
+            <damageDef>AA_Frost</damageDef>
+            <armorPen>0.3</armorPen>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_Frozen</hediff>
+            <severity>1</severity>
+            <durationTicks>180</durationTicks>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Stun">
+            <ticks>30</ticks>
+          </li>
+        </effects>
+        <color>(0.561, 0.847, 1, 1)</color>
+        <color2>(1, 1, 1, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Snow</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>2.5</scale>
+            <scaleEnd>3</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.3</scale>
+            <scaleEnd>1.1</scaleEnd>
+            <ticks>28</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Shard</fleck>
+            <count>10</count>
+            <speed>3</speed>
+            <scale>0.7</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Snow</fleck>
+            <count>6</count>
+            <speed>1.5</speed>
+            <scale>0.8</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Frost</castSound>
+        <impactSound>AA_Impact_Frost</impactSound>
+        <style>Frost</style>
+        <delayTicks>60</delayTicks>
+        <delayedCount>1</delayedCount>
+        <delayedSpread>0</delayedSpread>
+        <delayedStagger>12</delayedStagger>
+        <strikeStyle>Eruption</strikeStyle>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2813,6 +2994,7 @@
         <castSound>AA_Cast_Storm</castSound>
         <impactSound>AA_Impact_Storm</impactSound>
         <shake>1.2</shake>
+        <style>Storm</style>
         <projectileSpeed>9</projectileSpeed>
         <projectileScale>1.8</projectileScale>
         <projectileTex>ArcanumAscendant/Vfx/Orb</projectileTex>
@@ -2910,6 +3092,7 @@
         <castSound>AA_Cast_Storm</castSound>
         <impactSound>AA_Impact_Storm</impactSound>
         <shake>2</shake>
+        <style>Storm</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3022,6 +3205,7 @@
         </impactVfx>
         <castSound>AA_Cast_Storm</castSound>
         <impactSound>AA_Impact_Storm</impactSound>
+        <style>Storm</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3113,6 +3297,7 @@
         </impactVfx>
         <castSound>AA_Cast_Storm</castSound>
         <impactSound>AA_Impact_Storm</impactSound>
+        <style>Storm</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3223,6 +3408,7 @@
         <castSound>AA_Cast_Storm</castSound>
         <impactSound>AA_Impact_Storm</impactSound>
         <shake>2.5</shake>
+        <style>Storm</style>
         <barrageCount>24</barrageCount>
         <barrageInterval>4</barrageInterval>
         <barrageRadius>8</barrageRadius>
@@ -3345,6 +3531,109 @@
         </impactVfx>
         <castSound>AA_Cast_Storm</castSound>
         <impactSound>AA_Impact_Storm</impactSound>
+        <style>Storm</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_ArcMissiles</defName>
+    <label>arc missiles</label>
+    <description>Six crackling orbs of lightning that seek out enemies. They leave targets shocked; fire turns a shocked target into an explosion.</description>
+    <iconPath>ArcanumAscendant/Spells/ArcMissiles</iconPath>
+    <cooldownTicksRange>540</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>26</range>
+      <warmupTime>0.5</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>32</manaCost>
+        <tags>
+          <li>Storm</li>
+        </tags>
+        <tier>2</tier>
+        <role>Attack</role>
+        <autocastByDefault>true</autocastByDefault>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Missiles</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Damage">
+            <amount>10</amount>
+            <damageDef>AA_Lightning</damageDef>
+            <vsMechanoids>1.5</vsMechanoids>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_Shocked</hediff>
+            <severity>1</severity>
+          </li>
+        </effects>
+        <color>(0.435, 0.659, 1, 1)</color>
+        <color2>(0.902, 0.949, 1, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Spark</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>1.8</scale>
+            <scaleEnd>2.16</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Bolt</fleck>
+            <count>8</count>
+            <speed>2.2</speed>
+            <scale>0.55</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.2</scale>
+            <scaleEnd>2</scaleEnd>
+            <ticks>20</ticks>
+            <useColor2>true</useColor2>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Storm</castSound>
+        <impactSound>AA_Impact_Storm</impactSound>
+        <style>Storm</style>
+        <projectileCount>6</projectileCount>
+        <projectileSpeed>20</projectileSpeed>
+        <projectileTex>ArcanumAscendant/Vfx/Orb</projectileTex>
+        <projectileScale>0.45</projectileScale>
+        <missileSpread>110</missileSpread>
+        <multiTargetRadius>7</multiTargetRadius>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3435,6 +3724,7 @@
         </impactVfx>
         <castSound>AA_Cast_Frost</castSound>
         <impactSound>AA_Impact_Frost</impactSound>
+        <style>Frost</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3544,6 +3834,7 @@
         </impactVfx>
         <castSound>AA_Cast_Frost</castSound>
         <impactSound>AA_Impact_Frost</impactSound>
+        <style>Frost</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3645,6 +3936,7 @@
         </impactVfx>
         <castSound>AA_Cast_Frost</castSound>
         <impactSound>AA_Impact_Frost</impactSound>
+        <style>Frost</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3748,6 +4040,7 @@
         </impactVfx>
         <castSound>AA_Cast_Frost</castSound>
         <impactSound>AA_Impact_Frost</impactSound>
+        <style>Frost</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3880,6 +4173,7 @@
         <castSound>AA_Cast_Frost</castSound>
         <impactSound>AA_Impact_Frost</impactSound>
         <shake>3</shake>
+        <style>Frost</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3984,9 +4278,124 @@
         </impactVfx>
         <castSound>AA_Cast_Frost</castSound>
         <impactSound>AA_Impact_Frost</impactSound>
+        <style>Frost</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_IceHalo</defName>
+    <label>ice halo</label>
+    <description>Six blades of ice orbit you for twenty-five seconds, slicing and chilling anyone who gets close.</description>
+    <iconPath>ArcanumAscendant/Spells/IceHalo</iconPath>
+    <cooldownTicksRange>2700</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>0</range>
+      <warmupTime>0.4</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <drawAimPie>false</drawAimPie>
+      <targetable>false</targetable>
+      <nonInterruptingSelfCast>false</nonInterruptingSelfCast>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>40</manaCost>
+        <tags>
+          <li>Frost</li>
+        </tags>
+        <tier>2</tier>
+        <role>Attack</role>
+        <autocastByDefault>true</autocastByDefault>
+        <aiMinEnemiesInRadius>1</aiMinEnemiesInRadius>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Orbitals</delivery>
+        <affects>Enemies</affects>
+        <radius>2.8</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Damage">
+            <amount>8</amount>
+            <damageDef>AA_Frost</damageDef>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_Chilled</hediff>
+            <severity>1</severity>
+            <stack>true</stack>
+            <maxSeverity>3</maxSeverity>
+          </li>
+        </effects>
+        <color>(0.561, 0.847, 1, 1)</color>
+        <color2>(1, 1, 1, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Snow</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>2.5</scale>
+            <scaleEnd>3</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.3</scale>
+            <scaleEnd>1.1</scaleEnd>
+            <ticks>28</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Shard</fleck>
+            <count>10</count>
+            <speed>3</speed>
+            <scale>0.7</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Snow</fleck>
+            <count>6</count>
+            <speed>1.5</speed>
+            <scale>0.8</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Frost</castSound>
+        <impactSound>AA_Impact_Frost</impactSound>
+        <style>Frost</style>
+        <orbitalCount>6</orbitalCount>
+        <orbitalRadius>1.8</orbitalRadius>
+        <orbitalDuration>1500</orbitalDuration>
+        <orbitalSpeed>5</orbitalSpeed>
+        <orbitalHitRadius>0.9</orbitalHitRadius>
+        <orbitalHitCooldown>45</orbitalHitCooldown>
+        <projectileTex>ArcanumAscendant/Vfx/Shard</projectileTex>
+        <projectileScale>0.5</projectileScale>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+    <targetRequired>false</targetRequired>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_Tornado</defName>
@@ -4090,6 +4499,7 @@
         </impactVfx>
         <castSound>AA_Cast_Storm</castSound>
         <impactSound>AA_Impact_Storm</impactSound>
+        <style>Storm</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -4186,6 +4596,7 @@
         </impactVfx>
         <castSound>AA_Cast_Storm</castSound>
         <impactSound>AA_Impact_Storm</impactSound>
+        <style>Frost</style>
         <barrageCount>14</barrageCount>
         <barrageInterval>4</barrageInterval>
         <barrageRadius>4.5</barrageRadius>
@@ -4284,6 +4695,7 @@
         </impactVfx>
         <castSound>AA_Cast_Storm</castSound>
         <impactSound>AA_Impact_Storm</impactSound>
+        <style>Storm</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -4379,6 +4791,7 @@
         </impactVfx>
         <castSound>AA_Cast_Storm</castSound>
         <impactSound>AA_Impact_Storm</impactSound>
+        <style>Storm</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -4494,6 +4907,7 @@
         <castSound>AA_Cast_Storm</castSound>
         <impactSound>AA_Impact_Storm</impactSound>
         <shake>2.5</shake>
+        <style>Storm</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -4577,9 +4991,122 @@
         </impactVfx>
         <castSound>AA_Cast_Storm</castSound>
         <impactSound>AA_Impact_Storm</impactSound>
+        <style>Storm</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_CycloneBlades</defName>
+    <label>cyclone blades</label>
+    <description>Three blades of compressed wind scream around you, cutting and hurling back whatever they hit.</description>
+    <iconPath>ArcanumAscendant/Spells/CycloneBlades</iconPath>
+    <cooldownTicksRange>2400</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>0</range>
+      <warmupTime>0.4</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <drawAimPie>false</drawAimPie>
+      <targetable>false</targetable>
+      <nonInterruptingSelfCast>false</nonInterruptingSelfCast>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>38</manaCost>
+        <tags>
+          <li>Storm</li>
+        </tags>
+        <tier>2</tier>
+        <role>Attack</role>
+        <autocastByDefault>true</autocastByDefault>
+        <aiMinEnemiesInRadius>1</aiMinEnemiesInRadius>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Orbitals</delivery>
+        <affects>Enemies</affects>
+        <radius>3.2</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Damage">
+            <amount>12</amount>
+            <damageDef>Cut</damageDef>
+            <armorPen>0.25</armorPen>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Knockback">
+            <distance>1.5</distance>
+          </li>
+        </effects>
+        <color>(0.722, 0.831, 1, 1)</color>
+        <color2>(1, 1, 1, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Spark</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>2.5</scale>
+            <scaleEnd>3</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.3</scale>
+            <scaleEnd>1.1</scaleEnd>
+            <ticks>28</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Snow</fleck>
+            <count>10</count>
+            <speed>3</speed>
+            <scale>0.7</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Spark</fleck>
+            <count>6</count>
+            <speed>1.5</speed>
+            <scale>0.8</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Storm</castSound>
+        <impactSound>AA_Impact_Storm</impactSound>
+        <style>Storm</style>
+        <orbitalCount>3</orbitalCount>
+        <orbitalRadius>2.2</orbitalRadius>
+        <orbitalDuration>1200</orbitalDuration>
+        <orbitalSpeed>8</orbitalSpeed>
+        <orbitalHitRadius>1</orbitalHitRadius>
+        <orbitalHitCooldown>40</orbitalHitCooldown>
+        <projectileTex>ArcanumAscendant/Vfx/Shard</projectileTex>
+        <projectileScale>0.6</projectileScale>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+    <targetRequired>false</targetRequired>
   </AbilityDef>
   <HediffDef>
     <defName>AA_FrostArmor</defName>
@@ -4601,6 +5128,8 @@
         <size>1.8</size>
         <fleck>AA_Fleck_Snow</fleck>
         <fleckInterval>30</fleckInterval>
+        <emitter>Chill</emitter>
+        <emitInterval>24</emitInterval>
       </li>
     </comps>
     <stages>

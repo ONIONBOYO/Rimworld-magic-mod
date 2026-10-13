@@ -66,6 +66,8 @@
         <size>1.3</size>
         <fleck>AA_Fleck_Smoke</fleck>
         <fleckInterval>40</fleckInterval>
+        <emitter>Undead</emitter>
+        <emitInterval>30</emitInterval>
       </li>
     </comps>
     <stages>
@@ -153,6 +155,12 @@
         <color>(1, 0.478, 0.165, 1)</color>
         <fleck>AA_Fleck_Ember</fleck>
       </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(1, 0.478, 0.165, 0.9)</color>
+        <texPath></texPath>
+        <emitter>Burning</emitter>
+        <emitInterval>8</emitInterval>
+      </li>
     </comps>
     <stages>
       <li>
@@ -182,6 +190,8 @@
         <size>1.4</size>
         <fleck>AA_Fleck_Snow</fleck>
         <fleckInterval>25</fleckInterval>
+        <emitter>Chill</emitter>
+        <emitInterval>20</emitInterval>
       </li>
     </comps>
     <stages>
@@ -213,6 +223,11 @@
         <size>1.8</size>
         <fleck>AA_Fleck_Shard</fleck>
         <fleckInterval>15</fleckInterval>
+        <emitter>Frozen</emitter>
+        <emitInterval>20</emitInterval>
+        <overlayTex>ArcanumAscendant/Vfx/IceCrust</overlayTex>
+        <overlayGlow>false</overlayGlow>
+        <overlaySize>1.5</overlaySize>
       </li>
     </comps>
     <stages>
@@ -245,6 +260,8 @@
         <size>1</size>
         <fleck>AA_Fleck_Bolt</fleck>
         <fleckInterval>18</fleckInterval>
+        <emitter>Shocked</emitter>
+        <emitInterval>10</emitInterval>
       </li>
     </comps>
     <stages>
@@ -282,6 +299,12 @@
         <damagePerSecond>2</damagePerSecond>
         <color>(0.49, 1, 0.604, 1)</color>
         <fleck>AA_Fleck_Mote</fleck>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(0.49, 1, 0.604, 0.9)</color>
+        <texPath></texPath>
+        <emitter>Poison</emitter>
+        <emitInterval>16</emitInterval>
       </li>
     </comps>
     <stages>
@@ -323,6 +346,12 @@
         <spreadSeverity>1</spreadSeverity>
         <color>(0.373, 0.749, 0.353, 1)</color>
       </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(0.373, 0.749, 0.353, 0.9)</color>
+        <texPath></texPath>
+        <emitter>Plague</emitter>
+        <emitInterval>14</emitInterval>
+      </li>
     </comps>
     <stages>
       <li>
@@ -361,6 +390,12 @@
         <damagePerSecond>2.2</damagePerSecond>
         <color>(1, 0.188, 0.282, 1)</color>
         <fleck>AA_Fleck_Blood</fleck>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(1, 0.188, 0.282, 0.9)</color>
+        <texPath></texPath>
+        <emitter>Bleed</emitter>
+        <emitInterval>12</emitInterval>
       </li>
     </comps>
     <stages>
@@ -414,6 +449,13 @@
         <texPath>ArcanumAscendant/Vfx/Hex</texPath>
         <size>1.6</size>
         <fleckInterval>20</fleckInterval>
+        <emitter>Doom</emitter>
+        <emitInterval>24</emitInterval>
+        <overlayTex>ArcanumAscendant/Vfx/DoomSigil</overlayTex>
+        <overlaySize>0.8</overlaySize>
+        <overlayZ>1</overlayZ>
+        <overlaySpin>1.5</overlaySpin>
+        <overlayPulse>true</overlayPulse>
       </li>
     </comps>
     <stages>
@@ -483,6 +525,8 @@
         <texPath>ArcanumAscendant/Vfx/Clock</texPath>
         <size>1.6</size>
         <fleckInterval>20</fleckInterval>
+        <emitter>Slow</emitter>
+        <emitInterval>20</emitInterval>
       </li>
     </comps>
     <stages>
@@ -538,6 +582,12 @@
         <texPath>ArcanumAscendant/Vfx/RuneCircle</texPath>
         <size>1.4</size>
         <fleckInterval>20</fleckInterval>
+        <emitter>Holy</emitter>
+        <emitInterval>30</emitInterval>
+        <overlayTex>ArcanumAscendant/Vfx/MarkSigil</overlayTex>
+        <overlaySize>0.7</overlaySize>
+        <overlayZ>1</overlayZ>
+        <overlayPulse>true</overlayPulse>
       </li>
     </comps>
     <stages>
@@ -570,6 +620,8 @@
         <size>1.6</size>
         <fleck>AA_Fleck_Leaf</fleck>
         <fleckInterval>30</fleckInterval>
+        <emitter>Roots</emitter>
+        <emitInterval>24</emitInterval>
       </li>
     </comps>
     <stages>
@@ -627,6 +679,12 @@
         <damagePerSecond>1</damagePerSecond>
         <color>(0.498, 0.961, 0.894, 1)</color>
         <fleck>AA_Fleck_Clock</fleck>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(0.561, 0.627, 0.478, 0.9)</color>
+        <texPath></texPath>
+        <emitter>Wither</emitter>
+        <emitInterval>18</emitInterval>
       </li>
     </comps>
     <stages>
@@ -714,6 +772,8 @@
         <texPath>ArcanumAscendant/Vfx/Vortex</texPath>
         <size>1.4</size>
         <fleckInterval>20</fleckInterval>
+        <emitter>Void</emitter>
+        <emitInterval>14</emitInterval>
       </li>
     </comps>
     <stages>
@@ -747,6 +807,8 @@
         <texPath>ArcanumAscendant/Vfx/Clock</texPath>
         <size>1.3</size>
         <fleckInterval>20</fleckInterval>
+        <emitter>Haste</emitter>
+        <emitInterval>4</emitInterval>
       </li>
     </comps>
     <stages>
@@ -841,6 +903,8 @@
         <size>1</size>
         <fleck>AA_Fleck_Star</fleck>
         <fleckInterval>45</fleckInterval>
+        <emitter>Holy</emitter>
+        <emitInterval>30</emitInterval>
       </li>
     </comps>
     <stages>
@@ -903,6 +967,8 @@
         <size>1</size>
         <fleck>AA_Fleck_Note</fleck>
         <fleckInterval>35</fleckInterval>
+        <emitter>Song</emitter>
+        <emitInterval>30</emitInterval>
       </li>
     </comps>
     <stages>
@@ -963,6 +1029,8 @@
         <size>1</size>
         <fleck>AA_Fleck_Ember</fleck>
         <fleckInterval>20</fleckInterval>
+        <emitter>Fire</emitter>
+        <emitInterval>16</emitInterval>
       </li>
     </comps>
     <stages>
@@ -1135,6 +1203,8 @@
         <size>1</size>
         <fleck>AA_Fleck_Blood</fleck>
         <fleckInterval>25</fleckInterval>
+        <emitter>Blood</emitter>
+        <emitInterval>16</emitInterval>
       </li>
     </comps>
     <stages>
@@ -1170,6 +1240,11 @@
         <texPath>ArcanumAscendant/Vfx/HexShield</texPath>
         <size>2.2</size>
         <fleckInterval>20</fleckInterval>
+        <emitter>Divine</emitter>
+        <emitInterval>16</emitInterval>
+        <overlayTex>ArcanumAscendant/Vfx/HexShield</overlayTex>
+        <overlaySize>1.9</overlaySize>
+        <overlayPulse>true</overlayPulse>
       </li>
     </comps>
     <stages>
@@ -1200,6 +1275,8 @@
         <size>2.2</size>
         <fleck>AA_Fleck_Skull</fleck>
         <fleckInterval>40</fleckInterval>
+        <emitter>Undead</emitter>
+        <emitInterval>16</emitInterval>
       </li>
     </comps>
     <stages>
@@ -1241,6 +1318,8 @@
         <size>2.6</size>
         <fleck>AA_Fleck_Feather</fleck>
         <fleckInterval>20</fleckInterval>
+        <emitter>Divine</emitter>
+        <emitInterval>12</emitInterval>
       </li>
     </comps>
     <stages>
@@ -1278,6 +1357,8 @@
         <size>1</size>
         <fleck>AA_Fleck_Bolt</fleck>
         <fleckInterval>10</fleckInterval>
+        <emitter>Shocked</emitter>
+        <emitInterval>24</emitInterval>
       </li>
     </comps>
     <stages>
@@ -1312,6 +1393,8 @@
         <size>1</size>
         <fleck>AA_Fleck_Glow</fleck>
         <fleckInterval>20</fleckInterval>
+        <emitter>Ward</emitter>
+        <emitInterval>12</emitInterval>
       </li>
     </comps>
     <stages>
@@ -1342,6 +1425,8 @@
         <size>1</size>
         <fleck>AA_Fleck_Gear</fleck>
         <fleckInterval>30</fleckInterval>
+        <emitter>Ward</emitter>
+        <emitInterval>14</emitInterval>
       </li>
     </comps>
     <stages>
@@ -1493,6 +1578,8 @@
         <size>2.6</size>
         <fleck>AA_Fleck_Ember</fleck>
         <fleckInterval>6</fleckInterval>
+        <emitter>Fire</emitter>
+        <emitInterval>8</emitInterval>
       </li>
     </comps>
     <stages>
@@ -1586,6 +1673,12 @@
         <disappearsAfterTicks>240~240</disappearsAfterTicks>
         <showRemainingTime>true</showRemainingTime>
       </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(1, 0.886, 0.541, 0.9)</color>
+        <texPath></texPath>
+        <emitter>Holy</emitter>
+        <emitInterval>24</emitInterval>
+      </li>
     </comps>
     <stages>
       <li>
@@ -1615,6 +1708,9 @@
         <texPath>ArcanumAscendant/Vfx/HexShield</texPath>
         <size>1.9</size>
         <fleckInterval>20</fleckInterval>
+        <overlayTex>ArcanumAscendant/Vfx/Clock</overlayTex>
+        <overlaySize>1.7</overlaySize>
+        <overlaySpin>2</overlaySpin>
       </li>
     </comps>
     <stages>

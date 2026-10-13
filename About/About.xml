@@ -3,14 +3,14 @@
   <name>Arcanum Ascendant - Magic &amp; Classes</name>
   <author>onionboyo</author>
   <packageId>onionboyo.arcanumascendant</packageId>
-  <modVersion>1.1.0</modVersion>
+  <modVersion>1.2.0</modVersion>
   <url>https://github.com/onionboyo/rimworld-magic-mod</url>
   <supportedVersions>
     <li>1.6</li>
   </supportedVersions>
   <description>A deep magic and class system for RimWorld. No other mods required (no Harmony needed).
 
-[ 9 CLASSES · 27 SUBCLASSES · 252 SPELLS · 705 SKILL TREE NODES ]
+[ 9 CLASSES · 27 SUBCLASSES · 277 SPELLS · 730 SKILL TREE NODES ]
 
 Awaken a colonist's magic and choose a path. Awakening works like gaining a psylink: scribe a grimoire from arcane crystals, then study at an arcane lectern until the gift wakes.
  - Pyromancer: Inferno Lord, Ashen Phoenix, Forgeheart
@@ -32,7 +32,14 @@ FEATURES
  - Endgame spells built to fight heavily armored mods: true damage, % vitality damage, executes, shield-shattering, mechanoid shutdown, black holes, time stop, mind control.
  - Utility and quirky spells: make it rain, clear toxic fallout, turn rocks into silver or steel, enrich soil, grow crops, tame animals, recruit prisoners, speak with the dead, make colonists young again (curing the ailments of age and regrowing limbs over several castings), age enemies to dust, repair and un-rot items, raise item quality, turn enemies to gold, call down ore meteorites, steal skills, polymorph raiders into chickens, custard pies and banana peels.
  - Summons: risen dead, wolves, bears, a thrumbo, megascarabs, turrets, golem constructs, walls of ice, bone and thorns.
- - Custom visual effects (projectiles with trails, beams, chain lightning, meteors, pillars of light, rune circles, shockwaves, black holes) and custom sound effects.
+ - A full effects engine. Every school of magic has its own casting circle, projectile, impact, ground marks and death effect. Thousands of particles (sparks, embers, smoke, ice shards, debris), spells that light up the night, branching lightning, ribbon trails, telegraphed strikes, damage numbers and cinematic ultimates. Every part can be scaled or switched off.
+ - Elemental reactions: freeze an enemy and hit them with fire or force to Shatter them, burn a shocked target to Overload it, purge curses with holy light. Twelve reactions to discover.
+ - Spell mastery: every spell ranks up from Apprentice to Grandmaster as you cast it.
+ - Overchannel: cast beyond your mana and take on arcane strain, with wild surges and a risk of burnout.
+ - Seven familiars (ember sprite, frost wisp, shadow raven, lumen, clockwork owl, void eye, pocket dragon) that follow their mage, give lasting bonuses and join fights.
+ - New spell forms: homing missile swarms, orbiting blades and suns, channelled beams and delayed strikes.
+ - Arcane buildings: a ward pylon whose dome stops incoming bullets, and a mana font that speeds up mana regeneration.
+ - Custom sound effects.
  - Autocast for drafted mages, enemy mages in raids, a grimoire UI with zoomable skill trees, a spellbook and a codex.
  - Fully configurable in mod settings.
 

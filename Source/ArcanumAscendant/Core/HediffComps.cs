@@ -353,6 +353,17 @@ namespace ArcanumAscendant
         public float size = 1.6f;
         public FleckDef fleck;
         public int fleckInterval = 20;
+        /// <summary>Particle emitter preset from <see cref="StatusFx"/> (Burning, Frozen, Shocked, Doom...).</summary>
+        public string emitter;
+        public int emitInterval = 12;
+        /// <summary>Texture that clings to the pawn while the hediff lasts (ice crust, sigil, bubble).</summary>
+        public string overlayTex;
+        public bool overlayGlow = true;
+        public float overlaySize = 1.6f;
+        public float overlaySpin;
+        public float overlayZ;
+        public bool overlayPulse;
+        public Color overlayColor = new Color(0f, 0f, 0f, 0f);
 
         public HediffCompProperties_AuraVisual()
         {
@@ -364,6 +375,8 @@ namespace ArcanumAscendant
     {
         private int acc = 999;
         private int fleckAcc;
+        private int emitAcc;
+        [Unsaved] private VfxStatusOverlay overlay;
 
         public HediffCompProperties_AuraVisual Props => (HediffCompProperties_AuraVisual)props;
 
@@ -371,11 +384,30 @@ namespace ArcanumAscendant
         {
             var p = Pawn;
             if (!p.Spawned || p.Dead) return;
+            if (Props.overlayTex != null && (overlay == null || overlay.finished) && p.Map == Find.CurrentMap)
+            {
+                overlay = new VfxStatusOverlay
+                {
+                    pawn = p, hediff = parent.def, mat = ArcaneMats.Get(Props.overlayTex, Props.overlayGlow),
+                    color = Props.overlayColor.a > 0f ? Props.overlayColor : Props.color, size = Props.overlaySize, glow = Props.overlayGlow,
+                    spin = Props.overlaySpin, zOffset = Props.overlayZ, pulse = Props.overlayPulse, bob = Props.overlayZ > 0.3f ? 0.06f : 0f,
+                };
+                ArcaneVfxManager.For(p.Map)?.Add(overlay);
+            }
+            if (Props.emitter != null)
+            {
+                emitAcc += elapsed;
+                if (emitAcc >= Props.emitInterval)
+                {
+                    emitAcc = 0;
+                    StatusFx.Emit(Props.emitter, p, Props.color, parent.Severity);
+                }
+            }
             acc += elapsed;
             if (acc >= 58)
             {
                 acc = 0;
-                if (Props.texPath != null) ArcaneFx.Aura(p, Props.color, 62, Props.size, Props.texPath);
+                if (!Props.texPath.NullOrEmpty()) ArcaneFx.Aura(p, Props.color, 62, Props.size, Props.texPath);
             }
             if (Props.fleck != null)
             {

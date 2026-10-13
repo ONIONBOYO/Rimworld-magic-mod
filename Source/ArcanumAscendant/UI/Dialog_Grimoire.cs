@@ -18,6 +18,7 @@ namespace ArcanumAscendant
         private Vector2 treeScroll;
         private Vector2 bookScroll;
         private Vector2 codexScroll;
+        private float codexHeight = 2000f;
         private Vector2 sideScroll;
         private float zoom = 1f;
         private const float CellW = 118f;
@@ -563,14 +564,26 @@ namespace ArcanumAscendant
             GUI.color = Color.white;
             string desc = s.description ?? "";
             Widgets.Label(new Rect(icon.xMax + 10f, r.y + 42f, r.width - icon.width - 340f, 20f), desc.Truncate(r.width - icon.width - 340f));
+            if (known)
+            {
+                int pts = comp.MasteryPoints(s);
+                int rank = Mastery.RankFor(pts);
+                var mr = new Rect(r.xMax - 300f, r.y + 48f, 290f, 10f);
+                float lo = Mastery.Thresholds[rank], hi = rank >= Mastery.MaxRank ? lo : Mastery.Thresholds[rank + 1];
+                Widgets.FillableBar(mr, rank >= Mastery.MaxRank ? 1f : (pts - lo) / Mathf.Max(1f, hi - lo), rank >= Mastery.MaxRank ? ArcaneTex.WardFill : ArcaneTex.XpFill, ArcaneTex.BarBg, false);
+                Text.Font = GameFont.Tiny;
+                Widgets.Label(new Rect(mr.x, mr.y - 14f, mr.width, 14f), ("AA_MasteryShort".Translate(Mastery.RankLabel(rank)) + (rank < Mastery.MaxRank ? "  " + pts + " / " + hi : "")).Colorize(rank >= Mastery.MaxRank ? Gold : ColoredText.SubtleGrayColor));
+                Text.Font = GameFont.Small;
+                TooltipHandler.TipRegion(mr.ExpandedBy(0f, 8f), "AA_MasteryTip".Translate(Mastery.RankLabel(rank), Mastery.BonusText(rank), Mastery.PointsPerCast(s)));
+            }
             Text.Font = GameFont.Small;
             TooltipHandler.TipRegion(r, () => ArcaneUtility.SpellTooltip(s, comp.Pawn), s.GetHashCode() + 13);
             if (known)
             {
                 bool auto = comp.IsAutocast(s);
                 bool shown = !comp.IsHidden(s);
-                var a1 = new Rect(r.xMax - 300f, r.y + 18f, 140f, 28f);
-                var a2 = new Rect(r.xMax - 150f, r.y + 18f, 140f, 28f);
+                var a1 = new Rect(r.xMax - 300f, r.y + 6f, 140f, 26f);
+                var a2 = new Rect(r.xMax - 150f, r.y + 6f, 140f, 26f);
                 bool autoBefore = auto, shownBefore = shown;
                 bool canAuto = ext != null && ext.role != SpellRole.Utility && ext.role != SpellRole.Mobility;
                 if (canAuto) Widgets.CheckboxLabeled(a1, "AA_Autocast".Translate(), ref auto);
@@ -584,7 +597,8 @@ namespace ArcanumAscendant
         {
             Widgets.DrawBoxSolid(r, new Color(0.03f, 0.025f, 0.05f));
             var inner = r.ContractedBy(14f);
-            var view = new Rect(0f, 0f, inner.width - 16f, 2000f);
+            // The codex measures itself each frame, so the scroll area always fits its content.
+            var view = new Rect(0f, 0f, inner.width - 16f, Mathf.Max(codexHeight, inner.height));
             Widgets.BeginScrollView(inner, ref codexScroll, view);
             float y = 0f;
             void Section(ArcaneClassDef c)
@@ -610,7 +624,35 @@ namespace ArcanumAscendant
             string tips = "AA_CodexTipsBody".Translate();
             float th = Text.CalcHeight(tips, view.width);
             Widgets.Label(new Rect(0f, y, view.width, th), tips);
+            y += th + 16f;
+            var game = Current.Game?.GetComponent<GameComponent_Arcanum>();
+            var reactions = ArcaneReactions.All;
+            int known = reactions.Count(rr => game != null && game.IsDiscovered(rr));
+            Widgets.Label(new Rect(0f, y, view.width, 24f), "AA_CodexReactions".Translate(known, reactions.Count).Colorize(Gold));
+            y += 26f;
+            GUI.color = ColoredText.SubtleGrayColor;
+            string intro = "AA_CodexReactionsIntro".Translate();
+            float ih = Text.CalcHeight(intro, view.width);
+            Widgets.Label(new Rect(0f, y, view.width, ih), intro);
+            GUI.color = Color.white;
+            y += ih + 8f;
+            foreach (var rr in reactions)
+            {
+                bool found = game != null && game.IsDiscovered(rr);
+                string head = found ? rr.LabelCap.ToString().Colorize(rr.color) : "AA_UnknownReaction".Translate().Colorize(Color.gray);
+                string body = found ? rr.description : rr.descriptionShort;
+                float bh = Text.CalcHeight(body ?? "", view.width - 20f);
+                var box = new Rect(0f, y, view.width, 26f + bh + 6f);
+                Widgets.DrawBoxSolid(box, new Color(0.07f, 0.06f, 0.1f));
+                if (found) Widgets.DrawBoxSolidWithOutline(box, Color.clear, rr.color * new Color(1, 1, 1, 0.35f));
+                Widgets.Label(new Rect(10f, y + 3f, view.width - 20f, 24f), head);
+                GUI.color = found ? Color.white : ColoredText.SubtleGrayColor;
+                Widgets.Label(new Rect(10f, y + 26f, view.width - 20f, bh), body ?? "");
+                GUI.color = Color.white;
+                y += box.height + 6f;
+            }
             Widgets.EndScrollView();
+            codexHeight = y + 20f;
         }
 
         #endregion

@@ -597,6 +597,20 @@
     <unlockSpell>AA_Spell_StandingOvation</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Bard_EchoingNotes</defName>
+    <tree>AA_Class_Bard</tree>
+    <kind>Spell</kind>
+    <x>4</x>
+    <y>5</y>
+    <requiredLevel>7</requiredLevel>
+    <requiredAttribute>AA_Attunement</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Bard_Encore</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_EchoingNotes</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Skald_BattleHymn</defName>
     <tree>AA_Class_Skald</tree>
     <kind>Spell</kind>
@@ -1613,6 +1627,20 @@
     </prerequisites>
     <unlockSpell>AA_Spell_BananaPeel</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Jester_JugglingKnives</defName>
+    <tree>AA_Class_Jester</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>3</y>
+    <requiredLevel>12</requiredLevel>
+    <requiredAttribute>AA_Attunement</requiredAttribute>
+    <requiredAttributeValue>9</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Jester_BananaPeel</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_JugglingKnives</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
   <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_DiscordantNote</defName>
     <label>discordant note</label>
@@ -1710,6 +1738,7 @@
         </impactVfx>
         <castSound>AA_Cast_Song</castSound>
         <impactSound>AA_Impact_Song</impactSound>
+        <style>Song</style>
         <projectileSpeed>26</projectileSpeed>
         <projectileScale>0.8</projectileScale>
         <projectileArc>0.6</projectileArc>
@@ -1811,6 +1840,7 @@
         </impactVfx>
         <castSound>AA_Cast_Song</castSound>
         <impactSound>AA_Impact_Song</impactSound>
+        <style>Song</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -1902,6 +1932,7 @@
         </impactVfx>
         <castSound>AA_Cast_Song</castSound>
         <impactSound>AA_Impact_Song</impactSound>
+        <style>Song</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2001,6 +2032,7 @@
         </impactVfx>
         <castSound>AA_Cast_Song</castSound>
         <impactSound>AA_Impact_Song</impactSound>
+        <style>Song</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2082,6 +2114,7 @@
         </impactVfx>
         <castSound>AA_Cast_Song</castSound>
         <impactSound>AA_Impact_Song</impactSound>
+        <style>Song</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2185,6 +2218,7 @@
         </impactVfx>
         <castSound>AA_Cast_Song</castSound>
         <impactSound>AA_Impact_Song</impactSound>
+        <style>Song</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2285,6 +2319,7 @@
         </impactVfx>
         <castSound>AA_Cast_Song</castSound>
         <impactSound>AA_Impact_Song</impactSound>
+        <style>Song</style>
         <coneAngle>60</coneAngle>
         <coneRange>6</coneRange>
       </li>
@@ -2389,6 +2424,7 @@
         </impactVfx>
         <castSound>AA_Cast_Song</castSound>
         <impactSound>AA_Impact_Song</impactSound>
+        <style>Song</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2492,6 +2528,7 @@
         </impactVfx>
         <castSound>AA_Cast_Song</castSound>
         <impactSound>AA_Impact_Song</impactSound>
+        <style>Song</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2589,10 +2626,113 @@
         </impactVfx>
         <castSound>AA_Cast_Song</castSound>
         <impactSound>AA_Impact_Song</impactSound>
+        <style>Song</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
     <targetRequired>false</targetRequired>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_EchoingNotes</defName>
+    <label>echoing notes</label>
+    <description>Sing five notes that take wing and chase enemies down, ringing in their skulls.</description>
+    <iconPath>ArcanumAscendant/Spells/EchoingNotes</iconPath>
+    <cooldownTicksRange>600</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>26</range>
+      <warmupTime>0.5</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>26</manaCost>
+        <tags>
+          <li>Song</li>
+        </tags>
+        <tier>2</tier>
+        <role>Attack</role>
+        <autocastByDefault>true</autocastByDefault>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Missiles</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Damage">
+            <amount>8</amount>
+            <damageDef>AA_Sonic</damageDef>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_Concussed</hediff>
+            <severity>1</severity>
+            <chance>0.3</chance>
+          </li>
+        </effects>
+        <color>(1, 0.612, 0.878, 1)</color>
+        <color2>(1, 0.91, 0.969, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>1.8</scale>
+            <scaleEnd>2.16</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Note</fleck>
+            <count>8</count>
+            <speed>2.2</speed>
+            <scale>0.55</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.2</scale>
+            <scaleEnd>2</scaleEnd>
+            <ticks>20</ticks>
+            <useColor2>true</useColor2>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Song</castSound>
+        <impactSound>AA_Impact_Song</impactSound>
+        <style>Song</style>
+        <projectileCount>5</projectileCount>
+        <projectileSpeed>13</projectileSpeed>
+        <projectileTex>ArcanumAscendant/Vfx/Note</projectileTex>
+        <projectileScale>0.5</projectileScale>
+        <missileSpread>160</missileSpread>
+        <multiTargetRadius>7</multiTargetRadius>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_BattleHymn</defName>
@@ -2700,6 +2840,7 @@
         </impactVfx>
         <castSound>AA_Cast_Song</castSound>
         <impactSound>AA_Impact_Song</impactSound>
+        <style>Song</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2795,6 +2936,7 @@
         <castSound>AA_Cast_Song</castSound>
         <impactSound>AA_Impact_Song</impactSound>
         <shake>1.5</shake>
+        <style>Song</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2894,6 +3036,7 @@
         </impactVfx>
         <castSound>AA_Cast_Song</castSound>
         <impactSound>AA_Impact_Song</impactSound>
+        <style>Song</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2993,6 +3136,7 @@
         </impactVfx>
         <castSound>AA_Cast_Song</castSound>
         <impactSound>AA_Impact_Song</impactSound>
+        <style>Song</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3111,6 +3255,7 @@
         <castSound>AA_Cast_Song</castSound>
         <impactSound>AA_Impact_Song</impactSound>
         <shake>3</shake>
+        <style>Song</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3205,6 +3350,7 @@
         </impactVfx>
         <castSound>AA_Cast_Song</castSound>
         <impactSound>AA_Impact_Song</impactSound>
+        <style>Song</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3297,6 +3443,7 @@
         </impactVfx>
         <castSound>AA_Cast_Arcane</castSound>
         <impactSound>AA_Impact_Arcane</impactSound>
+        <style>Song</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3390,6 +3537,7 @@
         </impactVfx>
         <castSound>AA_Cast_Arcane</castSound>
         <impactSound>AA_Impact_Arcane</impactSound>
+        <style>Song</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3477,6 +3625,7 @@
         </impactVfx>
         <castSound>AA_Cast_Arcane</castSound>
         <impactSound>AA_Impact_Arcane</impactSound>
+        <style>Song</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3559,6 +3708,7 @@
         </impactVfx>
         <castSound>AA_Cast_Arcane</castSound>
         <impactSound>AA_Impact_Arcane</impactSound>
+        <style>Song</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3661,6 +3811,7 @@
         </impactVfx>
         <castSound>AA_Cast_Arcane</castSound>
         <impactSound>AA_Impact_Arcane</impactSound>
+        <style>Song</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3744,6 +3895,7 @@
         </impactVfx>
         <castSound>AA_Cast_Arcane</castSound>
         <impactSound>AA_Impact_Arcane</impactSound>
+        <style>Song</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3834,6 +3986,7 @@
         </impactVfx>
         <castSound>AA_Cast_Song</castSound>
         <impactSound>AA_Impact_Song</impactSound>
+        <style>Song</style>
         <projectileSpeed>20</projectileSpeed>
         <projectileScale>1</projectileScale>
         <projectileArc>1.5</projectileArc>
@@ -3988,6 +4141,7 @@
         </impactVfx>
         <castSound>AA_Cast_Song</castSound>
         <impactSound>AA_Impact_Song</impactSound>
+        <style>Song</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -4073,6 +4227,7 @@
         </impactVfx>
         <castSound>AA_Cast_Song</castSound>
         <impactSound>AA_Impact_Song</impactSound>
+        <style>Song</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -4172,6 +4327,7 @@
         </impactVfx>
         <castSound>AA_Cast_Song</castSound>
         <impactSound>AA_Impact_Song</impactSound>
+        <style>Song</style>
         <coneAngle>70</coneAngle>
         <coneRange>8</coneRange>
       </li>
@@ -4318,6 +4474,7 @@
         <castSound>AA_Cast_Song</castSound>
         <impactSound>AA_Impact_Song</impactSound>
         <shake>2</shake>
+        <style>Song</style>
         <barrageCount>20</barrageCount>
         <barrageInterval>5</barrageInterval>
         <barrageRadius>7</barrageRadius>
@@ -4425,9 +4582,124 @@
         </impactVfx>
         <castSound>AA_Cast_Song</castSound>
         <impactSound>AA_Impact_Song</impactSound>
+        <style>Song</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_JugglingKnives</defName>
+    <label>juggling knives</label>
+    <description>Juggle three knives around yourself at alarming speed. Anyone who gets close gets cut, and occasionally a custard pie flies out of the act.</description>
+    <iconPath>ArcanumAscendant/Spells/JugglingKnives</iconPath>
+    <cooldownTicksRange>1800</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>0</range>
+      <warmupTime>0.4</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <drawAimPie>false</drawAimPie>
+      <targetable>false</targetable>
+      <nonInterruptingSelfCast>false</nonInterruptingSelfCast>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>25</manaCost>
+        <tags>
+          <li>Song</li>
+          <li>Chaos</li>
+        </tags>
+        <tier>2</tier>
+        <role>Attack</role>
+        <quirky>true</quirky>
+        <aiMinEnemiesInRadius>1</aiMinEnemiesInRadius>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Orbitals</delivery>
+        <affects>Enemies</affects>
+        <radius>2.3</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Damage">
+            <amount>7</amount>
+            <damageDef>Cut</damageDef>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_Pied</hediff>
+            <severity>1</severity>
+            <chance>0.2</chance>
+          </li>
+        </effects>
+        <color>(1, 0.847, 0.29, 1)</color>
+        <color2>(1, 0.353, 0.816, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Note</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>2.5</scale>
+            <scaleEnd>3</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.3</scale>
+            <scaleEnd>1.1</scaleEnd>
+            <ticks>28</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>10</count>
+            <speed>3</speed>
+            <scale>0.7</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Note</fleck>
+            <count>6</count>
+            <speed>1.5</speed>
+            <scale>0.8</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Song</castSound>
+        <impactSound>AA_Impact_Song</impactSound>
+        <style>Song</style>
+        <orbitalCount>3</orbitalCount>
+        <orbitalRadius>1.3</orbitalRadius>
+        <orbitalDuration>1200</orbitalDuration>
+        <orbitalSpeed>10</orbitalSpeed>
+        <orbitalHitRadius>0.9</orbitalHitRadius>
+        <orbitalHitCooldown>40</orbitalHitCooldown>
+        <projectileTex>ArcanumAscendant/Vfx/Dagger</projectileTex>
+        <projectileScale>0.5</projectileScale>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+    <targetRequired>false</targetRequired>
   </AbilityDef>
   <ThoughtDef>
     <defName>AA_JoyfulTune</defName>
@@ -4465,6 +4737,8 @@
         <size>1.3</size>
         <fleck>AA_Fleck_Note</fleck>
         <fleckInterval>40</fleckInterval>
+        <emitter>Song</emitter>
+        <emitInterval>20</emitInterval>
       </li>
     </comps>
     <stages>

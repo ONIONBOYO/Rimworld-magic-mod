@@ -62,3 +62,5 @@ PlantHarvestYield
 SocialImpact
 ConstructionSpeed
 Rat
+Security
+Mote

@@ -350,6 +350,27 @@
     </comps>
   </ThingDef>
 
+  <!-- Invisible, short-lived light used by spell effects so they illuminate their surroundings at night. -->
+  <ThingDef>
+    <defName>AA_LightFlash</defName>
+    <label>arcane light flash</label>
+    <thingClass>ArcanumAscendant.ArcaneLightFlash</thingClass>
+    <category>Ethereal</category>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <drawerType>None</drawerType>
+    <selectable>false</selectable>
+    <useHitPoints>false</useHitPoints>
+    <rotatable>false</rotatable>
+    <destroyable>true</destroyable>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>5</glowRadius>
+        <glowColor>(255,255,255,0)</glowColor>
+      </li>
+    </comps>
+  </ThingDef>
+
   <!-- ===================== Recipes ===================== -->
   <RecipeDef Name="AA_ArcaneRecipeBase" Abstract="True">
     <workSpeedStat>GeneralLaborSpeed</workSpeedStat>

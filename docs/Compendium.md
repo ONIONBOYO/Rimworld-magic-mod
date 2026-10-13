@@ -2,7 +2,7 @@
 
 Every class, subclass, spell and keystone in the mod. Generated from `Tools/gen/classes/*.py` - do not edit by hand.
 
-**9 classes - 27 subclasses - 252 spells - 705 skill tree nodes**
+**9 classes - 27 subclasses - 277 spells - 730 skill tree nodes**
 
 ## Contents
 
@@ -40,6 +40,7 @@ Pyromancers command the oldest and hungriest of the elements. Every fight ends i
 | Meteor | 60 | 1.1 h | attack | Call down a burning star. Devastates a wide area, stuns, and sets the world alight. |
 | Dragon's Breath | 34 | 14s | attack | Exhale a roaring cone of dragonfire. Everything in front of you burns. |
 | Wall of Fire | 40 | 30s | control | Draw a line of fire across the battlefield. It burns for half a minute and scorches anything that crosses it. |
+| Orbiting Suns | 40 | 1.1 h | attack | Three miniature suns wheel around you for twenty-five seconds, scorching and igniting anything that comes close. |
 
 **Keystones:** *Avatar of Ruin* - Abandon restraint. Fire spells deal far more damage but cost more mana.; *Eternal Flame* - A fire that never goes out. Fire spells are cheaper and sometimes don't go on cooldown at all.; *Heart of the Sun* - The pinnacle of pyromancy. Your fire kills sometimes launch a free Fireball at the next enemy.
 
@@ -59,6 +60,7 @@ Inferno Lords forsake subtlety for scale: firestorms, pillars of flame and the d
 | Infernal Pact | 0 | 1.4 h | buff | Burn your own blood for power: restore a large share of your mana and become empowered, at the cost of health. |
 | Cataclysm (ultimate) | 180 | 5.8 h | attack | The Inferno Lord's final word. A storm of great meteors annihilates an enormous area. Nothing survives the center. |
 | Supernova | 120 | 2.9 h | attack | Become a dying star. A blinding blast of fire tears outward from you, burning even through armor. It costs you some of your own blood. |
+| Infernal Torrent | 50 | 30s | attack | Pour a continuous torrent of hellfire at a target for five seconds. Everything around the point of contact burns. |
 
 **Keystones:** *Scorched Earth Doctrine* - You are a walking wildfire. Your fire spells frequently set targets burning, and enemies near you take fire damage.; *Ruinous Precision* - Every blast placed perfectly. Massive critical chance and armor penetration for fire spells.
 
@@ -78,6 +80,7 @@ Ashen Phoenixes learned that fire also cleanses and renews. They dive through en
 | Wings of Flame | 35 | 1.4 h | buff | Unfurl wings of living fire: faster movement, immunity to fire, and more spell power. |
 | Rebirth Eternal (ultimate) | 220 | 7.2 h | heal | The phoenix's song. Resurrects fallen allies nearby, fully heals and wards the living, and burns every enemy in a wide nova. |
 | Rekindle | 70 | 4 h | heal | Phoenix fire burns away what is broken. Heals an ally, fades two scars and regrows a lost limb or organ with each casting. |
+| Phoenix Feathers | 40 | 1.4 h | heal | Five burning feathers circle you for half a minute. Each time one brushes an ally it mends their wounds. |
 
 **Keystones:** *Phoenix Heart* - When you are downed, you rise from the ashes fully healed in an explosion of fire. Once per day.; *Solar Flare* - Your healing spells often release a free Ember Swarm at nearby enemies.; *Ashen Covenant* - Devote yourself to renewal. Much stronger healing, and every healing spell shields you.
 
@@ -97,6 +100,7 @@ Forgehearts are smiths first and mages second. They armor their friends in molte
 | Pyroclastic Smelt * | 25 | 1 h | utility | Melt down stone chunks in an area. The arcane forge leaves behind usable steel. |
 | Forge of the Titans (ultimate) | 200 | 7.2 h | summon | Raise a towering Magma Titan and two Ember Sentinels. The Titan lobs molten slag that explodes on impact. |
 | Reforge * | 90 | 1 day | utility | Pour soul-fire into a weapon or piece of gear and hammer it anew. Its quality rises by one step, up to legendary. |
+| Hammerfall | 55 | 28s | attack | Five glowing forge-hammers slam down in turn around the target. Each blow crushes and staggers. Force like this shatters frozen enemies. |
 
 **Keystones:** *Living Forge* - Allies who fight beside you are continually coated in molten armor.; *Mechbane* - You know exactly where machines are weakest. Huge bonus damage against mechanoids, and your fire shatters energy shields.
 
@@ -124,6 +128,7 @@ Tempests are storms given a voice. Their lightning leaps from foe to foe, their 
 | Thunderstorm | 70 | 1.2 h | attack | Darken the sky over an area and call down bolt after bolt of lightning. |
 | Frost Nova | 30 | 18s | control | A ring of killing frost bursts from you, freezing everything close by. |
 | Storm Lance | 42 | 16s | attack | Hurl a lance of lightning that splits the sky: bolts strike every few steps along its path. |
+| Glacial Spike | 28 | 10s | attack | A spike of ice erupts from the ground a moment after you mark the spot, freezing whatever stands there. Frozen enemies shatter when struck with fire or force. |
 
 **Keystones:** *Maelstrom* - Become the storm. Lightning spells hit harder, chain further, and sometimes cost nothing.; *Heart of Winter* - Winter follows you. Frost lasts longer, chills almost always, and enemies near you slow to a crawl.; *Storm Sovereign* - The sky answers you unbidden: while in combat, a free Spark strikes a random nearby enemy every second and a half.
 
@@ -143,6 +148,7 @@ Stormcallers chase the purest form of the storm. Their lightning overloads machi
 | Tesla Coil | 36 | 40s | summon | Conjure a crackling tesla coil that zaps enemies with chain lightning for a minute. |
 | Wrath of the Sky (ultimate) | 190 | 5.8 h | attack | The storm takes notice. Two dozen lightning bolts annihilate a vast area while you become Stormborn. |
 | Ion Storm | 110 | 2.2 h | control | Call down a storm of ionised air. For twenty seconds it fries electronics, collapses shields and locks up mechanoids. |
+| Arc Missiles | 32 | 9s | attack | Six crackling orbs of lightning that seek out enemies. They leave targets shocked; fire turns a shocked target into an explosion. |
 
 **Keystones:** *Storm Ascendant* - Your lightning ignores more armor and deals far more damage.; *Living Current* - Your lightning has a mind of its own. Lightning hits sometimes spawn a free Chain Lightning.
 
@@ -162,6 +168,7 @@ Frostwardens are the patient side of the storm. They wall off the battlefield, f
 | Cryostasis | 30 | 1.1 h | heal | Seal a badly wounded ally in protective ice. They cannot act or be harmed, and they regenerate while frozen. |
 | Absolute Zero (ultimate) | 200 | 5.8 h | control | All motion stops. Every enemy in a vast radius around you is frozen solid and battered by cold, and a killing blizzard rises. |
 | Glacial Tomb | 55 | 40s | control | Encase a target in a tomb of ice ringed by frozen walls. It can do nothing for ten seconds, and the ice makes it brittle. |
+| Ice Halo | 40 | 1.1 h | attack | Six blades of ice orbit you for twenty-five seconds, slicing and chilling anyone who gets close. |
 
 **Keystones:** *Glaciation* - Frost spells execute weakened enemies, and Shatter becomes devastating.; *Eternal Winter* - You become a fortress of ice: a huge ward that regenerates rapidly, and a quarter of all damage is drained from mana instead.
 
@@ -181,6 +188,7 @@ Skybreakers master the air. They ride the wind, pelt enemies with hail, conjure 
 | Clear Skies * | 60 | 2 days | utility | Tear open the clouds. Ends toxic fallout, volcanic winter, flashstorms, cold snaps and heat waves, and calls a beautiful aurora. |
 | Hurricane (ultimate) | 210 | 6.2 h | control | Unleash a hurricane. For twenty seconds a colossal vortex drags everything toward its eye and shreds it. |
 | Starfall * | 90 | 2 days | utility | Reach into the sky and pull down a falling star. It crashes nearby as a meteorite packed with ore. |
+| Cyclone Blades | 38 | 40s | attack | Three blades of compressed wind scream around you, cutting and hurling back whatever they hit. |
 
 **Keystones:** *Eye of God* - See the battlefield from above. Every area spell grows enormously.; *Untouchable* - Like trying to hit the wind. A quarter of all attacks simply miss as you blink away.
 
@@ -208,6 +216,7 @@ Necromancers treat death as a resource. Every fallen raider is a future soldier,
 | Army of the Dead | 80 | 2.9 h | summon | Raise every corpse in a wide area - up to six - as thralls for a full day. |
 | Corpse Feast | 10 | 30s | utility | Draw the last life out of up to six corpses nearby. Each one heals you and refills your mana, then crumbles away. |
 | Mark of the Grave | 26 | 12s | control | Brand an enemy for death. Their wounds fester, and if they die while marked they rise as your undead servant. |
+| Soul Swarm | 34 | 14s | attack | Release six hungry souls that hunt down enemies and gnaw at their life, feeding a share of it back to you. |
 
 **Keystones:** *Master of Graves* - Your army is endless. Raise far more corpses for far longer, and those you kill often rise again.; *Soul Eater* - Consume souls directly. Massive lifesteal, a flood of mana on every kill, and kills shave seconds off your cooldowns.; *Deathlord* - Death answers to you. Anything you kill may burst in a wave of necrotic energy.
 
@@ -227,6 +236,7 @@ Liches trade their humanity for undying power. Their touch freezes the blood and
 | Lichform | 60 | 4.3 h | buff | Become a lich for a minute: no pain, no hunger, halved damage, and terrible magical power. |
 | Finger of Death (ultimate) | 160 | 4.3 h | attack | Point, and the target dies. Even the mightiest war machines are torn apart by a huge fraction of their own vitality. |
 | Soul Reap | 60 | 40s | attack | Tear a sliver of soul from every enemy around you. You are healed for part of the damage and your mana surges. |
+| Drain Soul | 40 | 20s | attack | Lock a ribbon of necrotic power onto a target and drink its soul for five seconds. You heal for most of the damage. |
 
 **Keystones:** *Eternal Vigil* - Your phylactery holds. When you fall, you rise again in a wave of death. Once per day.; *Archlich* - Death on demand. Finger of Death recharges much faster and necromancy hits harder.; *Soulbound* - Spend twice as long in Lichform, more often, and drink the life of your foes.
 
@@ -246,6 +256,7 @@ Bonelords raise legions. Bone spires guard their flanks, bone prisons trap their
 | Bone Spear | 24 | 8s | attack | A line of bone spikes erupts from the ground toward the target. |
 | Legion Eternal (ultimate) | 200 | 7.2 h | summon | Every corpse in a huge area rises - up to fifteen - for two full days, empowered by your will. |
 | Bone Storm | 50 | 35s | buff | A whirlwind of razor-edged bone spins around you for twelve seconds, shredding every enemy that comes close. |
+| Bone Shards | 30 | 12s | attack | Hurl five jagged shards of bone that curve in on enemies and leave them bleeding. |
 
 **Keystones:** *Legion Master* - Every ally near you fights with the fury of Dark Command at all times.; *Bone Fortress* - Bone grows over you like armor, and when you are struck a spire may burst from the ground to defend you.
 
@@ -292,6 +303,7 @@ Paladins channel radiant light. They stand on the front line, shielding allies, 
 | Holy Nova | 55 | 40s | heal | A blast of light: heals allies and burns enemies all around you. |
 | Divine Intervention | 60 | 2.9 h | buff | The heavens reach down and hold an ally. For eight seconds nothing can harm them. |
 | Heaven's Lance | 48 | 20s | attack | Call a procession of holy pillars that march out from you in a line, searing and judging everything in their path. |
+| Sunstrike | 45 | 22s | attack | Mark the ground. A heartbeat later a column of sunfire slams down: heavy radiant damage, a stagger, and a mark of judgment that shadow magic can detonate. |
 
 **Keystones:** *Wrath of Heaven* - Light that burns the unnatural: much more holy damage, especially against machines and abominations.; *Sanctity* - Become a living sanctuary. Much stronger healing, and every spell wards you.; *Exalted* - When struck, you may erupt in a free Holy Nova.
 
@@ -330,6 +342,7 @@ Clerics pour everything into restoration: mass heals, regeneration, sanctuaries,
 | Sanctuary | 40 | 40s | heal | Raise a dome of holy light. Allies inside heal quickly and take less damage. |
 | Miracle (ultimate) | 250 | 1 day | heal | A true miracle. Resurrects every fallen ally nearby, fully heals and restores every living ally, regrows lost limbs and cures all ills. |
 | Greater Restoration | 140 | 1 day | heal | A long, exhausting prayer that makes the body whole: every chronic illness cured, every scar erased, every lost limb and organ regrown, every addiction broken. |
+| Guardian Spirits | 50 | 1.8 h | heal | Three guardian spirits circle you for forty seconds. Whenever one passes an ally it heals them and lifts poisons and sickness. |
 
 **Keystones:** *Ascension* - Death is a minor setback. Resurrection and Miracle recharge twice as fast.; *Overflowing Grace* - Every spell you cast becomes a heal for everyone around you.
 
@@ -349,6 +362,7 @@ Inquisitors hunt what should not exist: rogue mages, abominations and the war ma
 | Banishment | 28 | 20s | control | Hurl a foe far across the battlefield and stun them. |
 | Final Judgment (ultimate) | 200 | 5.8 h | attack | Heaven renders its verdict. Twelve pillars of annihilating light fall around the target. Armor means nothing. |
 | Mirror of Judgment | 50 | 1.4 h | buff | For ten seconds, every blow struck against you is judged: you take half of it, and the attacker takes all of it. |
+| Searing Ray | 45 | 25s | attack | Focus a ray of holy fire on a heretic for four seconds. It burns through armor and brands them for judgment. |
 
 **Keystones:** *No Heresy* - Holy spells often purge their targets for free and execute the weakened.; *The Long Inquest* - Final Judgment recharges far faster and calls more pillars.
 
@@ -377,6 +391,7 @@ Chronomancers see time as a river they can wade into. They hasten friends, slow 
 | Rejuvenate * | 60 | 6 h | utility | Unwind an ally's personal time. Each casting takes three years off their body, cures one age-related condition (bad back, cataracts, frailty, dementia and the like) and fades one scar. Keep casting to restore them fully. |
 | Senescence | 34 | 15s | attack | Force years of age onto a target in an instant. Each casting adds about eight years, wracks the body with time-ravaged weakness, and may bring on the ailments of old age. Push someone far enough past their natural lifespan and they crumble to dust. |
 | Reverse Entropy * | 45 | 2 h | utility | Run time backwards for everything in an area: damaged items are repaired, spoiled food is fresh again, and clothes taken from the dead lose their taint. Allies' worn gear is restored too. |
+| Temporal Bomb | 40 | 25s | attack | Plant a knot of stopped time on an enemy. It follows them for three seconds, then releases every moment it held at once: heavy damage, a long stun and lingering slowness. Void magic fractures slowed targets. |
 
 **Keystones:** *Eternal Stasis* - When you stop time, it stays stopped. Time Stop and Slow last half again as long and reach further.; *Infinite Acceleration* - Everything you do happens a little sooner than it should.; *Master of Time* - When badly hurt, time sometimes simply undoes it: a free Rewind Wounds on yourself.
 
@@ -414,6 +429,7 @@ Voidwalkers learned that space has holes in it. They step through, pull enemies 
 | Phase Shift | 28 | 1.1 h | buff | Slip partly out of reality. Attacks pass through you and you move faster. |
 | Singularity (ultimate) | 210 | 6.2 h | attack | Tear open a black hole. For fifteen seconds it drags everything toward it and grinds it out of existence. |
 | Transposition | 24 | 15s | mobility | Fold space so that you and a target trade places instantly. Pull an ally out of danger, or drop an enemy into it. |
+| Disintegrate | 70 | 1.1 h | attack | Focus a beam of pure nothing on a target for six seconds. It ignores nearly all armor and erases a little of the target's being with every pulse. |
 
 **Keystones:** *Devourer* - The void is always hungry. Void kills implode, hurting nearby foes and feeding you mana.; *Annihilation* - Pure erasure. Void spells deal vastly more damage and ignore much more armor.
 
@@ -460,6 +476,7 @@ Druids are the voice of every living thing on the rim. They call beasts, raise t
 | Wrath of Nature | 55 | 35s | attack | A wave of thorns and roots tears through the ground toward the target. |
 | Earthquake | 60 | 40s | control | Stamp, and the earth answers. The ground heaves around you, knocking enemies flat and battering them with stone. |
 | Nature's Renewal | 50 | 3 h | heal | Pour the patient strength of the forest into an ally: heals, cures an age-related or chronic condition and fades two scars with each casting. |
+| Hornet Swarm | 30 | 12s | attack | Loose a swarm of eight giant hornets. They chase down enemies and sting them with venom. |
 
 **Keystones:** *Overgrowth* - The wild turns violent. Nature spells hit harder and often entangle.; *Lifewell* - Everything you cast spills life into those around you.; *Archdruid* - The wild answers you unbidden: in combat, wolves arrive every thirty seconds.
 
@@ -544,6 +561,7 @@ Runesmiths are engineers of magic. They etch runes into stone, steel and skin - 
 | Runic Barrage | 60 | 40s | attack | A storm of glowing runes slams down over an area, shattering shields and armor. |
 | Midas Touch * | 55 | 1.4 h | attack | Inscribe a rune of gold on a creature. If it is weakened or small, it turns to solid gold where it stands. The mighty are only gilded, slowed and burned. |
 | Rune Cannonade | 65 | 40s | attack | Inscribe a firing solution in the air. A battery of runic shells rains down on the target area, each one exploding and shredding armor. |
+| Seeker Glyphs | 30 | 10s | attack | Four burning glyphs peel off your hand and hunt their targets, cracking armor where they strike. |
 
 **Keystones:** *Overcharge* - Every rune burns hotter. Much more damage and armor penetration.; *Arcane Foundry* - Every construct spell builds one more construct, and they last much longer.; *Grand Architect* - Runes guard you even unbidden: being hit may inscribe a free Explosive Rune under the attacker.
 
@@ -563,6 +581,7 @@ Golemancers build their armies. Iron sentries, arc pylons and runic walls go up 
 | Maintenance Protocol | 30 | 1.1 h | utility | Mass repair: every structure and construct in a wide area is restored. |
 | Colossus Protocol (ultimate) | 220 | 7.2 h | summon | Wake the Rune Colossus - a towering artillery construct - alongside two iron sentries. |
 | Overdrive Protocol | 50 | 1.4 h | buff | Broadcast an overdrive glyph. Every ally nearby moves and fights faster and is patched up. |
+| Drone Swarm | 40 | 1.2 h | attack | Four runic drones whirl around you for thirty seconds, grinding into anything that comes near and sundering its armor. |
 
 **Keystones:** *Warforged* - Your constructs are built for war: half again as powerful.; *Endless Factory* - Your constructs last twice as long and can be rebuilt far sooner.
 
@@ -582,6 +601,7 @@ Spellforgers enchant people instead of things. A spellforger's squad hits harder
 | Mana Battery | 45 | 1.4 h | utility | Pour your stored power into an ally mage, restoring 40% of their mana. |
 | Grand Enchantment (ultimate) | 220 | 7.2 h | buff | Every ally in a huge radius receives every enchantment you know at once: ironhide, rune-charged weapons, empowerment, haste and a massive ward. |
 | Masterwork Rune * | 80 | 1 day | utility | Carve a rune of perfection into an item or the weapon a pawn is holding. Its quality rises by one step, up to legendary. |
+| Magic Missile | 24 | 6s | attack | The oldest spell in the book, perfected: five darts of pure force that never miss and ignore armor entirely. |
 
 **Keystones:** *Paragon of Runes* - Allies near you are continually warded and rune-charged.; *Arcane Well* - You are a font of mana: allied mages near you regenerate mana from your reserves.
 
@@ -628,6 +648,7 @@ Shadowmancers deal in what can't be seen: curses, stealth and the dread that tur
 | Umbral Eruption | 55 | 35s | attack | Darkness bursts from the ground around you, tearing and blinding everyone nearby. |
 | Eclipse * | 80 | 1 day | utility | Swallow the sun. Darkness falls across the map for six hours, and every enemy near you is blinded by the sudden night. |
 | Shadow Bind | 32 | 18s | control | Shadows lash out from the ground and drag every enemy in the area toward the center, holding them in place. |
+| Shadow Blades | 36 | 40s | attack | Four knives of solid shadow circle you for twenty seconds, slashing and opening wounds on everyone who comes close. |
 
 **Keystones:** *Living Nightmare* - Enemies near you are steadily cursed and weakened.; *Silhouette* - Strike from where they least expect. Huge spell critical chance and damage.; *Shadow Lord* - When struck, you may melt into the shadows for free.
 
@@ -647,6 +668,7 @@ Assassins end fights before they start. They blink behind the most dangerous ene
 | Mark for Death | 20 | 16s | control | Mark a single enemy. Everything hurts it more, and it cannot hide. |
 | Death Lotus (ultimate) | 170 | 4.8 h | attack | Become a whirlwind of shadow blades, flickering between up to nine enemies. Each strike executes the weakened. |
 | Shadow Dance | 40 | 24s | attack | Flicker from enemy to enemy, appearing behind each one for a single killing cut. |
+| Whirling Daggers | 30 | 30s | attack | Five poisoned daggers spin around you for fifteen seconds. Walk through a crowd and let them do the work. |
 
 **Keystones:** *Executioner* - Shadow spells execute anything below a quarter of its health.; *Shadowdance* - Kills flow into the next: shadow kills often trigger a free Backstab on the nearest enemy.
 
@@ -685,6 +707,7 @@ Hemomancers spend blood like mana: their own, their allies' and especially their
 | Transfusion | 15 | 20s | heal | Give your own blood to save an ally: a huge heal for them, a wound for you. |
 | Crimson Tide (ultimate) | 150 | 5.3 h | attack | Your blood erupts outward in a red wave: crushing damage to every enemy around you, and you drink half of it back. |
 | Blood Harvest | 45 | 20s | attack | Pull the blood out of every enemy in an area through their skin. You drink a third of what you take. |
+| Blood Siphon | 30 | 20s | attack | Draw a stream of blood out of a target for five seconds. Their wounds keep bleeding and you heal for half of everything you take. |
 
 **Keystones:** *Sanguinarch* - The blood of your enemies flows to you: massive lifesteal and blood damage.; *The Undying Blood* - Your blood refuses to stop. When downed, you rise again fully healed. Once per day.
 
@@ -712,6 +735,7 @@ Spellsingers weave magic into music. A war chant makes soldiers fearless, a lull
 | Ballad of Heroes | 60 | 1.4 h | buff | The song of legends. Every ally nearby gains valor, steadiness and a strong ward. |
 | Siren's Call | 34 | 22s | control | Sing a note no one can resist. Enemies in the area stumble toward its center, entranced, and stand there listening. |
 | Standing Ovation * | 90 | 2 days | utility | Give the performance of a lifetime. Every colonist who hears it is struck by inspiration. |
+| Echoing Notes | 26 | 10s | attack | Sing five notes that take wing and chase enemies down, ringing in their skulls. |
 
 **Keystones:** *Requiem* - Your music becomes a weapon: sonic magic hits much harder and resonates through machines.; *Grand Symphony* - Your songs carry further and linger far longer.; *Living Legend* - Songs are already being sung about you. Allies nearby in combat always have valor.
 
@@ -769,6 +793,7 @@ Jesters treat magic as a joke, and the joke is usually on the enemy. Their spell
 | Confetti Cannon | 26 | 14s | attack | A deafening cannon of confetti. Enemies in front are stunned and concussed; it is very festive. |
 | Grand Finale (ultimate) | 180 | 5.8 h | attack | The show-stopper. Twenty random magical effects explode over a huge area. Nobody, including the jester, knows what will happen. |
 | Banana Peels * | 26 | 25s | control | Scatter conjured banana peels across an area. For fifteen seconds, enemies who walk through keep slipping over. |
+| Juggling Knives * | 25 | 30s | attack | Juggle three knives around yourself at alarming speed. Anyone who gets close gets cut, and occasionally a custard pie flies out of the act. |
 
 **Keystones:** *The House Always Wins* - Luck is a skill. Huge crit chance and spells often refund themselves.; *Pandemonium* - Chaos follows you everywhere: Wild Magic erupts around a random enemy every five seconds in combat.
 

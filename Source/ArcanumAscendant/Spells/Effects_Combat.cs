@@ -76,6 +76,7 @@ namespace ArcanumAscendant
                 mult *= cm;
             }
             DealDamage(ctx, p, amount * mult, crit);
+            if (!p.Dead) ArcaneReactions.TryTrigger(ctx, p, Def);
         }
 
         public void DealDamage(SpellContext ctx, Pawn p, float total, bool crit)
@@ -84,6 +85,7 @@ namespace ArcanumAscendant
             float pen = (armorPen >= 0f ? armorPen : def.defaultArmorPenetration) + ctx.mods.armorPen;
             bool wasDead = p.Dead;
             float dealt = 0f;
+            Vector3 hitPos = p.DrawPos;
             int n = Mathf.Max(1, hits);
             float perHit = total / n;
             float angle = (p.DrawPos - (ctx.caster?.DrawPos ?? p.DrawPos)).AngleFlat();
@@ -116,16 +118,32 @@ namespace ArcanumAscendant
             {
                 CompArcane.applyingSpellDamage = false;
             }
-            if (crit && p.Spawned) ArcaneFx.Text(p, "AA_Crit".Translate(Mathf.RoundToInt(dealt)), new Color(1f, 0.85f, 0.3f));
+            if (ArcanumMod.Settings.damageNumbers) ArcaneFx.DamageNumber(ctx.map, hitPos, dealt, crit, ctx.Color);
+            else if (crit && p.Spawned) ArcaneFx.Text(p, "AA_Crit".Translate(Mathf.RoundToInt(dealt)), new Color(1f, 0.85f, 0.3f));
             if (stunTicks > 0 && !p.Dead && p.stances?.stunner != null)
                 p.stances.stunner.StunFor(Mathf.RoundToInt(stunTicks * ctx.DurationFactor), ctx.caster, false, true);
             ApplyOnHitMods(ctx, p);
             float ls = ctx.lifestealStat + ctx.mods.lifesteal + healCasterFraction;
             if (ls > 0f && dealt > 0f && ctx.caster != null && !ctx.caster.Dead)
+            {
                 ArcaneUtility.HealPawn(ctx.caster, dealt * ls);
+                if (dealt > 3f && ctx.caster.Spawned && ctx.map != null && ctx.caster.Map == ctx.map && VRand.Chance(0.6f))
+                    ArcaneVfxManager.For(ctx.map)?.Add(new VfxSoulWisp(hitPos, ctx.caster, ctx.Color, ctx.Color2));
+            }
             ctx.totalDamage += dealt;
             ctx.arcane?.Notify_SpellHit(ctx, p, dealt);
-            if (!wasDead && p.Dead) ctx.arcane?.Notify_Kill(p, ctx);
+            if (!wasDead && p.Dead)
+            {
+                try
+                {
+                    StyleFx.Death(ctx, p, hitPos);
+                }
+                catch (System.Exception e)
+                {
+                    Log.ErrorOnce("[Arcanum Ascendant] Death effect error: " + e, 0x5A1C0F1);
+                }
+                ctx.arcane?.Notify_Kill(p, ctx);
+            }
         }
 
         public static void ApplyOnHitMods(SpellContext ctx, Pawn p)
@@ -192,8 +210,10 @@ namespace ArcanumAscendant
         public override void ApplyToPawn(SpellContext ctx, Pawn p, ImpactInfo info)
         {
             float heal = amount * ctx.HealFactor * info.scale;
-            if (ctx.RollCrit(out float cm)) heal *= cm;
-            ArcaneUtility.HealPawn(p, heal, removeScars);
+            bool healCrit = ctx.RollCrit(out float cm);
+            if (healCrit) heal *= cm;
+            float healed = ArcaneUtility.HealPawn(p, heal, removeScars);
+            if (healed >= 0.5f && p.Spawned) ArcaneFx.HealNumber(p.Map, p.DrawPos, healed, healCrit);
             if (tend)
                 foreach (var h in p.health.hediffSet.hediffs.ToList())
                     if (h.TendableNow()) h.Tended(1f, 1f);

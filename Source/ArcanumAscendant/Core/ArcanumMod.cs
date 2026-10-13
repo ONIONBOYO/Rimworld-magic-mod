@@ -20,6 +20,12 @@ namespace ArcanumAscendant
         public bool screenShake = true;
         public bool allowAutocast = true;
         public bool autocastNewSpells = true;
+        public bool dynamicLights = true;
+        public bool screenFlashes = true;
+        public bool cinematicUltimates = true;
+        public bool damageNumbers = true;
+        public bool decals = true;
+        public bool reactions = true;
 
         public override void ExposeData()
         {
@@ -36,6 +42,12 @@ namespace ArcanumAscendant
             Scribe_Values.Look(ref screenShake, "screenShake", true);
             Scribe_Values.Look(ref allowAutocast, "allowAutocast", true);
             Scribe_Values.Look(ref autocastNewSpells, "autocastNewSpells", true);
+            Scribe_Values.Look(ref dynamicLights, "dynamicLights", true);
+            Scribe_Values.Look(ref screenFlashes, "screenFlashes", true);
+            Scribe_Values.Look(ref cinematicUltimates, "cinematicUltimates", true);
+            Scribe_Values.Look(ref damageNumbers, "damageNumbers", true);
+            Scribe_Values.Look(ref decals, "decals", true);
+            Scribe_Values.Look(ref reactions, "reactions", true);
         }
     }
 
@@ -52,11 +64,15 @@ namespace ArcanumAscendant
 
         public override string SettingsCategory() => "Arcanum Ascendant";
 
+        private static Vector2 settingsScroll;
+
         public override void DoSettingsWindowContents(Rect inRect)
         {
             var s = Settings;
             var l = new Listing_Standard();
-            l.Begin(inRect);
+            var view = new Rect(0f, 0f, inRect.width - 20f, 980f);
+            Widgets.BeginScrollView(inRect, ref settingsScroll, view);
+            l.Begin(view);
             l.Label("AA_Set_Header".Translate().Colorize(new Color(0.75f, 0.6f, 1f)));
             l.GapLine();
             l.Label("AA_Set_Xp".Translate(s.xpMultiplier.ToStringPercent()));
@@ -76,10 +92,16 @@ namespace ArcanumAscendant
             l.Label("AA_Set_EnemyLevel".Translate(s.enemyLevelScale.ToStringPercent()));
             s.enemyLevelScale = l.Slider(s.enemyLevelScale, 0.1f, 4f);
             l.CheckboxLabeled("AA_Set_EnemyCast".Translate(), ref s.enemyMagesCast);
+            l.CheckboxLabeled("AA_Set_Reactions".Translate(), ref s.reactions, "AA_Set_ReactionsDesc".Translate());
             l.GapLine();
             l.Label("AA_Set_Vfx".Translate(s.vfxIntensity.ToStringPercent()));
             s.vfxIntensity = l.Slider(s.vfxIntensity, 0f, 2f);
             l.CheckboxLabeled("AA_Set_Shake".Translate(), ref s.screenShake);
+            l.CheckboxLabeled("AA_Set_Lights".Translate(), ref s.dynamicLights, "AA_Set_LightsDesc".Translate());
+            l.CheckboxLabeled("AA_Set_Flashes".Translate(), ref s.screenFlashes, "AA_Set_FlashesDesc".Translate());
+            l.CheckboxLabeled("AA_Set_Cinematic".Translate(), ref s.cinematicUltimates, "AA_Set_CinematicDesc".Translate());
+            l.CheckboxLabeled("AA_Set_Numbers".Translate(), ref s.damageNumbers, "AA_Set_NumbersDesc".Translate());
+            l.CheckboxLabeled("AA_Set_Decals".Translate(), ref s.decals, "AA_Set_DecalsDesc".Translate());
             l.Gap();
             if (l.ButtonText("AA_Set_Reset".Translate()))
             {
@@ -88,6 +110,7 @@ namespace ArcanumAscendant
                     f.SetValue(s, f.GetValue(fresh));
             }
             l.End();
+            Widgets.EndScrollView();
         }
     }
 
@@ -135,7 +158,30 @@ namespace ArcanumAscendant
     /// <summary>Awakens starting colonists if the setting is on.</summary>
     public class GameComponent_Arcanum : GameComponent
     {
+        private HashSet<ArcaneReactionDef> discovered = new HashSet<ArcaneReactionDef>();
+
         public GameComponent_Arcanum(Game game) { }
+
+        public bool IsDiscovered(ArcaneReactionDef r) => discovered.Contains(r);
+
+        /// <summary>The first time the colony sets off a reaction, it is written into every grimoire's codex.</summary>
+        public void Discover(ArcaneReactionDef r, Pawn by)
+        {
+            if (r == null || !discovered.Add(r)) return;
+            Find.LetterStack.ReceiveLetter("AA_ReactionDiscoveredLabel".Translate(r.LabelCap),
+                "AA_ReactionDiscoveredText".Translate(by.LabelShort, r.LabelCap, r.description, by.Named("PAWN")), LetterDefOf.PositiveEvent, by);
+        }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Collections.Look(ref discovered, "discoveredReactions", LookMode.Def);
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            {
+                discovered ??= new HashSet<ArcaneReactionDef>();
+                discovered.RemoveWhere(d => d == null);
+            }
+        }
 
         public override void StartedNewGame()
         {
@@ -184,6 +230,15 @@ namespace ArcanumAscendant
                 if (c.subclassDef != null) foreach (var n in c.subclassDef.nodes) c.ForceRank(n, n.maxRank);
             });
             yield return new FloatMenuOption("Fill mana & ward", () => { c.mana = c.ManaMax; c.ward = c.WardMax; });
+            yield return new FloatMenuOption("+40 strain", () => c.AddStrain(40f));
+            yield return new FloatMenuOption("Clear strain", () => { c.strain = 0f; c.AddStrain(0.001f); });
+            yield return new FloatMenuOption("Wild surge", () => ArcaneStrain.WildSurge(c));
+            yield return new FloatMenuOption("Grandmaster every known spell", () => { foreach (var s in c.KnownSpells().ToList()) c.GainMastery(s, Mastery.Thresholds[Mastery.MaxRank]); });
+            foreach (var fam in DefDatabase<FamiliarDef>.AllDefs)
+            {
+                var ff = fam;
+                yield return new FloatMenuOption("Bond familiar: " + fam.label, () => Familiars.Bond(c, ff));
+            }
             yield return new FloatMenuOption("Reset all cooldowns", () => { foreach (var a in c.ArcaneAbilities()) a.ResetCooldown(); });
             yield return new FloatMenuOption("Respec", () => c.Respec());
             yield return new FloatMenuOption("Remove class", () => c.Unawaken());

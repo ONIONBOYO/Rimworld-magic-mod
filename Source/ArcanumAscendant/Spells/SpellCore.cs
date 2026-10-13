@@ -31,6 +31,14 @@ namespace ArcanumAscendant
         Self,
         Barrage,
         Line,
+        /// <summary>Homing missiles launched in a fan.</summary>
+        Missiles,
+        /// <summary>Orbs that circle the caster and strike what they touch.</summary>
+        Orbitals,
+        /// <summary>A beam the caster keeps channelling, pulsing its effects.</summary>
+        Channel,
+        /// <summary>A warning circle that detonates after a delay.</summary>
+        Delayed,
     }
 
     /// <summary>Spell definition data, attached to an AbilityDef as its effect comp.</summary>
@@ -69,6 +77,27 @@ namespace ArcanumAscendant
         public int lineStepDelay = 2;
         public float lineLength = 12f;
 
+        // missiles
+        public float missileSpread = 70f;
+
+        // orbitals
+        public int orbitalCount = 3;
+        public float orbitalRadius = 1.6f;
+        public int orbitalDuration = 1200;
+        public float orbitalSpeed = 5f;
+        public float orbitalHitRadius = 0.9f;
+        public int orbitalHitCooldown = 30;
+
+        // channel
+        public int channelTicks = 240;
+        public int channelInterval = 20;
+
+        // delayed
+        public int delayTicks = 90;
+        public int delayedCount = 1;
+        public float delayedSpread;
+        public int delayedStagger = 12;
+
         // barrage
         public int barrageCount = 6;
         public int barrageInterval = 8;
@@ -85,6 +114,8 @@ namespace ArcanumAscendant
         public SoundDef castSound;
         public SoundDef impactSound;
         public float shake;
+        /// <summary>Visual school: decides the casting circle, projectile, impact and death signatures. Auto reads the spell's tags.</summary>
+        public VfxStyle style = VfxStyle.Auto;
 
         public CompProperties_ArcaneSpell()
         {
@@ -134,6 +165,8 @@ namespace ArcanumAscendant
         public Color Color => props?.color ?? Color.white;
         public Color Color2 => props?.color2 ?? Color.white;
         public HashSet<Thing> hitThisCast = new HashSet<Thing>();
+        /// <summary>True while an elemental reaction resolves, so reactions cannot chain into each other.</summary>
+        public bool inReaction;
         /// <summary>The pawn the caster deliberately aimed an offensive spell at. It counts as an enemy even when it isn't
         /// hostile (hunting a wild animal, punishing a colonist), the same way a forced attack works in vanilla.</summary>
         public Pawn forcedTarget;

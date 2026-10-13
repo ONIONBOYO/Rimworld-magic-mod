@@ -590,6 +590,20 @@
     <unlockSpell>AA_Spell_RuneCannonade</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Runesmith_SeekerGlyphs</defName>
+    <tree>AA_Class_Runesmith</tree>
+    <kind>Spell</kind>
+    <x>2</x>
+    <y>5</y>
+    <requiredLevel>7</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Runesmith_Artificer</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_SeekerGlyphs</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Golemancer_IronSentry</defName>
     <tree>AA_Class_Golemancer</tree>
     <kind>Spell</kind>
@@ -905,6 +919,20 @@
       <li>AA_Node_Golemancer_ArcPylon</li>
     </prerequisites>
     <unlockSpell>AA_Spell_OverdriveProtocol</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Golemancer_DroneSwarm</defName>
+    <tree>AA_Class_Golemancer</tree>
+    <kind>Spell</kind>
+    <x>1</x>
+    <y>4</y>
+    <requiredLevel>14</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>10</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Golemancer_MaintenanceProtocol</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_DroneSwarm</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Spellforger_EmpowerAllies</defName>
@@ -1246,6 +1274,20 @@
       <li>AA_Node_Spellforger_Disenchant</li>
     </prerequisites>
     <unlockSpell>AA_Spell_MasterworkRune</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Spellforger_MagicMissile</defName>
+    <tree>AA_Class_Spellforger</tree>
+    <kind>Spell</kind>
+    <x>0</x>
+    <y>3</y>
+    <requiredLevel>12</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>9</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Spellforger_MasterworkRune</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_MagicMissile</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Gunslinger_Quickdraw</defName>
@@ -1685,6 +1727,7 @@
         </impactVfx>
         <castSound>AA_Cast_Rune</castSound>
         <impactSound>AA_Impact_Rune</impactSound>
+        <style>Rune</style>
         <projectileSpeed>30</projectileSpeed>
         <projectileScale>0.8</projectileScale>
         <projectileSpin>true</projectileSpin>
@@ -1777,6 +1820,7 @@
         </impactVfx>
         <castSound>AA_Cast_Rune</castSound>
         <impactSound>AA_Impact_Rune</impactSound>
+        <style>Rune</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -1868,6 +1912,7 @@
         </impactVfx>
         <castSound>AA_Cast_Rune</castSound>
         <impactSound>AA_Impact_Rune</impactSound>
+        <style>Rune</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2004,6 +2049,7 @@
         </impactVfx>
         <castSound>AA_Cast_Rune</castSound>
         <impactSound>AA_Impact_Rune</impactSound>
+        <style>Rune</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2092,6 +2138,7 @@
         </impactVfx>
         <castSound>AA_Cast_Rune</castSound>
         <impactSound>AA_Impact_Rune</impactSound>
+        <style>Rune</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2175,6 +2222,7 @@
         </impactVfx>
         <castSound>AA_Cast_Rune</castSound>
         <impactSound>AA_Impact_Rune</impactSound>
+        <style>Rune</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2262,6 +2310,7 @@
         </impactVfx>
         <castSound>AA_Cast_Rune</castSound>
         <impactSound>AA_Impact_Rune</impactSound>
+        <style>Rune</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2368,6 +2417,7 @@
         </impactVfx>
         <castSound>AA_Cast_Rune</castSound>
         <impactSound>AA_Impact_Rune</impactSound>
+        <style>Rune</style>
         <barrageCount>10</barrageCount>
         <barrageInterval>5</barrageInterval>
         <barrageRadius>4</barrageRadius>
@@ -2468,6 +2518,7 @@
         </impactVfx>
         <castSound>AA_Cast_Rune</castSound>
         <impactSound>AA_Impact_Rune</impactSound>
+        <style>Rune</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2575,6 +2626,7 @@
         <castSound>AA_Cast_Rune</castSound>
         <impactSound>AA_Impact_Rune</impactSound>
         <shake>0.6</shake>
+        <style>Rune</style>
         <barrageCount>10</barrageCount>
         <barrageInterval>6</barrageInterval>
         <barrageRadius>4.5</barrageRadius>
@@ -2582,6 +2634,110 @@
         <strikeStyle>Meteor</strikeStyle>
         <projectileScale>0.6</projectileScale>
         <projectileTex>ArcanumAscendant/Vfx/RuneBolt</projectileTex>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_SeekerGlyphs</defName>
+    <label>seeker glyphs</label>
+    <description>Four burning glyphs peel off your hand and hunt their targets, cracking armor where they strike.</description>
+    <iconPath>ArcanumAscendant/Spells/SeekerGlyphs</iconPath>
+    <cooldownTicksRange>600</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>26</range>
+      <warmupTime>0.5</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>30</manaCost>
+        <tags>
+          <li>Rune</li>
+        </tags>
+        <tier>2</tier>
+        <role>Attack</role>
+        <autocastByDefault>true</autocastByDefault>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Missiles</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Damage">
+            <amount>16</amount>
+            <damageDef>AA_Rune</damageDef>
+            <armorPen>0.4</armorPen>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_ArmorShred</hediff>
+            <severity>1</severity>
+            <stack>true</stack>
+            <maxSeverity>4</maxSeverity>
+          </li>
+        </effects>
+        <color>(1, 0.667, 0.235, 1)</color>
+        <color2>(1, 0.941, 0.784, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Gear</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>1.8</scale>
+            <scaleEnd>2.16</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Rune</fleck>
+            <count>8</count>
+            <speed>2.2</speed>
+            <scale>0.55</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.2</scale>
+            <scaleEnd>2</scaleEnd>
+            <ticks>20</ticks>
+            <useColor2>true</useColor2>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Rune</castSound>
+        <impactSound>AA_Impact_Rune</impactSound>
+        <style>Rune</style>
+        <projectileCount>4</projectileCount>
+        <projectileSpeed>18</projectileSpeed>
+        <projectileTex>ArcanumAscendant/Vfx/RuneBolt</projectileTex>
+        <projectileScale>0.6</projectileScale>
+        <missileSpread>110</missileSpread>
+        <multiTargetRadius>7</multiTargetRadius>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2673,6 +2829,7 @@
         </impactVfx>
         <castSound>AA_Cast_Rune</castSound>
         <impactSound>AA_Impact_Rune</impactSound>
+        <style>Rune</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2765,6 +2922,7 @@
         </impactVfx>
         <castSound>AA_Cast_Arcane</castSound>
         <impactSound>AA_Impact_Arcane</impactSound>
+        <style>Rune</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2861,6 +3019,7 @@
         </impactVfx>
         <castSound>AA_Cast_Rune</castSound>
         <impactSound>AA_Impact_Rune</impactSound>
+        <style>Rune</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2949,6 +3108,7 @@
         </impactVfx>
         <castSound>AA_Cast_Rune</castSound>
         <impactSound>AA_Impact_Rune</impactSound>
+        <style>Rune</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3060,6 +3220,7 @@
         <castSound>AA_Cast_Rune</castSound>
         <impactSound>AA_Impact_Rune</impactSound>
         <shake>2.5</shake>
+        <style>Rune</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3152,6 +3313,121 @@
         </impactVfx>
         <castSound>AA_Cast_Rune</castSound>
         <impactSound>AA_Impact_Rune</impactSound>
+        <style>Rune</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+    <targetRequired>false</targetRequired>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_DroneSwarm</defName>
+    <label>drone swarm</label>
+    <description>Four runic drones whirl around you for thirty seconds, grinding into anything that comes near and sundering its armor.</description>
+    <iconPath>ArcanumAscendant/Spells/DroneSwarm</iconPath>
+    <cooldownTicksRange>3000</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>0</range>
+      <warmupTime>0.4</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <drawAimPie>false</drawAimPie>
+      <targetable>false</targetable>
+      <nonInterruptingSelfCast>false</nonInterruptingSelfCast>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>40</manaCost>
+        <tags>
+          <li>Rune</li>
+        </tags>
+        <tier>2</tier>
+        <role>Attack</role>
+        <autocastByDefault>true</autocastByDefault>
+        <aiMinEnemiesInRadius>1</aiMinEnemiesInRadius>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Orbitals</delivery>
+        <affects>Enemies</affects>
+        <radius>3</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Damage">
+            <amount>9</amount>
+            <damageDef>AA_Rune</damageDef>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_ArmorShred</hediff>
+            <severity>1</severity>
+            <stack>true</stack>
+            <maxSeverity>4</maxSeverity>
+          </li>
+        </effects>
+        <color>(0.878, 0.627, 0.376, 1)</color>
+        <color2>(0.784, 0.816, 0.878, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Spark</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>2.5</scale>
+            <scaleEnd>3</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.3</scale>
+            <scaleEnd>1.1</scaleEnd>
+            <ticks>28</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Gear</fleck>
+            <count>10</count>
+            <speed>3</speed>
+            <scale>0.7</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Spark</fleck>
+            <count>6</count>
+            <speed>1.5</speed>
+            <scale>0.8</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Rune</castSound>
+        <impactSound>AA_Impact_Rune</impactSound>
+        <style>Rune</style>
+        <orbitalCount>4</orbitalCount>
+        <orbitalRadius>2</orbitalRadius>
+        <orbitalDuration>1800</orbitalDuration>
+        <orbitalSpeed>5.5</orbitalSpeed>
+        <orbitalHitRadius>0.9</orbitalHitRadius>
+        <orbitalHitCooldown>40</orbitalHitCooldown>
+        <projectileTex>ArcanumAscendant/Vfx/Gear</projectileTex>
+        <projectileScale>0.5</projectileScale>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3240,6 +3516,7 @@
         </impactVfx>
         <castSound>AA_Cast_Arcane</castSound>
         <impactSound>AA_Impact_Arcane</impactSound>
+        <style>Rune</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3321,6 +3598,7 @@
         </impactVfx>
         <castSound>AA_Cast_Arcane</castSound>
         <impactSound>AA_Impact_Arcane</impactSound>
+        <style>Rune</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3415,6 +3693,7 @@
         </impactVfx>
         <castSound>AA_Cast_Arcane</castSound>
         <impactSound>AA_Impact_Arcane</impactSound>
+        <style>Rune</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3498,6 +3777,7 @@
         </impactVfx>
         <castSound>AA_Cast_Arcane</castSound>
         <impactSound>AA_Impact_Arcane</impactSound>
+        <style>Rune</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3611,6 +3891,7 @@
         <castSound>AA_Cast_Arcane</castSound>
         <impactSound>AA_Impact_Arcane</impactSound>
         <shake>1.5</shake>
+        <style>Rune</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3703,6 +3984,104 @@
         </impactVfx>
         <castSound>AA_Cast_Arcane</castSound>
         <impactSound>AA_Impact_Arcane</impactSound>
+        <style>Rune</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_MagicMissile</defName>
+    <label>magic missile</label>
+    <description>The oldest spell in the book, perfected: five darts of pure force that never miss and ignore armor entirely.</description>
+    <iconPath>ArcanumAscendant/Spells/MagicMissile</iconPath>
+    <cooldownTicksRange>360</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>26</range>
+      <warmupTime>0.5</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>24</manaCost>
+        <tags>
+          <li>Rune</li>
+        </tags>
+        <tier>1</tier>
+        <role>Attack</role>
+        <autocastByDefault>true</autocastByDefault>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Missiles</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Damage">
+            <amount>11</amount>
+            <trueDamage>true</trueDamage>
+          </li>
+        </effects>
+        <color>(0.478, 0.816, 1, 1)</color>
+        <color2>(1, 0.941, 0.784, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>1.8</scale>
+            <scaleEnd>2.16</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Rune</fleck>
+            <count>8</count>
+            <speed>2.2</speed>
+            <scale>0.55</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.2</scale>
+            <scaleEnd>2</scaleEnd>
+            <ticks>20</ticks>
+            <useColor2>true</useColor2>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Arcane</castSound>
+        <impactSound>AA_Impact_Arcane</impactSound>
+        <style>Rune</style>
+        <projectileCount>5</projectileCount>
+        <projectileSpeed>22</projectileSpeed>
+        <projectileTex>ArcanumAscendant/Vfx/Orb</projectileTex>
+        <projectileScale>0.4</projectileScale>
+        <missileSpread>90</missileSpread>
+        <multiTargetRadius>7</multiTargetRadius>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3788,6 +4167,7 @@
         </impactVfx>
         <castSound>AA_Cast_Rune</castSound>
         <impactSound>AA_Impact_Rune</impactSound>
+        <style>Rune</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3874,6 +4254,7 @@
         </impactVfx>
         <castSound>AA_Cast_Rune</castSound>
         <impactSound>AA_Impact_Rune</impactSound>
+        <style>Rune</style>
         <chainCount>5</chainCount>
         <chainRange>7</chainRange>
         <chainFalloff>0.9</chainFalloff>
@@ -3964,6 +4345,7 @@
         </impactVfx>
         <castSound>AA_Cast_Rune</castSound>
         <impactSound>AA_Impact_Rune</impactSound>
+        <style>Rune</style>
         <beamWidth>0.35</beamWidth>
         <beamTicks>14</beamTicks>
         <beamTex>ArcanumAscendant/Vfx/Beam</beamTex>
@@ -4068,6 +4450,7 @@
         </impactVfx>
         <castSound>AA_Cast_Rune</castSound>
         <impactSound>AA_Impact_Rune</impactSound>
+        <style>Rune</style>
         <coneAngle>80</coneAngle>
         <coneRange>9</coneRange>
       </li>
@@ -4172,6 +4555,7 @@
         <castSound>AA_Cast_Rune</castSound>
         <impactSound>AA_Impact_Rune</impactSound>
         <shake>3</shake>
+        <style>Rune</style>
         <beamWidth>0.8</beamWidth>
         <beamTicks>30</beamTicks>
       </li>
@@ -4274,6 +4658,7 @@
         </impactVfx>
         <castSound>AA_Cast_Rune</castSound>
         <impactSound>AA_Impact_Rune</impactSound>
+        <style>Rune</style>
         <projectileCount>6</projectileCount>
         <projectileSpeed>60</projectileSpeed>
         <projectileScale>0.5</projectileScale>
@@ -4830,6 +5215,11 @@
         <size>1.3</size>
         <fleck>AA_Fleck_Spark</fleck>
         <fleckInterval>30</fleckInterval>
+        <emitter>Gold</emitter>
+        <emitInterval>12</emitInterval>
+        <overlayTex>ArcanumAscendant/Vfx/GoldCrust</overlayTex>
+        <overlayGlow>false</overlayGlow>
+        <overlaySize>1.4</overlaySize>
       </li>
     </comps>
     <stages>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <JobDef>
+    <defName>AA_ArcaneChannel</defName>
+    <driverClass>ArcanumAscendant.JobDriver_ArcaneChannel</driverClass>
+    <reportString>channeling.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <suspendable>false</suspendable>
+  </JobDef>
+
+  <!-- ===================== Ward pylon: a projectile-stopping dome ===================== -->
+  <ThingDef>
+    <defName>AA_WardPylon</defName>
+    <label>ward pylon</label>
+    <description>A crystal pylon wound with runes that projects a shimmering dome. Bullets, arrows and other projectiles fired from outside the dome stop dead against it; your own shots pass out freely.\n\nThe dome soaks a great deal of damage before collapsing, then needs time to reform. An EMP blast silences it for a while.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <graphicData>
+      <texPath>ArcanumAscendant/Things/WardPylon</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.6, 1.6)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>false</blockWind>
+    <fillPercent>0.45</fillPercent>
+    <pathCost>50</pathCost>
+    <tickerType>Normal</tickerType>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <size>(1,1)</size>
+    <statBases>
+      <MaxHitPoints>320</MaxHitPoints>
+      <WorkToBuild>5000</WorkToBuild>
+      <Flammability>0</Flammability>
+      <Beauty>6</Beauty>
+      <Mass>35</Mass>
+    </statBases>
+    <costList>
+      <AA_ArcaneCrystal>25</AA_ArcaneCrystal>
+      <Steel>100</Steel>
+      <Silver>60</Silver>
+    </costList>
+    <designationCategory>Security</designationCategory>
+    <researchPrerequisites>
+      <li>AA_HigherArcana</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <comps>
+      <li Class="CompProperties_ProjectileInterceptor">
+        <radius>6.9</radius>
+        <interceptGroundProjectiles>true</interceptGroundProjectiles>
+        <interceptNonHostileProjectiles>false</interceptNonHostileProjectiles>
+        <interceptOutgoingProjectiles>false</interceptOutgoingProjectiles>
+        <drawWithNoSelection>true</drawWithNoSelection>
+        <color>(0.7, 0.5, 1, 0.55)</color>
+        <idlePulseSpeed>3</idlePulseSpeed>
+        <minIdleAlpha>0.08</minIdleAlpha>
+        <hitPoints>400</hitPoints>
+        <rechargeHitPointsIntervalTicks>15</rechargeHitPointsIntervalTicks>
+        <cooldownTicks>1800</cooldownTicks>
+        <disarmedByEmpForTicks>900</disarmedByEmpForTicks>
+        <startWithMaxHitPoints>true</startWithMaxHitPoints>
+        <hitPointsRestoreInstantlyAfterCharge>true</hitPointsRestoreInstantlyAfterCharge>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>5</glowRadius>
+        <glowColor>(170,120,255,0)</glowColor>
+      </li>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneAmbience">
+        <color>(0.75, 0.55, 1, 1)</color>
+        <interval>10</interval>
+        <height>0.7</height>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- ===================== Mana font ===================== -->
+  <ThingDef>
+    <defName>AA_ManaFont</defName>
+    <label>mana font</label>
+    <description>A basin of rune-cut stone cradling a cluster of arcane crystals tapped into a ley line. Mana wells up around it: mages nearby regenerate mana much faster, and you can watch it stream into them.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <graphicData>
+      <texPath>ArcanumAscendant/Things/ManaFont</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2.2, 2.2)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.4</fillPercent>
+    <pathCost>60</pathCost>
+    <tickerType>Normal</tickerType>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <size>(2,2)</size>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToBuild>4000</WorkToBuild>
+      <Flammability>0</Flammability>
+      <Beauty>12</Beauty>
+      <Mass>60</Mass>
+    </statBases>
+    <costList>
+      <AA_ArcaneCrystal>30</AA_ArcaneCrystal>
+      <Silver>80</Silver>
+      <Steel>40</Steel>
+    </costList>
+    <designationCategory>Misc</designationCategory>
+    <researchPrerequisites>
+      <li>AA_Arcanology</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>6</glowRadius>
+        <glowColor>(110,160,255,0)</glowColor>
+      </li>
+      <li Class="ArcanumAscendant.CompProperties_ManaFont">
+        <radius>7.9</radius>
+        <manaPerSecond>1.5</manaPerSecond>
+        <color>(0.45, 0.65, 1, 1)</color>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- ===================== Familiar vessel ===================== -->
+  <ThingDef ParentName="AA_ArcaneItemBase">
+    <defName>AA_FamiliarVessel</defName>
+    <label>familiar vessel</label>
+    <description>A sealed crystal flask with something small and bright moving inside. A mage of the Second Circle or higher can break it to bond the spirit within as a familiar: a companion that follows them, grants lasting bonuses and joins their fights.\n\nBreaking a second vessel replaces the current familiar.</description>
+    <graphicData>
+      <texPath>ArcanumAscendant/Items/FamiliarVessel</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stackLimit>5</stackLimit>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <MarketValue>1100</MarketValue>
+      <Mass>0.5</Mass>
+      <Flammability>0</Flammability>
+      <Beauty>6</Beauty>
+      <DeteriorationRate>0.5</DeteriorationRate>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>Break {0_label} and bond a familiar</useLabel>
+        <useDuration>600</useDuration>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>ArcanumAscendant.CompUseEffect_BondFamiliar</compClass>
+      </li>
+      <li Class="CompProperties_UseEffectDestroySelf" />
+    </comps>
+  </ThingDef>
+
+  <RecipeDef ParentName="AA_ArcaneRecipeBase">
+    <defName>AA_Make_FamiliarVessel</defName>
+    <label>seal familiar vessel</label>
+    <description>Coax a spirit into a crystal vessel.</description>
+    <jobString>Sealing a familiar vessel.</jobString>
+    <workAmount>9000</workAmount>
+    <ingredients>
+      <li>
+        <filter><thingDefs><li>AA_ArcaneCrystal</li></thingDefs></filter>
+        <count>15</count>
+      </li>
+      <li>
+        <filter><thingDefs><li>Gold</li></thingDefs></filter>
+        <count>10</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>AA_ArcaneCrystal</li>
+        <li>Gold</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <AA_FamiliarVessel>1</AA_FamiliarVessel>
+    </products>
+    <skillRequirements>
+      <Intellectual>8</Intellectual>
+    </skillRequirements>
+    <researchPrerequisite>AA_HigherArcana</researchPrerequisite>
+  </RecipeDef>
+
+</Defs>

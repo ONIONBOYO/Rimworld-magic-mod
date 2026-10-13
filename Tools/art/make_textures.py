@@ -772,6 +772,9 @@ def main():
     make_vfx()
     print("Rendering items and UI...")
     make_items_ui()
+    print("Rendering effect textures...")
+    import make_vfx2
+    make_vfx2.make_all()
     print("Rendering %d icons/things..." % len(manifest))
     class_paths = []
     for i, e in enumerate(manifest):

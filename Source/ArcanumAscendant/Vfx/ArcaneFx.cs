@@ -45,7 +45,7 @@ namespace ArcanumAscendant
                     {
                         mat = ArcaneMats.Get(s.tex ?? "ArcanumAscendant/Vfx/Glow"), pos = pos, follow = f, scaleStart = s0, scaleEnd = s1,
                         duration = s.ticks, color = color, fadeIn = s.type == VfxType.Flash ? 0.02f : 0.15f, fadeOut = 0.6f, spin = s.rotation,
-                        angle = Rand.Range(0f, 360f),
+                        angle = VRand.Range(0f, 360f),
                     });
                     break;
                 case VfxType.Ring:
@@ -71,7 +71,7 @@ namespace ArcanumAscendant
                     mgr.Add(new VfxPillar(pos, s.ticks, color, c2, s0));
                     break;
                 case VfxType.Lightning:
-                    mgr.Add(new VfxLightning(pos + new Vector3(Rand.Range(-2f, 2f), 0f, 16f), pos, s.ticks, color, c2, s0));
+                    mgr.Add(new VfxLightning(pos + new Vector3(VRand.Range(-2f, 2f), 0f, 16f), pos, s.ticks, color, c2, s0));
                     break;
                 case VfxType.Particles:
                     Particles(map, pos, color, s.fleck ?? ArcaneDefOf.AA_Fleck_Spark, Mathf.RoundToInt(s.count * (s.scaleByRadius ? Mathf.Max(1f, radius) : 1f)), s.speed, s.scale, -1f, s.scaleByRadius ? radius : 0.3f);
@@ -85,15 +85,15 @@ namespace ArcanumAscendant
                         data.velocityAngle = ang + 180f + 35f;
                         data.velocitySpeed = s.speed;
                         data.instanceColor = color;
-                        data.rotationRate = Rand.Range(-90f, 90f);
+                        data.rotationRate = VRand.Range(-90f, 90f);
                         map.flecks.CreateFleck(data);
                     }
                     break;
                 case VfxType.Smoke:
                     for (int i = 0; i < s.count; i++)
                     {
-                        Vector2 r = Rand.InsideUnitCircle * Mathf.Max(0.5f, radius);
-                        Particles(map, pos + new Vector3(r.x, 0f, r.y), color, ArcaneDefOf.AA_Fleck_Smoke, 1, s.speed * 0.3f, s.scale * Rand.Range(1.5f, 2.5f));
+                        Vector3 r = VRand.InsideCircle(Mathf.Max(0.5f, radius));
+                        Particles(map, pos + r, color, ArcaneDefOf.AA_Fleck_Smoke, 1, s.speed * 0.3f, s.scale * VRand.Range(1.5f, 2.5f));
                     }
                     break;
                 case VfxType.Orbit:
@@ -102,6 +102,70 @@ namespace ArcanumAscendant
                         follow = f, pos = pos, mat = ArcaneMats.Get(s.tex ?? "ArcanumAscendant/Vfx/Spark"), color = color, count = Mathf.Max(1, s.count),
                         radius = Mathf.Max(0.5f, s.scale), speed = s.speed, duration = s.ticks, size = 0.35f,
                     });
+                    break;
+                case VfxType.Light:
+                    // scale is the light radius in cells.
+                    ArcaneLightFlash.Spawn(map, pos, color, s0, s.ticks);
+                    break;
+                case VfxType.Decal:
+                    // Decals linger: ticks is their lifetime, never shorter than four seconds.
+                    mgr.decals.Add(pos, s.decal, s0, color.a > 0f ? color : Color.white, Mathf.Max(4f, s.ticks / 60f));
+                    break;
+                case VfxType.ScreenFlash:
+                    // alpha is the strength; ground switches to a darkening vignette instead of a full-screen wash.
+                    if (map == Find.CurrentMap) mgr.screen.AddFlash(new Color(color.r, color.g, color.b, 1f), s.alpha, s.ticks, s.ground, mgr.Now);
+                    break;
+                case VfxType.Sparks:
+                    Fx.Sparks(map, pos, color, s.count, s.speed, 0.11f * s.scale);
+                    break;
+                case VfxType.Embers:
+                    Fx.Embers(map, pos, color, s.count, s.scaleByRadius ? Mathf.Max(0.4f, radius) : 0.4f, Mathf.Max(0.2f, s.speed * 0.5f), 1.6f, 0.16f * s.scale);
+                    break;
+                case VfxType.SmokePlume:
+                    Fx.Smoke(map, pos, color, s.count, s.scaleByRadius ? Mathf.Max(0.6f, radius) : 0.6f, s.scale, 2.6f, 0.35f, s.ground, Mathf.Max(0.1f, s.speed * 0.25f));
+                    break;
+                case VfxType.Debris:
+                    Fx.Debris(map, pos, color, s.count, s.speed, 0.2f * s.scale);
+                    break;
+                case VfxType.Shards:
+                    Fx.Shards(map, pos, color, s.count, s.speed, 0.28f * s.scale);
+                    break;
+                case VfxType.GodRays:
+                    mgr.Add(new VfxGodRays(pos, Mathf.Max(0.8f, s.scaleByRadius ? radius : s.scale), color, Mathf.Max(1, s.count), s.ticks));
+                    break;
+                case VfxType.Implode:
+                    Fx.Implode(map, pos, color, s.count, Mathf.Max(1f, s.scaleByRadius ? radius + 1f : 2.5f * s.scale), Mathf.Clamp(s.ticks / 60f, 0.3f, 2f));
+                    break;
+                case VfxType.Flare:
+                    mgr.Add(new VfxSprite
+                    {
+                        mat = ArcaneMats.Flare, pos = pos, follow = f, scaleStart = s0, scaleEnd = s1, duration = s.ticks, color = color,
+                        fadeIn = 0.04f, fadeOut = 0.7f, spin = s.rotation, angle = VRand.Range(0f, 360f),
+                    });
+                    break;
+                case VfxType.Mist:
+                    Fx.Mist(map, pos, color, s.count, Mathf.Max(0.6f, s.scaleByRadius ? radius : s.scale), 3.2f, 1.6f, !s.ground);
+                    break;
+                case VfxType.Ripples:
+                {
+                    // Several rings rolling out one after another, like a stone dropped in water.
+                    int rings = Mathf.Clamp(s.count, 1, 6);
+                    for (int i = 0; i < rings; i++)
+                    {
+                        float k = 1f - i * 0.12f;
+                        mgr.Schedule(i * Mathf.Max(2, s.ticks / (rings * 2)), () => mgr.Add(new VfxSprite
+                        {
+                            mat = ArcaneMats.Ring, pos = pos, follow = f, scaleStart = s0 * 0.2f, scaleEnd = s1 * k, duration = s.ticks,
+                            color = color * new Color(1f, 1f, 1f, k), fadeIn = 0.02f, fadeOut = 0.8f, layer = AltitudeLayer.MoteLow,
+                        }));
+                    }
+                    break;
+                }
+                case VfxType.Arcs:
+                    mgr.Add(new VfxArcs { follow = f, pos = pos, radius = Mathf.Max(0.4f, s.scaleByRadius ? radius : s.scale * 0.7f), color = color, duration = s.ticks });
+                    break;
+                case VfxType.Telegraph:
+                    mgr.Add(new VfxTelegraph { follow = f, pos = pos, radius = Mathf.Max(0.5f, s.scaleByRadius ? radius : s.scale), color = color, duration = s.ticks });
                     break;
             }
         }
@@ -113,12 +177,11 @@ namespace ArcanumAscendant
             if (count <= 0) return;
             for (int i = 0; i < count; i++)
             {
-                Vector2 r = Rand.InsideUnitCircle * spread;
-                var data = FleckMaker.GetDataStatic(pos + new Vector3(r.x, 0f, r.y), map, fleck, scale * Rand.Range(0.7f, 1.3f));
-                data.velocityAngle = angle >= 0f ? angle + Rand.Range(-20f, 20f) : Rand.Range(0f, 360f);
-                data.velocitySpeed = speed * Rand.Range(0.5f, 1.4f);
-                data.rotationRate = Rand.Range(-180f, 180f);
-                data.rotation = Rand.Range(0f, 360f);
+                var data = FleckMaker.GetDataStatic(pos + VRand.InsideCircle(spread), map, fleck, scale * VRand.Range(0.7f, 1.3f));
+                data.velocityAngle = angle >= 0f ? angle + VRand.Range(-20f, 20f) : VRand.Range(0f, 360f);
+                data.velocitySpeed = speed * VRand.Range(0.5f, 1.4f);
+                data.rotationRate = VRand.Range(-180f, 180f);
+                data.rotation = VRand.Range(0f, 360f);
                 data.instanceColor = color;
                 map.flecks.CreateFleck(data);
             }
@@ -186,7 +249,7 @@ namespace ArcanumAscendant
             mgr.Add(new VfxSprite
             {
                 mat = ArcaneMats.Hex, follow = pawn, pos = pawn.DrawPos, scaleStart = 1.9f, scaleEnd = broke ? 2.8f : 2.1f, duration = broke ? 30 : 18,
-                color = (broke ? Color.white : color) * new Color(1, 1, 1, 0.8f), fadeIn = 0.02f, fadeOut = 0.8f, angle = Rand.Range(0f, 60f),
+                color = (broke ? Color.white : color) * new Color(1, 1, 1, 0.8f), fadeIn = 0.02f, fadeOut = 0.8f, angle = VRand.Range(0f, 60f),
             });
             Vector3 impact = pawn.DrawPos;
             if (dinfo.Instigator != null && dinfo.Instigator.Spawned)
@@ -205,13 +268,13 @@ namespace ArcanumAscendant
             int n = Mathf.RoundToInt(range * coneAngle / 6f);
             for (int i = 0; i < n; i++)
             {
-                float a = angle + Rand.Range(-coneAngle * 0.5f, coneAngle * 0.5f);
-                var fleck = Rand.Chance(0.5f) ? ArcaneDefOf.AA_Fleck_Ember : ArcaneDefOf.AA_Fleck_Mote;
-                var data = FleckMaker.GetDataStatic(origin, map, fleck, Rand.Range(0.6f, 1.3f));
+                float a = angle + VRand.Range(-coneAngle * 0.5f, coneAngle * 0.5f);
+                var fleck = VRand.Chance(0.5f) ? ArcaneDefOf.AA_Fleck_Ember : ArcaneDefOf.AA_Fleck_Mote;
+                var data = FleckMaker.GetDataStatic(origin, map, fleck, VRand.Range(0.6f, 1.3f));
                 data.velocityAngle = a;
-                data.velocitySpeed = range * Rand.Range(1.4f, 2.2f);
-                data.instanceColor = Rand.Chance(0.5f) ? ctx.Color : ctx.Color2;
-                data.rotationRate = Rand.Range(-200f, 200f);
+                data.velocitySpeed = range * VRand.Range(1.4f, 2.2f);
+                data.instanceColor = VRand.Chance(0.5f) ? ctx.Color : ctx.Color2;
+                data.rotationRate = VRand.Range(-200f, 200f);
                 map.flecks.CreateFleck(data);
             }
             Flash(map, origin, ctx.Color, 2.5f);
@@ -226,9 +289,41 @@ namespace ArcanumAscendant
             FleckMaker.ThrowDustPuffThick(pos, map, 1.5f, new Color(0.6f, 0.55f, 0.5f));
         }
 
+        /// <summary>A floating damage number. Crits are bigger, gold and punctuated.</summary>
+        public static void DamageNumber(Map map, Vector3 pos, float amount, bool crit, Color school)
+        {
+            if (map == null || map != Find.CurrentMap || amount < 0.5f) return;
+            var mgr = ArcaneVfxManager.For(map);
+            int n = Mathf.RoundToInt(amount);
+            Color c = crit ? new Color(1f, 0.82f, 0.25f) : Color.Lerp(school, Color.white, 0.55f);
+            float scale = crit ? 1.45f : amount >= 60f ? 1.3f : 1f;
+            mgr.screen.AddText(pos, crit ? n + "!" : n.ToString(), c, scale, mgr.Now);
+        }
+
+        public static void HealNumber(Map map, Vector3 pos, float amount, bool crit)
+        {
+            if (map == null || map != Find.CurrentMap || amount < 0.5f) return;
+            var mgr = ArcaneVfxManager.For(map);
+            mgr.screen.AddText(pos, "+" + Mathf.RoundToInt(amount), crit ? new Color(0.6f, 1f, 0.75f) : new Color(0.45f, 0.95f, 0.55f), crit ? 1.3f : 1f, mgr.Now);
+        }
+
+        /// <summary>Floating text with the combat-text styling (outlined, pops in, rises).</summary>
+        public static void FloatText(Map map, Vector3 pos, string text, Color color, float scale = 1.1f)
+        {
+            if (map == null || map != Find.CurrentMap) return;
+            var mgr = ArcaneVfxManager.For(map);
+            mgr.screen.AddText(pos, text, color, scale, mgr.Now, 90f);
+        }
+
         public static void Text(Thing t, string text, Color color)
         {
             if (t?.Map == null) return;
+            if (t.Map == Find.CurrentMap)
+            {
+                var mgr = ArcaneVfxManager.For(t.Map);
+                mgr.screen.AddText(t.DrawPos + new Vector3(0f, 0f, 0.3f), text, color, 1.05f, mgr.Now, 100f, true);
+                return;
+            }
             MoteMaker.ThrowText(t.DrawPos + new Vector3(0f, 0f, 0.5f), t.Map, text, color, 2.5f);
         }
 

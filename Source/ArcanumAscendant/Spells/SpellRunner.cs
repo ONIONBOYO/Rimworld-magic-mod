@@ -84,8 +84,10 @@ namespace ArcanumAscendant
                             int ticks = Mathf.Max(3, Mathf.RoundToInt(dist / Mathf.Max(1f, props.projectileSpeed) * 60f));
                             var proj = new VfxProjectile(start, end, ticks, ArcaneMats.Get(props.projectileTex), ctx.Color, ctx.Color2,
                                 props.projectileScale, props.delivery == DeliveryType.Meteor ? 0f : props.projectileArc, props.projectileSpin,
-                                props.delivery == DeliveryType.Meteor);
+                                props.delivery == DeliveryType.Meteor) { style = StyleFx.Resolve(ctx) };
                             mgr.Add(proj);
+                            if (props.delivery == DeliveryType.Meteor)
+                                mgr.Add(new VfxTelegraph { pos = tt.CenterVector3, radius = Mathf.Max(1.2f, radius), color = ctx.Color, duration = ticks });
                             mgr.Schedule(ticks, () =>
                             {
                                 var info = MakeInfo(tt, radius, start);
@@ -115,6 +117,25 @@ namespace ArcanumAscendant
 
                 case DeliveryType.Line:
                     DoLine(ctx, target, origin);
+                    break;
+
+                case DeliveryType.Missiles:
+                {
+                    int count = Mathf.Max(1, props.projectileCount + extra);
+                    Deliveries.Missiles(ctx, target, origin, radius, count, MultiTargets(ctx, target, count));
+                    break;
+                }
+
+                case DeliveryType.Orbitals:
+                    mgr.Add(new VfxOrbitals(ctx, props.orbitalCount + extra, Mathf.RoundToInt(props.orbitalDuration * ctx.DurationFactor)));
+                    break;
+
+                case DeliveryType.Channel:
+                    Deliveries.Channel(ctx, target);
+                    break;
+
+                case DeliveryType.Delayed:
+                    Deliveries.Delayed(ctx, target, radius, props.delayedCount + extra);
                     break;
             }
 
@@ -169,6 +190,14 @@ namespace ArcanumAscendant
             {
                 ArcaneFx.PlayAll(props.impactVfx, map, info.pos, ctx, info.radius);
                 props.impactSound?.PlayOneShot(new TargetInfo(info.cell, map));
+                try
+                {
+                    StyleFx.Impact(ctx, info);
+                }
+                catch (Exception e)
+                {
+                    Log.ErrorOnce("[Arcanum Ascendant] Impact effect error: " + e, 0x5A1C0EE);
+                }
             }
             var effects = effectsOverride ?? props.effects;
             var cache = new Dictionary<float, List<Thing>>();
@@ -247,7 +276,7 @@ namespace ArcanumAscendant
             IntVec3 endCell = end.ToIntVec3();
             if (!endCell.InBounds(map)) endCell = endCell.ClampInsideMap(map);
             float width = props.beamWidth * ctx.RadiusFactor;
-            ArcaneVfxManager.For(map).Add(new VfxBeam(origin, end, props.beamTicks, ArcaneMats.Get(props.beamTex), ctx.Color, ctx.Color2, width));
+            ArcaneVfxManager.For(map).Add(new VfxBeam(origin, end, props.beamTicks, ArcaneMats.Get(props.beamTex), ctx.Color, ctx.Color2, width) { style = StyleFx.Resolve(ctx) });
 
             var cells = new HashSet<IntVec3>();
             Vector3 d = end - origin;
@@ -287,9 +316,10 @@ namespace ArcanumAscendant
             var hit = new HashSet<Thing>();
             Vector3 from = origin;
             Thing current = target.Thing;
+            var style = StyleFx.Resolve(ctx);
             if (!(current is Pawn))
             {
-                mgr.Add(new VfxLightning(from, target.CenterVector3, 14, ctx.Color, ctx.Color2, 0.9f));
+                ChainLink(mgr, style, from, target.CenterVector3, ctx, 1f);
                 Impact(ctx, MakeInfo(target, radius, origin));
                 return;
             }
@@ -303,7 +333,7 @@ namespace ArcanumAscendant
                 mgr.Schedule(delay, () =>
                 {
                     if (!cur.Spawned) return;
-                    mgr.Add(new VfxLightning(src, cur.DrawPos, 14, ctx.Color, ctx.Color2, 0.9f * Mathf.Max(0.5f, sc)));
+                    ChainLink(mgr, style, src, cur.DrawPos, ctx, sc);
                     var info = MakeInfo(cur, radius, src);
                     info.scale = sc;
                     Impact(ctx, info);
@@ -317,6 +347,14 @@ namespace ArcanumAscendant
                     .OfType<Pawn>().Where(p => !hit.Contains(p) && ctx.Passes(p, props.affects))
                     .OrderBy(p => p.Position.DistanceToSquared(cur.Position)).FirstOrDefault();
             }
+        }
+
+        private static void ChainLink(ArcaneVfxManager mgr, VfxStyle style, Vector3 a, Vector3 b, SpellContext ctx, float scale)
+        {
+            if (style == VfxStyle.Storm || style == VfxStyle.Arcane)
+                mgr.Add(new VfxLightning(a, b, 14, ctx.Color, ctx.Color2, 0.9f * Mathf.Max(0.5f, scale)));
+            else
+                mgr.Add(new VfxBeam(a, b, 10, ArcaneMats.Beam, ctx.Color, ctx.Color2, 0.45f * Mathf.Max(0.5f, scale)) { style = style });
         }
 
         private static void DoCone(SpellContext ctx, LocalTargetInfo target, Vector3 origin)
@@ -338,6 +376,7 @@ namespace ArcanumAscendant
             var info = new ImpactInfo { cell = target.Cell, pos = target.CenterVector3, primary = target.Thing, radius = 0.001f, areaCells = cells, sourcePos = origin };
             Impact(ctx, info, playVfx: false);
             ArcaneFx.ConeSpray(map, origin, baseAngle, props.coneAngle, range, ctx);
+            StyleFx.Cone(ctx, origin, baseAngle, props.coneAngle, range);
             props.impactSound?.PlayOneShot(new TargetInfo(ctx.caster.Position, map));
         }
 
@@ -382,7 +421,8 @@ namespace ArcanumAscendant
                     Vector3 start = pos + new Vector3(Rand.Range(-4f, -1f), 0f, 14f);
                     int ticks = 18;
                     mgr.Add(new VfxProjectile(start, pos, ticks, ArcaneMats.Get(props.projectileTex), ctx.Color, ctx.Color2, props.projectileScale, 0f,
-                        props.strikeStyle == StrikeStyle.Shard, true));
+                        props.strikeStyle == StrikeStyle.Shard, true) { style = StyleFx.Resolve(ctx) });
+                    mgr.Add(new VfxTelegraph { pos = pos, radius = Mathf.Max(0.8f, strikeR), color = ctx.Color, duration = ticks });
                     mgr.Schedule(ticks, () => Impact(ctx, new ImpactInfo { cell = cell, pos = pos, radius = strikeR, sourcePos = start }));
                     break;
                 }
@@ -419,10 +459,22 @@ namespace ArcanumAscendant
                 IntVec3 cell = p.ToIntVec3();
                 if (!cell.InBounds(map)) break;
                 if (cell.Impassable(map) && cell.GetEdifice(map) is Building b && b.def.building != null && b.def.building.isNaturalRock) break;
+                int step = i;
                 mgr.Schedule(i * props.lineStepDelay, () =>
                 {
                     ArcaneFx.Eruption(map, cell.ToVector3Shifted(), ctx.Color, ctx.Color2, strikeR * 0.7f);
                     Impact(ctx, new ImpactInfo { cell = cell, pos = cell.ToVector3Shifted(), radius = strikeR, sourcePos = origin }, uniqueHits: true, playVfx: false);
+                    if (step % 2 == 0)
+                    {
+                        try
+                        {
+                            StyleFx.Impact(ctx, new ImpactInfo { cell = cell, pos = cell.ToVector3Shifted(), radius = strikeR * 0.6f, scale = 0.6f, sourcePos = origin });
+                        }
+                        catch (Exception e)
+                        {
+                            Log.ErrorOnce("[Arcanum Ascendant] Line effect error: " + e, 0x5A1C0EF);
+                        }
+                    }
                 });
             }
             props.impactSound?.PlayOneShot(new TargetInfo(ctx.caster.Position, map));

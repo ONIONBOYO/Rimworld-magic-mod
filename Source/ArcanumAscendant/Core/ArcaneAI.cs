@@ -41,6 +41,8 @@ namespace ArcanumAscendant
                 if (a.Ext.role == SpellRole.Utility || a.Ext.role == SpellRole.Mobility) return false;
                 if (a.Ext.quirky && !player) return false;
                 if (!a.CanCast.Accepted) return false;
+                // Autocast never overchannels: taking on strain is always the player's call.
+                if (c.mana + 0.01f < a.ManaCost && !a.CanPayWithHealth(out _)) return false;
                 return !a.GizmoDisabled(out _);
             }).ToList();
             if (abilities.Count == 0) return;

@@ -304,10 +304,18 @@ Gain experience by casting spells, damaging and killing hostile enemies, healing
   <AA_Delivery_Self>self</AA_Delivery_Self>
   <AA_Delivery_Barrage>barrage</AA_Delivery_Barrage>
   <AA_Delivery_Line>wave along the ground</AA_Delivery_Line>
+  <AA_Delivery_Missiles>homing missiles</AA_Delivery_Missiles>
+  <AA_Delivery_Orbitals>orbits you</AA_Delivery_Orbitals>
+  <AA_Delivery_Channel>channelled beam</AA_Delivery_Channel>
+  <AA_Delivery_Delayed>delayed strike</AA_Delivery_Delayed>
   <AA_Tip_Radius>Radius: {0}</AA_Tip_Radius>
   <AA_Tip_Chains>Jumps: {0}</AA_Tip_Chains>
   <AA_Tip_Strikes>Strikes: {0}</AA_Tip_Strikes>
   <AA_Tip_Projectiles>Projectiles: {0}</AA_Tip_Projectiles>
+  <AA_Tip_Missiles>Missiles: {0}</AA_Tip_Missiles>
+  <AA_Tip_Orbitals>Orbiting: {0} for {1}</AA_Tip_Orbitals>
+  <AA_Tip_Channel>Channelled for {0}, pulsing every {1}s. Moving or being interrupted ends it.</AA_Tip_Channel>
+  <AA_Tip_Delayed>Strikes: {0}, landing after {1}s</AA_Tip_Delayed>
   <AA_Tip_Self>On you: </AA_Tip_Self>
   <AA_Tip_Power>Your power multiplier: {0}</AA_Tip_Power>
   <AA_Set_Header>Arcanum Ascendant</AA_Set_Header>
@@ -404,4 +412,72 @@ Etch a {2} at an arcane lectern (or buy one from an exotic trader), then have {0
   <AA_Desc_StealSkill>Steals up to {0} experience from the target's best skill</AA_Desc_StealSkill>
   <AA_FateDenied>Fate denied!</AA_FateDenied>
   <AA_NotYet>Not yet!</AA_NotYet>
+  <AA_BondFamiliar>Bond the {0}</AA_BondFamiliar>
+  <AA_ChooseFamiliar>Choose a familiar for {0}</AA_ChooseFamiliar>
+  <AA_FamiliarBonded>{0} has bonded a {1}.</AA_FamiliarBonded>
+  <AA_BurnoutMessage>{0} pushed the weave too far and burned out. No mana will regenerate and spells are weak for a day.</AA_BurnoutMessage>
+  <AA_BurnoutMote>Burnout!</AA_BurnoutMote>
+  <AA_ChannelReport>channeling a spell.</AA_ChannelReport>
+  <AA_CodexReactions>Elemental reactions ({0} of {1} discovered)</AA_CodexReactions>
+  <AA_CodexReactionsIntro>When a spell of one element hits a target carrying a status from another, the two can combine into a reaction. Your colony discovers each reaction the first time a mage sets it off; until then only a hint is known.</AA_CodexReactionsIntro>
+  <AA_UnknownReaction>Undiscovered reaction</AA_UnknownReaction>
+  <AA_ReactionDiscoveredLabel>Reaction discovered: {0}</AA_ReactionDiscoveredLabel>
+  <AA_ReactionDiscoveredText>{0} has discovered an elemental reaction: {1}.
+
+{2}
+
+It is now recorded in the codex of every grimoire.</AA_ReactionDiscoveredText>
+  <AA_ManaFontInspect>Mages within {1} cells regenerate {0} extra mana per second.</AA_ManaFontInspect>
+  <AA_MasteryBonus>+{0} damage and healing, {1} lower mana cost and cooldown</AA_MasteryBonus>
+  <AA_MasteryBonus3>+10% area and duration</AA_MasteryBonus3>
+  <AA_MasteryBonus5>+1 projectile, chain or target, +10% critical chance, +5% more area and duration</AA_MasteryBonus5>
+  <AA_MasteryNone>No mastery bonus yet.</AA_MasteryNone>
+  <AA_MasteryShort>Mastery: {0}</AA_MasteryShort>
+  <AA_MasteryTip>Spell mastery: {0}
+
+{1}
+
+Each cast of this spell earns {2} mastery point(s). Spells with long cooldowns earn more per cast.</AA_MasteryTip>
+  <AA_MasteryUp>{0}: {1}!</AA_MasteryUp>
+  <AA_MasteryRank0>Untrained</AA_MasteryRank0>
+  <AA_MasteryRank1>Apprentice</AA_MasteryRank1>
+  <AA_MasteryRank2>Adept</AA_MasteryRank2>
+  <AA_MasteryRank3>Expert</AA_MasteryRank3>
+  <AA_MasteryRank4>Master</AA_MasteryRank4>
+  <AA_MasteryRank5>Grandmaster</AA_MasteryRank5>
+  <AA_Overchannel>Overchannel</AA_Overchannel>
+  <AA_OverchannelDesc>When on, this mage can cast spells without enough mana by burning their own mind instead. The missing mana becomes arcane strain.
+
+Strain hurts and fogs the mind, fades with rest, and makes the weave unstable: past 40 strain, every overchannelled cast can set off a wild surge with random effects. At {1} strain the mage burns out for a day.
+
+Current strain: {0}</AA_OverchannelDesc>
+  <AA_StrainTip>Arcane strain: {0} / {1}
+Chance of a wild surge when overchannelling: {2}</AA_StrainTip>
+  <AA_Shattered>Shattered!</AA_Shattered>
+  <AA_WildSurge>Wild surge</AA_WildSurge>
+  <AA_WildSurgeMessage>Wild surge from {0}: {1}.</AA_WildSurgeMessage>
+  <AA_Surge_Mana>mana floods back</AA_Surge_Mana>
+  <AA_Surge_Bolt>a stray bolt of lightning</AA_Surge_Bolt>
+  <AA_Surge_Blink>blinked away</AA_Surge_Blink>
+  <AA_Surge_Petals>a storm of petals</AA_Surge_Petals>
+  <AA_Surge_Fire>burst into flame</AA_Surge_Fire>
+  <AA_Surge_Haste>time quickens</AA_Surge_Haste>
+  <AA_Surge_Time>every cooldown resets</AA_Surge_Time>
+  <AA_Surge_Nosebleed>a nosebleed</AA_Surge_Nosebleed>
+  <AA_Surge_Gravity>gravity lurches</AA_Surge_Gravity>
+  <AA_Surge_Drain>the mana drains away</AA_Surge_Drain>
+  <AA_Surge_Ward>a surge of warding</AA_Surge_Ward>
+  <AA_Surge_Heal>a wave of healing</AA_Surge_Heal>
+  <AA_Set_Lights>Dynamic spell lighting</AA_Set_Lights>
+  <AA_Set_LightsDesc>Spells briefly light up their surroundings, which matters most at night and underground.</AA_Set_LightsDesc>
+  <AA_Set_Flashes>Screen flashes</AA_Set_Flashes>
+  <AA_Set_FlashesDesc>Brief screen flashes and vignettes for the biggest spells and reactions.</AA_Set_FlashesDesc>
+  <AA_Set_Cinematic>Cinematic ultimates</AA_Set_Cinematic>
+  <AA_Set_CinematicDesc>Ultimate spells show letterbox bars and their name across the screen.</AA_Set_CinematicDesc>
+  <AA_Set_Numbers>Damage numbers</AA_Set_Numbers>
+  <AA_Set_NumbersDesc>Floating damage and healing numbers for spells.</AA_Set_NumbersDesc>
+  <AA_Set_Decals>Ground marks</AA_Set_Decals>
+  <AA_Set_DecalsDesc>Spells leave scorch marks, frost, blood and sigils on the ground that fade over time.</AA_Set_DecalsDesc>
+  <AA_Set_Reactions>Elemental reactions</AA_Set_Reactions>
+  <AA_Set_ReactionsDesc>Spells of different elements combine into reactions (Shatter, Overload, Purge...).</AA_Set_ReactionsDesc>
 </LanguageData>

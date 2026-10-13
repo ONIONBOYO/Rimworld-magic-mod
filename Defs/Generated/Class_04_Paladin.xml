@@ -657,6 +657,20 @@
     <unlockSpell>AA_Spell_HeavensLance</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Paladin_Sunstrike</defName>
+    <tree>AA_Class_Paladin</tree>
+    <kind>Spell</kind>
+    <x>2</x>
+    <y>3</y>
+    <requiredLevel>3</requiredLevel>
+    <requiredAttribute>AA_Resilience</requiredAttribute>
+    <requiredAttributeValue>5</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Paladin_Consecration</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_Sunstrike</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Templar_Judgment</defName>
     <tree>AA_Class_Templar</tree>
     <kind>Spell</kind>
@@ -1354,6 +1368,20 @@
     <unlockSpell>AA_Spell_GreaterRestoration</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Cleric_GuardianSpirits</defName>
+    <tree>AA_Class_Cleric</tree>
+    <kind>Spell</kind>
+    <x>0</x>
+    <y>3</y>
+    <requiredLevel>12</requiredLevel>
+    <requiredAttribute>AA_Resilience</requiredAttribute>
+    <requiredAttributeValue>9</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Cleric_Rejuvenate</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_GuardianSpirits</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Inquisitor_HolyFire</defName>
     <tree>AA_Class_Inquisitor</tree>
     <kind>Spell</kind>
@@ -1696,6 +1724,20 @@
     </prerequisites>
     <unlockSpell>AA_Spell_MirrorOfJudgment</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Inquisitor_SearingRay</defName>
+    <tree>AA_Class_Inquisitor</tree>
+    <kind>Spell</kind>
+    <x>1</x>
+    <y>4</y>
+    <requiredLevel>14</requiredLevel>
+    <requiredAttribute>AA_Potency</requiredAttribute>
+    <requiredAttributeValue>10</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Inquisitor_Banishment</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_SearingRay</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
   <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_Smite</defName>
     <label>smite</label>
@@ -1788,6 +1830,7 @@
         </impactVfx>
         <castSound>AA_Cast_Holy</castSound>
         <impactSound>AA_Impact_Holy</impactSound>
+        <style>Holy</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -1882,6 +1925,7 @@
         </impactVfx>
         <castSound>AA_Cast_Holy</castSound>
         <impactSound>AA_Impact_Holy</impactSound>
+        <style>Holy</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -1960,6 +2004,7 @@
         </impactVfx>
         <castSound>AA_Cast_Holy</castSound>
         <impactSound>AA_Impact_Holy</impactSound>
+        <style>Holy</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2075,6 +2120,7 @@
         </impactVfx>
         <castSound>AA_Cast_Holy</castSound>
         <impactSound>AA_Impact_Holy</impactSound>
+        <style>Holy</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2165,6 +2211,7 @@
         </impactVfx>
         <castSound>AA_Cast_Holy</castSound>
         <impactSound>AA_Impact_Holy</impactSound>
+        <style>Holy</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2257,6 +2304,7 @@
         </impactVfx>
         <castSound>AA_Cast_Holy</castSound>
         <impactSound>AA_Impact_Holy</impactSound>
+        <style>Holy</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2355,6 +2403,7 @@
         </impactVfx>
         <castSound>AA_Cast_Holy</castSound>
         <impactSound>AA_Impact_Holy</impactSound>
+        <style>Holy</style>
         <projectileSpeed>26</projectileSpeed>
         <projectileScale>1</projectileScale>
         <projectileSpin>true</projectileSpin>
@@ -2463,6 +2512,7 @@
         </impactVfx>
         <castSound>AA_Cast_Holy</castSound>
         <impactSound>AA_Impact_Holy</impactSound>
+        <style>Holy</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2553,6 +2603,7 @@
         </impactVfx>
         <castSound>AA_Cast_Holy</castSound>
         <impactSound>AA_Impact_Holy</impactSound>
+        <style>Holy</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2655,9 +2706,125 @@
         <castSound>AA_Cast_Holy</castSound>
         <impactSound>AA_Impact_Holy</impactSound>
         <shake>1</shake>
+        <style>Holy</style>
         <lineLength>16</lineLength>
         <strikeRadius>1.3</strikeRadius>
         <lineStepDelay>3</lineStepDelay>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_Sunstrike</defName>
+    <label>sunstrike</label>
+    <description>Mark the ground. A heartbeat later a column of sunfire slams down: heavy radiant damage, a stagger, and a mark of judgment that shadow magic can detonate.</description>
+    <iconPath>ArcanumAscendant/Spells/Sunstrike</iconPath>
+    <cooldownTicksRange>1320</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>28</range>
+      <warmupTime>0.6</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>45</manaCost>
+        <tags>
+          <li>Holy</li>
+        </tags>
+        <tier>3</tier>
+        <role>Attack</role>
+        <autocastByDefault>true</autocastByDefault>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Delayed</delivery>
+        <affects>Enemies</affects>
+        <radius>2.2</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Damage">
+            <amount>55</amount>
+            <damageDef>AA_Holy</damageDef>
+            <armorPen>0.5</armorPen>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_Marked</hediff>
+            <severity>1</severity>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Stun">
+            <ticks>45</ticks>
+          </li>
+        </effects>
+        <color>(1, 0.886, 0.541, 1)</color>
+        <color2>(1, 1, 1, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Feather</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>2.5</scale>
+            <scaleEnd>3</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.3</scale>
+            <scaleEnd>1.1</scaleEnd>
+            <ticks>28</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>10</count>
+            <speed>3</speed>
+            <scale>0.7</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Feather</fleck>
+            <count>6</count>
+            <speed>1.5</speed>
+            <scale>0.8</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Holy</castSound>
+        <impactSound>AA_Impact_Holy</impactSound>
+        <shake>1</shake>
+        <style>Holy</style>
+        <delayTicks>75</delayTicks>
+        <delayedCount>1</delayedCount>
+        <delayedSpread>0</delayedSpread>
+        <delayedStagger>12</delayedStagger>
+        <strikeStyle>Pillar</strikeStyle>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2763,6 +2930,7 @@
         </impactVfx>
         <castSound>AA_Cast_Holy</castSound>
         <impactSound>AA_Impact_Holy</impactSound>
+        <style>Holy</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2848,6 +3016,7 @@
         </impactVfx>
         <castSound>AA_Cast_Holy</castSound>
         <impactSound>AA_Impact_Holy</impactSound>
+        <style>Holy</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2957,6 +3126,7 @@
         </impactVfx>
         <castSound>AA_Cast_Holy</castSound>
         <impactSound>AA_Impact_Holy</impactSound>
+        <style>Holy</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3034,6 +3204,7 @@
         </impactVfx>
         <castSound>AA_Cast_Holy</castSound>
         <impactSound>AA_Impact_Holy</impactSound>
+        <style>Holy</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3144,6 +3315,7 @@
         <castSound>AA_Cast_Holy</castSound>
         <impactSound>AA_Impact_Holy</impactSound>
         <shake>2.5</shake>
+        <style>Holy</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3230,6 +3402,7 @@
         </impactVfx>
         <castSound>AA_Cast_Holy</castSound>
         <impactSound>AA_Impact_Holy</impactSound>
+        <style>Holy</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3331,6 +3504,7 @@
         </impactVfx>
         <castSound>AA_Cast_Holy</castSound>
         <impactSound>AA_Impact_Holy</impactSound>
+        <style>Holy</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3418,6 +3592,7 @@
         </impactVfx>
         <castSound>AA_Cast_Holy</castSound>
         <impactSound>AA_Impact_Holy</impactSound>
+        <style>Holy</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3504,6 +3679,7 @@
         </impactVfx>
         <castSound>AA_Cast_Holy</castSound>
         <impactSound>AA_Impact_Holy</impactSound>
+        <style>Holy</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3615,6 +3791,7 @@
         </impactVfx>
         <castSound>AA_Cast_Holy</castSound>
         <impactSound>AA_Impact_Holy</impactSound>
+        <style>Holy</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3733,6 +3910,7 @@
         <castSound>AA_Cast_Holy</castSound>
         <impactSound>AA_Impact_Holy</impactSound>
         <shake>1.5</shake>
+        <style>Holy</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3839,9 +4017,120 @@
         </impactVfx>
         <castSound>AA_Cast_Holy</castSound>
         <impactSound>AA_Impact_Holy</impactSound>
+        <style>Holy</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_GuardianSpirits</defName>
+    <label>guardian spirits</label>
+    <description>Three guardian spirits circle you for forty seconds. Whenever one passes an ally it heals them and lifts poisons and sickness.</description>
+    <iconPath>ArcanumAscendant/Spells/GuardianSpirits</iconPath>
+    <cooldownTicksRange>4500</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>0</range>
+      <warmupTime>0.4</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <drawAimPie>false</drawAimPie>
+      <targetable>false</targetable>
+      <nonInterruptingSelfCast>false</nonInterruptingSelfCast>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>50</manaCost>
+        <tags>
+          <li>Holy</li>
+          <li>Healing</li>
+        </tags>
+        <tier>2</tier>
+        <role>Heal</role>
+        <autocastByDefault>true</autocastByDefault>
+        <aiHealthThreshold>0.6</aiHealthThreshold>
+        <aiAllowedUndrafted>true</aiAllowedUndrafted>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Orbitals</delivery>
+        <affects>Allies</affects>
+        <radius>2.6</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Heal">
+            <amount>10</amount>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Cleanse" />
+        </effects>
+        <color>(0.722, 1, 0.847, 1)</color>
+        <color2>(1, 1, 1, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>2.5</scale>
+            <scaleEnd>3</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.3</scale>
+            <scaleEnd>1.1</scaleEnd>
+            <ticks>28</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Feather</fleck>
+            <count>10</count>
+            <speed>3</speed>
+            <scale>0.7</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>6</count>
+            <speed>1.5</speed>
+            <scale>0.8</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Holy</castSound>
+        <impactSound>AA_Impact_Holy</impactSound>
+        <style>Holy</style>
+        <orbitalCount>3</orbitalCount>
+        <orbitalRadius>1.6</orbitalRadius>
+        <orbitalDuration>2400</orbitalDuration>
+        <orbitalSpeed>3.5</orbitalSpeed>
+        <orbitalHitRadius>0.9</orbitalHitRadius>
+        <orbitalHitCooldown>150</orbitalHitCooldown>
+        <projectileTex>ArcanumAscendant/Vfx/Star</projectileTex>
+        <projectileScale>0.55</projectileScale>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+    <targetRequired>false</targetRequired>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_Purge</defName>
@@ -3931,6 +4220,7 @@
         </impactVfx>
         <castSound>AA_Cast_Fire</castSound>
         <impactSound>AA_Impact_Fire</impactSound>
+        <style>Holy</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -4026,6 +4316,7 @@
         </impactVfx>
         <castSound>AA_Cast_Fire</castSound>
         <impactSound>AA_Impact_Fire</impactSound>
+        <style>Holy</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -4129,6 +4420,7 @@
         </impactVfx>
         <castSound>AA_Cast_Fire</castSound>
         <impactSound>AA_Impact_Fire</impactSound>
+        <style>Fire</style>
         <projectileSpeed>32</projectileSpeed>
         <projectileScale>1</projectileScale>
         <projectileTex>ArcanumAscendant/Vfx/Star</projectileTex>
@@ -4218,6 +4510,7 @@
         </impactVfx>
         <castSound>AA_Cast_Fire</castSound>
         <impactSound>AA_Impact_Fire</impactSound>
+        <style>Holy</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -4320,6 +4613,7 @@
         <castSound>AA_Cast_Fire</castSound>
         <impactSound>AA_Impact_Fire</impactSound>
         <shake>2</shake>
+        <style>Holy</style>
         <barrageCount>12</barrageCount>
         <barrageInterval>8</barrageInterval>
         <barrageRadius>6</barrageRadius>
@@ -4412,10 +4706,110 @@
         </impactVfx>
         <castSound>AA_Cast_Fire</castSound>
         <impactSound>AA_Impact_Fire</impactSound>
+        <style>Holy</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
     <targetRequired>false</targetRequired>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_SearingRay</defName>
+    <label>searing ray</label>
+    <description>Focus a ray of holy fire on a heretic for four seconds. It burns through armor and brands them for judgment.</description>
+    <iconPath>ArcanumAscendant/Spells/SearingRay</iconPath>
+    <cooldownTicksRange>1500</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>20</range>
+      <warmupTime>0.6</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>45</manaCost>
+        <tags>
+          <li>Holy</li>
+        </tags>
+        <tier>3</tier>
+        <role>Attack</role>
+        <autocastByDefault>true</autocastByDefault>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Channel</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Damage">
+            <amount>10</amount>
+            <damageDef>AA_Holy</damageDef>
+            <armorPen>0.4</armorPen>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_Marked</hediff>
+            <severity>1</severity>
+          </li>
+        </effects>
+        <color>(1, 0.604, 0.235, 1)</color>
+        <color2>(1, 0.941, 0.753, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Ember</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>1.8</scale>
+            <scaleEnd>2.16</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>8</count>
+            <speed>2.2</speed>
+            <scale>0.55</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.2</scale>
+            <scaleEnd>2</scaleEnd>
+            <ticks>20</ticks>
+            <useColor2>true</useColor2>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Fire</castSound>
+        <impactSound>AA_Impact_Fire</impactSound>
+        <style>Holy</style>
+        <channelTicks>240</channelTicks>
+        <channelInterval>15</channelInterval>
+        <beamWidth>0.9</beamWidth>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
   </AbilityDef>
   <HediffDef>
     <defName>AA_RighteousFury</defName>
@@ -4476,6 +4870,11 @@
         <size>2</size>
         <fleck>AA_Fleck_Feather</fleck>
         <fleckInterval>20</fleckInterval>
+        <emitter>Divine</emitter>
+        <emitInterval>10</emitInterval>
+        <overlayTex>ArcanumAscendant/Vfx/HexShield</overlayTex>
+        <overlaySize>2.1</overlaySize>
+        <overlayPulse>true</overlayPulse>
       </li>
     </comps>
     <stages>
@@ -4507,6 +4906,9 @@
         <texPath>ArcanumAscendant/Vfx/Shield</texPath>
         <size>1.8</size>
         <fleckInterval>20</fleckInterval>
+        <overlayTex>ArcanumAscendant/Vfx/HexShield</overlayTex>
+        <overlaySize>1.8</overlaySize>
+        <overlayPulse>true</overlayPulse>
       </li>
     </comps>
     <stages>
@@ -4538,6 +4940,11 @@
         <texPath>ArcanumAscendant/Vfx/Hex</texPath>
         <size>1.8</size>
         <fleckInterval>20</fleckInterval>
+        <emitter>Holy</emitter>
+        <emitInterval>20</emitInterval>
+        <overlayTex>ArcanumAscendant/Vfx/HexShield</overlayTex>
+        <overlaySize>1.8</overlaySize>
+        <overlayPulse>true</overlayPulse>
       </li>
     </comps>
     <stages>

@@ -19,6 +19,12 @@ namespace ArcanumAscendant
         public static readonly Material Spark;
         public static readonly Material Smoke;
         public static readonly Material Shock;
+        public static readonly Material Trail;
+        public static readonly Material TrailLit;
+        public static readonly Material Flare;
+        public static readonly Material GodRay;
+        public static readonly Material Telegraph;
+        public static readonly Material BlackHole;
 
         static ArcaneMats()
         {
@@ -31,6 +37,12 @@ namespace ArcanumAscendant
             Spark = Get("ArcanumAscendant/Vfx/Spark");
             Smoke = Get("ArcanumAscendant/Vfx/Smoke", false);
             Shock = Get("ArcanumAscendant/Vfx/Shockwave");
+            Trail = Get("ArcanumAscendant/Vfx/Trail");
+            TrailLit = Get("ArcanumAscendant/Vfx/TrailSmoke", false);
+            Flare = Get("ArcanumAscendant/Vfx/Flare");
+            GodRay = Get("ArcanumAscendant/Vfx/GodRay");
+            Telegraph = Get("ArcanumAscendant/Vfx/Telegraph");
+            BlackHole = Get("ArcanumAscendant/Vfx/BlackHole", false);
         }
 
         public static Material Get(string path, bool additive = true)
@@ -47,7 +59,7 @@ namespace ArcanumAscendant
 
         public static void Draw(Material mat, Vector3 pos, Quaternion rot, Vector3 scale, Color color)
         {
-            if (mat == null) return;
+            if (mat == null || color.a <= 0.003f) return;
             MPB.SetColor(ShaderPropertyIDs.Color, color);
             Graphics.DrawMesh(MeshPool.plane10, Matrix4x4.TRS(pos, rot, scale), mat, 0, null, 0, MPB);
         }
@@ -81,11 +93,34 @@ namespace ArcanumAscendant
         public static readonly Texture2D TreeBackground = ContentFinder<Texture2D>.Get("ArcanumAscendant/UI/TreeBackground", false) ?? BaseContent.BlackTex;
         public static readonly Texture2D Rune = ContentFinder<Texture2D>.Get("ArcanumAscendant/Vfx/RuneCircle", false) ?? BaseContent.WhiteTex;
         public static readonly Texture2D LineTex = ContentFinder<Texture2D>.Get("ArcanumAscendant/UI/Line", false) ?? BaseContent.WhiteTex;
+        public static readonly Texture2D Star = ContentFinder<Texture2D>.Get("ArcanumAscendant/Vfx/Star", false) ?? BaseContent.WhiteTex;
+        public static readonly Texture2D OverchannelIcon = ContentFinder<Texture2D>.Get("ArcanumAscendant/UI/Overchannel", false) ?? BaseContent.BadTex;
         public static readonly Texture2D ManaFill = SolidColorMaterials.NewSolidColorTexture(new Color(0.25f, 0.55f, 1f));
         public static readonly Texture2D ManaBg = SolidColorMaterials.NewSolidColorTexture(new Color(0.05f, 0.07f, 0.15f));
         public static readonly Texture2D WardFill = SolidColorMaterials.NewSolidColorTexture(new Color(0.85f, 0.8f, 0.4f));
         public static readonly Texture2D XpFill = SolidColorMaterials.NewSolidColorTexture(new Color(0.75f, 0.45f, 1f));
+        public static readonly Texture2D StrainFill = SolidColorMaterials.NewSolidColorTexture(new Color(1f, 0.3f, 0.25f));
         public static readonly Texture2D BarBg = SolidColorMaterials.NewSolidColorTexture(new Color(0.08f, 0.08f, 0.1f));
+    }
+
+    /// <summary>The visual school of a spell. Decides its casting circle, projectile, impact, death and status effects.</summary>
+    public enum VfxStyle
+    {
+        Auto,
+        Arcane,
+        Fire,
+        Frost,
+        Storm,
+        Necro,
+        Holy,
+        Time,
+        Void,
+        Nature,
+        Rune,
+        Shadow,
+        Blood,
+        Song,
+        Plague,
     }
 
     public enum VfxType
@@ -102,6 +137,21 @@ namespace ArcanumAscendant
         Shockwave,
         Orbit,
         Hex,
+        Light,
+        Decal,
+        ScreenFlash,
+        Sparks,
+        Embers,
+        SmokePlume,
+        Debris,
+        Shards,
+        GodRays,
+        Implode,
+        Flare,
+        Mist,
+        Ripples,
+        Arcs,
+        Telegraph,
     }
 
     /// <summary>Data-driven visual effect description.</summary>
@@ -123,6 +173,7 @@ namespace ArcanumAscendant
         public float alpha = 1f;
         public bool ground;
         public bool attach;
+        public DecalKind decal = DecalKind.Scorch;
     }
 
     public abstract class Vfx
@@ -140,11 +191,23 @@ namespace ArcanumAscendant
 
         public abstract void Draw(float now);
 
+        /// <summary>Called once when the effect is removed. Free meshes here.</summary>
+        public virtual void OnEnd()
+        {
+        }
+
         protected static float FadeInOut(float t, float fadeIn = 0.15f, float fadeOut = 0.4f)
         {
             if (t < fadeIn) return t / fadeIn;
             if (t > 1f - fadeOut) return Mathf.Clamp01((1f - t) / fadeOut);
             return 1f;
+        }
+
+        protected static float EaseOutBack(float t)
+        {
+            const float c1 = 1.70158f, c3 = c1 + 1f;
+            float x = t - 1f;
+            return 1f + c3 * x * x * x + c1 * x * x;
         }
     }
 
@@ -162,20 +225,98 @@ namespace ArcanumAscendant
         public float alpha = 1f;
         public float fadeIn = 0.1f;
         public float fadeOut = 0.5f;
-        public AltitudeLayer layer = AltitudeLayer.MoteOverhead;
+        public bool popIn;
+        public AltitudeLayer layer = AltitudeLayer.VisEffects;
 
         public override void Draw(float now)
         {
             float t = T(now);
             Vector3 p = follow != null && follow.Spawned ? follow.DrawPos : pos;
             p.y = layer.AltitudeFor();
-            float s = Mathf.Lerp(scaleStart, scaleEnd, 1f - (1f - t) * (1f - t));
+            float e = popIn ? EaseOutBack(Mathf.Clamp01(t * 2.2f)) : 1f - (1f - t) * (1f - t);
+            float s = Mathf.LerpUnclamped(scaleStart, scaleEnd, e);
             var c = color;
             c.a *= alpha * FadeInOut(t, fadeIn, fadeOut);
             ArcaneMats.DrawQuad(mat, p, s, angle + spin * (now - startTick), c);
         }
     }
 
+    /// <summary>A strip mesh along a polyline, used for lightning bolts and long beams. UV.x runs across the width.</summary>
+    public class StripMesh
+    {
+        private Mesh mesh;
+        private int capacity;
+        private Vector3[] verts;
+        private Vector2[] uvs;
+
+        public void Build(List<Vector3> pts, float width, float y, float taper = 0f)
+        {
+            int n = pts.Count;
+            if (n < 2) return;
+            if (mesh == null || capacity < n)
+            {
+                if (mesh != null) Object.Destroy(mesh);
+                capacity = n;
+                mesh = new Mesh { name = "AA_Strip" };
+                mesh.MarkDynamic();
+                verts = new Vector3[n * 2];
+                uvs = new Vector2[n * 2];
+                var tris = new int[(n - 1) * 6];
+                for (int i = 0; i < n - 1; i++)
+                {
+                    int v = i * 2, k = i * 6;
+                    tris[k] = v;
+                    tris[k + 1] = v + 2;
+                    tris[k + 2] = v + 1;
+                    tris[k + 3] = v + 1;
+                    tris[k + 4] = v + 2;
+                    tris[k + 5] = v + 3;
+                }
+                mesh.vertices = verts;
+                mesh.uv = uvs;
+                mesh.triangles = tris;
+            }
+            for (int i = 0; i < capacity; i++)
+            {
+                int j = Mathf.Min(i, n - 1);
+                Vector3 p = pts[j];
+                Vector3 d = j < n - 1 ? pts[j + 1] - p : p - pts[j - 1];
+                if (j > 0 && j < n - 1) d = pts[j + 1] - pts[j - 1];
+                d.y = 0f;
+                Vector3 perp = new Vector3(-d.z, 0f, d.x);
+                float m = perp.magnitude;
+                perp = m > 0.0001f ? perp / m : Vector3.right;
+                float u = j / (float)(n - 1);
+                float w = width * (taper > 0f ? Mathf.Lerp(1f, 1f - taper, u) : 1f);
+                p.y = y;
+                verts[i * 2] = p + perp * w * 0.5f;
+                verts[i * 2 + 1] = p - perp * w * 0.5f;
+                uvs[i * 2] = new Vector2(0f, u);
+                uvs[i * 2 + 1] = new Vector2(1f, u);
+            }
+            mesh.vertices = verts;
+            mesh.uv = uvs;
+            mesh.RecalculateBounds();
+        }
+
+        public void Draw(Material mat, Color color)
+        {
+            if (mesh == null || mat == null || color.a <= 0.003f) return;
+            ArcaneMats.MPB.SetColor(ShaderPropertyIDs.Color, color);
+            Graphics.DrawMesh(mesh, Matrix4x4.identity, mat, 0, null, 0, ArcaneMats.MPB);
+        }
+
+        public void Dispose()
+        {
+            if (mesh != null) Object.Destroy(mesh);
+            mesh = null;
+        }
+    }
+
+    /// <summary>
+    /// A beam of energy: it snaps on with an overshoot, pulses, carries travelling bright pulses from caster to target,
+    /// sprays sparks where it lands and fades out thin.
+    /// </summary>
     public class VfxBeam : Vfx
     {
         private readonly Vector3 a;
@@ -184,6 +325,8 @@ namespace ArcanumAscendant
         private readonly Color color;
         private readonly Color color2;
         private readonly float width;
+        public VfxStyle style = VfxStyle.Arcane;
+        private bool lit;
 
         public VfxBeam(Vector3 a, Vector3 b, int ticks, Material mat, Color color, Color color2, float width)
         {
@@ -199,27 +342,55 @@ namespace ArcanumAscendant
         public override void Tick(int now, Map map)
         {
             base.Tick(now, map);
-            if ((now - startTick) % 3 == 0)
+            int age = now - startTick;
+            if (!lit)
             {
-                float f = Rand.Value;
-                ArcaneFx.Particles(map, Vector3.Lerp(a, b, f), color, ArcaneDefOf.AA_Fleck_Spark, 1, 1.2f, 0.8f);
+                lit = true;
+                ArcaneLightFlash.Spawn(map, b, color, 3f + width * 2f, duration + 6);
             }
+            Vector3 dir = (a - b).Yto0().normalized;
+            if (age % 2 == 0) Fx.Sparks(map, b, color, 3f, 4.5f, 0.1f, 0.35f, dir.AngleFlat(), 140f);
+            if (age % 3 == 0)
+            {
+                Vector3 p = Vector3.Lerp(a, b, VRand.Value);
+                Fx.Burst(map, p, Color.Lerp(color, color2, VRand.Value), 1f, PMat.Mote, 0.6f, 0.5f, 0.22f);
+            }
+            if (age % 5 == 0) StyleFx.BeamImpactTick(style, map, b, color, color2);
         }
 
         public override void Draw(float now)
         {
             float t = T(now);
-            float alpha = FadeInOut(t, 0.08f, 0.5f);
-            float w = width * (0.6f + 0.4f * Mathf.Sin(now * 0.9f)) * (1f - t * 0.5f);
-            Vector3 pa = a; pa.y = AltitudeLayer.MoteOverhead.AltitudeFor();
-            Vector3 pb = b; pb.y = pa.y;
-            ArcaneMats.DrawStretched(mat, pa, pb, w * 2.2f, color * new Color(1, 1, 1, alpha * 0.55f));
-            ArcaneMats.DrawStretched(mat, pa + new Vector3(0, 0.01f, 0), pb + new Vector3(0, 0.01f, 0), w * 0.8f, Color.Lerp(color2, Color.white, 0.6f) * new Color(1, 1, 1, alpha));
-            ArcaneMats.DrawQuad(ArcaneMats.Glow, pa, w * 3f, 0f, color * new Color(1, 1, 1, alpha));
-            ArcaneMats.DrawQuad(ArcaneMats.Glow, pb, w * 4f, 0f, color * new Color(1, 1, 1, alpha));
+            float age = now - startTick;
+            float grow = Mathf.Clamp01(age / 4f);
+            float w = width * (grow < 1f ? EaseOutBack(grow) : 1f) * (0.85f + 0.15f * Mathf.Sin(now * 1.3f)) * (t > 0.6f ? Mathf.Lerp(1f, 0.15f, (t - 0.6f) / 0.4f) : 1f);
+            float alpha = t > 0.85f ? (1f - t) / 0.15f : 1f;
+            float y = VAlt.Glow;
+            Vector3 pa = a; pa.y = y;
+            Vector3 pb = b; pb.y = y;
+            ArcaneMats.DrawStretched(mat, pa, pb, w * 2.8f, color * new Color(1, 1, 1, alpha * 0.4f));
+            ArcaneMats.DrawStretched(mat, pa + new Vector3(0, 0.002f, 0), pb + new Vector3(0, 0.002f, 0), w * 1.2f, Color.Lerp(color, color2, 0.4f) * new Color(1, 1, 1, alpha * 0.85f));
+            ArcaneMats.DrawStretched(mat, pa + new Vector3(0, 0.004f, 0), pb + new Vector3(0, 0.004f, 0), w * 0.4f, new Color(1f, 1f, 1f, alpha));
+            Vector3 d = pb - pa;
+            float len = d.MagnitudeHorizontal();
+            for (int i = 0; i < 4; i++)
+            {
+                float f = Mathf.Repeat(age * 0.09f * (10f / Mathf.Max(3f, len)) + i * 0.25f, 1f);
+                Vector3 p = pa + d * f;
+                p.y = y + 0.006f;
+                ArcaneMats.DrawQuad(ArcaneMats.Glow, p, w * 2.2f, 0f, Color.Lerp(color2, Color.white, 0.5f) * new Color(1, 1, 1, alpha * 0.8f * Mathf.Sin(f * Mathf.PI)));
+            }
+            ArcaneMats.DrawQuad(ArcaneMats.Glow, pa, w * 4f, 0f, color * new Color(1, 1, 1, alpha * 0.9f));
+            ArcaneMats.DrawQuad(ArcaneMats.Flare, pa + new Vector3(0, 0.003f, 0), w * 3.5f, now * 4f, Color.Lerp(color2, Color.white, 0.5f) * new Color(1, 1, 1, alpha * 0.7f));
+            ArcaneMats.DrawQuad(ArcaneMats.Glow, pb, w * 5.5f, 0f, color * new Color(1, 1, 1, alpha));
+            ArcaneMats.DrawQuad(ArcaneMats.Flare, pb + new Vector3(0, 0.003f, 0), w * 5f, -now * 6f, new Color(1f, 1f, 1f, alpha * 0.8f));
         }
     }
 
+    /// <summary>
+    /// Fractal lightning: a jagged main channel with forked branches. It re-strikes a few times (the flicker of real
+    /// lightning), then leaves a fading afterglow.
+    /// </summary>
     public class VfxLightning : Vfx
     {
         private readonly Vector3 a;
@@ -227,8 +398,12 @@ namespace ArcanumAscendant
         private readonly Color color;
         private readonly Color color2;
         private readonly float width;
-        private List<Vector3> points = new List<Vector3>();
+        private readonly List<List<Vector3>> bolts = new List<List<Vector3>>();
+        private readonly List<StripMesh> meshes = new List<StripMesh>();
+        private readonly List<float> widths = new List<float>();
+        private int strikes;
         private int lastGen = -99;
+        private bool struck;
 
         public VfxLightning(Vector3 a, Vector3 b, int ticks, Color color, Color color2, float width)
         {
@@ -240,51 +415,110 @@ namespace ArcanumAscendant
             this.width = width;
         }
 
+        private static void Displace(List<Vector3> pts, Vector3 from, Vector3 to, float offset, int depth)
+        {
+            if (depth <= 0)
+            {
+                pts.Add(to);
+                return;
+            }
+            Vector3 mid = (from + to) * 0.5f;
+            Vector3 d = to - from;
+            Vector3 perp = new Vector3(-d.z, 0f, d.x).normalized;
+            mid += perp * VRand.Range(-offset, offset);
+            Displace(pts, from, mid, offset * 0.55f, depth - 1);
+            Displace(pts, mid, to, offset * 0.55f, depth - 1);
+        }
+
         private void Generate()
         {
-            points.Clear();
-            Vector3 d = b - a;
-            float len = d.MagnitudeHorizontal();
-            int segs = Mathf.Clamp(Mathf.CeilToInt(len * 1.6f), 3, 60);
-            Vector3 perp = new Vector3(-d.z, 0f, d.x).normalized;
-            for (int i = 0; i <= segs; i++)
+            bolts.Clear();
+            widths.Clear();
+            float len = (b - a).MagnitudeHorizontal();
+            int depth = Mathf.Clamp(Mathf.CeilToInt(Mathf.Log(Mathf.Max(2f, len * 3f), 2f)), 2, 6);
+            var main = new List<Vector3> { a };
+            Displace(main, a, b, Mathf.Min(1.4f, len * 0.16f), depth);
+            bolts.Add(main);
+            widths.Add(1f);
+            int branches = len > 3f ? VRand.RangeInt(1, 4) : 0;
+            for (int i = 0; i < branches && main.Count > 4; i++)
             {
-                float f = i / (float)segs;
-                Vector3 p = Vector3.Lerp(a, b, f);
-                if (i > 0 && i < segs) p += perp * Rand.Range(-0.45f, 0.45f) * Mathf.Min(1f, len / 4f);
-                points.Add(p);
+                int k = VRand.RangeInt(1, main.Count - 2);
+                Vector3 start = main[k];
+                Vector3 dir = (b - a).Yto0().normalized;
+                float ang = VRand.Range(25f, 60f) * VRand.Sign;
+                Vector3 bdir = Quaternion.AngleAxis(ang, Vector3.up) * dir;
+                float blen = len * VRand.Range(0.15f, 0.35f);
+                var br = new List<Vector3> { start };
+                Displace(br, start, start + bdir * blen, blen * 0.2f, Mathf.Max(2, depth - 2));
+                bolts.Add(br);
+                widths.Add(0.45f);
+            }
+            while (meshes.Count < bolts.Count) meshes.Add(new StripMesh());
+            float y = VAlt.Glow;
+            for (int i = 0; i < bolts.Count; i++) meshes[i].Build(bolts[i], width * widths[i], y, widths[i] < 1f ? 0.8f : 0.2f);
+        }
+
+        public override void Tick(int now, Map map)
+        {
+            base.Tick(now, map);
+            if (!struck)
+            {
+                struck = true;
+                ArcaneLightFlash.Spawn(map, b, Color.Lerp(color, Color.white, 0.5f), 7f + width * 2f, 8);
+                Fx.Sparks(map, b, color, 10f, 6f, 0.11f, 0.35f);
             }
         }
 
         public override void Draw(float now)
         {
-            int tick = Mathf.FloorToInt(now);
-            if (tick - lastGen >= 2)
+            int tick = Mathf.FloorToInt(now) - startTick;
+            if (strikes < 3 && (lastGen < 0 || (tick >= 3 && strikes == 1) || (tick >= 7 && strikes == 2)))
             {
                 lastGen = tick;
+                strikes++;
                 Generate();
             }
             float t = T(now);
-            float alpha = FadeInOut(t, 0.02f, 0.6f);
-            float y = AltitudeLayer.MoteOverhead.AltitudeFor();
-            for (int i = 0; i < points.Count - 1; i++)
+            float flicker = t < 0.5f ? ((Mathf.FloorToInt(now * 2f) % 2 == 0) ? 1f : 0.55f) : 1f;
+            float alpha = (t < 0.04f ? t / 0.04f : Mathf.Clamp01((1f - t) / 0.7f)) * flicker;
+            for (int i = 0; i < bolts.Count && i < meshes.Count; i++)
             {
-                Vector3 p0 = points[i]; p0.y = y;
-                Vector3 p1 = points[i + 1]; p1.y = y;
-                ArcaneMats.DrawStretched(ArcaneMats.Beam, p0, p1, width * 1.4f, color * new Color(1, 1, 1, alpha * 0.6f));
-                ArcaneMats.DrawStretched(ArcaneMats.Beam, p0 + new Vector3(0, 0.01f, 0), p1 + new Vector3(0, 0.01f, 0), width * 0.45f, Color.Lerp(color2, Color.white, 0.7f) * new Color(1, 1, 1, alpha));
+                meshes[i].Draw(ArcaneMats.Beam, color * new Color(1, 1, 1, alpha * 0.55f));
+            }
+            float y = VAlt.Glow + 0.004f;
+            var core = Color.Lerp(color2, Color.white, 0.75f) * new Color(1, 1, 1, alpha);
+            for (int i = 0; i < bolts.Count; i++)
+            {
+                var pts = bolts[i];
+                float w = width * widths[i] * 0.35f;
+                for (int k = 0; k < pts.Count - 1; k++)
+                {
+                    Vector3 p0 = pts[k]; p0.y = y;
+                    Vector3 p1 = pts[k + 1]; p1.y = y;
+                    ArcaneMats.DrawStretched(ArcaneMats.Beam, p0, p1, w, core);
+                }
             }
             Vector3 end = b; end.y = y;
-            ArcaneMats.DrawQuad(ArcaneMats.Glow, end, width * 3.5f, 0f, color * new Color(1, 1, 1, alpha));
+            ArcaneMats.DrawQuad(ArcaneMats.Glow, end, width * 4.5f, 0f, color * new Color(1, 1, 1, alpha));
+            ArcaneMats.DrawQuad(ArcaneMats.Flare, end + new Vector3(0, 0.002f, 0), width * 4f, now * 10f, new Color(1f, 1f, 1f, alpha * 0.8f));
+        }
+
+        public override void OnEnd()
+        {
+            foreach (var m in meshes) m.Dispose();
+            meshes.Clear();
         }
     }
 
+    /// <summary>A column of light from the sky with a ground flare and rising motes.</summary>
     public class VfxPillar : Vfx
     {
         private readonly Vector3 pos;
         private readonly Color color;
         private readonly Color color2;
         private readonly float width;
+        private bool lit;
 
         public VfxPillar(Vector3 pos, int ticks, Color color, Color color2, float width)
         {
@@ -295,22 +529,40 @@ namespace ArcanumAscendant
             this.width = width;
         }
 
+        public override void Tick(int now, Map map)
+        {
+            base.Tick(now, map);
+            int age = now - startTick;
+            if (!lit)
+            {
+                lit = true;
+                ArcaneLightFlash.Spawn(map, pos, color, 4f + width * 2f, duration);
+            }
+            if (age % 3 == 0) Fx.Rise(map, pos, Color.Lerp(color, Color.white, 0.4f), 1.2f * width, PMat.Mote, width * 0.4f, 3.5f, 0.7f, 0.2f);
+        }
+
         public override void Draw(float now)
         {
             float t = T(now);
-            float alpha = FadeInOut(t, 0.1f, 0.6f);
-            float y = AltitudeLayer.MoteOverhead.AltitudeFor();
+            float alpha = FadeInOut(t, 0.08f, 0.6f);
+            float y = VAlt.Glow;
             Vector3 bottom = pos; bottom.y = y;
-            Vector3 top = bottom + new Vector3(0f, 0f, 14f);
-            float w = width * (t < 0.2f ? Mathf.Lerp(0.2f, 1.2f, t / 0.2f) : Mathf.Lerp(1.2f, 0.3f, (t - 0.2f) / 0.8f));
-            ArcaneMats.DrawStretched(ArcaneMats.Pillar, bottom, top, w * 1.8f, color * new Color(1, 1, 1, alpha * 0.7f));
-            ArcaneMats.DrawStretched(ArcaneMats.Pillar, bottom + new Vector3(0, 0.01f, 0), top, w * 0.6f, Color.Lerp(color2, Color.white, 0.5f) * new Color(1, 1, 1, alpha));
-            ArcaneMats.DrawQuad(ArcaneMats.Glow, bottom, w * 3.5f, 0f, color * new Color(1, 1, 1, alpha));
-            ArcaneMats.DrawQuad(ArcaneMats.Ring, bottom, w * (2f + t * 4f), 0f, color2 * new Color(1, 1, 1, alpha * 0.8f));
+            Vector3 top = bottom + new Vector3(0f, 0f, 16f);
+            float w = width * (t < 0.15f ? EaseOutBack(t / 0.15f) * 1.2f : Mathf.Lerp(1.2f, 0.25f, (t - 0.15f) / 0.85f));
+            ArcaneMats.DrawStretched(ArcaneMats.Pillar, bottom, top, w * 2.2f, color * new Color(1, 1, 1, alpha * 0.55f));
+            ArcaneMats.DrawStretched(ArcaneMats.Pillar, bottom + new Vector3(0, 0.002f, 0), top, w * 0.9f, Color.Lerp(color2, Color.white, 0.4f) * new Color(1, 1, 1, alpha));
+            ArcaneMats.DrawStretched(ArcaneMats.Pillar, bottom + new Vector3(0, 0.004f, 0), top, w * 0.3f, new Color(1f, 1f, 1f, alpha));
+            ArcaneMats.DrawQuad(ArcaneMats.Glow, bottom, w * 4f, 0f, color * new Color(1, 1, 1, alpha));
+            ArcaneMats.DrawQuad(ArcaneMats.Flare, bottom + new Vector3(0, 0.003f, 0), w * 3.5f, now * 3f, Color.Lerp(color2, Color.white, 0.6f) * new Color(1, 1, 1, alpha * 0.8f));
+            Vector3 g = bottom; g.y = VAlt.Ground;
+            ArcaneMats.DrawQuad(ArcaneMats.Ring, g, w * (2f + t * 5f), 0f, color2 * new Color(1, 1, 1, alpha * 0.8f));
         }
     }
 
-    /// <summary>A glowing projectile with a ghost trail and ember particles.</summary>
+    /// <summary>
+    /// A styled projectile: a bright head, a ribbon trail and particles shed along the way according to its school.
+    /// Meteors fall steeply with a thick fire-and-smoke trail.
+    /// </summary>
     public class VfxProjectile : Vfx
     {
         private readonly Vector3 start;
@@ -323,6 +575,10 @@ namespace ArcanumAscendant
         private readonly bool spin;
         private readonly bool meteor;
         private readonly float angle;
+        public VfxStyle style = VfxStyle.Arcane;
+        private RibbonTrail trail;
+        private RibbonTrail smokeTrail;
+        private bool launched;
 
         public VfxProjectile(Vector3 start, Vector3 end, int ticks, Material mat, Color color, Color color2, float scale, float arc, bool spin, bool meteor)
         {
@@ -347,34 +603,58 @@ namespace ArcanumAscendant
             return p;
         }
 
+        private void EnsureTrails()
+        {
+            if (trail != null) return;
+            float w = scale * (meteor ? 1.6f : 0.75f) * StyleFx.TrailWidth(style);
+            trail = new RibbonTrail(meteor ? 26 : 18, w, meteor ? 0.45f : 0.22f, ArcaneMats.Trail, Color.Lerp(color, color2, 0.25f));
+            if (meteor || style == VfxStyle.Fire || style == VfxStyle.Shadow || style == VfxStyle.Necro || style == VfxStyle.Void)
+            {
+                Color sc = meteor || style == VfxStyle.Fire ? new Color(0.25f, 0.22f, 0.2f, 0.55f) : new Color(color.r * 0.3f, color.g * 0.3f, color.b * 0.3f, 0.5f);
+                smokeTrail = new RibbonTrail(meteor ? 30 : 20, w * (meteor ? 2.6f : 1.8f), meteor ? 1.4f : 0.6f, ArcaneMats.TrailLit, sc) { lit = true, minStep = 0.2f };
+            }
+        }
+
         public override void Tick(int now, Map map)
         {
             base.Tick(now, map);
-            float t = T(now);
-            if (map != null && (now - startTick) % 2 == 0)
+            if (!launched)
             {
-                Vector3 p = PosAt(t);
-                ArcaneFx.Particles(map, p, color, meteor ? ArcaneDefOf.AA_Fleck_Ember : ArcaneDefOf.AA_Fleck_Mote, meteor ? 2 : 1, meteor ? 0.8f : 0.4f, scale * (meteor ? 1.1f : 0.6f));
+                launched = true;
+                if (!meteor) StyleFx.Muzzle(style, map, start, angle, color, color2, scale);
             }
+            float t = T(now);
+            Vector3 p = PosAt(t);
+            StyleFx.ProjectileTick(style, map, p, now - startTick, color, color2, scale, meteor);
         }
 
         public override void Draw(float now)
         {
+            EnsureTrails();
             float t = T(now);
-            float y = AltitudeLayer.MoteOverhead.AltitudeFor();
-            float s = scale * (meteor ? 1.6f : 1f);
+            Vector3 p = PosAt(t);
+            trail.AddPoint(p, now);
+            smokeTrail?.AddPoint(p, now);
+            trail.Age(now);
+            smokeTrail?.Age(now);
+            smokeTrail?.Draw(now);
+            trail.Draw(now);
+            float y = VAlt.Glow;
+            float s = scale * (meteor ? 1.7f : 1f);
             float rot = spin ? (now - startTick) * 18f : angle;
-            for (int i = 6; i >= 1; i--)
-            {
-                float tg = t - i * 0.035f;
-                if (tg < 0f) continue;
-                Vector3 g = PosAt(tg); g.y = y;
-                float f = 1f - i / 7f;
-                ArcaneMats.DrawQuad(ArcaneMats.Glow, g, s * (0.4f + 0.8f * f), 0f, color * new Color(1, 1, 1, 0.45f * f));
-            }
-            Vector3 p = PosAt(t); p.y = y + 0.01f;
-            ArcaneMats.DrawQuad(ArcaneMats.Glow, p, s * 2.2f, 0f, color * new Color(1, 1, 1, 0.8f));
-            ArcaneMats.DrawQuad(mat, p + new Vector3(0, 0.01f, 0), s, rot, Color.Lerp(color2, Color.white, 0.35f));
+            Vector3 hp = p;
+            hp.y = y + 0.003f;
+            float pulse = 1f + 0.12f * Mathf.Sin(now * 1.7f);
+            ArcaneMats.DrawQuad(ArcaneMats.Glow, hp, s * 3f * pulse, 0f, color * new Color(1, 1, 1, 0.75f));
+            ArcaneMats.DrawQuad(ArcaneMats.Glow, hp + new Vector3(0, 0.002f, 0), s * 1.3f, 0f, Color.Lerp(color2, Color.white, 0.6f) * new Color(1, 1, 1, 0.9f));
+            StyleFx.ProjectileHead(style, hp, s, now, color, color2);
+            ArcaneMats.DrawQuad(mat, hp + new Vector3(0, 0.004f, 0), s, rot, Color.Lerp(color2, Color.white, 0.35f));
+        }
+
+        public override void OnEnd()
+        {
+            trail?.Dispose();
+            smokeTrail?.Dispose();
         }
     }
 
@@ -395,13 +675,14 @@ namespace ArcanumAscendant
             float t = T(now);
             float alpha = FadeInOut(t, 0.15f, 0.3f);
             Vector3 c = follow != null && follow.Spawned ? follow.DrawPos : pos;
-            c.y = AltitudeLayer.MoteOverhead.AltitudeFor();
+            c.y = VAlt.Glow;
             for (int i = 0; i < count; i++)
             {
                 float a = (now - startTick) * speed + i * 360f / count;
                 Vector3 off = Quaternion.AngleAxis(a, Vector3.up) * new Vector3(radius, 0f, 0f);
                 off.z *= 0.6f;
-                ArcaneMats.DrawQuad(mat, c + off, size, a, color * new Color(1, 1, 1, alpha));
+                ArcaneMats.DrawQuad(ArcaneMats.Glow, c + off, size * 2.2f, 0f, color * new Color(1, 1, 1, alpha * 0.4f));
+                ArcaneMats.DrawQuad(mat, c + off + new Vector3(0, 0.002f, 0), size, a, color * new Color(1, 1, 1, alpha));
             }
         }
     }

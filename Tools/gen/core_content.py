@@ -79,8 +79,68 @@ def stage(offsets=None, factors=None, caps=None, dmgf=None, mult=None, label=Non
     return O(None, **f)
 
 
+# Visual behaviour of status effects: a particle emitter preset (see StatusFx in C#) and an optional overlay that clings to
+# the pawn while the status lasts.
+STATUS_VFX = {
+    "AA_Burning": dict(emitter="Burning", emitInterval=8),
+    "AA_LivingBomb": dict(emitter="Burning", emitInterval=6),
+    "AA_Chilled": dict(emitter="Chill", emitInterval=20),
+    "AA_Frozen": dict(emitter="Frozen", emitInterval=20, overlayTex="ArcanumAscendant/Vfx/IceCrust", overlayGlow=False, overlaySize=1.5),
+    "AA_Shocked": dict(emitter="Shocked", emitInterval=10),
+    "AA_Stormborn": dict(emitter="Shocked", emitInterval=24),
+    "AA_Poisoned": dict(emitter="Poison", emitInterval=16),
+    "AA_Plague": dict(emitter="Plague", emitInterval=14),
+    "AA_Bleeding": dict(emitter="Bleed", emitInterval=12),
+    "AA_Doom": dict(emitter="Doom", emitInterval=24, overlayTex="ArcanumAscendant/Vfx/DoomSigil", overlaySize=0.8, overlayZ=1.0, overlaySpin=1.5, overlayPulse=True),
+    "AA_GraveMark": dict(emitter="Doom", emitInterval=26, overlayTex="ArcanumAscendant/Vfx/Skull", overlaySize=0.55, overlayZ=1.0, overlayPulse=True),
+    "AA_Agony": dict(emitter="Shadow", emitInterval=20),
+    "AA_Slowed": dict(emitter="Slow", emitInterval=20),
+    "AA_CausalityLoop": dict(emitter="Slow", emitInterval=16),
+    "AA_Marked": dict(emitter="Holy", emitInterval=30, overlayTex="ArcanumAscendant/Vfx/MarkSigil", overlaySize=0.7, overlayZ=1.0, overlayPulse=True),
+    "AA_Entangled": dict(emitter="Roots", emitInterval=24),
+    "AA_Withering": dict(emitter="Wither", emitInterval=18),
+    "AA_TimeRavaged": dict(emitter="Wither", emitInterval=14),
+    "AA_Voidtouched": dict(emitter="Void", emitInterval=14),
+    "AA_Haste": dict(emitter="Haste", emitInterval=4),
+    "AA_Undead": dict(emitter="Undead", emitInterval=30),
+    "AA_Lichform": dict(emitter="Undead", emitInterval=16),
+    "AA_Blessed": dict(emitter="Holy", emitInterval=30),
+    "AA_Sanctified": dict(emitter="Holy", emitInterval=24),
+    "AA_Avatar": dict(emitter="Divine", emitInterval=12),
+    "AA_DivineShield": dict(emitter="Divine", emitInterval=16, overlayTex="ArcanumAscendant/Vfx/HexShield", overlaySize=1.9, overlayPulse=True),
+    "AA_DivineIntervention": dict(emitter="Divine", emitInterval=10, overlayTex="ArcanumAscendant/Vfx/HexShield", overlaySize=2.1, overlayPulse=True),
+    "AA_UnbreakableVow": dict(overlayTex="ArcanumAscendant/Vfx/HexShield", overlaySize=1.8, overlayPulse=True),
+    "AA_MirrorOfJudgment": dict(emitter="Holy", emitInterval=20, overlayTex="ArcanumAscendant/Vfx/HexShield", overlaySize=1.8, overlayPulse=True),
+    "AA_Petrified": dict(emitter="Stone", emitInterval=30, overlayTex="ArcanumAscendant/Vfx/StoneCrust", overlayGlow=False, overlaySize=1.4),
+    "AA_Gilded": dict(emitter="Gold", emitInterval=12, overlayTex="ArcanumAscendant/Vfx/GoldCrust", overlayGlow=False, overlaySize=1.4),
+    "AA_FateAnchor": dict(overlayTex="ArcanumAscendant/Vfx/Clock", overlaySize=0.6, overlayZ=1.0, overlaySpin=-3.0),
+    "AA_Chronoshield": dict(overlayTex="ArcanumAscendant/Vfx/Clock", overlaySize=1.7, overlaySpin=2.0),
+    "AA_UndyingSong": dict(emitter="Song", emitInterval=20),
+    "AA_Valor": dict(emitter="Song", emitInterval=30),
+    "AA_FireWard": dict(emitter="Fire", emitInterval=16),
+    "AA_MoltenArmor": dict(emitter="Fire", emitInterval=14),
+    "AA_PhoenixWings": dict(emitter="Fire", emitInterval=8),
+    "AA_FrostArmor": dict(emitter="Chill", emitInterval=24),
+    "AA_BloodFrenzy": dict(emitter="Blood", emitInterval=16),
+    "AA_Overcharged": dict(emitter="Ward", emitInterval=14),
+    "AA_ManaSurge": dict(emitter="Ward", emitInterval=12),
+    "AA_ArcaneStrain": dict(emitter="Strain", emitInterval=30),
+    "AA_ArcaneBurnout": dict(emitter="Strain", emitInterval=12),
+}
+
+AURA_CLS = "ArcanumAscendant.HediffCompProperties_AuraVisual"
+
+
 def status(defName, label, desc, color, *, bad, ticks=None, stages=None, comps=None, maxSev=None, initSev=1.0, cls="HediffWithComps"):
     comps = list(comps or [])
+    vfx = STATUS_VFX.get(defName)
+    if vfx:
+        aura_comp = next((c for c in comps if isinstance(c, O) and c.cls == AURA_CLS), None)
+        if aura_comp is None:
+            aura_comp = O(AURA_CLS, color=rgb(color) + (0.9,), texPath="")
+            comps.append(aura_comp)
+        for k, v in vfx.items():
+            aura_comp.fields[k] = float(v) if isinstance(v, float) else v
     if ticks:
         comps.insert(0, disappears(ticks))
     return to_xml("HediffDef", O(None,

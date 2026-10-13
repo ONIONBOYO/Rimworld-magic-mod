@@ -16,8 +16,18 @@ namespace ArcanumAscendant
         private readonly List<(int tick, Action action)> scheduled = new List<(int, Action)>();
         private List<ArcaneField> fields = new List<ArcaneField>();
         public PolymorphTracker polymorphs = new PolymorphTracker();
+        [Unsaved] public readonly ArcaneParticleSystem particles = new ArcaneParticleSystem();
+        [Unsaved] public readonly ArcaneDecalSystem decals = new ArcaneDecalSystem();
+        [Unsaved] public readonly ArcaneScreenFx screen = new ArcaneScreenFx();
+        [Unsaved] private readonly List<CompArcane> familiarOwners = new List<CompArcane>();
+        [Unsaved] private readonly Dictionary<CompArcane, RibbonTrail> familiarTrails = new Dictionary<CompArcane, RibbonTrail>();
+        [Unsaved] private readonly List<CompManaFont> fonts = new List<CompManaFont>();
         private int lastTicks = -1;
         private float frac;
+        private float lastNow = -1f;
+
+        /// <summary>Current game time in ticks, with a fractional part for smooth animation between ticks.</summary>
+        public float Now => Find.TickManager.TicksGame + frac;
 
         public ArcaneVfxManager(Map map) : base(map)
         {
@@ -54,8 +64,75 @@ namespace ArcanumAscendant
             scheduled.Add((Find.TickManager.TicksGame + delayTicks, action));
         }
 
+        public void RegisterFamiliar(CompArcane c)
+        {
+            if (c != null && !familiarOwners.Contains(c)) familiarOwners.Add(c);
+        }
+
+        public void RegisterFont(CompManaFont f)
+        {
+            if (f != null && !fonts.Contains(f)) fonts.Add(f);
+        }
+
+        public void UnregisterFont(CompManaFont f) => fonts.Remove(f);
+
+        /// <summary>The mana font whose radius covers this cell, if any.</summary>
+        public CompManaFont FontNear(IntVec3 cell)
+        {
+            for (int i = 0; i < fonts.Count; i++)
+            {
+                var f = fonts[i];
+                if (f.parent.Spawned && f.parent.Position.DistanceTo(cell) <= f.Props.radius) return f;
+            }
+            return null;
+        }
+
+        public IEnumerable<CompArcane> MagesNear(IntVec3 cell, float radius)
+        {
+            foreach (var p in map.mapPawns.AllPawnsSpawned)
+            {
+                if (p.Position.DistanceTo(cell) > radius) continue;
+                var c = p.TryGetComp<CompArcane>();
+                if (c != null && c.IsMage) yield return c;
+            }
+        }
+
+        private void DrawFamiliars(float now)
+        {
+            for (int i = familiarOwners.Count - 1; i >= 0; i--)
+            {
+                var c = familiarOwners[i];
+                var p = c?.Pawn;
+                if (p == null || c.familiar == null || p.Dead || !p.Spawned || p.Map != map)
+                {
+                    if (c != null && familiarTrails.TryGetValue(c, out var old))
+                    {
+                        old.Dispose();
+                        familiarTrails.Remove(c);
+                    }
+                    familiarOwners.RemoveAt(i);
+                    continue;
+                }
+                if (!familiarTrails.TryGetValue(c, out var trail))
+                {
+                    trail = new RibbonTrail(14, 0.3f, 0.35f, ArcaneMats.Trail, c.familiar.color);
+                    familiarTrails[c] = trail;
+                }
+                try
+                {
+                    Familiars.Draw(c, now, trail);
+                }
+                catch (Exception e)
+                {
+                    Log.ErrorOnce("[Arcanum Ascendant] Familiar draw error: " + e, 0x5A1C0F2);
+                    familiarOwners.RemoveAt(i);
+                }
+            }
+        }
+
         public void AddField(ArcaneField f)
         {
+            f.InitVisuals();
             fields.Add(f);
         }
 
@@ -87,8 +164,20 @@ namespace ArcanumAscendant
             for (int i = active.Count - 1; i >= 0; i--)
             {
                 var v = active[i];
-                v.Tick(now, map);
-                if (v.finished) active.RemoveAt(i);
+                try
+                {
+                    v.Tick(now, map);
+                }
+                catch (Exception e)
+                {
+                    Log.ErrorOnce("[Arcanum Ascendant] VFX tick error: " + e, 0x5A1C0E7);
+                    v.finished = true;
+                }
+                if (v.finished)
+                {
+                    End(v);
+                    active.RemoveAt(i);
+                }
             }
             for (int i = fields.Count - 1; i >= 0; i--)
             {
@@ -107,6 +196,18 @@ namespace ArcanumAscendant
             polymorphs.Tick(map);
         }
 
+        private static void End(Vfx v)
+        {
+            try
+            {
+                v.OnEnd();
+            }
+            catch (Exception e)
+            {
+                Log.ErrorOnce("[Arcanum Ascendant] VFX cleanup error: " + e, 0x5A1C0E8);
+            }
+        }
+
         public override void MapComponentUpdate()
         {
             base.MapComponentUpdate();
@@ -123,8 +224,29 @@ namespace ArcanumAscendant
                 frac = Mathf.Min(0.99f, frac + Time.deltaTime * 60f * tm.TickRateMultiplier);
             }
             float now = ticks + frac;
+            float dt = lastNow < 0f ? 0f : Mathf.Clamp((now - lastNow) / 60f, 0f, 0.25f);
+            lastNow = now;
             float intensity = ArcanumMod.Settings.vfxIntensity;
+            try
+            {
+                particles.Update(dt);
+                decals.Update(dt);
+            }
+            catch (Exception e)
+            {
+                Log.ErrorOnce("[Arcanum Ascendant] Particle update error: " + e, 0x5A1C0E9);
+                particles.Clear();
+            }
             if (intensity <= 0.01f) return;
+            var view = Find.CameraDriver.CurrentViewRect;
+            try
+            {
+                decals.Draw(view);
+            }
+            catch (Exception e)
+            {
+                Log.ErrorOnce("[Arcanum Ascendant] Decal draw error: " + e, 0x5A1C0EA);
+            }
             for (int i = 0; i < active.Count; i++)
             {
                 try
@@ -137,7 +259,41 @@ namespace ArcanumAscendant
                     active[i].finished = true;
                 }
             }
-            for (int i = 0; i < fields.Count; i++) fields[i].Draw(now);
+            for (int i = 0; i < fields.Count; i++)
+            {
+                try
+                {
+                    fields[i].Draw(now);
+                }
+                catch (Exception e)
+                {
+                    Log.ErrorOnce("[Arcanum Ascendant] Field draw error: " + e, 0x5A1C0EB);
+                }
+            }
+            DrawFamiliars(now);
+            try
+            {
+                particles.Draw(view);
+            }
+            catch (Exception e)
+            {
+                Log.ErrorOnce("[Arcanum Ascendant] Particle draw error: " + e, 0x5A1C0EC);
+                particles.Clear();
+            }
+        }
+
+        public override void MapComponentOnGUI()
+        {
+            base.MapComponentOnGUI();
+            if (Find.CurrentMap != map) return;
+            try
+            {
+                screen.OnGUI(map, Now);
+            }
+            catch (Exception e)
+            {
+                Log.ErrorOnce("[Arcanum Ascendant] Screen effect error: " + e, 0x5A1C0ED);
+            }
         }
 
         public override void ExposeData()
@@ -174,6 +330,9 @@ namespace ArcanumAscendant
 
         [Unsaved] public Effect_Field effect;
         [Unsaved] public SpellContext ctx;
+        [Unsaved] private VfxStyle style = VfxStyle.Arcane;
+        [Unsaved] private bool harmful = true;
+        [Unsaved] private bool lightSpawned;
 
         public bool CanSave => ability != null && effectIndex >= 0;
 
@@ -193,7 +352,15 @@ namespace ArcanumAscendant
             ctx.basePower = power;
             ctx.healStat = healPower;
             ctx.critChance = critChance;
+            InitVisuals();
             return true;
+        }
+
+        public void InitVisuals()
+        {
+            if (ctx == null || effect == null) return;
+            style = StyleFx.Resolve(ctx);
+            harmful = effect.pulseEffects.Any(e => e is Effect_Damage || e.affects == TargetFilter.Enemies);
         }
 
         public void Tick(Map map)
@@ -219,13 +386,18 @@ namespace ArcanumAscendant
                 ArcaneFx.PlayAll(effect.pulseVfx, map, Center, ctx, radius);
                 if (effect.pullStrength > 0f) Pull(map, center);
             }
+            if (age % 4 == 0) StyleFx.FieldTick(style, map, Center, radius, ctx.Color, ctx.Color2, age, harmful);
+            if (!lightSpawned && !followCaster)
+            {
+                lightSpawned = true;
+                if (StyleFx.FieldGlows(style)) ArcaneLightFlash.Spawn(map, Center, ctx.Color, Mathf.Min(radius + 2f, 10f), ticksLeft);
+            }
             if (effect.ambientFleck != null && age % 3 == 0)
             {
                 int n = Mathf.CeilToInt(effect.ambientDensity * radius * radius * 0.05f);
                 for (int i = 0; i < n; i++)
                 {
-                    Vector2 r = Rand.InsideUnitCircle * radius;
-                    Vector3 p = Center + new Vector3(r.x, 0f, r.y);
+                    Vector3 p = Center + VRand.InsideCircle(radius);
                     ArcaneFx.Particles(map, p, effect.useColor2 ? ctx.Color2 : ctx.Color, effect.ambientFleck, 1, effect.ambientSpeed, effect.ambientScale, effect.ambientAngle);
                 }
             }
@@ -257,7 +429,10 @@ namespace ArcanumAscendant
             Vector3 c = Center;
             c.y = AltitudeLayer.MoteLow.AltitudeFor();
             var mat = ArcaneMats.Get(effect.groundTex);
-            ArcaneMats.DrawQuad(mat, c, radius * 2f * 1.05f, now * effect.groundSpin, ctx.Color * new Color(1, 1, 1, alpha));
+            ArcaneMats.DrawQuad(ArcaneMats.Glow, c, radius * 2.4f, 0f, ctx.Color * new Color(1, 1, 1, alpha * 0.35f));
+            ArcaneMats.DrawQuad(mat, c + new Vector3(0, 0.002f, 0), radius * 2f * 1.05f, now * effect.groundSpin, ctx.Color * new Color(1, 1, 1, alpha));
+            ArcaneMats.DrawQuad(ArcaneMats.Ring, c + new Vector3(0, 0.004f, 0), radius * 2.08f, 0f,
+                Color.Lerp(ctx.Color, Color.white, 0.3f) * new Color(1, 1, 1, alpha * (0.55f + 0.2f * Mathf.Sin(now * 0.1f + lifeT * 3f))));
             if (effect.groundTex2 != null)
                 ArcaneMats.DrawQuad(ArcaneMats.Get(effect.groundTex2), c + new Vector3(0, 0.005f, 0), radius * 2f * 0.8f, -now * effect.groundSpin * 1.5f, ctx.Color2 * new Color(1, 1, 1, alpha * 0.8f));
             if (effect.pullStrength > 0f)

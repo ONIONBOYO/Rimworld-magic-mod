@@ -11,7 +11,7 @@ namespace ArcanumAscendant
     public class ArcaneAbility : Ability
     {
         private SpellExtension extInt;
-        private int lastCircleTick = -1;
+        [Unsaved] private VfxCastCircle circle;
 
         public ArcaneAbility() { }
         public ArcaneAbility(Pawn pawn) : base(pawn) { }
@@ -84,7 +84,7 @@ namespace ArcanumAscendant
                 var baseReport = base.CanCast;
                 if (!baseReport.Accepted) return baseReport;
                 var c = Arcane;
-                if (c != null && c.mana + 0.01f < ManaCost && !CanPayWithHealth(out _)) return "AA_NotEnoughMana".Translate();
+                if (c != null && c.mana + 0.01f < ManaCost && !CanPayWithHealth(out _) && !c.CanOverchannel) return "AA_NotEnoughMana".Translate();
                 if (SilencedDef != null && pawn.health.hediffSet.HasHediff(SilencedDef)) return "AA_SilencedReason".Translate();
                 return true;
             }
@@ -94,7 +94,7 @@ namespace ArcanumAscendant
         {
             if (base.GizmoDisabled(out reason)) return true;
             var c = Arcane;
-            if (c != null && c.mana + 0.01f < ManaCost && !CanPayWithHealth(out _))
+            if (c != null && c.mana + 0.01f < ManaCost && !CanPayWithHealth(out _) && !c.CanOverchannel)
             {
                 reason = "AA_NotEnoughManaDetail".Translate(ManaCost.ToString("F0"), c.mana.ToString("F0"));
                 return true;
@@ -116,6 +116,7 @@ namespace ArcanumAscendant
         {
             var c = Arcane;
             float cost = ManaCost;
+            float strainOwed = 0f;
             if (c != null)
             {
                 if (c.mana >= cost) c.mana -= cost;
@@ -124,6 +125,11 @@ namespace ArcanumAscendant
                     c.mana = 0f;
                     ArcaneUtility.PayHealth(pawn, hp);
                 }
+                else if (c.CanOverchannel)
+                {
+                    strainOwed = cost - c.mana;
+                    c.mana = 0f;
+                }
                 else c.mana = Mathf.Max(0f, c.mana - cost);
             }
             if (Ext.healthCost > 0f) ArcaneUtility.PayHealth(pawn, Ext.healthCost);
@@ -131,23 +137,26 @@ namespace ArcanumAscendant
             if (def.cooldownTicksRange.max > 0)
                 StartCooldown(AdjustedCooldown(def.cooldownTicksRange.RandomInRange));
             if (c != null && c.IsMage)
+            {
                 c.GainXp((4f + cost * 0.6f) * Ext.xpFactor);
+                c.GainMastery(def, Mastery.PointsPerCast(def));
+                if (strainOwed > 0f) c.AddStrain(strainOwed);
+            }
             return result;
         }
 
         public override void AbilityTick()
         {
             base.AbilityTick();
-            if (Casting && pawn.Spawned && pawn.IsHashIntervalTick(5))
+            if (!Casting || !pawn.Spawned) return;
+            if (circle != null && !circle.finished && !circle.Ending) return;
+            var props = SpellProps;
+            circle = new VfxCastCircle
             {
-                int now = Find.TickManager.TicksGame;
-                if (lastCircleTick < 0 || now - lastCircleTick > 20)
-                {
-                    lastCircleTick = now;
-                    var props = SpellProps;
-                    ArcaneFx.CastingCircle(pawn, props?.color ?? Color.white, props?.color2 ?? Color.white, Ext.ultimate);
-                }
-            }
+                pawn = pawn, ability = this, style = StyleFx.Resolve(props, Ext), c1 = props?.color ?? Color.white, c2 = props?.color2 ?? Color.white,
+                ultimate = Ext.ultimate,
+            };
+            ArcaneVfxManager.For(pawn.Map)?.Add(circle);
         }
 
         public override IEnumerable<Command> GetGizmos()
@@ -179,6 +188,14 @@ namespace ArcanumAscendant
             var caster = parent.pawn;
             if (caster == null || caster.MapHeld == null) return;
             var ctx = SpellContext.For(caster, parent.def);
+            try
+            {
+                StyleFx.Release(ctx, target.IsValid ? target.CenterVector3 : caster.DrawPos);
+            }
+            catch (System.Exception e)
+            {
+                Log.ErrorOnce("[Arcanum Ascendant] Release effect error: " + e, 0x5A1C0F0);
+            }
             SpellRunner.Execute(ctx, target, dest);
             ctx.arcane?.Notify_SpellCast(ctx);
         }
@@ -194,6 +211,12 @@ namespace ArcanumAscendant
                 case DeliveryType.Barrage: r = p.barrageRadius * ctx.RadiusFactor; break;
                 case DeliveryType.Cone: r = 0f; break;
                 default: r = p.radius * ctx.RadiusFactor; break;
+            }
+            if (p.delivery == DeliveryType.Orbitals)
+            {
+                float orb = p.orbitalRadius * Mathf.Max(0.6f, ctx.RadiusFactor) + p.orbitalHitRadius;
+                if (orb < GenRadial.MaxRadialPatternRadius) GenDraw.DrawRadiusRing(parent.pawn.Position, orb, p.color);
+                return;
             }
             if (p.delivery == DeliveryType.Nova || p.delivery == DeliveryType.Self)
             {
@@ -288,6 +311,14 @@ namespace ArcanumAscendant
                 if (a.Ext.ultimate)
                 {
                     Widgets.DrawBoxSolidWithOutline(new Rect(butRect.x, butRect.yMax - 3f, butRect.width, 3f), a.SpellProps?.color ?? Color.white, Color.clear);
+                }
+                int rank = c.MasteryRank(a.def);
+                if (rank > 0)
+                {
+                    var old = GUI.color;
+                    GUI.color = rank >= Mastery.MaxRank ? new Color(1f, 0.85f, 0.35f) : new Color(0.85f, 0.85f, 0.95f);
+                    for (int i = 0; i < rank; i++) GUI.DrawTexture(new Rect(butRect.x + 3f + i * 9f, butRect.yMax - 14f, 10f, 10f), ArcaneTex.Star);
+                    GUI.color = old;
                 }
                 if (!a.OnCooldown && c.mana < a.ManaCost)
                 {

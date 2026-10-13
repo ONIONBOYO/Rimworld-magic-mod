@@ -622,6 +622,20 @@
     <unlockSpell>AA_Spell_ReverseEntropy</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Chronomancer_TemporalBomb</defName>
+    <tree>AA_Class_Chronomancer</tree>
+    <kind>Spell</kind>
+    <x>1</x>
+    <y>6</y>
+    <requiredLevel>9</requiredLevel>
+    <requiredAttribute>AA_Celerity</requiredAttribute>
+    <requiredAttributeValue>9</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Chronomancer_Dilation</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_TemporalBomb</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Timeweaver_MassHaste</defName>
     <tree>AA_Class_Timeweaver</tree>
     <kind>Spell</kind>
@@ -1284,6 +1298,20 @@
     <unlockSpell>AA_Spell_Transposition</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Voidwalker_Disintegrate</defName>
+    <tree>AA_Class_Voidwalker</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>3</y>
+    <requiredLevel>12</requiredLevel>
+    <requiredAttribute>AA_Potency</requiredAttribute>
+    <requiredAttributeValue>9</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Voidwalker_Ghostwalk</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_Disintegrate</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Paradox_CausalityLoop</defName>
     <tree>AA_Class_Paradox</tree>
     <kind>Spell</kind>
@@ -1717,6 +1745,7 @@
         </impactVfx>
         <castSound>AA_Cast_Time</castSound>
         <impactSound>AA_Impact_Time</impactSound>
+        <style>Time</style>
         <projectileSpeed>28</projectileSpeed>
         <projectileScale>0.8</projectileScale>
         <projectileTex>ArcanumAscendant/Vfx/Orb</projectileTex>
@@ -1803,6 +1832,7 @@
         </impactVfx>
         <castSound>AA_Cast_Time</castSound>
         <impactSound>AA_Impact_Time</impactSound>
+        <style>Time</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -1890,6 +1920,7 @@
         </impactVfx>
         <castSound>AA_Cast_Time</castSound>
         <impactSound>AA_Impact_Time</impactSound>
+        <style>Time</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -1981,6 +2012,7 @@
         </impactVfx>
         <castSound>AA_Cast_Time</castSound>
         <impactSound>AA_Impact_Time</impactSound>
+        <style>Void</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2068,6 +2100,7 @@
         </impactVfx>
         <castSound>AA_Cast_Time</castSound>
         <impactSound>AA_Impact_Time</impactSound>
+        <style>Time</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2156,6 +2189,7 @@
         </impactVfx>
         <castSound>AA_Cast_Time</castSound>
         <impactSound>AA_Impact_Time</impactSound>
+        <style>Time</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2250,6 +2284,7 @@
         </impactVfx>
         <castSound>AA_Cast_Time</castSound>
         <impactSound>AA_Impact_Time</impactSound>
+        <style>Time</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2345,6 +2380,7 @@
         <castSound>AA_Cast_Time</castSound>
         <impactSound>AA_Impact_Time</impactSound>
         <shake>1</shake>
+        <style>Time</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2438,6 +2474,7 @@
         </impactVfx>
         <castSound>AA_Cast_Time</castSound>
         <impactSound>AA_Impact_Time</impactSound>
+        <style>Time</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2559,6 +2596,7 @@
         </impactVfx>
         <castSound>AA_Cast_Time</castSound>
         <impactSound>AA_Impact_Time</impactSound>
+        <style>Time</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2654,6 +2692,121 @@
         </impactVfx>
         <castSound>AA_Cast_Time</castSound>
         <impactSound>AA_Impact_Time</impactSound>
+        <style>Time</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_TemporalBomb</defName>
+    <label>temporal bomb</label>
+    <description>Plant a knot of stopped time on an enemy. It follows them for three seconds, then releases every moment it held at once: heavy damage, a long stun and lingering slowness. Void magic fractures slowed targets.</description>
+    <iconPath>ArcanumAscendant/Spells/TemporalBomb</iconPath>
+    <cooldownTicksRange>1500</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>28</range>
+      <warmupTime>0.6</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>40</manaCost>
+        <tags>
+          <li>Time</li>
+        </tags>
+        <tier>3</tier>
+        <role>Attack</role>
+        <autocastByDefault>true</autocastByDefault>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Delayed</delivery>
+        <affects>Enemies</affects>
+        <radius>2.5</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Damage">
+            <amount>60</amount>
+            <damageDef>AA_Temporal</damageDef>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Stun">
+            <ticks>120</ticks>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_Slowed</hediff>
+            <severity>1</severity>
+          </li>
+        </effects>
+        <color>(0.498, 0.961, 0.894, 1)</color>
+        <color2>(1, 1, 1, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Mote</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>2.5</scale>
+            <scaleEnd>3</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.3</scale>
+            <scaleEnd>1.1</scaleEnd>
+            <ticks>28</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Clock</fleck>
+            <count>10</count>
+            <speed>3</speed>
+            <scale>0.7</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Mote</fleck>
+            <count>6</count>
+            <speed>1.5</speed>
+            <scale>0.8</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Time</castSound>
+        <impactSound>AA_Impact_Time</impactSound>
+        <shake>1</shake>
+        <style>Time</style>
+        <delayTicks>180</delayTicks>
+        <delayedCount>1</delayedCount>
+        <delayedSpread>0</delayedSpread>
+        <delayedStagger>12</delayedStagger>
+        <strikeStyle>Pillar</strikeStyle>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2736,6 +2889,7 @@
         </impactVfx>
         <castSound>AA_Cast_Time</castSound>
         <impactSound>AA_Impact_Time</impactSound>
+        <style>Time</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2871,6 +3025,7 @@
         </impactVfx>
         <castSound>AA_Cast_Time</castSound>
         <impactSound>AA_Impact_Time</impactSound>
+        <style>Time</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2951,6 +3106,7 @@
         </impactVfx>
         <castSound>AA_Cast_Time</castSound>
         <impactSound>AA_Impact_Time</impactSound>
+        <style>Time</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3054,6 +3210,7 @@
         </impactVfx>
         <castSound>AA_Cast_Time</castSound>
         <impactSound>AA_Impact_Time</impactSound>
+        <style>Time</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3156,6 +3313,7 @@
         <castSound>AA_Cast_Time</castSound>
         <impactSound>AA_Impact_Time</impactSound>
         <shake>1.5</shake>
+        <style>Time</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3251,6 +3409,7 @@
         </impactVfx>
         <castSound>AA_Cast_Void</castSound>
         <impactSound>AA_Impact_Void</impactSound>
+        <style>Void</style>
         <projectileSpeed>22</projectileSpeed>
         <projectileScale>1</projectileScale>
         <projectileTex>ArcanumAscendant/Vfx/VoidOrb</projectileTex>
@@ -3340,6 +3499,7 @@
         </impactVfx>
         <castSound>AA_Cast_Void</castSound>
         <impactSound>AA_Impact_Void</impactSound>
+        <style>Void</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3445,6 +3605,7 @@
         </impactVfx>
         <castSound>AA_Cast_Void</castSound>
         <impactSound>AA_Impact_Void</impactSound>
+        <style>Void</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3524,6 +3685,7 @@
         </impactVfx>
         <castSound>AA_Cast_Void</castSound>
         <impactSound>AA_Impact_Void</impactSound>
+        <style>Void</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3641,6 +3803,7 @@
         <castSound>AA_Cast_Void</castSound>
         <impactSound>AA_Impact_Void</impactSound>
         <shake>3</shake>
+        <style>Void</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3730,6 +3893,107 @@
         </impactVfx>
         <castSound>AA_Cast_Void</castSound>
         <impactSound>AA_Impact_Void</impactSound>
+        <style>Void</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_Disintegrate</defName>
+    <label>disintegrate</label>
+    <description>Focus a beam of pure nothing on a target for six seconds. It ignores nearly all armor and erases a little of the target's being with every pulse.</description>
+    <iconPath>ArcanumAscendant/Spells/Disintegrate</iconPath>
+    <cooldownTicksRange>2700</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>22</range>
+      <warmupTime>0.6</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>70</manaCost>
+        <tags>
+          <li>Void</li>
+        </tags>
+        <tier>4</tier>
+        <role>Attack</role>
+        <autocastByDefault>true</autocastByDefault>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Channel</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Damage">
+            <amount>14</amount>
+            <damageDef>AA_Void</damageDef>
+            <armorPen>0.9</armorPen>
+            <lethalPercent>0.01</lethalPercent>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_Voidtouched</hediff>
+            <severity>1</severity>
+          </li>
+        </effects>
+        <color>(0.753, 0.376, 1, 1)</color>
+        <color2>(0.165, 0.039, 0.29, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Smoke</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>1.8</scale>
+            <scaleEnd>2.16</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Mote</fleck>
+            <count>8</count>
+            <speed>2.2</speed>
+            <scale>0.55</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.2</scale>
+            <scaleEnd>2</scaleEnd>
+            <ticks>20</ticks>
+            <useColor2>true</useColor2>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Void</castSound>
+        <impactSound>AA_Impact_Void</impactSound>
+        <style>Void</style>
+        <channelTicks>360</channelTicks>
+        <channelInterval>20</channelInterval>
+        <beamWidth>1.2</beamWidth>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3833,6 +4097,7 @@
         </impactVfx>
         <castSound>AA_Cast_Void</castSound>
         <impactSound>AA_Impact_Void</impactSound>
+        <style>Time</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3949,6 +4214,7 @@
         </impactVfx>
         <castSound>AA_Cast_Void</castSound>
         <impactSound>AA_Impact_Void</impactSound>
+        <style>Time</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -4036,6 +4302,7 @@
         </impactVfx>
         <castSound>AA_Cast_Void</castSound>
         <impactSound>AA_Impact_Void</impactSound>
+        <style>Time</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -4135,6 +4402,7 @@
         </impactVfx>
         <castSound>AA_Cast_Void</castSound>
         <impactSound>AA_Impact_Void</impactSound>
+        <style>Time</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -4236,6 +4504,7 @@
         <castSound>AA_Cast_Void</castSound>
         <impactSound>AA_Impact_Void</impactSound>
         <shake>2</shake>
+        <style>Time</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -4326,6 +4595,7 @@
         </impactVfx>
         <castSound>AA_Cast_Void</castSound>
         <impactSound>AA_Impact_Void</impactSound>
+        <style>Time</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -4355,6 +4625,8 @@
         <texPath>ArcanumAscendant/Vfx/Clock</texPath>
         <size>1.4</size>
         <fleckInterval>20</fleckInterval>
+        <emitter>Slow</emitter>
+        <emitInterval>16</emitInterval>
       </li>
     </comps>
     <stages>
@@ -4381,6 +4653,8 @@
         <size>1.4</size>
         <fleck>AA_Fleck_Clock</fleck>
         <fleckInterval>50</fleckInterval>
+        <emitter>Wither</emitter>
+        <emitInterval>14</emitInterval>
       </li>
     </comps>
     <stages>
@@ -4529,6 +4803,10 @@
         <texPath>ArcanumAscendant/Vfx/Clock</texPath>
         <size>1.3</size>
         <fleckInterval>20</fleckInterval>
+        <overlayTex>ArcanumAscendant/Vfx/Clock</overlayTex>
+        <overlaySize>0.6</overlaySize>
+        <overlayZ>1</overlayZ>
+        <overlaySpin>-3</overlaySpin>
       </li>
     </comps>
     <stages>

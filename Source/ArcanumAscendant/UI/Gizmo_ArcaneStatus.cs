@@ -58,6 +58,13 @@ namespace ArcanumAscendant
             float wardMax = comp.WardMax;
             var wardRect = new Rect(barX, manaRect.yMax + 2f, barW, 8f);
             if (wardMax > 0.5f) Widgets.FillableBar(wardRect, comp.ward / wardMax, ArcaneTex.WardFill, ArcaneTex.BarBg, false);
+            if (comp.strain > 0.5f)
+            {
+                var strainRect = new Rect(barX, wardRect.yMax + 2f, barW, 5f);
+                Widgets.FillableBar(strainRect, Mathf.Clamp01(comp.strain / ArcaneStrain.BurnoutThreshold), ArcaneTex.StrainFill, ArcaneTex.BarBg, false);
+                TooltipHandler.TipRegion(strainRect.ExpandedBy(0f, 4f), "AA_StrainTip".Translate(comp.strain.ToString("F0"), ArcaneStrain.BurnoutThreshold.ToString("F0"),
+                    ArcaneStrain.SurgeChance(comp.strain).ToStringPercent()));
+            }
 
             var xpRect = new Rect(inner.x, inner.yMax - 18f, inner.width, 5f);
             Widgets.FillableBar(xpRect, Mathf.Clamp01(comp.xp / comp.XpToNextLevel), comp.ReadyToAscend ? ArcaneTex.WardFill : ArcaneTex.XpFill, ArcaneTex.BarBg, false);

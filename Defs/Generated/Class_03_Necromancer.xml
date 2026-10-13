@@ -649,6 +649,20 @@
     <unlockSpell>AA_Spell_GraveMark</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Necromancer_SoulSwarm</defName>
+    <tree>AA_Class_Necromancer</tree>
+    <kind>Spell</kind>
+    <x>4</x>
+    <y>5</y>
+    <requiredLevel>7</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Necromancer_Reaper</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_SoulSwarm</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Lich_DeathCoil</defName>
     <tree>AA_Class_Lich</tree>
     <kind>Spell</kind>
@@ -1009,6 +1023,20 @@
     <unlockSpell>AA_Spell_SoulReap</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Lich_DrainSoul</defName>
+    <tree>AA_Class_Lich</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>3</y>
+    <requiredLevel>12</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>9</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Lich_SoulReap</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_DrainSoul</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Bonelord_BoneSpire</defName>
     <tree>AA_Class_Bonelord</tree>
     <kind>Spell</kind>
@@ -1347,6 +1375,20 @@
       <li>AA_Node_Bonelord_Impaler</li>
     </prerequisites>
     <unlockSpell>AA_Spell_BoneStorm</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Bonelord_BoneShards</defName>
+    <tree>AA_Class_Bonelord</tree>
+    <kind>Spell</kind>
+    <x>1</x>
+    <y>4</y>
+    <requiredLevel>14</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>10</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Bonelord_BonePrison</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_BoneShards</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Plaguebringer_PlagueBolt</defName>
@@ -1803,6 +1845,7 @@
         </impactVfx>
         <castSound>AA_Cast_Necro</castSound>
         <impactSound>AA_Impact_Necro</impactSound>
+        <style>Necro</style>
         <projectileSpeed>26</projectileSpeed>
         <projectileScale>0.8</projectileScale>
         <projectileTex>ArcanumAscendant/Vfx/Skull</projectileTex>
@@ -1899,6 +1942,7 @@
         </impactVfx>
         <castSound>AA_Cast_Necro</castSound>
         <impactSound>AA_Impact_Necro</impactSound>
+        <style>Necro</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -1986,6 +2030,7 @@
         </impactVfx>
         <castSound>AA_Cast_Necro</castSound>
         <impactSound>AA_Impact_Necro</impactSound>
+        <style>Necro</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2084,6 +2129,7 @@
         </impactVfx>
         <castSound>AA_Cast_Necro</castSound>
         <impactSound>AA_Impact_Necro</impactSound>
+        <style>Necro</style>
         <beamWidth>0.7</beamWidth>
         <beamTicks>26</beamTicks>
       </li>
@@ -2180,6 +2226,7 @@
         </impactVfx>
         <castSound>AA_Cast_Necro</castSound>
         <impactSound>AA_Impact_Necro</impactSound>
+        <style>Necro</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2263,6 +2310,7 @@
         </impactVfx>
         <castSound>AA_Cast_Necro</castSound>
         <impactSound>AA_Impact_Necro</impactSound>
+        <style>Necro</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2360,6 +2408,7 @@
         </impactVfx>
         <castSound>AA_Cast_Necro</castSound>
         <impactSound>AA_Impact_Necro</impactSound>
+        <style>Necro</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2457,6 +2506,7 @@
         <castSound>AA_Cast_Necro</castSound>
         <impactSound>AA_Impact_Necro</impactSound>
         <shake>1.5</shake>
+        <style>Necro</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2552,6 +2602,7 @@
         </impactVfx>
         <castSound>AA_Cast_Necro</castSound>
         <impactSound>AA_Impact_Necro</impactSound>
+        <style>Necro</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2659,6 +2710,105 @@
         </impactVfx>
         <castSound>AA_Cast_Necro</castSound>
         <impactSound>AA_Impact_Necro</impactSound>
+        <style>Necro</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_SoulSwarm</defName>
+    <label>soul swarm</label>
+    <description>Release six hungry souls that hunt down enemies and gnaw at their life, feeding a share of it back to you.</description>
+    <iconPath>ArcanumAscendant/Spells/SoulSwarm</iconPath>
+    <cooldownTicksRange>840</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>26</range>
+      <warmupTime>0.5</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>34</manaCost>
+        <tags>
+          <li>Necromancy</li>
+        </tags>
+        <tier>3</tier>
+        <role>Attack</role>
+        <autocastByDefault>true</autocastByDefault>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Missiles</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Damage">
+            <amount>9</amount>
+            <damageDef>AA_Necrotic</damageDef>
+            <healCasterFraction>0.25</healCasterFraction>
+          </li>
+        </effects>
+        <color>(0.49, 1, 0.604, 1)</color>
+        <color2>(0.122, 0.42, 0.227, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Smoke</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>1.8</scale>
+            <scaleEnd>2.16</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Skull</fleck>
+            <count>8</count>
+            <speed>2.2</speed>
+            <scale>0.55</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.2</scale>
+            <scaleEnd>2</scaleEnd>
+            <ticks>20</ticks>
+            <useColor2>true</useColor2>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Necro</castSound>
+        <impactSound>AA_Impact_Necro</impactSound>
+        <style>Necro</style>
+        <projectileCount>6</projectileCount>
+        <projectileSpeed>14</projectileSpeed>
+        <projectileTex>ArcanumAscendant/Vfx/Skull</projectileTex>
+        <projectileScale>0.55</projectileScale>
+        <missileSpread>140</missileSpread>
+        <multiTargetRadius>7</multiTargetRadius>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2758,6 +2908,7 @@
         </impactVfx>
         <castSound>AA_Cast_Frost</castSound>
         <impactSound>AA_Impact_Frost</impactSound>
+        <style>Necro</style>
         <projectileSpeed>20</projectileSpeed>
         <projectileScale>1.1</projectileScale>
         <projectileSpin>true</projectileSpin>
@@ -2868,6 +3019,7 @@
         </impactVfx>
         <castSound>AA_Cast_Frost</castSound>
         <impactSound>AA_Impact_Frost</impactSound>
+        <style>Frost</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -2971,6 +3123,7 @@
         </impactVfx>
         <castSound>AA_Cast_Frost</castSound>
         <impactSound>AA_Impact_Frost</impactSound>
+        <style>Necro</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3055,6 +3208,7 @@
         </impactVfx>
         <castSound>AA_Cast_Frost</castSound>
         <impactSound>AA_Impact_Frost</impactSound>
+        <style>Necro</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3156,6 +3310,7 @@
         <castSound>AA_Cast_Frost</castSound>
         <impactSound>AA_Impact_Frost</impactSound>
         <shake>2</shake>
+        <style>Necro</style>
         <beamWidth>1</beamWidth>
         <beamTicks>40</beamTicks>
       </li>
@@ -3260,10 +3415,107 @@
         </impactVfx>
         <castSound>AA_Cast_Frost</castSound>
         <impactSound>AA_Impact_Frost</impactSound>
+        <style>Necro</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
     <targetRequired>false</targetRequired>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_DrainSoul</defName>
+    <label>drain soul</label>
+    <description>Lock a ribbon of necrotic power onto a target and drink its soul for five seconds. You heal for most of the damage.</description>
+    <iconPath>ArcanumAscendant/Spells/DrainSoul</iconPath>
+    <cooldownTicksRange>1200</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>18</range>
+      <warmupTime>0.6</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>40</manaCost>
+        <tags>
+          <li>Necromancy</li>
+        </tags>
+        <tier>3</tier>
+        <role>Attack</role>
+        <autocastByDefault>true</autocastByDefault>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Channel</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Damage">
+            <amount>10</amount>
+            <damageDef>AA_Necrotic</damageDef>
+            <armorPen>0.5</armorPen>
+            <healCasterFraction>0.6</healCasterFraction>
+          </li>
+        </effects>
+        <color>(0.604, 0.847, 1, 1)</color>
+        <color2>(0.165, 0.227, 0.416, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Snow</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>1.8</scale>
+            <scaleEnd>2.16</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Skull</fleck>
+            <count>8</count>
+            <speed>2.2</speed>
+            <scale>0.55</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.2</scale>
+            <scaleEnd>2</scaleEnd>
+            <ticks>20</ticks>
+            <useColor2>true</useColor2>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Frost</castSound>
+        <impactSound>AA_Impact_Frost</impactSound>
+        <style>Necro</style>
+        <channelTicks>300</channelTicks>
+        <channelInterval>20</channelInterval>
+        <beamWidth>0.8</beamWidth>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_BoneSpire</defName>
@@ -3353,6 +3605,7 @@
         </impactVfx>
         <castSound>AA_Cast_Necro</castSound>
         <impactSound>AA_Impact_Necro</impactSound>
+        <style>Necro</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3443,6 +3696,7 @@
         </impactVfx>
         <castSound>AA_Cast_Necro</castSound>
         <impactSound>AA_Impact_Necro</impactSound>
+        <style>Necro</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3524,6 +3778,7 @@
         </impactVfx>
         <castSound>AA_Cast_Necro</castSound>
         <impactSound>AA_Impact_Necro</impactSound>
+        <style>Necro</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3619,6 +3874,7 @@
         </impactVfx>
         <castSound>AA_Cast_Necro</castSound>
         <impactSound>AA_Impact_Necro</impactSound>
+        <style>Necro</style>
         <lineLength>14</lineLength>
         <strikeRadius>1</strikeRadius>
         <lineStepDelay>2</lineStepDelay>
@@ -3721,6 +3977,7 @@
         <castSound>AA_Cast_Necro</castSound>
         <impactSound>AA_Impact_Necro</impactSound>
         <shake>2</shake>
+        <style>Necro</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -3816,10 +4073,116 @@
         </impactVfx>
         <castSound>AA_Cast_Necro</castSound>
         <impactSound>AA_Impact_Necro</impactSound>
+        <style>Necro</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
     <targetRequired>false</targetRequired>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_BoneShards</defName>
+    <label>bone shards</label>
+    <description>Hurl five jagged shards of bone that curve in on enemies and leave them bleeding.</description>
+    <iconPath>ArcanumAscendant/Spells/BoneShards</iconPath>
+    <cooldownTicksRange>720</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>26</range>
+      <warmupTime>0.5</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>30</manaCost>
+        <tags>
+          <li>Necromancy</li>
+        </tags>
+        <tier>2</tier>
+        <role>Attack</role>
+        <autocastByDefault>true</autocastByDefault>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Missiles</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Damage">
+            <amount>12</amount>
+            <damageDef>Cut</damageDef>
+            <armorPen>0.3</armorPen>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_Bleeding</hediff>
+            <severity>1</severity>
+            <chance>0.4</chance>
+            <stack>true</stack>
+            <maxSeverity>5</maxSeverity>
+          </li>
+        </effects>
+        <color>(0.91, 0.886, 0.784, 1)</color>
+        <color2>(0.416, 0.373, 0.251, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Smoke</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>1.8</scale>
+            <scaleEnd>2.16</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Bone</fleck>
+            <count>8</count>
+            <speed>2.2</speed>
+            <scale>0.55</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.2</scale>
+            <scaleEnd>2</scaleEnd>
+            <ticks>20</ticks>
+            <useColor2>true</useColor2>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Necro</castSound>
+        <impactSound>AA_Impact_Necro</impactSound>
+        <style>Necro</style>
+        <projectileCount>5</projectileCount>
+        <projectileSpeed>16</projectileSpeed>
+        <projectileTex>ArcanumAscendant/Vfx/Bone</projectileTex>
+        <projectileScale>0.5</projectileScale>
+        <missileSpread>110</missileSpread>
+        <multiTargetRadius>7</multiTargetRadius>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_PlagueBolt</defName>
@@ -3914,6 +4277,7 @@
         </impactVfx>
         <castSound>AA_Cast_Necro</castSound>
         <impactSound>AA_Impact_Necro</impactSound>
+        <style>Plague</style>
         <projectileSpeed>24</projectileSpeed>
         <projectileScale>0.9</projectileScale>
         <projectileTex>ArcanumAscendant/Vfx/Orb</projectileTex>
@@ -4030,6 +4394,7 @@
         </impactVfx>
         <castSound>AA_Cast_Necro</castSound>
         <impactSound>AA_Impact_Necro</impactSound>
+        <style>Plague</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -4129,6 +4494,7 @@
         </impactVfx>
         <castSound>AA_Cast_Necro</castSound>
         <impactSound>AA_Impact_Necro</impactSound>
+        <style>Plague</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -4215,6 +4581,7 @@
         </impactVfx>
         <castSound>AA_Cast_Necro</castSound>
         <impactSound>AA_Impact_Necro</impactSound>
+        <style>Necro</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -4356,6 +4723,7 @@
         <castSound>AA_Cast_Necro</castSound>
         <impactSound>AA_Impact_Necro</impactSound>
         <shake>1.5</shake>
+        <style>Plague</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -4448,6 +4816,7 @@
         </impactVfx>
         <castSound>AA_Cast_Necro</castSound>
         <impactSound>AA_Impact_Necro</impactSound>
+        <style>Plague</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -4704,6 +5073,12 @@
         <size>1.4</size>
         <fleck>AA_Fleck_Skull</fleck>
         <fleckInterval>45</fleckInterval>
+        <emitter>Doom</emitter>
+        <emitInterval>26</emitInterval>
+        <overlayTex>ArcanumAscendant/Vfx/Skull</overlayTex>
+        <overlaySize>0.55</overlaySize>
+        <overlayZ>1</overlayZ>
+        <overlayPulse>true</overlayPulse>
       </li>
     </comps>
     <stages>

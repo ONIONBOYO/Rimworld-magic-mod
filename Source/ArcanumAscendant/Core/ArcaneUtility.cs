@@ -335,6 +335,24 @@ namespace ArcanumAscendant
                 if (props.delivery == DeliveryType.Barrage) sb.AppendLine("AA_Tip_Strikes".Translate(props.barrageCount + 2 * (ctx?.mods.extraTargets ?? 0)));
                 if ((props.delivery == DeliveryType.Projectile || props.delivery == DeliveryType.Meteor) && props.projectileCount + (ctx?.mods.extraTargets ?? 0) > 1)
                     sb.AppendLine("AA_Tip_Projectiles".Translate(props.projectileCount + (ctx?.mods.extraTargets ?? 0)));
+                int extra = ctx?.mods.extraTargets ?? 0;
+                float dur = ctx?.DurationFactor ?? 1f;
+                switch (props.delivery)
+                {
+                    case DeliveryType.Missiles:
+                        sb.AppendLine("AA_Tip_Missiles".Translate(Mathf.Max(1, props.projectileCount + extra)));
+                        break;
+                    case DeliveryType.Orbitals:
+                        sb.AppendLine("AA_Tip_Orbitals".Translate(props.orbitalCount + extra, Mathf.RoundToInt(props.orbitalDuration * dur).ToStringTicksToPeriod()));
+                        break;
+                    case DeliveryType.Channel:
+                        sb.AppendLine("AA_Tip_Channel".Translate(Mathf.RoundToInt(props.channelTicks * dur).ToStringTicksToPeriod(),
+                            (props.channelInterval / 60f).ToString("0.##")));
+                        break;
+                    case DeliveryType.Delayed:
+                        sb.AppendLine("AA_Tip_Delayed".Translate(props.delayedCount + extra, (props.delayTicks / 60f).ToString("0.#")));
+                        break;
+                }
                 sb.AppendLine();
                 foreach (var e in props.casterEffects)
                     foreach (var line in e.Describe(ctx)) sb.AppendLine("• " + "AA_Tip_Self".Translate() + line);
