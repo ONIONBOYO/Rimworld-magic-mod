@@ -59,8 +59,8 @@ def reactions_xml():
         "Living wood burns well.", FIRE_DMG, ["AA_Entangled"], color="#ff8a2a", color2="#c8e070", vfx="Wildfire", callout="WILDFIRE!",
         bonus=12, bonusDef="Flame", radius=3.0, effects=[hediff("AA_Burning", 2.0, stack=True, maxSeverity=5.0), ignite(0.5)], style="Fire", sound="AA_Impact_Fire"))
     r.append(reaction("AA_Reaction_Purge", "purge",
-        "Holy light burning through a curse, plague or undeath purges it violently: the curse is torn out, the target takes heavy radiant damage and reels.",
-        "Light abhors what has been cursed.", ["AA_Holy"], ["AA_Doom", "AA_Voidtouched", "AA_Undead", "AA_Plague", "AA_Agony", "AA_GraveMark", "AA_Withering"],
+        "Holy light burning through a curse or plague purges it violently: the curse is torn out, the target takes heavy radiant damage and reels.",
+        "Light abhors what has been cursed.", ["AA_Holy"], ["AA_Doom", "AA_Voidtouched", "AA_Plague", "AA_Agony", "AA_GraveMark", "AA_Withering"],
         color="#ffe28a", color2="#ffffff", vfx="Purge", callout="PURGED!", bonus=45, bonusDef="AA_Holy", effects=[stun(90)], style="Holy", shake=1.0,
         sound="AA_Impact_Holy"))
     r.append(reaction("AA_Reaction_Fracture", "time fracture",

@@ -285,7 +285,7 @@ namespace ArcanumAscendant
             else if (Rand.Chance(ArcaneStrain.SurgeChance(strain))) ArcaneStrain.WildSurge(this);
         }
 
-        private void UpdateStrainHediff()
+        public void UpdateStrainHediff()
         {
             var def = ArcaneDefOf.AA_ArcaneStrain;
             var p = Pawn;
@@ -787,7 +787,7 @@ namespace ArcanumAscendant
             {
                 bool calm = now - lastCombatTick > 900;
                 strain = Mathf.Max(0f, strain - (calm ? 1.2f : 0.4f) * seconds);
-                if (p.IsHashIntervalTick(60) || strain <= 0f) UpdateStrainHediff();
+                UpdateStrainHediff();
             }
             if (familiar != null) Familiars.Tick(this, elapsed);
 

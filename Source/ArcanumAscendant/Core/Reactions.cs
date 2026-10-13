@@ -48,6 +48,9 @@ namespace ArcanumAscendant
         private static readonly Dictionary<int, int> lastTriggered = new Dictionary<int, int>();
         private static List<ArcaneReactionDef> all;
 
+        /// <summary>Called when a game starts or loads, so cooldowns never leak between saves.</summary>
+        public static void Reset() => lastTriggered.Clear();
+
         public static List<ArcaneReactionDef> All => all ??= DefDatabase<ArcaneReactionDef>.AllDefsListForReading.ToList();
 
         /// <summary>Checks a fresh spell hit for a reaction and sets it off. At most one reaction per hit.</summary>
@@ -69,7 +72,7 @@ namespace ArcanumAscendant
                 }
                 if (h == null) continue;
                 int key = p.thingIDNumber * 31 + r.index;
-                if (lastTriggered.TryGetValue(key, out int last) && now - last < r.cooldownTicks) continue;
+                if (lastTriggered.TryGetValue(key, out int last) && now >= last && now - last < r.cooldownTicks) continue;
                 lastTriggered[key] = now;
                 if (lastTriggered.Count > 4000) lastTriggered.Clear();
                 Trigger(r, ctx, p, h);

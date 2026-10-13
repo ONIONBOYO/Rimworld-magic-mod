@@ -160,7 +160,12 @@ namespace ArcanumAscendant
     {
         private HashSet<ArcaneReactionDef> discovered = new HashSet<ArcaneReactionDef>();
 
-        public GameComponent_Arcanum(Game game) { }
+        public GameComponent_Arcanum(Game game)
+        {
+            // Static per-game caches must not survive into another save.
+            ArcaneReactions.Reset();
+            ArcaneLightFlash.ResetLive();
+        }
 
         public bool IsDiscovered(ArcaneReactionDef r) => discovered.Contains(r);
 

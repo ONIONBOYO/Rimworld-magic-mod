@@ -7,6 +7,7 @@
     <reportString>channeling.</reportString>
     <casualInterruptible>false</casualInterruptible>
     <suspendable>false</suspendable>
+    <checkOverrideOnDamage>Never</checkOverrideOnDamage>
   </JobDef>
 
   <!-- ===================== Ward pylon: a projectile-stopping dome ===================== -->

@@ -51,6 +51,7 @@ namespace ArcanumAscendant
             {
                 if (h is Hediff_Injury || h is Hediff_MissingPart || h is Hediff_AddedPart) continue;
                 if (h.def == ArcaneDefOf.AA_ArcaneCore || h.def == ArcaneDefOf.AA_Summoned || h.def == ArcaneDefOf.AA_Undead || h.def == ArcaneDefOf.AA_Dominated) continue;
+                if (h.def == ArcaneDefOf.AA_ArcaneStrain || h.def == ArcaneDefOf.AA_ArcaneBurnout) continue;
                 bool remove = false;
                 if (diseases && h.def.makesSickThought) remove = true;
                 if (diseases && h.def.isInfection) remove = true;

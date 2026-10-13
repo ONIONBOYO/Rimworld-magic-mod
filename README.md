@@ -83,7 +83,7 @@ When a spell hits a target that already carries the right status, the two combin
 | **Overload** | Fire on a **shocked** target | An explosion that burns and stuns everyone around |
 | **Superconduct** | Lightning or EMP on a **chilled or frozen** target | Arcs to everyone nearby, shocking them and stripping their armor |
 | **Wildfire** | Fire on a target **entangled** in roots or thorns | Everyone in the tangle catches fire |
-| **Purge** | Holy damage on a **cursed, plagued or undead** target | Tears the curse out, deals heavy radiant damage, and stuns |
+| **Purge** | Holy damage on a **cursed or plagued** target | Tears the curse out, deals heavy radiant damage, and stuns |
 | **Time Fracture** | Void damage on a target in **slowed or looping** time | Huge damage that ignores armor, and a long stun |
 | **Resonance** | Sound or force on a target turned to **ice, stone or gold** | They shatter from within |
 | **Necrotic Bloom** | Necrotic damage on a **bleeding** target | Poison bursts over everyone nearby and heals the caster |

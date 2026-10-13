@@ -129,6 +129,8 @@ namespace ArcanumAscendant
 
         private static readonly List<ArcaneLightFlash> live = new List<ArcaneLightFlash>();
 
+        public static void ResetLive() => live.Clear();
+
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);

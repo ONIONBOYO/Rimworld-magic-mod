@@ -363,6 +363,7 @@
     <useHitPoints>false</useHitPoints>
     <rotatable>false</rotatable>
     <destroyable>true</destroyable>
+    <isSaveable>false</isSaveable>
     <comps>
       <li Class="CompProperties_Glower">
         <glowRadius>5</glowRadius>

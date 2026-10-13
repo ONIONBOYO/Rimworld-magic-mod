@@ -282,7 +282,7 @@
   <ArcanumAscendant.ArcaneReactionDef>
     <defName>AA_Reaction_Purge</defName>
     <label>purge</label>
-    <description>Holy light burning through a curse, plague or undeath purges it violently: the curse is torn out, the target takes heavy radiant damage and reels.</description>
+    <description>Holy light burning through a curse or plague purges it violently: the curse is torn out, the target takes heavy radiant damage and reels.</description>
     <descriptionShort>Light abhors what has been cursed.</descriptionShort>
     <triggerDamage>
       <li>AA_Holy</li>
@@ -290,7 +290,6 @@
     <requiredHediffs>
       <li>AA_Doom</li>
       <li>AA_Voidtouched</li>
-      <li>AA_Undead</li>
       <li>AA_Plague</li>
       <li>AA_Agony</li>
       <li>AA_GraveMark</li>

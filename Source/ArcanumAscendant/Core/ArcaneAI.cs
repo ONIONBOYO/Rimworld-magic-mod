@@ -20,6 +20,7 @@ namespace ArcanumAscendant
             if (p.stances?.stunner?.Stunned ?? false) return;
             if (p.stances?.curStance is Stance_Warmup) return;
             if (p.CurJob?.ability != null) return;
+            if (p.CurJobDef == ArcaneDefOf.AA_ArcaneChannel) return;
             if (p.InMentalState && !p.MentalStateDef.IsAggro) return;
             if (ArcanumMod.Settings.vfxIntensity < 0f) return;
             bool player = p.Faction == Faction.OfPlayer;

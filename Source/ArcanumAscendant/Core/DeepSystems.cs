@@ -107,6 +107,7 @@ namespace ArcanumAscendant
             var p = c.Pawn;
             if (p == null) return;
             c.strain = 50f;
+            c.UpdateStrainHediff();
             if (ArcaneDefOf.AA_ArcaneBurnout != null) ArcaneUtility.ApplyHediff(p, ArcaneDefOf.AA_ArcaneBurnout, 1f, -1, null);
             if (p.Spawned)
             {
@@ -369,7 +370,11 @@ namespace ArcanumAscendant
                     var ally = GenRadial.RadialDistinctThingsAround(p.Position, map, f.abilityRange, true).OfType<Pawn>()
                         .Where(x => !x.Dead && !x.HostileTo(p) && (x.Faction == p.Faction || x == p) && x.health.summaryHealth.SummaryHealthPercent < 0.98f)
                         .OrderBy(x => x.health.summaryHealth.SummaryHealthPercent).FirstOrDefault();
-                    if (ally == null) return;
+                    if (ally == null)
+                    {
+                        c.familiarCooldown = 120;
+                        return;
+                    }
                     c.familiarCooldown = f.abilityInterval;
                     float amount = f.abilityPower * power;
                     mgr.Add(new VfxSoulWisp(from, ally, f.color, f.color2, () =>
@@ -450,8 +455,8 @@ namespace ArcanumAscendant
             this.comp = comp;
             defs = DefDatabase<FamiliarDef>.AllDefsListForReading.ToList();
             selected = comp.familiar ?? defs.FirstOrDefault();
-            doCloseX = false;
-            closeOnCancel = false;
+            doCloseX = defs.Count == 0;
+            closeOnCancel = defs.Count == 0;
             forcePause = true;
             absorbInputAroundWindow = true;
             closeOnClickedOutside = false;

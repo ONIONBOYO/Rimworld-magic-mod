@@ -52,6 +52,7 @@ namespace ArcanumAscendant
             if (v == null) return;
             v.startTick = Find.TickManager.TicksGame;
             if (active.Count < 1500) active.Add(v);
+            else v.finished = true;
         }
 
         public void Schedule(int delayTicks, Action action)
