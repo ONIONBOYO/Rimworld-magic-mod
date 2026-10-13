@@ -973,6 +973,23 @@ namespace ArcanumAscendant
                 if (controllable || DebugSettings.ShowDevGizmos)
                 {
                     yield return new Gizmo_ArcaneStatus(this);
+                    if (controllable && p.Spawned)
+                    {
+                        var summons = ArcaneUtility.CommandableSummonsOf(p);
+                        if (summons.Count > 0)
+                            yield return new Command_Target
+                            {
+                                defaultLabel = "AA_OrderSummons".Translate(summons.Count),
+                                defaultDesc = "AA_OrderSummonsDesc".Translate(),
+                                icon = ContentFinder<Texture2D>.Get("UI/Commands/Attack", false) ?? BaseContent.BadTex,
+                                targetingParams = TargetingParameters.ForAttackAny(),
+                                action = t =>
+                                {
+                                    if (t.Thing == null) return;
+                                    foreach (var s in ArcaneUtility.CommandableSummonsOf(p)) ArcaneUtility.OrderAttack(s, t.Thing);
+                                },
+                            };
+                    }
                     yield return new Command_Toggle
                     {
                         defaultLabel = "AA_Overchannel".Translate(),

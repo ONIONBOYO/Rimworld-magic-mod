@@ -304,6 +304,8 @@ Gain experience by casting spells, damaging and killing hostile enemies, healing
   <AA_Delivery_Self>self</AA_Delivery_Self>
   <AA_Delivery_Barrage>barrage</AA_Delivery_Barrage>
   <AA_Delivery_Line>wave along the ground</AA_Delivery_Line>
+  <AA_OrderSummons>Command summons ({0})</AA_OrderSummons>
+  <AA_OrderSummonsDesc>Order this mage's summoned creatures and constructs to attack a target. Raised and dominated people join the colony and can be drafted directly.</AA_OrderSummonsDesc>
   <AA_Delivery_Missiles>homing missiles</AA_Delivery_Missiles>
   <AA_Delivery_Orbitals>orbits you</AA_Delivery_Orbitals>
   <AA_Delivery_Channel>channelled beam</AA_Delivery_Channel>

@@ -208,10 +208,71 @@ namespace ArcanumAscendant
             return caster.Faction == Faction.OfPlayer ? ThrallFaction() : caster.Faction;
         }
 
+        /// <summary>
+        /// Faction a specific summon should join. People raised or dominated by a colony mage join the colony itself, so they can be
+        /// drafted and ordered like colonists; the hidden thrall faction is only for beasts and constructs.
+        /// </summary>
+        public static Faction SummonFactionFor(Pawn caster, Pawn summon)
+        {
+            if (caster?.Faction == Faction.OfPlayer && summon != null && summon.RaceProps.Humanlike) return Faction.OfPlayer;
+            return SummonFactionFor(caster);
+        }
+
+        /// <summary>Moves a pawn into the faction it should serve, clearing prisoner or guest status first.</summary>
+        public static void BindToFaction(Pawn p, Faction faction)
+        {
+            if (p == null || faction == null || p.Faction == faction) return;
+            if (p.guest != null && (p.IsPrisoner || p.guest.HostFaction != null)) p.guest.SetGuestStatus(null);
+            p.SetFaction(faction);
+        }
+
+        /// <summary>Summons and thralls bound to this mage on its map that the player cannot draft directly.</summary>
+        public static List<Pawn> CommandableSummonsOf(Pawn master)
+        {
+            var list = new List<Pawn>();
+            if (master?.Map == null) return list;
+            foreach (var p in master.Map.mapPawns.AllPawnsSpawned)
+            {
+                if (p.Dead || p.Downed || p.Faction == Faction.OfPlayer) continue;
+                var hs = p.health?.hediffSet?.hediffs;
+                if (hs == null) continue;
+                for (int i = 0; i < hs.Count; i++)
+                    if (hs[i] is HediffWithComps hc && hc.TryGetComp<HediffComp_Summoned>()?.master == master)
+                    {
+                        list.Add(p);
+                        break;
+                    }
+            }
+            return list;
+        }
+
+        /// <summary>Orders a summon to attack a target, melee or ranged.</summary>
+        public static void OrderAttack(Pawn p, Thing target)
+        {
+            if (p == null || target == null || !p.Spawned || p.Downed) return;
+            var verb = p.TryGetAttackVerb(target, false);
+            bool ranged = verb != null && !verb.IsMeleeAttack;
+            Job job;
+            if (ranged && verb.CanHitTarget(target)) job = JobMaker.MakeJob(JobDefOf.AttackStatic, target);
+            else if (ranged)
+            {
+                var cell = CellFinder.StandableCellNear(target.Position, p.Map, Mathf.Max(2f, verb.verbProps.range * 0.6f));
+                job = JobMaker.MakeJob(JobDefOf.Goto, cell.IsValid ? cell : target.Position);
+                job.locomotionUrgency = LocomotionUrgency.Jog;
+                job.expiryInterval = 180;
+            }
+            else job = JobMaker.MakeJob(JobDefOf.AttackMelee, target);
+            if (job.expiryInterval <= 0) job.expiryInterval = 900;
+            job.checkOverrideOnExpire = true;
+            p.jobs.StartJob(job, JobCondition.InterruptForced);
+        }
+
         /// <summary>Puts the given pawn(s) into a lord that fights alongside the caster.</summary>
         public static void JoinCasterSide(Pawn caster, Map map, Pawn specific = null)
         {
             if (caster == null || map == null) return;
+            // Colony members take orders directly and must not be locked into a non-draftable lord.
+            if (specific != null && specific.Faction == Faction.OfPlayer) return;
             var faction = SummonFactionFor(caster);
             if (faction == null) return;
             var pawns = specific != null ? new List<Pawn> { specific } :
@@ -257,8 +318,8 @@ namespace ArcanumAscendant
             Vector3 pos = corpse.DrawPos;
             if (!ResurrectionUtility.TryResurrect(dead, new ResurrectionParams { gettingScarsChance = 0f, restoreMissingParts = true, noLord = true, removeDiedThoughts = true }))
                 return false;
-            var faction = SummonFactionFor(ctx.caster);
-            if (faction != null && dead.Faction != faction) dead.SetFaction(faction);
+            var faction = SummonFactionFor(ctx.caster, dead);
+            if (faction != null && dead.Faction != faction) BindToFaction(dead, faction);
             dead.mindState?.mentalStateHandler?.Reset();
             MakeSummon(dead, ctx, durationTicks, undeadDef);
             ArcaneUtility.HealPawn(dead, 9999f);

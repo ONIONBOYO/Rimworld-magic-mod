@@ -136,7 +136,12 @@ namespace ArcanumAscendant
                     return;
                 }
             }
+            // Saves from older versions put raised people in the hidden thrall faction, where they cannot be drafted. Bring them home.
+            if (p.RaceProps.Humanlike && master?.Faction == Faction.OfPlayer && p.Faction != Faction.OfPlayer && p.Faction?.def.defName == "AA_ArcaneThralls")
+                ArcaneUtility.BindToFaction(p, Faction.OfPlayer);
             if (!Props.controlAI || !p.Spawned || p.Downed) return;
+            // Player orders always win: a drafted or ordered thrall is left alone.
+            if (p.Drafted || (p.CurJob != null && p.CurJob.playerForced)) return;
             aiAcc += elapsed;
             if (aiAcc < 45) return;
             aiAcc = 0;
@@ -155,7 +160,9 @@ namespace ArcanumAscendant
             float best = 999f;
             foreach (var other in map.mapPawns.AllPawnsSpawned)
             {
-                if (other.Dead || other.Downed || !other.HostileTo(p)) continue;
+                if (other.Dead || other.Downed || other == master) continue;
+                // Defend the master too: anyone hostile to the mage is fair game, whatever the thrall's own faction thinks.
+                if (!other.HostileTo(p) && !(master != null && !master.Dead && other.HostileTo(master))) continue;
                 float d = other.Position.DistanceTo(anchor);
                 if (d > 22f) continue;
                 float dp = other.Position.DistanceTo(p.Position);
@@ -167,12 +174,7 @@ namespace ArcanumAscendant
             }
             if (enemy != null)
             {
-                bool ranged = p.equipment?.Primary != null && p.equipment.Primary.def.IsRangedWeapon;
-                if (ranged && p.RaceProps.Humanlike) return; // lord handles ranged humanlikes
-                var job = JobMaker.MakeJob(JobDefOf.AttackMelee, enemy);
-                job.expiryInterval = 600;
-                job.checkOverrideOnExpire = true;
-                p.jobs.StartJob(job, JobCondition.InterruptForced);
+                ArcaneUtility.OrderAttack(p, enemy);
                 return;
             }
             if (master != null && master.Spawned && master.Map == map && p.Position.DistanceTo(master.Position) > Props.leashRange
@@ -192,6 +194,12 @@ namespace ArcanumAscendant
             {
                 ArcaneFx.Particles(p.Map, p.DrawPos, new Color(0.7f, 0.6f, 1f), ArcaneDefOf.AA_Fleck_Smoke, 6, 0.8f, 1f);
                 ArcaneFx.Particles(p.Map, p.DrawPos, new Color(0.7f, 0.6f, 1f), ArcaneDefOf.AA_Fleck_Spark, 10, 2f, 0.5f);
+            }
+            if (Props.killOnExpire && p.Faction == Faction.OfPlayer && p.RaceProps.Humanlike)
+            {
+                // The binding ends: the thrall leaves the colony before it collapses, so nobody mourns a corpse that was already dead.
+                if (p.Drafted) p.drafter.Drafted = false;
+                p.SetFaction(null);
             }
             if (Props.killOnExpire)
             {
@@ -273,6 +281,7 @@ namespace ArcanumAscendant
             if (p == null || p.Destroyed) return;
             if (originalFaction != null && p.Faction != originalFaction && !originalFaction.defeated)
             {
+                if (p.Drafted) p.drafter.Drafted = false;
                 p.SetFaction(originalFaction);
                 if (!p.Dead && p.Spawned && originalFaction.HostileTo(Faction.OfPlayer))
                     LordMaker.MakeNewLord(originalFaction, new LordJob_AssaultColony(originalFaction, false, false, false, false, false, false, false), p.Map, new[] { p });

@@ -398,10 +398,10 @@ namespace ArcanumAscendant
             if (p.Faction == Faction.OfPlayer || p.IsPrisonerOfColony || p.IsSlaveOfColony) return;
             if (p.health.hediffSet.HasHediff(ArcaneDefOf.AA_Dominated)) return;
             var originalFaction = p.Faction;
-            var newFaction = ArcaneUtility.SummonFactionFor(ctx.caster);
+            var newFaction = ArcaneUtility.SummonFactionFor(ctx.caster, p);
             if (newFaction == null || newFaction == originalFaction) return;
             if (p.InMentalState) p.MentalState.RecoverFromState();
-            p.SetFaction(newFaction);
+            ArcaneUtility.BindToFaction(p, newFaction);
             var h = (HediffWithComps)HediffMaker.MakeHediff(ArcaneDefOf.AA_Dominated, p);
             p.health.AddHediff(h);
             var comp = h.TryGetComp<HediffComp_Dominated>();
