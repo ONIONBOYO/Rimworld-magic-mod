@@ -22,7 +22,7 @@
       <drawSize>(1.6, 1.6)</drawSize>
     </graphicData>
     <altitudeLayer>Building</altitudeLayer>
-    <passability>Impassable</passability>
+    <passability>PassThroughOnly</passability>
     <blockWind>false</blockWind>
     <fillPercent>0.45</fillPercent>
     <pathCost>50</pathCost>

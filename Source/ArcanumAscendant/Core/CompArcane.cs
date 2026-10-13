@@ -476,7 +476,11 @@ namespace ArcanumAscendant
             }
         }
 
-        public static ThingDef SigilFor(int targetCircle) => DefDatabase<ThingDef>.GetNamedSilentFail("AA_Sigil_Circle" + targetCircle);
+        // ThingDef names may not end in a digit, so the sigils are named by ordinal.
+        private static readonly string[] SigilNames = { null, null, "AA_Sigil_SecondCircle", "AA_Sigil_ThirdCircle", "AA_Sigil_FourthCircle", "AA_Sigil_FifthCircle" };
+
+        public static ThingDef SigilFor(int targetCircle) =>
+            targetCircle >= 2 && targetCircle < SigilNames.Length ? DefDatabase<ThingDef>.GetNamedSilentFail(SigilNames[targetCircle]) : null;
 
         private void LevelUp()
         {

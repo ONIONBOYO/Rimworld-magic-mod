@@ -85,7 +85,7 @@
 
   <!-- ===================== Ascension sigils (the arcane equivalent of a neuroformer) ===================== -->
   <ThingDef ParentName="AA_ArcaneItemBase">
-    <defName>AA_Sigil_Circle2</defName>
+    <defName>AA_Sigil_SecondCircle</defName>
     <label>sigil of the second circle</label>
     <description>A disc of arcane glass etched with a second-circle seal. A mage who has reached level 6 can shatter it to break through to the Second Circle: their level cap rises by six, and they gain three skill points and an attribute point at once. Reaching the Second Circle also unlocks the mage's subclass.</description>
     <graphicData>
@@ -115,7 +115,7 @@
   </ThingDef>
 
   <ThingDef ParentName="AA_ArcaneItemBase">
-    <defName>AA_Sigil_Circle3</defName>
+    <defName>AA_Sigil_ThirdCircle</defName>
     <label>sigil of the third circle</label>
     <description>A disc of arcane glass etched with a third-circle seal. A mage who has reached level 12 can shatter it to break through to the Third Circle: their level cap rises by six, and they gain three skill points and an attribute point at once.</description>
     <graphicData>
@@ -145,7 +145,7 @@
   </ThingDef>
 
   <ThingDef ParentName="AA_ArcaneItemBase">
-    <defName>AA_Sigil_Circle4</defName>
+    <defName>AA_Sigil_FourthCircle</defName>
     <label>sigil of the fourth circle</label>
     <description>A disc of arcane glass etched with a fourth-circle seal. A mage who has reached level 18 can shatter it to break through to the Fourth Circle: their level cap rises by six, and they gain three skill points and an attribute point at once.</description>
     <graphicData>
@@ -175,7 +175,7 @@
   </ThingDef>
 
   <ThingDef ParentName="AA_ArcaneItemBase">
-    <defName>AA_Sigil_Circle5</defName>
+    <defName>AA_Sigil_FifthCircle</defName>
     <label>sigil of the fifth circle</label>
     <description>A disc of arcane glass etched with a fifth-circle seal. A mage who has reached level 24 can shatter it to break through to the Fifth Circle: their level cap rises by six, and they gain three skill points and an attribute point at once.</description>
     <graphicData>
@@ -228,7 +228,7 @@
       </thingDefs>
     </fixedIngredientFilter>
     <products>
-      <AA_Sigil_Circle2>1</AA_Sigil_Circle2>
+      <AA_Sigil_SecondCircle>1</AA_Sigil_SecondCircle>
     </products>
     <skillRequirements>
       <Intellectual>6</Intellectual>
@@ -259,7 +259,7 @@
       </thingDefs>
     </fixedIngredientFilter>
     <products>
-      <AA_Sigil_Circle3>1</AA_Sigil_Circle3>
+      <AA_Sigil_ThirdCircle>1</AA_Sigil_ThirdCircle>
     </products>
     <skillRequirements>
       <Intellectual>8</Intellectual>
@@ -290,7 +290,7 @@
       </thingDefs>
     </fixedIngredientFilter>
     <products>
-      <AA_Sigil_Circle4>1</AA_Sigil_Circle4>
+      <AA_Sigil_FourthCircle>1</AA_Sigil_FourthCircle>
     </products>
     <skillRequirements>
       <Intellectual>10</Intellectual>
@@ -326,7 +326,7 @@
       </thingDefs>
     </fixedIngredientFilter>
     <products>
-      <AA_Sigil_Circle5>1</AA_Sigil_Circle5>
+      <AA_Sigil_FifthCircle>1</AA_Sigil_FifthCircle>
     </products>
     <skillRequirements>
       <Intellectual>12</Intellectual>
