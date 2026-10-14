@@ -3,14 +3,14 @@
   <name>Arcanum Ascendant - Magic &amp; Classes</name>
   <author>onionboyo</author>
   <packageId>onionboyo.arcanumascendant</packageId>
-  <modVersion>1.2.0</modVersion>
+  <modVersion>1.3.0</modVersion>
   <url>https://github.com/onionboyo/rimworld-magic-mod</url>
   <supportedVersions>
     <li>1.6</li>
   </supportedVersions>
   <description>A deep magic and class system for RimWorld. No other mods required (no Harmony needed).
 
-[ 9 CLASSES · 27 SUBCLASSES · 277 SPELLS · 730 SKILL TREE NODES ]
+[ 14 CLASSES · 42 SUBCLASSES · 424 SPELLS · 1170 SKILL TREE NODES ]
 
 Awaken a colonist's magic and choose a path. Awakening works like gaining a psylink: scribe a grimoire from arcane crystals, then study at an arcane lectern until the gift wakes.
  - Pyromancer: Inferno Lord, Ashen Phoenix, Forgeheart
@@ -22,6 +22,11 @@ Awaken a colonist's magic and choose a path. Awakening works like gaining a psyl
  - Runesmith: Golemancer, Spellforger, Arcane Gunslinger
  - Shadowmancer: Assassin, Hexer, Hemomancer
  - Spellsinger: Skald, Illusionist, Jester
+ - Harbinger: Doomsayer, Pale Rider, Cataclysm
+ - Wind Mage: Windblade, Pressure Sage, Skywarden
+ - Succubus (women): Temptress, Thief of Years, Nightmare Muse
+ - Incubus (men): Pactbinder, Dreamlord, Hellprince
+ - Noclipper (the Backrooms): Level Keeper, Entity Handler, Archivist
 
 FEATURES
  - Five attributes (Potency, Focus, Celerity, Resilience, Attunement) that gate deeper skill tree rows.
@@ -31,7 +36,8 @@ FEATURES
  - Mana and an arcane ward that absorbs damage.
  - Endgame spells built to fight heavily armored mods: true damage, % vitality damage, executes, shield-shattering, mechanoid shutdown, black holes, time stop, mind control.
  - Utility and quirky spells: make it rain, clear toxic fallout, turn rocks into silver or steel, enrich soil, grow crops, tame animals, recruit prisoners, speak with the dead, make colonists young again (curing the ailments of age and regrowing limbs over several castings), age enemies to dust, repair and un-rot items, raise item quality, turn enemies to gold, call down ore meteorites, steal skills, polymorph raiders into chickens, custard pies and banana peels.
- - Summons: risen dead, wolves, bears, a thrumbo, megascarabs, turrets, golem constructs, walls of ice, bone and thorns.
+ - Signature mechanics for the five newest classes: Omens that break the Seventh Seal, enemies thrown through the air into walls, Infatuation that turns enemies to your side, Debts that the Incubus collects, and enemies noclipped out of reality into Backrooms mazes.
+ - Summons: risen dead, wolves, bears, a thrumbo, megascarabs, hellhounds, Backrooms Hounds and Partygoers, turrets, golem constructs, walls of ice, bone, thorns, wind and yellow wallpaper.
  - A full effects engine. Every school of magic has its own casting circle, projectile, impact, ground marks and death effect. Thousands of particles (sparks, embers, smoke, ice shards, debris), spells that light up the night, branching lightning, ribbon trails, telegraphed strikes, damage numbers and cinematic ultimates. Every part can be scaled or switched off.
  - Elemental reactions: freeze an enemy and hit them with fire or force to Shatter them, burn a shocked target to Overload it, purge curses with holy light. Twelve reactions to discover.
  - Spell mastery: every spell ranks up from Apprentice to Grandmaster as you cast it.

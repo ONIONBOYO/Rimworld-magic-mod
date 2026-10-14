@@ -2,7 +2,7 @@
 
 ![Arcanum Ascendant](About/Preview.png)
 
-A magic and class system for RimWorld with **9 classes, 27 subclasses, 277 spells and 730 skill tree nodes**. Every class and every subclass has its own skill tree, and it doesn't depend on any other mod (not even Harmony).
+A magic and class system for RimWorld with **14 classes, 42 subclasses, 424 spells and 1170 skill tree nodes**. Every class and every subclass has its own skill tree, and it doesn't depend on any other mod (not even Harmony).
 
 - **Five attributes**: Potency, Focus, Celerity, Resilience and Attunement. They power your spells and gate the deeper rows of every tree.
 - **Branching skill trees**: spells, augments that change how a spell behaves, multi-rank passives, mutually exclusive keystones and a subclass ultimate.
@@ -10,7 +10,8 @@ A magic and class system for RimWorld with **9 classes, 27 subclasses, 277 spell
 - **Five arcane circles**: levels 1-30 come from fighting, casting, healing and study. At levels 6, 12, 18 and 24 experience stops until the mage shatters an *ascension sigil* to break through to the next circle. Subclasses open at the Second Circle and ultimates need the Fifth. After level 30, paragon levels continue slowly.
 - **Endgame spells for endgame threats**: true damage, damage based on a percentage of the target's vitality, executes, shield shattering, mechanoid shutdowns, black holes, time stop, mass mind control and spells that scale with "boss" size. They're built for heavily armored late-game faction mods.
 - **Utility and quirky spells**: make colonists young again (each casting cures an ailment of age, fades a scar or regrows a limb), age enemies until they crumble to dust, repair and un-rot items, raise an item's quality to legendary, turn weakened enemies into solid gold, call down ore meteorites, steal skills from prisoners, make it rain, turn rock into steel or silver, grow crops, tame every animal in sight, polymorph raiders into chickens, and scatter banana peels.
-- **Summons**: risen dead, wolves, bears, a thrumbo, megascarabs, turrets, a Magma Titan, a Rune Colossus, and walls of ice, bone, thorns and runes.
+- **Five mythic classes** built around a signature mechanic each: the **Harbinger** lays Omens until the Seventh Seal breaks, the **Wind Mage** really throws enemies through the air and into walls, the **Succubus** (women) and **Incubus** (men) enthrall enemies or put them in debt, and the **Noclipper** drops enemies out of reality and builds Backrooms mazes around them. See [The mythic classes](#the-mythic-classes).
+- **Summons**: risen dead, wolves, bears, a thrumbo, megascarabs, hellhounds, Backrooms Hounds and Partygoers, a Skin-Stealer copy of an enemy, turrets, a Magma Titan, a Rune Colossus, and walls of ice, bone, thorns, runes, wind and yellow wallpaper.
   - Raised and mind-controlled people join your colony for as long as the spell lasts. Draft them and give orders like any colonist. When undrafted they guard their mage. Summoned beasts guard their mage too, and the mage gets a **Command summons** button that sends them all at a target.
 - **A full effects engine**: every school of magic has its own look, from the casting circle that builds under the mage to the projectile, the impact, the ground it scars and the way enemies die. Spells light up the night, leave scorch marks and frost behind, and ultimates get a cinematic name card. See [Visual effects](#visual-effects).
 - **Elemental reactions**: combine schools for bonus effects. Freeze an enemy, then hit them with fire or force to **Shatter** them. Fire on a shocked target **Overloads**, and holy light **Purges** a curse. There are twelve reactions to discover.
@@ -18,8 +19,8 @@ A magic and class system for RimWorld with **9 classes, 27 subclasses, 277 spell
 - **Overchannel**: cast without enough mana by burning your own mind. Strain builds up, wild surges go off, and pushing too far burns the mage out for a day.
 - **Familiars**: bond an ember sprite, frost wisp, shadow raven, lumen, clockwork owl, void eye or pocket dragon. Each one circles its mage, gives a lasting bonus and joins fights.
 - **New spell forms**: homing missile swarms, blades and suns that orbit the caster, channelled beams you hold on a target, and delayed strikes telegraphed on the ground.
-- **Arcane buildings**: a **ward pylon** whose dome stops incoming bullets, and a **mana font** that speeds up mana regeneration for mages nearby.
-- **Sound**: 64 synthesized sound effects.
+- **Arcane buildings**: a **ward pylon** whose dome stops incoming bullets, and a **mana font** that speeds up mana regeneration for mages nearby. The arcane lectern has a proper view for each direction you place it in.
+- **Sound**: 90 synthesized sound effects, from church bells and crow calls to fluorescent hum.
 - **Grimoire UI**: a zoomable skill-tree screen, an attribute panel, a spellbook with autocast and hide toggles, a subclass picker with tree previews, and a codex.
 - **Enemy mages**: raiders can be awakened too, and they cast their spells at you.
 - **Fully configurable**: XP rate, mana regeneration, spell power, enemy mage frequency and level, and every visual effect can be scaled or turned off.
@@ -50,7 +51,7 @@ That's it. You can add it to an existing save.
 
 1. **Find arcane crystals.** Mine violet *ley crystal veins* in mountains, drill for them with a deep drill, buy them from exotic traders and outlander or tribal settlements, or take them from enemy mages you kill.
 2. **Research *Arcanology*** and build an **arcane lectern**. Scribe a **grimoire of awakening** there (8 arcane crystals, 60 silver, 25 cloth, Intellectual 6).
-3. **Attune a colonist.** Have them read the grimoire. They then need about 16 hours of study at the lectern; they study in their free time, or you can right-click the lectern to order it. Psychic sensitivity and Intellectual skill speed this up. When attunement completes, click **Awaken magic** and choose one of the nine classes.
+3. **Attune a colonist.** Have them read the grimoire. They then need about 16 hours of study at the lectern; they study in their free time, or you can right-click the lectern to order it. Psychic sensitivity and Intellectual skill speed this up. When attunement completes, click **Awaken magic** and choose a class. Women see the Succubus and men the Incubus; people without a gender can take either.
    - Rarely, a colonist's gift wakes on its own.
    - If you'd rather skip all this, turn on **Free awakening** in the mod settings.
 4. **Open the grimoire.** Mages get a status panel showing mana, ward and XP. Click it to open the grimoire:
@@ -135,8 +136,25 @@ Craft a **familiar vessel** at the arcane lectern (15 arcane crystals and 10 gol
 | **Runesmith** | Turrets, wards and transmutation | Golemancer (construct army), Spellforger (enchanting allies), Arcane Gunslinger (runic gunplay) |
 | **Shadowmancer** | Hexes, stealth and terror | Assassin (backstab, Death Lotus), Hexer (curses and chickens), Hemomancer (blood magic) |
 | **Spellsinger** | Music: buffs, sleep, mood | Skald (war songs), Illusionist (charm and recruit), Jester (chaos magic and pies) |
+| **Harbinger** | Omens and the Seventh Seal | Doomsayer (prophecy, shared fate, the Apocalypse), Pale Rider (reaping and harvesting souls), Cataclysm (earthquakes, Wormwood, the Seven Seals) |
+| **Wind Mage** | Throw enemies, steal their breath, stop bullets | Windblade (blinking blade dancer), Pressure Sage (crushing pressure, Dead Air), Skywarden (domes of wind, rescues) |
+| **Succubus** (women) | Infatuation, enthralment, stolen youth | Temptress (domination), Thief of Years (age drain and rejuvenation), Nightmare Muse (sleep and dreams) |
+| **Incubus** (men) | Debt, contracts, hellfire | Pactbinder (usury and foreclosure), Dreamlord (possession and nightmares), Hellprince (infernal form and hellgates) |
+| **Noclipper** | The Backrooms | Level Keeper (mazes, rooms and the Poolrooms), Entity Handler (Hounds, Partygoers, Smilers, Skin-Stealers), Archivist (cursed tape, rewinds, exit signs) |
 
 See the [Compendium](docs/Compendium.md) for every spell, its cost, cooldown and description.
+
+### The mythic classes
+
+Each of the five newest classes is built around a stacking mechanic that pays off in its own way:
+
+| Class | Mechanic | What happens |
+|---|---|---|
+| **Harbinger** | **Omens** | Crows, prophecies, curses and even your allies' gunfire (on a *Fated* enemy) lay Omens. At seven the **Seventh Seal** breaks: damage that ignores armor and scales with the victim's own vitality, and its Omens scatter to everyone nearby, so one seal can set off the next. *Toll the Bell* and *Last Rites* spend Omens for burst damage instead. Bosses need ten. |
+| **Wind Mage** | **Real throws** | *Gust*, *Hurl*, *Updraft* and *Sky Toss* launch enemies through the air. The farther they fly, the harder they land, and hitting a wall is a **wall slam**. *Vacuum Bubble* suffocates and silences, and *Wind Wall*, *Aegis of Gales* and *Heaven's Bulwark* tear apart bullets fired into them and can throw the force back. |
+| **Succubus** | **Infatuation** | At five stacks the target is **Enthralled** and fights for her for twenty seconds. Bosses are stunned instead. *Heartbreak* and *Stolen Heartbeat* spend stacks for damage, and *Kiss of Youth* keeps her young. |
+| **Incubus** | **Debt** | At five Debts he **collects**: hellfire, a share of the victim's vitality and the weapon out of its hands. *Devil's Due* calls in every Debt on the map at once. *Infernal Contracts* make an ally monstrously strong, if they deliver two kills in time. |
+| **Noclipper** | **Lost** | At four stacks the target **noclips out of reality** for six seconds and comes back wandering. *Level 0* raises a maze of yellow wallpaper around a whole squad, the *Door to Nowhere* swallows anyone who walks past, and *Bleed Through* sends every enemy on the map into the Backrooms. |
 
 ---
 
@@ -144,7 +162,7 @@ See the [Compendium](docs/Compendium.md) for every spell, its cost, cooldown and
 
 The effects run on the mod's own particle, decal and lighting systems, built on the game's own rendering. They don't use custom shaders, and they don't touch the game's random numbers, so they can't change the outcome of a fight.
 
-- **Signature looks for each school.** Fire throws streaking sparks, rising embers and black smoke, and leaves scorch marks. Frost bursts into ice shards and creeping frost. Storm uses forked lightning that branches and strikes again. Necromancy raises wisps and grinning skulls and leaves rot on the ground. Holy magic falls in shafts of light. Time magic uses clock faces and slowed sparks, Void uses implosions and dark rifts, and Song uses rings and music notes.
+- **Signature looks for each school.** Fire throws streaking sparks, rising embers and black smoke, and leaves scorch marks. Frost bursts into ice shards and creeping frost. Storm uses forked lightning that branches and strikes again. Necromancy raises wisps and grinning skulls and leaves rot on the ground. Holy magic falls in shafts of light. Time magic uses clock faces and slowed sparks, Void uses implosions and dark rifts, and Song uses rings and music notes. Wind magic throws gusts, leaves and dust; Doom brings crows, burning seals and watching eyes; Desire scatters hearts, petals and kisses; and the Liminal school glitches, flickers and hums like a fluorescent tube.
 - **Casting circles.** While a mage casts, a circle in their school's style builds under their feet and a charge gathers in their hand. Ultimates add a second outer ring and the ground shakes.
 - **Projectiles with real trails.** Every projectile has a ribbon trail, a smoke trail for fire, a muzzle flash and its own head glow. Homing missiles curve toward their targets.
 - **Impacts by school, with ground marks.** Craters, scorch, frost, cracks, blood, rot, glowing glyphs and void stains slowly fade from the ground.
