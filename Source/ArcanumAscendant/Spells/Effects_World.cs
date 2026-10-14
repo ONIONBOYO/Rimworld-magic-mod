@@ -274,8 +274,9 @@ namespace ArcanumAscendant
             {
                 var group = new List<Pawn> { caster };
                 foreach (var t in GenRadial.RadialDistinctThingsAround(caster.Position, map, gatherRadius * ctx.RadiusFactor, true))
-                    if (t is Pawn ally && ally != caster && !ally.Dead && !ally.Downed && ctx.IsAlly(ally) && ally.carryTracker?.CarriedThing == null
-                        && !(ally.CurJob?.def == JobDefOf.LayDown))
+                    // only the caster's own people, standing in sight: no prisoners, guests or traders through walls
+                    if (t is Pawn ally && ally != caster && !ally.Dead && !ally.Downed && ally.Faction == caster.Faction && !ally.IsPrisoner
+                        && ally.carryTracker?.CarriedThing == null && !(ally.CurJob?.def == JobDefOf.LayDown) && GenSight.LineOfSight(caster.Position, ally.Position, map, true))
                         group.Add(ally);
                 var taken = new HashSet<IntVec3>();
                 foreach (var ally in group)

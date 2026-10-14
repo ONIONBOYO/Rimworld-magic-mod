@@ -40,7 +40,7 @@ def creature(defName, label, desc, *, tex, size, body, body_size, health, speed,
     race = O(None, body=body, baseBodySize=float(body_size), baseHealthScale=float(health), baseHungerRate=0.01, foodType="None",
              lifeExpectancy=100, intelligence="Animal", thinkTreeMain="Animal", thinkTreeConstant="AnimalConstant",
              manhunterOnDamageChance=1.0, hasGenders=False, needsRest=False, petness=0.0, canBePredatorPrey=False, herdAnimal=False,
-             predator=True, maxPreyBodySize=0.0, alwaysViolent=True, isImmuneToInfections=True, bleedRateFactor=0.2, hasMeat=False,
+             alwaysViolent=True, isImmuneToInfections=True, bleedRateFactor=0.2, hasMeat=False,
              nameOnTameChance=0.0, trainability="None",
              lifeStageAges=[O(None, def_="AnimalAdult", minAge=0.0)],
              soundMeleeHitPawn="Pawn_Melee_BigBash_HitPawn", soundMeleeHitBuilding="Pawn_Melee_BigBash_HitBuilding", soundMeleeMiss="Pawn_Melee_BigBash_Miss")

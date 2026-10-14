@@ -35,7 +35,7 @@ def statuses():
     s.append(status(LOST, "lost", "This creature is losing its grip on where it is. At four stacks it noclips clean out of reality for six seconds and comes "
         "back disoriented. The very strongest only slip away for a moment.", YELLOW, bad=True, ticks=1500, maxSev=8,
         comps=[stack_trigger(4, boss=8, color=YELLOW, label="AA_LostInBackrooms", shake=0.5, sound="AA_Buzz",
-                             effects=[banish(360, bossFactor=0.35, ret=[hediff("AA_Disoriented", 1.0)])],
+                             effects=[banish(360, bossFactor=0.35, retHediff="AA_Disoriented")],
                              vfx=[flash(3.0, color=MONO), ring(1.2, 0.1, 20, byRadius=False)])],
         stages=[stage(offsets={"ShootingAccuracyPawn": -0.04, "MoveSpeed": -0.03}, mult=True)],
         fx=dict(emitter="Lost", emitInterval=10, overlayTex="ArcanumAscendant/Vfx/Glitch", overlaySize=0.6, overlayZ=1.0, overlayPulse=True)))
@@ -67,7 +67,7 @@ def statuses():
         tex="WallpaperWall", color=YELLOW, hp=220, lifetime=1800, size=1.0, wall=True, glow=0.0))
     s.append(MT.construct("Construct_NowhereDoor", "door to nowhere", "An ordinary office door, standing on its own, slightly open. Anything hostile that walks too "
         "close goes through it.", tex="NowhereDoor", color=YELLOW, hp=300, lifetime=1800, size=1.4, glow=1.4, light=4.0,
-        pulse=[lost(1), banish(300, ret=[hediff("AA_Disoriented", 1.0)])], radius=1.8, interval=60))
+        pulse=[lost(1), banish(300, retHediff="AA_Disoriented")], radius=1.8, interval=60))
     s.append(MT.construct("Construct_Smiler", "smiler", "A darkness with a smile in it. Enemies who see it run, and the static hurts.", tex="Smiler",
         color="#f0f0e8", hp=250, lifetime=1800, size=1.6, glow=0.0, pulse=[hediff("AA_SmilerDread", 1.0), dmg(6, "AA_Static"), lost(1, chance=0.5)],
         radius=5.0, interval=120))
@@ -103,7 +103,7 @@ def build():
               impact_vfx=[flash(2.0), burst("spark", 10, 2.0, 0.4)], effects=[teleport("CasterToTarget")], flavor="Wrong place, right time."),
         Spell("WrongTurn", "wrong turn", "Somewhere back there, the target took a wrong turn. It vanishes from reality for four seconds and comes back more Lost.",
               icon=("door", "eye"), mana=26, cd=18, range=26, warmup=0.5, tags=["Liminal"], role="Control", impact_vfx=STATIC_HIT,
-              effects=[lost(1), banish(240, ret=[hediff("AA_Disoriented", 1.0)])]),
+              effects=[lost(1), banish(240, retHediff="AA_Disoriented")]),
         Spell("BuzzingLights", "buzzing lights", "Fluorescent lights hum into existence over an area for twelve seconds. Enemies under them glitch, losing whole "
               "moments, and grow more Lost.", icon=("tube", "eye"), mana=40, cd=30, range=28, warmup=0.8, tags=["Liminal"], role="Control", target="enemy_area",
               ai_min=2, tier=2, sound_cast="AA_Buzz", impact_vfx=[flash(2.0, color=MONO), ring(0.2, 1.0, 26)],
@@ -211,7 +211,7 @@ def build():
               "(bosses for less) and comes back Lost and disoriented.", icon=("maze", "eclipse"), mana=230, cd=300, warmup=3.0, tags=["Liminal"],
               target="self", delivery="Global", ultimate=True, tier=5, xp=2.0, shake=1.0, ai_min=4, sound_cast="AA_Buzz",
               cast_vfx=[pillar(2.6, 70), screen("#f2e27a", 0.3, 50)], impact_vfx=[burst("spark", 8, 2.0, 0.4)],
-              effects=[dmg(15, "AA_Static"), banish(600, ret=[hediff("AA_Disoriented", 1.0), lost(2)])]),
+              effects=[dmg(15, "AA_Static"), banish(600, ret=[lost(2)], retHediff="AA_Disoriented")]),
     )
     lk.add_nodes(
         Node("ManilaRoom", None, (2, 0), kind="Spell", spell="ManilaRoom"),

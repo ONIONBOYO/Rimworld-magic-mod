@@ -109,6 +109,7 @@ namespace ArcanumAscendant
             {
                 float amount = Mathf.Max(1f, dmg * Props.reflectFraction * Mathf.Max(0.5f, Construct?.power ?? 1f));
                 var caster = Construct?.caster;
+                bool prevSpellDamage0 = CompArcane.applyingSpellDamage;
                 CompArcane.applyingSpellDamage = true;
                 try
                 {
@@ -116,7 +117,7 @@ namespace ArcanumAscendant
                 }
                 finally
                 {
-                    CompArcane.applyingSpellDamage = false;
+                    CompArcane.applyingSpellDamage = prevSpellDamage0;
                 }
                 if (map == Find.CurrentMap)
                     ArcaneVfxManager.For(map).Add(new VfxProjectile(pos, shooter.DrawPos, 8, ArcaneMats.Get("ArcanumAscendant/Vfx/Gust"), Props.color, Color.white, 0.6f, 0f, false, false)

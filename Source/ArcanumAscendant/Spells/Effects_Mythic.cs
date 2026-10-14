@@ -208,6 +208,7 @@ namespace ArcanumAscendant
             bool wasDead = victim.Dead;
             Vector3 pos = victim.DrawPos;
             float dealt = 0f;
+            bool prevSpellDamage0 = CompArcane.applyingSpellDamage;
             CompArcane.applyingSpellDamage = true;
             try
             {
@@ -216,7 +217,7 @@ namespace ArcanumAscendant
             }
             finally
             {
-                CompArcane.applyingSpellDamage = false;
+                CompArcane.applyingSpellDamage = prevSpellDamage0;
             }
             if (ArcanumMod.Settings.damageNumbers && victim.MapHeld != null) ArcaneFx.DamageNumber(victim.MapHeld, pos, dealt, false, color);
             if (!wasDead && victim.Dead) instigator?.TryGetComp<CompArcane>()?.Notify_Kill(victim, null);
@@ -391,13 +392,18 @@ namespace ArcanumAscendant
                 return;
             }
             var caster = ctx.caster;
-            if (steal && caster != null && caster.Spawned && map != null && caster.Map == map)
+            if (steal && caster != null && caster.Spawned && map != null && caster.Map == map && dropped.Spawned)
             {
-                if (dropped.Spawned) dropped.DeSpawn();
+                IntVec3 where = dropped.Position;
+                dropped.DeSpawn();
                 if (GenPlace.TryPlaceThing(dropped, caster.Position, map, ThingPlaceMode.Near))
                 {
                     if (caster.Faction == Faction.OfPlayer) dropped.SetForbidden(false, false);
                     ArcaneVfxManager.For(map).Add(new VfxSoulWisp(from, caster, ctx.Color, ctx.Color2));
+                }
+                else if (!GenPlace.TryPlaceThing(dropped, where, map, ThingPlaceMode.Near) && !dropped.Destroyed)
+                {
+                    GenSpawn.Spawn(dropped, where, map, WipeMode.VanishOrMoveAside);
                 }
             }
         }
@@ -423,6 +429,9 @@ namespace ArcanumAscendant
         public float maxBodySize = 99f;
         public List<SpellEffect> returnEffects;
         public float returnRadius;
+        /// <summary>A status the pawn comes back with. Unlike returnEffects it survives saving and loading, whatever cast the banish
+        /// (a spell, a detonating status or a construct).</summary>
+        public HediffDef returnHediff;
 
         public override void ApplyToPawn(SpellContext ctx, Pawn p, ImpactInfo info)
         {
@@ -433,7 +442,7 @@ namespace ArcanumAscendant
             if (p.kindDef?.isBoss ?? false) dur = Mathf.RoundToInt(dur * bossFactor);
             if (dur < 30) return;
             int index = ctx.props?.effects?.IndexOf(this) ?? -1;
-            BanishUtility.Banish(p, dur, ctx, index);
+            BanishUtility.Banish(p, dur, ctx, index, this);
         }
 
         public override IEnumerable<string> Describe(SpellContext ctx)
@@ -453,6 +462,10 @@ namespace ArcanumAscendant
         public AbilityDef spell;
         public int effectIndex = -1;
         public Color color = Color.white;
+        public HediffDef returnHediff;
+        /// <summary>The mental state it vanished in (a manhunter stays a manhunter), which the trip through the world wipes.</summary>
+        public MentalStateDef mentalState;
+        [Unsaved] public Effect_Banish effect;
 
         public void ExposeData()
         {
@@ -465,6 +478,8 @@ namespace ArcanumAscendant
             Scribe_Defs.Look(ref spell, "spell");
             Scribe_Values.Look(ref effectIndex, "effectIndex", -1);
             Scribe_Values.Look(ref color, "color", Color.white);
+            Scribe_Defs.Look(ref returnHediff, "returnHediff");
+            Scribe_Defs.Look(ref mentalState, "mentalState");
         }
     }
 
@@ -472,7 +487,7 @@ namespace ArcanumAscendant
     {
         public static GameComponent_Arcanum Comp => Current.Game?.GetComponent<GameComponent_Arcanum>();
 
-        public static void Banish(Pawn p, int ticks, SpellContext ctx, int effectIndex)
+        public static void Banish(Pawn p, int ticks, SpellContext ctx, int effectIndex, Effect_Banish effect = null)
         {
             var comp = Comp;
             var map = p.Map;
@@ -482,6 +497,7 @@ namespace ArcanumAscendant
             {
                 pawn = p, returnTick = Find.TickManager.TicksGame + ticks, mapId = map.uniqueID, cell = p.Position, faction = p.Faction,
                 source = ctx?.caster, spell = ctx?.def, effectIndex = effectIndex, color = ctx?.Color ?? Color.white,
+                effect = effect, returnHediff = effect?.returnHediff, mentalState = p.MentalStateDef,
             };
             try
             {
@@ -516,6 +532,12 @@ namespace ArcanumAscendant
                 var b = list[i];
                 if (b.pawn == null || b.pawn.Destroyed || b.pawn.Dead)
                 {
+                    // it died in the levels below: stop forcing the world to keep it
+                    if (b.pawn != null && !b.pawn.Destroyed && Find.WorldPawns.Contains(b.pawn))
+                    {
+                        Find.WorldPawns.RemovePawn(b.pawn);
+                        Find.WorldPawns.PassToWorld(b.pawn, PawnDiscardDecideMode.Decide);
+                    }
                     list.RemoveAt(i);
                     continue;
                 }
@@ -550,22 +572,43 @@ namespace ArcanumAscendant
             if (!c.InBounds(map) || !c.Standable(map)) c = CellFinder.StandableCellNear(b.cell.ClampInsideMap(map), map, 8f);
             if (!c.IsValid) c = CellFinder.RandomCell(map);
             GenSpawn.Spawn(p, c, map);
+            // passing through the world can hand a factionless wanderer to some faction and wipes its mind: put both back
+            if (p.Faction != b.faction)
+            {
+                try
+                {
+                    p.SetFaction(b.faction);
+                }
+                catch (Exception e)
+                {
+                    Log.ErrorOnce("[Arcanum Ascendant] Could not restore the faction of " + p + ": " + e.Message, 0x5A1C1C1);
+                }
+            }
+            if (b.mentalState != null && !p.InMentalState && !p.Dead)
+                p.mindState?.mentalStateHandler?.TryStartMentalState(b.mentalState, null, true, true, false, null, true);
             var faction = p.Faction;
-            if (faction != null && faction != Faction.OfPlayer && faction.HostileTo(Faction.OfPlayer) && (p.RaceProps.Humanlike || p.RaceProps.IsMechanoid) && p.GetLord() == null)
+            if (faction != null && faction != Faction.OfPlayer && faction.HostileTo(Faction.OfPlayer) && (p.RaceProps.Humanlike || p.RaceProps.IsMechanoid)
+                && p.GetLord() == null && !p.InMentalState)
                 LordMaker.MakeNewLord(faction, new LordJob_AssaultColony(faction, false, false, false, false, false, false, false), map, new[] { p });
             GlitchBurst(map, p.DrawPos, b.color, 1f);
             SoundDefOf.Psycast_Skip_Entry.PlayOneShot(new TargetInfo(c, map));
-            if (b.source != null && b.spell != null && b.effectIndex >= 0 && !b.source.Destroyed)
+            var eb = b.effect;
+            SpellContext ctx = null;
+            if (b.source != null && !b.source.Destroyed && b.spell != null)
             {
-                var ctx = SpellContext.For(b.source, b.spell);
-                if (ctx.props != null && b.effectIndex < ctx.props.effects.Count && ctx.props.effects[b.effectIndex] is Effect_Banish eb && !eb.returnEffects.NullOrEmpty())
-                {
-                    ctx.map = map;
-                    ctx.forcedTarget = p;
-                    var info = new ImpactInfo { cell = c, pos = p.DrawPos, primary = p, radius = eb.returnRadius * ctx.RadiusFactor, sourcePos = p.DrawPos };
-                    SpellRunner.Impact(ctx, info, eb.returnEffects, playVfx: false);
-                }
+                ctx = SpellContext.For(b.source, b.spell);
+                if (ctx.props == null) ctx = null;
+                else if (eb == null && b.effectIndex >= 0 && b.effectIndex < ctx.props.effects.Count) eb = ctx.props.effects[b.effectIndex] as Effect_Banish;
             }
+            ctx ??= SourcedHediff.Context(b.source != null && !b.source.Destroyed ? b.source : null, null, map, b.color);
+            ctx.map = map;
+            ctx.forcedTarget = p;
+            if (eb != null && !eb.returnEffects.NullOrEmpty())
+            {
+                var info = new ImpactInfo { cell = c, pos = p.DrawPos, primary = p, radius = eb.returnRadius * ctx.RadiusFactor, sourcePos = p.DrawPos };
+                SpellRunner.Impact(ctx, info, eb.returnEffects, playVfx: false);
+            }
+            if (b.returnHediff != null && !p.Dead) ArcaneUtility.ApplyHediff(p, b.returnHediff, 1f, -1, ctx);
         }
 
         /// <summary>Static, glitching squares and a soft implosion: something stepped in or out of reality here.</summary>
@@ -608,22 +651,35 @@ namespace ArcanumAscendant
             var map = ctx.map;
             if (map == null) return;
             var mgr = ArcaneVfxManager.For(map);
+            var primary = info.primary as Pawn;
+            string cue = "seq" + GetHashCode() + "_";
             int t = 0;
-            foreach (var step in steps)
+            for (int i = 0; i < steps.Count; i++)
             {
-                t += Mathf.Max(0, step.delayTicks);
-                var s = step;
+                var s = steps[i];
+                t += Mathf.Max(0, s.delayTicks);
+                int stepIndex = i;
                 mgr.Schedule(t, () =>
                 {
                     if (ctx.map != map || !info.cell.InBounds(map)) return;
                     float r = s.radius >= 0f ? s.radius * ctx.RadiusFactor : info.radius;
-                    ArcaneFx.PlayAll(s.vfx, map, info.pos, ctx, r);
-                    s.sound?.PlayOneShot(new TargetInfo(info.cell, map));
-                    if (s.shake > 0f) ArcaneFx.Shake(map, s.shake);
-                    if (!s.textKey.NullOrEmpty() && map == Find.CurrentMap)
-                        ArcaneVfxManager.For(map).screen.AddText(info.pos + new Vector3(0f, 0f, 1.2f), s.textKey.Translate(), s.textColor, 1.3f, ArcaneVfxManager.For(map).Now, 90f, true);
+                    // a single-target step follows its target wherever it went; an area step stays where the spell landed
+                    bool follow = r < 0.5f && primary != null;
+                    if (follow && (primary.Dead || !primary.Spawned || primary.Map != map)) return;
+                    IntVec3 cell = follow ? primary.Position : info.cell;
+                    Vector3 pos = follow ? primary.DrawPos : info.pos;
+                    ArcaneFx.PlayAll(s.vfx, map, pos, ctx, r);
+                    // sound, shake and title once per cast, even when a map-wide spell scheduled this for every target
+                    if (ctx.Once(cue + stepIndex))
+                    {
+                        s.sound?.PlayOneShot(new TargetInfo(cell, map));
+                        if (s.shake > 0f) ArcaneFx.Shake(map, s.shake);
+                        if (!s.textKey.NullOrEmpty() && map == Find.CurrentMap)
+                            ArcaneVfxManager.For(map).screen.AddText(pos + new Vector3(0f, 0f, 1.2f), s.textKey.Translate(), s.textColor, 1.3f, ArcaneVfxManager.For(map).Now, 90f, true);
+                    }
                     if (!s.effects.NullOrEmpty())
-                        SpellRunner.Impact(ctx, new ImpactInfo { cell = info.cell, pos = info.pos, radius = r, sourcePos = info.sourcePos }, s.effects, playVfx: false);
+                        SpellRunner.Impact(ctx, new ImpactInfo { cell = cell, pos = pos, primary = follow ? primary : null, radius = r, sourcePos = info.sourcePos },
+                            s.effects, playVfx: false);
                 });
             }
         }
@@ -686,7 +742,8 @@ namespace ArcanumAscendant
             if (map == null) return;
             int made = ctx.hitThisCast.Count(t => t is Pawn cp && cp.health?.hediffSet?.HasHediff(ArcaneDefOf.AA_Summoned) == true && cp.kindDef == p.kindDef);
             if (made >= maxCopies) return;
-            var faction = ArcaneUtility.SummonFactionFor(ctx.caster, p);
+            // copies serve in the hidden thrall faction: they are not colonists, so their deaths are nobody's loss
+            var faction = ArcaneUtility.SummonFactionFor(ctx.caster);
             if (faction == null) return;
             Pawn copy;
             try
@@ -703,6 +760,16 @@ namespace ArcanumAscendant
             if (!c.IsValid) c = p.Position;
             GenSpawn.Spawn(copy, c, map);
             ArcaneUtility.MakeSummon(copy, ctx, Mathf.RoundToInt(durationTicks * ctx.DurationFactor), ArcaneDefOf.AA_Summoned);
+            var bond = (copy.health.hediffSet.GetFirstHediffOfDef(ArcaneDefOf.AA_Summoned) as HediffWithComps)?.TryGetComp<HediffComp_Summoned>();
+            if (bond != null)
+            {
+                // the stolen skin comes with stolen gear, and it all unravels together
+                bond.copy = true;
+                bond.conjuredGear = new List<Thing>();
+                if (copy.equipment != null) bond.conjuredGear.AddRange(copy.equipment.AllEquipmentListForReading);
+                if (copy.apparel != null) bond.conjuredGear.AddRange(copy.apparel.WornApparel);
+                if (copy.inventory != null) bond.conjuredGear.AddRange(copy.inventory.innerContainer);
+            }
             ArcaneUtility.JoinCasterSide(ctx.caster, map, copy);
             ctx.hitThisCast.Add(copy);
             BanishUtility.GlitchBurst(map, copy.DrawPos, ctx.Color, 1f);

@@ -113,6 +113,7 @@ namespace ArcanumAscendant
             int n = Mathf.Max(1, hits);
             float perHit = total / n;
             float angle = (p.DrawPos - (ctx.caster?.DrawPos ?? p.DrawPos)).AngleFlat();
+            bool prevSpellDamage0 = CompArcane.applyingSpellDamage;
             CompArcane.applyingSpellDamage = true;
             try
             {
@@ -140,7 +141,7 @@ namespace ArcanumAscendant
             }
             finally
             {
-                CompArcane.applyingSpellDamage = false;
+                CompArcane.applyingSpellDamage = prevSpellDamage0;
             }
             if (ArcanumMod.Settings.damageNumbers) ArcaneFx.DamageNumber(ctx.map, hitPos, dealt, crit, ctx.Color);
             else if (crit && p.Spawned) ArcaneFx.Text(p, "AA_Crit".Translate(Mathf.RoundToInt(dealt)), new Color(1f, 0.85f, 0.3f));
@@ -351,9 +352,10 @@ namespace ArcanumAscendant
             }
             if (hitWall && !pull && wallDamage > 0f)
             {
+                bool prevSpellDamage1 = CompArcane.applyingSpellDamage;
                 CompArcane.applyingSpellDamage = true;
                 try { p.TakeDamage(new DamageInfo(DamageDefOf.Blunt, wallDamage * ctx.DamageFactor, 0.2f, -1f, ctx.caster)); }
-                finally { CompArcane.applyingSpellDamage = false; }
+                finally { CompArcane.applyingSpellDamage = prevSpellDamage1; }
             }
         }
 
@@ -389,6 +391,7 @@ namespace ArcanumAscendant
                     if (t is Pawn p && ctx.IsAlly(p)) ignored.Add(p);
                     else if (t is Building b && b.Faction != null && b.Faction == ctx.caster.Faction) ignored.Add(b);
             }
+            bool prevSpellDamage2 = CompArcane.applyingSpellDamage;
             CompArcane.applyingSpellDamage = true;
             try
             {
@@ -398,7 +401,7 @@ namespace ArcanumAscendant
             }
             finally
             {
-                CompArcane.applyingSpellDamage = false;
+                CompArcane.applyingSpellDamage = prevSpellDamage2;
             }
         }
 
@@ -629,13 +632,14 @@ namespace ArcanumAscendant
                 foreach (var t in GenRadial.RadialDistinctThingsAround(cell, map, r, true))
                     if (t is Pawn p && ctx.IsAlly(p)) ignored.Add(p);
             }
+            bool prevSpellDamage3 = CompArcane.applyingSpellDamage;
             CompArcane.applyingSpellDamage = true;
             try
             {
                 GenExplosion.DoExplosion(cell, map, r, damageDef ?? DamageDefOf.Bomb, ctx.caster, Mathf.RoundToInt(damage * size * ctx.DamageFactor), 0.4f,
                     null, null, null, null, null, 0f, 1, null, null, 255, false, null, 0f, 1, 0f, false, null, ignored);
             }
-            finally { CompArcane.applyingSpellDamage = false; }
+            finally { CompArcane.applyingSpellDamage = prevSpellDamage3; }
             ArcaneFx.Particles(map, cell.ToVector3Shifted(), new Color(0.6f, 0.05f, 0.05f), ArcaneDefOf.AA_Fleck_Bone, 8, 3f, 0.6f);
         }
 

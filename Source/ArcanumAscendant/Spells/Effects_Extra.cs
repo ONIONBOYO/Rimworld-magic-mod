@@ -363,9 +363,10 @@ namespace ArcanumAscendant
                 return;
             }
             var dinfo = new DamageInfo(ArcaneDefOf.AA_ArcaneTrue, damage * ctx.DamageFactor, 1f, -1f, ctx.caster);
+            bool prevSpellDamage0 = CompArcane.applyingSpellDamage;
             CompArcane.applyingSpellDamage = true;
             try { p.TakeDamage(dinfo); }
-            finally { CompArcane.applyingSpellDamage = false; }
+            finally { CompArcane.applyingSpellDamage = prevSpellDamage0; }
             if (gildedHediff != null && !p.Dead) ArcaneUtility.ApplyHediff(p, gildedHediff, 1f, -1, ctx);
         }
 
@@ -551,6 +552,7 @@ namespace ArcanumAscendant
             if (reflect > 0f && dinfo.Instigator is Pawn attacker && attacker != p && !attacker.Dead && original > 0f)
             {
                 reflecting = true;
+                bool prevSpellDamage1 = CompArcane.applyingSpellDamage;
                 CompArcane.applyingSpellDamage = true;
                 try
                 {
@@ -561,7 +563,7 @@ namespace ArcanumAscendant
                 finally
                 {
                     reflecting = false;
-                    CompArcane.applyingSpellDamage = false;
+                    CompArcane.applyingSpellDamage = prevSpellDamage1;
                 }
             }
             if (p.Spawned && factor < 0.99f) ArcaneFx.WardHit(p, col, dinfo, broke: false);

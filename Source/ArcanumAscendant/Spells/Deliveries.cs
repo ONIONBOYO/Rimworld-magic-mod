@@ -399,7 +399,8 @@ namespace ArcanumAscendant
         {
             var map = ctx.map;
             var affects = ctx.props.affects;
-            var targets = map.mapPawns.AllPawnsSpawned.Where(p => !p.Dead && ctx.Passes(p, affects))
+            // hidden and sleeping things (fogged hives, dormant mech clusters) are left alone
+            var targets = map.mapPawns.AllPawnsSpawned.Where(p => !p.Dead && !p.Fogged() && !ArcaneUtility.IsDormant(p) && ctx.Passes(p, affects))
                 .OrderBy(p => p.Position.DistanceToSquared(ctx.caster?.Position ?? p.Position)).Take(MaxGlobalTargets).ToList();
             var mgr = ArcaneVfxManager.For(map);
             for (int i = 0; i < targets.Count; i++)

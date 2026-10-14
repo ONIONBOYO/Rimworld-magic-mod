@@ -169,6 +169,14 @@ namespace ArcanumAscendant
         public Color Color => props?.color ?? Color.white;
         public Color Color2 => props?.color2 ?? Color.white;
         public HashSet<Thing> hitThisCast = new HashSet<Thing>();
+        private HashSet<string> cues;
+
+        /// <summary>True the first time a key is seen during this cast: for sounds and titles that should play once, not once per target.</summary>
+        public bool Once(string key)
+        {
+            cues ??= new HashSet<string>();
+            return cues.Add(key);
+        }
         /// <summary>True while an elemental reaction resolves, so reactions cannot chain into each other.</summary>
         public bool inReaction;
         /// <summary>The pawn the caster deliberately aimed an offensive spell at. It counts as an enemy even when it isn't

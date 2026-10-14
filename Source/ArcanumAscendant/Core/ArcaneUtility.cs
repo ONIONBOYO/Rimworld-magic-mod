@@ -23,9 +23,10 @@ namespace ArcanumAscendant
             var part = p.health.hediffSet.GetNotMissingParts().Where(x => x.depth == BodyPartDepth.Outside && x.coverageAbs > 0f).RandomElementWithFallback();
             var dinfo = new DamageInfo(DamageDefOf.Cut, amount, 999f, -1f, null, part);
             dinfo.SetIgnoreInstantKillProtection(false);
+            bool prevSpellDamage0 = CompArcane.applyingSpellDamage;
             CompArcane.applyingSpellDamage = true;
             try { p.TakeDamage(dinfo); }
-            finally { CompArcane.applyingSpellDamage = false; }
+            finally { CompArcane.applyingSpellDamage = prevSpellDamage0; }
             if (p.Spawned) ArcaneFx.Particles(p.Map, p.DrawPos, new Color(0.8f, 0.05f, 0.1f), ArcaneDefOf.AA_Fleck_Mote, 5, 1.2f, 0.5f);
         }
 
@@ -217,6 +218,13 @@ namespace ArcanumAscendant
         {
             if (caster?.Faction == Faction.OfPlayer && summon != null && summon.RaceProps.Humanlike) return Faction.OfPlayer;
             return SummonFactionFor(caster);
+        }
+
+        /// <summary>Asleep and not yet roused: dormant mechanoid clusters, sleeping insect hives and the like.</summary>
+        public static bool IsDormant(Pawn p)
+        {
+            var c = p?.GetComp<CompCanBeDormant>();
+            return c != null && !c.Awake;
         }
 
         /// <summary>Moves a pawn into the faction it should serve, clearing prisoner or guest status first.</summary>

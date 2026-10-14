@@ -33,11 +33,13 @@ namespace ArcanumAscendant
             return ctx;
         }
 
-        /// <summary>Runs an action next tick: status callbacks often fire while the game is iterating a pawn's hediffs.</summary>
+        /// <summary>Runs an action next tick: status callbacks often fire while the game is iterating a pawn's hediffs.
+        /// Off the map (a caravan, a transport pod) it runs on the next game tick instead.</summary>
         public static void Later(Map map, Action a)
         {
-            if (map == null) return;
-            ArcaneVfxManager.For(map).Schedule(1, a);
+            if (a == null) return;
+            if (map != null) ArcaneVfxManager.For(map).Schedule(1, a);
+            else Current.Game?.GetComponent<GameComponent_Arcanum>()?.RunNextTick(a);
         }
     }
 
@@ -101,8 +103,9 @@ namespace ArcanumAscendant
         {
             if (pending || parent.Severity + 0.001f < Threshold) return;
             var p = Pawn;
-            var map = p?.MapHeld;
-            if (map == null || p.Dead) return;
+            // a bearer in flight, being carried or in a pod waits until it is back on the ground
+            if (p == null || p.Dead || !p.Spawned) return;
+            var map = p.Map;
             pending = true;
             SourcedHediff.Later(map, Fire);
         }
@@ -111,7 +114,7 @@ namespace ArcanumAscendant
         {
             pending = false;
             var p = Pawn;
-            if (p == null || p.Dead || p.health == null || !p.health.hediffSet.hediffs.Contains(parent)) return;
+            if (p == null || p.Dead || !p.Spawned || p.health == null || !p.health.hediffSet.hediffs.Contains(parent)) return;
             if (parent.Severity + 0.001f < Threshold) return;
             var map = p.MapHeld;
             if (map == null) return;
@@ -203,6 +206,9 @@ namespace ArcanumAscendant
             base.CompPostPostRemoved();
             var p = Pawn;
             if (p == null || p.Dead) return;
+            // only a mark that runs its course comes due; one that is cleansed or dispelled simply fades
+            var timer = parent.TryGetComp<HediffComp_Disappears>();
+            if (timer != null && timer.ticksToDisappear > 0) return;
             float st = stored;
             var src = source;
             float pw = power;
@@ -231,6 +237,7 @@ namespace ArcanumAscendant
             bool wasDead = p.Dead;
             float dealt = 0f;
             resolving = true;
+            bool prevSpellDamage0 = CompArcane.applyingSpellDamage;
             CompArcane.applyingSpellDamage = true;
             try
             {
@@ -241,7 +248,7 @@ namespace ArcanumAscendant
             finally
             {
                 resolving = false;
-                CompArcane.applyingSpellDamage = false;
+                CompArcane.applyingSpellDamage = prevSpellDamage0;
             }
             if (!wasDead && p.Dead) source?.TryGetComp<CompArcane>()?.Notify_Kill(p, null);
             if (map == null || map != Find.CurrentMap) return;
@@ -538,6 +545,7 @@ namespace ArcanumAscendant
             float share = totalDamageDealt * Props.shareFraction;
             Vector3 from = p.SpawnedOrAnyParentSpawned ? p.DrawPos : p.PositionHeld.ToVector3Shifted();
             sharing = true;
+            bool prevSpellDamage1 = CompArcane.applyingSpellDamage;
             CompArcane.applyingSpellDamage = true;
             try
             {
@@ -555,7 +563,7 @@ namespace ArcanumAscendant
             finally
             {
                 sharing = false;
-                CompArcane.applyingSpellDamage = false;
+                CompArcane.applyingSpellDamage = prevSpellDamage1;
             }
         }
 
@@ -797,6 +805,7 @@ namespace ArcanumAscendant
             if (reflect > 0f && dinfo.Instigator is Pawn attacker && attacker != p && !attacker.Dead && attacker.Spawned && attacker.Map == map)
             {
                 reflecting = true;
+                bool prevSpellDamage2 = CompArcane.applyingSpellDamage;
                 CompArcane.applyingSpellDamage = true;
                 try
                 {
@@ -808,7 +817,7 @@ namespace ArcanumAscendant
                 finally
                 {
                     reflecting = false;
-                    CompArcane.applyingSpellDamage = false;
+                    CompArcane.applyingSpellDamage = prevSpellDamage2;
                 }
             }
             return true;

@@ -76,6 +76,7 @@ namespace ArcanumAscendant
             if (Props.damagePerSecond > 0f && Props.damageDef != null)
             {
                 bool wasDead = p.Dead;
+                bool prevSpellDamage0 = CompArcane.applyingSpellDamage;
                 CompArcane.applyingSpellDamage = true;
                 try
                 {
@@ -83,7 +84,7 @@ namespace ArcanumAscendant
                 }
                 finally
                 {
-                    CompArcane.applyingSpellDamage = false;
+                    CompArcane.applyingSpellDamage = prevSpellDamage0;
                 }
                 if (!wasDead && p.Dead) instigator?.TryGetComp<CompArcane>()?.Notify_Kill(p, null);
             }
@@ -117,6 +118,10 @@ namespace ArcanumAscendant
     {
         public Pawn master;
         public int ticksLeft = -1;
+        /// <summary>Gear that was conjured along with this summon. It unravels when the summon does, so it cannot be farmed.</summary>
+        public List<Thing> conjuredGear;
+        /// <summary>A stolen-skin copy of an enemy: it serves in the thrall faction rather than joining the colony.</summary>
+        public bool copy;
         private int aiAcc;
         private bool expiring;
 
@@ -131,23 +136,24 @@ namespace ArcanumAscendant
             if (ticksLeft > 0)
             {
                 ticksLeft -= elapsed;
-                if (ticksLeft <= 0)
+                if (ticksLeft <= 0) ticksLeft = 0;
+            }
+            // 0 means the binding has run out (-1 is "no time limit"; anything lower comes from older saves that ran out too)
+            if (ticksLeft == 0 || ticksLeft < -1)
+            {
+                // the binding ends next tick, outside the hediff update loop that is running right now
+                if (!expiring)
                 {
-                    // the binding ends next tick, outside the hediff update loop that is running right now
-                    if (!expiring && p.MapHeld != null)
+                    expiring = true;
+                    SourcedHediff.Later(p.MapHeld, () =>
                     {
-                        expiring = true;
-                        SourcedHediff.Later(p.MapHeld, () =>
-                        {
-                            if (!p.Dead && !p.Destroyed && p.health.hediffSet.hediffs.Contains(parent)) Expire();
-                        });
-                    }
-                    else if (p.MapHeld == null) Expire();
-                    return;
+                        if (!p.Dead && !p.Destroyed && p.health.hediffSet.hediffs.Contains(parent)) Expire();
+                    });
                 }
+                return;
             }
             // Saves from older versions put raised people in the hidden thrall faction, where they cannot be drafted. Bring them home.
-            if (p.RaceProps.Humanlike && master?.Faction == Faction.OfPlayer && p.Faction != Faction.OfPlayer && p.Faction?.def.defName == "AA_ArcaneThralls")
+            if (!copy && p.RaceProps.Humanlike && master?.Faction == Faction.OfPlayer && p.Faction != Faction.OfPlayer && p.Faction?.def.defName == "AA_ArcaneThralls")
                 ArcaneUtility.BindToFaction(p, Faction.OfPlayer);
             if (!Props.controlAI || !p.Spawned || p.Downed) return;
             // Player orders always win: a drafted or ordered thrall is left alone.
@@ -197,6 +203,18 @@ namespace ArcanumAscendant
             }
         }
 
+        private void UnravelGear()
+        {
+            if (conjuredGear == null) return;
+            foreach (var t in conjuredGear)
+                if (t != null && !t.Destroyed)
+                {
+                    if (t.Spawned && t.Map == Find.CurrentMap) ArcaneFx.Particles(t.Map, t.DrawPos, new Color(0.7f, 0.6f, 1f), ArcaneDefOf.AA_Fleck_Smoke, 3, 0.5f, 0.8f);
+                    t.Destroy(DestroyMode.Vanish);
+                }
+            conjuredGear = null;
+        }
+
         public void Expire()
         {
             var p = Pawn;
@@ -225,6 +243,7 @@ namespace ArcanumAscendant
                 }
                 p.Destroy(DestroyMode.Vanish);
             }
+            UnravelGear();
         }
 
         public override void Notify_PawnDied(DamageInfo? dinfo, Hediff culprit = null)
@@ -233,9 +252,14 @@ namespace ArcanumAscendant
             if (!Props.vanishOnDeath) return;
             var p = Pawn;
             var map = p.MapHeld;
-            if (map == null) return;
+            if (map == null)
+            {
+                UnravelGear();
+                return;
+            }
             ArcaneVfxManager.For(map).Schedule(1, () =>
             {
+                UnravelGear();
                 var corpse = p.Corpse;
                 if (corpse != null && !corpse.Destroyed)
                 {
@@ -250,6 +274,10 @@ namespace ArcanumAscendant
             base.CompExposeData();
             Scribe_References.Look(ref master, "master");
             Scribe_Values.Look(ref ticksLeft, "ticksLeft", -1);
+            if (Scribe.mode == LoadSaveMode.Saving) conjuredGear?.RemoveAll(t => t == null || t.Destroyed);
+            Scribe_Collections.Look(ref conjuredGear, "conjuredGear", LookMode.Reference);
+            Scribe_Values.Look(ref copy, "copy");
+            if (Scribe.mode == LoadSaveMode.PostLoadInit) conjuredGear?.RemoveAll(t => t == null);
         }
     }
 
@@ -354,9 +382,10 @@ namespace ArcanumAscendant
                     if (t.Dead || (instigator != null && !t.HostileTo(instigator))) continue;
                     if (props.damageDef != null)
                     {
+                        bool prevSpellDamage1 = CompArcane.applyingSpellDamage;
                         CompArcane.applyingSpellDamage = true;
                         try { t.TakeDamage(new DamageInfo(props.damageDef, props.damage, 0.3f, -1f, instigator)); }
-                        finally { CompArcane.applyingSpellDamage = false; }
+                        finally { CompArcane.applyingSpellDamage = prevSpellDamage1; }
                     }
                     if (props.spreadHediff != null && !t.Dead)
                     {
@@ -482,6 +511,7 @@ namespace ArcanumAscendant
             ArcaneFx.Eruption(map, p.DrawPos, props.color, UnityEngine.Color.white, props.radius);
             ArcaneVfxManager.For(map).Add(new VfxSprite { mat = ArcaneMats.Shock, pos = p.DrawPos, scaleStart = 0.5f, scaleEnd = props.radius * 2.6f, duration = 26, color = props.color, fadeIn = 0.02f, fadeOut = 0.8f });
             ArcaneFx.Shake(map, props.shake);
+            bool prevSpellDamage2 = CompArcane.applyingSpellDamage;
             CompArcane.applyingSpellDamage = true;
             try
             {
@@ -497,7 +527,7 @@ namespace ArcanumAscendant
             }
             finally
             {
-                CompArcane.applyingSpellDamage = false;
+                CompArcane.applyingSpellDamage = prevSpellDamage2;
             }
         }
     }

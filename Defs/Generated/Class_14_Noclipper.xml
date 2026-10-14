@@ -2094,12 +2094,7 @@
           </li>
           <li Class="ArcanumAscendant.Effect_Banish">
             <durationTicks>240</durationTicks>
-            <returnEffects>
-              <li Class="ArcanumAscendant.Effect_Hediff">
-                <hediff>AA_Disoriented</hediff>
-                <severity>1</severity>
-              </li>
-            </returnEffects>
+            <returnHediff>AA_Disoriented</returnHediff>
           </li>
         </effects>
         <color>(0.949, 0.886, 0.478, 1)</color>
@@ -3419,10 +3414,6 @@
             <durationTicks>600</durationTicks>
             <returnEffects>
               <li Class="ArcanumAscendant.Effect_Hediff">
-                <hediff>AA_Disoriented</hediff>
-                <severity>1</severity>
-              </li>
-              <li Class="ArcanumAscendant.Effect_Hediff">
                 <hediff>AA_Lost</hediff>
                 <severity>2</severity>
                 <durationTicks>1500</durationTicks>
@@ -3430,6 +3421,7 @@
                 <maxSeverity>8</maxSeverity>
               </li>
             </returnEffects>
+            <returnHediff>AA_Disoriented</returnHediff>
           </li>
         </effects>
         <color>(0.91, 0.863, 0.541, 1)</color>
@@ -4610,12 +4602,7 @@
           <li Class="ArcanumAscendant.Effect_Banish">
             <durationTicks>360</durationTicks>
             <bossFactor>0.35</bossFactor>
-            <returnEffects>
-              <li Class="ArcanumAscendant.Effect_Hediff">
-                <hediff>AA_Disoriented</hediff>
-                <severity>1</severity>
-              </li>
-            </returnEffects>
+            <returnHediff>AA_Disoriented</returnHediff>
           </li>
         </effects>
         <spreadRadius>4</spreadRadius>
@@ -5074,12 +5061,7 @@
           </li>
           <li Class="ArcanumAscendant.Effect_Banish">
             <durationTicks>300</durationTicks>
-            <returnEffects>
-              <li Class="ArcanumAscendant.Effect_Hediff">
-                <hediff>AA_Disoriented</hediff>
-                <severity>1</severity>
-              </li>
-            </returnEffects>
+            <returnHediff>AA_Disoriented</returnHediff>
           </li>
         </pulseEffects>
         <pulseInterval>60</pulseInterval>
@@ -5218,8 +5200,6 @@
       <petness>0</petness>
       <canBePredatorPrey>false</canBePredatorPrey>
       <herdAnimal>false</herdAnimal>
-      <predator>true</predator>
-      <maxPreyBodySize>0</maxPreyBodySize>
       <alwaysViolent>true</alwaysViolent>
       <isImmuneToInfections>true</isImmuneToInfections>
       <bleedRateFactor>0.2</bleedRateFactor>
@@ -5329,8 +5309,6 @@
       <petness>0</petness>
       <canBePredatorPrey>false</canBePredatorPrey>
       <herdAnimal>false</herdAnimal>
-      <predator>true</predator>
-      <maxPreyBodySize>0</maxPreyBodySize>
       <alwaysViolent>true</alwaysViolent>
       <isImmuneToInfections>true</isImmuneToInfections>
       <bleedRateFactor>0.2</bleedRateFactor>

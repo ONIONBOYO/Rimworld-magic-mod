@@ -112,13 +112,14 @@ namespace ArcanumAscendant
             ArcaneVfxManager.For(map).Schedule(2, () =>
             {
                 var ignored = GenRadial.RadialDistinctThingsAround(cell, map, radius, true).OfType<Pawn>().Where(p => !p.HostileTo(caster)).Cast<Thing>().ToList();
+                bool prevSpellDamage0 = CompArcane.applyingSpellDamage;
                 CompArcane.applyingSpellDamage = true;
                 try
                 {
                     GenExplosion.DoExplosion(cell, map, radius, damageDef ?? DamageDefOf.Bomb, caster, Mathf.RoundToInt(damage * rank * power), -1f, null, null, null, null, null, 0f, 1, null, null, 255,
                         false, null, 0f, 1, 0f, false, null, ignored);
                 }
-                finally { CompArcane.applyingSpellDamage = false; }
+                finally { CompArcane.applyingSpellDamage = prevSpellDamage0; }
             });
         }
     }
@@ -163,13 +164,14 @@ namespace ArcanumAscendant
                 ArcaneFx.Shake(map, 3f);
                 ArcaneFx.Text(caster, labelKey.Translate(), color);
                 var ignored = GenRadial.RadialDistinctThingsAround(caster.Position, map, novaRadius, true).OfType<Pawn>().Where(x => !x.HostileTo(caster)).Cast<Thing>().ToList();
+                bool prevSpellDamage1 = CompArcane.applyingSpellDamage;
                 CompArcane.applyingSpellDamage = true;
                 try
                 {
                     GenExplosion.DoExplosion(caster.Position, map, novaRadius, novaDamageDef ?? DamageDefOf.Flame, caster, Mathf.RoundToInt(novaDamage * rank * power), -1f, null, null, null, null, null, 0f, 1,
                         null, null, 255, false, null, 0f, 1, 0f, false, null, ignored);
                 }
-                finally { CompArcane.applyingSpellDamage = false; }
+                finally { CompArcane.applyingSpellDamage = prevSpellDamage1; }
             });
         }
     }
@@ -185,9 +187,10 @@ namespace ArcanumAscendant
         {
             if (!(dinfo.Instigator is Pawn attacker) || attacker == c.Pawn || attacker.Dead || dealt <= 0f) return;
             if (meleeOnly && (dinfo.Weapon != null && dinfo.Weapon.IsRangedWeapon || attacker.Position.DistanceTo(c.Pawn.Position) > 2f)) return;
+            bool prevSpellDamage2 = CompArcane.applyingSpellDamage;
             CompArcane.applyingSpellDamage = true;
             try { attacker.TakeDamage(new DamageInfo(damageDef ?? ArcaneDefOf.AA_Arcane, dealt * fraction * rank * c.SpellPower, 0.5f, -1f, c.Pawn)); }
-            finally { CompArcane.applyingSpellDamage = false; }
+            finally { CompArcane.applyingSpellDamage = prevSpellDamage2; }
             if (attacker.Spawned) ArcaneFx.Particles(attacker.Map, attacker.DrawPos, c.DisplayClass.color, ArcaneDefOf.AA_Fleck_Spark, 3, 1.2f, 0.4f);
         }
     }
@@ -309,9 +312,10 @@ namespace ArcanumAscendant
             if (target.health.summaryHealth.SummaryHealthPercent < thresholdPerRank * rank)
             {
                 if (target.Spawned) ArcaneFx.Text(target, "AA_Executed".Translate(), new Color(1f, 0.3f, 0.3f));
+                bool prevSpellDamage3 = CompArcane.applyingSpellDamage;
                 CompArcane.applyingSpellDamage = true;
                 try { target.Kill(new DamageInfo(ArcaneDefOf.AA_ArcaneTrue, 9999f, 999f, -1f, c.Pawn)); }
-                finally { CompArcane.applyingSpellDamage = false; }
+                finally { CompArcane.applyingSpellDamage = prevSpellDamage3; }
                 c.Notify_Kill(target, ctx);
             }
         }

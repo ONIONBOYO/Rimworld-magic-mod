@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
@@ -161,6 +162,14 @@ namespace ArcanumAscendant
         private HashSet<ArcaneReactionDef> discovered = new HashSet<ArcaneReactionDef>();
         /// <summary>Pawns pulled out of reality, waiting to fall back in.</summary>
         public List<BanishedPawn> banished = new List<BanishedPawn>();
+        private readonly List<Action> nextTick = new List<Action>();
+        private readonly List<Action> running = new List<Action>();
+
+        /// <summary>Defers work by one game tick when there is no map to schedule it on.</summary>
+        public void RunNextTick(Action a)
+        {
+            if (a != null) nextTick.Add(a);
+        }
 
         public GameComponent_Arcanum(Game game)
         {
@@ -196,6 +205,24 @@ namespace ArcanumAscendant
         public override void GameComponentTick()
         {
             base.GameComponentTick();
+            if (nextTick.Count > 0)
+            {
+                running.Clear();
+                running.AddRange(nextTick);
+                nextTick.Clear();
+                foreach (var a in running)
+                {
+                    try
+                    {
+                        a();
+                    }
+                    catch (Exception e)
+                    {
+                        Log.ErrorOnce("[Arcanum Ascendant] Deferred action failed: " + e, 0x5A1C1C0);
+                    }
+                }
+                running.Clear();
+            }
             if (banished.Count > 0 && Find.TickManager.TicksGame % 10 == 0) BanishUtility.Tick(this);
         }
 

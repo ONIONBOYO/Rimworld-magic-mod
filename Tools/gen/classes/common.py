@@ -127,10 +127,11 @@ def disarm(steal=True, destroyChance=0.0, fallback=20.0, fallbackDef=None, mechs
              affectsMechs=mechs or None, **kw)
 
 
-def banish(duration, bossFactor=None, maxBodySize=None, ret=None, retRadius=None, **kw):
-    """Remove targets from reality for a while. They come back where they were (ret effects play on their return)."""
+def banish(duration, bossFactor=None, maxBodySize=None, ret=None, retRadius=None, retHediff=None, **kw):
+    """Remove targets from reality for a while. They come back where they were: retHediff is applied on return (and survives a
+    save), ret effects play on return when the banish came straight from a spell."""
     return O("Effect_Banish", durationTicks=int(duration), bossFactor=bossFactor, maxBodySize=maxBodySize, returnEffects=ret,
-             returnRadius=float(retRadius) if retRadius else None, **kw)
+             returnRadius=float(retRadius) if retRadius else None, returnHediff=retHediff, **kw)
 
 
 def step(delay, effects=None, radius=None, vfx=None, shake=None, sound=None, text=None, textColor=None):

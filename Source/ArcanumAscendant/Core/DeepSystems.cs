@@ -347,6 +347,7 @@ namespace ArcanumAscendant
                     mgr.Schedule(ticks, () =>
                     {
                         if (target.Dead || !target.Spawned) return;
+                        bool prevSpellDamage0 = CompArcane.applyingSpellDamage;
                         CompArcane.applyingSpellDamage = true;
                         try
                         {
@@ -357,7 +358,7 @@ namespace ArcanumAscendant
                         }
                         finally
                         {
-                            CompArcane.applyingSpellDamage = false;
+                            CompArcane.applyingSpellDamage = prevSpellDamage0;
                         }
                         if (f.hediff != null && !target.Dead) ArcaneUtility.ApplyHediff(target, f.hediff, f.hediffSeverity, -1, null);
                         ArcaneFx.Flash(map, target.DrawPos, f.color, 1.4f);

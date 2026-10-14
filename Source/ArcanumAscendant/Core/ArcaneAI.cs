@@ -140,7 +140,7 @@ namespace ArcanumAscendant
                     if (props.delivery == DeliveryType.Global)
                     {
                         // map-wide spells are worth it against a real attack, not a lone straggler
-                        int hostiles = map.mapPawns.AllPawnsSpawned.Count(x => !x.Dead && !x.Downed && x.HostileTo(p));
+                        int hostiles = map.mapPawns.AllPawnsSpawned.Count(x => !x.Dead && !x.Downed && x.HostileTo(p) && !x.Fogged() && !ArcaneUtility.IsDormant(x));
                         if (hostiles < Mathf.Max(3f, a.Ext.aiMinEnemiesInRadius)) return false;
                         target = p;
                         return true;
