@@ -159,6 +159,8 @@ namespace ArcanumAscendant
     public class GameComponent_Arcanum : GameComponent
     {
         private HashSet<ArcaneReactionDef> discovered = new HashSet<ArcaneReactionDef>();
+        /// <summary>Pawns pulled out of reality, waiting to fall back in.</summary>
+        public List<BanishedPawn> banished = new List<BanishedPawn>();
 
         public GameComponent_Arcanum(Game game)
         {
@@ -181,11 +183,20 @@ namespace ArcanumAscendant
         {
             base.ExposeData();
             Scribe_Collections.Look(ref discovered, "discoveredReactions", LookMode.Def);
+            Scribe_Collections.Look(ref banished, "banishedPawns", LookMode.Deep);
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
                 discovered ??= new HashSet<ArcaneReactionDef>();
                 discovered.RemoveWhere(d => d == null);
+                banished ??= new List<BanishedPawn>();
+                banished.RemoveAll(b => b?.pawn == null);
             }
+        }
+
+        public override void GameComponentTick()
+        {
+            base.GameComponentTick();
+            if (banished.Count > 0 && Find.TickManager.TicksGame % 10 == 0) BanishUtility.Tick(this);
         }
 
         public override void StartedNewGame()
@@ -195,7 +206,7 @@ namespace ArcanumAscendant
             foreach (var p in PawnsFinder.AllMaps_FreeColonistsSpawned)
             {
                 var c = p.TryGetComp<CompArcane>();
-                if (c != null && !c.IsMage) c.Awaken(DefDatabase<ArcaneClassDef>.AllDefs.Where(d => !d.IsSubclass).RandomElement(), true);
+                if (c != null && !c.IsMage) c.Awaken(ArcaneClassDef.RandomRootFor(p), true);
             }
         }
     }

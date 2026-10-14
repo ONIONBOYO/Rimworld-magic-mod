@@ -118,6 +118,7 @@ namespace ArcanumAscendant
         public Pawn master;
         public int ticksLeft = -1;
         private int aiAcc;
+        private bool expiring;
 
         public HediffCompProperties_Summoned Props => (HediffCompProperties_Summoned)props;
 
@@ -132,7 +133,16 @@ namespace ArcanumAscendant
                 ticksLeft -= elapsed;
                 if (ticksLeft <= 0)
                 {
-                    Expire();
+                    // the binding ends next tick, outside the hediff update loop that is running right now
+                    if (!expiring && p.MapHeld != null)
+                    {
+                        expiring = true;
+                        SourcedHediff.Later(p.MapHeld, () =>
+                        {
+                            if (!p.Dead && !p.Destroyed && p.health.hediffSet.hediffs.Contains(parent)) Expire();
+                        });
+                    }
+                    else if (p.MapHeld == null) Expire();
                     return;
                 }
             }
@@ -208,6 +218,11 @@ namespace ArcanumAscendant
             }
             else if (!p.Destroyed)
             {
+                if (p.Faction == Faction.OfPlayer && p.RaceProps.Humanlike)
+                {
+                    if (p.Drafted) p.drafter.Drafted = false;
+                    p.SetFaction(null);
+                }
                 p.Destroy(DestroyMode.Vanish);
             }
         }

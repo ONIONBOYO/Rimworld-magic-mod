@@ -20,7 +20,7 @@ namespace ArcanumAscendant
         public Dialog_ChooseClass(CompArcane comp, bool mustChoose = false)
         {
             this.comp = comp;
-            classes = DefDatabase<ArcaneClassDef>.AllDefs.Where(d => !d.IsSubclass).OrderBy(d => d.order).ToList();
+            classes = ArcaneClassDef.RootsFor(comp.Pawn);
             selected = classes.FirstOrDefault();
             doCloseX = !mustChoose;
             closeOnCancel = !mustChoose;
@@ -42,7 +42,7 @@ namespace ArcanumAscendant
             var left = new Rect(body.x, body.y, body.width * 0.52f, body.height);
             var right = new Rect(left.xMax + 12f, body.y, body.width - left.width - 12f, body.height);
 
-            int cols = 3;
+            int cols = classes.Count > 12 ? 4 : 3;
             int rows = Mathf.CeilToInt(classes.Count / (float)cols);
             float cw = (left.width - (cols - 1) * 8f) / cols;
             float ch = Mathf.Min(150f, (left.height - (rows - 1) * 8f) / rows);

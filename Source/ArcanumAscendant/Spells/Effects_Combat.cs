@@ -46,6 +46,14 @@ namespace ArcanumAscendant
         public HediffDef bonusVsHediff;
         public float bonusVsHediffFactor = 2f;
         public bool consumeHediff;
+        /// <summary>Extra damage per stack (severity) of this status on the target, e.g. omens or infatuation.</summary>
+        public HediffDef stackHediff;
+        public float bonusPerStack;
+        public bool consumeStacks;
+        /// <summary>Damage multiplied by body size to this power: crushing forces hurt the biggest creatures most.</summary>
+        public float bodySizeExponent;
+        /// <summary>Multiplier against targets that are downed, stunned or asleep.</summary>
+        public float bonusVsHelpless = 1f;
 
         public DamageDef Def => trueDamage ? ArcaneDefOf.AA_ArcaneTrue : damageDef ?? ArcaneDefOf.AA_Arcane;
 
@@ -59,6 +67,22 @@ namespace ArcanumAscendant
                 float d = (p.DrawPos - info.pos).MagnitudeHorizontal();
                 mult *= Mathf.Lerp(1f, 0.4f, Mathf.Clamp01(d / info.radius));
             }
+            if (stackHediff != null && bonusPerStack != 0f)
+            {
+                var sh = p.health.hediffSet.GetFirstHediffOfDef(stackHediff);
+                if (sh != null)
+                {
+                    mult *= Mathf.Max(0f, 1f + bonusPerStack * sh.Severity);
+                    if (consumeStacks)
+                    {
+                        p.health.RemoveHediff(sh);
+                        if (p.Spawned && sh.Severity >= 1f) ArcaneFx.Text(p, "AA_StacksConsumed".Translate(Mathf.FloorToInt(sh.Severity), sh.def.label), ctx.Color);
+                    }
+                }
+            }
+            if (bodySizeExponent != 0f) mult *= Mathf.Pow(Mathf.Clamp(p.BodySize, 0.2f, 10f), bodySizeExponent);
+            if (bonusVsHelpless != 1f && (p.Downed || (p.stances?.stunner?.Stunned ?? false) || (p.jobs?.curDriver?.asleep ?? false)))
+                mult *= bonusVsHelpless;
             if (bonusVsHediff != null)
             {
                 var bh = p.health.hediffSet.GetFirstHediffOfDef(bonusVsHediff);
@@ -189,6 +213,10 @@ namespace ArcanumAscendant
             if (stunTicks > 0) yield return "AA_Desc_Stun".Translate((stunTicks / 60f).ToString("F1"));
             if (healCasterFraction > 0f) yield return "AA_Desc_Drain".Translate(healCasterFraction.ToStringPercent());
             if (bonusVsHediff != null) yield return "AA_Desc_BonusVs".Translate(bonusVsHediffFactor.ToStringPercent(), bonusVsHediff.label);
+            if (stackHediff != null && bonusPerStack != 0f)
+                yield return (consumeStacks ? "AA_Desc_PerStackConsume" : "AA_Desc_PerStack").Translate(bonusPerStack.ToStringPercent("F0"), stackHediff.label);
+            if (bodySizeExponent > 0f) yield return "AA_Desc_BodySize".Translate();
+            if (bonusVsHelpless > 1.01f) yield return "AA_Desc_VsHelpless".Translate(bonusVsHelpless.ToStringPercent("F0"));
             if (damageBuildings) yield return "AA_Desc_Buildings".Translate();
         }
     }

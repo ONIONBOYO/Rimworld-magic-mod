@@ -21,6 +21,11 @@ DAMAGES = [
     ("AA_Void", "void", "AA_VoidScar", "void scar", "Heat", 0.8, "#c060ff", "Void", 0.0, "{0} was consumed by the void."),
     ("AA_Temporal", "entropy", "AA_EntropyWound", "entropic decay", None, 0.0, "#7ff5e4", "Time", 0.0, "{0} aged to dust."),
     ("AA_Rune", "runic", "AA_RuneBurn", "rune burn", "Sharp", 0.45, "#ffaa3c", "Rune", 0.0, "{0} was dismantled by runes."),
+    ("AA_Doom", "doom", "AA_Doomblight", "doomblight", None, 0.0, "#c8323c", "Doom", 0.02, "{0} met the end that was foretold."),
+    ("AA_Gale", "gale", "AA_WindShear", "wind shear", "Blunt", 0.3, "#7ef0d2", "Wind", 0.02, "{0} was torn apart by the wind."),
+    ("AA_Heartbreak", "heartbreak", "AA_Heartache", "heartache", None, 0.0, "#ff5fa2", "Desire", 0.0, "{0} died of a broken heart."),
+    ("AA_Hellfire", "hellfire", "AA_Hellburn", "hellfire burn", "Heat", 0.4, "#c060ff", "Fire", 0.0, "{0} was dragged screaming into hellfire."),
+    ("AA_Static", "static", "AA_StaticBurn", "static burn", "Heat", 0.3, "#f2e27a", "Liminal", 0.0, "{0} glitched out of existence."),
 ]
 
 
@@ -131,8 +136,10 @@ STATUS_VFX = {
 AURA_CLS = "ArcanumAscendant.HediffCompProperties_AuraVisual"
 
 
-def status(defName, label, desc, color, *, bad, ticks=None, stages=None, comps=None, maxSev=None, initSev=1.0, cls="HediffWithComps"):
+def status(defName, label, desc, color, *, bad, ticks=None, stages=None, comps=None, maxSev=None, initSev=1.0, cls="HediffWithComps", fx=None, extra=None):
     comps = list(comps or [])
+    if fx:
+        STATUS_VFX[defName] = fx
     vfx = STATUS_VFX.get(defName)
     if vfx:
         aura_comp = next((c for c in comps if isinstance(c, O) and c.cls == AURA_CLS), None)
@@ -143,10 +150,12 @@ def status(defName, label, desc, color, *, bad, ticks=None, stages=None, comps=N
             aura_comp.fields[k] = float(v) if isinstance(v, float) else v
     if ticks:
         comps.insert(0, disappears(ticks))
-    return to_xml("HediffDef", O(None,
-        defName=defName, label=label, description=desc, hediffClass=cls, isBad=bad, defaultLabelColor=rgb(color) + (1.0,),
-        initialSeverity=initSev, maxSeverity=maxSev, everCurableByItem=False if not bad else None,
-        comps=comps or None, stages=stages or [stage()]), 1)
+    fields = dict(defName=defName, label=label, description=desc, hediffClass=cls, isBad=bad, defaultLabelColor=rgb(color) + (1.0,),
+                  initialSeverity=initSev, maxSeverity=maxSev, everCurableByItem=False if not bad else None,
+                  comps=comps or None, stages=stages or [stage()])
+    if extra:
+        fields.update(extra)
+    return to_xml("HediffDef", O(None, **fields), 1)
 
 
 FIRE, FROST, STORM, NECRO, HOLY, SHADOW, NATURE, RUNE, SONG, TIME, BLOOD, VOID = (

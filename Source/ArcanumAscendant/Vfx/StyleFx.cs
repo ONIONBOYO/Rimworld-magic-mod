@@ -50,6 +50,14 @@ namespace ArcanumAscendant
                         case "Hex": return VfxStyle.Shadow;
                         case "Song":
                         case "Chaos": return VfxStyle.Song;
+                        case "Wind":
+                        case "Air": return VfxStyle.Wind;
+                        case "Doom":
+                        case "Omen": return VfxStyle.Doom;
+                        case "Desire":
+                        case "Charm": return VfxStyle.Desire;
+                        case "Liminal":
+                        case "Backrooms": return VfxStyle.Liminal;
                     }
             return VfxStyle.Arcane;
         }
@@ -101,6 +109,10 @@ namespace ArcanumAscendant
                 case VfxStyle.Holy: return 0.9f;
                 case VfxStyle.Necro: return 1f;
                 case VfxStyle.Blood: return 0.85f;
+                case VfxStyle.Wind: return 0.55f;
+                case VfxStyle.Doom: return 1.05f;
+                case VfxStyle.Desire: return 0.75f;
+                case VfxStyle.Liminal: return 0.6f;
                 default: return 0.8f;
             }
         }
@@ -138,6 +150,21 @@ namespace ArcanumAscendant
                     break;
                 case VfxStyle.Song:
                     Fx.Burst(map, pos, c, 2f, PMat.Note, 1.2f, 0.8f, 0.3f, PFlags.Wobble);
+                    break;
+                case VfxStyle.Wind:
+                    Fx.Burst(map, pos, W(c2, 0.3f), 5f, PMat.Gust, 3f, 0.4f, 0.5f, PFlags.Stretch | PFlags.AlignVel, 0f, 0f, 0.2f, 0.2f);
+                    Fx.Burst(map, pos, new Color(0.8f, 0.78f, 0.7f, 0.5f), 2f, PMat.Dust, 1f, 0.8f, 0.4f, PFlags.Lit);
+                    break;
+                case VfxStyle.Doom:
+                    Fx.Smoke(map, pos, A(c * 0.25f, 0.6f), 1f, 0.15f, 0.6f, 1.4f, 0.3f, true);
+                    Fx.Burst(map, pos, new Color(0.08f, 0.06f, 0.07f, 0.95f), 2f, PMat.FeatherDark, 1.2f, 1.4f, 0.28f, PFlags.Wobble | PFlags.Lit, 120f, 0.8f, 0.5f);
+                    break;
+                case VfxStyle.Desire:
+                    Fx.Burst(map, pos, c, 3f, PMat.Heart, 1.6f, 0.7f, 0.22f, PFlags.Wobble);
+                    Fx.Burst(map, pos, W(c2, 0.4f), 3f, PMat.Star, 1.8f, 0.5f, 0.16f, PFlags.Glint);
+                    break;
+                case VfxStyle.Liminal:
+                    Fx.Burst(map, pos, c, 4f, PMat.Glitch, 1.5f, 0.3f, 0.22f, PFlags.Flicker, 0f, 0f, 0.3f, 0.3f);
                     break;
             }
         }
@@ -194,6 +221,21 @@ namespace ArcanumAscendant
                 case VfxStyle.Plague:
                     if (age % 3 == 0) Fx.Rise(map, p, c, 1f, PMat.Bubble, 0.1f, 0.5f, 0.6f, 0.15f);
                     break;
+                case VfxStyle.Wind:
+                    Fx.Burst(map, p, A(W(c2, 0.2f), 0.7f), 1f, PMat.Gust, 0.6f, 0.4f, 0.45f, PFlags.Stretch | PFlags.AlignVel, 0f, 0f, 0.1f, 0.15f);
+                    if (age % 5 == 0) Fx.Burst(map, p, new Color(0.55f, 0.7f, 0.35f, 1f), 1f, PMat.Leaf, 0.8f, 1.2f, 0.18f, PFlags.Wobble | PFlags.Lit, 300f, 0.5f);
+                    break;
+                case VfxStyle.Doom:
+                    if (age % 3 == 0) Fx.Burst(map, p, new Color(0.08f, 0.06f, 0.07f, 0.95f), 1f, PMat.FeatherDark, 0.4f, 1.3f, 0.24f, PFlags.Wobble | PFlags.Lit, 140f, 0.6f, 0.3f);
+                    if (age % 2 == 0) Fx.Embers(map, p, c, 1f, 0.1f, 0.4f, 0.8f, 0.1f);
+                    break;
+                case VfxStyle.Desire:
+                    if (age % 2 == 0) Fx.Burst(map, p, c, 1f, PMat.Heart, 0.3f, 0.7f, 0.18f, PFlags.Wobble);
+                    if (age % 4 == 0) Fx.Burst(map, p, W(c2, 0.2f), 1f, PMat.Petal, 0.5f, 1.2f, 0.18f, PFlags.Wobble, 200f, 0.4f);
+                    break;
+                case VfxStyle.Liminal:
+                    if (age % 2 == 0) Fx.Burst(map, p + VRand.InsideCircle(0.25f), c, 1f, PMat.Glitch, 0.1f, 0.35f, 0.2f, PFlags.Flicker, 0f);
+                    break;
                 default:
                     if (age % 2 == 0) Fx.Burst(map, p, c, 1f, PMat.Mote, 0.3f, 0.5f, 0.2f);
                     break;
@@ -222,6 +264,20 @@ namespace ArcanumAscendant
                 case VfxStyle.Fire:
                     ArcaneMats.DrawQuad(PMat.Get(PMat.Flame), hp + new Vector3(0f, 0.001f, 0.1f), size * 1.6f, Mathf.Sin(now * 0.7f) * 12f, c2 * new Color(1, 1, 1, 0.8f));
                     break;
+                case VfxStyle.Wind:
+                    ArcaneMats.DrawQuad(PMat.Get(PMat.Gust), hp + new Vector3(0, 0.001f, 0), size * 2.2f, now * 25f, W(c2, 0.3f) * new Color(1, 1, 1, 0.8f));
+                    ArcaneMats.DrawQuad(PMat.Get(PMat.Gust), hp + new Vector3(0, 0.002f, 0), size * 1.6f, -now * 31f, c * new Color(1, 1, 1, 0.7f));
+                    break;
+                case VfxStyle.Doom:
+                    ArcaneMats.DrawQuad(PMat.Get(PMat.Eye), hp + new Vector3(0, 0.001f, 0), size * (1.5f + 0.15f * Mathf.Sin(now * 0.5f)), 0f, W(c, 0.15f));
+                    break;
+                case VfxStyle.Desire:
+                    ArcaneMats.DrawQuad(PMat.Get(PMat.Heart), hp + new Vector3(0, 0.001f, 0), size * (1.4f + 0.2f * Mathf.Sin(now * 0.6f)), 0f, W(c, 0.25f));
+                    break;
+                case VfxStyle.Liminal:
+                    if (Mathf.PerlinNoise(now * 0.4f, 3.3f) > 0.35f)
+                        ArcaneMats.DrawQuad(PMat.Get(PMat.Glitch), hp + new Vector3(VRand.Range(-0.05f, 0.05f), 0.001f, 0f), size * 1.8f, 0f, c * new Color(1, 1, 1, 0.8f));
+                    break;
             }
         }
 
@@ -241,6 +297,18 @@ namespace ArcanumAscendant
                     break;
                 case VfxStyle.Holy:
                     Fx.Rise(map, end, W(c, 0.5f), 1.5f, PMat.Star, 0.4f, 1.5f, 0.7f, 0.2f, PFlags.Glint);
+                    break;
+                case VfxStyle.Wind:
+                    Fx.Burst(map, end, W(c2, 0.2f), 2f, PMat.Gust, 2.5f, 0.4f, 0.45f, PFlags.Stretch | PFlags.AlignVel, 0f, 0f, 0.1f, 0.3f);
+                    break;
+                case VfxStyle.Doom:
+                    Fx.Embers(map, end, c, 1.5f, 0.3f, 0.6f, 0.9f, 0.12f);
+                    break;
+                case VfxStyle.Desire:
+                    Fx.Burst(map, end, c, 1.5f, PMat.Heart, 1.2f, 0.6f, 0.18f, PFlags.Wobble);
+                    break;
+                case VfxStyle.Liminal:
+                    Fx.Burst(map, end, c, 2f, PMat.Glitch, 1.2f, 0.3f, 0.2f, PFlags.Flicker);
                     break;
                 default:
                     Fx.Burst(map, end, c, 1.5f, PMat.Mote, 1.5f, 0.5f, 0.2f);
@@ -297,6 +365,26 @@ namespace ArcanumAscendant
                 case VfxStyle.Song:
                     if (age % 6 == 0) Fx.Rise(map, feet, c1, 1f, PMat.Note, 0.8f, 1f, 1f, 0.28f, PFlags.Wobble);
                     if (age % 15 == 0) Sprite(map, ArcaneMats.Ring, feet, 0.4f, 2.6f, 20, A(c1, 0.6f), layer: AltitudeLayer.MoteLow);
+                    break;
+                case VfxStyle.Wind:
+                    if (age % 3 == 0) Fx.Vortex(map, feet, A(W(c2, 0.2f), 0.75f), 1f, 1.5f + progress, PMat.Gust, 0.6f, 0.45f, 12f);
+                    if (age % 7 == 0) Fx.Rise(map, feet, new Color(0.55f, 0.7f, 0.35f, 1f), 1f, PMat.Leaf, 1.2f, 1.8f, 0.9f, 0.18f, PFlags.Wobble | PFlags.Lit, 300f);
+                    if (age % 10 == 0) Fx.RingBurst(map, feet, new Color(0.8f, 0.78f, 0.7f, 0.35f), 4f, PMat.Dust, 0.6f, 1.2f, 1f, 0.5f);
+                    break;
+                case VfxStyle.Doom:
+                    if (age % 5 == 0) Fx.Vortex(map, feet, new Color(0.08f, 0.06f, 0.07f, 0.95f), 1f, 1.6f, PMat.Crow, 1.1f, 0.34f, 6f);
+                    if (age % 8 == 0) Fx.Rise(map, feet, c1, 1f, PMat.Eye, 1f, 0.8f, 1f, 0.24f, PFlags.Pulse);
+                    if (age % 20 == 0) Sprite(map, PMat.Get(PMat.Seal), feet, 0.5f, 2.4f + progress, 24, A(c1, 0.55f), spin: 30f, layer: AltitudeLayer.MoteLow);
+                    break;
+                case VfxStyle.Desire:
+                    if (age % 4 == 0) Fx.Vortex(map, feet, W(c2, 0.2f), 1f, 1.4f, PMat.Petal, 1f, 0.2f, 7f);
+                    if (age % 7 == 0) Fx.Rise(map, hand, c1, 1f, PMat.Kiss, 0.3f, 0.9f, 0.9f, 0.22f, PFlags.Wobble);
+                    if (age % 9 == 0) Fx.Mist(map, feet, A(c1, 0.18f), 1f, 0.9f, 1.8f, 1f, true);
+                    break;
+                case VfxStyle.Liminal:
+                    if (age % 3 == 0) Fx.Burst(map, feet + VRand.InsideCircle(1f), c1, 1f, PMat.Glitch, 0.2f, 0.3f, 0.2f, PFlags.Flicker, 0f);
+                    if (age % 12 == 0) Fx.Rise(map, feet, A(c1, 0.8f), 1f, PMat.Tube, 0.8f, 0.4f, 0.6f, 0.4f, PFlags.Flicker, 0f);
+                    if (age % 25 == 0) ArcaneLightFlash.Spawn(map, feet, c1, 2.5f + progress * 2f, 6);
                     break;
             }
         }
@@ -377,6 +465,20 @@ namespace ArcanumAscendant
                         break;
                     case VfxStyle.Blood:
                         p.mat = PMat.BloodAlpha; p.size0 = 0.18f; p.size1 = 0.12f; p.c0 = A(c * 0.8f, 0.95f); p.c1 = A(c * 0.6f, 0f); p.flags = PFlags.Lit | PFlags.AlignVel;
+                        break;
+                    case VfxStyle.Wind:
+                        p.mat = PMat.Gust; p.size0 = 0.4f; p.size1 = 1.2f; p.c0 = A(W(c2, 0.2f), 0.8f); p.c1 = A(c, 0f); p.flags = PFlags.Stretch | PFlags.AlignVel; p.stretch = 0.05f;
+                        if (i % 4 == 0) Fx.Burst(map, origin + dir * VRand.Range(1f, range), new Color(0.8f, 0.78f, 0.7f, 0.4f), 1f, PMat.Dust, 1.5f, 0.9f, 0.5f, PFlags.Lit);
+                        break;
+                    case VfxStyle.Doom:
+                        p.mat = i % 3 == 0 ? PMat.FeatherDark : PMat.SmokeDark; p.size0 = 0.3f; p.size1 = 1.2f; p.c0 = i % 3 == 0 ? new Color(0.08f, 0.06f, 0.07f, 0.95f) : A(c * 0.35f, 0.6f);
+                        p.c1 = A(c * 0.2f, 0f); p.flags = PFlags.Lit | PFlags.Wobble; p.turb = 0.3f;
+                        break;
+                    case VfxStyle.Desire:
+                        p.mat = i % 2 == 0 ? PMat.Heart : PMat.Petal; p.size0 = 0.22f; p.size1 = 0.4f; p.c0 = i % 2 == 0 ? c : W(c2, 0.3f); p.c1 = A(c2, 0f); p.flags = PFlags.Wobble;
+                        break;
+                    case VfxStyle.Liminal:
+                        p.mat = PMat.Glitch; p.size0 = 0.25f; p.size1 = 0.5f; p.c0 = c; p.c1 = A(c2, 0f); p.flags = PFlags.Flicker;
                         break;
                     default:
                         p.mat = PMat.Glow; p.size0 = 0.3f; p.size1 = 1.1f; p.c0 = W(c, 0.3f); p.c1 = A(c2, 0f);
@@ -546,6 +648,48 @@ namespace ArcanumAscendant
                     Fx.Burst(map, pos, W(c2, 0.4f), 4f * m, PMat.Star, 2f, 0.8f, 0.2f, PFlags.Glint);
                     Light(map, pos, c, 2f + r, 12);
                     break;
+                case VfxStyle.Wind:
+                    ArcaneFx.Flash(map, pos, W(c2, 0.6f), 1f + r * 1.2f);
+                    Sprite(map, ArcaneMats.Shock, pos, 0.3f, 1.8f + r * 2.4f, 14, A(W(c2, 0.4f), 0.8f));
+                    Fx.Burst(map, pos, A(W(c2, 0.2f), 0.85f), 10f * m, PMat.Gust, 4.5f + r, 0.4f, 0.55f, PFlags.Stretch | PFlags.AlignVel, 0f, 0f, 0.15f, 0.2f + r * 0.3f);
+                    Fx.RingBurst(map, pos, new Color(0.8f, 0.78f, 0.7f, 0.45f), 8f + r * 6f, PMat.Dust, Mathf.Max(0.3f, r * 0.4f), 3f + r, 1.2f, 0.7f + r * 0.12f);
+                    Fx.Burst(map, pos, new Color(0.55f, 0.7f, 0.35f, 1f), 4f * m, PMat.Leaf, 3f, 1.6f, 0.2f, PFlags.Wobble | PFlags.Lit, 400f, 0.8f, 0.6f);
+                    if (r >= 1f) Fx.Debris(map, pos, new Color(0.6f, 0.55f, 0.48f, 1f), r * 2f, 2.5f + r, 0.14f);
+                    if (r >= 2f) Decal(map, pos, DecalKind.Crack, r * 1.6f, new Color(1f, 1f, 1f, 0.45f), 20f);
+                    Light(map, pos, W(c, 0.5f), 2f + r, 10);
+                    break;
+                case VfxStyle.Doom:
+                    ArcaneFx.Flash(map, pos, c * 0.8f, 1.2f + r * 1.3f);
+                    Sprite(map, PMat.Get(PMat.Seal), pos, 0.6f + r * 1.2f, 1.6f + r * 2.2f, 26, A(W(c, 0.15f), 0.9f), true, 40f, AltitudeLayer.MoteLow);
+                    Fx.Embers(map, pos, c, 8f * m, 0.3f + r * 0.6f, 1.2f, 1.8f);
+                    Fx.Burst(map, pos, new Color(0.08f, 0.06f, 0.07f, 0.95f), 6f * m, PMat.FeatherDark, 2.6f, 1.8f, 0.3f, PFlags.Wobble | PFlags.Lit, 160f, 0.8f, 0.5f);
+                    Fx.Smoke(map, pos, A(c * 0.2f, 0.7f), 4f * m, 0.3f + r * 0.5f, 0.9f + r * 0.3f, 2.6f, 0.4f, true, 0.6f);
+                    if (r > 0.5f) Shockwave(map, pos, r, A(c * 0.7f, 0.9f), A(c * 0.25f, 0.4f));
+                    Decal(map, pos, DecalKind.Glyph, 1f + r * 2f, A(c, 0.85f), 6f);
+                    Decal(map, pos, DecalKind.Scorch, 0.8f + r * 1.6f, new Color(0.8f, 0.6f, 0.6f, 0.7f), 30f);
+                    Light(map, pos, c, 2.5f + r * 1.3f, 16);
+                    if (r >= 3f) mgr.screen.AddFlash(new Color(0.25f, 0f, 0.02f), 0.45f, 26f, true, mgr.Now);
+                    break;
+                case VfxStyle.Desire:
+                    ArcaneFx.Flash(map, pos, W(c, 0.4f), 1.1f + r * 1.2f);
+                    Sprite(map, PMat.Get(PMat.Heart), pos, 0.4f + r * 0.6f, 1.4f + r * 1.6f, 20, A(W(c, 0.2f), 0.8f), true);
+                    Fx.Burst(map, pos, c, 6f * m, PMat.Heart, 2.4f, 1f, 0.24f, PFlags.Wobble, 90f, 0.6f, 0.4f);
+                    Fx.Burst(map, pos, W(c2, 0.3f), 5f * m, PMat.Petal, 2f, 1.8f, 0.2f, PFlags.Wobble, 220f, 0.6f, 0.6f);
+                    Fx.Burst(map, pos, W(c2, 0.5f), 4f * m, PMat.Star, 2.4f, 0.6f, 0.16f, PFlags.Glint);
+                    Fx.Rise(map, pos, c, 2f * m, PMat.Kiss, 0.3f + r * 0.4f, 0.9f, 1.1f, 0.26f, PFlags.Wobble);
+                    Fx.Mist(map, pos, A(c, 0.22f), 2f * m, r + 0.3f, 2.4f, 1.2f, true);
+                    if (r > 0.5f) Sprite(map, ArcaneMats.Ring, pos, 0.3f, 1.6f + r * 2.2f, 22, A(c, 0.6f), layer: AltitudeLayer.MoteLow);
+                    Decal(map, pos, DecalKind.Leaves, 0.8f + r * 1.6f, new Color(1f, 0.55f, 0.75f, 0.75f), 20f);
+                    Light(map, pos, c, 2f + r, 14);
+                    break;
+                case VfxStyle.Liminal:
+                    BanishUtility.GlitchBurst(map, pos, c, Mathf.Clamp(0.5f + r * 0.3f, 0.5f, 2f));
+                    ArcaneFx.Flash(map, pos, W(c, 0.5f), 1f + r);
+                    Sprite(map, ArcaneMats.Ring, pos, 0.2f, 1.4f + r * 2f, 12, A(c, 0.7f), layer: AltitudeLayer.MoteLow);
+                    if (r > 0.5f) mgr.Schedule(6, () => Fx.Burst(map, pos, A(c, 0.7f), 6f * m, PMat.Tube, 0.6f, 0.4f, 0.4f, PFlags.Flicker, 0f, 0f, 0.6f, r));
+                    Decal(map, pos, DecalKind.Rot, 1f + r * 1.8f, new Color(0.95f, 0.88f, 0.45f, 0.6f), 30f);
+                    for (int i = 0; i < 3; i++) mgr.Schedule(i * 4 + 2, () => Light(map, pos, c, 2f + r * 1.2f, 3));
+                    break;
                 default:
                     ArcaneFx.Flash(map, pos, W(c, 0.4f), 1.2f + r * 1.3f);
                     Fx.Sparks(map, pos, c2, 8f * m, 4.5f + r);
@@ -581,6 +725,26 @@ namespace ArcanumAscendant
                 case VfxStyle.Rune: mat = PMat.Rune; break;
                 case VfxStyle.Blood: mat = PMat.Heart; break;
                 case VfxStyle.Storm: mat = PMat.Spark; break;
+                case VfxStyle.Wind:
+                    mat = PMat.Leaf;
+                    flags = PFlags.Wobble | PFlags.Lit;
+                    Fx.Vortex(map, pos, A(W(c2, 0.3f), 0.7f), 5f * m, 0.8f + r * 0.6f, PMat.Gust, 0.7f, 0.4f, 10f);
+                    break;
+                case VfxStyle.Doom:
+                    mat = PMat.Eye;
+                    flags = PFlags.Pulse;
+                    Fx.Burst(map, pos, new Color(0.08f, 0.06f, 0.07f, 0.95f), 2f * m, PMat.FeatherDark, 1.2f, 1.8f, 0.26f, PFlags.Wobble | PFlags.Lit, 120f, 0.5f, 0.6f);
+                    break;
+                case VfxStyle.Desire:
+                    mat = PMat.Heart;
+                    flags = PFlags.Wobble;
+                    Fx.Rise(map, pos, c, 2f * m, PMat.Kiss, 0.3f + r * 0.4f, 0.8f, 1.1f, 0.24f, PFlags.Wobble);
+                    break;
+                case VfxStyle.Liminal:
+                    mat = PMat.Glitch;
+                    flags = PFlags.Flicker;
+                    Fx.Rise(map, pos, A(c, 0.6f), 1f + r * 0.5f, PMat.Tube, 0.3f + r * 0.5f, 0.1f, 1f, 0.4f, PFlags.Flicker, 0f);
+                    break;
                 default: mat = PMat.Mote; break;
             }
             Fx.Rise(map, pos, W(c, 0.3f), 6f * m, mat, 0.3f + r * 0.6f, 1.3f, 1.2f, 0.24f, flags);
@@ -661,6 +825,35 @@ namespace ArcanumAscendant
                     Fx.Burst(map, pos, c, 10f * size, PMat.Note, 2.4f, 1.4f, 0.32f, PFlags.Wobble, 120f);
                     Sprite(map, ArcaneMats.Ring, pos, 0.3f, 3.5f, 24, A(c, 0.8f));
                     break;
+                case VfxStyle.Wind:
+                    Fx.Burst(map, pos, A(W(c2, 0.2f), 0.85f), 10f * size, PMat.Gust, 5f, 0.45f, 0.6f, PFlags.Stretch | PFlags.AlignVel, 0f, 0f, 0.2f, 0.3f);
+                    Fx.Vortex(map, pos, new Color(0.8f, 0.78f, 0.7f, 0.5f), 8f * size, 1.4f * size, PMat.Dust, 1.1f, 0.5f, 14f);
+                    Fx.Burst(map, pos, new Color(0.55f, 0.7f, 0.35f, 1f), 6f * size, PMat.Leaf, 3.5f, 2f, 0.22f, PFlags.Wobble | PFlags.Lit, 500f, 0.6f, 0.8f);
+                    break;
+                case VfxStyle.Doom:
+                    var reaper = ctx.caster;
+                    if (reaper != null && reaper.Spawned && reaper.Map == map && (reaper.DrawPos - pos).MagnitudeHorizontal() < 45f)
+                        mgr.Add(new VfxSoulWisp(pos, reaper, c, c2));
+                    Fx.Burst(map, pos, new Color(0.08f, 0.06f, 0.07f, 0.95f), 10f * size, PMat.FeatherDark, 2.8f, 2.4f, 0.32f, PFlags.Wobble | PFlags.Lit, 200f, 0.5f, 0.8f);
+                    Fx.Vortex(map, pos, new Color(0.08f, 0.06f, 0.07f, 0.95f), 4f * size, 1.6f, PMat.Crow, 1.4f, 0.4f, 8f);
+                    Fx.Rise(map, pos, W(c, 0.2f), 1f, PMat.Eye, 0.1f, 1.1f, 1.5f, 0.5f, PFlags.Pulse, 0f);
+                    Fx.Embers(map, pos, c, 8f * size, 0.4f * size, 1.3f, 2f);
+                    Decal(map, pos, DecalKind.Glyph, 1.4f * size, A(c, 0.85f), 8f);
+                    break;
+                case VfxStyle.Desire:
+                    Fx.Burst(map, pos, c, 12f * size, PMat.Heart, 3f, 1.2f, 0.26f, PFlags.Wobble, 220f, 1.4f, 0.6f);
+                    Sprite(map, PMat.Get(PMat.Heart), pos + new Vector3(0f, 0f, 0.5f), 1.2f, 0.2f, 22, W(c, 0.3f), true);
+                    Fx.Rise(map, pos, A(W(c, 0.3f), 0.8f), 4f * size, PMat.Wisp, 0.4f, 1.4f, 1.3f, 0.36f, PFlags.None, 200f);
+                    var lover = ctx.caster;
+                    if (lover != null && lover.Spawned && lover.Map == map && (lover.DrawPos - pos).MagnitudeHorizontal() < 45f)
+                        mgr.Add(new VfxSoulWisp(pos, lover, c, c2, null, PMat.Heart));
+                    break;
+                case VfxStyle.Liminal:
+                    BanishUtility.GlitchBurst(map, pos, c, 1.2f * size);
+                    Fx.Implode(map, pos, A(c, 0.9f), 14f * size, 1.6f, 0.45f, PMat.Glitch, 0.2f);
+                    mgr.Schedule(10, () => Fx.Rise(map, pos, new Color(1f, 1f, 1f, 0.9f), 1f, PMat.Smile, 0.05f, 0.5f, 1.4f, 0.55f, PFlags.Flicker, 0f));
+                    Decal(map, pos, DecalKind.Rot, 1.2f * size, new Color(0.95f, 0.88f, 0.45f, 0.7f), 30f);
+                    break;
                 default:
                     Fx.Burst(map, pos, c, 10f * size, PMat.Mote, 2.5f, 0.8f, 0.24f);
                     break;
@@ -727,6 +920,27 @@ namespace ArcanumAscendant
                     Fx.Rise(map, center, c, n * 0.3f, PMat.Note, radius, 0.9f, 1.4f, 0.26f, PFlags.Wobble);
                     if (age % 40 == 0) Sprite(map, ArcaneMats.Ring, center, 0.3f, radius * 2.2f, 30, A(c, 0.5f), layer: AltitudeLayer.MoteLow);
                     break;
+                case VfxStyle.Wind:
+                    if (age % 4 == 0) Fx.Vortex(map, center, A(W(c2, 0.2f), 0.6f), n * 0.5f, radius, PMat.Gust, 0.8f, 0.5f, 12f);
+                    if (age % 9 == 0) Fx.Burst(map, center, new Color(0.55f, 0.7f, 0.35f, 1f), n * 0.2f, PMat.Leaf, 1.6f, 1.6f, 0.18f, PFlags.Wobble | PFlags.Lit, 400f, 0.3f, 0.6f, radius);
+                    if (age % 14 == 0) Fx.Burst(map, center, new Color(0.8f, 0.78f, 0.7f, 0.3f), n * 0.3f, PMat.Dust, 1f, 1.4f, 0.5f, PFlags.Lit, 30f, 0f, 0.2f, radius);
+                    break;
+                case VfxStyle.Doom:
+                    Fx.Burst(map, center, new Color(0.2f, 0.19f, 0.18f, 0.9f), n * 0.3f, PMat.Ash, 0.3f, 2.2f, 0.16f, PFlags.Lit | PFlags.Wobble, 90f, -0.25f, 1.6f, radius);
+                    Fx.Embers(map, center, c, n * 0.25f, radius, 0.9f, 1.6f, 0.1f);
+                    if (age % 14 == 0) Fx.Smoke(map, center, A(c * 0.18f, 0.5f), n * 0.3f, radius, 1.2f, 3f, 0.25f, true, 0.3f);
+                    if (age % 60 == 0) Fx.Vortex(map, center, new Color(0.08f, 0.06f, 0.07f, 0.95f), 2f, radius * 0.8f, PMat.Crow, 2f, 0.32f, 4f);
+                    break;
+                case VfxStyle.Desire:
+                    Fx.Burst(map, center, W(c2, 0.3f), n * 0.25f, PMat.Petal, 0.4f, 2f, 0.2f, PFlags.Wobble, 200f, 0.4f, 1.4f, radius);
+                    Fx.Rise(map, center, c, n * 0.2f, PMat.Heart, radius, 0.7f, 1.4f, 0.2f, PFlags.Wobble);
+                    if (age % 10 == 0) Fx.Mist(map, center, A(c, 0.16f), n * 0.3f, radius, 3f, 1.6f, true);
+                    break;
+                case VfxStyle.Liminal:
+                    if (age % 3 == 0) Fx.Burst(map, center + VRand.InsideCircle(radius), c, 1f, PMat.Glitch, 0.1f, 0.35f, 0.24f, PFlags.Flicker, 0f, 0f, 0.3f, 0.1f);
+                    if (age % 20 == 0) Fx.Rise(map, center, A(c, 0.6f), n * 0.2f, PMat.Tube, radius, 0.05f, 1.2f, 0.45f, PFlags.Flicker, 0f);
+                    if (age % 45 == 0 && VRand.Chance(0.5f)) Light(map, center + VRand.InsideCircle(radius * 0.6f), c, 2.5f, 4);
+                    break;
                 default:
                     Fx.Rise(map, center, c, n * 0.3f, PMat.Mote, radius, 0.8f, 1.2f, 0.15f);
                     break;
@@ -734,7 +948,8 @@ namespace ArcanumAscendant
         }
 
         public static bool FieldGlows(VfxStyle s) => s == VfxStyle.Fire || s == VfxStyle.Holy || s == VfxStyle.Storm || s == VfxStyle.Rune || s == VfxStyle.Arcane
-                                                     || s == VfxStyle.Necro || s == VfxStyle.Time || s == VfxStyle.Void;
+                                                     || s == VfxStyle.Necro || s == VfxStyle.Time || s == VfxStyle.Void
+                                                     || s == VfxStyle.Doom || s == VfxStyle.Desire || s == VfxStyle.Liminal;
     }
 
     /// <summary>Per-status particle emitters and clinging overlays.</summary>
@@ -822,6 +1037,35 @@ namespace ArcanumAscendant
                     break;
                 case "Blood":
                     Fx.Rise(map, pos, c, 0.4f, PMat.Blood, 0.3f, 0.7f, 1f, 0.12f);
+                    break;
+                case "Omen":
+                    if (VRand.Chance(0.5f))
+                        Fx.Burst(map, pos + new Vector3(0f, 0f, 0.6f), new Color(0.08f, 0.06f, 0.07f, 0.95f), 1f, PMat.FeatherDark, 0.3f, 1.6f, 0.2f, PFlags.Wobble | PFlags.Lit, 90f, 0.4f, 0.6f);
+                    if (severity >= 4f && VRand.Chance(0.3f)) Fx.Rise(map, pos, c, 1f, PMat.Eye, 0.2f, 0.6f, 0.9f, 0.2f, PFlags.Pulse, 0f);
+                    break;
+                case "Gale":
+                    Fx.Vortex(map, pos, new Color(c.r, c.g, c.b, 0.6f), 0.6f, 0.6f, PMat.Gust, 0.6f, 0.3f, 12f);
+                    break;
+                case "Charm":
+                    Fx.Rise(map, pos + new Vector3(0f, 0f, 0.5f), c, 0.4f * k, PMat.Heart, 0.2f, 0.7f, 1f, 0.16f, PFlags.Wobble);
+                    if (VRand.Chance(0.15f)) Fx.Burst(map, pos, new Color(1f, 0.8f, 0.9f, 0.9f), 1f, PMat.Petal, 0.3f, 1.4f, 0.16f, PFlags.Wobble, 200f, 0.3f, 0.6f);
+                    break;
+                case "Lost":
+                    Fx.Burst(map, pos + VRand.InsideCircle(0.3f), c, 0.5f * k, PMat.Glitch, 0.2f, 0.3f, 0.18f, PFlags.Flicker, 0f);
+                    break;
+                case "Debt":
+                    Fx.Burst(map, pos, c, 0.4f, PMat.Gold, 0.4f, 0.8f, 0.14f, PFlags.Glint, 90f, 0.8f, 0.6f);
+                    if (VRand.Chance(0.2f)) Fx.Embers(map, pos, c, 1f, 0.3f, 0.8f, 1.2f, 0.12f);
+                    break;
+                case "Dream":
+                    Fx.Rise(map, pos + new Vector3(0.2f, 0f, 0.5f), c, 0.25f, PMat.Star, 0.1f, 0.5f, 1.4f, 0.14f, PFlags.Glint);
+                    if (VRand.Chance(0.1f)) Fx.Mist(map, pos, new Color(c.r, c.g, c.b, 0.2f), 1f, 0.4f, 2.4f, 1f, true);
+                    break;
+                case "Infernal":
+                    Fx.Flames(map, pos, c, new Color(1f, 0.7f, 0.3f), 0.6f * k, 0.25f, 0.32f, 0.05f);
+                    break;
+                case "Watched":
+                    if (VRand.Chance(0.08f)) Fx.Rise(map, pos + new Vector3(0f, 0f, 0.7f), new Color(1f, 1f, 1f, 0.85f), 1f, PMat.Eye, 0.05f, 0.2f, 0.8f, 0.2f, PFlags.Pulse, 0f);
                     break;
                 case "Strain":
                     Fx.Sparks(map, pos + new Vector3(0f, 0f, 0.45f), new Color(1f, 0.35f, 0.25f), 1.5f * k, 2f, 0.08f, 0.3f, -1f, 360f, 1f, 0.1f);

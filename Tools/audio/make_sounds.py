@@ -1,6 +1,6 @@
 """
 Synthesizes every sound effect used by the mod (pure numpy, no samples).
-Usage: python3 Tools/audio/make_sounds.py
+Usage: python3 Tools/audio/make_sounds.py [Name ...]   (no names = every sound)
 Writes Sounds/ArcanumAscendant/<Name>/<n>.wav (22.05 kHz, 16-bit mono).
 """
 import os
@@ -431,6 +431,134 @@ def node_unlock(rng):
     return reverb(y, rng, 0.8, 0.3)
 
 
+def cast_wind(rng):
+    d = 1.0
+    n = int(SR * d)
+    w = whoosh(d, rng, 250, 2600) * 1.3
+    whistle = osc(sweep(900, 1500, d, 0.8) * (1 + 0.01 * np.sin(np.linspace(0, 40, n))), d) * env(n, 0.2, 0.3, 0.5, 0.4) * 0.12
+    return reverb(mixdown(w, whistle), rng, 0.9, 0.3)
+
+
+def impact_wind(rng):
+    d = 0.9
+    return reverb(mixdown(boom(0.5, rng, 140, 60) * 0.7, whoosh(d, rng, 3000, 400) * 1.2), rng, 0.8, 0.25)
+
+
+def gust(rng):
+    d = 1.6
+    n = int(SR * d)
+    body = whoosh(d, rng, 180, 1800) * 1.4
+    gusts = lowpass(noise(d, rng), 600) * (0.6 + 0.4 * np.sin(np.linspace(0, 9, n) + rng.uniform(0, 3))) * env(n, 0.3, 0.3, 0.7, 0.5)
+    return reverb(mixdown(body, gusts * 0.8), rng, 1.0, 0.3)
+
+
+def caw(rng):
+    d = 0.9
+    y = np.zeros(int(SR * d))
+    for start in (0.0, rng.uniform(0.28, 0.36)):
+        L = 0.24
+        n = int(SR * L)
+        f = sweep(rng.uniform(560, 640), rng.uniform(380, 430), L, 0.7)
+        src = fft_filter(osc(f, L, "saw") * 0.6 + osc(f * 2.02, L, "saw") * 0.25, 500, 3200)
+        rasp = 1 + 0.4 * np.sign(np.sin(np.linspace(0, 2 * np.pi * 55 * L, n)))
+        seg = np.asarray(src * env(n, 0.01, 0.05, 0.8, 0.1)) * rasp
+        i = int(start * SR)
+        y[i:i + n] += seg[: len(y) - i]
+    return reverb(S(y), rng, 0.7, 0.25)
+
+
+def toll(rng):
+    d = 3.0
+    base = rng.choice([98.0, 110.0])
+    partials = ((0.5, 0.6), (1, 1.0), (1.19, 0.5), (1.5, 0.45), (2.0, 0.4), (2.52, 0.25), (3.0, 0.2), (4.07, 0.12))
+    y = bell(base * 2, d, rng, partials=partials, tau=1.6)
+    strike = highpass(noise(0.05, rng), 2000) * expdecay(int(SR * 0.05), 0.01) * 0.4
+    return reverb(mixdown(strike, y), rng, 2.0, 0.4, 0.8)
+
+
+def cast_doom(rng):
+    d = 1.2
+    n = int(SR * d)
+    drone = lowpass(osc(55, d, "saw") * 0.3 + osc(82.5, d, "saw") * 0.15, sweep(200, 900, d, 0.5)) * env(n, 0.3, 0.3, 0.7, 0.4)
+    whisper = fft_filter(noise(d, rng), 2000, 6000) * env(n, 0.4, 0.2, 0.4, 0.4) * 0.15
+    cw = np.pad(np.asarray(caw(rng))[: int(SR * 0.6)] * 0.35, (int(0.4 * SR), 0))
+    return reverb(mixdown(drone, whisper, cw), rng, 1.3, 0.4)
+
+
+def impact_doom(rng):
+    d = 1.6
+    b = bell(rng.choice([131.0, 147.0]), d, rng, partials=((0.5, 0.5), (1, 1.0), (1.19, 0.4), (1.5, 0.4), (2, 0.3)), tau=0.9) * 0.6
+    return reverb(mixdown(boom(d, rng, 80, 30), b), rng, 1.5, 0.4, 0.6)
+
+
+def _beat(rng, amp=1.0):
+    L = 0.2
+    n = int(SR * L)
+    return lowpass(osc(sweep(75, 38, L, 0.5), L) * expdecay(n, 0.05), 320) * amp
+
+
+def heartbeat(rng):
+    d = 1.2
+    y = np.zeros(int(SR * d))
+    for start, amp in ((0.0, 1.0), (0.2, 0.7), (0.72, 0.85), (0.92, 0.6)):
+        b = np.asarray(_beat(rng, amp))
+        i = int(start * SR)
+        y[i:i + len(b)] += b[: len(y) - i]
+    return reverb(S(y), rng, 0.6, 0.2)
+
+
+def cast_desire(rng):
+    d = 1.2
+    n = int(SR * d)
+    base = rng.choice([392.0, 440.0])
+    y = np.zeros(n)
+    for k, r in enumerate([1, 1.26, 1.5, 2.0, 2.52]):
+        note = karplus(base * r, d - k * 0.07, rng, 0.997)
+        i = int(k * 0.07 * SR)
+        y[i:i + len(note)] += note * 0.5
+    sigh = fft_filter(noise(d, rng), 600, 2600) * env(n, 0.35, 0.2, 0.5, 0.5) * 0.25
+    return reverb(mixdown(S(y), sigh), rng, 1.3, 0.4)
+
+
+def impact_desire(rng):
+    d = 1.2
+    shimmer = mixdown(*[np.pad(bell(f, 0.9, rng, tau=0.4), (int(k * 0.05 * SR), 0)) for k, f in enumerate((1318.5, 1568.0, 1975.5))]) * 0.3
+    return reverb(mixdown(heartbeat(rng)[: int(SR * d)] * 0.9, shimmer), rng, 1.1, 0.35)
+
+
+def buzz(rng):
+    d = 1.4
+    n = int(SR * d)
+    hum = osc(120, d, "square") * 0.25 + osc(240, d) * 0.2 + osc(360, d, "saw") * 0.08
+    hum = lowpass(hum, 2500)
+    gate = np.ones(n)
+    for _ in range(rng.randint(2, 5)):
+        p = rng.randint(0, n - 2000)
+        L = rng.randint(300, 1800)
+        gate[p:p + L] *= rng.uniform(0.0, 0.3)
+    clicks = crackle(d, rng, 10) * 0.6
+    return reverb(mixdown(hum * gate, clicks), rng, 0.8, 0.35, 0.6)
+
+
+def cast_liminal(rng):
+    d = 1.1
+    n = int(SR * d)
+    chime = bell(rng.choice([587.33, 659.25]), d, rng, tau=0.5)[::-1] * 0.4
+    wobble = osc(sweep(300, 180, d, 1.0) * (1 + 0.03 * np.sin(np.linspace(0, 30, n))), d, "tri") * env(n, 0.1, 0.3, 0.5, 0.3) * 0.25
+    return reverb(mixdown(buzz(rng)[:n] * 0.6, chime, wobble), rng, 1.2, 0.45, 0.6)
+
+
+def impact_liminal(rng):
+    d = 0.8
+    n = int(SR * d)
+    z = np.asarray(noise(d, rng)) * np.asarray(expdecay(n, 0.25))
+    hold = np.repeat(z[::12], 12)[:n]
+    crushed = np.round(hold * 6) / 6
+    thump = boom(0.5, rng, 100, 45) * 0.6
+    gate = (np.sin(np.linspace(0, 2 * np.pi * 9, n)) > -0.3).astype(float)
+    return reverb(mixdown(S(crushed * gate) * 0.8, thump), rng, 0.9, 0.4, 0.5)
+
+
 RECIPES = {
     "Charge": charge, "Turret_Shot": turret_shot, "Construct_Break": construct_break, "LevelUp": level_up, "Awaken": awaken, "NodeUnlock": node_unlock,
     "Cast_Fire": cast_fire, "Impact_Fire": impact_fire, "Cast_Holy": cast_holy, "Impact_Holy": impact_holy, "Cast_Rune": cast_rune, "Impact_Rune": impact_rune,
@@ -438,12 +566,19 @@ RECIPES = {
     "Impact_Necro": impact_necro, "Cast_Shadow": cast_shadow, "Impact_Shadow": impact_shadow, "Cast_Arcane": cast_arcane, "Impact_Arcane": impact_arcane,
     "Cast_Blood": cast_blood, "Impact_Blood": impact_blood, "Cast_Nature": cast_nature, "Impact_Nature": impact_nature, "Cast_Song": cast_song,
     "Impact_Song": impact_song, "Cast_Void": cast_void, "Impact_Void": impact_void, "Cast_Time": cast_time, "Impact_Time": impact_time,
+    "Cast_Wind": cast_wind, "Impact_Wind": impact_wind, "Cast_Doom": cast_doom, "Impact_Doom": impact_doom, "Cast_Desire": cast_desire,
+    "Impact_Desire": impact_desire, "Cast_Liminal": cast_liminal, "Impact_Liminal": impact_liminal,
+    "Bell": toll, "Caw": caw, "Heartbeat": heartbeat, "Buzz": buzz, "Gust": gust,
 }
 
 
 def main():
+    import sys
+    only = set(sys.argv[1:])
     total = 0
     for name, fn in RECIPES.items():
+        if only and name not in only:
+            continue
         for v in range(2):
             rng = np.random.RandomState(zlib.crc32(name.encode()) % 10000 + v * 7919)
             y = fn(rng)

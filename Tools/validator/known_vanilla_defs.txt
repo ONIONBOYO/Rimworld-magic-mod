@@ -64,3 +64,14 @@ ConstructionSpeed
 Rat
 Security
 Mote
+Frenzy_Work
+QuadrupedAnimalWithPawsAndTail
+FrontRightPaw
+FrontLeftPaw
+Teeth
+AnimalAdult
+Pawn_Melee_BigBash_HitBuilding
+Pawn_Melee_BigBash_HitPawn
+Pawn_Melee_BigBash_Miss
+Animal
+AnimalConstant

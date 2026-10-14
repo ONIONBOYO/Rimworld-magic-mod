@@ -669,19 +669,7 @@ def make_items_ui():
 
     save(potion(hexc("#3a7bff")), "Items/ManaPotion")
     save(potion(hexc("#9a5aff"), True), "Items/GreaterManaPotion")
-    # arcane lectern
-    S2 = 256
-    lec = pen_mask(S2, lambda p: [p.poly([(-0.7, 0.1), (0.7, 0.1), (0.55, 0.55), (-0.55, 0.55)]), p.rect(-0.12, -0.75, 0.12, 0.1), p.rect(-0.5, -0.85, 0.5, -0.7)])
-    img = sprite(lec, np.array([110, 80, 55], np.float32), S2)
-    pages = pen_mask(S2, lambda p: [p.poly([(-0.55, 0.18), (-0.04, 0.22), (-0.04, 0.5), (-0.48, 0.46)]), p.poly([(0.55, 0.18), (0.04, 0.22), (0.04, 0.5), (0.48, 0.46)])])
-    img = over(img, solid(S2, np.array([240, 232, 210], np.float32), pages))
-    runes = pen_mask(S2, lambda p: [p.line([(x, 0.28), (x + 0.08, 0.42)], 0.02) for x in (-0.45, -0.3, -0.15, 0.12, 0.27, 0.4)])
-    img = over(img, solid(S2, hexc("#b48cff"), blur(runes, 3)))
-    img = over(img, solid(S2, hexc("#e8d8ff"), runes))
-    orb = pen_mask(S2, lambda p: p.circle(0, 0.72, 0.1))
-    img = over(img, solid(S2, hexc("#b48cff"), blur(orb, 10)))
-    img = over(img, solid(S2, WHITE, orb))
-    save(img, "Things/ArcaneAltar")
+    # the arcane lectern is modelled in 3D: see buildings3d.py
     lt = vfx_radial(64, lambda r, x, y: np.clip(np.exp(-(r / 0.35) ** 2) * 1.3 + 0.3 * np.exp(-(r / 0.9) ** 2), 0, 1))
     save(white(lt, 64), "Things/ArcaneLight")
     # UI
@@ -709,7 +697,7 @@ def make_items_ui():
         save(attr_icon(motif, col), "UI/Attr_" + name)
 
 
-def make_preview(classes):
+def make_preview(classes, subtitle):
     W, H = 1280, 720
     bg = np.zeros((H, W, 3), np.float32)
     y, x = np.mgrid[0:H, 0:W].astype(np.float32)
@@ -732,11 +720,12 @@ def make_preview(classes):
     layer.paste(tint, ((W - 640) // 2, (H - 640) // 2), tint)
     img = over(img, layer)
     n = len(classes)
+    isz = 128 if n <= 10 else 104
     for i, (icon_path) in enumerate(classes):
-        ic = Image.open(icon_path).convert("RGBA").resize((128, 128), Image.LANCZOS)
+        ic = Image.open(icon_path).convert("RGBA").resize((isz, isz), Image.LANCZOS)
         ang = math.radians(-90 + i * 360 / n)
-        cx, cy = W / 2 + 470 * math.cos(ang) * 1.0, H / 2 + 250 * math.sin(ang)
-        img.paste(ic, (int(cx - 64), int(cy - 64)), ic)
+        cx, cy = W / 2 + 500 * math.cos(ang) * 1.0, H / 2 + 245 * math.sin(ang) - 8
+        img.paste(ic, (int(cx - isz / 2), int(cy - isz / 2)), ic)
     font_big = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf", 96)
     font_small = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf", 30)
     txt = Image.new("L", (W, H), 0)
@@ -746,7 +735,7 @@ def make_preview(classes):
     for t, yy, f in [(title, H / 2 - 130, font_big), (title2, H / 2 - 30, font_big)]:
         w = td.textlength(t, font=f)
         td.text(((W - w) / 2, yy), t, font=f, fill=255)
-    sub = "9 classes  ·  27 subclasses  ·  207 spells  ·  658 skill nodes"
+    sub = subtitle
     w = td.textlength(sub, font=font_small)
     td.text(((W - w) / 2, H - 62), sub, font=font_small, fill=255)
     img = over(img, solid_wh(W, H, np.array([170, 110, 255], np.float32), blur(txt, 12)))
@@ -766,20 +755,32 @@ def solid_wh(w, h, color, mask):
     return to_rgba(rgb, arr(mask) * 255)
 
 
-def main():
+def main(missing_only=False):
+    """missing_only: render just the icons that do not exist yet (plus the preview), leaving every existing texture untouched."""
     manifest = json.load(open(os.path.join(ROOT, "Tools", "gen", "out", "icons.json")))
-    print("Rendering VFX...")
-    make_vfx()
-    print("Rendering items and UI...")
-    make_items_ui()
-    print("Rendering effect textures...")
-    import make_vfx2
-    make_vfx2.make_all()
+    if not missing_only:
+        print("Rendering VFX...")
+        make_vfx()
+        print("Rendering items and UI...")
+        make_items_ui()
+        print("Rendering effect textures...")
+        import make_vfx2
+        make_vfx2.make_all()
+        print("Rendering 3D buildings...")
+        import buildings3d
+        buildings3d.make_all()
+    print("Rendering Harbinger, Wind Mage, Succubus, Incubus and Noclipper textures...")
+    import mythic_art
+    mythic_art.make_all()
     print("Rendering %d icons/things..." % len(manifest))
     class_paths = []
     for i, e in enumerate(manifest):
         k = e["kind"]
         rel = e["path"].replace("ArcanumAscendant/", "")
+        if missing_only and os.path.exists(os.path.join(TEX, rel + ".png")):
+            if k == "class" and e["frame"] == "class":
+                class_paths.append(os.path.join(TEX, rel + ".png"))
+            continue
         if k == "spell":
             save(spell_icon(e["motif"], e.get("motif2"), e["c1"], e["c2"], e["frame"] == "ultimate"), rel)
         elif k == "node":
@@ -791,9 +792,14 @@ def main():
         elif k == "thing":
             make_thing(e["path"], e["motif"], e["c1"], e["c2"])
     print("Rendering preview...")
-    make_preview(class_paths)
+    counts = {f: sum(1 for e in manifest if e["kind"] == kind and (frame is None or e["frame"] == frame))
+              for f, kind, frame in (("classes", "class", "class"), ("subclasses", "class", "subclass"), ("spells", "spell", None), ("nodes", "node", None))}
+    spell_nodes = counts["spells"]  # every spell is unlocked by exactly one tree node or starts unlocked
+    subtitle = "%d classes  ·  %d subclasses  ·  %d spells  ·  %d skill nodes" % (counts["classes"], counts["subclasses"], counts["spells"],
+                                                                               counts["nodes"] + spell_nodes - counts["classes"])
+    make_preview(class_paths, subtitle)
     print("Done.")
 
 
 if __name__ == "__main__":
-    main()
+    main(missing_only="--missing-only" in sys.argv)

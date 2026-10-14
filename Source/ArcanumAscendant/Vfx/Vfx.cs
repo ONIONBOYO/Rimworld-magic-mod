@@ -121,6 +121,10 @@ namespace ArcanumAscendant
         Blood,
         Song,
         Plague,
+        Wind,
+        Doom,
+        Desire,
+        Liminal,
     }
 
     public enum VfxType

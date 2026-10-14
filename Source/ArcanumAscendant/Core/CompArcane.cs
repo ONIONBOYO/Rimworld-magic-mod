@@ -388,7 +388,7 @@ namespace ArcanumAscendant
             if (p == null || silent) return;
             if (p.Faction != Faction.OfPlayer)
             {
-                Awaken(DefDatabase<ArcaneClassDef>.AllDefs.Where(d => !d.IsSubclass).RandomElement(), true);
+                Awaken(ArcaneClassDef.RandomRootFor(p), true);
                 return;
             }
             if (p.Spawned)
@@ -817,6 +817,11 @@ namespace ArcanumAscendant
             absorbed = false;
             if (Pawn == null || Pawn.Dead) return;
             if (dinfo.Def == null || !dinfo.Def.harmsHealth) return;
+            if (HediffComp_Deflect.Apply(Pawn, ref dinfo))
+            {
+                absorbed = true;
+                return;
+            }
             if (HediffComp_DamageShell.Apply(Pawn, ref dinfo))
             {
                 absorbed = true;
@@ -871,6 +876,23 @@ namespace ArcanumAscendant
             Notify_Kill(victim, null);
         }
 
+        /// <summary>A status this mage applied (omens, infatuation...) just detonated on a victim.</summary>
+        public void Notify_StackTriggered(Pawn victim, HediffDef def)
+        {
+            if (!IsMage) return;
+            foreach (var (passive, rank, _) in Passives)
+            {
+                try
+                {
+                    passive.StackTriggered(this, rank, victim, def);
+                }
+                catch (Exception e)
+                {
+                    Log.ErrorOnce("[Arcanum Ascendant] Passive error: " + e.Message, 0x5A1C1C0);
+                }
+            }
+        }
+
         public void Notify_Kill(Pawn victim, SpellContext ctx)
         {
             if (!IsMage || victim == null) return;
@@ -919,7 +941,7 @@ namespace ArcanumAscendant
             if (!p.Faction.HostileTo(Faction.OfPlayer)) return;
             var s = ArcanumMod.Settings;
             if (!Rand.Chance(s.enemyMageChance)) return;
-            var cls = DefDatabase<ArcaneClassDef>.AllDefsListForReading.Where(d => !d.IsSubclass).RandomElementWithFallback();
+            var cls = ArcaneClassDef.RandomRootFor(p);
             if (cls == null) return;
             Awaken(cls, true);
             float days = GenDate.DaysPassedSinceSettleFloat;

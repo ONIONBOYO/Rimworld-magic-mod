@@ -41,6 +41,7 @@ namespace ArcanumAscendant
         public virtual void SpellHit(CompArcane c, int rank, SpellContext ctx, Pawn target, float damage) { }
         public virtual void Kill(CompArcane c, int rank, Pawn victim, SpellContext ctx) { }
         public virtual void Downed(CompArcane c, int rank) { }
+        public virtual void StackTriggered(CompArcane c, int rank, Pawn victim, HediffDef def) { }
         public virtual void Notify_Learned(CompArcane c, int rank) { }
     }
 
@@ -245,6 +246,9 @@ namespace ArcanumAscendant
         public bool weapons;
         public bool self;
         public int durationTicks = -1;
+        /// <summary>Adds to the target's existing stacks (omens, debts...) instead of just refreshing them. Stacks remember this mage.</summary>
+        public bool stack;
+        public float maxSeverity = -1f;
 
         public override string Describe(int rank)
         {
@@ -252,13 +256,15 @@ namespace ArcanumAscendant
             return (self ? "AA_P_OnHitSelfHediff" : "AA_P_OnHitHediff").Translate(Pct(Mathf.Min(1f, chancePerRank * rank)), src, hediff?.label ?? "?") + TagText + CdText;
         }
 
-        private void Do(CompArcane c, Pawn target, int rank)
+        private void Do(CompArcane c, Pawn target, int rank, SpellContext ctx)
         {
             if (hediff == null || !Ready(c) || !Rand.Chance(chancePerRank * rank)) return;
             var who = self ? c.Pawn : target;
             if (who == null || who.Dead) return;
             Trigger(c);
-            var h = ArcaneUtility.ApplyHediff(who, hediff, severity, durationTicks, null, stack: self);
+            SpellContext src = null;
+            if (stack && !self) src = ctx ?? SourcedHediff.Context(c.Pawn, null, who.MapHeld, Color.white);
+            var h = ArcaneUtility.ApplyHediff(who, hediff, severity, durationTicks, src, stack: self || stack, maxSeverity);
             var dot = (h as HediffWithComps)?.TryGetComp<HediffComp_ArcaneDot>();
             if (dot != null && !self)
             {
@@ -269,12 +275,12 @@ namespace ArcanumAscendant
 
         public override void SpellHit(CompArcane c, int rank, SpellContext ctx, Pawn target, float damage)
         {
-            if (spells && TagMatch(ctx)) Do(c, target, rank);
+            if (spells && TagMatch(ctx)) Do(c, target, rank, ctx);
         }
 
         public override void WeaponHit(CompArcane c, int rank, Thing victim, DamageInfo dinfo, DamageWorker.DamageResult result)
         {
-            if (weapons && victim is Pawn p) Do(c, p, rank);
+            if (weapons && victim is Pawn p) Do(c, p, rank, null);
         }
     }
 
@@ -492,6 +498,8 @@ namespace ArcanumAscendant
         Periodic,
         OnSpellHit,
         OnDowned,
+        /// <summary>A stacking status this mage applied detonates (seventh seal, enthralment...).</summary>
+        OnStackTrigger,
     }
 
     public enum PassiveTargetMode
@@ -513,6 +521,8 @@ namespace ArcanumAscendant
         public float searchRadius = 15f;
         public int interval = 600;
         public bool onlyInCombat = true;
+        /// <summary>For OnStackTrigger: only this status counts (any when empty).</summary>
+        public HediffDef stackHediff;
 
         public override string Describe(int rank) => ("AA_Trigger_" + trigger).Translate(Pct(Mathf.Min(1f, chancePerRank * rank)), spell?.label ?? "?",
             (interval / 60f).ToString("F0")) + TagText + CdText;
@@ -565,6 +575,11 @@ namespace ArcanumAscendant
         public override void Downed(CompArcane c, int rank)
         {
             if (trigger == PassiveTrigger.OnDowned) Fire(c, rank, c.Pawn);
+        }
+
+        public override void StackTriggered(CompArcane c, int rank, Pawn victim, HediffDef def)
+        {
+            if (trigger == PassiveTrigger.OnStackTrigger && (stackHediff == null || stackHediff == def)) Fire(c, rank, victim);
         }
 
         public override void Tick(CompArcane c, int rank, int elapsed)
@@ -643,6 +658,29 @@ namespace ArcanumAscendant
             float v = perLevel * c.level * rank;
             if (attribute != null) v += perAttributePoint * c.Attribute(attribute) * rank;
             addOffset(stat, v);
+        }
+    }
+
+    /// <summary>Kills feed a stacking resource on the mage (harvested souls, collected hearts...).</summary>
+    public class P_StacksOnKill : ArcanePassive
+    {
+        public HediffDef hediff;
+        public float perKill = 1f;
+        public float maxStacks = -1f;
+        public bool spellKillsOnly;
+        /// <summary>Each kill refreshes how long the stacks last.</summary>
+        public int durationTicks = -1;
+
+        public override string Describe(int rank) => "AA_P_StacksOnKill".Translate((perKill * rank).ToString("0.#"), hediff?.label ?? "?",
+            maxStacks > 0f ? maxStacks.ToString("F0") : "-") + TagText + CdText;
+
+        public override void Kill(CompArcane c, int rank, Pawn victim, SpellContext ctx)
+        {
+            if (hediff == null || !Ready(c) || spellKillsOnly && ctx == null || ctx != null && !TagMatch(ctx)) return;
+            Trigger(c);
+            ArcaneUtility.ApplyHediff(c.Pawn, hediff, perKill * rank, durationTicks, null, true, maxStacks);
+            if (c.Pawn.Spawned && victim != null && victim.MapHeld == c.Pawn.Map && victim.MapHeld == Find.CurrentMap)
+                ArcaneVfxManager.For(c.Pawn.Map).Add(new VfxSoulWisp(victim.PositionHeld.ToVector3Shifted(), c.Pawn, c.WardColor, Color.white));
         }
     }
 }

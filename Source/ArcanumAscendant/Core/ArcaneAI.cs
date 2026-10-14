@@ -137,6 +137,14 @@ namespace ArcanumAscendant
                 default:
                 {
                     if (nearestEnemy == null) return false;
+                    if (props.delivery == DeliveryType.Global)
+                    {
+                        // map-wide spells are worth it against a real attack, not a lone straggler
+                        int hostiles = map.mapPawns.AllPawnsSpawned.Count(x => !x.Dead && !x.Downed && x.HostileTo(p));
+                        if (hostiles < Mathf.Max(3f, a.Ext.aiMinEnemiesInRadius)) return false;
+                        target = p;
+                        return true;
+                    }
                     if (selfCast)
                     {
                         float r = Mathf.Max(radius, 2f);

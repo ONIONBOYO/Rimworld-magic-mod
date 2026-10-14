@@ -94,6 +94,7 @@ namespace ArcanumAscendant
                     dot.instigator = ctx.caster;
                     dot.power = Mathf.Max(dot.power, ctx.DamageFactor);
                 }
+                hc.TryGetComp<HediffComp_StackTrigger>()?.Check();
             }
             return h;
         }

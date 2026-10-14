@@ -482,4 +482,39 @@ Chance of a wild surge when overchannelling: {2}</AA_StrainTip>
   <AA_Set_DecalsDesc>Spells leave scorch marks, frost, blood and sigils on the ground that fade over time.</AA_Set_DecalsDesc>
   <AA_Set_Reactions>Elemental reactions</AA_Set_Reactions>
   <AA_Set_ReactionsDesc>Spells of different elements combine into reactions (Shatter, Overload, Purge...).</AA_Set_ReactionsDesc>
+
+  <!-- Mythic mechanics: launches, banishment, stacks, contracts -->
+  <AA_Desc_LaunchSelf>Ride the wind to the target</AA_Desc_LaunchSelf>
+  <AA_Desc_Launch_AwayFromCaster>Hurls targets up to {0} cells away; landing deals {1} damage, more against walls</AA_Desc_Launch_AwayFromCaster>
+  <AA_Desc_Launch_TowardCaster>Drags targets through the air toward you; landing deals {1} damage</AA_Desc_Launch_TowardCaster>
+  <AA_Desc_Launch_Upward>Throws targets into the air; they crash down for {1} damage</AA_Desc_Launch_Upward>
+  <AA_Desc_Launch_AwayFromImpact>Blasts targets up to {0} cells outward; landing deals {1} damage, more against walls</AA_Desc_Launch_AwayFromImpact>
+  <AA_Desc_Launch_TowardImpact>Sucks targets toward the centre; landing deals {1} damage</AA_Desc_Launch_TowardImpact>
+  <AA_WallSlam>Wall slam!</AA_WallSlam>
+  <AA_Disarmed>Disarmed!</AA_Disarmed>
+  <AA_Desc_DisarmSteal>Tears the weapon from the target's hands and brings it to you</AA_Desc_DisarmSteal>
+  <AA_Desc_Disarm>Knocks the weapon out of the target's hands</AA_Desc_Disarm>
+  <AA_Desc_Banish>Removes targets from reality for {0}. Bosses return sooner.</AA_Desc_Banish>
+  <AA_Noclipped>Noclipped</AA_Noclipped>
+  <AA_Desc_Sequence>Unfolds in {0} stages over {1}</AA_Desc_Sequence>
+  <AA_EmpowerText>+{0} power</AA_EmpowerText>
+  <AA_Desc_EmpowerConsume>Spends your {0}: +{1} power per stack (up to +{2})</AA_Desc_EmpowerConsume>
+  <AA_Desc_Empower>+{1} power per stack of {0} you carry (up to +{2})</AA_Desc_Empower>
+  <AA_SkinStolen>Skin stolen</AA_SkinStolen>
+  <AA_Desc_CopyPawn>Creates a copy of the target that fights for you for {0}</AA_Desc_CopyPawn>
+  <AA_DoomFalls>Doom falls</AA_DoomFalls>
+  <AA_ContractPaid>Contract fulfilled</AA_ContractPaid>
+  <AA_ContractDue>Payment due</AA_ContractDue>
+  <AA_Deflected>Deflected</AA_Deflected>
+  <AA_DeflectorInspect>Wind dome: {0} cells. Shots stopped: {1}</AA_DeflectorInspect>
+  <AA_StacksConsumed>{0} {1} consumed</AA_StacksConsumed>
+  <AA_Desc_PerStackConsume>+{0} damage per stack of {1}, consuming them</AA_Desc_PerStackConsume>
+  <AA_Desc_PerStack>+{0} damage per stack of {1}</AA_Desc_PerStack>
+  <AA_Desc_BodySize>Hits bigger creatures much harder</AA_Desc_BodySize>
+  <AA_Desc_VsHelpless>{0} damage against downed, stunned or sleeping targets</AA_Desc_VsHelpless>
+  <AA_P_StacksOnKill>On kill: gain {0} {1} (max {2})</AA_P_StacksOnKill>
+  <AA_Trigger_OnStackTrigger>When one of your stacking curses detonates: {0} chance to cast {1} for free</AA_Trigger_OnStackTrigger>
+  <AA_Delivery_Global>strikes every enemy on the map</AA_Delivery_Global>
+  <AA_Delivery_ChainDash>blinks from enemy to enemy</AA_Delivery_ChainDash>
+  <AA_Desc_Teleport_AlliesToTarget>You and nearby allies step through to the target</AA_Desc_Teleport_AlliesToTarget>
 </LanguageData>

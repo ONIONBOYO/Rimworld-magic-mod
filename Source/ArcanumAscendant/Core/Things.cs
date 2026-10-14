@@ -311,7 +311,7 @@ namespace ArcanumAscendant
             if (c == null) return;
             if (usedBy.Faction != Faction.OfPlayer)
             {
-                c.Awaken(DefDatabase<ArcaneClassDef>.AllDefs.Where(d => !d.IsSubclass).RandomElement());
+                c.Awaken(ArcaneClassDef.RandomRootFor(usedBy));
                 return;
             }
             if (ArcanumMod.Settings.freeAwakening)

@@ -104,6 +104,91 @@
     </subSounds>
   </SoundDef>
   <SoundDef>
+    <defName>AA_Bell</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>4</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArcanumAscendant/Bell</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>38~44</volumeRange>
+        <pitchRange>0.95~1.05</pitchRange>
+        <distRange>25~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>AA_Caw</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>4</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArcanumAscendant/Caw</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>26~32</volumeRange>
+        <pitchRange>0.9~1.15</pitchRange>
+        <distRange>25~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>AA_Heartbeat</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>4</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArcanumAscendant/Heartbeat</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>34~40</volumeRange>
+        <pitchRange>0.95~1.05</pitchRange>
+        <distRange>25~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>AA_Buzz</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>4</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArcanumAscendant/Buzz</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>24~30</volumeRange>
+        <pitchRange>0.97~1.03</pitchRange>
+        <distRange>25~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>AA_Gust</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>4</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArcanumAscendant/Gust</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>30~36</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <distRange>25~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
     <defName>AA_Cast_Fire</defName>
     <context>MapOnly</context>
     <maxSimultaneous>4</maxSimultaneous>
@@ -537,6 +622,142 @@
         <grains>
           <li Class="AudioGrain_Folder">
             <clipFolderPath>ArcanumAscendant/Impact_Time</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>30~38</volumeRange>
+        <pitchRange>0.88~1.12</pitchRange>
+        <distRange>25~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>AA_Cast_Wind</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>4</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArcanumAscendant/Cast_Wind</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>22~30</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <distRange>25~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>AA_Impact_Wind</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>4</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArcanumAscendant/Impact_Wind</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>30~38</volumeRange>
+        <pitchRange>0.88~1.12</pitchRange>
+        <distRange>25~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>AA_Cast_Doom</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>4</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArcanumAscendant/Cast_Doom</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>22~30</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <distRange>25~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>AA_Impact_Doom</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>4</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArcanumAscendant/Impact_Doom</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>30~38</volumeRange>
+        <pitchRange>0.88~1.12</pitchRange>
+        <distRange>25~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>AA_Cast_Desire</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>4</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArcanumAscendant/Cast_Desire</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>22~30</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <distRange>25~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>AA_Impact_Desire</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>4</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArcanumAscendant/Impact_Desire</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>30~38</volumeRange>
+        <pitchRange>0.88~1.12</pitchRange>
+        <distRange>25~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>AA_Cast_Liminal</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>4</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArcanumAscendant/Cast_Liminal</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>22~30</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <distRange>25~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>AA_Impact_Liminal</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>4</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArcanumAscendant/Impact_Liminal</clipFolderPath>
           </li>
         </grains>
         <volumeRange>30~38</volumeRange>

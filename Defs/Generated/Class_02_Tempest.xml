@@ -2157,7 +2157,7 @@
         </impactVfx>
         <castSound>AA_Cast_Storm</castSound>
         <impactSound>AA_Impact_Storm</impactSound>
-        <style>Storm</style>
+        <style>Wind</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -4499,7 +4499,7 @@
         </impactVfx>
         <castSound>AA_Cast_Storm</castSound>
         <impactSound>AA_Impact_Storm</impactSound>
-        <style>Storm</style>
+        <style>Wind</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -4695,7 +4695,7 @@
         </impactVfx>
         <castSound>AA_Cast_Storm</castSound>
         <impactSound>AA_Impact_Storm</impactSound>
-        <style>Storm</style>
+        <style>Wind</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
@@ -4907,7 +4907,7 @@
         <castSound>AA_Cast_Storm</castSound>
         <impactSound>AA_Impact_Storm</impactSound>
         <shake>2.5</shake>
-        <style>Storm</style>
+        <style>Wind</style>
       </li>
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>

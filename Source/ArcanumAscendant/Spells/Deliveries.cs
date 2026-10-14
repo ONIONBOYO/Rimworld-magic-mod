@@ -392,6 +392,112 @@ namespace ArcanumAscendant
             ArcaneVfxManager.For(ctx.map).Add(new VfxChannel(ctx, target, job, ticks));
         }
 
+        public const int MaxGlobalTargets = 80;
+
+        /// <summary>Every valid target on the map takes the spell, a handful per tick so huge raids do not hitch.</summary>
+        public static void Global(SpellContext ctx, Vector3 origin, float radius)
+        {
+            var map = ctx.map;
+            var affects = ctx.props.affects;
+            var targets = map.mapPawns.AllPawnsSpawned.Where(p => !p.Dead && ctx.Passes(p, affects))
+                .OrderBy(p => p.Position.DistanceToSquared(ctx.caster?.Position ?? p.Position)).Take(MaxGlobalTargets).ToList();
+            var mgr = ArcaneVfxManager.For(map);
+            for (int i = 0; i < targets.Count; i++)
+            {
+                var t = targets[i];
+                int delay = i / 5;
+                bool vfx = i < 30;
+                Action strike = () =>
+                {
+                    if (!t.Spawned || t.Dead || t.Map != map) return;
+                    SpellRunner.Impact(ctx, new ImpactInfo { cell = t.Position, pos = t.DrawPos, primary = t, radius = radius, sourcePos = origin }, playVfx: vfx);
+                };
+                if (delay <= 0) strike();
+                else mgr.Schedule(delay, strike);
+            }
+        }
+
+        /// <summary>The caster blinks to each enemy in turn, appearing behind it and striking.</summary>
+        public static void ChainDash(SpellContext ctx, LocalTargetInfo target, int hops, float range, float radius)
+        {
+            var caster = ctx.caster;
+            var map = ctx.map;
+            if (caster == null || !caster.Spawned || map == null) return;
+            var mgr = ArcaneVfxManager.For(map);
+            var visited = new HashSet<Pawn>();
+            Pawn first = target.Thing as Pawn;
+            if (first == null || !ctx.Passes(first, ctx.props.affects)) first = NextDashTarget(ctx, target.Cell, range, visited);
+            if (first == null) return;
+            int gap = Mathf.Max(2, ctx.props.chainDelay);
+            Action<int, Pawn> hop = null;
+            hop = (i, t) =>
+            {
+                if (!caster.Spawned || caster.Dead || caster.Downed || caster.Map != map) return;
+                if (t == null || !t.Spawned || t.Dead)
+                {
+                    t = NextDashTarget(ctx, caster.Position, range, visited);
+                    if (t == null) return;
+                }
+                visited.Add(t);
+                Vector3 from = caster.DrawPos;
+                IntVec3 dest = BehindCell(t, caster, map);
+                if (dest.IsValid && dest != caster.Position)
+                {
+                    caster.Position = dest;
+                    caster.Notify_Teleported(false, true);
+                }
+                Vector3 to = caster.DrawPos;
+                if (map == Find.CurrentMap)
+                {
+                    mgr.Add(new VfxBeam(from, to, 9, ArcaneMats.Get(ctx.props.beamTex), ctx.Color, ctx.Color2, 0.45f) { style = StyleFx.Resolve(ctx) });
+                    Fx.Burst(map, from, ctx.Color2, 6f, PMat.Gust, 2f, 0.4f, 0.5f, PFlags.Stretch | PFlags.AlignVel, 0f, 0f, 0.2f, 0.3f);
+                    Fx.Sparks(map, t.DrawPos, ctx.Color2, 8f, 5f);
+                }
+                SpellRunner.Impact(ctx, new ImpactInfo { cell = t.Position, pos = t.DrawPos, primary = t, radius = radius, sourcePos = from });
+                if (i >= hops) return;
+                var next = NextDashTarget(ctx, t.Position, range, visited);
+                if (next != null) mgr.Schedule(gap, () => hop(i + 1, next));
+            };
+            hop(0, first);
+        }
+
+        private static Pawn NextDashTarget(SpellContext ctx, IntVec3 around, float range, HashSet<Pawn> visited)
+        {
+            var map = ctx.map;
+            Pawn best = null;
+            float bestD = float.MaxValue;
+            foreach (var t in GenRadial.RadialDistinctThingsAround(around, map, Mathf.Min(range, GenRadial.MaxRadialPatternRadius - 1f), true))
+            {
+                if (!(t is Pawn p) || p.Dead || visited.Contains(p) || p == ctx.caster || !ctx.Passes(p, ctx.props.affects)) continue;
+                float d = p.Position.DistanceToSquared(around);
+                if (d < bestD)
+                {
+                    bestD = d;
+                    best = p;
+                }
+            }
+            return best;
+        }
+
+        private static IntVec3 BehindCell(Pawn t, Pawn caster, Map map)
+        {
+            IntVec3 best = IntVec3.Invalid;
+            float bestScore = float.MinValue;
+            Vector3 from = caster.DrawPos;
+            foreach (var adj in GenAdj.AdjacentCells)
+            {
+                var c = t.Position + adj;
+                if (!c.InBounds(map) || !c.Standable(map)) continue;
+                float score = (c.ToVector3Shifted() - from).MagnitudeHorizontalSquared() - (c.GetFirstPawn(map) != null ? 100f : 0f);
+                if (score > bestScore)
+                {
+                    bestScore = score;
+                    best = c;
+                }
+            }
+            return best;
+        }
+
         public static void Delayed(SpellContext ctx, LocalTargetInfo target, float radius, int count)
         {
             var props = ctx.props;

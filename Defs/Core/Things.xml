@@ -123,9 +123,10 @@
     <category>Building</category>
     <graphicData>
       <texPath>ArcanumAscendant/Things/ArcaneAltar</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(1.5, 1.5)</drawSize>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1.6, 1.6)</drawSize>
     </graphicData>
+    <tickerType>Normal</tickerType>
     <altitudeLayer>Building</altitudeLayer>
     <passability>PassThroughOnly</passability>
     <pathCost>50</pathCost>
@@ -162,6 +163,11 @@
         <glowColor>(170,120,255,0)</glowColor>
       </li>
       <li Class="ArcanumAscendant.CompProperties_ArcaneLectern" />
+      <li Class="ArcanumAscendant.CompProperties_ArcaneAmbience">
+        <color>(0.72, 0.55, 1, 1)</color>
+        <interval>45</interval>
+        <height>0.62</height>
+      </li>
     </comps>
   </ThingDef>
 
@@ -370,6 +376,24 @@
         <glowColor>(255,255,255,0)</glowColor>
       </li>
     </comps>
+  </ThingDef>
+
+  <!-- Carries a pawn thrown by wind magic: it flies in an arc, then lands (or slams into a wall) with damage. -->
+  <ThingDef>
+    <defName>AA_WindFlyer</defName>
+    <label>airborne</label>
+    <thingClass>ArcanumAscendant.ArcanePawnFlyer</thingClass>
+    <category>Ethereal</category>
+    <tickerType>Normal</tickerType>
+    <useHitPoints>false</useHitPoints>
+    <drawOffscreen>true</drawOffscreen>
+    <altitudeLayer>Skyfaller</altitudeLayer>
+    <drawerType>RealtimeOnly</drawerType>
+    <pawnFlyer>
+      <flightDurationMin>0.45</flightDurationMin>
+      <flightSpeed>14</flightSpeed>
+      <heightFactor>1.1</heightFactor>
+    </pawnFlyer>
   </ThingDef>
 
   <!-- ===================== Recipes ===================== -->

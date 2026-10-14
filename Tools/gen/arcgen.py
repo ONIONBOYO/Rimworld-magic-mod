@@ -327,9 +327,11 @@ ROLE_UNDRAFTED = {"Heal", "Buff", "Utility", "Summon", "Mobility"}
 # Visual style of a spell, from its tags (highest priority first) and then from its school.
 STYLE_TAGS = [("Plague", "Plague"), ("Frost", "Frost"), ("Fire", "Fire"), ("Storm", "Storm"), ("Holy", "Holy"), ("Time", "Time"),
               ("Void", "Void"), ("Space", "Void"), ("Blood", "Blood"), ("Song", "Song"), ("Chaos", "Song"), ("Necromancy", "Necro"),
-              ("Nature", "Nature"), ("Beast", "Nature"), ("Rune", "Rune"), ("Gun", "Rune"), ("Shadow", "Shadow"), ("Hex", "Shadow")]
+              ("Nature", "Nature"), ("Beast", "Nature"), ("Rune", "Rune"), ("Gun", "Rune"), ("Shadow", "Shadow"), ("Hex", "Shadow"),
+              ("Wind", "Wind"), ("Doom", "Doom"), ("Desire", "Desire"), ("Charm", "Desire"), ("Liminal", "Liminal")]
 STYLE_SCHOOLS = {"Fire": "Fire", "Frost": "Frost", "Storm": "Storm", "Necro": "Necro", "Holy": "Holy", "Time": "Time", "Void": "Void",
-                 "Nature": "Nature", "Rune": "Rune", "Shadow": "Shadow", "Blood": "Blood", "Song": "Song"}
+                 "Nature": "Nature", "Rune": "Rune", "Shadow": "Shadow", "Blood": "Blood", "Song": "Song",
+                 "Wind": "Wind", "Doom": "Doom", "Desire": "Desire", "Liminal": "Liminal"}
 
 
 def style_for(spell):
@@ -537,7 +539,7 @@ ATTR = {"POT": "AA_Potency", "FOC": "AA_Focus", "CEL": "AA_Celerity", "RES": "AA
 
 class ClassSpec:
     def __init__(self, cid, label, *, color, color2, icon, tagline, desc, playstyle, lore, primary, secondary, tags,
-                 starting=(), innate=None, order=0, parent=None, school=None, width=7, height=9, unlock=7):
+                 starting=(), innate=None, order=0, parent=None, school=None, width=7, height=9, unlock=7, gender=None, gender_group=None):
         self.cid = cid
         self.defName = "AA_Class_" + cid
         self.label = label
@@ -561,6 +563,8 @@ class ClassSpec:
         self.width = width
         self.height = height
         self.unlock = unlock
+        self.gender = gender
+        self.gender_group = gender_group
         self.nodes = []
         self.spells = []
 
@@ -598,6 +602,8 @@ class ClassSpec:
             "treeWidth": self.width,
             "treeHeight": self.height,
             "order": self.order,
+            "requiredGender": self.gender,
+            "genderGroup": self.gender_group,
         }
         body = "".join(to_xml(k, v, 2) for k, v in f.items() if v is not None)
         return "  <%sArcaneClassDef>\n%s  </%sArcaneClassDef>\n" % (NS, body, NS)

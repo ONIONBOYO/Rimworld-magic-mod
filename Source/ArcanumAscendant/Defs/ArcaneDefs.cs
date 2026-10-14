@@ -25,6 +25,9 @@ namespace ArcanumAscendant
         public int treeWidth = 7;
         public int treeHeight = 8;
         public int order;
+        /// <summary>Only pawns of this gender can take the class. Male/Female pairs sharing a genderGroup appear as one choice.</summary>
+        public Gender requiredGender = Gender.None;
+        public string genderGroup;
 
         [Unsaved] public List<ArcaneClassDef> subclasses = new List<ArcaneClassDef>();
         [Unsaved] public List<ArcaneNodeDef> nodes = new List<ArcaneNodeDef>();
@@ -41,6 +44,23 @@ namespace ArcanumAscendant
                     iconInt = iconPath.NullOrEmpty() ? BaseContent.BadTex : ContentFinder<Texture2D>.Get(iconPath, false) ?? BaseContent.BadTex;
                 return iconInt;
             }
+        }
+
+        /// <summary>Whether this pawn may take the class. Pawns without a gender may take either half of a pair.</summary>
+        public bool AllowedFor(Pawn p) => requiredGender == Gender.None || p == null || p.gender == Gender.None || p.gender == requiredGender;
+
+        /// <summary>Root classes this pawn can choose, in display order.</summary>
+        public static List<ArcaneClassDef> RootsFor(Pawn p) =>
+            DefDatabase<ArcaneClassDef>.AllDefs.Where(d => !d.IsSubclass && d.AllowedFor(p)).OrderBy(d => d.order).ToList();
+
+        /// <summary>A random root class this pawn can take (used for enemy mages and free awakenings).</summary>
+        public static ArcaneClassDef RandomRootFor(Pawn p)
+        {
+            var list = RootsFor(p);
+            if (list.Count == 0) list = DefDatabase<ArcaneClassDef>.AllDefs.Where(d => !d.IsSubclass).ToList();
+            // a gendered pair counts as a single class, so it is not twice as likely for genderless pawns
+            var groups = list.GroupBy(d => d.genderGroup.NullOrEmpty() ? d.defName : d.genderGroup).ToList();
+            return groups.RandomElement().RandomElement();
         }
 
         public IEnumerable<AbilityDef> AllSpells => nodes.Where(n => n.unlockSpell != null).Select(n => n.unlockSpell).Concat(startingSpells).Distinct();
@@ -272,6 +292,7 @@ namespace ArcanumAscendant
         public static HediffDef AA_ArcaneCore;
         public static ThingDef AA_ArcaneCrystal;
         public static ThingDef AA_LightFlash;
+        public static ThingDef AA_WindFlyer;
         public static HediffDef AA_ArcaneStrain;
         public static HediffDef AA_ArcaneBurnout;
         public static HediffDef AA_Haste;
@@ -283,6 +304,7 @@ namespace ArcanumAscendant
         public static HediffDef AA_Undead;
         public static DamageDef AA_Arcane;
         public static DamageDef AA_ArcaneTrue;
+        public static DamageDef AA_Force;
         public static StatCategoryDef AA_ArcanaStats;
         public static StatDef AA_SpellPower;
         public static StatDef AA_ManaMax;

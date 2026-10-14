@@ -730,4 +730,264 @@
     <combatLogRules>Damage_Bomb</combatLogRules>
     <buildingDamageFactor>1.5</buildingDamageFactor>
   </DamageDef>
+  <HediffDef>
+    <defName>AA_Doomblight</defName>
+    <label>doomblight</label>
+    <labelNoun>a doomblight</labelNoun>
+    <description>A wound left by doom magic.</description>
+    <hediffClass>Hediff_Injury</hediffClass>
+    <tendable>true</tendable>
+    <displayWound>true</displayWound>
+    <labelNounPretty>{0} in the {1}</labelNounPretty>
+    <defaultLabelColor>(0.784, 0.196, 0.235, 1)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_TendDuration">
+        <labelTendedWell>bandaged</labelTendedWell>
+        <labelTendedWellInner>tended</labelTendedWellInner>
+        <labelSolidTendedWell>set</labelSolidTendedWell>
+      </li>
+      <li Class="HediffCompProperties_Infecter">
+        <infectionChance>0.1</infectionChance>
+      </li>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>doomblight scar</permanentLabel>
+      </li>
+    </comps>
+    <injuryProps>
+      <painPerSeverity>0.0125</painPerSeverity>
+      <averagePainPerSeverityPermanent>0.0063</averagePainPerSeverityPermanent>
+      <bleedRate>0.02</bleedRate>
+      <canMerge>true</canMerge>
+      <destroyedLabel>Destroyed by doom</destroyedLabel>
+      <destroyedOutLabel>Destroyed by doom</destroyedOutLabel>
+    </injuryProps>
+  </HediffDef>
+  <DamageDef>
+    <defName>AA_Doom</defName>
+    <label>doom</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} met the end that was foretold.</deathMessage>
+    <hediff>AA_Doomblight</hediff>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <defaultDamage>10</defaultDamage>
+    <defaultArmorPenetration>0</defaultArmorPenetration>
+    <defaultStoppingPower>0.5</defaultStoppingPower>
+    <minDamageToFragment>12</minDamageToFragment>
+    <makesBlood>true</makesBlood>
+    <explosionCellFleck>AA_Fleck_Glow</explosionCellFleck>
+    <explosionColorCenter>(1, 0.3352, 0.382, 1)</explosionColorCenter>
+    <explosionColorEdge>(0.784, 0.196, 0.235, 1)</explosionColorEdge>
+    <soundExplosion>AA_Impact_Doom</soundExplosion>
+    <combatLogRules>Damage_Bomb</combatLogRules>
+    <buildingDamageFactor>1</buildingDamageFactor>
+  </DamageDef>
+  <HediffDef>
+    <defName>AA_WindShear</defName>
+    <label>wind shear</label>
+    <labelNoun>a wind shear</labelNoun>
+    <description>A wound left by gale magic.</description>
+    <hediffClass>Hediff_Injury</hediffClass>
+    <tendable>true</tendable>
+    <displayWound>true</displayWound>
+    <labelNounPretty>{0} in the {1}</labelNounPretty>
+    <defaultLabelColor>(0.494, 0.941, 0.824, 1)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_TendDuration">
+        <labelTendedWell>bandaged</labelTendedWell>
+        <labelTendedWellInner>tended</labelTendedWellInner>
+        <labelSolidTendedWell>set</labelSolidTendedWell>
+      </li>
+      <li Class="HediffCompProperties_Infecter">
+        <infectionChance>0.1</infectionChance>
+      </li>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>wind shear scar</permanentLabel>
+      </li>
+    </comps>
+    <injuryProps>
+      <painPerSeverity>0.0125</painPerSeverity>
+      <averagePainPerSeverityPermanent>0.0063</averagePainPerSeverityPermanent>
+      <bleedRate>0.02</bleedRate>
+      <canMerge>true</canMerge>
+      <destroyedLabel>Destroyed by gale</destroyedLabel>
+      <destroyedOutLabel>Destroyed by gale</destroyedOutLabel>
+    </injuryProps>
+  </HediffDef>
+  <DamageDef>
+    <defName>AA_Gale</defName>
+    <label>gale</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} was torn apart by the wind.</deathMessage>
+    <hediff>AA_WindShear</hediff>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <armorCategory>Blunt</armorCategory>
+    <defaultDamage>10</defaultDamage>
+    <defaultArmorPenetration>0.3</defaultArmorPenetration>
+    <defaultStoppingPower>0.5</defaultStoppingPower>
+    <minDamageToFragment>12</minDamageToFragment>
+    <makesBlood>true</makesBlood>
+    <explosionCellFleck>AA_Fleck_Glow</explosionCellFleck>
+    <explosionColorCenter>(0.6928, 1, 1, 1)</explosionColorCenter>
+    <explosionColorEdge>(0.494, 0.941, 0.824, 1)</explosionColorEdge>
+    <soundExplosion>AA_Impact_Wind</soundExplosion>
+    <combatLogRules>Damage_Bomb</combatLogRules>
+    <buildingDamageFactor>1</buildingDamageFactor>
+  </DamageDef>
+  <HediffDef>
+    <defName>AA_Heartache</defName>
+    <label>heartache</label>
+    <labelNoun>a heartache</labelNoun>
+    <description>A wound left by heartbreak magic.</description>
+    <hediffClass>Hediff_Injury</hediffClass>
+    <tendable>true</tendable>
+    <displayWound>true</displayWound>
+    <labelNounPretty>{0} in the {1}</labelNounPretty>
+    <defaultLabelColor>(1, 0.373, 0.635, 1)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_TendDuration">
+        <labelTendedWell>bandaged</labelTendedWell>
+        <labelTendedWellInner>tended</labelTendedWellInner>
+        <labelSolidTendedWell>set</labelSolidTendedWell>
+      </li>
+      <li Class="HediffCompProperties_Infecter">
+        <infectionChance>0.1</infectionChance>
+      </li>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>heartache scar</permanentLabel>
+      </li>
+    </comps>
+    <injuryProps>
+      <painPerSeverity>0.0125</painPerSeverity>
+      <averagePainPerSeverityPermanent>0.0063</averagePainPerSeverityPermanent>
+      <canMerge>true</canMerge>
+      <destroyedLabel>Destroyed by heartbreak</destroyedLabel>
+      <destroyedOutLabel>Destroyed by heartbreak</destroyedOutLabel>
+    </injuryProps>
+  </HediffDef>
+  <DamageDef>
+    <defName>AA_Heartbreak</defName>
+    <label>heartbreak</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} died of a broken heart.</deathMessage>
+    <hediff>AA_Heartache</hediff>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <defaultDamage>10</defaultDamage>
+    <defaultArmorPenetration>0</defaultArmorPenetration>
+    <defaultStoppingPower>0.5</defaultStoppingPower>
+    <minDamageToFragment>12</minDamageToFragment>
+    <makesBlood>false</makesBlood>
+    <explosionCellFleck>AA_Fleck_Glow</explosionCellFleck>
+    <explosionColorCenter>(1, 0.5476, 0.862, 1)</explosionColorCenter>
+    <explosionColorEdge>(1, 0.373, 0.635, 1)</explosionColorEdge>
+    <soundExplosion>AA_Impact_Desire</soundExplosion>
+    <combatLogRules>Damage_Bomb</combatLogRules>
+    <buildingDamageFactor>1</buildingDamageFactor>
+  </DamageDef>
+  <HediffDef>
+    <defName>AA_Hellburn</defName>
+    <label>hellfire burn</label>
+    <labelNoun>a hellfire burn</labelNoun>
+    <description>A wound left by hellfire magic.</description>
+    <hediffClass>Hediff_Injury</hediffClass>
+    <tendable>true</tendable>
+    <displayWound>true</displayWound>
+    <labelNounPretty>{0} in the {1}</labelNounPretty>
+    <defaultLabelColor>(0.753, 0.376, 1, 1)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_TendDuration">
+        <labelTendedWell>bandaged</labelTendedWell>
+        <labelTendedWellInner>tended</labelTendedWellInner>
+        <labelSolidTendedWell>set</labelSolidTendedWell>
+      </li>
+      <li Class="HediffCompProperties_Infecter">
+        <infectionChance>0.1</infectionChance>
+      </li>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>hellfire burn scar</permanentLabel>
+      </li>
+    </comps>
+    <injuryProps>
+      <painPerSeverity>0.0125</painPerSeverity>
+      <averagePainPerSeverityPermanent>0.0063</averagePainPerSeverityPermanent>
+      <canMerge>true</canMerge>
+      <destroyedLabel>Destroyed by hellfire</destroyedLabel>
+      <destroyedOutLabel>Destroyed by hellfire</destroyedOutLabel>
+    </injuryProps>
+  </HediffDef>
+  <DamageDef>
+    <defName>AA_Hellfire</defName>
+    <label>hellfire</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} was dragged screaming into hellfire.</deathMessage>
+    <hediff>AA_Hellburn</hediff>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <armorCategory>Heat</armorCategory>
+    <defaultDamage>10</defaultDamage>
+    <defaultArmorPenetration>0.4</defaultArmorPenetration>
+    <defaultStoppingPower>0.5</defaultStoppingPower>
+    <minDamageToFragment>12</minDamageToFragment>
+    <makesBlood>false</makesBlood>
+    <explosionCellFleck>AA_Fleck_Glow</explosionCellFleck>
+    <explosionColorCenter>(1, 0.5512, 1, 1)</explosionColorCenter>
+    <explosionColorEdge>(0.753, 0.376, 1, 1)</explosionColorEdge>
+    <soundExplosion>AA_Impact_Fire</soundExplosion>
+    <combatLogRules>Damage_Bomb</combatLogRules>
+    <buildingDamageFactor>1</buildingDamageFactor>
+  </DamageDef>
+  <HediffDef>
+    <defName>AA_StaticBurn</defName>
+    <label>static burn</label>
+    <labelNoun>a static burn</labelNoun>
+    <description>A wound left by static magic.</description>
+    <hediffClass>Hediff_Injury</hediffClass>
+    <tendable>true</tendable>
+    <displayWound>true</displayWound>
+    <labelNounPretty>{0} in the {1}</labelNounPretty>
+    <defaultLabelColor>(0.949, 0.886, 0.478, 1)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_TendDuration">
+        <labelTendedWell>bandaged</labelTendedWell>
+        <labelTendedWellInner>tended</labelTendedWellInner>
+        <labelSolidTendedWell>set</labelSolidTendedWell>
+      </li>
+      <li Class="HediffCompProperties_Infecter">
+        <infectionChance>0.1</infectionChance>
+      </li>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>static burn scar</permanentLabel>
+      </li>
+    </comps>
+    <injuryProps>
+      <painPerSeverity>0.0125</painPerSeverity>
+      <averagePainPerSeverityPermanent>0.0063</averagePainPerSeverityPermanent>
+      <canMerge>true</canMerge>
+      <destroyedLabel>Destroyed by static</destroyedLabel>
+      <destroyedOutLabel>Destroyed by static</destroyedOutLabel>
+    </injuryProps>
+  </HediffDef>
+  <DamageDef>
+    <defName>AA_Static</defName>
+    <label>static</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} glitched out of existence.</deathMessage>
+    <hediff>AA_StaticBurn</hediff>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <armorCategory>Heat</armorCategory>
+    <defaultDamage>10</defaultDamage>
+    <defaultArmorPenetration>0.3</defaultArmorPenetration>
+    <defaultStoppingPower>0.5</defaultStoppingPower>
+    <minDamageToFragment>12</minDamageToFragment>
+    <makesBlood>false</makesBlood>
+    <explosionCellFleck>AA_Fleck_Glow</explosionCellFleck>
+    <explosionColorCenter>(1, 1, 0.6736, 1)</explosionColorCenter>
+    <explosionColorEdge>(0.949, 0.886, 0.478, 1)</explosionColorEdge>
+    <soundExplosion>AA_Impact_Liminal</soundExplosion>
+    <combatLogRules>Damage_Bomb</combatLogRules>
+    <buildingDamageFactor>1</buildingDamageFactor>
+  </DamageDef>
 </Defs>

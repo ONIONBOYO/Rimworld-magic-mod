@@ -108,7 +108,8 @@ namespace ArcanumAscendant
         private static readonly Dictionary<string, int> byName = new Dictionary<string, int>();
 
         public static readonly int Glow, Spark, Streak, Ember, Mote, Smoke, SmokeDark, Dust, Shard, Snow, Leaf, Petal, Feather, Note, Rune, Skull, Bone,
-            Bolt, Star, Ring, Clock, Debris, Debris2, Shadow, Blood, BloodAlpha, Wisp, Flame, Bubble, Gear, Flare, Ash, IceChunk, Gold, Heart, Crystal;
+            Bolt, Star, Ring, Clock, Debris, Debris2, Shadow, Blood, BloodAlpha, Wisp, Flame, Bubble, Gear, Flare, Ash, IceChunk, Gold, Heart, Crystal,
+            Gust, Glitch, Eye, Seal, Crow, FeatherDark, Kiss, Smile, Tube, Confetti;
 
         static PMat()
         {
@@ -148,6 +149,16 @@ namespace ArcanumAscendant
             Gold = Register("ArcanumAscendant/Vfx/GoldFleck", true);
             Heart = Register("ArcanumAscendant/Vfx/Heart", true);
             Crystal = Register("ArcanumAscendant/Vfx/Crystal", true);
+            Gust = Register("ArcanumAscendant/Vfx/Gust", true);
+            Glitch = Register("ArcanumAscendant/Vfx/Glitch", true);
+            Eye = Register("ArcanumAscendant/Vfx/OmenEye", true);
+            Seal = Register("ArcanumAscendant/Vfx/OmenSeal", true);
+            Crow = Register("ArcanumAscendant/Vfx/Crow", false);
+            FeatherDark = Register("ArcanumAscendant/Vfx/Feather", false);
+            Kiss = Register("ArcanumAscendant/Vfx/Kiss", true);
+            Smile = Register("ArcanumAscendant/Vfx/Smile", true);
+            Tube = Register("ArcanumAscendant/Vfx/Tube", true);
+            Confetti = Register("ArcanumAscendant/Vfx/Confetti", false);
         }
 
         public static int Register(string path, bool additive)

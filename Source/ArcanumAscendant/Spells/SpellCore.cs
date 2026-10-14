@@ -39,6 +39,10 @@ namespace ArcanumAscendant
         Channel,
         /// <summary>A warning circle that detonates after a delay.</summary>
         Delayed,
+        /// <summary>Strikes every valid target on the map (capped), spread over a few ticks.</summary>
+        Global,
+        /// <summary>The caster blinks from enemy to enemy, striking each one.</summary>
+        ChainDash,
     }
 
     /// <summary>Spell definition data, attached to an AbilityDef as its effect comp.</summary>
@@ -269,6 +273,8 @@ namespace ArcanumAscendant
         public float scale = 1f;
         public List<IntVec3> areaCells;
         public Vector3 sourcePos;
+        /// <summary>Never affected by this impact (e.g. the pawn whose status just detonated).</summary>
+        public Thing exclude;
 
         public List<IntVec3> Cells(Map map)
         {

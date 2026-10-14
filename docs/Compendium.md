@@ -2,7 +2,7 @@
 
 Every class, subclass, spell and keystone in the mod. Generated from `Tools/gen/classes/*.py` - do not edit by hand.
 
-**9 classes - 27 subclasses - 277 spells - 730 skill tree nodes**
+**14 classes - 42 subclasses - 424 spells - 1170 skill tree nodes**
 
 ## Contents
 
@@ -15,6 +15,11 @@ Every class, subclass, spell and keystone in the mod. Generated from `Tools/gen/
 - [Runesmith](#runesmith): Golemancer, Spellforger, Arcane Gunslinger
 - [Shadowmancer](#shadowmancer): Assassin, Hexer, Hemomancer
 - [Spellsinger](#spellsinger): Skald, Illusionist, Jester
+- [Harbinger](#harbinger): Doomsayer, Pale Rider, Cataclysm
+- [Wind Mage](#wind-mage): Windblade, Pressure Sage, Skywarden
+- [Succubus](#succubus): Temptress, Thief of Years, Nightmare Muse
+- [Incubus](#incubus): Pactbinder, Dreamlord, Hellprince
+- [Noclipper](#noclipper): Level Keeper, Entity Handler, Archivist
 
 ## Pyromancer
 
@@ -796,6 +801,433 @@ Jesters treat magic as a joke, and the joke is usually on the enemy. Their spell
 | Juggling Knives * | 25 | 30s | attack | Juggle three knives around yourself at alarming speed. Anyone who gets close gets cut, and occasionally a custard pie flies out of the act. |
 
 **Keystones:** *The House Always Wins* - Luck is a skill. Huge crit chance and spells often refund themselves.; *Pandemonium* - Chaos follows you everywhere: Wild Magic erupts around a random enemy every five seconds in combat.
+
+## Harbinger
+
+*Prophet of the end. Lay Omens on your enemies, then break the Seventh Seal and watch it chain through the crowd.*
+
+Harbingers do not so much fight as announce. Every curse they speak is a promise, and every promise is kept.
+
+**Playstyle:** Build Omens with crows, prophecies and your allies' own gunfire (Fated), then cash them in: Toll the Bell for a single kill, Last Rites for a crowd, or let seven of them break the Seventh Seal, which ignores armour, scales with the victim's own vitality and splashes Omens onto its friends. Wants Focus and Potency.
+
+**Key attributes:** Focus, Potency
+
+### Harbinger spells
+
+| Spell | Mana | Cooldown | Role | Description |
+|---|---|---|---|---|
+| Ill Omen | 8 | 1.5s | attack | Send a crow of ill omen. Its beak deals doom damage that ignores armour and lays an Omen. Seven Omens break the Seventh Seal. |
+| Murder of Crows | 24 | 10s | attack | Release six crows that wheel through the air and fall on the nearest enemies, each one laying an Omen. |
+| Toll the Bell | 22 | 9s | attack | A single, terrible note for a single enemy: doom damage, plus 35% for every Omen it carries. The Omens are spent. |
+| Prophecy of Ruin | 18 | 14s | control | Foretell an enemy's death and lay two Omens. If it dies within thirty seconds you regain a quarter of your mana, your other spells cool down by a third, and its doom spreads: three Omens on every enemy within six cells. |
+| Sentence | 30 | 20s | control | Pass sentence on an enemy. In ten seconds, half of every wound it took in the meantime is dealt again, plus 3% of its vitality for each Omen it carries. |
+| Fated | 20 | 16s | control | Tie an enemy's fate to its wounds for twenty seconds: every time anything hurts it, it gains an Omen. Your allies' gunfire becomes prophecy. |
+| Apocalyptic Vision | 28 | 22s | control | Show everyone in front of you how the world ends. Enemies in a wide cone flee in terror for six seconds and gain two Omens. |
+| Black Sun | 45 | 40s | control | Put out the sun over an area for fifteen seconds. Enemies beneath it can barely see and gain an Omen every two seconds. |
+| Doomsday Clock | 40 | 26s | attack | A spectral clock appears over an area and strikes midnight three seconds later: everything beneath takes heavy doom damage, +15% per Omen, and gains another. |
+| Last Rites | 50 | 35s | attack | Read the last rites over everyone around you. Every enemy within six cells takes doom damage, +30% per Omen (spent), and you are healed for a quarter of the damage. |
+| Memento Mori * | 30 | 1 day | utility | Whisper to a colonist the exact day of their death. Unsettled and inspired, they throw themselves into their work. |
+
+**Keystones:** *Prophet of the End* - Every death you cause is foretold. Kills often prophesy the ruin of the nearest enemy for free, and your doom hits harder.; *End Times* - Omens fall like rain. Half your Doom hits lay an extra Omen, and every Doom spell costs a fifth less mana.; *Herald of the Seventh Seal* - Death announces you. Anything you kill may burst in a wave of doom that ignores armour.
+
+### Doomsayer (subclass)
+
+*Speak the end aloud. Doom clocks, shared fates, words that unmake, and the Apocalypse itself.*
+
+Doomsayers have stopped predicting the end and started scheduling it.
+
+**Playstyle:** The purest Omen engine. Words of Unmaking spreads Omens down a chain, Shared Fate links a crowd so one Seventh Seal hurts them all, and Final Hour deletes a single target. The Apocalypse puts three Omens on everything on the map. Wants Focus and Attunement.
+
+| Spell | Mana | Cooldown | Role | Description |
+|---|---|---|---|---|
+| Words of Unmaking | 32 | 14s | attack | Speak a word that should not be spoken. It leaps between six enemies, searing each one and laying two Omens. |
+| Final Hour | 45 | 24s | attack | Hang a doom clock over one enemy. When it strikes four seconds later the enemy takes massive doom damage, +20% per Omen (spent), plus 8% of its vitality. Nothing outruns its final hour. |
+| Shared Fate | 40 | 30s | control | Bind every enemy in an area to one fate for fifteen seconds: half of any wound one of them takes is dealt to all the others. One Seventh Seal becomes a massacre. |
+| Doom Spiral | 30 | 18s | attack | Stare into an enemy's soul and unravel it: a beam that searing doom along its length and lays an Omen every half second for four seconds. |
+| Cheat Fate | 60 | 7.2 h | buff | Rewrite an ally's fate. For the next minute, if they would die, they rise again instead. |
+| Apocalypse (ultimate) | 220 | 7.2 h | attack | Announce the end of the world. Every enemy on the map takes doom damage and gains three Omens; three seconds later the sky answers, and every Omen on the map is tolled at once for 35% extra damage each. |
+
+**Keystones:** *Voice of the End* - Every word is final. Final Hour and Words of Unmaking recharge far faster and all your doom hits harder.; *Unwritten* - Your own fate is unwritten. Once a day, when you would die, you rise again in a wave of doom. Cheat Fate recharges twice as fast.
+
+### Pale Rider (subclass)
+
+*Behold, a pale horse. Reap with a scythe of pale fire, ride through the enemy line, and harvest their souls.*
+
+The fourth horseman, or someone who borrowed his horse. Pale Riders fight up close and grow stronger with every death.
+
+**Playstyle:** A front-line reaper. Kills store Souls (more power and speed); Soul Harvest spends them in a huge nova. Reap executes the weak, Ride Them Down tramples a path through a line, and Death Rides blinks you from enemy to enemy. Wants Potency and Resilience.
+
+| Spell | Mana | Cooldown | Role | Description |
+|---|---|---|---|---|
+| Reap | 18 | 6s | attack | Swing a scythe of pale fire in a wide arc. Executes enemies below 20% health and deals triple damage to anything downed or stunned. |
+| Spectral Steed | 20 | 1.4 h | buff | Mount a spectral pale horse for thirty seconds: much faster, harder to stop, and slightly harder to hurt. |
+| Ride Them Down | 26 | 14s | mobility | Ride through the enemy line to the target point, trampling everything in your path for doom damage and knocking it aside. |
+| Soul Harvest | 40 | 25s | attack | Spend every harvested soul in one blast of pale fire around you: +15% power per soul (up to +150%), healing you for a fifth of the damage. Some survivors flee in terror. |
+| Deathly Pallor | 34 | 40s | control | Wear death like a cloak for twenty seconds. Enemies near you are slowed by the chill of the grave and gain an Omen every two seconds. |
+| Death Rides (ultimate) | 200 | 5.8 h | attack | Become Death for thirty seconds and ride through the battlefield: blink between up to ten enemies, reaping each one for massive doom damage. Anything below 30% health dies outright. Spends your souls for extra power. |
+
+**Keystones:** *Horseman of Death* - You never dismount. Spectral Steed lasts twice as long and returns twice as often, and Ride Them Down hits harder and recharges fast.; *Grim Reaper* - Every swing is a harvest. Reap recharges twice as fast and anything you hit below 15% health dies.
+
+### Cataclysm (subclass)
+
+*The end of days, on demand. Earthquakes, the bitter star Wormwood, plagues of locusts and the Seven Seals.*
+
+Some Harbingers announce the end. Cataclysms bring it, one disaster at a time.
+
+**Playstyle:** Huge, slow, map-shaking area damage that also wrecks buildings and turrets. Split the Earth flings a line of enemies into the air, Wormwood poisons the ground, the Blood Moon lays Omens on everything on the map, and the Seven Seals unfold seven different calamities over one spot. Wants Potency and Attunement.
+
+| Spell | Mana | Cooldown | Role | Description |
+|---|---|---|---|---|
+| Split the Earth | 34 | 16s | attack | Split the earth in a line. The ground erupts beneath everything in the way, flinging enemies into the air and cracking walls and turrets. |
+| Locust Swarm | 42 | 30s | control | A plague of locusts descends on an area for fifteen seconds, devouring enemies, stripping their armour and sometimes laying Omens. |
+| Wormwood | 60 | 40s | attack | Call down Wormwood, the bitter star. It smashes into an area and poisons the ground for twenty seconds. |
+| Hailfire | 55 | 30s | attack | Hail and fire mixed with blood rain down on an area: a dozen strikes, each one burning and sometimes laying an Omen. |
+| Blood Moon | 70 | 2.9 h | control | Turn the moon to blood for thirty seconds. Every enemy on the map gains an Omen every five seconds. |
+| The Seven Seals (ultimate) | 240 | 7.2 h | attack | Break the seven seals over an area, one after another: conquest, war, famine, death, the martyrs' vengeance, the great quake and the final silence. Each seal is a different calamity. |
+
+**Keystones:** *Armageddon* - Everything you call down is bigger. Much bigger.; *Extinction* - Every death is a small apocalypse: kills often explode in doom, and your calamities recharge faster.
+
+## Wind Mage
+
+*Throw the battlefield around. Hurl enemies through the air into walls, steal their breath and blow their bullets away.*
+
+Wind Mages treat a fight like weather: something that happens to other people. Their enemies spend most of it in the air.
+
+**Playstyle:** Positioning is a weapon. Gust, Hurl and Sky Toss really throw enemies: the farther they fly, the harder they land, and walls hurt most of all. Vacuum Bubble silences and suffocates, Tailwind and Wind Wall turn bullets aside, and the Cyclone sucks a whole squad in before blasting it apart. Wants Celerity and Potency.
+
+**Key attributes:** Celerity, Potency
+
+### Wind Mage spells
+
+| Spell | Mana | Cooldown | Role | Description |
+|---|---|---|---|---|
+| Gust | 8 | 1.5s | attack | A blade of wind that cuts and shoves its target back three cells. Anything shoved into a wall takes far more damage. |
+| Updraft | 18 | 10s | control | A column of wind pops everything in a small area into the air. They come down hard and stunned. |
+| Hurl | 22 | 12s | attack | Grab an enemy with a fist of wind and hurl it ten cells. It hurts whatever it lands on, and walls hurt most of all. |
+| Zephyr Dash | 14 | 8s | mobility | Ride a gust to the target spot. You land in a burst of wind that knocks everyone around you back. |
+| Air Lance | 24 | 9s | attack | Compress the air into a lance and drive it through everything in a straight line, punching through armour and shoving targets aside. |
+| Vacuum Bubble | 26 | 18s | control | Pull all the air away from an enemy's head for eight seconds. It suffocates, cannot call out, and cannot cast spells. |
+| Tailwind | 18 | 25s | buff | Wrap an ally in a tailwind for thirty seconds: much faster, and a third of incoming shots are blown off course. |
+| Wind Wall | 34 | 30s | control | Raise a line of standing gales for thirty seconds. Bullets, arrows and shells that cross it are torn apart. |
+| Snatch | 20 | 30s | control | A cheeky gust plucks the weapon out of an enemy's hands and drops it at your feet. Mechanoids just get buffeted. |
+| Sky Toss | 45 | 30s | attack | Every enemy around you is thrown high into the air and slammed back into the ground. |
+| Cyclone | 60 | 1.1 h | attack | Spin up a cyclone over an area. For eight seconds it drags enemies toward its heart and batters them; then it explodes, blasting everything inside outward. |
+| Dust Devil | 30 | 24s | control | Trap an enemy in its own little cyclone for seven seconds. It is thrown into the air every second and a half, and lands hard every time. |
+| Cleansing Wind * | 60 | 2 days | utility | Call a great wind across the whole map. It blows away toxic fallout and volcanic ash, clears the sky and snuffs out the fires around you. |
+
+**Keystones:** *Storm Chaser* - Ride every storm. Cyclone and Sky Toss come back far sooner and grow larger, and you move much faster.; *Eye of Calm* - You stand in the calm eye of your own storm. Ranged attacks lose a third of their force against you, and part of every blow is blown back at the attacker.; *Tempestuous* - The wind never stops. Your wind spells often loose a free Gust at a random enemy.
+
+### Windblade (subclass)
+
+*Become the wind with an edge. Blink from enemy to enemy, cut a hundred times a second.*
+
+Windblades learned that air moving fast enough is a sword, and that a sword moving fast enough is everywhere at once.
+
+**Playstyle:** A blinking duelist. Gale Step and Hundredfold Gale teleport you from enemy to enemy, cutting each one; Thousand Cuts shreds a single target; Eye of the Storm turns half of all attacks aside and throws some back. Wants Celerity and Potency.
+
+| Spell | Mana | Cooldown | Role | Description |
+|---|---|---|---|---|
+| Gale Step | 30 | 12s | attack | Become the wind and blink through up to five enemies, appearing behind each one and cutting it. Wounds may keep bleeding. |
+| Thousand Cuts | 26 | 10s | attack | A storm of tiny blades descends on one enemy: twelve cuts in a heartbeat, each one hard to stop. |
+| Razor Gale | 30 | 14s | attack | A fan of razor wind tears through everything in front of you, shoving enemies back and leaving them bleeding. |
+| Crosswind | 28 | 12s | attack | Loose eight wind blades that curve through the air and find their own targets, each one cutting and shoving. |
+| Eye of the Storm | 35 | 1.1 h | buff | Stand in the calm eye of a storm of blades for twenty seconds. Half of all attacks, ranged or melee, are turned aside and part of their force thrown back. You move and strike faster. |
+| Hundredfold Gale (ultimate) | 200 | 5.8 h | attack | Dissolve into the wind and blink between up to fifteen enemies in a few seconds, cutting each one deep. You stand in the eye of the storm when it ends. |
+
+**Keystones:** *Wind Dancer* - You never stop moving. Gale Step returns twice as fast and blinks through two more enemies.; *Honed Edge* - Every cut finds the gap in the armour. Huge critical chance and armour piercing.
+
+### Pressure Sage (subclass)
+
+*Weaponise the weight of the sky. Implosions, crushing pressure and the air stolen from an entire map.*
+
+Pressure Sages understand that the atmosphere weighs a great deal, and that it can be persuaded to sit on people.
+
+**Playstyle:** Heavy control and the best answer to giant machines: Crushing Depth deals damage scaled by body size, Implosion sucks a group together and blows it apart, Dead Calm suffocates an area, and Dead Air steals the breath of every enemy on the map. Wants Potency and Focus.
+
+| Spell | Mana | Cooldown | Role | Description |
+|---|---|---|---|---|
+| Crushing Depth | 34 | 14s | attack | Crush an enemy under the weight of the sky. Damage scales with body size: a centipede takes several times what a man does. It is slowed afterwards. |
+| Eardrum Burst | 30 | 18s | control | A sudden spike of pressure around you bursts eardrums: enemies close by are concussed and stunned. |
+| Implosion | 40 | 22s | attack | Collapse the air over an area: everything inside is sucked toward the centre, then the pressure snaps back and blasts it all outward. |
+| Pressure Lock | 28 | 20s | control | Pin an enemy in place under crushing pressure for six seconds; every blow against it lands harder. Machines cannot be held down for long, but they stagger. |
+| Dead Calm | 50 | 40s | control | Still the air over an area for twelve seconds. There is nothing to breathe: every enemy inside suffocates. |
+| Dead Air (ultimate) | 220 | 7.2 h | attack | Steal the breath of every enemy on the map. They suffocate, are crushed by the weight of the sky (big ones hardest) and stagger for a moment. |
+
+**Keystones:** *Vacuum* - Your silences last far longer, and every breath you steal for good returns mana to you.; *Crushing* - Everything you do weighs more. Much more damage, and far more against machines.
+
+### Skywarden (subclass)
+
+*Guardian of the open sky. Domes of wind that eat bullets, rescues through the air, and walls of gale.*
+
+Skywardens stand between their friends and the guns, and the guns lose.
+
+**Playstyle:** The best protector against ranged armies. Aegis of Gales raises a dome that destroys hostile shots and throws their force back; Gale Guard does the same for one ally; Rescue lifts an ally (even a downed one) through the air to your side. Heaven's Bulwark covers a whole battle line. Wants Resilience and Celerity.
+
+| Spell | Mana | Cooldown | Role | Description |
+|---|---|---|---|---|
+| Aegis of Gales | 50 | 1.4 h | buff | Raise a spinning dome of wind for forty seconds. Hostile shots fired into it from outside are torn apart, and half their force is thrown back at the shooter. |
+| Rescue | 16 | 12s | utility | Lift an ally out of danger on a gust of wind and set them down beside you. Works on the fallen, too. |
+| Gale Guard | 30 | 30s | buff | Wrap an ally in a guard of wind for twenty-five seconds: most bullets are turned aside and their force thrown back. Adds a ward. |
+| Slipstream | 40 | 1.1 h | buff | Every ally around you rides your slipstream for thirty seconds: hastened, and a third of incoming shots blown aside. |
+| Skyfall | 36 | 20s | attack | Leap into the sky and come down like a hammer: everything where you land is crushed and blasted outward. |
+| Heaven's Bulwark (ultimate) | 200 | 7.2 h | buff | The sky itself stands guard. Raise a vast dome of wind for a full minute that tears apart every hostile shot fired into it and throws the whole force back at the shooter. Allies near you gain a ward and a guard of wind. |
+
+**Keystones:** *Aegis* - Your domes and guards come back far sooner and last half again as long.; *Storm Shield* - Whoever strikes you is struck back by the wind, hard. Much larger ward.
+
+## Succubus
+
+*Win every fight by making the enemy fall in love. Infatuate, enthrall, and let their own army do the killing.*
+
+Succubi are demons of desire, or simply very persuasive mages. The difference matters little to the raiders who switch sides mid-battle.
+
+**Playstyle:** Stack Infatuation with kisses, charms and the Siren's Call. At five stacks a target is Enthralled and fights for you for twenty seconds; bosses are stunned instead. Heartbreak spends the stacks for damage, Lovers' Quarrel turns a crowd against itself, and Kiss of Youth keeps you young forever. Only women can take this path. Wants Attunement and Focus.
+
+**Key attributes:** Attunement, Focus
+
+### Succubus spells
+
+| Spell | Mana | Cooldown | Role | Description |
+|---|---|---|---|---|
+| Blown Kiss | 8 | 1.5s | attack | Blow a kiss that flies like an arrow: it stings with heartbreak and leaves the target infatuated. |
+| Captivate | 20 | 12s | control | Captivate an enemy completely: for eight seconds it walks to your side and will not fight unless badly hurt. Two stacks of Infatuation. |
+| Siren Song | 26 | 20s | control | Sing a note no one can resist. Every enemy within six cells drops what it is doing and walks toward you, dazed, and gains Infatuation. A hard blow wakes them. |
+| Heartbreak | 24 | 10s | attack | Break a heart that is already yours: heartbreak damage, +50% for every stack of Infatuation on the target. The stacks are spent. |
+| Kiss of Youth | 30 | 30s | attack | Steal a kiss and the years that come with it. The target ages several years and is hurt; you grow a little younger. |
+| Glamour | 24 | 35s | buff | Weave a glamour around yourself or an ally for thirty seconds. Enemies can hardly bring themselves to hurt the wearer: a quarter of all attacks simply fail. |
+| Ardor | 22 | 30s | buff | Fill an ally with burning ardor for forty seconds: harder blows, steadier aim, no fear of pain. |
+| Lovers' Quarrel | 40 | 35s | control | Whisper a terrible rumour into a crowd. Enemies in the area fly into a jealous rage and attack whoever is nearest. |
+| Essence Feast | 40 | 30s | attack | Drink from every heart around you. Enemies within eight cells take heartbreak damage, two and a half times as much if they are infatuated, and you are healed for half of it. |
+| Stolen Heartbeat | 50 | 40s | attack | Reach into an enemy's chest and stop its heart for a moment: heartbreak damage, a share of its vitality, more for every stack of Infatuation (spent), and a long stun. |
+| Irresistible * | 80 | 3 days | utility | Turn the full force of your charm on a downed enemy or a prisoner. They fall hopelessly in love and join the colony. |
+
+**Keystones:** *Femme Fatale* - Love kills. Heartbreak and Stolen Heartbeat come back far sooner and all your desire hits harder.; *Beloved of All* - Everyone falls for you. Most of your spells lay an extra stack of Infatuation, and your charms last longer.; *Queen of Hearts* - Hearts flutter wherever you walk: enemies near you steadily become infatuated.
+
+### Temptress (subclass)
+
+*Make them yours. Enthral single targets, seduce whole squads, and lead an army of the damned.*
+
+A Temptress does not win battles; she collects them.
+
+**Playstyle:** The domination specialist. Enthrall and Heartstrings pile on Infatuation, Mass Seduction turns an area into a trap of hearts, Kiss of Betrayal takes an enemy for your own outright, and the Harem of the Damned enthralls every enemy around you at once. Wants Attunement and Celerity.
+
+| Spell | Mana | Cooldown | Role | Description |
+|---|---|---|---|---|
+| Enthrall | 30 | 16s | control | Hold an enemy's gaze until it forgets everything else: transfixed for six seconds, and three stacks of Infatuation. |
+| Heartstrings | 28 | 12s | attack | Pluck the heartstrings of seven enemies in a chain: each one is stung and grows more infatuated. |
+| Jealousy | 26 | 22s | control | Plant jealousy in one enemy's heart: it flies into a rage against its own side and grows more infatuated with you. |
+| Mass Seduction | 50 | 1.1 h | control | Turn an area into a garden of temptation for fifteen seconds: every enemy inside gains Infatuation every two seconds. |
+| Kiss of Betrayal | 60 | 1.4 h | control | A kiss that rewrites loyalty. For fifteen seconds an enemy (not too large, and never a boss) fights for you. |
+| Harem of the Damned (ultimate) | 220 | 7.2 h | attack | Reveal your true face. Every enemy within twelve cells is overwhelmed with five stacks of Infatuation: all but the mightiest are enthralled and fight for you. |
+
+**Keystones:** *Siren Queen* - Your charms last half again as long and reach farther.; *Heartless* - When your lovers die, their broken hearts burst and wound everyone nearby.
+
+### Thief of Years (subclass)
+
+*Beauty is eternal if someone else pays for it. Steal years from enemies, give them to friends, never grow old.*
+
+Thieves of Years drink time itself. Their enemies wither into grey old men in a single battle; their friends grow young again.
+
+**Playstyle:** A drain-and-sustain mage. Withering Kiss and Time's Toll age enemies until their bodies fail, Decay keeps aging them for fifteen seconds, and the stolen years heal and rejuvenate your allies. Eternal Beauty ages a whole battlefield by a decade and makes you deathless. Wants Focus and Resilience.
+
+| Spell | Mana | Cooldown | Role | Description |
+|---|---|---|---|---|
+| Withering Kiss | 34 | 20s | attack | A long, cold kiss: the target ages five years, may develop the ailments of old age, and very old enemies crumble. You grow a year younger. |
+| Stolen Youth | 40 | 1.4 h | heal | Pour stolen years into an ally: they grow three years younger, an old ailment may lift, scars fade and wounds close. |
+| Time's Toll | 44 | 30s | attack | Collect what time is owed from an area: everyone inside ages three years, slows to a crawl and takes heartbreak damage. |
+| Decay | 36 | 30s | control | Set an enemy's years running: for fifteen seconds it ages a year every three seconds, and the years hurt. |
+| Spring of Youth | 45 | 1.1 h | heal | Spend stolen youth on everyone around you: allies within four cells heal, regenerate and lose a scar. |
+| Eternal Beauty (ultimate) | 220 | 7.2 h | attack | Drink a whole battlefield's worth of youth. Every enemy within ten cells ages twelve years (the old simply crumble) and takes heartbreak damage; you grow five years younger and cannot die for a minute. |
+
+**Keystones:** *Methuselah* - You have outlived death before. Once a day, when you would die, you rise again young and whole.; *Graverobber* - You take far more than years. Heavy lifesteal and more damage.
+
+### Nightmare Muse (subclass)
+
+*Sweet dreams and night terrors. Sing enemies to sleep, feed on their dreams, wake their nightmares.*
+
+A Nightmare Muse visits people in their sleep. Since she started doing it on the battlefield, nobody gets much sleep there.
+
+**Playstyle:** Control through sleep. Sleepsong and Endless Night put enemies into a dream that only pain can break; Dream Eater deals triple damage to dreamers, Dread Dream sends them fleeing while the nightmare eats them, and Sleepwalk sets them wandering. Wants Attunement and Focus.
+
+| Spell | Mana | Cooldown | Role | Description |
+|---|---|---|---|---|
+| Sleepsong | 30 | 20s | control | Sing a lullaby over an area. Enemies inside fall into a dream for ten seconds and stand where they are until something hurts them. |
+| Dream Eater | 26 | 10s | attack | Feed on an enemy's dreams: heartbreak damage, tripled against a dreamer, healing you for half and restoring mana. |
+| Dread Dream | 28 | 16s | control | Wake the worst nightmare an enemy has ever had. It flees in terror for six seconds while the dream eats at it. |
+| Sleepwalk | 34 | 25s | control | Enemies in an area fall into a walking sleep for eight seconds and wander off, unaware of the battle. |
+| Lucid Dream | 26 | 35s | buff | Let an ally fight as if in a lucid dream for thirty seconds: time slows, aim sharpens and pain becomes just an idea. |
+| Endless Night (ultimate) | 220 | 7.2 h | attack | Every enemy on the map falls into a deep dream. Five seconds later you feast on every dream at once: heartbreak damage, tripled against those still dreaming. |
+
+**Keystones:** *Sandman's Song* - Your lullabies carry much farther and come back sooner.; *Nightmare Queen* - Dream Eater feasts on three dreamers at once, and every dream you touch bites harder.
+
+## Incubus
+
+*Every deal has a price. Put enemies in debt and collect, sign contracts with your friends, and steal what you covet.*
+
+Incubi are devils of the bargain. Everything has a price, and they are very, very good at collecting.
+
+**Playstyle:** Lay Debts with hellfire brands, chains and commands. At five Debts the Incubus collects: hellfire, a share of the victim's vitality, and the weapon out of its hands. Devil's Due calls in every Debt on the map at once. Infernal Contracts make an ally monstrously strong if they deliver two kills. Only men can take this path. Wants Potency and Attunement.
+
+**Key attributes:** Potency, Attunement
+
+### Incubus spells
+
+| Spell | Mana | Cooldown | Role | Description |
+|---|---|---|---|---|
+| Hellfire Brand | 8 | 1.5s | attack | Fling a brand of violet hellfire. It burns, and it marks the target as owing you: one Debt. |
+| Covet | 20 | 25s | control | Covet an enemy's weapon, and it is yours: it tears out of their hands and lands at your feet. The enemy owes you for the trouble. |
+| Command: Kneel | 24 | 16s | control | Speak with the voice of a prince of hell. The target kneels for five seconds, takes more damage while it does, and owes you two Debts. |
+| Hellchains | 30 | 18s | control | Burning chains erupt from the ground in an area, binding every enemy there for six seconds and burning them. One Debt each. |
+| Collect | 24 | 10s | attack | Call in a debt early: hellfire damage, +50% for every Debt the target owes (all of them spent). |
+| Infernal Contract | 30 | 40s | buff | Offer an ally a contract: for forty seconds they are monstrously strong. If they make two kills before it runs out they are rewarded; if not, the devil collects. |
+| Pact of Flame | 24 | 1.1 h | buff | Make a pact with hellfire for thirty seconds: immune to burning, and your spells burn hotter. |
+| Soul Bargain | 0 | 1.4 h | utility | Sell a little of your own soul: lose some health, regain two fifths of your mana at once. |
+| Brimstone | 46 | 28s | attack | Brimstone erupts from the earth in an area: eight burning strikes, each one laying a Debt half the time. |
+| Devil's Due | 70 | 1.4 h | attack | Call in every debt at once. Every enemy on the map takes hellfire damage, +60% for every Debt it owes (spent). |
+| Deal With the Devil * | 40 | 1 day | utility | Offer a colonist a deal. They will gain something wonderful: an inspiration, years of skill, a healed body or fantastic luck. Usually. |
+
+**Keystones:** *Loan Shark* - Payment is due now. Devil's Due and Collect come back far sooner, and everything infernal hits harder.; *Prince of Lies* - Everyone owes you, and nobody can pin you down: half your infernal hits add a Debt, and attacks often find only an illusion.; *Archdevil* - Hell follows you. Anything you kill may burst into hellfire.
+
+### Pactbinder (subclass)
+
+*Every soul has a price, and every price has interest. Usury, collateral, blood contracts and foreclosure.*
+
+Pactbinders are the accountants of hell, and nothing in hell is more frightening than an accountant.
+
+**Playstyle:** The Debt engine. Usury makes Debts accrue on their own, Soul Collateral pays you when a debtor dies, Breach of Contract cashes Debts in for enormous single-target damage, and Foreclosure collects from everyone around you at once. Blood Contracts make an ally a demigod for a minute. Wants Potency and Focus.
+
+| Spell | Mana | Cooldown | Role | Description |
+|---|---|---|---|---|
+| Usury | 26 | 18s | control | Charge interest on an enemy's soul: for twenty seconds it gains a Debt every two seconds. |
+| Soul Collateral | 30 | 25s | control | Take an enemy's soul as collateral and lay two Debts. If it dies within thirty seconds, you regain mana and a ward, your other spells cool down by half, and its friends inherit the debt. |
+| Breach of Contract | 40 | 20s | attack | Punish a defaulter: hellfire damage, +40% for every Debt (spent), plus a share of its vitality. |
+| Garnishment | 36 | 25s | attack | Garnish the wages of everyone around you: hellfire damage, doubled against anyone in debt, healing you for two fifths. |
+| Blood Contract | 40 | 1.4 h | buff | Offer an ally a contract written in a great deal of blood: overwhelming power for a minute, paid for with three kills. |
+| Foreclosure (ultimate) | 220 | 7.2 h | attack | Foreclose on every soul within fifteen cells: each one is driven five Debts deeper and collected at once. |
+
+**Keystones:** *Hostile Takeover* - Every infernal hit adds a Debt (at most twice a second).; *Bankrupt* - Cash out constantly. Breach of Contract and Garnishment come back far sooner, and everything infernal hits harder.
+
+### Dreamlord (subclass)
+
+*He visits in the night. Possess enemies through their dreams, plant nightmares that spread, and rule the dreaming world.*
+
+The incubus of legend comes in dreams. The Dreamlord just does it to whole armies.
+
+**Playstyle:** Possession and spreading nightmares. Possess takes an enemy for thirty seconds; Nightmare Seed eats its host and jumps to everyone nearby when the host dies; Sleep Paralysis pins a target in place. The Lord of Dreams possesses or paralyses every enemy on the map. Wants Attunement and Focus.
+
+| Spell | Mana | Cooldown | Role | Description |
+|---|---|---|---|---|
+| Nightmare Seed | 30 | 15s | control | Plant a nightmare in an enemy. It feeds on its host for twenty seconds, and if the host dies it seeds itself in everyone nearby. |
+| Sleep Paralysis | 34 | 24s | control | Something sits on an enemy's chest: it cannot move for eight seconds and suffers. Machines do not dream. |
+| Waking Nightmare | 36 | 25s | control | Pull the nightmares of everyone in an area into the waking world: they flee in terror for seven seconds. |
+| Dreamshroud | 30 | 1.4 h | buff | Step halfway into the dreaming world for fifteen seconds: enemies cannot see you. |
+| Possess | 70 | 2.2 h | control | Slip into an enemy's dreams and take the wheel: for thirty seconds it fights for you. Not the mightiest, and not machines too big to dream. |
+| Lord of Dreams (ultimate) | 230 | 7.2 h | attack | Rule the dreaming world. Every enemy on the map is either possessed for twenty seconds or paralysed in its sleep, and all of them owe you. |
+
+**Keystones:** *Dream Tyrant* - Possess takes two minds at once and returns sooner.; *Nightmare Lord* - Every nightmare you plant is deeper and crueller.
+
+### Hellprince (subclass)
+
+*Stop pretending. Take your true form, drag enemies in with a lash of hellfire, and open the gates of hell.*
+
+Some incubi bargain. Hellprinces remember who they were before they learned to smile, and they do not bargain.
+
+**Playstyle:** A burning brawler. Hellfire Lash drags enemies to you, Infernal Form doubles your strength and armours you in hellfire, Hellhounds and Hellgates scorch everything near them, and the Crown of Ash turns you into a walking inferno that lays Debts on everything it burns. Wants Potency and Resilience.
+
+| Spell | Mana | Cooldown | Role | Description |
+|---|---|---|---|---|
+| Hellfire Lash | 22 | 10s | attack | Crack a whip of hellfire at an enemy and drag it through the air to your feet, burning. |
+| Infernal Form | 60 | 2.9 h | buff | Take your true shape for forty seconds: horns and hellfire, twice the strength, heavy armour and immunity to fire. |
+| Hellhounds | 50 | 2.2 h | summon | Whistle up two hellhounds for a minute. They are savage, immune to fire and scorch everything they stand near. |
+| Rain of Brimstone | 70 | 1.1 h | attack | Five burning stones fall from the sky on and around the target. |
+| Hellgate | 50 | 1.4 h | summon | Tear open a crack into hell for thirty seconds. It breathes hellfire on every enemy near it and lays Debts on them. |
+| Crown of Ash (ultimate) | 220 | 7.2 h | control | Crown yourself in hellfire for thirty seconds: you take your infernal form, and everything within six cells of you burns and falls into debt every second and a half. |
+
+**Keystones:** *Warlord of Hell* - You barely remember your mortal shape. Infernal Form lasts twice as long and returns much sooner.; *Pyrelord* - Everything you burn burns hotter, and the dead burst into hellfire.
+
+## Noclipper
+
+*You fell out of reality once and found the way back. Walk through walls, trap enemies in yellow mazes, and send them where you went.*
+
+Noclippers have been to the Backrooms: the endless, humming, yellow levels behind the world. They came back with a few habits.
+
+**Playstyle:** Lay Lost with static and wrong turns; at four stacks an enemy noclips out of reality for six seconds and comes back wandering. Noclip walks you through walls, Endless Hallway and Level 0 build corridors and mazes of wallpaper around the enemy, the Door to Nowhere swallows anyone who comes close, and Out of Bounds drops a whole squad out of the map. Wants Attunement and Celerity.
+
+**Key attributes:** Attunement, Celerity
+
+### Noclipper spells
+
+| Spell | Mana | Cooldown | Role | Description |
+|---|---|---|---|---|
+| Static Flicker | 8 | 1.5s | attack | Throw a burst of bad signal. It hurts, and it leaves the target a little more Lost. |
+| Noclip | 16 | 10s | mobility | Clip through reality to any spot in range. Walls, doors and line of sight do not matter. |
+| Wrong Turn | 26 | 18s | control | Somewhere back there, the target took a wrong turn. It vanishes from reality for four seconds and comes back more Lost. |
+| Buzzing Lights | 40 | 30s | control | Fluorescent lights hum into existence over an area for twelve seconds. Enemies under them glitch, losing whole moments, and grow more Lost. |
+| Endless Hallway | 30 | 30s | control | Wallpapered walls rise on both sides of a line from you to the target, turning the ground in between into a hallway for half a minute. |
+| Almond Water | 20 | 20s | heal | Share a sip of almond water: an ally heals, shakes off what ails them, steadies their mind and regains some mana. |
+| Something Is Watching | 34 | 25s | control | Enemies in an area feel eyes on them from every corner for fifteen seconds. They aim badly and keep losing their way. |
+| Door to Nowhere | 45 | 1.2 h | control | An ordinary office door appears, standing on its own, for thirty seconds. Any enemy that walks close to it goes through, and vanishes for five seconds. |
+| Level 0 | 60 | 1.4 h | control | Fold the world into Level 0 around a target area: a maze of damp yellow wallpaper rises around every enemy inside and stands for half a minute. Everyone inside grows more Lost. |
+| Out of Bounds | 60 | 1.1 h | control | Every enemy in an area falls through the floor and out of the map. Eight seconds later they drop back in, hard. |
+| Conjure Almond Water * | 30 | 1 day | utility | Reach into a wall and pull out a few bottles of almond water. Nobody knows why this works. |
+
+**Keystones:** *Wanderer* - You never stay anywhere long. Noclip is nearly always ready, and sometimes when you are hurt you slip away on your own.; *Keeper of Thresholds* - Everyone who meets you starts to lose their way: half your hits make them more Lost.; *The Backrooms* - You know the levels better than anyone alive. Every time someone noclips away, a flicker of static jumps to the next enemy.
+
+### Level Keeper (subclass)
+
+*Pull the levels through into the world: the Poolrooms, the Manila Room, Level Run For Your Life, and the rest.*
+
+Level Keepers carry the Backrooms around with them, a room or two at a time.
+
+**Playstyle:** Battlefield architecture. The Manila Room seals a single enemy in a box, Threshold rings an area in walls, the Poolrooms heal your side and drown theirs, and Level ! sends every enemy around you running. Bleed Through drops every enemy on the map into the Backrooms for ten seconds. Wants Attunement and Resilience.
+
+| Spell | Mana | Cooldown | Role | Description |
+|---|---|---|---|---|
+| Manila Room | 40 | 30s | control | Fold a single enemy into the Manila Room: a box of wallpaper closes around it for twenty seconds. |
+| The Poolrooms | 50 | 1.2 h | control | Flood an area with the Poolrooms for twenty seconds: warm water and pale tiles. Allies inside regenerate; enemies wade slowly and lose their way. |
+| Level ! | 45 | 40s | control | The lights turn red. Every enemy within seven cells runs for its life for six seconds; every ally runs faster. |
+| Threshold | 45 | 40s | control | Draw a threshold around an area: a ring of wallpaper walls cuts it off from the world for fifteen seconds. |
+| Sublimity | 40 | 1.1 h | buff | Open a door onto somewhere warm, quiet and impossible. Allies around you are warded, steadied and fearless for thirty seconds. |
+| Bleed Through (ultimate) | 230 | 7.2 h | attack | Let the Backrooms bleed through into the world. Every enemy on the map noclips out of reality for ten seconds (bosses for less) and comes back Lost and disoriented. |
+
+**Keystones:** *Master of Levels* - Every level you open is larger and stays open far longer.; *Safe Room* - Wherever you stand is a safe room: allies near you are steadily warded and healed while you fight.
+
+### Entity Handler (subclass)
+
+*Some things in the levels can be reasoned with. Hounds, Partygoers, Smilers and Skin-Stealers, on your side for once.*
+
+Entity Handlers made friends in the Backrooms. Their friends are why nobody else did.
+
+**Playstyle:** A summoner of Backrooms entities. Hounds hunt in a pack, Partygoers swarm and smile =), a Smiler sends enemies running, and the Skin-Stealer copies an enemy to fight on your side. Level Fun throws a party nobody survives. Wants Attunement and Focus.
+
+| Spell | Mana | Cooldown | Role | Description |
+|---|---|---|---|---|
+| Release the Hounds | 40 | 1.4 h | summon | Open a door and let two Hounds out for a minute. They run on all fours and they are very hungry. |
+| Partygoers | 50 | 1.8 h | summon | Invite three Partygoers to the fight for a minute. They are so happy to be here =) |
+| Smiler | 45 | 1.2 h | control | Leave a Smiler in the dark for thirty seconds. Every few seconds, enemies who see it run in terror and the static burns them. |
+| Faceling Swap | 18 | 12s | mobility | Trade places with an enemy, the way the Facelings do. It finds itself where you were, a little more Lost. |
+| Skin-stealer | 60 | 2.2 h | attack | Let a Skin-Stealer wear an enemy's face. A perfect copy of the target, gear and all, fights for you for forty-five seconds. |
+| Level Fun (ultimate) | 230 | 7.2 h | attack | Everyone is invited to Level Fun =) Six Partygoers join the fight, and every enemy in a wide area loses its mind with joy and its way out. |
+
+**Keystones:** *Alpha* - Lead the pack. Every summon brings an extra entity, and they last half again as long.; *Host of the Party* - Everyone comes to your parties eventually. Your guests come back sooner, and some of the people you kill come back as guests.
+
+### Archivist (subclass)
+
+*Everything is on tape. Record your enemies and replay their worst moments, rewind your friends, and find the exit sign.*
+
+Archivists document the Backrooms on old camcorders. The tapes remember more than they should.
+
+**Playstyle:** Recording is damage. Camcorder records an enemy for eight seconds; when the tape ends, every wound it took happens again. Pair it with your allies' fire. Rewind Tape undoes thirty seconds of an ally's wounds, Exit Sign teleports your whole squad, and Lost Footage records an entire battlefield. Wants Focus and Attunement.
+
+| Spell | Mana | Cooldown | Role | Description |
+|---|---|---|---|---|
+| Camcorder | 30 | 20s | control | Start recording an enemy. In eight seconds the tape ends, and every wound it took in the meantime happens to it again. |
+| Tracking Error | 30 | 18s | control | The picture rolls and tears over an area: enemies inside glitch for eight seconds, losing whole seconds at a time. |
+| Static Burst | 36 | 22s | attack | Every screen in the world flashes to static at once: everything around you is burned by it, made more Lost and sometimes thrown out of sync. |
+| Exit Sign | 40 | 1.4 h | utility | Follow the exit sign. You and every ally within six cells step through a door and come out at the target. |
+| Rewind Tape | 50 | 2.2 h | heal | Rewind an ally by thirty seconds. The wounds of the last half-minute never happened. |
+| Lost Footage (ultimate) | 220 | 7.2 h | attack | Record an entire battlefield on cursed tape. Every enemy within twelve cells is recorded for ten seconds; when the tape runs out, everything that happened to each of them happens again, half as bad again. |
+
+**Keystones:** *Director's Cut* - Film everything. Camcorder returns twice as fast and records two more enemies.; *Rewinder* - Your own tape can be rewound. Once a day, when you would die, you are rewound instead.
 
 
 Spells marked * are utility or quirky spells.

@@ -156,6 +156,9 @@ namespace ArcanumAscendant
         public bool ring;
         public int lifetimeTicks = -1;
         public bool onlyStandable = true;
+        public SpawnPattern pattern = SpawnPattern.Default;
+        public int boxRadius = 1;
+        public float corridorWidth = 2f;
 
         public override bool AppliesToPawns => false;
 
@@ -164,9 +167,11 @@ namespace ArcanumAscendant
             if (thing == null) return;
             var map = ctx.map;
             var cells = new List<IntVec3>();
-            if (ring && info.radius > 0.5f)
+            if (pattern == SpawnPattern.Maze || pattern == SpawnPattern.Box || pattern == SpawnPattern.Corridor)
+                cells.AddRange(SpawnPatterns.Cells(pattern, ctx, info, boxRadius, corridorWidth).Where(c => c.InBounds(map)));
+            else if ((ring || pattern == SpawnPattern.Ring) && info.radius > 0.5f)
                 cells.AddRange(GenRadial.RadialCellsAround(info.cell, info.radius, true).Where(c => c.InBounds(map) && c.DistanceTo(info.cell) > info.radius - 1.1f));
-            else if (inArea)
+            else if (inArea || pattern == SpawnPattern.Area)
                 cells.AddRange(info.Cells(map).Where(c => Rand.Chance(cellChance)));
             else
                 for (int i = 0; i < count + (thing.category == ThingCategory.Building ? ctx.mods.extraTargets : 0); i++)
@@ -194,7 +199,7 @@ namespace ArcanumAscendant
                     GenPlace.TryPlaceThing(t, c, map, ThingPlaceMode.Near);
                     var con = t.TryGetComp<CompArcaneConstruct>();
                     if (con != null) con.Setup(ctx, lifetimeTicks > 0 ? Mathf.RoundToInt(lifetimeTicks * ctx.DurationFactor) : -1);
-                    if (inArea) continue;
+                    if (inArea || pattern == SpawnPattern.Area) continue;
                     break;
                 }
             }
@@ -246,6 +251,8 @@ namespace ArcanumAscendant
         Swap,
         Banish,
         AlliesToCaster,
+        /// <summary>The caster and every ally around them step through to the target.</summary>
+        AlliesToTarget,
     }
 
     public class Effect_Teleport : SpellEffect
@@ -253,14 +260,33 @@ namespace ArcanumAscendant
         public TeleportMode mode = TeleportMode.CasterToTarget;
         public float banishDistance = 15f;
         public List<SpellEffect> pathEffects;
+        /// <summary>AlliesToTarget: how far from the caster allies are gathered.</summary>
+        public float gatherRadius = 6f;
 
-        public override bool AppliesToPawns => mode != TeleportMode.CasterToTarget && mode != TeleportMode.Swap;
+        public override bool AppliesToPawns => mode != TeleportMode.CasterToTarget && mode != TeleportMode.Swap && mode != TeleportMode.AlliesToTarget;
 
         public override void ApplyAtCell(SpellContext ctx, ImpactInfo info)
         {
             var caster = ctx.caster;
             var map = ctx.map;
             if (caster == null || !caster.Spawned) return;
+            if (mode == TeleportMode.AlliesToTarget)
+            {
+                var group = new List<Pawn> { caster };
+                foreach (var t in GenRadial.RadialDistinctThingsAround(caster.Position, map, gatherRadius * ctx.RadiusFactor, true))
+                    if (t is Pawn ally && ally != caster && !ally.Dead && !ally.Downed && ctx.IsAlly(ally) && ally.carryTracker?.CarriedThing == null
+                        && !(ally.CurJob?.def == JobDefOf.LayDown))
+                        group.Add(ally);
+                var taken = new HashSet<IntVec3>();
+                foreach (var ally in group)
+                {
+                    var c = CellFinder.StandableCellNear(info.cell, map, 5f, x => !taken.Contains(x) && x.GetFirstPawn(map) == null);
+                    if (!c.IsValid) continue;
+                    taken.Add(c);
+                    Blink(ally, c, ctx);
+                }
+                return;
+            }
             if (mode == TeleportMode.CasterToTarget)
             {
                 IntVec3 dest = info.cell;

@@ -137,6 +137,14 @@ namespace ArcanumAscendant
                 case DeliveryType.Delayed:
                     Deliveries.Delayed(ctx, target, radius, props.delayedCount + extra);
                     break;
+
+                case DeliveryType.Global:
+                    Deliveries.Global(ctx, origin, radius);
+                    break;
+
+                case DeliveryType.ChainDash:
+                    Deliveries.ChainDash(ctx, target, props.chainCount + extra, props.chainRange * Mathf.Max(0.5f, ctx.RadiusFactor), radius);
+                    break;
             }
 
             if (props.shake > 0f) ArcaneFx.Shake(map, props.shake);
@@ -209,6 +217,7 @@ namespace ArcanumAscendant
                 if (!e.AppliesToPawns) continue;
                 foreach (var t in Targets(ctx, info, r, cache).ToList())
                 {
+                    if (info.exclude != null && t == info.exclude) continue;
                     if (!ctx.Passes(t, e.affects)) continue;
                     if (uniqueHits && ctx.hitThisCast.Contains(t)) continue;
                     if (t is Pawn p)

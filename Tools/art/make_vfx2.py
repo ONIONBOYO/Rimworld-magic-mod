@@ -377,6 +377,7 @@ CIRCLES = {
     "Storm": ("bolt", "zigzag"), "Necro": ("skull", "pentagram"), "Holy": ("cross", "rays"), "Time": ("hourglass", "clock"),
     "Void": ("portal", "spiral"), "Nature": ("leaf", "petals"), "Rune": ("rune", "squares"), "Shadow": ("moon", "eye"),
     "Blood": ("drop", "thorns"), "Song": ("note", "waves"), "Plague": ("mushroom", "bubbles"),
+    "Wind": ("gust", "gusts"), "Doom": ("eye", "heptagram"), "Desire": ("heart", "hearts"), "Liminal": ("smile", "grid"),
 }
 
 
@@ -507,6 +508,45 @@ def cast_circle(size, motif, inner, seed):
             rr = rng.uniform(0.06, 0.16) * Ri
             px, py = c + math.cos(th) * dist, c + math.sin(th) * dist
             d.ellipse([px - rr, py - rr, px + rr, py + rr], outline=255, width=w)
+    elif inner == "heptagram":
+        pts = [(c + Ri * math.cos(math.radians(90 + i * 360 * 3 / 7)), c - Ri * math.sin(math.radians(90 + i * 360 * 3 / 7))) for i in range(8)]
+        d.line(pts, fill=255, width=w)
+        for i in range(7):
+            th = math.radians(90 + i * 360 / 7)
+            px, py = c + Ri * math.cos(th), c - Ri * math.sin(th)
+            rr = Ri * 0.09
+            d.ellipse([px - rr, py - rr, px + rr, py + rr], outline=255, width=w)
+        circ(Ri * 0.42, w)
+    elif inner == "gusts":
+        for k in range(5):
+            pts = []
+            for i in range(60):
+                t = i / 59
+                th = math.radians(k * 72 + t * 220)
+                rr = Ri * (0.25 + 0.75 * t)
+                pts.append((c + math.cos(th) * rr, c + math.sin(th) * rr))
+            d.line(pts, fill=255, width=w)
+        circ(Ri * 0.22, w)
+    elif inner == "hearts":
+        hg = glyph("heart", int(S * 0.07), 0.9)
+        for i in range(12):
+            th = i * 30
+            gr = hg.rotate(-th, expand=True)
+            px = c + Ri * 0.78 * math.cos(math.radians(th - 90))
+            py = c + Ri * 0.78 * math.sin(math.radians(th - 90))
+            img.paste(255, (int(px - gr.size[0] / 2), int(py - gr.size[1] / 2)), gr)
+        for i in range(4):
+            th = math.radians(45 + i * 90)
+            d.arc([c - Ri * 0.6, c - Ri * 0.6, c + Ri * 0.6, c + Ri * 0.6], i * 90 + 10, i * 90 + 80, fill=255, width=w)
+        circ(Ri * 0.35, w)
+    elif inner == "grid":
+        step = Ri * 0.34
+        for k in range(-2, 3):
+            off = k * step
+            half = (max(0.0, Ri ** 2 - off ** 2)) ** 0.5
+            d.line([c + off, c - half, c + off, c + half], fill=255, width=w)
+            d.line([c - half, c + off, c + half, c + off], fill=255, width=w)
+        poly(4, rot=45, rr=Ri * 0.98)
     cg = glyph(motif, int(S * 0.16), 0.9)
     img.paste(255, (int(c - cg.size[0] / 2), int(c - cg.size[1] / 2)), cg)
     m = img.resize((size, size), Image.LANCZOS)
@@ -695,42 +735,7 @@ def familiars():
 def buildings():
     hexc, mix, WHITE = mt.hexc, mt.mix, mt.WHITE
     S = 256
-    # ward pylon: stone base, faceted violet obelisk with glowing runes, floating capstone
-    base = mt.pen_mask(S, lambda p: [p.poly([(-0.55, -0.85), (0.55, -0.85), (0.4, -0.6), (-0.4, -0.6)])])
-    img = mt.sprite(base, np.array([95, 90, 100], np.float32), S)
-    crystal = mt.pen_mask(S, lambda p: p.poly([(-0.22, -0.6), (0.22, -0.6), (0.17, 0.45), (0.0, 0.62), (-0.17, 0.45)]))
-    x, y, r = coords(S)
-    shade = np.clip(0.75 + 1.2 * (-x) + 0.25 * noise(S, 6, 3, 601), 0.45, 1.25)
-    col = np.dstack([shade * 150, shade * 105, shade * 235])
-    img = mt.over(img, mt.over(mt.solid(S, hexc("#b48cff"), blur(crystal, 6).point(lambda v: int(v * 0.6))), to_rgba(col, arr(crystal) * 255)))
-    runes = mt.pen_mask(S, lambda p: [p.line([(0.0, yy), (0.06, yy + 0.08)], 0.02) for yy in (-0.45, -0.25, -0.05, 0.15)] +
-                                      [p.line([(-0.06, yy + 0.04), (0.04, yy + 0.04)], 0.015) for yy in (-0.4, -0.2, 0.0, 0.2)])
-    img = mt.over(img, mt.solid(S, hexc("#e8d8ff"), blur(runes, 3)))
-    img = mt.over(img, mt.solid(S, WHITE, runes))
-    cap = mt.pen_mask(S, lambda p: p.poly([(0.0, 0.95), (0.12, 0.8), (0.0, 0.7), (-0.12, 0.8)]))
-    img = mt.over(img, mt.solid(S, hexc("#c8a8ff"), blur(cap, 8)))
-    img = mt.over(img, mt.solid(S, mix(hexc("#d8c0ff"), WHITE, 0.4), cap))
-    save(img, "Things/WardPylon")
-
-    # mana font: stone basin with glowing liquid and a crystal cluster
-    basin = mt.pen_mask(S, lambda p: [p.ellipse(0, -0.25, 0.88, 0.5), p.rect(-0.7, -0.75, 0.7, -0.25), p.ellipse(0, -0.75, 0.7, 0.2)])
-    img = mt.sprite(basin, np.array([110, 108, 118], np.float32), S)
-    pool = mt.pen_mask(S, lambda p: p.ellipse(0, -0.25, 0.72, 0.36))
-    img = mt.over(img, to_rgba(mt.radial(S, np.array([170, 210, 255], np.float32), np.array([40, 80, 200], np.float32), 1.0, 0.5, 0.62),
-                               arr(pool) * 255))
-    rng = random.Random(77)
-    for i in range(7):
-        cx = rng.uniform(-0.35, 0.35)
-        h = rng.uniform(0.45, 0.95)
-        w = rng.uniform(0.08, 0.14)
-        tilt = rng.uniform(-0.15, 0.15)
-        cm = mt.pen_mask(S, lambda p, cx=cx, h=h, w=w, tilt=tilt: p.poly([(cx - w, -0.3), (cx + w, -0.3), (cx + w * 0.7 + tilt, -0.3 + h), (cx + tilt, -0.3 + h + 0.12),
-                                                                              (cx - w * 0.7 + tilt, -0.3 + h)]))
-        shade = np.clip(0.7 + 1.0 * (-(x - cx)) + 0.2 * noise(S, 6, 2, 700 + i), 0.45, 1.3)
-        col = np.dstack([shade * 120, shade * 175, shade * 255])
-        img = mt.over(img, mt.solid(S, hexc("#7ab0ff"), blur(cm, 5).point(lambda v: int(v * 0.5))))
-        img = mt.over(img, to_rgba(col, arr(cm) * 255))
-    save(img, "Things/ManaFont")
+    # the ward pylon and mana font are modelled in 3D: see buildings3d.py
 
     # familiar vessel: round crystal flask with a bright spirit inside
     S = 128
