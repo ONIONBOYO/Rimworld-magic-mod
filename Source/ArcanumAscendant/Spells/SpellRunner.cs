@@ -223,6 +223,7 @@ namespace ArcanumAscendant
                     if (t is Pawn p)
                     {
                         if (p.Dead || p.Destroyed) continue;
+                        if (e.requires != null && !e.requires.Met(p, ctx.caster, out _)) continue;
                         e.ApplyToPawn(ctx, p, info);
                         if (!e.vfxOnTarget.NullOrEmpty() && p.Spawned) ArcaneFx.PlayAll(e.vfxOnTarget, map, p.DrawPos, ctx, 0f);
                     }

@@ -366,6 +366,8 @@ namespace ArcanumAscendant
         Wander,
         /// <summary>Stands still, transfixed.</summary>
         Hold,
+        /// <summary>Can only think of attacking the caster (a paladin's challenge).</summary>
+        Attack,
     }
 
     public class HediffCompProperties_Compel : HediffCompProperties
@@ -484,6 +486,22 @@ namespace ArcanumAscendant
                     if (p.CurJobDef == JobDefOf.Wait) return;
                     job = JobMaker.MakeJob(JobDefOf.Wait, Props.interval * 3);
                     break;
+                case CompelMode.Attack:
+                {
+                    if (!srcHere || source.Downed)
+                    {
+                        broken = true;
+                        return;
+                    }
+                    if (p.CurJob != null && p.CurJob.targetA.Thing == source && (p.CurJobDef == JobDefOf.AttackMelee || p.CurJobDef == JobDefOf.AttackStatic)) return;
+                    var verb = p.TryGetAttackVerb(source, !p.IsColonist);
+                    if (verb == null) return;
+                    job = JobMaker.MakeJob(verb.IsMeleeAttack ? JobDefOf.AttackMelee : JobDefOf.AttackStatic, source);
+                    job.expiryInterval = Props.interval * 6;
+                    job.checkOverrideOnExpire = true;
+                    if (p.mindState != null) p.mindState.enemyTarget = source;
+                    break;
+                }
             }
             if (job != null) p.jobs.StartJob(job, JobCondition.InterruptForced);
         }

@@ -822,6 +822,7 @@ namespace ArcanumAscendant
                 absorbed = true;
                 return;
             }
+            HediffComp_Guardian.Apply(Pawn, ref dinfo);
             if (HediffComp_DamageShell.Apply(Pawn, ref dinfo))
             {
                 absorbed = true;

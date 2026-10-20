@@ -53,6 +53,8 @@ namespace ArcanumAscendant
         public float radius;
         public List<SpellEffect> effects = new List<SpellEffect>();
         public List<SpellEffect> casterEffects = new List<SpellEffect>();
+        /// <summary>Single-target colony spells: who the spell can be cast on. Checked when the target is picked.</summary>
+        public PawnRequirement targetRequirement;
 
         // projectile / meteor
         public string projectileTex = "ArcanumAscendant/Vfx/Orb";

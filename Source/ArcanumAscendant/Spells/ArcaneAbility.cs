@@ -239,6 +239,19 @@ namespace ArcanumAscendant
     /// <summary>Verb that applies cast speed and range modifiers.</summary>
     public class Verb_ArcaneCast : Verb_CastAbility
     {
+        public override bool ValidateTarget(LocalTargetInfo target, bool showMessages = true)
+        {
+            if (!base.ValidateTarget(target, showMessages)) return false;
+            var req = ability?.def?.comps?.OfType<CompProperties_ArcaneSpell>().FirstOrDefault()?.targetRequirement;
+            if (req == null) return true;
+            var p = target.Pawn;
+            if (p == null && target.Thing is Corpse) return true;
+            if (req.Met(p, CasterPawn, out string reason)) return true;
+            if (showMessages && !reason.NullOrEmpty())
+                Messages.Message("AA_Req_Invalid".Translate(ability.def.LabelCap, reason), MessageTypeDefOf.RejectInput, false);
+            return false;
+        }
+
         public override float WarmupTime
         {
             get

@@ -14,6 +14,8 @@ namespace ArcanumAscendant
         public float chance = 1f;
         public float radius = -1f;
         public List<VfxSpec> vfxOnTarget;
+        /// <summary>Only pawns meeting this are touched by the effect.</summary>
+        public PawnRequirement requires;
 
         public virtual bool AppliesToPawns => true;
         public virtual void ApplyAtCell(SpellContext ctx, ImpactInfo info) { }
