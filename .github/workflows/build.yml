@@ -1,0 +1,41 @@
+name: Build
+
+# Compiles the assembly against the RimWorld reference assemblies and validates every XML def against it.
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Compile assembly
+        shell: bash
+        run: |
+          set -o pipefail
+          dotnet build Source/ArcanumAscendant/ArcanumAscendant.csproj -c Release -clp:NoSummary 2>&1 | tee build.log
+
+      - name: Validate defs against the assembly
+        shell: bash
+        run: |
+          set -o pipefail
+          REFS=$(ls -d ~/.nuget/packages/krafs.rimworld.ref/*/ref/net472 | tail -1)
+          dotnet build Tools/validator/validator.csproj -c Release -v q
+          dotnet Tools/validator/bin/Release/net8.0/validator.dll . "$REFS" 2>&1 | tee validate.log
+
+      - name: Upload build output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build
+          path: |
+            1.6/Assemblies/ArcanumAscendant.dll
+            build.log
+            validate.log
