@@ -3,8 +3,12 @@ name: Build
 # Compiles the assembly against the RimWorld reference assemblies and validates every XML def against it.
 on:
   push:
+    branches-ignore: [ci-logs]
   pull_request:
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -17,12 +21,15 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Compile assembly
+        id: compile
         shell: bash
         run: |
           set -o pipefail
           dotnet build Source/ArcanumAscendant/ArcanumAscendant.csproj -c Release -clp:NoSummary 2>&1 | tee build.log
 
       - name: Validate defs against the assembly
+        id: validate
+        if: steps.compile.outcome == 'success'
         shell: bash
         run: |
           set -o pipefail
@@ -39,3 +46,17 @@ jobs:
             1.6/Assemblies/ArcanumAscendant.dll
             build.log
             validate.log
+
+      - name: Publish logs and assembly to the ci-logs branch
+        if: always() && github.event_name == 'push'
+        shell: bash
+        run: |
+          mkdir -p /tmp/ci && cp build.log /tmp/ci/ 2>/dev/null || true
+          cp validate.log /tmp/ci/ 2>/dev/null || true
+          cp 1.6/Assemblies/ArcanumAscendant.dll /tmp/ci/ 2>/dev/null || true
+          echo "${{ github.sha }} compile=${{ steps.compile.outcome }} validate=${{ steps.validate.outcome }}" > /tmp/ci/status.txt
+          cd /tmp/ci && git init -q -b ci-logs
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A && git commit -q -m "CI output for ${{ github.sha }}"
+          git push -f -q "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" ci-logs
