@@ -4,6 +4,7 @@
     <defName>AA_ArcanaStats</defName>
     <label>arcana</label>
     <displayOrder>46</displayOrder>
+    <displayAllByDefault>true</displayAllByDefault>
   </StatCategoryDef>
 
   <StatDef>
