@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Succubus colony expansion (Source/ArcanumAscendant/Spells/Colony_Succubus.cs) -->
+  <AA_Desc_SuccubusReconcile>The target and the person they get on worst with make up</AA_Desc_SuccubusReconcile>
+  <AA_Desc_SuccubusReconcileLove>{0} chance that two single adults who could love each other fall in love instead</AA_Desc_SuccubusReconcileLove>
+  <AA_SuccubusNoFeud>No feud to mend</AA_SuccubusNoFeud>
+  <AA_SuccubusMadeUp>Made up with {0}</AA_SuccubusMadeUp>
+  <AA_SuccubusEnemiesToLoversLabel>Enemies to lovers: {0} and {1}</AA_SuccubusEnemiesToLoversLabel>
+  <AA_SuccubusEnemiesToLovers>{0} and {1} could not stand each other. Then {2} kissed them both, and somewhere between the shouting and the apology they fell in love.\n\nThey are now lovers.</AA_SuccubusEnemiesToLovers>
+  <AA_Desc_SuccubusHeartsDue>Only affects targets with at least {0} stacks of {1}:</AA_Desc_SuccubusHeartsDue>
+  <AA_Desc_SuccubusHeartsDueSpent>Only affects targets with at least {0} stacks of {1}, and spends them all:</AA_Desc_SuccubusHeartsDueSpent>
+  <AA_SuccubusNotSmitten>Not smitten enough ({0}/{1})</AA_SuccubusNotSmitten>
+  <AA_SuccubusUnmoved>Unmoved</AA_SuccubusUnmoved>
+</LanguageData>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Incubus: dreamwork (Dreamlord) and the firstborn clause (Pactbinder) -->
+  <AA_IncubusNoNightmares>Nothing worth eating</AA_IncubusNoNightmares>
+  <AA_IncubusDevoured>{0} nightmares devoured</AA_IncubusDevoured>
+  <AA_IncubusWoken>Rude awakening!</AA_IncubusWoken>
+  <AA_IncubusPromiseVoid>Clause void</AA_IncubusPromiseVoid>
+  <AA_IncubusPromiseKeptLabel>Promised child: {0}</AA_IncubusPromiseKeptLabel>
+  <AA_IncubusPromiseKept>{1} has given birth to {0}, and the firstborn clause holds: the child is born gifted ({2}).</AA_IncubusPromiseKept>
+  <AA_Desc_IncubusDevour>Removes the target's {0} worst bad memories (+{1} if asleep); {2} mana back for each</AA_Desc_IncubusDevour>
+  <AA_Desc_IncubusWake>Wakes every sleeping colonist at once</AA_Desc_IncubusWake>
+  <AA_Desc_IncubusWakeRest>Rest on waking: +{0}</AA_Desc_IncubusWakeRest>
+  <AA_Desc_IncubusWakeStatus>Woken: {0}</AA_Desc_IncubusWakeStatus>
+  <AA_Desc_IncubusWakeDraft>The woken are drafted</AA_Desc_IncubusWakeDraft>
+</LanguageData>
