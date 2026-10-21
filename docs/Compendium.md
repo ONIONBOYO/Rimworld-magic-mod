@@ -2,7 +2,7 @@
 
 Every class, subclass, spell and keystone in the mod. Generated from `Tools/gen/classes/*.py` - do not edit by hand.
 
-**14 classes - 42 subclasses - 484 spells - 1242 skill tree nodes**
+**14 classes - 42 subclasses - 514 spells - 1278 skill tree nodes**
 
 ## Contents
 
@@ -324,6 +324,12 @@ Paladins channel radiant light. They stand on the front line, shielding allies, 
 | Divine Intervention | 60 | 2.9 h | buff | The heavens reach down and hold an ally. For eight seconds nothing can harm them. |
 | Heaven's Lance | 48 | 20s | attack | Call a procession of holy pillars that march out from you in a line, searing and judging everything in their path. |
 | Sunstrike | 45 | 22s | attack | Mark the ground. A heartbeat later a column of sunfire slams down: heavy radiant damage, a stagger, and a mark of judgment that shadow magic can detonate. |
+| Quarter * | 30 | 6 h | utility | Kneel beside a downed enemy and spare them. Their wounds are tended and healed for 30, their pain is dulled to 40% for twelve hours, and they are taken captive and released on the spot: no longer hostile, they walk home as soon as they can stand. Their faction warms to you (+12 goodwill, though factions that can never make peace do not care), and you feel the better for it (+4 mood for two days). Only the downed are judged; anyone still standing is left alone. |
+| Lantern of Dawn * | 60 | 3 days | utility | Hang a small sun over the target for three days. It lights the ground like a sun lamp: crops within about 6 cells grow as in full daylight, at night and under a roof alike (they still need warmth), and nobody there works in the dark. Allies within 7 cells of it also work 10% faster. Grow food in a sealed hall through the winter, or keep the harvest going all night. |
+| Beacon for the Lost * | 90 | 10 days | utility | Light a beacon that only the lost can see. Within moments someone answers: a wanderer walks in asking to join the colony, or an escape pod falls nearby with a wounded refugee inside. Once every ten days. |
+| Breaking of Bread * | 50 | 1 day | utility | Bless a single loaf and break it among everyone within 5 cells, and there is always enough. Every person there, prisoners too, eats until full without a crumb leaving the larder, and animals get a hearty meal. They remember sharing it (+4 mood for a day). Once a day: a famine can be survived on this. |
+| Bear the Burden * | 20 | 4 h | buff | Take another's weariness onto your own shoulders. They regain 50% rest at once and feel only half their pain for 12 hours; you lose 35% rest and ache in their place for those 12 hours (+10% pain, 5% slower). They think better of you for it (+12 opinion for six days). Let the doctor finish the surgery, or the builder close the wall before the cold. |
+| Rebuke the Unhallowed | 40 | 30s | attack | Raise your holy symbol and let the light judge what should not walk. Every enemy within 7 cells is seared: the undead and anything summoned take about 78 holy damage, the creatures of the dark (Anomaly's entities) about 75 and mechanoids 15, while living people and beasts take only a stinging 12. Break an enemy necromancer's army without burning its prisoners. |
 
 **Keystones:** *Wrath of Heaven* - Light that burns the unnatural: much more holy damage, especially against machines and abominations.; *Sanctity* - Become a living sanctuary. Much stronger healing, and every spell wards you.; *Exalted* - When struck, you may erupt in a free Holy Nova.
 
@@ -343,6 +349,9 @@ Templars are the sword and shield of the faith: armored, relentless, and impossi
 | Righteous Fury | 30 | 1.4 h | buff | Fight with holy fury: your weapon strikes hit harder and heal you. |
 | Avatar of Light (ultimate) | 180 | 5.8 h | buff | Become an avatar of the divine for a minute, exploding with holy force as you ascend. |
 | Unbreakable Vow | 45 | 1.4 h | buff | Swear to stand your ground. For fifteen seconds you take far less damage and a third of every blow is turned back on the attacker. |
+| Guardian's Oath * | 35 | 1.4 h | buff | Swear to stand between an ally and harm for a day. Every blow that lands on them is halved, and the other half strikes you instead, wherever you are on the map, through your own armour and ward. The oath breaks if you are downed, die or leave the map. Swear it over the children before the raid, or over the only doctor. |
+| Banner of the Order * | 45 | 1 day | buff | Plant the order's banner for a day. Everyone of yours within 8 cells of it stands taller: +3 mood, a mental break threshold 8% lower, pain has to be 10% worse to drop them and they aim 10% quicker. Plant it in the dining hall in a hard winter, or behind the barricade when the raid comes. |
+| Pilgrim's Blessing * | 40 | 1 day | buff | Bless travellers before the road. For three days everyone of yours within 4 cells walks 10% faster, gets hungry 30% slower, tires 20% slower and stays comfortable 8 C further into the cold and the heat. Bless a caravan before it leaves, or the hunting party. |
 
 **Keystones:** *Juggernaut* - An unstoppable wall of plate and faith. Huge armor, and melee attackers are punished severely.; *Eternal Crusade* - The fight feeds you. Weapon hits restore mana and kills slash your cooldowns.
 
@@ -363,6 +372,9 @@ Clerics pour everything into restoration: mass heals, regeneration, sanctuaries,
 | Miracle (ultimate) | 250 | 1 day | heal | A true miracle. Resurrects every fallen ally nearby, fully heals and restores every living ally, regrows lost limbs and cures all ills. |
 | Greater Restoration | 140 | 1 day | heal | A long, exhausting prayer that makes the body whole: every chronic illness cured, every scar erased, every lost limb and organ regrown, every addiction broken. |
 | Guardian Spirits | 50 | 1.8 h | heal | Three guardian spirits circle you for forty seconds. Whenever one passes an ally it heals them and lifts poisons and sickness. |
+| Communion * | 30 | 1 day | buff | Share the sacrament of your own blood. Whoever receives it feels blessed (+6 mood for two days). A sanguophage (Biotech) is also fed 40 hemogen, and nobody has to be bitten. You are a little pale for 8 hours afterwards (5% less blood pumping, tiring 20% faster). Once a day. |
+| Peace of the Wild * | 50 | 2 days | utility | Walk into the madness with open hands. Every creature within 9 cells that has been driven mad (a manhunting pack, an animal out for revenge, a psychic insanity pulse) or anyone in a berserk rage comes back to itself at once. Wild animals then wander off in peace. Once every two days. |
+| Christening * | 35 | 3 days | buff | Bless someone in water and light before their family. It is meant for babies and children (Biotech), but anyone can be blessed. For thirty days they fight off disease 30% faster and stay comfortable 10 C further into the cold and the heat, enough to carry a newborn through its first winter. Everyone within 5 cells who sees it is moved (+5 mood for two days). |
 
 **Keystones:** *Ascension* - Death is a minor setback. Resurrection and Miracle recharge twice as fast.; *Overflowing Grace* - Every spell you cast becomes a heal for everyone around you.
 
@@ -383,6 +395,9 @@ Inquisitors hunt what should not exist: rogue mages, abominations and the war ma
 | Final Judgment (ultimate) | 200 | 5.8 h | attack | Heaven renders its verdict. Twelve pillars of annihilating light fall around the target. Armor means nothing. |
 | Mirror of Judgment | 50 | 1.4 h | buff | For ten seconds, every blow struck against you is judged: you take half of it, and the attacker takes all of it. |
 | Searing Ray | 45 | 25s | attack | Focus a ray of holy fire on a heretic for four seconds. It burns through armor and brands them for judgment. |
+| Seal of the Mind * | 50 | 3 days | buff | Seal the minds of everyone of yours within 5 cells against the whispers. For three days they are as if psychically deaf: a psychic drone, a psychic ship's wail or a hostile psycaster's touch cannot reach them (nor can a psychic soothe, and psycasters among them cannot cast). Gather the colony at dinner when the drone begins. |
+| The Fire Obeys * | 35 | 1 h | utility | Command the flames. Every fire within 8 cells goes out at once, and any ally burning there is put out; then the fire leaps onto every enemy in the area instead and sets them ablaze. You drink the heat (+12 mana). Save the storeroom from a short-circuit fire, or hand the raiders back their own molotovs. |
+| Auto-da-fe | 40 | 30s | attack | Pass sentence on a fallen foe. A downed enemy is burned at the stake where they lie, killed outright, and the pyre bursts over every enemy within 5 cells: 30 holy damage, a mark of judgment, a stagger and even odds of catching fire. Anyone still standing is not judged. The other face of quarter. |
 
 **Keystones:** *No Heresy* - Holy spells often purge their targets for free and execute the weakened.; *The Long Inquest* - Final Judgment recharges far faster and calls more pillars.
 
@@ -771,6 +786,12 @@ Spellsingers weave magic into music. A war chant makes soldiers fearless, a lull
 | Siren's Call | 34 | 22s | control | Sing a note no one can resist. Enemies in the area stumble toward its center, entranced, and stand there listening. |
 | Standing Ovation * | 90 | 2 days | utility | Give the performance of a lifetime. Every colonist who hears it is struck by inspiration. |
 | Echoing Notes | 26 | 10s | attack | Sing five notes that take wing and chase enemies down, ringing in their skulls. |
+| Revelry * | 50 | 2 days | utility | Strike up a dance tune and call the colony to a party. A real party gathers around you at a party spot, table or campfire (attending lifts the mood as any good party does), and everyone within 12 cells of you is festive for four hours: their recreation fills 50% faster. Needs a free gathering spot and a colony that is not busy fighting; the festive mood lands even if the party cannot start. Once every two days. |
+| Fireside Sing-along * | 40 | 1 day | utility | Lead everyone within 7 cells in a song they all know. Up to 10 people who are awake (colonists, slaves, prisoners and guests alike, children too) sing together: every pair of them gains +10 opinion of each other for six days, each regains 15% recreation, and the bigger the choir the better they all feel for a day (+3 mood for two or three voices, +5 for four, +7 for six, +9 for eight or more). Old grudges are hard to keep through the chorus. Once a day. |
+| Surgeon's Sonata * | 30 | 12 h | buff | Play a slow, steady sonata for a doctor. For six hours their hands do not shake: their surgeries succeed 30% more often (relative to their own odds), and they tend wounds 20% better and 30% faster. Play it before the risky operation, not after. Twice a day. |
+| Catchy Tune * | 35 | 1 day | buff | Teach someone a tune they cannot stop humming. For a day they hum it wherever they go, and anyone who comes within 4 cells of them catches it (but does not pass it on). Hummer and listeners alike find their recreation draining 40% slower for a day. Send it round the colony with your busiest hauler or cook. Once a day. |
+| Song on the Wind * | 80 | 15 days | utility | Sing a song meant for someone you have never met, and let the wind carry it past the edge of the map. Someone out there hears it: a wanderer arrives soon after, asking to join the colony. Once a season. |
+| Taunting Elegy | 35 | 30s | control | Stand over a fallen body and sing its elegy, mockingly, for its friends to hear. Every enemy within 8 cells of the corpse is disheartened for 20 seconds (25% worse aim, 20% worse in melee, 15% slower), and each person among them has one chance in three to lose heart altogether and run from the battle. Bosses are unmoved. Bring their champion down first, then sing over him. |
 
 **Keystones:** *Requiem* - Your music becomes a weapon: sonic magic hits much harder and resonates through machines.; *Grand Symphony* - Your songs carry further and linger far longer.; *Living Legend* - Songs are already being sung about you. Allies nearby in combat always have valor.
 
@@ -790,6 +811,9 @@ Skalds sing on the battlefield, and their songs shake the ground. Their allies f
 | Dirge | 28 | 20s | control | A funeral song for enemies who aren't dead yet. They weaken and their doom approaches. |
 | Song of Ragnarok (ultimate) | 200 | 6.2 h | buff | The end-of-the-world song. Allies become legends - valor, haste, power and wards - while enemies are shattered by sound. |
 | Song of the Undying | 110 | 7.2 h | buff | A saga so stirring that death itself waits for the last verse. For thirty seconds, allies around you who fall are pulled back to life. |
+| Named in the Saga | 30 | 30s | control | Name an enemy in your saga. For 30 seconds it takes 30% more damage from everything. If it dies while its name still rings, its death becomes a verse: every ally within 12 cells of the body gains valor, every colonist among them remembers being there (+6 mood for three days), and you regain 20 mana. |
+| Horn of the Hall * | 50 | 1 day | utility | Blow the great horn. Everyone of the colony on the map (and any guests) drops what they are doing, even sleep, and hurries to you at double speed for 20 seconds; getting hurt breaks the call. For two hours after, their tiredness stops growing and they walk 10% faster, and they wake with 20% more rest. Draft them as they arrive. Prisoners cannot leave their cells; the colony's animals come running too. Once a day. |
+| Saga of the Old Ones * | 45 | 1 day | utility | Recite the saga of the old ones, who built the great machines before the fall. Somewhere in its four hundred verses is something your researchers did not know: 400 research points (more with spell power) go into the current project, and a project with fewer than 150 points left is finished outright. Once a day. |
 
 **Keystones:** *Einherjar* - The song is not over. When downed, rise again in a thunderous chord. Once per day.; *War Band* - Your warband never stops fighting: allies nearby always have valor and a trickle of ward.
 
@@ -809,6 +833,9 @@ Illusionists weave lies so beautiful the world believes them. Enemies fight for 
 | Silver Tongue * | 60 | 1 day | utility | Talk a prisoner, a downed enemy or a visitor into joining the colony on the spot. |
 | Mass Domination (ultimate) | 220 | 6.7 h | control | Bend every lesser mind in an area to your will for a full minute. Bosses resist. |
 | Plagiarize * | 60 | 1 day | utility | Reach into someone's mind and take what they know. A large chunk of their best skill's experience becomes yours. |
+| Phantom Feast * | 40 | 1 day | utility | Lay an illusory banquet before everyone within 6 cells of the target. Nobody is fed, but everyone believes they have eaten a lavish meal: they get the mood of one (as from a real lavish meal) and for a day their hunger grows half as fast. The illusion that gets a colony through the last week of winter. Once a day. |
+| Hypnotherapy * | 80 | 5 days | utility | Put a colonist into a trance and talk them out of their cravings. Every addiction they have is gone at once, withdrawal and all (even luciferium), and they come out of it calm and clear-headed (+5 mood for two days). It cannot stop them from starting again. Once every five days. |
+| False Sun * | 60 | 3 days | utility | Hang an illusion of the noonday sun in the air for three days. It is so convincing that the plants believe it: it lights the ground like a sun lamp, so crops within about 6 cells grow indoors, underground or through an eclipse (in the daytime hours; plants still rest at night), and nobody near it works in the dark. It needs no power and burns no fuel. Once every three days. |
 
 **Keystones:** *Mastermind* - Your illusions reach further and hold far longer.; *Enthrall* - Enemies who come close to you periodically freeze, transfixed.
 
@@ -829,6 +856,9 @@ Jesters treat magic as a joke, and the joke is usually on the enemy. Their spell
 | Grand Finale (ultimate) | 180 | 5.8 h | attack | The show-stopper. Twenty random magical effects explode over a huge area. Nobody, including the jester, knows what will happen. |
 | Banana Peels * | 26 | 25s | control | Scatter conjured banana peels across an area. For fifteen seconds, enemies who walk through keep slipping over. |
 | Juggling Knives * | 25 | 30s | attack | Juggle three knives around yourself at alarming speed. Anyone who gets close gets cut, and occasionally a custard pie flies out of the act. |
+| Pass the Hat * | 30 | 12 h | utility | Juggle, tumble and fall over for everyone within 9 cells, then pass the hat. Every visitor, trader and guest of a friendly faction watching tosses in 10 to 25 silver (5% more per level of your Social skill), regains 20% recreation and leaves their faction a little fonder of the colony (+1 goodwill per guest, at most +5 per faction). Colonists just enjoy the show (+10% recreation). The silver lands at your feet. Twice a day. |
+| Wheel of Fortune * | 50 | 3 days | utility | Spin the jester's wheel and let fate pick something to happen to the colony. Most slices are good: cargo pods, a falling ship chunk, a meteorite full of ore, a wild animal deciding to join you, a psychic soothe, an ambrosia sprout or a refugee pod. Some are not: a short circuit, a solar flare, an eclipse or a family of alphabeavers. Slices that cannot happen right now are skipped. Once every three days. |
+| Seltzer Bottle * | 20 | 12s | control | Spray a fizzing blast of conjured soda water in a 50-degree cone 7 cells long. Every fire it touches goes out (on the ground, on buildings and on anyone burning, friend or foe), and enemies caught in it are knocked back 2 cells and left sputtering for 10 seconds (15% slower, 20% worse aim). Put out the kitchen, then the raiders. |
 
 **Keystones:** *The House Always Wins* - Luck is a skill. Huge crit chance and spells often refund themselves.; *Pandemonium* - Chaos follows you everywhere: Wild Magic erupts around a random enemy every five seconds in combat.
 

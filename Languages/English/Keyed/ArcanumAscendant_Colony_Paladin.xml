@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Paladin family colony expansion (Source/ArcanumAscendant/Spells/Colony_Paladin.cs) -->
+  <AA_Paladin_VerdictNotDowned>still standing</AA_Paladin_VerdictNotDowned>
+  <AA_Paladin_QuarterGiven>quarter given</AA_Paladin_QuarterGiven>
+  <AA_Paladin_QuarterMessage>{0} grants quarter to {1}. Once {1} can stand, they will walk home to {2}, unharmed.</AA_Paladin_QuarterMessage>
+  <AA_Desc_PaladinQuarter>A downed enemy person is taken captive and released at once: no longer hostile, they walk home when they can stand</AA_Desc_PaladinQuarter>
+  <AA_Desc_PaladinQuarterGoodwill>Their faction's goodwill {0} (not factions that can never make peace)</AA_Desc_PaladinQuarterGoodwill>
+  <AA_Paladin_PyreText>burned at the stake</AA_Paladin_PyreText>
+  <AA_Desc_PaladinPyre>A downed enemy is burned where they lie (killed outright); the pyre bursts over everything within {0} cells:</AA_Desc_PaladinPyre>
+  <AA_Paladin_OathBroken>oath broken</AA_Paladin_OathBroken>
+</LanguageData>

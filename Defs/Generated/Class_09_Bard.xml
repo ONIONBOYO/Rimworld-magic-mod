@@ -611,6 +611,114 @@
     <unlockSpell>AA_Spell_EchoingNotes</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Bard_CatchyTune</defName>
+    <tree>AA_Class_Bard</tree>
+    <kind>Spell</kind>
+    <x>2</x>
+    <y>1</y>
+    <prerequisites>
+      <li>AA_Node_Bard_PerfectPitch</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_CatchyTune</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Bard_SurgeonsSonata</defName>
+    <tree>AA_Class_Bard</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>1</y>
+    <prerequisites>
+      <li>AA_Node_Bard_Harmony</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_SurgeonsSonata</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Bard_TauntingElegy</defName>
+    <tree>AA_Class_Bard</tree>
+    <kind>Spell</kind>
+    <x>0</x>
+    <y>3</y>
+    <requiredLevel>3</requiredLevel>
+    <requiredAttribute>AA_Attunement</requiredAttribute>
+    <requiredAttributeValue>5</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Bard_Crescendo</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_TauntingElegy</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Bard_Singalong</defName>
+    <tree>AA_Class_Bard</tree>
+    <kind>Spell</kind>
+    <x>2</x>
+    <y>3</y>
+    <requiredLevel>3</requiredLevel>
+    <requiredAttribute>AA_Attunement</requiredAttribute>
+    <requiredAttributeValue>5</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Bard_Lullaby</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_Singalong</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Bard_Revelry</defName>
+    <tree>AA_Class_Bard</tree>
+    <kind>Spell</kind>
+    <x>3</x>
+    <y>4</y>
+    <requiredLevel>5</requiredLevel>
+    <requiredAttribute>AA_Attunement</requiredAttribute>
+    <requiredAttributeValue>6</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Bard_Showman</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_Revelry</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Bard_Nightsong</defName>
+    <label>nightsong</label>
+    <description>You hum in your sleep, and everyone sleeps better for it. Every hour, everyone within 9 cells of you (drafted or not, prisoners and animals too) rests 20% faster for the next hour. Put your bed in the barracks.</description>
+    <tree>AA_Class_Bard</tree>
+    <kind>Notable</kind>
+    <x>5</x>
+    <y>4</y>
+    <requiredLevel>5</requiredLevel>
+    <requiredAttribute>AA_Attunement</requiredAttribute>
+    <requiredAttributeValue>6</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Bard_Inspire</li>
+    </prerequisites>
+    <passives>
+      <li Class="ArcanumAscendant.P_Aura">
+        <radius>9</radius>
+        <interval>2500</interval>
+        <affects>Allies</affects>
+        <color>(1, 0.61, 0.88, 1)</color>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_BardNightsong</hediff>
+            <severity>1</severity>
+          </li>
+        </effects>
+      </li>
+    </passives>
+    <iconPath>ArcanumAscendant/Nodes/Bard_Nightsong</iconPath>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Bard_SongOnTheWind</defName>
+    <tree>AA_Class_Bard</tree>
+    <kind>Spell</kind>
+    <x>2</x>
+    <y>6</y>
+    <requiredLevel>9</requiredLevel>
+    <requiredAttribute>AA_Attunement</requiredAttribute>
+    <requiredAttributeValue>9</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Bard_Chorus</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_SongOnTheWind</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Skald_BattleHymn</defName>
     <tree>AA_Class_Skald</tree>
     <kind>Spell</kind>
@@ -949,6 +1057,78 @@
       <li>AA_Node_Skald_RallyingCry</li>
     </prerequisites>
     <unlockSpell>AA_Spell_SongOfUndying</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Skald_NamedInSaga</defName>
+    <tree>AA_Class_Skald</tree>
+    <kind>Spell</kind>
+    <x>2</x>
+    <y>2</y>
+    <requiredLevel>10</requiredLevel>
+    <requiredAttribute>AA_Attunement</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Skald_Drummer</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_NamedInSaga</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Skald_HornOfTheHall</defName>
+    <tree>AA_Class_Skald</tree>
+    <kind>Spell</kind>
+    <x>5</x>
+    <y>3</y>
+    <requiredLevel>12</requiredLevel>
+    <requiredAttribute>AA_Attunement</requiredAttribute>
+    <requiredAttributeValue>9</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Skald_Bannerman</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_HornOfTheHall</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Skald_AncestralSaga</defName>
+    <tree>AA_Class_Skald</tree>
+    <kind>Spell</kind>
+    <x>1</x>
+    <y>4</y>
+    <requiredLevel>14</requiredLevel>
+    <requiredAttribute>AA_Attunement</requiredAttribute>
+    <requiredAttributeValue>10</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Skald_Hymnal</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_AncestralSaga</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Skald_Frith</defName>
+    <label>frith</label>
+    <description>Where the skald sits, there is peace. Every hour, everyone within 10 cells of you (drafted or not) is under frith for the next hour: no social fights start, and their mental break threshold is 4% lower.</description>
+    <tree>AA_Class_Skald</tree>
+    <kind>Notable</kind>
+    <x>4</x>
+    <y>4</y>
+    <requiredLevel>14</requiredLevel>
+    <requiredAttribute>AA_Attunement</requiredAttribute>
+    <requiredAttributeValue>10</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Skald_Shieldsinger</li>
+    </prerequisites>
+    <passives>
+      <li Class="ArcanumAscendant.P_Aura">
+        <radius>10</radius>
+        <interval>2500</interval>
+        <affects>Allies</affects>
+        <color>(1, 0.54, 0.29, 1)</color>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_SkaldFrith</hediff>
+            <severity>1</severity>
+          </li>
+        </effects>
+      </li>
+    </passives>
+    <iconPath>ArcanumAscendant/Nodes/Skald_Frith</iconPath>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Illusionist_Charm</defName>
@@ -1293,6 +1473,46 @@
       <li>AA_Node_Illusionist_Mirage</li>
     </prerequisites>
     <unlockSpell>AA_Spell_Plagiarize</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Illusionist_PhantomFeast</defName>
+    <tree>AA_Class_Illusionist</tree>
+    <kind>Spell</kind>
+    <x>4</x>
+    <y>1</y>
+    <requiredLevel>8</requiredLevel>
+    <prerequisites>
+      <li>AA_Node_Illusionist_Glamour</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_PhantomFeast</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Illusionist_Hypnotherapy</defName>
+    <tree>AA_Class_Illusionist</tree>
+    <kind>Spell</kind>
+    <x>1</x>
+    <y>3</y>
+    <requiredLevel>12</requiredLevel>
+    <requiredAttribute>AA_Attunement</requiredAttribute>
+    <requiredAttributeValue>9</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Illusionist_Hypnosis</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_Hypnotherapy</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Illusionist_FalseSun</defName>
+    <tree>AA_Class_Illusionist</tree>
+    <kind>Spell</kind>
+    <x>5</x>
+    <y>3</y>
+    <requiredLevel>12</requiredLevel>
+    <requiredAttribute>AA_Attunement</requiredAttribute>
+    <requiredAttributeValue>9</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Illusionist_Phantasm</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_FalseSun</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Jester_PieInTheFace</defName>
@@ -1640,6 +1860,100 @@
       <li>AA_Node_Jester_BananaPeel</li>
     </prerequisites>
     <unlockSpell>AA_Spell_JugglingKnives</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Jester_PassTheHat</defName>
+    <tree>AA_Class_Jester</tree>
+    <kind>Spell</kind>
+    <x>4</x>
+    <y>1</y>
+    <requiredLevel>8</requiredLevel>
+    <prerequisites>
+      <li>AA_Node_Jester_Pratfall</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_PassTheHat</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Jester_SeltzerBottle</defName>
+    <tree>AA_Class_Jester</tree>
+    <kind>Spell</kind>
+    <x>0</x>
+    <y>2</y>
+    <requiredLevel>10</requiredLevel>
+    <requiredAttribute>AA_Attunement</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Jester_WildMagic</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_SeltzerBottle</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Jester_ClassClown</defName>
+    <label>class clown</label>
+    <description>You can't help being funny. Every hour, each person within 8 cells of you (drafted or not) has one chance in six to crack up at something you did: +4 mood for six hours.</description>
+    <tree>AA_Class_Jester</tree>
+    <kind>Notable</kind>
+    <x>2</x>
+    <y>4</y>
+    <requiredLevel>14</requiredLevel>
+    <requiredAttribute>AA_Attunement</requiredAttribute>
+    <requiredAttributeValue>10</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Jester_ConfettiCannon</li>
+    </prerequisites>
+    <passives>
+      <li Class="ArcanumAscendant.P_Aura">
+        <radius>8</radius>
+        <interval>2500</interval>
+        <affects>AlliesNotSelf</affects>
+        <color>(1, 0.85, 0.29, 1)</color>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Random">
+            <options>
+              <li Class="ArcanumAscendant.Effect_Thought">
+                <thought>AA_JesterLaughed</thought>
+              </li>
+              <li Class="ArcanumAscendant.Effect_Need">
+                <need>Joy</need>
+                <amount>0</amount>
+              </li>
+              <li Class="ArcanumAscendant.Effect_Need">
+                <need>Joy</need>
+                <amount>0</amount>
+              </li>
+              <li Class="ArcanumAscendant.Effect_Need">
+                <need>Joy</need>
+                <amount>0</amount>
+              </li>
+              <li Class="ArcanumAscendant.Effect_Need">
+                <need>Joy</need>
+                <amount>0</amount>
+              </li>
+              <li Class="ArcanumAscendant.Effect_Need">
+                <need>Joy</need>
+                <amount>0</amount>
+              </li>
+            </options>
+            <perTarget>true</perTarget>
+          </li>
+        </effects>
+      </li>
+    </passives>
+    <iconPath>ArcanumAscendant/Nodes/Jester_ClassClown</iconPath>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Jester_WheelOfFortune</defName>
+    <tree>AA_Class_Jester</tree>
+    <kind>Spell</kind>
+    <x>4</x>
+    <y>4</y>
+    <requiredLevel>14</requiredLevel>
+    <requiredAttribute>AA_Attunement</requiredAttribute>
+    <requiredAttributeValue>10</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Jester_Gambler</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_WheelOfFortune</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_DiscordantNote</defName>
@@ -2735,6 +3049,607 @@
     <warmupStartSound>AA_Charge</warmupStartSound>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_Revelry</defName>
+    <label>revelry</label>
+    <description>Strike up a dance tune and call the colony to a party. A real party gathers around you at a party spot, table or campfire (attending lifts the mood as any good party does), and everyone within 12 cells of you is festive for four hours: their recreation fills 50% faster. Needs a free gathering spot and a colony that is not busy fighting; the festive mood lands even if the party cannot start. Once every two days.</description>
+    <iconPath>ArcanumAscendant/Spells/Revelry</iconPath>
+    <cooldownTicksRange>120000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>0</range>
+      <warmupTime>3</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <drawAimPie>false</drawAimPie>
+      <targetable>false</targetable>
+      <nonInterruptingSelfCast>false</nonInterruptingSelfCast>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>50</manaCost>
+        <tags>
+          <li>Song</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+        <flavor>Somebody has to start the dancing.</flavor>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Nova</delivery>
+        <affects>Allies</affects>
+        <radius>12</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Gathering" />
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_BardFestive</hediff>
+            <severity>1</severity>
+          </li>
+        </effects>
+        <color>(1, 0.612, 0.878, 1)</color>
+        <color2>(1, 0.91, 0.969, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.1</scale>
+            <scaleEnd>1</scaleEnd>
+            <ticks>40</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Note</fleck>
+            <count>18</count>
+            <speed>2.5</speed>
+            <scale>0.7</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>10</count>
+            <speed>2</speed>
+            <scale>0.5</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Petal</fleck>
+            <count>24</count>
+            <speed>2.5</speed>
+            <scale>0.6</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>12</count>
+            <speed>2</speed>
+            <scale>0.5</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Song</castSound>
+        <impactSound>AA_Impact_Song</impactSound>
+        <style>Song</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+    <targetRequired>false</targetRequired>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_Singalong</defName>
+    <label>fireside sing-along</label>
+    <description>Lead everyone within 7 cells in a song they all know. Up to 10 people who are awake (colonists, slaves, prisoners and guests alike, children too) sing together: every pair of them gains +10 opinion of each other for six days, each regains 15% recreation, and the bigger the choir the better they all feel for a day (+3 mood for two or three voices, +5 for four, +7 for six, +9 for eight or more). Old grudges are hard to keep through the chorus. Once a day.</description>
+    <iconPath>ArcanumAscendant/Spells/Singalong</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>0</range>
+      <warmupTime>4</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <drawAimPie>false</drawAimPie>
+      <targetable>false</targetable>
+      <nonInterruptingSelfCast>false</nonInterruptingSelfCast>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>40</manaCost>
+        <tags>
+          <li>Song</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Nova</delivery>
+        <affects>Allies</affects>
+        <radius>7</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_BardSingAlong">
+            <opinionThought>AA_BardSangTogether</opinionThought>
+            <moodThought>AA_BardChoir</moodThought>
+            <maxSingers>10</maxSingers>
+            <joy>0.15</joy>
+          </li>
+        </effects>
+        <color>(1, 0.612, 0.878, 1)</color>
+        <color2>(1, 0.91, 0.969, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.1</scale>
+            <scaleEnd>1</scaleEnd>
+            <ticks>50</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Note</fleck>
+            <count>26</count>
+            <speed>1.6</speed>
+            <scale>0.6</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>2</scale>
+            <scaleEnd>3.5</scaleEnd>
+            <ticks>50</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Song</castSound>
+        <impactSound>AA_Impact_Song</impactSound>
+        <style>Song</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+    <targetRequired>false</targetRequired>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_SurgeonsSonata</defName>
+    <label>surgeon's sonata</label>
+    <description>Play a slow, steady sonata for a doctor. For six hours their hands do not shake: their surgeries succeed 30% more often (relative to their own odds), and they tend wounds 20% better and 30% faster. Play it before the risky operation, not after. Twice a day.</description>
+    <iconPath>ArcanumAscendant/Spells/SurgeonsSonata</iconPath>
+    <cooldownTicksRange>30000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>12</range>
+      <warmupTime>3</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>30</manaCost>
+        <tags>
+          <li>Song</li>
+          <li>Healing</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Buff</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_BardSonata</hediff>
+            <severity>1</severity>
+          </li>
+        </effects>
+        <color>(1, 0.612, 0.878, 1)</color>
+        <color2>(1, 0.91, 0.969, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.4</scale>
+            <scaleEnd>2.4</scaleEnd>
+            <ticks>40</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Note</fleck>
+            <count>10</count>
+            <speed>1</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.2</scale>
+            <scaleEnd>0.7</scaleEnd>
+            <ticks>30</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Song</castSound>
+        <impactSound>AA_Impact_Song</impactSound>
+        <style>Song</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_CatchyTune</defName>
+    <label>catchy tune</label>
+    <description>Teach someone a tune they cannot stop humming. For a day they hum it wherever they go, and anyone who comes within 4 cells of them catches it (but does not pass it on). Hummer and listeners alike find their recreation draining 40% slower for a day. Send it round the colony with your busiest hauler or cook. Once a day.</description>
+    <iconPath>ArcanumAscendant/Spells/CatchyTune</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>12</range>
+      <warmupTime>2</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>35</manaCost>
+        <tags>
+          <li>Song</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Buff</role>
+        <quirky>true</quirky>
+        <flavor>It goes da-da-DEE-da. No, the other one.</flavor>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_BardHumming</hediff>
+            <severity>1</severity>
+          </li>
+        </effects>
+        <color>(1, 0.612, 0.878, 1)</color>
+        <color2>(1, 0.91, 0.969, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Note</fleck>
+            <count>14</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Spiral</type>
+            <fleck>AA_Fleck_Note</fleck>
+            <count>10</count>
+            <speed>1.5</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.2</scale>
+            <scaleEnd>2</scaleEnd>
+            <ticks>30</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Song</castSound>
+        <impactSound>AA_Impact_Song</impactSound>
+        <style>Song</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_SongOnTheWind</defName>
+    <label>song on the wind</label>
+    <description>Sing a song meant for someone you have never met, and let the wind carry it past the edge of the map. Someone out there hears it: a wanderer arrives soon after, asking to join the colony. Once a season.</description>
+    <iconPath>ArcanumAscendant/Spells/SongOnTheWind</iconPath>
+    <cooldownTicksRange>900000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>0</range>
+      <warmupTime>6</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <drawAimPie>false</drawAimPie>
+      <targetable>false</targetable>
+      <nonInterruptingSelfCast>false</nonInterruptingSelfCast>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>80</manaCost>
+        <tags>
+          <li>Song</li>
+          <li>Utility</li>
+        </tags>
+        <tier>3</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+        <flavor>Nobody walks the rim alone for long once they've heard that tune.</flavor>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Self</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Incident">
+            <options>
+              <li>WandererJoin</li>
+            </options>
+          </li>
+        </effects>
+        <color>(1, 0.612, 0.878, 1)</color>
+        <color2>(1, 0.91, 0.969, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.2</scale>
+            <scaleEnd>2</scaleEnd>
+            <ticks>60</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Note</fleck>
+            <count>30</count>
+            <speed>3.5</speed>
+            <scale>0.6</scale>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Feather</fleck>
+            <count>12</count>
+            <speed>3</speed>
+            <scale>0.5</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Song</castSound>
+        <impactSound>AA_Impact_Song</impactSound>
+        <style>Song</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+    <targetRequired>false</targetRequired>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_TauntingElegy</defName>
+    <label>taunting elegy</label>
+    <description>Stand over a fallen body and sing its elegy, mockingly, for its friends to hear. Every enemy within 8 cells of the corpse is disheartened for 20 seconds (25% worse aim, 20% worse in melee, 15% slower), and each person among them has one chance in three to lose heart altogether and run from the battle. Bosses are unmoved. Bring their champion down first, then sing over him.</description>
+    <iconPath>ArcanumAscendant/Spells/TauntingElegy</iconPath>
+    <cooldownTicksRange>1800</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>26</range>
+      <warmupTime>1</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetItems>true</canTargetItems>
+        <canTargetCorpses>true</canTargetCorpses>
+        <canTargetBuildings>false</canTargetBuildings>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>35</manaCost>
+        <tags>
+          <li>Song</li>
+          <li>Curse</li>
+        </tags>
+        <tier>1</tier>
+        <role>Control</role>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <radius>8</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_BardDisheartened</hediff>
+            <severity>1</severity>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Random">
+            <options>
+              <li Class="ArcanumAscendant.Effect_MentalState">
+                <state>PanicFlee</state>
+                <humanlikeOnly>true</humanlikeOnly>
+              </li>
+              <li Class="ArcanumAscendant.Effect_Hediff">
+                <hediff>AA_BardDisheartened</hediff>
+                <severity>1</severity>
+              </li>
+              <li Class="ArcanumAscendant.Effect_Hediff">
+                <hediff>AA_BardDisheartened</hediff>
+                <severity>1</severity>
+              </li>
+            </options>
+            <perTarget>true</perTarget>
+          </li>
+        </effects>
+        <color>(1, 0.612, 0.878, 1)</color>
+        <color2>(1, 0.91, 0.969, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.1</scale>
+            <scaleEnd>1</scaleEnd>
+            <ticks>40</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Note</fleck>
+            <count>18</count>
+            <speed>2.5</speed>
+            <scale>0.6</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Skull</fleck>
+            <count>6</count>
+            <speed>1.5</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Smoke</type>
+            <count>3</count>
+            <scale>0.8</scale>
+            <speed>1</speed>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Song</castSound>
+        <impactSound>AA_Impact_Song</impactSound>
+        <style>Song</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_BattleHymn</defName>
     <label>battle hymn</label>
     <description>Sing a battle hymn as you fight: for fifteen seconds allies near you gain valor and enemies near you are battered by sound.</description>
@@ -3357,6 +4272,272 @@
     <targetRequired>false</targetRequired>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_NamedInSaga</defName>
+    <label>named in the saga</label>
+    <description>Name an enemy in your saga. For 30 seconds it takes 30% more damage from everything. If it dies while its name still rings, its death becomes a verse: every ally within 12 cells of the body gains valor, every colonist among them remembers being there (+6 mood for three days), and you regain 20 mana.</description>
+    <iconPath>ArcanumAscendant/Spells/NamedInSaga</iconPath>
+    <cooldownTicksRange>1800</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>28</range>
+      <warmupTime>0.6</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>30</manaCost>
+        <tags>
+          <li>Song</li>
+          <li>Curse</li>
+        </tags>
+        <tier>1</tier>
+        <role>Control</role>
+        <flavor>'And then came Bjorn, whose axe was hungry...'</flavor>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_SkaldNamed</hediff>
+            <severity>1</severity>
+          </li>
+        </effects>
+        <color>(1, 0.541, 0.29, 1)</color>
+        <color2>(1, 0.878, 0.69, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Spark</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>2.5</scale>
+            <scaleEnd>3</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Note</fleck>
+            <count>14</count>
+            <speed>2</speed>
+            <scale>0.6</scale>
+          </li>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.2</scale>
+            <scaleEnd>0.8</scaleEnd>
+            <ticks>26</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Song</castSound>
+        <impactSound>AA_Impact_Song</impactSound>
+        <style>Song</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_HornOfTheHall</defName>
+    <label>horn of the hall</label>
+    <description>Blow the great horn. Everyone of the colony on the map (and any guests) drops what they are doing, even sleep, and hurries to you at double speed for 20 seconds; getting hurt breaks the call. For two hours after, their tiredness stops growing and they walk 10% faster, and they wake with 20% more rest. Draft them as they arrive. Prisoners cannot leave their cells; the colony's animals come running too. Once a day.</description>
+    <iconPath>ArcanumAscendant/Spells/HornOfTheHall</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>0</range>
+      <warmupTime>0.5</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <drawAimPie>false</drawAimPie>
+      <targetable>false</targetable>
+      <nonInterruptingSelfCast>false</nonInterruptingSelfCast>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>50</manaCost>
+        <tags>
+          <li>Song</li>
+          <li>Utility</li>
+        </tags>
+        <tier>2</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+        <flavor>Three blasts: raiders. Nobody remembers what four blasts means.</flavor>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Global</delivery>
+        <affects>AlliesNotSelf</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_SkaldHornCall</hediff>
+            <severity>1</severity>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_SkaldRoused</hediff>
+            <severity>1</severity>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Need">
+            <need>Rest</need>
+            <amount>0.2</amount>
+          </li>
+        </effects>
+        <color>(1, 0.541, 0.29, 1)</color>
+        <color2>(1, 0.878, 0.69, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.1</scale>
+            <scaleEnd>2.5</scaleEnd>
+            <ticks>50</ticks>
+          </li>
+          <li>
+            <type>Flash</type>
+            <scale>3</scale>
+            <scaleEnd>3.6</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Note</fleck>
+            <count>6</count>
+            <speed>1.5</speed>
+            <scale>0.5</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Song</castSound>
+        <impactSound>AA_Impact_Song</impactSound>
+        <shake>1</shake>
+        <style>Song</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+    <targetRequired>false</targetRequired>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_AncestralSaga</defName>
+    <label>saga of the old ones</label>
+    <description>Recite the saga of the old ones, who built the great machines before the fall. Somewhere in its four hundred verses is something your researchers did not know: 400 research points (more with spell power) go into the current project, and a project with fewer than 150 points left is finished outright. Once a day.</description>
+    <iconPath>ArcanumAscendant/Spells/AncestralSaga</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>0</range>
+      <warmupTime>6</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <drawAimPie>false</drawAimPie>
+      <targetable>false</targetable>
+      <nonInterruptingSelfCast>false</nonInterruptingSelfCast>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>45</manaCost>
+        <tags>
+          <li>Song</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Self</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Research">
+            <points>400</points>
+            <finishBelow>150</finishBelow>
+          </li>
+        </effects>
+        <color>(1, 0.541, 0.29, 1)</color>
+        <color2>(1, 0.878, 0.69, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Spark</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Pillar</type>
+            <scale>1</scale>
+            <ticks>50</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Note</fleck>
+            <count>16</count>
+            <speed>1.5</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Rune</fleck>
+            <count>10</count>
+            <speed>1.2</speed>
+            <scale>0.5</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Song</castSound>
+        <impactSound>AA_Impact_Song</impactSound>
+        <style>Song</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+    <targetRequired>false</targetRequired>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_Charm</defName>
     <label>charm</label>
     <description>Charm a single enemy into fighting for you for thirty seconds.</description>
@@ -3891,6 +5072,305 @@
             <scale>2</scale>
             <scaleEnd>2.4</scaleEnd>
             <ticks>12</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Arcane</castSound>
+        <impactSound>AA_Impact_Arcane</impactSound>
+        <style>Song</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_PhantomFeast</defName>
+    <label>phantom feast</label>
+    <description>Lay an illusory banquet before everyone within 6 cells of the target. Nobody is fed, but everyone believes they have eaten a lavish meal: they get the mood of one (as from a real lavish meal) and for a day their hunger grows half as fast. The illusion that gets a colony through the last week of winter. Once a day.</description>
+    <iconPath>ArcanumAscendant/Spells/PhantomFeast</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>20</range>
+      <warmupTime>3</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>40</manaCost>
+        <tags>
+          <li>Song</li>
+          <li>Illusion</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+        <flavor>'Was the swan always this... crunchy?'</flavor>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <radius>6</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Thought">
+            <thought>AteLavishMeal</thought>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_IllusionistFed</hediff>
+            <severity>1</severity>
+          </li>
+        </effects>
+        <color>(0.769, 0.612, 1, 1)</color>
+        <color2>(0.941, 0.902, 1, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Note</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.1</scale>
+            <scaleEnd>1</scaleEnd>
+            <ticks>40</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>20</count>
+            <speed>1.5</speed>
+            <scale>0.6</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Spiral</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>12</count>
+            <speed>1.5</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>2</scale>
+            <scaleEnd>3.5</scaleEnd>
+            <ticks>40</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Arcane</castSound>
+        <impactSound>AA_Impact_Arcane</impactSound>
+        <style>Song</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_Hypnotherapy</defName>
+    <label>hypnotherapy</label>
+    <description>Put a colonist into a trance and talk them out of their cravings. Every addiction they have is gone at once, withdrawal and all (even luciferium), and they come out of it calm and clear-headed (+5 mood for two days). It cannot stop them from starting again. Once every five days.</description>
+    <iconPath>ArcanumAscendant/Spells/Hypnotherapy</iconPath>
+    <cooldownTicksRange>300000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>4</range>
+      <warmupTime>6</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>80</manaCost>
+        <tags>
+          <li>Song</li>
+          <li>Illusion</li>
+          <li>Healing</li>
+          <li>Utility</li>
+        </tags>
+        <tier>3</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Restore">
+            <addictions>true</addictions>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Thought">
+            <thought>AA_IllusionistTrance</thought>
+          </li>
+        </effects>
+        <color>(0.769, 0.612, 1, 1)</color>
+        <color2>(0.941, 0.902, 1, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Note</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Spiral</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>18</count>
+            <speed>-2</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.4</scale>
+            <scaleEnd>0.6</scaleEnd>
+            <ticks>40</ticks>
+            <useColor2>true</useColor2>
+          </li>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.6</scale>
+            <scaleEnd>0.1</scaleEnd>
+            <ticks>30</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Arcane</castSound>
+        <impactSound>AA_Impact_Arcane</impactSound>
+        <style>Song</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_FalseSun</defName>
+    <label>false sun</label>
+    <description>Hang an illusion of the noonday sun in the air for three days. It is so convincing that the plants believe it: it lights the ground like a sun lamp, so crops within about 6 cells grow indoors, underground or through an eclipse (in the daytime hours; plants still rest at night), and nobody near it works in the dark. It needs no power and burns no fuel. Once every three days.</description>
+    <iconPath>ArcanumAscendant/Spells/FalseSun</iconPath>
+    <cooldownTicksRange>180000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>20</range>
+      <warmupTime>4</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetItems>true</canTargetItems>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>60</manaCost>
+        <tags>
+          <li>Song</li>
+          <li>Illusion</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_SpawnThing">
+            <thing>AA_Construct_IllusionistFalseSun</thing>
+            <count>1</count>
+            <lifetimeTicks>180000</lifetimeTicks>
+          </li>
+        </effects>
+        <color>(0.769, 0.612, 1, 1)</color>
+        <color2>(0.941, 0.902, 1, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Note</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Pillar</type>
+            <scale>1.2</scale>
+            <ticks>50</ticks>
+          </li>
+          <li>
+            <type>Flash</type>
+            <scale>4</scale>
+            <scaleEnd>4.8</scaleEnd>
+            <ticks>12</ticks>
+            <color>(1, 0.957, 0.784, 1)</color>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>20</count>
+            <speed>2</speed>
+            <scale>0.5</scale>
           </li>
         </impactVfx>
         <castSound>AA_Cast_Arcane</castSound>
@@ -4701,6 +6181,308 @@
     <warmupStartSound>AA_Charge</warmupStartSound>
     <targetRequired>false</targetRequired>
   </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_PassTheHat</defName>
+    <label>pass the hat</label>
+    <description>Juggle, tumble and fall over for everyone within 9 cells, then pass the hat. Every visitor, trader and guest of a friendly faction watching tosses in 10 to 25 silver (5% more per level of your Social skill), regains 20% recreation and leaves their faction a little fonder of the colony (+1 goodwill per guest, at most +5 per faction). Colonists just enjoy the show (+10% recreation). The silver lands at your feet. Twice a day.</description>
+    <iconPath>ArcanumAscendant/Spells/PassTheHat</iconPath>
+    <cooldownTicksRange>30000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>0</range>
+      <warmupTime>5</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <drawAimPie>false</drawAimPie>
+      <targetable>false</targetable>
+      <nonInterruptingSelfCast>false</nonInterruptingSelfCast>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>30</manaCost>
+        <tags>
+          <li>Song</li>
+          <li>Chaos</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+        <flavor>Tips appreciated. Pies, less so.</flavor>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Nova</delivery>
+        <affects>Allies</affects>
+        <radius>9</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_JesterPassTheHat">
+            <silverPerGuest>10~25</silverPerGuest>
+            <goodwillPerGuest>1</goodwillPerGuest>
+            <maxGoodwillPerFaction>5</maxGoodwillPerFaction>
+            <guestJoy>0.2</guestJoy>
+            <colonistJoy>0.1</colonistJoy>
+          </li>
+        </effects>
+        <color>(1, 0.847, 0.29, 1)</color>
+        <color2>(1, 0.353, 0.816, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Note</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.1</scale>
+            <scaleEnd>1</scaleEnd>
+            <ticks>40</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>16</count>
+            <speed>2</speed>
+            <scale>0.5</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Note</fleck>
+            <count>10</count>
+            <speed>1.5</speed>
+            <scale>0.5</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Song</castSound>
+        <impactSound>AA_Impact_Song</impactSound>
+        <style>Song</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+    <targetRequired>false</targetRequired>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_WheelOfFortune</defName>
+    <label>wheel of fortune</label>
+    <description>Spin the jester's wheel and let fate pick something to happen to the colony. Most slices are good: cargo pods, a falling ship chunk, a meteorite full of ore, a wild animal deciding to join you, a psychic soothe, an ambrosia sprout or a refugee pod. Some are not: a short circuit, a solar flare, an eclipse or a family of alphabeavers. Slices that cannot happen right now are skipped. Once every three days.</description>
+    <iconPath>ArcanumAscendant/Spells/WheelOfFortune</iconPath>
+    <cooldownTicksRange>180000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>0</range>
+      <warmupTime>3</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <drawAimPie>false</drawAimPie>
+      <targetable>false</targetable>
+      <nonInterruptingSelfCast>false</nonInterruptingSelfCast>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>50</manaCost>
+        <tags>
+          <li>Song</li>
+          <li>Chaos</li>
+          <li>Utility</li>
+        </tags>
+        <tier>2</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+        <flavor>Round and round she goes.</flavor>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Self</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Incident">
+            <options>
+              <li>ResourcePodCrash</li>
+              <li>ShipChunkDrop</li>
+              <li>MeteoriteImpact</li>
+              <li>SelfTame</li>
+              <li>PsychicSoothe</li>
+              <li>AmbrosiaSprout</li>
+              <li>RefugeePodCrash</li>
+              <li>ShortCircuit</li>
+              <li>SolarFlare</li>
+              <li>Eclipse</li>
+              <li>Alphabeavers</li>
+            </options>
+          </li>
+        </effects>
+        <color>(1, 0.847, 0.29, 1)</color>
+        <color2>(1, 0.353, 0.816, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Note</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Spiral</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>24</count>
+            <speed>3</speed>
+            <scale>0.6</scale>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>16</count>
+            <speed>2.5</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Flash</type>
+            <scale>2.5</scale>
+            <scaleEnd>3</scaleEnd>
+            <ticks>12</ticks>
+            <color>(1, 0.847, 0.29, 1)</color>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Song</castSound>
+        <impactSound>AA_Impact_Song</impactSound>
+        <style>Song</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+    <targetRequired>false</targetRequired>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_SeltzerBottle</defName>
+    <label>seltzer bottle</label>
+    <description>Spray a fizzing blast of conjured soda water in a 50-degree cone 7 cells long. Every fire it touches goes out (on the ground, on buildings and on anyone burning, friend or foe), and enemies caught in it are knocked back 2 cells and left sputtering for 10 seconds (15% slower, 20% worse aim). Put out the kitchen, then the raiders.</description>
+    <iconPath>ArcanumAscendant/Spells/SeltzerBottle</iconPath>
+    <cooldownTicksRange>720</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>7</range>
+      <warmupTime>0.3</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetItems>true</canTargetItems>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>20</manaCost>
+        <tags>
+          <li>Song</li>
+          <li>Chaos</li>
+        </tags>
+        <tier>1</tier>
+        <role>Control</role>
+        <quirky>true</quirky>
+        <flavor>The oldest trick in the book. The book is very wet.</flavor>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Cone</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Extinguish">
+            <affects>All</affects>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Knockback">
+            <distance>2</distance>
+            <affects>Enemies</affects>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_JesterSoaked</hediff>
+            <severity>1</severity>
+            <affects>Enemies</affects>
+          </li>
+        </effects>
+        <color>(1, 0.847, 0.29, 1)</color>
+        <color2>(1, 0.353, 0.816, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Note</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Glow</fleck>
+            <count>10</count>
+            <speed>2.5</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Snow</fleck>
+            <count>14</count>
+            <speed>3</speed>
+            <scale>0.4</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Song</castSound>
+        <impactSound>AA_Impact_Song</impactSound>
+        <style>Song</style>
+        <coneAngle>50</coneAngle>
+        <coneRange>7</coneRange>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
   <ThoughtDef>
     <defName>AA_JoyfulTune</defName>
     <durationDays>0.5</durationDays>
@@ -4745,4 +6527,516 @@
       <li />
     </stages>
   </HediffDef>
+  <HediffDef>
+    <defName>AA_BardFestive</defName>
+    <label>festive</label>
+    <description>In a festive mood: recreation fills half again as fast.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(1, 0.612, 0.878, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>10000~10000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(1, 0.612, 0.878, 0.9)</color>
+        <texPath></texPath>
+        <emitter>Song</emitter>
+        <emitInterval>90</emitInterval>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <JoyGainFactor>1.5</JoyGainFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+  <ThoughtDef>
+    <defName>AA_BardSangTogether</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>10</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>sang together</label>
+        <description>We sang the same song around the fire. It's hard to stay cross with someone after that.</description>
+        <baseOpinionOffset>10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>AA_BardChoir</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>sang in a small group</label>
+        <description>A few of us sang together. It was nice.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+      <li>
+        <label>sang in a choir</label>
+        <description>We sang together, all of us at once. I still feel it.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+      <li>
+        <label>sang in a big choir</label>
+        <description>So many voices in one song. I felt like part of something.</description>
+        <baseMoodEffect>7</baseMoodEffect>
+      </li>
+      <li>
+        <label>sang in a great choir</label>
+        <description>The whole colony sang as one. I'll remember that night for a long time.</description>
+        <baseMoodEffect>9</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <HediffDef>
+    <defName>AA_BardSonata</defName>
+    <label>surgeon's sonata</label>
+    <description>A slow, steady sonata keeps this doctor's hands from shaking.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(1, 0.612, 0.878, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>15000~15000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(1, 0.612, 0.878, 0.9)</color>
+        <texPath></texPath>
+        <emitter>Song</emitter>
+        <emitInterval>120</emitInterval>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <MedicalSurgerySuccessChance>1.3</MedicalSurgerySuccessChance>
+          <MedicalTendQuality>1.2</MedicalTendQuality>
+          <MedicalTendSpeed>1.3</MedicalTendSpeed>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_BardHumming</defName>
+    <label>humming a catchy tune</label>
+    <description>Humming a tune that will not leave. Anyone who comes close catches it too, and recreation drains slower.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(1, 0.612, 0.878, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>60000~60000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_PeriodicEffects">
+        <interval>250</interval>
+        <areaEffects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_BardEarworm</hediff>
+            <severity>1</severity>
+            <affects>Allies</affects>
+          </li>
+        </areaEffects>
+        <areaRadius>4</areaRadius>
+        <color>(1, 0.61, 0.88, 1)</color>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(1, 0.612, 0.878, 0.9)</color>
+        <texPath></texPath>
+        <emitter>Song</emitter>
+        <emitInterval>60</emitInterval>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <JoyFallRateFactor>0.6</JoyFallRateFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_BardEarworm</defName>
+    <label>catchy tune</label>
+    <description>Caught a catchy tune from someone humming it. Recreation drains slower.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(1, 0.612, 0.878, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>60000~60000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(1, 0.612, 0.878, 0.9)</color>
+        <texPath></texPath>
+        <emitter>Song</emitter>
+        <emitInterval>180</emitInterval>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <JoyFallRateFactor>0.6</JoyFallRateFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_BardDisheartened</defName>
+    <label>disheartened</label>
+    <description>Heard their fallen comrade mocked in song. The fight has gone out of them.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>true</isBad>
+    <defaultLabelColor>(0.69, 0.541, 0.69, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>1200~1200</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(0.69, 0.541, 0.69, 0.9)</color>
+        <texPath></texPath>
+        <emitter>Lost</emitter>
+        <emitInterval>24</emitInterval>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <ShootingAccuracyPawn>0.75</ShootingAccuracyPawn>
+          <MeleeHitChance>0.8</MeleeHitChance>
+          <MoveSpeed>0.85</MoveSpeed>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_BardNightsong</defName>
+    <label>nightsong</label>
+    <description>Sleeping near a bard who hums in their sleep. Rest comes faster.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(1, 0.612, 0.878, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>2700~2700</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <RestRateMultiplier>1.2</RestRateMultiplier>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_SkaldNamed</defName>
+    <label>named in the saga</label>
+    <description>Named in a skald's saga. Every blow lands harder, and its death will be sung.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>true</isBad>
+    <defaultLabelColor>(1, 0.541, 0.29, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>1800~1800</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_DeathTrigger">
+        <casterEffects>
+          <li Class="ArcanumAscendant.Effect_RestoreMana">
+            <amount>20</amount>
+          </li>
+        </casterEffects>
+        <areaEffects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_Valor</hediff>
+            <severity>1</severity>
+            <affects>Allies</affects>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Thought">
+            <thought>AA_SkaldSagaVerse</thought>
+            <affects>Allies</affects>
+          </li>
+        </areaEffects>
+        <areaRadius>12</areaRadius>
+        <vfx>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.1</scale>
+            <scaleEnd>1</scaleEnd>
+            <ticks>40</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Note</fleck>
+            <count>24</count>
+            <speed>3</speed>
+            <scale>0.6</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Flash</type>
+            <scale>3</scale>
+            <scaleEnd>3.6</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+        </vfx>
+        <color>(1, 0.541, 0.29, 1)</color>
+        <labelKey>AA_SkaldVerseLabel</labelKey>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(1, 0.541, 0.29, 0.9)</color>
+        <texPath></texPath>
+        <emitter>Watched</emitter>
+        <emitInterval>20</emitInterval>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <IncomingDamageFactor>1.3</IncomingDamageFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+  <ThoughtDef>
+    <defName>AA_SkaldSagaVerse</defName>
+    <durationDays>3</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>a verse for the saga</label>
+        <description>I was there when the one named in the skald's saga fell. They will sing of it for years.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <HediffDef>
+    <defName>AA_SkaldHornCall</defName>
+    <label>answering the horn</label>
+    <description>The great horn is calling. Hurrying to the skald.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(1, 0.541, 0.29, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>1200~1200</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_Compel">
+        <mode>Approach</mode>
+        <breakOnDamage>true</breakOnDamage>
+        <breakDamage>1</breakDamage>
+        <approachDistance>3</approachDistance>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(1, 0.541, 0.29, 0.9)</color>
+        <texPath></texPath>
+        <emitter>Song</emitter>
+        <emitInterval>30</emitInterval>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <MoveSpeed>2</MoveSpeed>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_SkaldRoused</defName>
+    <label>roused by the horn</label>
+    <description>Woken by the horn and ready for anything. Tiredness can wait.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(1, 0.541, 0.29, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>5000~5000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <MoveSpeed>1.1</MoveSpeed>
+        </statFactors>
+        <restFallFactor>0</restFallFactor>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_SkaldFrith</defName>
+    <label>frith</label>
+    <description>Under the skald's frith: peace among kin. No fights here.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(1, 0.541, 0.29, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>2700~2700</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <MentalBreakThreshold>-0.04</MentalBreakThreshold>
+        </statOffsets>
+        <socialFightChanceFactor>0</socialFightChanceFactor>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_IllusionistFed</defName>
+    <label>phantom feast</label>
+    <description>Convinced by an illusion that they ate a banquet. Hunger grows half as fast.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(0.769, 0.612, 1, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>60000~60000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(0.769, 0.612, 1, 0.9)</color>
+        <texPath></texPath>
+        <emitter>Charm</emitter>
+        <emitInterval>240</emitInterval>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <hungerRateFactor>0.5</hungerRateFactor>
+      </li>
+    </stages>
+  </HediffDef>
+  <ThoughtDef>
+    <defName>AA_IllusionistTrance</defName>
+    <durationDays>2</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>free of cravings</label>
+        <description>The illusionist talked me out of it while I was under. The craving is just... gone.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThingDef>
+    <defName>AA_Construct_IllusionistFalseSun</defName>
+    <label>false sun</label>
+    <description>An illusion of the noonday sun, hung in the air by an illusionist. It is so convincing that plants grow under it as if under a sun lamp, and it needs no power at all.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>false</rotatable>
+    <passability>PassThroughOnly</passability>
+    <pathCost>30</pathCost>
+    <fillPercent>0.35</fillPercent>
+    <graphicData>
+      <texPath>ArcanumAscendant/Things/Construct_IllusionistFalseSun</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Beauty>5</Beauty>
+    </statBases>
+    <building>
+      <claimable>false</claimable>
+      <destroySound>AA_Construct_Break</destroySound>
+    </building>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneConstruct">
+        <defaultLifetimeTicks>180000</defaultLifetimeTicks>
+        <glowColor>(1, 0.957, 0.784, 1)</glowColor>
+        <glowSize>3</glowSize>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>14</glowRadius>
+        <glowColor>(370,370,370,0)</glowColor>
+      </li>
+    </comps>
+  </ThingDef>
+  <HediffDef>
+    <defName>AA_JesterSoaked</defName>
+    <label>soaked</label>
+    <description>Drenched in conjured soda water. Sputtering, sticky and slow.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>true</isBad>
+    <defaultLabelColor>(0.749, 0.91, 1, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>600~600</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(0.749, 0.91, 1, 0.9)</color>
+        <texPath></texPath>
+        <emitter>Chill</emitter>
+        <emitInterval>30</emitInterval>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <MoveSpeed>0.85</MoveSpeed>
+          <ShootingAccuracyPawn>0.8</ShootingAccuracyPawn>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+  <ThoughtDef>
+    <defName>AA_JesterLaughed</defName>
+    <durationDays>0.25</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>the jester made me laugh</label>
+        <description>I couldn't help it. That jester is ridiculous.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
 </Defs>

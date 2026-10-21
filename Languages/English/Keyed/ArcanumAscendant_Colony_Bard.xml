@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Bard family colony expansion (Source/ArcanumAscendant/Spells/Colony_Bard.cs) -->
+  <AA_BardSingAlongAlone>no one to sing with</AA_BardSingAlongAlone>
+  <AA_BardSangTogether>{0} voices, one song</AA_BardSangTogether>
+  <AA_Desc_BardSingAlong>Up to {0} people in the area sing together: every pair of them gains {1} opinion of each other</AA_Desc_BardSingAlong>
+  <AA_Desc_BardSingAlongChoir>Each singer feels good for a day, from {0} mood in a small group to {1} in a great choir</AA_Desc_BardSingAlongChoir>
+  <AA_Desc_BardSingAlongJoy>Each singer regains {0} recreation</AA_Desc_BardSingAlongJoy>
+
+  <AA_JesterTip>+{0} silver</AA_JesterTip>
+  <AA_JesterNoAudience>no audience to pass the hat to</AA_JesterNoAudience>
+  <AA_JesterHatTotal>{0} silver from {1} in the audience</AA_JesterHatTotal>
+  <AA_Desc_JesterPassTheHat>Every visitor, trader or guest of a friendly faction watching tips {0} to {1} silver (more with Social skill) and enjoys the show</AA_Desc_JesterPassTheHat>
+  <AA_Desc_JesterPassTheHatGoodwill>Their factions warm to the colony: {0} goodwill per guest, at most {1} per faction</AA_Desc_JesterPassTheHatGoodwill>
+  <AA_Desc_JesterPassTheHatColonists>Colonists watching regain {0} recreation</AA_Desc_JesterPassTheHatColonists>
+</LanguageData>

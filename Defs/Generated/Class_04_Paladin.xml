@@ -671,6 +671,119 @@
     <unlockSpell>AA_Spell_Sunstrike</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Paladin_BearTheBurden</defName>
+    <tree>AA_Class_Paladin</tree>
+    <kind>Spell</kind>
+    <x>4</x>
+    <y>1</y>
+    <prerequisites>
+      <li>AA_Node_Paladin_Fortitude</li>
+      <li>AA_Node_Paladin_Mercy</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_BearTheBurden</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Paladin_Quarter</defName>
+    <tree>AA_Class_Paladin</tree>
+    <kind>Spell</kind>
+    <x>5</x>
+    <y>2</y>
+    <requiredLevel>2</requiredLevel>
+    <prerequisites>
+      <li>AA_Node_Paladin_LayOnHands</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_Quarter</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Paladin_BreakingOfBread</defName>
+    <tree>AA_Class_Paladin</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>3</y>
+    <requiredLevel>3</requiredLevel>
+    <requiredAttribute>AA_Resilience</requiredAttribute>
+    <requiredAttributeValue>5</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Paladin_HealingHands</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_BreakingOfBread</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Paladin_LanternOfDawn</defName>
+    <tree>AA_Class_Paladin</tree>
+    <kind>Spell</kind>
+    <x>3</x>
+    <y>4</y>
+    <requiredLevel>5</requiredLevel>
+    <requiredAttribute>AA_Resilience</requiredAttribute>
+    <requiredAttributeValue>6</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Paladin_Bulwark</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_LanternOfDawn</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Paladin_RebukeTheUnhallowed</defName>
+    <tree>AA_Class_Paladin</tree>
+    <kind>Spell</kind>
+    <x>1</x>
+    <y>4</y>
+    <requiredLevel>5</requiredLevel>
+    <requiredAttribute>AA_Resilience</requiredAttribute>
+    <requiredAttributeValue>6</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Paladin_Zealot</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_RebukeTheUnhallowed</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Paladin_Hearthguard</defName>
+    <label>hearthguard</label>
+    <description>Home feels safe while you are in it. Every half hour, colonists, guests and prisoners within 10 cells of you feel sheltered (+3 mood for a few hours) and steadier (mental break threshold 4% lower for the next hour), drafted or not.</description>
+    <tree>AA_Class_Paladin</tree>
+    <kind>Notable</kind>
+    <x>5</x>
+    <y>4</y>
+    <requiredLevel>5</requiredLevel>
+    <requiredAttribute>AA_Resilience</requiredAttribute>
+    <requiredAttributeValue>6</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Paladin_Purify</li>
+    </prerequisites>
+    <passives>
+      <li Class="ArcanumAscendant.P_Aura">
+        <radius>10</radius>
+        <interval>1250</interval>
+        <affects>Allies</affects>
+        <color>(1, 0.89, 0.54, 1)</color>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Thought">
+            <thought>AA_PaladinHearthguard</thought>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_PaladinSteadied</hediff>
+            <severity>1</severity>
+          </li>
+        </effects>
+      </li>
+    </passives>
+    <iconPath>ArcanumAscendant/Nodes/Paladin_Hearthguard</iconPath>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Paladin_BeaconForTheLost</defName>
+    <tree>AA_Class_Paladin</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>6</y>
+    <requiredLevel>9</requiredLevel>
+    <requiredAttribute>AA_Resilience</requiredAttribute>
+    <requiredAttributeValue>9</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Paladin_Martyr</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_BeaconForTheLost</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Templar_Judgment</defName>
     <tree>AA_Class_Templar</tree>
     <kind>Spell</kind>
@@ -1002,6 +1115,76 @@
       <li>AA_Node_Templar_Bastion</li>
     </prerequisites>
     <unlockSpell>AA_Spell_UnbreakableVow</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Templar_PilgrimsBlessing</defName>
+    <tree>AA_Class_Templar</tree>
+    <kind>Spell</kind>
+    <x>2</x>
+    <y>1</y>
+    <requiredLevel>8</requiredLevel>
+    <prerequisites>
+      <li>AA_Node_Templar_Judgment</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_PilgrimsBlessing</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Templar_Squires</defName>
+    <label>squires</label>
+    <description>Everyone near a templar learns by watching. Allies within 8 cells of you learn every skill 25% faster, drafted or not.</description>
+    <tree>AA_Class_Templar</tree>
+    <kind>Notable</kind>
+    <x>2</x>
+    <y>2</y>
+    <requiredLevel>10</requiredLevel>
+    <requiredAttribute>AA_Resilience</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Templar_Vanguard</li>
+    </prerequisites>
+    <passives>
+      <li Class="ArcanumAscendant.P_Aura">
+        <radius>8</radius>
+        <interval>1250</interval>
+        <affects>Allies</affects>
+        <color>(1, 0.81, 0.35, 1)</color>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_PaladinSquire</hediff>
+            <severity>1</severity>
+          </li>
+        </effects>
+      </li>
+    </passives>
+    <iconPath>ArcanumAscendant/Nodes/Templar_Squires</iconPath>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Templar_GuardiansOath</defName>
+    <tree>AA_Class_Templar</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>2</y>
+    <requiredLevel>10</requiredLevel>
+    <requiredAttribute>AA_Resilience</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Templar_ShieldOfFaith</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_GuardiansOath</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Templar_BannerOfTheOrder</defName>
+    <tree>AA_Class_Templar</tree>
+    <kind>Spell</kind>
+    <x>4</x>
+    <y>4</y>
+    <requiredLevel>14</requiredLevel>
+    <requiredAttribute>AA_Resilience</requiredAttribute>
+    <requiredAttributeValue>10</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Templar_Unbreakable</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_BannerOfTheOrder</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Cleric_GreaterHeal</defName>
@@ -1382,6 +1565,78 @@
     <unlockSpell>AA_Spell_GuardianSpirits</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Cleric_Christening</defName>
+    <tree>AA_Class_Cleric</tree>
+    <kind>Spell</kind>
+    <x>4</x>
+    <y>1</y>
+    <requiredLevel>8</requiredLevel>
+    <prerequisites>
+      <li>AA_Node_Cleric_Grace</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_Christening</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Cleric_Communion</defName>
+    <tree>AA_Class_Cleric</tree>
+    <kind>Spell</kind>
+    <x>2</x>
+    <y>2</y>
+    <requiredLevel>10</requiredLevel>
+    <requiredAttribute>AA_Resilience</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Cleric_MassRegeneration</li>
+      <li>AA_Node_Cleric_Serenity</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_Communion</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Cleric_PeaceOfTheWild</defName>
+    <tree>AA_Class_Cleric</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>2</y>
+    <requiredLevel>10</requiredLevel>
+    <requiredAttribute>AA_Resilience</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Cleric_Sanctuary</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_PeaceOfTheWild</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Cleric_GuidingHands</defName>
+    <label>guiding hands</label>
+    <description>Healers work better with a cleric at their shoulder. Allies within 8 cells of you tend 15% better and 15% faster, and their surgeries are 15% more likely to succeed, drafted or not.</description>
+    <tree>AA_Class_Cleric</tree>
+    <kind>Notable</kind>
+    <x>4</x>
+    <y>3</y>
+    <requiredLevel>12</requiredLevel>
+    <requiredAttribute>AA_Resilience</requiredAttribute>
+    <requiredAttributeValue>9</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Cleric_Restoration</li>
+      <li>AA_Node_Cleric_HallowedDome</li>
+    </prerequisites>
+    <passives>
+      <li Class="ArcanumAscendant.P_Aura">
+        <radius>8</radius>
+        <interval>625</interval>
+        <affects>Allies</affects>
+        <color>(0.72, 1, 0.85, 1)</color>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_PaladinGuidedHands</hediff>
+            <severity>1</severity>
+          </li>
+        </effects>
+      </li>
+    </passives>
+    <iconPath>ArcanumAscendant/Nodes/Cleric_GuidingHands</iconPath>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Inquisitor_HolyFire</defName>
     <tree>AA_Class_Inquisitor</tree>
     <kind>Spell</kind>
@@ -1737,6 +1992,48 @@
       <li>AA_Node_Inquisitor_Banishment</li>
     </prerequisites>
     <unlockSpell>AA_Spell_SearingRay</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Inquisitor_TheFireObeys</defName>
+    <tree>AA_Class_Inquisitor</tree>
+    <kind>Spell</kind>
+    <x>4</x>
+    <y>2</y>
+    <requiredLevel>10</requiredLevel>
+    <requiredAttribute>AA_Potency</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Inquisitor_Interrogator</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_TheFireObeys</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Inquisitor_SealOfTheMind</defName>
+    <tree>AA_Class_Inquisitor</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>2</y>
+    <requiredLevel>10</requiredLevel>
+    <requiredAttribute>AA_Potency</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Inquisitor_Silence</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_SealOfTheMind</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Inquisitor_AutoDaFe</defName>
+    <tree>AA_Class_Inquisitor</tree>
+    <kind>Spell</kind>
+    <x>2</x>
+    <y>4</y>
+    <requiredLevel>14</requiredLevel>
+    <requiredAttribute>AA_Potency</requiredAttribute>
+    <requiredAttributeValue>10</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Inquisitor_Banishment</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_AutoDaFe</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_Smite</defName>
@@ -2830,6 +3127,618 @@
     <warmupStartSound>AA_Charge</warmupStartSound>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_Quarter</defName>
+    <label>quarter</label>
+    <description>Kneel beside a downed enemy and spare them. Their wounds are tended and healed for 30, their pain is dulled to 40% for twelve hours, and they are taken captive and released on the spot: no longer hostile, they walk home as soon as they can stand. Their faction warms to you (+12 goodwill, though factions that can never make peace do not care), and you feel the better for it (+4 mood for two days). Only the downed are judged; anyone still standing is left alone.</description>
+    <iconPath>ArcanumAscendant/Spells/Quarter</iconPath>
+    <cooldownTicksRange>15000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>4</range>
+      <warmupTime>3</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>30</manaCost>
+        <tags>
+          <li>Holy</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_PaladinVerdict">
+            <verdict>Quarter</verdict>
+            <goodwill>12</goodwill>
+            <casterThought>AA_PaladinMercyShown</casterThought>
+            <spareEffects>
+              <li Class="ArcanumAscendant.Effect_Heal">
+                <amount>30</amount>
+                <tend>true</tend>
+              </li>
+              <li Class="ArcanumAscendant.Effect_Hediff">
+                <hediff>AA_PaladinQuartered</hediff>
+                <severity>1</severity>
+              </li>
+            </spareEffects>
+          </li>
+        </effects>
+        <color>(1, 0.886, 0.541, 1)</color>
+        <color2>(1, 1, 1, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Feather</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Pillar</type>
+            <scale>1</scale>
+            <ticks>40</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Feather</fleck>
+            <count>14</count>
+            <speed>1.2</speed>
+            <scale>0.6</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.2</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>30</ticks>
+            <useColor2>true</useColor2>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Holy</castSound>
+        <impactSound>AA_Impact_Holy</impactSound>
+        <style>Holy</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_LanternOfDawn</defName>
+    <label>lantern of dawn</label>
+    <description>Hang a small sun over the target for three days. It lights the ground like a sun lamp: crops within about 6 cells grow as in full daylight, at night and under a roof alike (they still need warmth), and nobody there works in the dark. Allies within 7 cells of it also work 10% faster. Grow food in a sealed hall through the winter, or keep the harvest going all night.</description>
+    <iconPath>ArcanumAscendant/Spells/LanternOfDawn</iconPath>
+    <cooldownTicksRange>180000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>24</range>
+      <warmupTime>4</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetItems>true</canTargetItems>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>60</manaCost>
+        <tags>
+          <li>Holy</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_SpawnThing">
+            <thing>AA_Construct_PaladinDawnLantern</thing>
+            <count>1</count>
+            <lifetimeTicks>180000</lifetimeTicks>
+          </li>
+        </effects>
+        <color>(1, 0.886, 0.541, 1)</color>
+        <color2>(1, 1, 1, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Feather</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Pillar</type>
+            <scale>1.4</scale>
+            <ticks>60</ticks>
+          </li>
+          <li>
+            <type>Flash</type>
+            <scale>4</scale>
+            <scaleEnd>4.8</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.2</scale>
+            <scaleEnd>1</scaleEnd>
+            <ticks>40</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>20</count>
+            <speed>2</speed>
+            <scale>0.6</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Holy</castSound>
+        <impactSound>AA_Impact_Holy</impactSound>
+        <style>Holy</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_BeaconForTheLost</defName>
+    <label>beacon for the lost</label>
+    <description>Light a beacon that only the lost can see. Within moments someone answers: a wanderer walks in asking to join the colony, or an escape pod falls nearby with a wounded refugee inside. Once every ten days.</description>
+    <iconPath>ArcanumAscendant/Spells/BeaconForTheLost</iconPath>
+    <cooldownTicksRange>600000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>0</range>
+      <warmupTime>6</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <drawAimPie>false</drawAimPie>
+      <targetable>false</targetable>
+      <nonInterruptingSelfCast>false</nonInterruptingSelfCast>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>90</manaCost>
+        <tags>
+          <li>Holy</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Self</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Incident">
+            <options>
+              <li>WandererJoin</li>
+              <li>RefugeePodCrash</li>
+            </options>
+          </li>
+        </effects>
+        <color>(1, 0.886, 0.541, 1)</color>
+        <color2>(1, 1, 1, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Feather</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Pillar</type>
+            <scale>2.5</scale>
+            <ticks>120</ticks>
+          </li>
+          <li>
+            <type>Flash</type>
+            <scale>5</scale>
+            <scaleEnd>6</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.1</scale>
+            <scaleEnd>2</scaleEnd>
+            <ticks>60</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>30</count>
+            <speed>3</speed>
+            <scale>0.7</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Holy</castSound>
+        <impactSound>AA_Impact_Holy</impactSound>
+        <style>Holy</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+    <targetRequired>false</targetRequired>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_BreakingOfBread</defName>
+    <label>breaking of bread</label>
+    <description>Bless a single loaf and break it among everyone within 5 cells, and there is always enough. Every person there, prisoners too, eats until full without a crumb leaving the larder, and animals get a hearty meal. They remember sharing it (+4 mood for a day). Once a day: a famine can be survived on this.</description>
+    <iconPath>ArcanumAscendant/Spells/BreakingOfBread</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>0</range>
+      <warmupTime>5</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <drawAimPie>false</drawAimPie>
+      <targetable>false</targetable>
+      <nonInterruptingSelfCast>false</nonInterruptingSelfCast>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>50</manaCost>
+        <tags>
+          <li>Holy</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Nova</delivery>
+        <affects>Allies</affects>
+        <radius>5</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Need">
+            <need>Food</need>
+            <amount>1</amount>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Thought">
+            <thought>AA_PaladinBrokeBread</thought>
+          </li>
+        </effects>
+        <color>(1, 0.886, 0.541, 1)</color>
+        <color2>(1, 1, 1, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Feather</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.1</scale>
+            <scaleEnd>1</scaleEnd>
+            <ticks>40</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>3</scaleEnd>
+            <ticks>40</ticks>
+            <useColor2>true</useColor2>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>16</count>
+            <speed>1.6</speed>
+            <scale>0.5</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Holy</castSound>
+        <impactSound>AA_Impact_Holy</impactSound>
+        <style>Holy</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+    <targetRequired>false</targetRequired>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_BearTheBurden</defName>
+    <label>bear the burden</label>
+    <description>Take another's weariness onto your own shoulders. They regain 50% rest at once and feel only half their pain for 12 hours; you lose 35% rest and ache in their place for those 12 hours (+10% pain, 5% slower). They think better of you for it (+12 opinion for six days). Let the doctor finish the surgery, or the builder close the wall before the cold.</description>
+    <iconPath>ArcanumAscendant/Spells/BearTheBurden</iconPath>
+    <cooldownTicksRange>10000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>3</range>
+      <warmupTime>2</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>20</manaCost>
+        <tags>
+          <li>Holy</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Buff</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>AlliesNotSelf</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Need">
+            <need>Rest</need>
+            <amount>0.5</amount>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_PaladinBurdenLifted</hediff>
+            <severity>1</severity>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Thought">
+            <thought>AA_PaladinCarriedMyBurden</thought>
+            <toCaster>true</toCaster>
+          </li>
+        </effects>
+        <casterEffects>
+          <li Class="ArcanumAscendant.Effect_Need">
+            <need>Rest</need>
+            <amount>-0.35</amount>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_PaladinBurdenBorne</hediff>
+            <severity>1</severity>
+          </li>
+        </casterEffects>
+        <color>(1, 0.886, 0.541, 1)</color>
+        <color2>(1, 1, 1, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Feather</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.2</scale>
+            <scaleEnd>2</scaleEnd>
+            <ticks>30</ticks>
+            <useColor2>true</useColor2>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Feather</fleck>
+            <count>8</count>
+            <speed>1</speed>
+            <scale>0.5</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Holy</castSound>
+        <impactSound>AA_Impact_Holy</impactSound>
+        <style>Holy</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_RebukeTheUnhallowed</defName>
+    <label>rebuke the unhallowed</label>
+    <description>Raise your holy symbol and let the light judge what should not walk. Every enemy within 7 cells is seared: the undead and anything summoned take about 78 holy damage, the creatures of the dark (Anomaly's entities) about 75 and mechanoids 15, while living people and beasts take only a stinging 12. Break an enemy necromancer's army without burning its prisoners.</description>
+    <iconPath>ArcanumAscendant/Spells/RebukeTheUnhallowed</iconPath>
+    <cooldownTicksRange>1800</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>0</range>
+      <warmupTime>0.8</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <drawAimPie>false</drawAimPie>
+      <targetable>false</targetable>
+      <nonInterruptingSelfCast>false</nonInterruptingSelfCast>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>40</manaCost>
+        <tags>
+          <li>Holy</li>
+        </tags>
+        <tier>3</tier>
+        <role>Attack</role>
+        <autocastByDefault>true</autocastByDefault>
+        <aiMinEnemiesInRadius>1</aiMinEnemiesInRadius>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Nova</delivery>
+        <affects>Enemies</affects>
+        <radius>7</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Damage">
+            <amount>30</amount>
+            <damageDef>AA_Holy</damageDef>
+            <vsHumanlikes>0.2</vsHumanlikes>
+            <vsAnimals>0.2</vsAnimals>
+            <vsMechanoids>0.5</vsMechanoids>
+            <vsEntities>2.5</vsEntities>
+            <bonusVsHediff>AA_Undead</bonusVsHediff>
+            <bonusVsHediffFactor>12</bonusVsHediffFactor>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Damage">
+            <amount>30</amount>
+            <damageDef>AA_Holy</damageDef>
+            <vsHumanlikes>0.2</vsHumanlikes>
+            <vsAnimals>0.2</vsAnimals>
+            <vsMechanoids>0</vsMechanoids>
+            <vsEntities>0</vsEntities>
+            <bonusVsHediff>AA_Summoned</bonusVsHediff>
+            <bonusVsHediffFactor>12</bonusVsHediffFactor>
+            <noCrit>true</noCrit>
+          </li>
+        </effects>
+        <color>(1, 0.886, 0.541, 1)</color>
+        <color2>(1, 1, 1, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Feather</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>5</scale>
+            <scaleEnd>6</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.1</scale>
+            <scaleEnd>1.2</scaleEnd>
+            <ticks>36</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Pillar</type>
+            <scale>1.6</scale>
+            <ticks>40</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>24</count>
+            <speed>4</speed>
+            <scale>0.6</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Holy</castSound>
+        <impactSound>AA_Impact_Holy</impactSound>
+        <style>Holy</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+    <targetRequired>false</targetRequired>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_Judgment</defName>
     <label>judgment</label>
     <description>A massive smite that marks the target for judgment: everyone hits them harder.</description>
@@ -3407,6 +4316,293 @@
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
     <targetRequired>false</targetRequired>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_GuardiansOath</defName>
+    <label>guardian's oath</label>
+    <description>Swear to stand between an ally and harm for a day. Every blow that lands on them is halved, and the other half strikes you instead, wherever you are on the map, through your own armour and ward. The oath breaks if you are downed, die or leave the map. Swear it over the children before the raid, or over the only doctor.</description>
+    <iconPath>ArcanumAscendant/Spells/GuardiansOath</iconPath>
+    <cooldownTicksRange>3600</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>20</range>
+      <warmupTime>0.5</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>35</manaCost>
+        <tags>
+          <li>Holy</li>
+          <li>Ward</li>
+        </tags>
+        <tier>1</tier>
+        <role>Buff</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>AlliesNotSelf</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_PaladinGuardianOath</hediff>
+            <severity>1</severity>
+          </li>
+        </effects>
+        <color>(1, 0.812, 0.353, 1)</color>
+        <color2>(1, 0.965, 0.847, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Spark</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Hex</type>
+            <scale>2.4</scale>
+            <scaleEnd>2.16</scaleEnd>
+            <ticks>40</ticks>
+          </li>
+          <li>
+            <type>Flash</type>
+            <scale>2.5</scale>
+            <scaleEnd>3</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>12</count>
+            <speed>1.6</speed>
+            <scale>0.6</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Holy</castSound>
+        <impactSound>AA_Impact_Holy</impactSound>
+        <style>Holy</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_BannerOfTheOrder</defName>
+    <label>banner of the order</label>
+    <description>Plant the order's banner for a day. Everyone of yours within 8 cells of it stands taller: +3 mood, a mental break threshold 8% lower, pain has to be 10% worse to drop them and they aim 10% quicker. Plant it in the dining hall in a hard winter, or behind the barricade when the raid comes.</description>
+    <iconPath>ArcanumAscendant/Spells/BannerOfTheOrder</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>12</range>
+      <warmupTime>3</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetItems>true</canTargetItems>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>45</manaCost>
+        <tags>
+          <li>Holy</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Buff</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_SpawnThing">
+            <thing>AA_Construct_PaladinBanner</thing>
+            <count>1</count>
+            <lifetimeTicks>60000</lifetimeTicks>
+          </li>
+        </effects>
+        <color>(1, 0.812, 0.353, 1)</color>
+        <color2>(1, 0.965, 0.847, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Spark</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Pillar</type>
+            <scale>1.2</scale>
+            <ticks>50</ticks>
+          </li>
+          <li>
+            <type>Flash</type>
+            <scale>3</scale>
+            <scaleEnd>3.6</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.2</scale>
+            <scaleEnd>1</scaleEnd>
+            <ticks>30</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>16</count>
+            <speed>2</speed>
+            <scale>0.6</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Holy</castSound>
+        <impactSound>AA_Impact_Holy</impactSound>
+        <style>Holy</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_PilgrimsBlessing</defName>
+    <label>pilgrim's blessing</label>
+    <description>Bless travellers before the road. For three days everyone of yours within 4 cells walks 10% faster, gets hungry 30% slower, tires 20% slower and stays comfortable 8 C further into the cold and the heat. Bless a caravan before it leaves, or the hunting party.</description>
+    <iconPath>ArcanumAscendant/Spells/PilgrimsBlessing</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>12</range>
+      <warmupTime>3</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>40</manaCost>
+        <tags>
+          <li>Holy</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Buff</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <radius>4</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_PaladinPilgrim</hediff>
+            <severity>1</severity>
+          </li>
+        </effects>
+        <color>(1, 0.812, 0.353, 1)</color>
+        <color2>(1, 0.965, 0.847, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Spark</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.1</scale>
+            <scaleEnd>1</scaleEnd>
+            <ticks>40</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Feather</fleck>
+            <count>16</count>
+            <speed>1.6</speed>
+            <scale>0.6</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.4</scale>
+            <scaleEnd>2.6</scaleEnd>
+            <ticks>30</ticks>
+            <useColor2>true</useColor2>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Holy</castSound>
+        <impactSound>AA_Impact_Holy</impactSound>
+        <style>Holy</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_GreaterHeal</defName>
@@ -4133,6 +5329,303 @@
     <targetRequired>false</targetRequired>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_Communion</defName>
+    <label>communion</label>
+    <description>Share the sacrament of your own blood. Whoever receives it feels blessed (+6 mood for two days). A sanguophage (Biotech) is also fed 40 hemogen, and nobody has to be bitten. You are a little pale for 8 hours afterwards (5% less blood pumping, tiring 20% faster). Once a day.</description>
+    <iconPath>ArcanumAscendant/Spells/Communion</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>3</range>
+      <warmupTime>4</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>30</manaCost>
+        <tags>
+          <li>Holy</li>
+          <li>Healing</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Buff</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>AlliesNotSelf</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Hemogen">
+            <amount>0.4</amount>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Thought">
+            <thought>AA_PaladinCommunion</thought>
+          </li>
+        </effects>
+        <casterEffects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_PaladinGaveBlood</hediff>
+            <severity>1</severity>
+          </li>
+        </casterEffects>
+        <color>(0.722, 1, 0.847, 1)</color>
+        <color2>(1, 1, 1, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.2</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>40</ticks>
+            <useColor2>true</useColor2>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Feather</fleck>
+            <count>10</count>
+            <speed>1</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>8</count>
+            <speed>1</speed>
+            <scale>0.4</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Holy</castSound>
+        <impactSound>AA_Impact_Holy</impactSound>
+        <style>Holy</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_PeaceOfTheWild</defName>
+    <label>peace of the wild</label>
+    <description>Walk into the madness with open hands. Every creature within 9 cells that has been driven mad (a manhunting pack, an animal out for revenge, a psychic insanity pulse) or anyone in a berserk rage comes back to itself at once. Wild animals then wander off in peace. Once every two days.</description>
+    <iconPath>ArcanumAscendant/Spells/PeaceOfTheWild</iconPath>
+    <cooldownTicksRange>120000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>24</range>
+      <warmupTime>2</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetItems>true</canTargetItems>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>50</manaCost>
+        <tags>
+          <li>Holy</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <radius>9</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Calm">
+            <violent>true</violent>
+            <affects>Enemies</affects>
+          </li>
+        </effects>
+        <color>(0.722, 1, 0.847, 1)</color>
+        <color2>(1, 1, 1, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.1</scale>
+            <scaleEnd>1</scaleEnd>
+            <ticks>50</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>2</scale>
+            <scaleEnd>4</scaleEnd>
+            <ticks>40</ticks>
+            <useColor2>true</useColor2>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Feather</fleck>
+            <count>24</count>
+            <speed>2</speed>
+            <scale>0.6</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Holy</castSound>
+        <impactSound>AA_Impact_Holy</impactSound>
+        <style>Holy</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_Christening</defName>
+    <label>christening</label>
+    <description>Bless someone in water and light before their family. It is meant for babies and children (Biotech), but anyone can be blessed. For thirty days they fight off disease 30% faster and stay comfortable 10 C further into the cold and the heat, enough to carry a newborn through its first winter. Everyone within 5 cells who sees it is moved (+5 mood for two days).</description>
+    <iconPath>ArcanumAscendant/Spells/Christening</iconPath>
+    <cooldownTicksRange>180000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>3</range>
+      <warmupTime>5</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>35</manaCost>
+        <tags>
+          <li>Holy</li>
+          <li>Healing</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Buff</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_PaladinChristened</hediff>
+            <severity>1</severity>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Thought">
+            <thought>AA_PaladinChristening</thought>
+            <radius>5</radius>
+          </li>
+        </effects>
+        <color>(0.722, 1, 0.847, 1)</color>
+        <color2>(1, 1, 1, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Pillar</type>
+            <scale>1</scale>
+            <ticks>50</ticks>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.4</scale>
+            <scaleEnd>2.6</scaleEnd>
+            <ticks>40</ticks>
+            <useColor2>true</useColor2>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Feather</fleck>
+            <count>14</count>
+            <speed>1.2</speed>
+            <scale>0.5</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Holy</castSound>
+        <impactSound>AA_Impact_Holy</impactSound>
+        <style>Holy</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_Purge</defName>
     <label>purge</label>
     <description>Strip away the target's magic: buffs, wards and energy shields are destroyed.</description>
@@ -4811,6 +6304,345 @@
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
   </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_SealOfTheMind</defName>
+    <label>seal of the mind</label>
+    <description>Seal the minds of everyone of yours within 5 cells against the whispers. For three days they are as if psychically deaf: a psychic drone, a psychic ship's wail or a hostile psycaster's touch cannot reach them (nor can a psychic soothe, and psycasters among them cannot cast). Gather the colony at dinner when the drone begins.</description>
+    <iconPath>ArcanumAscendant/Spells/SealOfTheMind</iconPath>
+    <cooldownTicksRange>180000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>20</range>
+      <warmupTime>3</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>50</manaCost>
+        <tags>
+          <li>Holy</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Buff</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <radius>5</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_PaladinSealedMind</hediff>
+            <severity>1</severity>
+          </li>
+        </effects>
+        <color>(1, 0.604, 0.235, 1)</color>
+        <color2>(1, 0.941, 0.753, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Ember</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Rune</type>
+            <scale>1</scale>
+            <scaleEnd>1.05</scaleEnd>
+            <ticks>60</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.1</scale>
+            <scaleEnd>1</scaleEnd>
+            <ticks>40</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>16</count>
+            <speed>1.6</speed>
+            <scale>0.5</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Fire</castSound>
+        <impactSound>AA_Impact_Fire</impactSound>
+        <style>Holy</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_TheFireObeys</defName>
+    <label>the fire obeys</label>
+    <description>Command the flames. Every fire within 8 cells goes out at once, and any ally burning there is put out; then the fire leaps onto every enemy in the area instead and sets them ablaze. You drink the heat (+12 mana). Save the storeroom from a short-circuit fire, or hand the raiders back their own molotovs.</description>
+    <iconPath>ArcanumAscendant/Spells/TheFireObeys</iconPath>
+    <cooldownTicksRange>2500</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>30</range>
+      <warmupTime>1</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetItems>true</canTargetItems>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>35</manaCost>
+        <tags>
+          <li>Holy</li>
+          <li>Fire</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <radius>8</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Extinguish">
+            <affects>Allies</affects>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Ignite">
+            <cellChance>0</cellChance>
+            <fireSize>0.6</fireSize>
+            <igniteTargets>true</igniteTargets>
+            <affects>Enemies</affects>
+          </li>
+        </effects>
+        <casterEffects>
+          <li Class="ArcanumAscendant.Effect_RestoreMana">
+            <amount>12</amount>
+          </li>
+        </casterEffects>
+        <color>(1, 0.604, 0.235, 1)</color>
+        <color2>(1, 0.941, 0.753, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Ember</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.1</scale>
+            <scaleEnd>1</scaleEnd>
+            <ticks>40</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Ember</fleck>
+            <count>30</count>
+            <speed>2.5</speed>
+            <scale>0.6</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Smoke</type>
+            <count>4</count>
+            <scale>1</scale>
+            <speed>1</speed>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Fire</castSound>
+        <impactSound>AA_Impact_Fire</impactSound>
+        <style>Fire</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_AutoDaFe</defName>
+    <label>auto-da-fe</label>
+    <description>Pass sentence on a fallen foe. A downed enemy is burned at the stake where they lie, killed outright, and the pyre bursts over every enemy within 5 cells: 30 holy damage, a mark of judgment, a stagger and even odds of catching fire. Anyone still standing is not judged. The other face of quarter.</description>
+    <iconPath>ArcanumAscendant/Spells/AutoDaFe</iconPath>
+    <cooldownTicksRange>1800</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>20</range>
+      <warmupTime>1.5</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>40</manaCost>
+        <tags>
+          <li>Holy</li>
+          <li>Fire</li>
+        </tags>
+        <tier>3</tier>
+        <role>Attack</role>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_PaladinVerdict">
+            <verdict>Pyre</verdict>
+            <killDamageDef>AA_Holy</killDamageDef>
+            <burstRadius>5</burstRadius>
+            <burstVfx>
+              <li>
+                <type>Flash</type>
+                <scale>5</scale>
+                <scaleEnd>6</scaleEnd>
+                <ticks>12</ticks>
+              </li>
+              <li>
+                <type>Shockwave</type>
+                <scale>0.1</scale>
+                <scaleEnd>1.1</scaleEnd>
+                <ticks>30</ticks>
+                <scaleByRadius>true</scaleByRadius>
+              </li>
+              <li>
+                <type>Particles</type>
+                <fleck>AA_Fleck_Ember</fleck>
+                <count>30</count>
+                <speed>3.5</speed>
+                <scale>0.7</scale>
+                <scaleByRadius>true</scaleByRadius>
+              </li>
+              <li>
+                <type>Particles</type>
+                <fleck>AA_Fleck_Star</fleck>
+                <count>16</count>
+                <speed>3</speed>
+                <scale>0.6</scale>
+                <scaleByRadius>true</scaleByRadius>
+              </li>
+            </burstVfx>
+            <burstEffects>
+              <li Class="ArcanumAscendant.Effect_Damage">
+                <amount>30</amount>
+                <damageDef>AA_Holy</damageDef>
+                <affects>Enemies</affects>
+              </li>
+              <li Class="ArcanumAscendant.Effect_Hediff">
+                <hediff>AA_Marked</hediff>
+                <severity>1</severity>
+                <affects>Enemies</affects>
+              </li>
+              <li Class="ArcanumAscendant.Effect_Stun">
+                <ticks>45</ticks>
+                <affects>Enemies</affects>
+              </li>
+              <li Class="ArcanumAscendant.Effect_Hediff">
+                <hediff>AA_Burning</hediff>
+                <severity>1</severity>
+                <chance>0.5</chance>
+                <affects>Enemies</affects>
+              </li>
+            </burstEffects>
+          </li>
+        </effects>
+        <color>(1, 0.604, 0.235, 1)</color>
+        <color2>(1, 0.941, 0.753, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Ember</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Pillar</type>
+            <scale>1.6</scale>
+            <ticks>50</ticks>
+          </li>
+          <li>
+            <type>Flash</type>
+            <scale>3.5</scale>
+            <scaleEnd>4.2</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Fire</castSound>
+        <impactSound>AA_Impact_Fire</impactSound>
+        <style>Fire</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
   <HediffDef>
     <defName>AA_RighteousFury</defName>
     <label>righteous fury</label>
@@ -4949,6 +6781,530 @@
     </comps>
     <stages>
       <li />
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_PaladinQuartered</defName>
+    <label>granted quarter</label>
+    <description>Spared by a paladin. The pain is dulled enough to walk home.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(1, 0.886, 0.541, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>30000~30000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(1, 0.886, 0.541, 0.9)</color>
+        <texPath></texPath>
+        <emitter>Holy</emitter>
+        <emitInterval>60</emitInterval>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <painFactor>0.4</painFactor>
+      </li>
+    </stages>
+  </HediffDef>
+  <ThoughtDef>
+    <defName>AA_PaladinMercyShown</defName>
+    <durationDays>2</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>showed mercy</label>
+        <description>I spared a fallen enemy and sent them home. The light asks nothing less.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <HediffDef>
+    <defName>AA_PaladinDawnlit</defName>
+    <label>dawnlit</label>
+    <description>Working in the light of a paladin's lantern.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(1, 0.914, 0.659, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>400~400</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <WorkSpeedGlobal>1.1</WorkSpeedGlobal>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+  <ThingDef>
+    <defName>AA_Construct_PaladinDawnLantern</defName>
+    <label>lantern of dawn</label>
+    <description>A small sun hung in the air by a paladin. It lights the ground like a sun lamp, so crops grow beneath it at night and under a roof, and everyone working in its light works a little faster.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>false</rotatable>
+    <passability>PassThroughOnly</passability>
+    <pathCost>30</pathCost>
+    <fillPercent>0.35</fillPercent>
+    <graphicData>
+      <texPath>ArcanumAscendant/Things/Construct_PaladinDawnLantern</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Beauty>5</Beauty>
+    </statBases>
+    <building>
+      <claimable>false</claimable>
+      <destroySound>AA_Construct_Break</destroySound>
+    </building>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneConstruct">
+        <defaultLifetimeTicks>180000</defaultLifetimeTicks>
+        <glowColor>(1, 0.914, 0.659, 1)</glowColor>
+        <glowSize>2.4</glowSize>
+        <pulseEffects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_PaladinDawnlit</hediff>
+            <severity>1</severity>
+          </li>
+        </pulseEffects>
+        <pulseInterval>250</pulseInterval>
+        <pulseRadius>7</pulseRadius>
+        <pulseAffects>Allies</pulseAffects>
+      </li>
+      <li Class="CompProperties_Glower">
+        <overlightRadius>7</overlightRadius>
+        <glowRadius>14</glowRadius>
+        <glowColor>(370,370,370,0)</glowColor>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThoughtDef>
+    <defName>AA_PaladinBrokeBread</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>broke bread together</label>
+        <description>The paladin blessed one loaf and there was enough for all of us.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <HediffDef>
+    <defName>AA_PaladinBurdenLifted</defName>
+    <label>burden lifted</label>
+    <description>A paladin took this weariness and pain onto their own shoulders.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(1, 0.886, 0.541, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>30000~30000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(1, 0.886, 0.541, 0.9)</color>
+        <texPath></texPath>
+        <emitter>Holy</emitter>
+        <emitInterval>60</emitInterval>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <painFactor>0.5</painFactor>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_PaladinBurdenBorne</defName>
+    <label>bearing a burden</label>
+    <description>Carrying someone else's weariness and pain.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>true</isBad>
+    <defaultLabelColor>(0.784, 0.69, 0.439, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>30000~30000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <MoveSpeed>0.95</MoveSpeed>
+        </statFactors>
+        <painOffset>0.1</painOffset>
+      </li>
+    </stages>
+  </HediffDef>
+  <ThoughtDef>
+    <defName>AA_PaladinCarriedMyBurden</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>10</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>carried my burden</label>
+        <baseOpinionOffset>12</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>AA_PaladinHearthguard</defName>
+    <durationDays>0.12</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>sheltered by the light</label>
+        <description>The paladin is home. Nothing will get past them.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <HediffDef>
+    <defName>AA_PaladinSteadied</defName>
+    <label>steadied</label>
+    <description>A paladin is near. It is easier to hold together.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(1, 0.886, 0.541, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>2500~2500</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <MentalBreakThreshold>-0.04</MentalBreakThreshold>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_PaladinGuardianOath</defName>
+    <label>guardian's oath</label>
+    <description>A templar has sworn to stand between this one and harm: half of every blow is turned aside onto the templar.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(1, 0.812, 0.353, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>60000~60000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_DamageShell">
+        <compClass>ArcanumAscendant.HediffComp_PaladinGuardianOath</compClass>
+        <damageFactor>0.5</damageFactor>
+        <color>(1, 0.812, 0.353, 1)</color>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(1, 0.812, 0.353, 0.9)</color>
+        <texPath></texPath>
+        <emitter>Ward</emitter>
+        <emitInterval>50</emitInterval>
+      </li>
+    </comps>
+    <stages>
+      <li />
+    </stages>
+  </HediffDef>
+  <ThingDef>
+    <defName>AA_Construct_PaladinBanner</defName>
+    <label>banner of the order</label>
+    <description>A templar's banner, planted and blessed. Those who stand near it stand taller.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>false</rotatable>
+    <passability>PassThroughOnly</passability>
+    <pathCost>30</pathCost>
+    <fillPercent>0.35</fillPercent>
+    <graphicData>
+      <texPath>ArcanumAscendant/Things/Construct_PaladinBanner</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.4</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Beauty>5</Beauty>
+    </statBases>
+    <building>
+      <claimable>false</claimable>
+      <destroySound>AA_Construct_Break</destroySound>
+    </building>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneConstruct">
+        <defaultLifetimeTicks>60000</defaultLifetimeTicks>
+        <glowColor>(1, 0.812, 0.353, 1)</glowColor>
+        <glowSize>1.6</glowSize>
+        <pulseEffects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_PaladinUnderBanner</hediff>
+            <severity>1</severity>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Thought">
+            <thought>AA_PaladinBannerPride</thought>
+          </li>
+        </pulseEffects>
+        <pulseInterval>250</pulseInterval>
+        <pulseRadius>8</pulseRadius>
+        <pulseAffects>Allies</pulseAffects>
+      </li>
+    </comps>
+  </ThingDef>
+  <HediffDef>
+    <defName>AA_PaladinUnderBanner</defName>
+    <label>under the banner</label>
+    <description>Standing near the order's banner.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(1, 0.812, 0.353, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>400~400</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <MentalBreakThreshold>-0.08</MentalBreakThreshold>
+          <PainShockThreshold>0.1</PainShockThreshold>
+        </statOffsets>
+        <statFactors>
+          <AimingDelayFactor>0.9</AimingDelayFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+  <ThoughtDef>
+    <defName>AA_PaladinBannerPride</defName>
+    <durationDays>0.25</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>under the order's banner</label>
+        <description>The templar's banner is flying over us. We will not break.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <HediffDef>
+    <defName>AA_PaladinPilgrim</defName>
+    <label>pilgrim's blessing</label>
+    <description>Blessed for the road: lighter on the feet, slower to hunger and tire.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(1, 0.812, 0.353, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>180000~180000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <ComfyTemperatureMin>-8</ComfyTemperatureMin>
+          <ComfyTemperatureMax>8</ComfyTemperatureMax>
+        </statOffsets>
+        <statFactors>
+          <MoveSpeed>1.1</MoveSpeed>
+        </statFactors>
+        <hungerRateFactor>0.7</hungerRateFactor>
+        <restFallFactor>0.8</restFallFactor>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_PaladinSquire</defName>
+    <label>squire</label>
+    <description>Learning by watching a templar.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(1, 0.812, 0.353, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>2500~2500</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <GlobalLearningFactor>0.25</GlobalLearningFactor>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <ThoughtDef>
+    <defName>AA_PaladinCommunion</defName>
+    <durationDays>2</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>took communion</label>
+        <description>The cleric shared the sacrament with me. I feel clean and held.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <HediffDef>
+    <defName>AA_PaladinGaveBlood</defName>
+    <label>gave of their blood</label>
+    <description>Pale after sharing the sacrament of their own blood.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>true</isBad>
+    <defaultLabelColor>(0.816, 0.627, 0.627, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>20000~20000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>BloodPumping</capacity>
+            <offset>-0.05</offset>
+          </li>
+        </capMods>
+        <restFallFactor>1.2</restFallFactor>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_PaladinChristened</defName>
+    <label>christened</label>
+    <description>Blessed in water and light: hardier against sickness and the weather.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(0.722, 1, 0.847, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>1800000~1800000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <ComfyTemperatureMin>-10</ComfyTemperatureMin>
+          <ComfyTemperatureMax>10</ComfyTemperatureMax>
+        </statOffsets>
+        <statFactors>
+          <ImmunityGainSpeed>1.3</ImmunityGainSpeed>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+  <ThoughtDef>
+    <defName>AA_PaladinChristening</defName>
+    <durationDays>2</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>witnessed a christening</label>
+        <description>The cleric blessed one of us in water and light. It was beautiful.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <HediffDef>
+    <defName>AA_PaladinGuidedHands</defName>
+    <label>guided hands</label>
+    <description>A cleric is close by, steadying the healer's hands.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(0.722, 1, 0.847, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>1450~1450</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <MedicalTendQuality>0.15</MedicalTendQuality>
+          <MedicalTendSpeed>0.15</MedicalTendSpeed>
+          <MedicalSurgerySuccessChance>0.15</MedicalSurgerySuccessChance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_PaladinSealedMind</defName>
+    <label>sealed mind</label>
+    <description>An inquisitor's seal: no psychic whisper reaches this mind, good or ill.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(1, 0.604, 0.235, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>180000~180000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(1, 0.604, 0.235, 0.9)</color>
+        <texPath></texPath>
+        <emitter>Watched</emitter>
+        <emitInterval>90</emitInterval>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <PsychicSensitivity>0</PsychicSensitivity>
+        </statFactors>
+      </li>
     </stages>
   </HediffDef>
 </Defs>
