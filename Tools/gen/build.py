@@ -79,15 +79,18 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry", action="store_true", help="validate everything but write nothing")
     ap.add_argument("--only", action="append", help="only build these class modules (implies --dry); spell ids are still checked against the rest")
+    ap.add_argument("--emit", help="write the def XML to this folder instead of Defs/Generated (nothing else is written); with --only, other "
+                                   "classes are still emitted when they build cleanly, so cross-class references resolve")
     args = ap.parse_args()
-    dry = args.dry or bool(args.only)
+    emit = args.emit
+    dry = (args.dry or bool(args.only)) and not emit
     only = set(args.only or [])
     if only:
         for m in only:
             if m not in CLASS_MODULES:
                 raise SystemExit("unknown class module %s (expected one of %s)" % (m, ", ".join(CLASS_MODULES)))
 
-    out_defs = os.path.join(ROOT, "Defs", "Generated")
+    out_defs = os.path.abspath(emit) if emit else os.path.join(ROOT, "Defs", "Generated")
     if not dry:
         os.makedirs(out_defs, exist_ok=True)
         for f in os.listdir(out_defs):
@@ -108,6 +111,7 @@ def main():
     all_spell_ids = {}
     all_def_names = set()
     stats = {"classes": 0, "subclasses": 0, "spells": 0, "nodes": 0}
+    skip = set()
     if only:
         # other classes are only loaded for their spell ids, so a half-finished module elsewhere doesn't block this check
         for modname in CLASS_MODULES:
@@ -117,12 +121,30 @@ def main():
                 r, ss, _, _ = load_class(modname)
             except Exception as e:  # noqa: BLE001
                 print("  (could not load %s for the id check: %s)" % (modname, e))
+                skip.add(modname)
                 continue
             for t in [r] + ss:
                 for sp in t.spells:
                     all_spell_ids[sp.sid] = modname
     for modname in CLASS_MODULES:
+        if only and modname not in only and not emit:
+            continue
+        if modname in skip:
+            continue
         if only and modname not in only:
+            # emitted only so references resolve: ids were registered above, and a broken module elsewhere is not this check's problem
+            try:
+                root, subs, extra, keys = load_class(modname)
+                fname = "Class_%02d_%s.xml" % (CLASS_MODULES.index(modname) + 1, root.cid)
+                chunks = [t.xml() for t in [root] + subs]
+                for t in [root] + subs:
+                    by_id = {n.nid: n for n in t.nodes}
+                    chunks += [node_xml(t, n, by_id) for n in t.nodes]
+                    chunks += [sp.xml() for sp in t.spells]
+                chunks.extend(extra)
+                write_defs(os.path.join(out_defs, fname), chunks)
+            except Exception as e:  # noqa: BLE001
+                print("  (not emitting %s: %s)" % (modname, e))
             continue
         try:
             root, subs, extra, keys = load_class(modname)
@@ -206,8 +228,9 @@ def main():
                     if (tag, dn) in all_def_names:
                         raise ValueError("duplicate %s %s" % (tag, dn))
                     all_def_names.add((tag, dn))
-    if dry:
-        print("Checked (nothing written): %(classes)d classes, %(subclasses)d subclasses, %(spells)d spells, %(nodes)d nodes" % stats)
+    if dry or emit:
+        print(("Emitted to %s: " % out_defs if emit else "Checked (nothing written): ") +
+              "%(classes)d classes, %(subclasses)d subclasses, %(spells)d spells, %(nodes)d nodes" % stats)
         return
     check_unique_def_names()
     write_keyed(keyed)

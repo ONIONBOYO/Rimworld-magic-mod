@@ -17,11 +17,20 @@ class V
     static void Main(string[] a)
     {
         string root = a[0], refDir = a[1];
+        // optional: --dll <mod dll> (default <root>/1.6/Assemblies/ArcanumAscendant.dll), --defs <dir> (repeatable; default <root>/Defs)
+        string dll = Path.Combine(root, "1.6/Assemblies/ArcanumAscendant.dll");
+        var defDirs = new List<string>();
+        for (int i = 2; i + 1 < a.Length; i += 2)
+        {
+            if (a[i] == "--dll") dll = a[i + 1];
+            else if (a[i] == "--defs") defDirs.Add(a[i + 1]);
+        }
+        if (defDirs.Count == 0) defDirs.Add(Path.Combine(root, "Defs"));
         var paths = Directory.GetFiles(refDir, "*.dll").ToList();
-        paths.Add(Path.Combine(root, "1.6/Assemblies/ArcanumAscendant.dll"));
+        paths.Add(dll);
         mlc = new MetadataLoadContext(new PathAssemblyResolver(paths), "mscorlib");
         game = mlc.LoadFromAssemblyPath(Path.Combine(refDir, "Assembly-CSharp.dll"));
-        mod = mlc.LoadFromAssemblyPath(Path.Combine(root, "1.6/Assemblies/ArcanumAscendant.dll"));
+        mod = mlc.LoadFromAssemblyPath(dll);
         foreach (var asm in new[] { game, mod, mlc.LoadFromAssemblyPath(Path.Combine(refDir, "UnityEngine.CoreModule.dll")) })
         {
             Type[] ts; try { ts = asm.GetTypes(); } catch (ReflectionTypeLoadException e) { ts = e.Types.Where(t => t != null).ToArray(); }
@@ -33,7 +42,7 @@ class V
         var extraKnown = Path.Combine(root, "Tools/validator/known_vanilla_defs.txt");
         if (File.Exists(extraKnown)) foreach (var l in File.ReadAllLines(extraKnown)) if (l.Trim().Length > 0 && !l.StartsWith("#")) knownVanilla.Add(l.Trim());
 
-        var files = Directory.GetFiles(Path.Combine(root, "Defs"), "*.xml", SearchOption.AllDirectories);
+        var files = defDirs.SelectMany(d => Directory.GetFiles(d, "*.xml", SearchOption.AllDirectories)).ToArray();
         var docs = files.Select(f => (f, doc: Load(f))).ToList();
         // collect defNames
         foreach (var (f, doc) in docs)
