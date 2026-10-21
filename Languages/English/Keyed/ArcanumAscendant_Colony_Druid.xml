@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Druid family colony expansion (Source/ArcanumAscendant/Spells/Colony_Druid.cs) -->
+  <AA_Druid_ReturnedToEarth>returned to the earth</AA_Druid_ReturnedToEarth>
+  <AA_Desc_DruidReturnToEarth>Up to {0} corpses sink into the ground (their gear stays behind); natural soil within {1} cells of each becomes rich soil (wider for bigger bodies) and plants there grow</AA_Desc_DruidReturnToEarth>
+  <AA_Desc_DruidReturnToEarthHeal>Each corpse heals allies within {1} cells for {0}</AA_Desc_DruidReturnToEarthHeal>
+  <AA_Desc_DruidReturnToEarthSpare>Your own people's bodies are left alone</AA_Desc_DruidReturnToEarthSpare>
+  <AA_Druid_Unleashed>unleashed!</AA_Druid_Unleashed>
+  <AA_Druid_NoPack>no beast answers</AA_Druid_NoPack>
+  <AA_Desc_DruidUnleashPack>Your tame animals within {0} cells charge the target and attack it for up to {1}</AA_Desc_DruidUnleashPack>
+  <AA_Desc_DruidUnleashPackRelease>Only animals trained in Release, or bonded to you, answer</AA_Desc_DruidUnleashPackRelease>
+  <AA_Desc_DruidUnleashPackEach>Each animal: {0}</AA_Desc_DruidUnleashPackEach>
+</LanguageData>
