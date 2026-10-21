@@ -4,7 +4,7 @@ from arcgen import (O, Spell, Node, ClassSpec, School, mod, P, rgb, to_xml,  # n
                     summon, raise_dead, spawn, conjure, teleport, resurrect, dominate, polymorph, condition, weather, lightning,
                     need, thought, inspire, skillxp, grow, repair, transmute, heat, mine, terraform, recruit, reveal, age, rewind,
                     cdreset, random_of, vfx, burst, glow, flash, ring, rune, pillar, bolt_down, smoke, spiral, hexshield, orbit, FLECK)
-from core_content import status, stage, disappears, aura, dot  # noqa: F401
+from core_content import status, stage, disappears, aura, dot, thought_def, opinion_def  # noqa: F401
 import things  # noqa: F401
 
 SEC = 60
@@ -214,3 +214,5 @@ def periodic(interval, effects=None, area=None, radius=3.0, vfx=None, color="#ff
 def screen(color, alpha=0.3, ticks=30, vignette=False):
     """A brief full-screen colour wash (or a darkening vignette) for the biggest moments."""
     return vfx("ScreenFlash", color=color, alpha=float(alpha), ticks=int(ticks), ground=vignette or None)
+from classes.prims_family import *  # noqa: F401,F403,E402
+from classes.prims_colony import *  # noqa: F401,F403,E402

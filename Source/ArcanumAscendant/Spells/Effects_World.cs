@@ -563,6 +563,8 @@ namespace ArcanumAscendant
     public class Effect_Thought : SpellEffect
     {
         public ThoughtDef thought;
+        /// <summary>The memory is about the caster (needed for social memories: what the target now thinks of the mage).</summary>
+        public bool toCaster;
 
         public Effect_Thought()
         {
@@ -572,7 +574,7 @@ namespace ArcanumAscendant
         public override void ApplyToPawn(SpellContext ctx, Pawn p, ImpactInfo info)
         {
             if (thought == null || p.needs?.mood?.thoughts?.memories == null) return;
-            p.needs.mood.thoughts.memories.TryGainMemory(thought);
+            Romance.GainMemory(p, thought, toCaster && ctx.caster != p ? ctx.caster : null);
         }
 
         public override IEnumerable<string> Describe(SpellContext ctx)

@@ -136,7 +136,20 @@ STATUS_VFX = {
 AURA_CLS = "ArcanumAscendant.HediffCompProperties_AuraVisual"
 
 
-def status(defName, label, desc, color, *, bad, ticks=None, stages=None, comps=None, maxSev=None, initSev=1.0, cls="HediffWithComps", fx=None, extra=None):
+def dlc_stat_extension(dlc_stats):
+    """Stats that only exist with a DLC (Biotech's Fertility...) can't be written into XML stat lists, so they ride along as a
+    mod extension the engine resolves by name at startup. dlc_stats maps stat defName -> ("factor"|"offset", value) for every
+    stage, or -> {stage_index: ("factor"|"offset", value)}."""
+    entries = []
+    for stat, spec in dlc_stats.items():
+        per_stage = spec if isinstance(spec, dict) else {-1: spec}
+        for idx, (kind, value) in per_stage.items():
+            entries.append(O(None, stat=stat, stage=int(idx) if idx != -1 else None, factor=kind == "factor" or None, value=float(value)))
+    return O("ArcanumAscendant.DlcStatModifiers", entries=entries)
+
+
+def status(defName, label, desc, color, *, bad, ticks=None, stages=None, comps=None, maxSev=None, initSev=1.0, cls="HediffWithComps", fx=None, extra=None,
+           dlc_stats=None):
     comps = list(comps or [])
     if fx:
         STATUS_VFX[defName] = fx
@@ -155,7 +168,33 @@ def status(defName, label, desc, color, *, bad, ticks=None, stages=None, comps=N
                   comps=comps or None, stages=stages or [stage()])
     if extra:
         fields.update(extra)
+    if dlc_stats:
+        fields["modExtensions"] = list(fields.get("modExtensions") or []) + [dlc_stat_extension(dlc_stats)]
     return to_xml("HediffDef", O(None, **fields), 1)
+
+
+# ------------------------------------------------------------------------------------------------
+# Thoughts
+# ------------------------------------------------------------------------------------------------
+
+def thought_def(defName, label, desc, mood, days=1.0, stack=1, stackMult=None, stages=None, nullifying=None, extra=None):
+    """A mood memory. stages, when given, is a list of (label, description, mood) and the memory picks one by index."""
+    st = [O(None, label=l, description=d, baseMoodEffect=float(m)) for l, d, m in stages] if stages else \
+        [O(None, label=label, description=desc, baseMoodEffect=float(mood))]
+    f = dict(defName=defName, durationDays=float(days), stackLimit=int(stack), stackedEffectMultiplier=float(stackMult) if stackMult else None,
+             nullifyingTraits=nullifying, stages=st)
+    if extra:
+        f.update(extra)
+    return to_xml("ThoughtDef", O(None, **f), 1)
+
+
+def opinion_def(defName, label, opinion, days=5.0, stack=1, desc=None, extra=None):
+    """A social memory: how the bearer feels about one other pawn (who must be given when the memory is added)."""
+    f = dict(defName=defName, thoughtClass="Thought_MemorySocial", durationDays=float(days), stackLimit=int(stack) * 10,
+             stackLimitForSameOtherPawn=int(stack), stages=[O(None, label=label, description=desc, baseOpinionOffset=float(opinion))])
+    if extra:
+        f.update(extra)
+    return to_xml("ThoughtDef", O(None, **f), 1)
 
 
 FIRE, FROST, STORM, NECRO, HOLY, SHADOW, NATURE, RUNE, SONG, TIME, BLOOD, VOID = (

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Love, family and sleep -->
+  <AA_NoMatch>No match</AA_NoMatch>
+  <AA_Smitten>Smitten with {0}</AA_Smitten>
+  <AA_Matchmade_LoverLabel>New lovers: {0} and {1}</AA_Matchmade_LoverLabel>
+  <AA_Matchmade_Lover>{2}'s magic has kindled something between {0} and {1}. They are now lovers.</AA_Matchmade_Lover>
+  <AA_Matchmade_FianceLabel>Engaged: {0} and {1}</AA_Matchmade_FianceLabel>
+  <AA_Matchmade_Fiance>Under {2}'s spell, {0} and {1} have promised themselves to each other. They are now engaged.</AA_Matchmade_Fiance>
+  <AA_Matchmade_SpouseLabel>Married: {0} and {1}</AA_Matchmade_SpouseLabel>
+  <AA_Matchmade_Spouse>{2} has bound {0} and {1} together. They are now married.</AA_Matchmade_Spouse>
+  <AA_Desc_Matchmake_BestMatch>Kindles love between the target and their best match on the map (or the partner they already have)</AA_Desc_Matchmake_BestMatch>
+  <AA_Desc_Matchmake_InArea>Kindles love between the best-suited pairs inside the area</AA_Desc_Matchmake_InArea>
+  <AA_Desc_Matchmake_Caster>The target falls for the caster</AA_Desc_Matchmake_Caster>
+  <AA_Desc_MatchmakeRelation>If both are adults who could love each other and are free (or already together), they become: {0}</AA_Desc_MatchmakeRelation>
+  <AA_Desc_OpinionMemory>Opinion: {0} ({1})</AA_Desc_OpinionMemory>
+  <AA_Desc_MoodMemory>Mood: {0} ({1})</AA_Desc_MoodMemory>
+  <AA_NoPartner>No partner</AA_NoPartner>
+  <AA_Rekindled_Engaged>{0} and {1} are now engaged.</AA_Rekindled_Engaged>
+  <AA_Rekindled_Married>{0} and {1} are now married.</AA_Rekindled_Married>
+  <AA_Desc_Rekindle>The target and their partner fall in love all over again</AA_Desc_Rekindle>
+  <AA_Desc_RekindleRaise>Lovers get engaged and fiances marry</AA_Desc_RekindleRaise>
+  <AA_NeedsBiotech>Needs Biotech</AA_NeedsBiotech>
+  <AA_AlreadyPregnant>Already pregnant</AA_AlreadyPregnant>
+  <AA_CannotConceive>Cannot conceive</AA_CannotConceive>
+  <AA_NoMate>No mate nearby</AA_NoMate>
+  <AA_Conceived>{0} is expecting {1}'s child.</AA_Conceived>
+  <AA_Desc_ConceiveHuman>A woman and her partner conceive now (Biotech; the usual fertility rules apply)</AA_Desc_ConceiveHuman>
+  <AA_Desc_ConceiveAnimal>A female animal and a male of her kind nearby conceive now</AA_Desc_ConceiveAnimal>
+  <AA_GestationHastened>+{0} days of gestation</AA_GestationHastened>
+  <AA_GestationSlowed>-{0} days of gestation</AA_GestationSlowed>
+  <AA_Desc_Gestate>Advances pregnancies by {0} days</AA_Desc_Gestate>
+  <AA_Desc_SleepNow>An ally lies down and falls asleep at once</AA_Desc_SleepNow>
+  <AA_Calmed>Calmed</AA_Calmed>
+  <AA_Desc_Calm>Ends non-violent mental breaks</AA_Desc_Calm>
+  <AA_Desc_CalmAll>Ends mental breaks, violent ones too</AA_Desc_CalmAll>
+  <AA_InLabor>in labor</AA_InLabor>
+  <AA_ExtraBirthLabel>{0} babies!</AA_ExtraBirthLabel>
+  <AA_ExtraBirthText>{0} has given birth to {1} babies at once. The blessing held.</AA_ExtraBirthText>
+  <AA_ExtraLitter>{0} has given birth to an unusually large litter.</AA_ExtraLitter>
+  <AA_DreamReason>Inspired by a dream ({0}).</AA_DreamReason>
+  <AA_WokeFromDream>What a dream...</AA_WokeFromDream>
+  <!-- Colony work -->
+  <AA_NoResearch>No research project</AA_NoResearch>
+  <AA_ResearchGained>+{0} research ({1})</AA_ResearchGained>
+  <AA_Desc_Research>Adds {0} research to the current project</AA_Desc_Research>
+  <AA_Desc_ResearchFinish>Finishes the project outright when less than {0} of it is left</AA_Desc_ResearchFinish>
+  <AA_Desc_Construct>Adds {0} work to construction frames in the area that have their materials</AA_Desc_Construct>
+  <AA_Desc_Craft>Takes {0} work off bills in progress in the area</AA_Desc_Craft>
+  <AA_Harvested>Harvested {0}</AA_Harvested>
+  <AA_Desc_Harvest>Harvests every ripe crop in growing zones in the area ({0} yield)</AA_Desc_Harvest>
+  <AA_Desc_HarvestWild>Harvests every ripe plant in the area ({0} yield)</AA_Desc_HarvestWild>
+  <AA_Desc_Sow>Sows the zone's crop into every empty cell of growing zones in the area</AA_Desc_Sow>
+  <AA_Desc_AnimalProduce>Tame animals gain {0} of their milk, wool or next egg</AA_Desc_AnimalProduce>
+  <AA_Trained>+{0} training</AA_Trained>
+  <AA_Desc_Train>Advances a tame animal's training by {0} steps</AA_Desc_Train>
+  <AA_Desc_BondAnimal>Bonds the animal with the caster</AA_Desc_BondAnimal>
+  <AA_Softened>Resistance {0}</AA_Softened>
+  <AA_Desc_Resistance>Prisoners lose {0} resistance</AA_Desc_Resistance>
+  <AA_Desc_Will>Prisoners lose {0} will</AA_Desc_Will>
+  <AA_Desc_Suppression>Slaves gain {0} suppression</AA_Desc_Suppression>
+  <AA_Cleaned>Cleaned {0}</AA_Cleaned>
+  <AA_Desc_CleanFilth>Cleans all filth in the area</AA_Desc_CleanFilth>
+  <AA_Desc_CleanSnow>Clears the snow</AA_Desc_CleanSnow>
+  <AA_Desc_CleanPollution>Cleanses pollution (Biotech)</AA_Desc_CleanPollution>
+  <AA_Desc_ChargeBattery>Charges batteries in the area by {0} Wd</AA_Desc_ChargeBattery>
+  <AA_Desc_Refuel>Refuels buildings in the area by {0} of their capacity</AA_Desc_Refuel>
+  <AA_NothingHappens>Nothing answers</AA_NothingHappens>
+  <AA_Desc_Incident>Calls: {0}</AA_Desc_Incident>
+  <AA_Desc_Goodwill_TargetFaction>{0} goodwill with the target's faction</AA_Desc_Goodwill_TargetFaction>
+  <AA_Desc_Goodwill_AllNonHostile>{0} goodwill with every friendly faction</AA_Desc_Goodwill_AllNonHostile>
+  <AA_Tended>Tended {0} ({1})</AA_Tended>
+  <AA_Desc_Tend>Tends every condition at {0} quality</AA_Desc_Tend>
+  <AA_Immunized>Immunity rising</AA_Immunized>
+  <AA_Desc_Immunize>+{0} immunity against every disease</AA_Desc_Immunize>
+  <AA_PassionKindled>Passion: {0}</AA_PassionKindled>
+  <AA_BestSkill>their best skill</AA_BestSkill>
+  <AA_Desc_Passion_AddMinor>Kindles a passion for {0}</AA_Desc_Passion_AddMinor>
+  <AA_Desc_Passion_Upgrade>Kindles or deepens a passion for {0}</AA_Desc_Passion_Upgrade>
+  <AA_TraitRemoved>No longer {0}</AA_TraitRemoved>
+  <AA_TraitGained>Now {0}</AA_TraitGained>
+  <AA_Desc_TraitRemove>Removes one of: {0}</AA_Desc_TraitRemove>
+  <AA_Desc_TraitAdd>Grants the trait {0}</AA_Desc_TraitAdd>
+  <AA_GatheringFailed>No one comes</AA_GatheringFailed>
+  <AA_Desc_Gathering>Starts a {0} with the caster as organizer</AA_Desc_Gathering>
+  <AA_Hauled>Stored {0} things</AA_Hauled>
+  <AA_Desc_Haul>Up to {0} items in the area fly to their storage</AA_Desc_Haul>
+  <AA_Desc_Smooth>Smooths natural stone floors and walls in the area</AA_Desc_Smooth>
+  <AA_Desc_Preserve>Food and corpses in the area become fresh again</AA_Desc_Preserve>
+</LanguageData>

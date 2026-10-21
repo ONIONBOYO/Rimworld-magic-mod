@@ -48,12 +48,53 @@ def node_motif(n, spells_by_id):
     return "rune"
 
 
+def colony_extension(modname):
+    """The colony expansion of a class lives in classes/x_<name>.py (x_pyromancer for c_pyromancer) and adds spells, nodes
+    and extra defs to the trees through extend(trees_by_cid, extra). Missing modules are fine."""
+    name = "classes.x_" + modname[2:]
+    try:
+        return importlib.import_module(name)
+    except ModuleNotFoundError as e:
+        if e.name == name:
+            return None
+        raise
+
+
+def load_class(modname):
+    mod = importlib.import_module("classes." + modname)
+    things.THING_ICONS.clear()
+    root, subs, extra = mod.build()
+    keys = dict(getattr(mod, "KEYS", {}))
+    expansion.extend(modname, root, subs, extra)
+    expansion2.extend(modname, root, subs, extra)
+    ext = colony_extension(modname)
+    if ext is not None:
+        ext.extend({t.cid: t for t in [root] + subs}, extra)
+        keys.update(getattr(ext, "KEYS", {}))
+    return root, subs, extra, keys
+
+
 def main():
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--dry", action="store_true", help="validate everything but write nothing")
+    ap.add_argument("--only", action="append", help="only build these class modules (implies --dry); spell ids are still checked against the rest")
+    args = ap.parse_args()
+    dry = args.dry or bool(args.only)
+    only = set(args.only or [])
+    if only:
+        for m in only:
+            if m not in CLASS_MODULES:
+                raise SystemExit("unknown class module %s (expected one of %s)" % (m, ", ".join(CLASS_MODULES)))
+
     out_defs = os.path.join(ROOT, "Defs", "Generated")
-    os.makedirs(out_defs, exist_ok=True)
-    for f in os.listdir(out_defs):
-        if f.endswith(".xml"):
-            os.remove(os.path.join(out_defs, f))
+    if not dry:
+        os.makedirs(out_defs, exist_ok=True)
+        for f in os.listdir(out_defs):
+            if f.endswith(".xml"):
+                os.remove(os.path.join(out_defs, f))
+    else:
+        globals()["write_defs"] = lambda path, chunks: None
 
     write_defs(os.path.join(out_defs, "Core_Damage.xml"), core_content.damage_xml())
     write_defs(os.path.join(out_defs, "Core_Status.xml"), core_content.status_xml())
@@ -64,21 +105,33 @@ def main():
     icons = []
     compendium = []
     keyed = {}
+    all_spell_ids = {}
     all_def_names = set()
     stats = {"classes": 0, "subclasses": 0, "spells": 0, "nodes": 0}
+    if only:
+        # other classes are only loaded for their spell ids, so a half-finished module elsewhere doesn't block this check
+        for modname in CLASS_MODULES:
+            if modname in only:
+                continue
+            try:
+                r, ss, _, _ = load_class(modname)
+            except Exception as e:  # noqa: BLE001
+                print("  (could not load %s for the id check: %s)" % (modname, e))
+                continue
+            for t in [r] + ss:
+                for sp in t.spells:
+                    all_spell_ids[sp.sid] = modname
     for modname in CLASS_MODULES:
+        if only and modname not in only:
+            continue
         try:
-            mod = importlib.import_module("classes." + modname)
+            root, subs, extra, keys = load_class(modname)
         except ModuleNotFoundError as e:
             if e.name == "classes." + modname:
                 print("  (skipping missing module %s)" % modname)
                 continue
             raise
-        things.THING_ICONS.clear()
-        root, subs, extra = mod.build()
-        keyed.update(getattr(mod, "KEYS", {}))
-        expansion.extend(modname, root, subs, extra)
-        expansion2.extend(modname, root, subs, extra)
+        keyed.update(keys)
         trees = [root] + subs
         compendium.append(trees)
         spells_by_id = {}
@@ -88,6 +141,9 @@ def main():
             for s in t.spells:
                 if s.sid in spells_by_id:
                     raise ValueError("duplicate spell " + s.sid)
+                if all_spell_ids.get(s.sid, modname) != modname:
+                    raise ValueError("spell %s is also defined by %s" % (s.sid, all_spell_ids[s.sid]))
+                all_spell_ids[s.sid] = modname
                 spells_by_id[s.sid] = s
         # validation
         used = set()
@@ -150,6 +206,9 @@ def main():
                     if (tag, dn) in all_def_names:
                         raise ValueError("duplicate %s %s" % (tag, dn))
                     all_def_names.add((tag, dn))
+    if dry:
+        print("Checked (nothing written): %(classes)d classes, %(subclasses)d subclasses, %(spells)d spells, %(nodes)d nodes" % stats)
+        return
     check_unique_def_names()
     write_keyed(keyed)
     write_json(os.path.join(HERE, "out", "icons.json"), icons)
