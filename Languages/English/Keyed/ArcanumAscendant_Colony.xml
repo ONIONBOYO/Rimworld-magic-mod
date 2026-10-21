@@ -87,4 +87,14 @@
   <AA_Desc_Haul>Up to {0} items in the area fly to their storage</AA_Desc_Haul>
   <AA_Desc_Smooth>Smooths natural stone floors and walls in the area</AA_Desc_Smooth>
   <AA_Desc_Preserve>Food and corpses in the area become fresh again</AA_Desc_Preserve>
+  <AA_ServantRises>{0} rises to serve the colony for {1} days.</AA_ServantRises>
+  <AA_Desc_RaiseServant>Raises up to {0} corpses as servants of the colony for {1} days: they work without needs and will not fight</AA_Desc_RaiseServant>
+  <!-- Biotech -->
+  <AA_GrowthGained>+{0} growth</AA_GrowthGained>
+  <AA_Desc_ChildGrowth>Children gain {0} growth points and {1} learning; babies get to play (Biotech)</AA_Desc_ChildGrowth>
+  <AA_HemogenGained>{0} hemogen</AA_HemogenGained>
+  <AA_Desc_Hemogen>{0} hemogen (Biotech)</AA_Desc_Hemogen>
+  <AA_Desc_MechEnergy>Restores {0} of a mechanoid's energy (Biotech)</AA_Desc_MechEnergy>
+  <AA_GeneGained>Gene: {0}</AA_GeneGained>
+  <AA_Desc_Gene>Writes the gene {0} into the target (Biotech)</AA_Desc_Gene>
 </LanguageData>

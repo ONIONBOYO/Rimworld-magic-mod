@@ -783,4 +783,42 @@ namespace ArcanumAscendant
             yield return "AA_Desc_Preserve".Translate();
         }
     }
+
+    /// <summary>
+    /// Raises the dead as servants of the colony: they work (no fighting), need nothing, and lie down dead again when the
+    /// binding ends. Unlike Raise Dead it also takes the colony's own fallen.
+    /// </summary>
+    public class Effect_RaiseServant : SpellEffect
+    {
+        public int maxCount = 1;
+        public float days = 3f;
+        public HediffDef servantHediff;
+        public bool animals;
+
+        public Effect_RaiseServant()
+        {
+            affects = TargetFilter.Corpses;
+        }
+
+        public override void ApplyToCorpse(SpellContext ctx, Corpse corpse, ImpactInfo info)
+        {
+            var def = servantHediff ?? Dlc.Def<HediffDef>("AA_RisenServant");
+            if (def == null || ctx.caster == null) return;
+            if (ctx.hitThisCast.Count(t => t is Pawn sp && sp.health.hediffSet.HasHediff(def)) >= maxCount + ctx.mods.extraTargets) return;
+            var p = corpse.InnerPawn;
+            if (p == null || p.RaceProps.IsMechanoid || corpse.GetRotStage() == RotStage.Dessicated || (p.kindDef?.isBoss ?? false)) return;
+            if (!p.RaceProps.Humanlike && !(animals && p.RaceProps.Animal)) return;
+            int ticks = Mathf.RoundToInt(days * GenDate.TicksPerDay * ctx.DurationFactor);
+            if (!ArcaneUtility.RaiseUndead(p, ctx, ticks, def)) return;
+            if (p.Faction != ctx.caster.Faction) ArcaneUtility.BindToFaction(p, ctx.caster.Faction);
+            if (p.Faction == Faction.OfPlayer && p.workSettings != null) p.workSettings.EnableAndInitializeIfNotAlreadyInitialized();
+            ctx.hitThisCast.Add(p);
+            Messages.Message("AA_ServantRises".Translate(p.LabelShort, (ticks / (float)GenDate.TicksPerDay).ToString("0.#"), p.Named("PAWN")), p, MessageTypeDefOf.NeutralEvent);
+        }
+
+        public override IEnumerable<string> Describe(SpellContext ctx)
+        {
+            yield return "AA_Desc_RaiseServant".Translate(maxCount, (days * (ctx?.DurationFactor ?? 1f)).ToString("0.#"));
+        }
+    }
 }

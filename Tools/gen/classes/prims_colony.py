@@ -98,3 +98,30 @@ def smooth(floors=True, walls=True, **kw):
 
 def preserve(**kw):
     return O("Effect_Preserve", **kw)
+
+
+def raise_servant(days=3.0, maxCount=1, animals=False, hediff=None, **kw):
+    """Raise corpses (the colony's own dead too) as needless, non-violent servant workers for some days."""
+    return O("Effect_RaiseServant", days=float(days), maxCount=maxCount if maxCount != 1 else None, animals=animals or None, servantHediff=hediff, **kw)
+
+
+# ---- Biotech (each does nothing without the DLC)
+
+def child_growth(points=4.0, learning=0.3, **kw):
+    """Children gain growth points and Learning; babies get to play."""
+    return O("Effect_ChildGrowth", points=float(points), learning=float(learning), **kw)
+
+
+def hemogen(amount=0.3, **kw):
+    """Add a fraction of a full hemogen bar (0.3 = 30 hemogen); negative drains."""
+    return O("Effect_Hemogen", amount=float(amount), **kw)
+
+
+def mech_energy(amount=0.3, **kw):
+    """Add a fraction of a mech's full energy; negative drains."""
+    return O("Effect_MechEnergy", amount=float(amount), **kw)
+
+
+def gene(add, xenogene=True, **kw):
+    """Write a gene (by defName) into the target."""
+    return O("Effect_Gene", add=add, xenogene=None if xenogene else False, **kw)

@@ -215,6 +215,13 @@ def status_xml():
         comps=[O("ArcanumAscendant.HediffCompProperties_Summoned", vanishOnDeath=False, killOnExpire=True), aura(NECRO, size=1.3, fleck="AA_Fleck_Smoke", interval=40)],
         stages=[stage(factors={"MoveSpeed": 0.9, "IncomingDamageFactor": 0.85}, offsets={"PainShockThreshold": 0.9, "MentalBreakThreshold": -1.0},
                       extra={"painFactor": 0.0, "disablesNeeds": ["Food", "Rest", "Joy", "Comfort", "Beauty", "Outdoors", "RoomSize"], "blocksMentalBreaks": True})]))
+    s.append(status("AA_RisenServant", "risen servant", "Raised from death to serve the colony. It works without food, sleep or complaint, will not fight, "
+        "and lies down dead again when the binding ends.", NECRO, bad=False,
+        comps=[O("ArcanumAscendant.HediffCompProperties_Summoned", vanishOnDeath=False, killOnExpire=True, controlAI=False),
+               aura(NECRO, size=1.2, fleck="AA_Fleck_Smoke", interval=60)],
+        stages=[stage(factors={"MoveSpeed": 0.85, "WorkSpeedGlobal": 0.8}, offsets={"PainShockThreshold": 0.9, "MentalBreakThreshold": -1.0},
+                      extra={"painFactor": 0.0, "disablesNeeds": ["Food", "Rest", "Joy", "Comfort", "Beauty", "Outdoors", "RoomSize"],
+                             "blocksMentalBreaks": True, "disabledWorkTags": "Violent"})]))
     s.append(status("AA_Dominated", "dominated", "This mind is bound to another's will.", "#ff7af0", bad=True,
         comps=[O("ArcanumAscendant.HediffCompProperties_Dominated"), aura("#ff7af0", size=1.3)], stages=[stage(extra={"blocksMentalBreaks": True})]))
     s.append(status("AA_Polymorphed", "polymorphed", "Temporarily transformed into a harmless creature.", "#ff7af0", bad=True, ticks=600))

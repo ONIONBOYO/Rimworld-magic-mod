@@ -95,6 +95,54 @@
     </stages>
   </HediffDef>
   <HediffDef>
+    <defName>AA_RisenServant</defName>
+    <label>risen servant</label>
+    <description>Raised from death to serve the colony. It works without food, sleep or complaint, will not fight, and lies down dead again when the binding ends.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(0.49, 1, 0.604, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="ArcanumAscendant.HediffCompProperties_Summoned">
+        <vanishOnDeath>false</vanishOnDeath>
+        <killOnExpire>true</killOnExpire>
+        <controlAI>false</controlAI>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(0.49, 1, 0.604, 0.9)</color>
+        <texPath>ArcanumAscendant/Vfx/RuneCircle</texPath>
+        <size>1.2</size>
+        <fleck>AA_Fleck_Smoke</fleck>
+        <fleckInterval>60</fleckInterval>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <PainShockThreshold>0.9</PainShockThreshold>
+          <MentalBreakThreshold>-1</MentalBreakThreshold>
+        </statOffsets>
+        <statFactors>
+          <MoveSpeed>0.85</MoveSpeed>
+          <WorkSpeedGlobal>0.8</WorkSpeedGlobal>
+        </statFactors>
+        <painFactor>0</painFactor>
+        <disablesNeeds>
+          <li>Food</li>
+          <li>Rest</li>
+          <li>Joy</li>
+          <li>Comfort</li>
+          <li>Beauty</li>
+          <li>Outdoors</li>
+          <li>RoomSize</li>
+        </disablesNeeds>
+        <blocksMentalBreaks>true</blocksMentalBreaks>
+        <disabledWorkTags>Violent</disabledWorkTags>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
     <defName>AA_Dominated</defName>
     <label>dominated</label>
     <description>This mind is bound to another's will.</description>
