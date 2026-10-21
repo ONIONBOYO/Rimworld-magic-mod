@@ -2,7 +2,7 @@
 
 Every class, subclass, spell and keystone in the mod. Generated from `Tools/gen/classes/*.py` - do not edit by hand.
 
-**14 classes - 42 subclasses - 424 spells - 1170 skill tree nodes**
+**14 classes - 42 subclasses - 484 spells - 1242 skill tree nodes**
 
 ## Contents
 
@@ -222,6 +222,12 @@ Necromancers treat death as a resource. Every fallen raider is a future soldier,
 | Corpse Feast | 10 | 30s | utility | Draw the last life out of up to six corpses nearby. Each one heals you and refills your mana, then crumbles away. |
 | Mark of the Grave | 26 | 12s | control | Brand an enemy for death. Their wounds fester, and if they die while marked they rise as your undead servant. |
 | Soul Swarm | 34 | 14s | attack | Release six hungry souls that hunt down enemies and gnaw at their life, feeding a share of it back to you. |
+| Grave Labor * | 45 | 1 day | utility | Bind a dead person back into their body to work for the colony. For three days the servant hauls, cleans, cooks, plants, mines and builds (20% slower than the living) without food, sleep, recreation or complaint. It will not fight, and it lies down dead again when the binding ends. Raiders and the colony's own fallen both answer, but not dried-out husks, beasts or machines. Once a day. |
+| Flesh Graft * | 55 | 1 day | heal | Stitch a part from a fresh corpse onto a living ally who has lost one: an arm, a leg, an eye, a jaw, a kidney, a lung. The donor must lie within 5 cells of the patient and share their body plan (people for people, dogs for dogs), and if the donor had a bionic or prosthetic there, the patient gets that instead. The rest of the donor crumbles to dust, leaving its gear behind. The graft aches for three days (+10% pain, -5% moving and manipulation), and most people are not thrilled to wear a dead stranger's flesh (-3 mood for 6 days). One part per casting, once a day. |
+| Last Words * | 40 | 2 days | utility | Call a soul back for one last conversation. Target a body, or a grave or sarcophagus that holds one: everyone in the colony who mourns that person (a lost spouse, a child, a friend, a bonded animal) can finally let go. Every sad memory they have of that death ends, and each mourner gains 'heard their last words' (+8 mood for 5 days). The body is not disturbed. Once every two days. |
+| Unliving Vigil * | 30 | 1 day | buff | Lend an ally the stillness of the grave for twelve hours. Their hunger and tiredness stop right where they are and pain reaches them only by half, so they can tend the sick, finish the harvest or stand watch through the night without a break. Feeling dead inside is unsettling (-3 mood for half a day). Once a day. |
+| Oath Beyond the Grave * | 35 | 2.9 h | buff | Bind an ally's soul to their body for a day. If they die before the oath fades (and you are on the same map), they stand back up a moment later, fully mended, as your deathless thrall, and fight on for six hours before the binding ends and they fall for good. The oath holds only once. |
+| Corpse Walk | 24 | 12s | mobility | Step into a corpse and out of it. You vanish and reappear where a body lies, up to 30 cells away, and the body bursts into grave-mist that weakens every enemy within 3 cells. No body, no step: it needs a corpse that is not a dried-out husk, and it spares the colony's own dead. |
 
 **Keystones:** *Master of Graves* - Your army is endless. Raise far more corpses for far longer, and those you kill often rise again.; *Soul Eater* - Consume souls directly. Massive lifesteal, a flood of mana on every kill, and kills shave seconds off your cooldowns.; *Deathlord* - Death answers to you. Anything you kill may burst in a wave of necrotic energy.
 
@@ -242,6 +248,9 @@ Liches trade their humanity for undying power. Their touch freezes the blood and
 | Finger of Death (ultimate) | 160 | 4.3 h | attack | Point, and the target dies. Even the mightiest war machines are torn apart by a huge fraction of their own vitality. |
 | Soul Reap | 60 | 40s | attack | Tear a sliver of soul from every enemy around you. You are healed for part of the damage and your mana surges. |
 | Drain Soul | 40 | 20s | attack | Lock a ribbon of necrotic power onto a target and drink its soul for five seconds. You heal for most of the damage. |
+| Harvest of Minds * | 50 | 1 day | utility | Drink what a dead mind knew. The body of a person lying within a cell of the target gives up its knowledge: 450 research points go into the colony's current project (more with spell power), and the husk crumbles to dust, leaving its gear behind. It needs a body that is not dried out, and it spares the colony's own dead. Once a day. |
+| Hollow Heart * | 40 | 1 day | utility | Lock an ally's feelings away in your phylactery for two days. A mental break that is not violent ends at once, and no new break can begin while the heart is hollow. The price: they care half as much about anyone (their opinions of others count for half), recreation does them half as much good, and their words carry 30% less weight. Once a day. |
+| Rime Bridge * | 40 | 12 h | utility | Breathe the cold of the tomb over water. Every cell of water or marsh within 3.5 cells of the target freezes into thick ice that never thaws, firm enough to walk and haul across: ford a river, reach an island, cross a lake or close a moat. |
 
 **Keystones:** *Eternal Vigil* - Your phylactery holds. When you fall, you rise again in a wave of death. Once per day.; *Archlich* - Death on demand. Finger of Death recharges much faster and necromancy hits harder.; *Soulbound* - Spend twice as long in Lichform, more often, and drink the life of your foes.
 
@@ -262,6 +271,9 @@ Bonelords raise legions. Bone spires guard their flanks, bone prisons trap their
 | Legion Eternal (ultimate) | 200 | 7.2 h | summon | Every corpse in a huge area rises - up to fifteen - for two full days, empowered by your will. |
 | Bone Storm | 50 | 35s | buff | A whirlwind of razor-edged bone spins around you for twelve seconds, shredding every enemy that comes close. |
 | Bone Shards | 30 | 12s | attack | Hurl five jagged shards of bone that curve in on enemies and leave them bleeding. |
+| Bone Scaffold * | 45 | 1 day | utility | Raise a scaffold of living bone for a day. Every hour its many hands put 300 work (more with healing power) into every construction frame within 7 cells that already has all its materials, finishing them one after another with your own Construction skill. Once a day. |
+| Grave Diggers * | 30 | 12 h | utility | Skeletal hands claw up through the rock. Every natural rock wall and ore vein within 2.5 cells of the target is dug out as if you had mined it yourself: stone chunks and ore drop where it stood. Twice a day. |
+| Marrow Bombs | 36 | 25s | summon | Raise up to three corpses as hollow shamblers packed with splintered bone. For twenty seconds they run at your enemies; when they are cut down, or the binding ends, they burst in a storm of shards that hits everyone within 2.5 cells, friend or foe, for 30 damage. Nothing is left to raise again. |
 
 **Keystones:** *Legion Master* - Every ally near you fights with the fury of Dark Command at all times.; *Bone Fortress* - Bone grows over you like armor, and when you are struck a spire may burst from the ground to defend you.
 
@@ -281,6 +293,9 @@ Plaguebringers cultivate disease like gardeners. A single carrier, a little pati
 | Swarm of Rot | 34 | 1.1 h | summon | Call forth a brood of megascarabs from the soil to swarm your enemies for a minute. |
 | Pandemic (ultimate) | 200 | 6.2 h | attack | Unleash a pandemic. Every enemy in an enormous area is infected, poisoned, cursed and withered, and the air itself turns toxic. |
 | Plague Rats | 40 | 1.1 h | summon | A swarm of plague-ridden rats boils out of the ground. Their bites carry the black plague. |
+| Variolation * | 45 | 2 days | buff | Give an ally a measured dose of plague. They run a fever for a day (-15% consciousness, -10% moving), and then their body remembers: for the next 19 days they build immunity 50% faster and resist toxins 25% better. With Biotech the lesson goes into their blood for good: they gain the strong immunity gene. Once every two days. |
+| Carrion Brood * | 35 | 12 h | utility | Loose your carrion beetles on the dead. Up to four bodies within 3 cells of the target are eaten down to nothing, and the beetles leave behind what they make of them: 10 to 16 insect jelly per body, a sweet food that never spoils. The gear is left behind. It spares the colony's own dead, and dried-out husks have nothing left to give. Twice a day. |
+| Plague Vessel | 30 | 30s | buff | Make an ally the plague's vessel for thirty seconds. Every two seconds every enemy within 3 cells of them catches the black plague, while the vessel itself is spared. An undead thrall makes a perfect vessel: send it into the thick of them. |
 
 **Keystones:** *Black Death* - Everything you touch catches the plague, and everything you kill bursts.; *Epidemiologist* - Precise and patient: plague magic lasts far longer, spreads further, and finishes off the weak.
 
@@ -482,6 +497,12 @@ Druids are the voice of every living thing on the rim. They call beasts, raise t
 | Earthquake | 60 | 40s | control | Stamp, and the earth answers. The ground heaves around you, knocking enemies flat and battering them with stone. |
 | Nature's Renewal | 50 | 3 h | heal | Pour the patient strength of the forest into an ally: heals, cures an age-related or chronic condition and fades two scars with each casting. |
 | Hornet Swarm | 30 | 12s | attack | Loose a swarm of eight giant hornets. They chase down enemies and sting them with venom. |
+| Gather Simples * | 30 | 1 day | utility | Walk the wild margins in your mind and come back with an armful of healroot: 3 to 5 herbal medicine appear at the target spot. Once a day. |
+| Harvest Home * | 45 | 1 day | utility | Sing the harvest in. Every ripe crop in your growing zones within 7 cells is reaped at once with 25% more yield, and every bare cell of those zones is sown again with the zone's crop, already 15% grown. Bring the fields in before the cold snap. Once a day. |
+| Greening Rite * | 60 | 5 days | buff | Walk barefoot in the soil with someone until something green wakes up in them. Their Plants passion is kindled (none becomes interested, interested becomes burning), they gain 2000 Plants experience and a good memory (+5 mood for 3 days). With Biotech, a child also gains 6 growth points and learning. Once every five days. |
+| Breath of the Forest * | 30 | 12 h | buff | Bring the smell of pine and rain indoors. Everyone within 6 cells of the target has their need for the outdoors filled completely (an end to cabin fever in mountain halls, prison cells and long winters) and feels refreshed (+6 mood for a day). |
+| Flowering Arbor * | 50 | 3 days | utility | Grow a living arbor heavy with blossom for three days. It is a thing of great beauty (+40 beauty, enough to lift a whole room's impressiveness) and everyone within 4 cells of it regains 3% recreation every hour. Grow it in the dining hall before a wedding. |
+| Return to the Earth * | 40 | 12 h | utility | Give the dead back to the land. Up to 8 corpses within 5 cells sink into the ground; whatever they wore or carried stays on the surface. Natural soil within 1.5 cells of each becomes rich soil (wider for big animals), plants there grow 20%, and every ally within 4 cells of a corpse is healed for 6. Your own people's bodies are left for a proper grave; mechanoids have nothing to give. |
 
 **Keystones:** *Overgrowth* - The wild turns violent. Nature spells hit harder and often entangle.; *Lifewell* - Everything you cast spills life into those around you.; *Archdruid* - The wild answers you unbidden: in combat, wolves arrive every thirty seconds.
 
@@ -501,6 +522,9 @@ Beastmasters gather a menagerie: summoned bears, wargs and, at the peak of their
 | Stampede | 34 | 20s | attack | A spectral herd thunders toward the target, trampling and scattering everything in its path. |
 | Thrumbo Call (ultimate) | 180 | 7.2 h | summon | The great white thrumbo answers your call, flanked by two wargs, for three minutes. |
 | Alpha's Call * | 100 | 1 day | utility | Let out the call of the pack leader. Every animal in a wide area that isn't too wild comes to your side for good. |
+| Beast Lore * | 30 | 12 h | utility | Teach a tame animal in its own tongue. It advances three steps of training at once (whatever its training settings allow next) and becomes bonded to you, with you as its master. Twice a day. |
+| Call of the Herds * | 70 | 3 days | utility | Sound the old herding call past the edge of the map. Something answers: a migrating herd crosses your land (good hunting), a few farm animals wander in to join you, or a thrumbo passes by. Once every three days. |
+| Unleash the Pack | 30 | 30s | attack | Point, and your own animals answer. Every tame animal of yours within 20 cells that has learned Release (or is bonded to you) turns feral and charges the target, attacking it for up to 25 seconds or until it falls. Babies, the downed, roped animals and conjured beasts stay put. Train your huskies and bears for this. |
 
 **Keystones:** *Primal Pack* - Your allies always fight with feral ferocity near you.; *King of Beasts* - Every beast-summoning spell calls one more creature, and they all stay far longer.
 
@@ -520,6 +544,9 @@ Verdant Wardens shape living fortresses. Their groves heal, their thorn walls bl
 | Nature's Grasp | 34 | 20s | attack | The whole area erupts with grasping roots and thorns. |
 | The World Tree (ultimate) | 220 | 7.2 h | heal | Raise an echo of the World Tree. For two minutes it heals every ally in a huge radius, while roots bind every enemy near you. |
 | Verdant Surge | 55 | 1.4 h | heal | A wave of green life rolls over your allies, healing them, purging poisons and fading a scar from each. |
+| Warden's Mercy * | 40 | 6 h | utility | Roots bind the wounds of the fallen, friend and foe. Everyone within 8 cells of the target (raiders, strangers, prisoners, colonists and animals) has every wound and illness that needs it tended at 70% quality, without medicine, so the downed live long enough to be rescued or captured. Enemies are also held by the roots (90% slower) for an hour. |
+| Mossheart * | 45 | 2 days | utility | Plant a mossheart: a squat green stump that eats filth. When it lands, and every hour for the next two days, all filth within 5.5 cells is consumed (a spotless infirmary or kitchen) and, with Biotech, polluted ground there is purified. |
+| Strangler Fig | 45 | 1.1 h | attack | Seed a strangler fig among the enemy's works. For 20 seconds its roots tear through a 3.5-cell circle: every structure there that your colony did not build (turrets, mortars, barricades, walls, even bare rock) takes 40 damage a second, and enemies inside take 5 thorn damage a second and are often rooted in place. Break a siege camp before the shells fly. |
 
 **Keystones:** *Living Bastion* - Become an ancient tree: massive ward and armor, and everything that hurts you is torn by thorns.; *The Gardener* - Your groves come quickly and heal mightily.
 
@@ -539,6 +566,9 @@ Shapeshifters wear the wild like a cloak. In bear form they are walls; in wolf f
 | Primal Roar | 30 | 30s | control | A roar that shakes the bones. Nearby enemies panic and flee, weakened. |
 | Thrumbo Avatar (ultimate) | 160 | 5.8 h | buff | Take the form of the thrumbo, the god-beast of the rim: nearly invulnerable, regenerating, devastating. |
 | Pounce | 22 | 10s | attack | Leap like a great cat onto a distant enemy, mauling them and knocking them off their feet. |
+| The Long Sleep * | 25 | 2 h | utility | Sing someone into a bear's winter sleep. They lie down in their bed at once; until they wake after at least 6 hours asleep (12 hours at most) they need a quarter of the food, heal wounds three times as fast, fight off disease 50% faster and shrug off 20 C of cold. They wake whole (+20% rest, +5 mood for a day). Works on colonists, prisoners and tame animals. |
+| Ox Form * | 20 | 3 h | buff | Become a great musk ox for 6 hours: carry three times as much when hauling, move 10% faster and shrug off 15 C of cold. Haul the steel home, then the harvest. |
+| Cub's Play * | 35 | 12 h | buff | Turn into a great clumsy cub and romp with everyone within 7 cells: they regain 30% recreation and laugh about it for a day (+5 mood). With Biotech, children gain 4 growth points and 40% learning, and babies get to play. |
 
 **Keystones:** *Spirit of Ursoc* - The great bear spirit protects you: when downed, you rise again in a roar. Once per day.; *Spirit of Fenris* - The wolf spirit hunts through you: weapon hits may Maul for free and every spell finishes the weak.
 
@@ -999,6 +1029,12 @@ Succubi are demons of desire, or simply very persuasive mages. The difference ma
 | Essence Feast | 40 | 30s | attack | Drink from every heart around you. Enemies within eight cells take heartbreak damage, two and a half times as much if they are infatuated, and you are healed for half of it. |
 | Stolen Heartbeat | 50 | 40s | attack | Reach into an enemy's chest and stop its heart for a moment: heartbreak damage, a share of its vitality, more for every stack of Infatuation (spent), and a long stun. |
 | Irresistible * | 80 | 3 days | utility | Turn the full force of your charm on a downed enemy or a prisoner. They fall hopelessly in love and join the colony. |
+| Red Thread of Fate * | 50 | 2 days | utility | Tie a red thread between a colonist and the one fate meant for them: their partner if they have one, otherwise their best match on the map. Both gain +20 opinion of each other for ten days and a +6 mood memory for two; if both are single adults who could love each other, they become lovers. |
+| Kiss and Make Up * | 40 | 1 day | utility | Kiss a colonist on the cheek and the feud they nurse against their worst rival in the colony is over: both gain +35 opinion of each other for ten days and +4 mood for a day. One time in three, if both are single adults who could love each other, the old enemies fall in love instead. |
+| Quickening * | 60 | 2 days | utility | Lay a hand on a woman, her partner or a tame animal and bless them with a child. The woman and her partner conceive at once (Biotech), or the animal and the nearest mate of its kind within twenty cells do; an egg-layer's next eggs are fertile. The usual rules still apply: the sterile, the too young and the too old cannot be helped. |
+| Blessing of Twins * | 80 | 5 days | utility | Bless a woman or a female animal, pregnant or not: her next birth within thirty days brings twins or triplets (even odds), or for an animal one or two extra litters. Until then she is half again as fertile (Biotech). |
+| Swoon | 30 | 25s | control | Whisper something to an enemy that is already yours. With at least three stacks of Infatuation (all spent) it swoons, fainting dead away for a minute and a half, unhurt and helpless: long enough to carry it off as a prisoner. Bosses, machines and creatures much bigger than a person are unmoved. |
+| Kiss of Life | 30 | 1.4 h | heal | Kiss a fallen ally back onto their feet. For thirty seconds pain does not reach them at all, which is enough to stand up and get clear if it was only the pain that dropped them; they also heal 12 and think fondly of you (+12 opinion for ten days). When the kiss fades, the pain returns. |
 
 **Keystones:** *Femme Fatale* - Love kills. Heartbreak and Stolen Heartbeat come back far sooner and all your desire hits harder.; *Beloved of All* - Everyone falls for you. Most of your spells lay an extra stack of Infatuation, and your charms last longer.; *Queen of Hearts* - Hearts flutter wherever you walk: enemies near you steadily become infatuated.
 
@@ -1018,6 +1054,9 @@ A Temptress does not win battles; she collects them.
 | Mass Seduction | 50 | 1.1 h | control | Turn an area into a garden of temptation for fifteen seconds: every enemy inside gains Infatuation every two seconds. |
 | Kiss of Betrayal | 60 | 1.4 h | control | A kiss that rewrites loyalty. For fifteen seconds an enemy (not too large, and never a boss) fights for you. |
 | Harem of the Damned (ultimate) | 220 | 7.2 h | attack | Reveal your true face. Every enemy within twelve cells is overwhelmed with five stacks of Infatuation: all but the mightiest are enthralled and fight for you. |
+| Honeyed Words * | 40 | 1 day | utility | Flirt shamelessly with a visitor, a trader or even a captive: their faction warms to the colony (+8 goodwill, except with factions that will never make peace), and for six hours you drive a harder bargain: +12% trade prices, +30% negotiation ability and +20% social impact. |
+| Gentlemen Callers * | 70 | 3 days | utility | Let word of your beauty slip beyond the colony. Within moments admirers come calling: a trade caravan or a group of friendly visitors arrives at the edge of the map, if any faction is willing to send one. |
+| Homeward Heart | 60 | 1.4 h | control | Remind every smitten enemy within nine cells of the sweetheart waiting at home. Each one with at least two stacks of Infatuation (all spent) loses the will to fight: people give up the raid and flee the map, while beasts and machines just run from you for eight seconds. Bosses are unmoved. |
 
 **Keystones:** *Siren Queen* - Your charms last half again as long and reach farther.; *Heartless* - When your lovers die, their broken hearts burst and wound everyone nearby.
 
@@ -1037,6 +1076,9 @@ Thieves of Years drink time itself. Their enemies wither into grey old men in a 
 | Decay | 36 | 30s | control | Set an enemy's years running: for fifteen seconds it ages a year every three seconds, and the years hurt. |
 | Spring of Youth | 45 | 1.1 h | heal | Spend stolen youth on everyone around you: allies within four cells heal, regenerate and lose a scar. |
 | Eternal Beauty (ultimate) | 220 | 7.2 h | attack | Drink a whole battlefield's worth of youth. Every enemy within ten cells ages twelve years (the old simply crumble) and takes heartbreak damage; you grow five years younger and cannot die for a minute. |
+| Borrowed Months * | 45 | 1 day | utility | Spend some of your stolen time on an expectant mother, person or animal: her pregnancy jumps five days ahead (more with greater healing power, never past the birth itself). The time comes out of your own hoard: you age half a year. |
+| Stolen Summers * | 50 | 1 day | utility | Pour summers stolen from your enemies into the children around a point: every child within four cells gains 8 growth points (more with greater healing power) and half a bar of learning, and babies get to play (Biotech). |
+| Time's Ruin | 50 | 35s | attack | Let a century pass over an area in a heartbeat. Walls, sandbags, turrets and every other building there that is not your colony's take heavy damage (180) as they crumble with age, and every enemy inside ages two years and takes a little damage. Cover does not last forever. |
 
 **Keystones:** *Methuselah* - You have outlived death before. Once a day, when you would die, you rise again young and whole.; *Graverobber* - You take far more than years. Heavy lifesteal and more damage.
 
@@ -1056,6 +1098,9 @@ A Nightmare Muse visits people in their sleep. Since she started doing it on the
 | Sleepwalk | 34 | 25s | control | Enemies in an area fall into a walking sleep for eight seconds and wander off, unaware of the battle. |
 | Lucid Dream | 26 | 35s | buff | Let an ally fight as if in a lucid dream for thirty seconds: time slows, aim sharpens and pain becomes just an idea. |
 | Endless Night (ultimate) | 220 | 7.2 h | attack | Every enemy on the map falls into a deep dream. Five seconds later you feast on every dream at once: heartbreak damage, tripled against those still dreaming. |
+| Dream of the Beloved * | 35 | 1 day | utility | Breathe a sweet dream over everyone within three cells who sleeps in the next day. After at least four hours of sleep they wake glowing: +8 mood for a day, +15% rest and +25% recreation, and if they have a lover, +15 opinion of them for five days. Cast it over a couple's bed and they wake up thinking only of each other. |
+| Sweet Oblivion * | 40 | 12 h | utility | Sing someone out of a mental break, even a violent one: the break ends at once, they lie down where they stand and fall asleep, and wake up feeling lighter (+5 mood for a day). It works just as well on a colonist who simply needs to sleep right now. |
+| Stolen Sleep | 30 | 20s | control | Steal every last scrap of sleep out of an enemy: its rest is emptied and it turns drowsy for thirty seconds (25% slower, 30% slower to aim, a little dazed). An enemy left on empty for long collapses asleep where it stands. The stolen sleep refreshes every ally within five cells of it (+25% rest). |
 
 **Keystones:** *Sandman's Song* - Your lullabies carry much farther and come back sooner.; *Nightmare Queen* - Dream Eater feasts on three dreamers at once, and every dream you touch bites harder.
 
@@ -1084,6 +1129,12 @@ Incubi are devils of the bargain. Everything has a price, and they are very, ver
 | Brimstone | 46 | 28s | attack | Brimstone erupts from the earth in an area: eight burning strikes, each one laying a Debt half the time. |
 | Devil's Due | 70 | 1.4 h | attack | Call in every debt at once. Every enemy on the map takes hellfire damage, +60% for every Debt it owes (spent). |
 | Deal With the Devil * | 40 | 1 day | utility | Offer a colonist a deal. They will gain something wonderful: an inspiration, years of skill, a healed body or fantastic luck. Usually. |
+| Night Visit * | 25 | 6 h | utility | Promise a colonist a visit tonight. The next time they sleep for four hours or more, the incubus walks through their dreams himself, and they wake with +12 mood for a day, +15 opinion of him for ten days, 30% recreation, 15% rest and a one in four chance of an inspiration. The promise fades if they do not sleep within a day and a half. The married may get ideas. |
+| Faustian Talent * | 60 | 10 days | utility | Sell a colonist a talent: their best skill without a burning passion gains a step of passion (none becomes interested, interested becomes burning). The devil is paid in knowledge: about 3000 experience drains out of a random skill. |
+| Marriage Contract * | 50 | 3 days | utility | Draw up a marriage contract for a colonist and their partner, and witness it. They fall in love all over again: +20 opinion of each other for fifteen days and +8 mood for three. Lovers sign an engagement; the engaged are married on the spot. |
+| Heir's Bargain * | 60 | 5 days | utility | (Biotech) Sell a couple the child they long for. The colonist you target signs, and the price is one life within a day: a hunted beast or a slaughtered one will do. When the day is out the bargain is settled. Paid, and the signer and their partner conceive at once (the sterile, the too young and the too old cannot be helped). Unpaid, and the signer defaults: 20% slower at work, 10% slower on their feet and quicker to break for a day. |
+| Sell a Vice * | 80 | 10 days | utility | Buy a colonist's worst habit off them: the first of pyromaniac, abrasive, greedy, jealous, wimp, annoying voice, creepy breathing or gourmand that they have is gone for good. The devil's fee is a sliver of soul, -5 mood for four days, and he takes it whether or not there was a vice to buy. |
+| Two for One * | 50 | 3 days | utility | Strike a bargain with an expectant mother, woman or beast: her next birth brings one more baby than nature intended (twins, or a second litter). She pays as she carries: 15% slower on her feet and 10% slower at work until the birth. The bargain lapses unclaimed after twenty days, and a man cannot take it. Human pregnancy needs Biotech. |
 
 **Keystones:** *Loan Shark* - Payment is due now. Devil's Due and Collect come back far sooner, and everything infernal hits harder.; *Prince of Lies* - Everyone owes you, and nobody can pin you down: half your infernal hits add a Debt, and attacks often find only an illusion.; *Archdevil* - Hell follows you. Anything you kill may burst into hellfire.
 
@@ -1103,6 +1154,9 @@ Pactbinders are the accountants of hell, and nothing in hell is more frightening
 | Garnishment | 36 | 25s | attack | Garnish the wages of everyone around you: hellfire damage, doubled against anyone in debt, healing you for two fifths. |
 | Blood Contract | 40 | 1.4 h | buff | Offer an ally a contract written in a great deal of blood: overwhelming power for a minute, paid for with three kills. |
 | Foreclosure (ultimate) | 220 | 7.2 h | attack | Foreclose on every soul within fifteen cells: each one is driven five Debts deeper and collected at once. |
+| Indenture * | 35 | 1 day | utility | Offer a prisoner terms they cannot refuse: resistance falls by 8 and will by 3 at once, then interest accrues, another 2 resistance every six hours for two days. A slave instead gains 30% suppression at once and 5% every six hours (Ideology). Spell power raises every figure a little. |
+| Promissory Note | 30 | 40s | buff | Sign an ally a promissory note: for fifteen seconds they take only a quarter of every blow. Then the note comes due and twice what landed is collected at once, through any armour: half the damage, paid later. Buy the time you need, and be ready to pay. |
+| Firstborn Clause * | 70 | 5 days | utility | (Biotech) Write a clause into an expectant mother's future: every baby she bears next is born gifted, with burning passions in two skills, one fine trait (kind, tough, too smart, fast learner, great memory or quick sleeper) and a lifelong 15% learning bonus (void on anyone but a woman). The Pactbinder underwrites the clause himself: -25 maximum mana and -0.3 mana per second for five days. The clause lapses after twenty days. |
 
 **Keystones:** *Hostile Takeover* - Every infernal hit adds a Debt (at most twice a second).; *Bankrupt* - Cash out constantly. Breach of Contract and Garnishment come back far sooner, and everything infernal hits harder.
 
@@ -1122,6 +1176,9 @@ The incubus of legend comes in dreams. The Dreamlord just does it to whole armie
 | Dreamshroud | 30 | 1.4 h | buff | Step halfway into the dreaming world for fifteen seconds: enemies cannot see you. |
 | Possess | 70 | 2.2 h | control | Slip into an enemy's dreams and take the wheel: for thirty seconds it fights for you. Not the mightiest, and not machines too big to dream. |
 | Lord of Dreams (ultimate) | 230 | 7.2 h | attack | Rule the dreaming world. Every enemy on the map is either possessed for twenty seconds or paralysed in its sleep, and all of them owe you. |
+| Lucid Lesson * | 30 | 1 day | utility | Send a colonist to bed at once (their own, if they can reach it) and teach them in their dreams: for the next eight hours they gain 300 experience in a random skill every hour, 2400 in all. |
+| Rude Awakening * | 50 | 14.4 h | utility | Tear every sleeping colonist on the map out of their dreams at once. They wake drafted, with 15% rest restored and a minute of nightmare-sharpened senses: 15% faster, 15% quicker to aim and steadier against pain. For the raid at three in the morning. |
+| Devour Nightmares * | 30 | 12 h | utility | Feast on a colonist's nightmares: their two worst bad memories (grief, horror, humiliation, whatever weighs most) are eaten away, three if they are asleep when you feed, and you regain 8 mana for each. |
 
 **Keystones:** *Dream Tyrant* - Possess takes two minds at once and returns sooner.; *Nightmare Lord* - Every nightmare you plant is deeper and crueller.
 
@@ -1141,6 +1198,9 @@ Some incubi bargain. Hellprinces remember who they were before they learned to s
 | Rain of Brimstone | 70 | 1.1 h | attack | Five burning stones fall from the sky on and around the target. |
 | Hellgate | 50 | 1.4 h | summon | Tear open a crack into hell for thirty seconds. It breathes hellfire on every enemy near it and lays Debts on them. |
 | Crown of Ash (ultimate) | 220 | 7.2 h | control | Crown yourself in hellfire for thirty seconds: you take your infernal form, and everything within six cells of you burns and falls into debt every second and a half. |
+| Trial By Hellfire * | 50 | 1 day | utility | Put the colonists around the target through a drill in hellfire: each gains 1500 melee and 1500 shooting experience, and comes out seared, with 15% more pain and 10% slower feet for six hours. |
+| Crack the Whip * | 40 | 1 day | utility | Crack a lash of hellfire over the colonists around the target. For eight hours they work 30% faster and move 10% faster, but nobody enjoys it: their recreation drops by a quarter at once and they suffer -5 mood for a day. |
+| Demand Tribute * | 80 | 5 days | utility | A prince of hell does not trade; he is paid. Demand tribute from the lords of the rim, and 150 to 250 silver (more with spell power) appears in brimstone at your feet. Every faction that is not at war with you resents it: -8 goodwill with each. |
 
 **Keystones:** *Warlord of Hell* - You barely remember your mortal shape. Infernal Form lasts twice as long and returns much sooner.; *Pyrelord* - Everything you burn burns hotter, and the dead burst into hellfire.
 

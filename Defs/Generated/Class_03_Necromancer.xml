@@ -663,6 +663,117 @@
     <unlockSpell>AA_Spell_SoulSwarm</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Necromancer_UnlivingVigil</defName>
+    <tree>AA_Class_Necromancer</tree>
+    <kind>Spell</kind>
+    <x>1</x>
+    <y>4</y>
+    <requiredLevel>5</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>6</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Necromancer_Enfeeble</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_UnlivingVigil</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Necromancer_GraveLabor</defName>
+    <tree>AA_Class_Necromancer</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>3</y>
+    <requiredLevel>3</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>5</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Necromancer_ShamblingHorde</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_GraveLabor</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Necromancer_FleshGraft</defName>
+    <tree>AA_Class_Necromancer</tree>
+    <kind>Spell</kind>
+    <x>3</x>
+    <y>4</y>
+    <requiredLevel>5</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>6</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Necromancer_SoulHarvest</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_FleshGraft</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Necromancer_LastWords</defName>
+    <tree>AA_Class_Necromancer</tree>
+    <kind>Spell</kind>
+    <x>5</x>
+    <y>4</y>
+    <requiredLevel>5</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>6</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Necromancer_SpeakWithDead</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_LastWords</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Necromancer_CorpseWalk</defName>
+    <tree>AA_Class_Necromancer</tree>
+    <kind>Spell</kind>
+    <x>2</x>
+    <y>5</y>
+    <requiredLevel>7</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Necromancer_Deathless</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_CorpseWalk</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Necromancer_GraveOath</defName>
+    <tree>AA_Class_Necromancer</tree>
+    <kind>Spell</kind>
+    <x>4</x>
+    <y>6</y>
+    <requiredLevel>9</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>9</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Necromancer_CorpseLord</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_GraveOath</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Necromancer_KeeperOfTheDead</defName>
+    <label>keeper of the dead</label>
+    <description>Rot answers to you. Every half hour, food and corpses within 7 cells of you are made fresh again, so nothing near you ever spoils: make your bed beside the larder or the morgue.</description>
+    <tree>AA_Class_Necromancer</tree>
+    <kind>Notable</kind>
+    <x>6</x>
+    <y>5</y>
+    <requiredLevel>7</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Necromancer_NecroticMastery</li>
+    </prerequisites>
+    <passives>
+      <li Class="ArcanumAscendant.P_Aura">
+        <radius>7</radius>
+        <interval>1250</interval>
+        <affects>Allies</affects>
+        <color>(0.49, 1, 0.6, 1)</color>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Preserve" />
+        </effects>
+      </li>
+    </passives>
+    <iconPath>ArcanumAscendant/Nodes/Necromancer_KeeperOfTheDead</iconPath>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Lich_DeathCoil</defName>
     <tree>AA_Class_Lich</tree>
     <kind>Spell</kind>
@@ -1037,6 +1148,79 @@
     <unlockSpell>AA_Spell_DrainSoul</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Lich_HollowHeart</defName>
+    <tree>AA_Class_Lich</tree>
+    <kind>Spell</kind>
+    <x>0</x>
+    <y>2</y>
+    <requiredLevel>10</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Lich_GraveChill</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_HollowHeart</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Lich_RimeBridge</defName>
+    <tree>AA_Class_Lich</tree>
+    <kind>Spell</kind>
+    <x>2</x>
+    <y>2</y>
+    <requiredLevel>10</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Lich_ColdBlood</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_RimeBridge</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Lich_MindHarvest</defName>
+    <tree>AA_Class_Lich</tree>
+    <kind>Spell</kind>
+    <x>5</x>
+    <y>3</y>
+    <requiredLevel>12</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>9</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Lich_SoulFeast</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_MindHarvest</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Lich_WhispersOfTheDead</defName>
+    <label>whispers of the dead</label>
+    <description>The dead whisper what they once knew. Everyone within 9 cells of you researches 25% faster.</description>
+    <tree>AA_Class_Lich</tree>
+    <kind>Notable</kind>
+    <x>4</x>
+    <y>2</y>
+    <requiredLevel>10</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Lich_ColdBlood</li>
+    </prerequisites>
+    <passives>
+      <li Class="ArcanumAscendant.P_Aura">
+        <radius>9</radius>
+        <interval>600</interval>
+        <affects>Allies</affects>
+        <color>(0.6, 0.85, 1, 1)</color>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_NecroWhispers</hediff>
+            <severity>1</severity>
+            <durationTicks>900</durationTicks>
+          </li>
+        </effects>
+      </li>
+    </passives>
+    <iconPath>ArcanumAscendant/Nodes/Lich_WhispersOfTheDead</iconPath>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Bonelord_BoneSpire</defName>
     <tree>AA_Class_Bonelord</tree>
     <kind>Spell</kind>
@@ -1389,6 +1573,46 @@
       <li>AA_Node_Bonelord_BonePrison</li>
     </prerequisites>
     <unlockSpell>AA_Spell_BoneShards</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Bonelord_BoneScaffold</defName>
+    <tree>AA_Class_Bonelord</tree>
+    <kind>Spell</kind>
+    <x>4</x>
+    <y>1</y>
+    <requiredLevel>8</requiredLevel>
+    <prerequisites>
+      <li>AA_Node_Bonelord_Ossify</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_BoneScaffold</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Bonelord_GraveDiggers</defName>
+    <tree>AA_Class_Bonelord</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>2</y>
+    <requiredLevel>10</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Bonelord_DarkCommand</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_GraveDiggers</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Bonelord_MarrowBombs</defName>
+    <tree>AA_Class_Bonelord</tree>
+    <kind>Spell</kind>
+    <x>2</x>
+    <y>4</y>
+    <requiredLevel>14</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>10</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Bonelord_BonePrison</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_MarrowBombs</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Plaguebringer_PlagueBolt</defName>
@@ -1750,6 +1974,77 @@
       <li>AA_Node_Plaguebringer_Contagion</li>
     </prerequisites>
     <unlockSpell>AA_Spell_PlagueRats</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Plaguebringer_CarrionBrood</defName>
+    <tree>AA_Class_Plaguebringer</tree>
+    <kind>Spell</kind>
+    <x>0</x>
+    <y>2</y>
+    <requiredLevel>10</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Plaguebringer_Miasma</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_CarrionBrood</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Plaguebringer_Variolation</defName>
+    <tree>AA_Class_Plaguebringer</tree>
+    <kind>Spell</kind>
+    <x>4</x>
+    <y>1</y>
+    <requiredLevel>8</requiredLevel>
+    <prerequisites>
+      <li>AA_Node_Plaguebringer_Virulence</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_Variolation</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Plaguebringer_PlagueVessel</defName>
+    <tree>AA_Class_Plaguebringer</tree>
+    <kind>Spell</kind>
+    <x>1</x>
+    <y>4</y>
+    <requiredLevel>14</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>10</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Plaguebringer_Carrier</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_PlagueVessel</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Plaguebringer_PlagueDoctor</defName>
+    <label>plague doctor</label>
+    <description>A plague doctor at the bedside. Allies within 9 cells of you (colonists, prisoners and animals) build immunity 35% faster: sleep in the hospital during an epidemic.</description>
+    <tree>AA_Class_Plaguebringer</tree>
+    <kind>Notable</kind>
+    <x>5</x>
+    <y>3</y>
+    <requiredLevel>12</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>9</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Plaguebringer_Outbreak</li>
+    </prerequisites>
+    <passives>
+      <li Class="ArcanumAscendant.P_Aura">
+        <radius>9</radius>
+        <interval>600</interval>
+        <affects>Allies</affects>
+        <color>(0.66, 0.85, 0.29, 1)</color>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_NecroPlagueDoctor</hediff>
+            <severity>1</severity>
+            <durationTicks>900</durationTicks>
+          </li>
+        </effects>
+      </li>
+    </passives>
+    <iconPath>ArcanumAscendant/Nodes/Plaguebringer_PlagueDoctor</iconPath>
   </ArcanumAscendant.ArcaneNodeDef>
   <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_SoulBolt</defName>
@@ -2814,6 +3109,582 @@
     <warmupStartSound>AA_Charge</warmupStartSound>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_GraveLabor</defName>
+    <label>grave labor</label>
+    <description>Bind a dead person back into their body to work for the colony. For three days the servant hauls, cleans, cooks, plants, mines and builds (20% slower than the living) without food, sleep, recreation or complaint. It will not fight, and it lies down dead again when the binding ends. Raiders and the colony's own fallen both answer, but not dried-out husks, beasts or machines. Once a day.</description>
+    <iconPath>ArcanumAscendant/Spells/GraveLabor</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>20</range>
+      <warmupTime>3</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetItems>true</canTargetItems>
+        <canTargetCorpses>true</canTargetCorpses>
+        <canTargetBuildings>false</canTargetBuildings>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>45</manaCost>
+        <tags>
+          <li>Necromancy</li>
+          <li>Summon</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+        <flavor>The harvest will not wait for the living.</flavor>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <radius>1.5</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_RaiseServant">
+            <days>3</days>
+          </li>
+        </effects>
+        <color>(0.49, 1, 0.604, 1)</color>
+        <color2>(0.122, 0.42, 0.227, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Smoke</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Rune</type>
+            <scale>1</scale>
+            <scaleEnd>1.05</scaleEnd>
+            <ticks>80</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Pillar</type>
+            <scale>1</scale>
+            <ticks>40</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Smoke</fleck>
+            <count>10</count>
+            <speed>1</speed>
+            <scale>0.8</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Skull</fleck>
+            <count>4</count>
+            <speed>1</speed>
+            <scale>0.6</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Necro</castSound>
+        <impactSound>AA_Impact_Necro</impactSound>
+        <style>Necro</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_FleshGraft</defName>
+    <label>flesh graft</label>
+    <description>Stitch a part from a fresh corpse onto a living ally who has lost one: an arm, a leg, an eye, a jaw, a kidney, a lung. The donor must lie within 5 cells of the patient and share their body plan (people for people, dogs for dogs), and if the donor had a bionic or prosthetic there, the patient gets that instead. The rest of the donor crumbles to dust, leaving its gear behind. The graft aches for three days (+10% pain, -5% moving and manipulation), and most people are not thrilled to wear a dead stranger's flesh (-3 mood for 6 days). One part per casting, once a day.</description>
+    <iconPath>ArcanumAscendant/Spells/FleshGraft</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>3</range>
+      <warmupTime>6</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>55</manaCost>
+        <tags>
+          <li>Necromancy</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Heal</role>
+        <quirky>true</quirky>
+        <aiHealthThreshold>0.6</aiHealthThreshold>
+        <aiAllowedUndrafted>true</aiAllowedUndrafted>
+        <flavor>He won't be needing it.</flavor>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_NecromancerGraft">
+            <donorRadius>5</donorRadius>
+            <graftHediff>AA_NecroGraft</graftHediff>
+            <thought>AA_NecroDeadMansGraft</thought>
+          </li>
+        </effects>
+        <color>(0.49, 1, 0.604, 1)</color>
+        <color2>(0.122, 0.42, 0.227, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Smoke</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.2</scale>
+            <scaleEnd>2</scaleEnd>
+            <ticks>30</ticks>
+            <useColor2>true</useColor2>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Bone</fleck>
+            <count>8</count>
+            <speed>1</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Smoke</fleck>
+            <count>6</count>
+            <speed>0.8</speed>
+            <scale>0.7</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Necro</castSound>
+        <impactSound>AA_Impact_Necro</impactSound>
+        <style>Necro</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_LastWords</defName>
+    <label>last words</label>
+    <description>Call a soul back for one last conversation. Target a body, or a grave or sarcophagus that holds one: everyone in the colony who mourns that person (a lost spouse, a child, a friend, a bonded animal) can finally let go. Every sad memory they have of that death ends, and each mourner gains 'heard their last words' (+8 mood for 5 days). The body is not disturbed. Once every two days.</description>
+    <iconPath>ArcanumAscendant/Spells/LastWords</iconPath>
+    <cooldownTicksRange>120000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>8</range>
+      <warmupTime>5</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetItems>true</canTargetItems>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>40</manaCost>
+        <tags>
+          <li>Necromancy</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+        <flavor>'Tell her I'm not angry.'</flavor>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <radius>1</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_NecromancerRite">
+            <notDesiccated>false</notDesiccated>
+            <includeGraves>true</includeGraves>
+            <spareColonists>false</spareColonists>
+            <easeGrief>true</easeGrief>
+            <mournerThought>AA_NecroLastWords</mournerThought>
+          </li>
+        </effects>
+        <color>(0.49, 1, 0.604, 1)</color>
+        <color2>(0.122, 0.42, 0.227, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Smoke</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Pillar</type>
+            <scale>0.8</scale>
+            <ticks>60</ticks>
+          </li>
+          <li>
+            <type>Spiral</type>
+            <fleck>AA_Fleck_Skull</fleck>
+            <count>8</count>
+            <speed>1</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.5</scale>
+            <scaleEnd>2.5</scaleEnd>
+            <ticks>50</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Necro</castSound>
+        <impactSound>AA_Impact_Necro</impactSound>
+        <style>Necro</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_UnlivingVigil</defName>
+    <label>unliving vigil</label>
+    <description>Lend an ally the stillness of the grave for twelve hours. Their hunger and tiredness stop right where they are and pain reaches them only by half, so they can tend the sick, finish the harvest or stand watch through the night without a break. Feeling dead inside is unsettling (-3 mood for half a day). Once a day.</description>
+    <iconPath>ArcanumAscendant/Spells/UnlivingVigil</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>20</range>
+      <warmupTime>1.5</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>30</manaCost>
+        <tags>
+          <li>Necromancy</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Buff</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_NecroVigil</hediff>
+            <severity>1</severity>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Thought">
+            <thought>AA_NecroGraveStill</thought>
+          </li>
+        </effects>
+        <color>(0.49, 1, 0.604, 1)</color>
+        <color2>(0.122, 0.42, 0.227, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Smoke</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.6</scale>
+            <scaleEnd>0.1</scaleEnd>
+            <ticks>30</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Smoke</fleck>
+            <count>8</count>
+            <speed>0.6</speed>
+            <scale>0.7</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1</scale>
+            <scaleEnd>1.8</scaleEnd>
+            <ticks>30</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Necro</castSound>
+        <impactSound>AA_Impact_Necro</impactSound>
+        <style>Necro</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_GraveOath</defName>
+    <label>oath beyond the grave</label>
+    <description>Bind an ally's soul to their body for a day. If they die before the oath fades (and you are on the same map), they stand back up a moment later, fully mended, as your deathless thrall, and fight on for six hours before the binding ends and they fall for good. The oath holds only once.</description>
+    <iconPath>ArcanumAscendant/Spells/GraveOath</iconPath>
+    <cooldownTicksRange>7200</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>20</range>
+      <warmupTime>1</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>35</manaCost>
+        <tags>
+          <li>Necromancy</li>
+        </tags>
+        <tier>1</tier>
+        <role>Buff</role>
+        <quirky>true</quirky>
+        <flavor>Not yet.</flavor>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_NecroGraveOath</hediff>
+            <severity>1</severity>
+          </li>
+        </effects>
+        <color>(0.49, 1, 0.604, 1)</color>
+        <color2>(0.122, 0.42, 0.227, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Smoke</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Rune</type>
+            <scale>0.8</scale>
+            <scaleEnd>0.84</scaleEnd>
+            <ticks>60</ticks>
+          </li>
+          <li>
+            <type>Spiral</type>
+            <fleck>AA_Fleck_Skull</fleck>
+            <count>6</count>
+            <speed>1</speed>
+            <scale>0.5</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Necro</castSound>
+        <impactSound>AA_Impact_Necro</impactSound>
+        <style>Necro</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_CorpseWalk</defName>
+    <label>corpse walk</label>
+    <description>Step into a corpse and out of it. You vanish and reappear where a body lies, up to 30 cells away, and the body bursts into grave-mist that weakens every enemy within 3 cells. No body, no step: it needs a corpse that is not a dried-out husk, and it spares the colony's own dead.</description>
+    <iconPath>ArcanumAscendant/Spells/CorpseWalk</iconPath>
+    <cooldownTicksRange>720</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>30</range>
+      <warmupTime>0.5</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetItems>true</canTargetItems>
+        <canTargetCorpses>true</canTargetCorpses>
+        <canTargetBuildings>false</canTargetBuildings>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>24</manaCost>
+        <tags>
+          <li>Necromancy</li>
+        </tags>
+        <tier>1</tier>
+        <role>Mobility</role>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <radius>1</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_NecromancerRite">
+            <effects>
+              <li Class="ArcanumAscendant.Effect_Teleport">
+                <mode>CasterToTarget</mode>
+              </li>
+              <li Class="ArcanumAscendant.Effect_Hediff">
+                <hediff>AA_Weakened</hediff>
+                <severity>1</severity>
+                <affects>Enemies</affects>
+              </li>
+            </effects>
+            <consume>true</consume>
+            <subRadius>3</subRadius>
+          </li>
+        </effects>
+        <color>(0.49, 1, 0.604, 1)</color>
+        <color2>(0.122, 0.42, 0.227, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Smoke</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>2</scale>
+            <scaleEnd>2.4</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Smoke</fleck>
+            <count>16</count>
+            <speed>2</speed>
+            <scale>0.9</scale>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Skull</fleck>
+            <count>5</count>
+            <speed>1.5</speed>
+            <scale>0.6</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Necro</castSound>
+        <impactSound>AA_Impact_Necro</impactSound>
+        <style>Necro</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_DeathCoil</defName>
     <label>death coil</label>
     <description>A spiralling coil of death that heals you for half the damage it deals.</description>
@@ -3518,6 +4389,303 @@
     <warmupStartSound>AA_Charge</warmupStartSound>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_MindHarvest</defName>
+    <label>harvest of minds</label>
+    <description>Drink what a dead mind knew. The body of a person lying within a cell of the target gives up its knowledge: 450 research points go into the colony's current project (more with spell power), and the husk crumbles to dust, leaving its gear behind. It needs a body that is not dried out, and it spares the colony's own dead. Once a day.</description>
+    <iconPath>ArcanumAscendant/Spells/MindHarvest</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>6</range>
+      <warmupTime>5</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetItems>true</canTargetItems>
+        <canTargetCorpses>true</canTargetCorpses>
+        <canTargetBuildings>false</canTargetBuildings>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>50</manaCost>
+        <tags>
+          <li>Necromancy</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+        <flavor>Every scholar who dies takes a library with them. Not any more.</flavor>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <radius>1</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_NecromancerRite">
+            <effects>
+              <li Class="ArcanumAscendant.Effect_Research">
+                <points>450</points>
+              </li>
+            </effects>
+            <humanlikeOnly>true</humanlikeOnly>
+            <consume>true</consume>
+          </li>
+        </effects>
+        <color>(0.604, 0.847, 1, 1)</color>
+        <color2>(0.165, 0.227, 0.416, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Snow</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Rune</type>
+            <scale>1</scale>
+            <scaleEnd>1.05</scaleEnd>
+            <ticks>90</ticks>
+          </li>
+          <li>
+            <type>Spiral</type>
+            <fleck>AA_Fleck_Skull</fleck>
+            <count>10</count>
+            <speed>1.2</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.5</scale>
+            <scaleEnd>2.5</scaleEnd>
+            <ticks>50</ticks>
+            <useColor2>true</useColor2>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Frost</castSound>
+        <impactSound>AA_Impact_Frost</impactSound>
+        <style>Necro</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_HollowHeart</defName>
+    <label>hollow heart</label>
+    <description>Lock an ally's feelings away in your phylactery for two days. A mental break that is not violent ends at once, and no new break can begin while the heart is hollow. The price: they care half as much about anyone (their opinions of others count for half), recreation does them half as much good, and their words carry 30% less weight. Once a day.</description>
+    <iconPath>ArcanumAscendant/Spells/HollowHeart</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>20</range>
+      <warmupTime>1.5</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>40</manaCost>
+        <tags>
+          <li>Necromancy</li>
+          <li>Frost</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+        <flavor>It's easier this way. You'll see.</flavor>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Calm" />
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_NecroHollowHeart</hediff>
+            <severity>1</severity>
+          </li>
+        </effects>
+        <color>(0.604, 0.847, 1, 1)</color>
+        <color2>(0.165, 0.227, 0.416, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Snow</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.6</scale>
+            <scaleEnd>0.1</scaleEnd>
+            <ticks>30</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Snow</fleck>
+            <count>12</count>
+            <speed>1</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1</scale>
+            <scaleEnd>1.6</scaleEnd>
+            <ticks>30</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Frost</castSound>
+        <impactSound>AA_Impact_Frost</impactSound>
+        <style>Frost</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_RimeBridge</defName>
+    <label>rime bridge</label>
+    <description>Breathe the cold of the tomb over water. Every cell of water or marsh within 3.5 cells of the target freezes into thick ice that never thaws, firm enough to walk and haul across: ford a river, reach an island, cross a lake or close a moat.</description>
+    <iconPath>ArcanumAscendant/Spells/RimeBridge</iconPath>
+    <cooldownTicksRange>30000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>26</range>
+      <warmupTime>2</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetItems>true</canTargetItems>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>40</manaCost>
+        <tags>
+          <li>Necromancy</li>
+          <li>Frost</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <radius>3.5</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Terraform">
+            <to>Ice</to>
+            <fromOnly>
+              <li>WaterShallow</li>
+              <li>WaterDeep</li>
+              <li>WaterMovingShallow</li>
+              <li>WaterMovingChestDeep</li>
+              <li>WaterOceanShallow</li>
+              <li>WaterOceanDeep</li>
+              <li>Marsh</li>
+            </fromOnly>
+          </li>
+        </effects>
+        <color>(0.604, 0.847, 1, 1)</color>
+        <color2>(0.165, 0.227, 0.416, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Snow</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.2</scale>
+            <scaleEnd>1</scaleEnd>
+            <ticks>40</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Snow</fleck>
+            <count>30</count>
+            <speed>2</speed>
+            <scale>0.6</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>2</scale>
+            <scaleEnd>3.5</scaleEnd>
+            <ticks>40</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Frost</castSound>
+        <impactSound>AA_Impact_Frost</impactSound>
+        <style>Frost</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_BoneSpire</defName>
     <label>bone spire</label>
     <description>Raise a spire of bone that fires splinters at enemies.</description>
@@ -4185,6 +5353,288 @@
     <warmupStartSound>AA_Charge</warmupStartSound>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_BoneScaffold</defName>
+    <label>bone scaffold</label>
+    <description>Raise a scaffold of living bone for a day. Every hour its many hands put 300 work (more with healing power) into every construction frame within 7 cells that already has all its materials, finishing them one after another with your own Construction skill. Once a day.</description>
+    <iconPath>ArcanumAscendant/Spells/BoneScaffold</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>20</range>
+      <warmupTime>2</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetItems>true</canTargetItems>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>45</manaCost>
+        <tags>
+          <li>Necromancy</li>
+          <li>Construct</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+        <flavor>Many hands make light work. These have a great many hands.</flavor>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_SpawnThing">
+            <thing>AA_Construct_BoneScaffold</thing>
+            <count>1</count>
+            <lifetimeTicks>60000</lifetimeTicks>
+          </li>
+        </effects>
+        <color>(0.91, 0.886, 0.784, 1)</color>
+        <color2>(0.416, 0.373, 0.251, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Smoke</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Bone</fleck>
+            <count>16</count>
+            <speed>2</speed>
+            <scale>0.6</scale>
+          </li>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.3</scale>
+            <scaleEnd>0.8</scaleEnd>
+            <ticks>24</ticks>
+          </li>
+          <li>
+            <type>Smoke</type>
+            <count>3</count>
+            <scale>1</scale>
+            <speed>1</speed>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Necro</castSound>
+        <impactSound>AA_Impact_Necro</impactSound>
+        <style>Necro</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_GraveDiggers</defName>
+    <label>grave diggers</label>
+    <description>Skeletal hands claw up through the rock. Every natural rock wall and ore vein within 2.5 cells of the target is dug out as if you had mined it yourself: stone chunks and ore drop where it stood. Twice a day.</description>
+    <iconPath>ArcanumAscendant/Spells/GraveDiggers</iconPath>
+    <cooldownTicksRange>30000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>24</range>
+      <warmupTime>2</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetItems>true</canTargetItems>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>30</manaCost>
+        <tags>
+          <li>Necromancy</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <radius>2.5</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Mine" />
+        </effects>
+        <color>(0.91, 0.886, 0.784, 1)</color>
+        <color2>(0.416, 0.373, 0.251, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Smoke</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Bone</fleck>
+            <count>18</count>
+            <speed>2</speed>
+            <scale>0.6</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Smoke</type>
+            <count>6</count>
+            <scale>1.2</scale>
+            <speed>1</speed>
+          </li>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.2</scale>
+            <scaleEnd>1</scaleEnd>
+            <ticks>30</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Necro</castSound>
+        <impactSound>AA_Impact_Necro</impactSound>
+        <style>Necro</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_MarrowBombs</defName>
+    <label>marrow bombs</label>
+    <description>Raise up to three corpses as hollow shamblers packed with splintered bone. For twenty seconds they run at your enemies; when they are cut down, or the binding ends, they burst in a storm of shards that hits everyone within 2.5 cells, friend or foe, for 30 damage. Nothing is left to raise again.</description>
+    <iconPath>ArcanumAscendant/Spells/MarrowBombs</iconPath>
+    <cooldownTicksRange>1500</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>26</range>
+      <warmupTime>1</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetItems>true</canTargetItems>
+        <canTargetCorpses>true</canTargetCorpses>
+        <canTargetBuildings>false</canTargetBuildings>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>36</manaCost>
+        <tags>
+          <li>Necromancy</li>
+          <li>Summon</li>
+        </tags>
+        <tier>1</tier>
+        <role>Summon</role>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <radius>5</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_RaiseDead">
+            <maxCount>3</maxCount>
+            <durationTicks>1200</durationTicks>
+            <undeadHediff>AA_NecroMarrowBomb</undeadHediff>
+          </li>
+        </effects>
+        <color>(0.91, 0.886, 0.784, 1)</color>
+        <color2>(0.416, 0.373, 0.251, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Smoke</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Rune</type>
+            <scale>1</scale>
+            <scaleEnd>1.05</scaleEnd>
+            <ticks>50</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Bone</fleck>
+            <count>14</count>
+            <speed>2</speed>
+            <scale>0.6</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Smoke</type>
+            <count>4</count>
+            <scale>1</scale>
+            <speed>1</speed>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Necro</castSound>
+        <impactSound>AA_Impact_Necro</impactSound>
+        <style>Necro</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_PlagueBolt</defName>
     <label>plague bolt</label>
     <description>Infect a target with the black plague. Victims who die from it burst and infect those around them.</description>
@@ -4821,6 +6271,283 @@
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
   </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_Variolation</defName>
+    <label>variolation</label>
+    <description>Give an ally a measured dose of plague. They run a fever for a day (-15% consciousness, -10% moving), and then their body remembers: for the next 19 days they build immunity 50% faster and resist toxins 25% better. With Biotech the lesson goes into their blood for good: they gain the strong immunity gene. Once every two days.</description>
+    <iconPath>ArcanumAscendant/Spells/Variolation</iconPath>
+    <cooldownTicksRange>120000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>6</range>
+      <warmupTime>3</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>45</manaCost>
+        <tags>
+          <li>Necromancy</li>
+          <li>Plague</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Buff</role>
+        <quirky>true</quirky>
+        <flavor>A little plague now, so the big one finds the door locked.</flavor>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_NecroVariolated</hediff>
+            <severity>1</severity>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Gene">
+            <add>Immunity_Strong</add>
+          </li>
+        </effects>
+        <color>(0.659, 0.847, 0.29, 1)</color>
+        <color2>(0.227, 0.353, 0.071, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Mote</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Spiral</type>
+            <fleck>AA_Fleck_Smoke</fleck>
+            <count>8</count>
+            <speed>1</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Mote</fleck>
+            <count>10</count>
+            <speed>1</speed>
+            <scale>0.4</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1</scale>
+            <scaleEnd>1.8</scaleEnd>
+            <ticks>30</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Necro</castSound>
+        <impactSound>AA_Impact_Necro</impactSound>
+        <style>Plague</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_CarrionBrood</defName>
+    <label>carrion brood</label>
+    <description>Loose your carrion beetles on the dead. Up to four bodies within 3 cells of the target are eaten down to nothing, and the beetles leave behind what they make of them: 10 to 16 insect jelly per body, a sweet food that never spoils. The gear is left behind. It spares the colony's own dead, and dried-out husks have nothing left to give. Twice a day.</description>
+    <iconPath>ArcanumAscendant/Spells/CarrionBrood</iconPath>
+    <cooldownTicksRange>30000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>24</range>
+      <warmupTime>2</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetItems>true</canTargetItems>
+        <canTargetCorpses>true</canTargetCorpses>
+        <canTargetBuildings>false</canTargetBuildings>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>35</manaCost>
+        <tags>
+          <li>Necromancy</li>
+          <li>Plague</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+        <flavor>Waste not, want not. The beetles certainly don't.</flavor>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <radius>3</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_NecromancerRite">
+            <effects>
+              <li Class="ArcanumAscendant.Effect_SpawnItems">
+                <thing>InsectJelly</thing>
+                <count>10~16</count>
+              </li>
+            </effects>
+            <maxCorpses>4</maxCorpses>
+            <consume>true</consume>
+          </li>
+        </effects>
+        <color>(0.659, 0.847, 0.29, 1)</color>
+        <color2>(0.227, 0.353, 0.071, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Mote</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Smoke</fleck>
+            <count>14</count>
+            <speed>1</speed>
+            <scale>1</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.3</scale>
+            <scaleEnd>0.8</scaleEnd>
+            <ticks>24</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Necro</castSound>
+        <impactSound>AA_Impact_Necro</impactSound>
+        <style>Plague</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_PlagueVessel</defName>
+    <label>plague vessel</label>
+    <description>Make an ally the plague's vessel for thirty seconds. Every two seconds every enemy within 3 cells of them catches the black plague, while the vessel itself is spared. An undead thrall makes a perfect vessel: send it into the thick of them.</description>
+    <iconPath>ArcanumAscendant/Spells/PlagueVessel</iconPath>
+    <cooldownTicksRange>1800</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>24</range>
+      <warmupTime>0.6</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>30</manaCost>
+        <tags>
+          <li>Necromancy</li>
+          <li>Plague</li>
+        </tags>
+        <tier>1</tier>
+        <role>Buff</role>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_NecroPlagueVessel</hediff>
+            <severity>1</severity>
+          </li>
+        </effects>
+        <color>(0.659, 0.847, 0.29, 1)</color>
+        <color2>(0.227, 0.353, 0.071, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Mote</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.2</scale>
+            <scaleEnd>1</scaleEnd>
+            <ticks>26</ticks>
+          </li>
+          <li>
+            <type>Spiral</type>
+            <fleck>AA_Fleck_Smoke</fleck>
+            <count>12</count>
+            <speed>2</speed>
+            <scale>0.8</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Necro</castSound>
+        <impactSound>AA_Impact_Necro</impactSound>
+        <style>Plague</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
   <HediffDef>
     <defName>AA_BoneArmor</defName>
     <label>bone armor</label>
@@ -5086,6 +6813,404 @@
         <statFactors>
           <InjuryHealingFactor>0.3</InjuryHealingFactor>
           <IncomingDamageFactor>1.1</IncomingDamageFactor>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_NecroGraft</defName>
+    <label>fresh graft</label>
+    <description>A part taken from the dead and stitched on by necromancy. It aches while it takes.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>true</isBad>
+    <defaultLabelColor>(0.784, 0.604, 0.541, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>180000~180000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(0.784, 0.604, 0.541, 0.9)</color>
+        <texPath></texPath>
+        <emitter>Undead</emitter>
+        <emitInterval>60</emitInterval>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.05</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.05</offset>
+          </li>
+        </capMods>
+        <painOffset>0.1</painOffset>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_NecroVigil</defName>
+    <label>unliving vigil</label>
+    <description>The stillness of the grave: hunger and tiredness have stopped, and pain is dulled.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(0.49, 1, 0.604, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>30000~30000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(0.49, 1, 0.604, 0.9)</color>
+        <texPath></texPath>
+        <emitter>Undead</emitter>
+        <emitInterval>45</emitInterval>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <MoveSpeed>0.95</MoveSpeed>
+        </statFactors>
+        <painFactor>0.5</painFactor>
+        <hungerRateFactor>0</hungerRateFactor>
+        <restFallFactor>0</restFallFactor>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_NecroGraveOath</defName>
+    <label>oath beyond the grave</label>
+    <description>Bound to this body by a necromancer's oath. Death will not keep them down, once.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(0.49, 1, 0.604, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>60000~60000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_RaiseOnDeath">
+        <durationTicks>15000</durationTicks>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath" />
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(0.49, 1, 0.604, 0.9)</color>
+        <texPath></texPath>
+        <emitter>Undead</emitter>
+        <emitInterval>50</emitInterval>
+      </li>
+    </comps>
+    <stages>
+      <li />
+    </stages>
+  </HediffDef>
+  <ThoughtDef>
+    <defName>AA_NecroLastWords</defName>
+    <durationDays>5</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>heard their last words</label>
+        <description>The necromancer let them speak one last time. I said goodbye, and I can let go now.</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>AA_NecroDeadMansGraft</defName>
+    <durationDays>6</durationDays>
+    <stackLimit>1</stackLimit>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>wearing a dead stranger's flesh</label>
+        <description>Part of me used to belong to someone else. It still twitches sometimes.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>AA_NecroGraveStill</defName>
+    <durationDays>0.5</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>grave-still</label>
+        <description>The necromancer stilled my body. I feel like a corpse that forgot to lie down.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <HediffDef>
+    <defName>AA_NecroHollowHeart</defName>
+    <label>hollow heart</label>
+    <description>Their feelings are locked away in a lich's phylactery. No break can reach them, but neither can much else.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(0.604, 0.847, 1, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>120000~120000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(0.604, 0.847, 1, 0.9)</color>
+        <texPath></texPath>
+        <emitter>Chill</emitter>
+        <emitInterval>40</emitInterval>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <JoyGainFactor>0.5</JoyGainFactor>
+          <SocialImpact>0.7</SocialImpact>
+        </statFactors>
+        <blocksMentalBreaks>true</blocksMentalBreaks>
+        <opinionOfOthersFactor>0.5</opinionOfOthersFactor>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_NecroWhispers</defName>
+    <label>whispers of the dead</label>
+    <description>The dead whisper what they once knew.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(0.604, 0.847, 1, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>900~900</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <ResearchSpeed>1.25</ResearchSpeed>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+  <ThingDef>
+    <defName>AA_Construct_BoneScaffold</defName>
+    <label>bone scaffold</label>
+    <description>A lattice of living bone with far too many hands. It builds.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>false</rotatable>
+    <passability>PassThroughOnly</passability>
+    <pathCost>30</pathCost>
+    <fillPercent>0.35</fillPercent>
+    <graphicData>
+      <texPath>ArcanumAscendant/Things/Construct_BoneScaffold</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.4</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Beauty>5</Beauty>
+    </statBases>
+    <building>
+      <claimable>false</claimable>
+      <destroySound>AA_Construct_Break</destroySound>
+    </building>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneConstruct">
+        <defaultLifetimeTicks>60000</defaultLifetimeTicks>
+        <glowColor>(0.91, 0.886, 0.784, 1)</glowColor>
+        <glowSize>1.2</glowSize>
+        <pulseEffects>
+          <li Class="ArcanumAscendant.Effect_Construct">
+            <work>300</work>
+          </li>
+        </pulseEffects>
+        <pulseInterval>2500</pulseInterval>
+        <pulseRadius>7</pulseRadius>
+        <pulseAffects>Allies</pulseAffects>
+      </li>
+    </comps>
+  </ThingDef>
+  <HediffDef>
+    <defName>AA_NecroMarrowBomb</defName>
+    <label>marrow bomb</label>
+    <description>A hollow shambler packed with splintered bone. It will burst when it falls.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(0.91, 0.886, 0.784, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="ArcanumAscendant.HediffCompProperties_DeathBurst">
+        <damageDef>AA_Necrotic</damageDef>
+        <damage>30</damage>
+        <radius>2.5</radius>
+        <color>(0.91, 0.886, 0.784, 1)</color>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_Summoned">
+        <vanishOnDeath>true</vanishOnDeath>
+        <killOnExpire>true</killOnExpire>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(0.91, 0.886, 0.784, 0.9)</color>
+        <texPath>ArcanumAscendant/Vfx/RuneCircle</texPath>
+        <size>1.2</size>
+        <fleck>AA_Fleck_Bone</fleck>
+        <fleckInterval>30</fleckInterval>
+        <emitter>Undead</emitter>
+        <emitInterval>20</emitInterval>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <PainShockThreshold>0.9</PainShockThreshold>
+          <MentalBreakThreshold>-1</MentalBreakThreshold>
+        </statOffsets>
+        <statFactors>
+          <MoveSpeed>1.4</MoveSpeed>
+        </statFactors>
+        <painFactor>0</painFactor>
+        <disablesNeeds>
+          <li>Food</li>
+          <li>Rest</li>
+          <li>Joy</li>
+          <li>Comfort</li>
+          <li>Beauty</li>
+          <li>Outdoors</li>
+          <li>RoomSize</li>
+        </disablesNeeds>
+        <blocksMentalBreaks>true</blocksMentalBreaks>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_NecroVariolated</defName>
+    <label>variolated</label>
+    <description>A measured dose of plague: first a fever, then a body that knows how to fight.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(0.659, 0.847, 0.29, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.05</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>hardened</label>
+        <statOffsets>
+          <ToxicResistance>0.25</ToxicResistance>
+        </statOffsets>
+        <statFactors>
+          <ImmunityGainSpeed>1.5</ImmunityGainSpeed>
+        </statFactors>
+      </li>
+      <li>
+        <minSeverity>0.95</minSeverity>
+        <label>fever</label>
+        <statOffsets>
+          <ToxicResistance>0.25</ToxicResistance>
+        </statOffsets>
+        <statFactors>
+          <ImmunityGainSpeed>1.5</ImmunityGainSpeed>
+        </statFactors>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.15</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.1</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_NecroPlagueVessel</defName>
+    <label>plague vessel</label>
+    <description>The black plague rides this body and leaps to every enemy nearby.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(0.659, 0.847, 0.29, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>1800~1800</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_PeriodicEffects">
+        <interval>120</interval>
+        <areaEffects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_Plague</hediff>
+            <severity>0.5</severity>
+            <stack>true</stack>
+            <maxSeverity>5</maxSeverity>
+            <affects>Enemies</affects>
+          </li>
+        </areaEffects>
+        <areaRadius>3</areaRadius>
+        <color>(0.659, 0.847, 0.29, 1)</color>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(0.659, 0.847, 0.29, 0.9)</color>
+        <texPath></texPath>
+        <emitter>Plague</emitter>
+        <emitInterval>12</emitInterval>
+      </li>
+    </comps>
+    <stages>
+      <li />
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_NecroPlagueDoctor</defName>
+    <label>plague doctor's care</label>
+    <description>A plaguebringer is near, and the body fights sickness harder.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(0.659, 0.847, 0.29, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>900~900</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <ImmunityGainSpeed>1.35</ImmunityGainSpeed>
         </statFactors>
       </li>
     </stages>

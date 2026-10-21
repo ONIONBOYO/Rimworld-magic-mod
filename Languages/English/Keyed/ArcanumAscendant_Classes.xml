@@ -4,13 +4,17 @@
   <AA_Collected>Debt collected</AA_Collected>
   <AA_Cyclone>Cyclone</AA_Cyclone>
   <AA_Doomsday>Midnight</AA_Doomsday>
+  <AA_DruidLongSleepWoke>awake and whole</AA_DruidLongSleepWoke>
   <AA_Enthralled>Enthralled</AA_Enthralled>
   <AA_FateRewritten>Fate rewritten</AA_FateRewritten>
   <AA_Foreclosed>Foreclosed</AA_Foreclosed>
   <AA_ForeverYoung>Forever young</AA_ForeverYoung>
   <AA_Implode>Implosion</AA_Implode>
+  <AA_IncubusHauntWake>A pleasant dream</AA_IncubusHauntWake>
+  <AA_IncubusVisitWake>What a dream...</AA_IncubusVisitWake>
   <AA_LevelFun>=)</AA_LevelFun>
   <AA_LostInBackrooms>Lost in the Backrooms</AA_LostInBackrooms>
+  <AA_NoteComesDue>The note comes due</AA_NoteComesDue>
   <AA_ProphecyFulfilled>As it was foretold</AA_ProphecyFulfilled>
   <AA_ReplayingFootage>Replaying footage</AA_ReplayingFootage>
   <AA_Seal1>The First Seal: Conquest</AA_Seal1>
@@ -22,4 +26,5 @@
   <AA_Seal7>The Seventh Seal: Silence</AA_Seal7>
   <AA_SentenceCarriedOut>Sentence carried out</AA_SentenceCarriedOut>
   <AA_SeventhSeal>The Seventh Seal breaks</AA_SeventhSeal>
+  <AA_SuccubusWokeInLove>Dreamt of love</AA_SuccubusWokeInLove>
 </LanguageData>

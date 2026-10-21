@@ -634,6 +634,116 @@
     <iconPath>ArcanumAscendant/Nodes/Succubus_QueenOfHearts</iconPath>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Succubus_RedThread</defName>
+    <tree>AA_Class_Succubus</tree>
+    <kind>Spell</kind>
+    <x>2</x>
+    <y>1</y>
+    <prerequisites>
+      <li>AA_Node_Succubus_SweetNothings</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_RedThread</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Succubus_Swoon</defName>
+    <tree>AA_Class_Succubus</tree>
+    <kind>Spell</kind>
+    <x>1</x>
+    <y>2</y>
+    <requiredLevel>2</requiredLevel>
+    <prerequisites>
+      <li>AA_Node_Succubus_Captivate</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_Swoon</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Succubus_KissAndMakeUp</defName>
+    <tree>AA_Class_Succubus</tree>
+    <kind>Spell</kind>
+    <x>3</x>
+    <y>2</y>
+    <requiredLevel>2</requiredLevel>
+    <prerequisites>
+      <li>AA_Node_Succubus_RedThread</li>
+      <li>AA_Node_Succubus_Heartbreak</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_KissAndMakeUp</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Succubus_KissOfLife</defName>
+    <tree>AA_Class_Succubus</tree>
+    <kind>Spell</kind>
+    <x>5</x>
+    <y>2</y>
+    <requiredLevel>2</requiredLevel>
+    <prerequisites>
+      <li>AA_Node_Succubus_Glamour</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_KissOfLife</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Succubus_Quickening</defName>
+    <tree>AA_Class_Succubus</tree>
+    <kind>Spell</kind>
+    <x>2</x>
+    <y>3</y>
+    <requiredLevel>3</requiredLevel>
+    <requiredAttribute>AA_Attunement</requiredAttribute>
+    <requiredAttributeValue>5</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Succubus_KissAndMakeUp</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_Quickening</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Succubus_MotherOfHerds</defName>
+    <label>mother of herds</label>
+    <description>Life wants to make more of itself around her. Every hour, colonists and tame animals within ten cells grow more fertile for two hours (Biotech: fertility x1.5), and tame animals' milk, wool and eggs come 2% sooner.</description>
+    <tree>AA_Class_Succubus</tree>
+    <kind>Notable</kind>
+    <x>3</x>
+    <y>4</y>
+    <requiredLevel>5</requiredLevel>
+    <requiredAttribute>AA_Attunement</requiredAttribute>
+    <requiredAttributeValue>6</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Succubus_Quickening</li>
+      <li>AA_Node_Succubus_KissOfYouth</li>
+    </prerequisites>
+    <passives>
+      <li Class="ArcanumAscendant.P_Aura">
+        <radius>10</radius>
+        <interval>2500</interval>
+        <affects>Allies</affects>
+        <color>(1, 0.37, 0.64, 1)</color>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_Fecund</hediff>
+            <severity>1</severity>
+          </li>
+          <li Class="ArcanumAscendant.Effect_AnimalProduce">
+            <fraction>0.02</fraction>
+          </li>
+        </effects>
+      </li>
+    </passives>
+    <iconPath>ArcanumAscendant/Nodes/Succubus_MotherOfHerds</iconPath>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Succubus_TwinBlessing</defName>
+    <tree>AA_Class_Succubus</tree>
+    <kind>Spell</kind>
+    <x>2</x>
+    <y>5</y>
+    <requiredLevel>7</requiredLevel>
+    <requiredAttribute>AA_Attunement</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Succubus_MotherOfHerds</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_TwinBlessing</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Temptress_Enthrall</defName>
     <tree>AA_Class_Temptress</tree>
     <kind>Spell</kind>
@@ -1040,6 +1150,74 @@
       <li>AA_Node_Temptress_Heartless</li>
     </prerequisites>
     <unlockSpell>AA_Spell_HaremOfTheDamned</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Temptress_HoneyedWords</defName>
+    <tree>AA_Class_Temptress</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>0</y>
+    <requiredLevel>7</requiredLevel>
+    <unlockSpell>AA_Spell_HoneyedWords</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Temptress_SweetCaptivity</defName>
+    <label>sweet captivity</label>
+    <description>Prisoners can't help falling for her. Every hour, prisoners within nine cells lose 0.5 resistance and 0.1 will, and slaves grow 2% more suppressed (Ideology).</description>
+    <tree>AA_Class_Temptress</tree>
+    <kind>Notable</kind>
+    <x>0</x>
+    <y>3</y>
+    <requiredLevel>12</requiredLevel>
+    <requiredAttribute>AA_Attunement</requiredAttribute>
+    <requiredAttributeValue>9</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Temptress_Puppeteer</li>
+    </prerequisites>
+    <passives>
+      <li Class="ArcanumAscendant.P_Aura">
+        <radius>9</radius>
+        <interval>2500</interval>
+        <affects>Allies</affects>
+        <color>(1, 0.37, 0.64, 1)</color>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Prisoner">
+            <resistance>0.5</resistance>
+            <will>0.1</will>
+            <suppression>0.02</suppression>
+          </li>
+        </effects>
+      </li>
+    </passives>
+    <iconPath>ArcanumAscendant/Nodes/Temptress_SweetCaptivity</iconPath>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Temptress_GentlemenCallers</defName>
+    <tree>AA_Class_Temptress</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>3</y>
+    <requiredLevel>12</requiredLevel>
+    <requiredAttribute>AA_Attunement</requiredAttribute>
+    <requiredAttributeValue>9</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Temptress_Siren</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_GentlemenCallers</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Temptress_HomewardHeart</defName>
+    <tree>AA_Class_Temptress</tree>
+    <kind>Spell</kind>
+    <x>5</x>
+    <y>4</y>
+    <requiredLevel>14</requiredLevel>
+    <requiredAttribute>AA_Attunement</requiredAttribute>
+    <requiredAttributeValue>10</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Temptress_Adoration</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_HomewardHeart</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_ThiefOfYears_WitheringKiss</defName>
@@ -1451,6 +1629,46 @@
     <unlockSpell>AA_Spell_EternalBeauty</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_ThiefOfYears_BorrowedMonths</defName>
+    <tree>AA_Class_ThiefOfYears</tree>
+    <kind>Spell</kind>
+    <x>4</x>
+    <y>1</y>
+    <requiredLevel>8</requiredLevel>
+    <prerequisites>
+      <li>AA_Node_ThiefOfYears_Timeless</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_BorrowedMonths</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_ThiefOfYears_TimesRuin</defName>
+    <tree>AA_Class_ThiefOfYears</tree>
+    <kind>Spell</kind>
+    <x>2</x>
+    <y>3</y>
+    <requiredLevel>12</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>9</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_ThiefOfYears_TimesToll</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_TimesRuin</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_ThiefOfYears_StolenSummers</defName>
+    <tree>AA_Class_ThiefOfYears</tree>
+    <kind>Spell</kind>
+    <x>4</x>
+    <y>3</y>
+    <requiredLevel>12</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>9</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_ThiefOfYears_FountainOfYouth</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_StolenSummers</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_NightmareMuse_Sleepsong</defName>
     <tree>AA_Class_NightmareMuse</tree>
     <kind>Spell</kind>
@@ -1848,6 +2066,76 @@
       <li>AA_Node_NightmareMuse_NightmareQueen</li>
     </prerequisites>
     <unlockSpell>AA_Spell_EndlessNight</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_NightmareMuse_BelovedDream</defName>
+    <tree>AA_Class_NightmareMuse</tree>
+    <kind>Spell</kind>
+    <x>4</x>
+    <y>1</y>
+    <requiredLevel>8</requiredLevel>
+    <prerequisites>
+      <li>AA_Node_NightmareMuse_Moonlit</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_BelovedDream</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_NightmareMuse_SweetOblivion</defName>
+    <tree>AA_Class_NightmareMuse</tree>
+    <kind>Spell</kind>
+    <x>0</x>
+    <y>3</y>
+    <requiredLevel>12</requiredLevel>
+    <requiredAttribute>AA_Attunement</requiredAttribute>
+    <requiredAttributeValue>9</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_NightmareMuse_Drowsy</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_SweetOblivion</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_NightmareMuse_StolenSleep</defName>
+    <tree>AA_Class_NightmareMuse</tree>
+    <kind>Spell</kind>
+    <x>2</x>
+    <y>3</y>
+    <requiredLevel>12</requiredLevel>
+    <requiredAttribute>AA_Attunement</requiredAttribute>
+    <requiredAttributeValue>9</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_NightmareMuse_DreadDream</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_StolenSleep</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_NightmareMuse_MoonlitVigil</defName>
+    <label>moonlit vigil</label>
+    <description>She keeps watch over sleepers. Allies within ten cells of her rest 30% faster in their sleep and are a little harder to break (-3% mental break threshold).</description>
+    <tree>AA_Class_NightmareMuse</tree>
+    <kind>Notable</kind>
+    <x>6</x>
+    <y>3</y>
+    <requiredLevel>12</requiredLevel>
+    <requiredAttribute>AA_Attunement</requiredAttribute>
+    <requiredAttributeValue>9</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_NightmareMuse_Somnolence</li>
+    </prerequisites>
+    <passives>
+      <li Class="ArcanumAscendant.P_Aura">
+        <radius>10</radius>
+        <interval>1250</interval>
+        <affects>Allies</affects>
+        <color>(0.69, 0.48, 1, 1)</color>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_MoonlitRest</hediff>
+            <severity>1</severity>
+          </li>
+        </effects>
+      </li>
+    </passives>
+    <iconPath>ArcanumAscendant/Nodes/NightmareMuse_MoonlitVigil</iconPath>
   </ArcanumAscendant.ArcaneNodeDef>
   <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_BlownKiss</defName>
@@ -2926,6 +3214,585 @@
     <warmupStartSound>AA_Charge</warmupStartSound>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_RedThread</defName>
+    <label>red thread of fate</label>
+    <description>Tie a red thread between a colonist and the one fate meant for them: their partner if they have one, otherwise their best match on the map. Both gain +20 opinion of each other for ten days and a +6 mood memory for two; if both are single adults who could love each other, they become lovers.</description>
+    <iconPath>ArcanumAscendant/Spells/RedThread</iconPath>
+    <cooldownTicksRange>120000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>30</range>
+      <warmupTime>2</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>50</manaCost>
+        <tags>
+          <li>Desire</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+        <flavor>Some threads were always there. She just pulls them tight.</flavor>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Matchmake">
+            <mode>BestMatch</mode>
+            <relation>Lover</relation>
+            <opinionThought>AA_RedThreadOpinion</opinionThought>
+            <moodThought>AA_RedThreadMood</moodThought>
+          </li>
+        </effects>
+        <color>(1, 0.373, 0.635, 1)</color>
+        <color2>(1, 0.82, 0.91, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Petal</fleck>
+            <count>12</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.4</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>30</ticks>
+            <useColor2>true</useColor2>
+          </li>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.2</scale>
+            <scaleEnd>0.9</scaleEnd>
+            <ticks>26</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Desire</castSound>
+        <impactSound>AA_Impact_Desire</impactSound>
+        <style>Desire</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_KissAndMakeUp</defName>
+    <label>kiss and make up</label>
+    <description>Kiss a colonist on the cheek and the feud they nurse against their worst rival in the colony is over: both gain +35 opinion of each other for ten days and +4 mood for a day. One time in three, if both are single adults who could love each other, the old enemies fall in love instead.</description>
+    <iconPath>ArcanumAscendant/Spells/KissAndMakeUp</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>24</range>
+      <warmupTime>1.5</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>40</manaCost>
+        <tags>
+          <li>Desire</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+        <flavor>'I hate him.' 'I know, darling. Kiss him anyway.'</flavor>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_SuccubusReconcile">
+            <opinionThought>AA_MadeUpOpinion</opinionThought>
+            <moodThought>AA_MadeUpMood</moodThought>
+            <loveChance>0.33</loveChance>
+          </li>
+        </effects>
+        <color>(1, 0.373, 0.635, 1)</color>
+        <color2>(1, 0.82, 0.91, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Petal</fleck>
+            <count>12</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.4</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>30</ticks>
+            <useColor2>true</useColor2>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Desire</castSound>
+        <impactSound>AA_Impact_Desire</impactSound>
+        <style>Desire</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_Quickening</defName>
+    <label>quickening</label>
+    <description>Lay a hand on a woman, her partner or a tame animal and bless them with a child. The woman and her partner conceive at once (Biotech), or the animal and the nearest mate of its kind within twenty cells do; an egg-layer's next eggs are fertile. The usual rules still apply: the sterile, the too young and the too old cannot be helped.</description>
+    <iconPath>ArcanumAscendant/Spells/Quickening</iconPath>
+    <cooldownTicksRange>120000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>6</range>
+      <warmupTime>3</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>60</manaCost>
+        <tags>
+          <li>Desire</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Conceive">
+            <mateRadius>20</mateRadius>
+          </li>
+        </effects>
+        <color>(1, 0.373, 0.635, 1)</color>
+        <color2>(1, 0.82, 0.91, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Petal</fleck>
+            <count>16</count>
+            <speed>1.2</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>8</count>
+            <speed>1</speed>
+            <scale>0.4</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.6</scaleEnd>
+            <ticks>40</ticks>
+            <useColor2>true</useColor2>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Desire</castSound>
+        <impactSound>AA_Impact_Desire</impactSound>
+        <style>Desire</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_TwinBlessing</defName>
+    <label>blessing of twins</label>
+    <description>Bless a woman or a female animal, pregnant or not: her next birth within thirty days brings twins or triplets (even odds), or for an animal one or two extra litters. Until then she is half again as fertile (Biotech).</description>
+    <iconPath>ArcanumAscendant/Spells/TwinBlessing</iconPath>
+    <cooldownTicksRange>300000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>6</range>
+      <warmupTime>3</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>80</manaCost>
+        <tags>
+          <li>Desire</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+        <flavor>Two cradles. Just in case. Make it three.</flavor>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_TwinBlessing</hediff>
+            <severity>1</severity>
+          </li>
+        </effects>
+        <color>(1, 0.373, 0.635, 1)</color>
+        <color2>(1, 0.82, 0.91, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Pillar</type>
+            <scale>1</scale>
+            <ticks>40</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>14</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Petal</fleck>
+            <count>14</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Desire</castSound>
+        <impactSound>AA_Impact_Desire</impactSound>
+        <style>Desire</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_Swoon</defName>
+    <label>swoon</label>
+    <description>Whisper something to an enemy that is already yours. With at least three stacks of Infatuation (all spent) it swoons, fainting dead away for a minute and a half, unhurt and helpless: long enough to carry it off as a prisoner. Bosses, machines and creatures much bigger than a person are unmoved.</description>
+    <iconPath>ArcanumAscendant/Spells/Swoon</iconPath>
+    <cooldownTicksRange>1500</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>24</range>
+      <warmupTime>0.6</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>30</manaCost>
+        <tags>
+          <li>Desire</li>
+          <li>Charm</li>
+        </tags>
+        <tier>2</tier>
+        <role>Control</role>
+        <flavor>Oh. Oh my.</flavor>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_SuccubusHeartsDue">
+            <stackHediff>AA_Infatuation</stackHediff>
+            <minStacks>3</minStacks>
+            <effects>
+              <li Class="ArcanumAscendant.Effect_Hediff">
+                <hediff>AA_Swooning</hediff>
+                <severity>1</severity>
+              </li>
+            </effects>
+            <maxBodySize>2.5</maxBodySize>
+            <fleshOnly>true</fleshOnly>
+          </li>
+        </effects>
+        <color>(1, 0.373, 0.635, 1)</color>
+        <color2>(1, 0.82, 0.91, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>1.8</scale>
+            <scaleEnd>2.16</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Petal</fleck>
+            <count>6</count>
+            <speed>2</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1</scale>
+            <scaleEnd>2</scaleEnd>
+            <ticks>18</ticks>
+            <useColor2>true</useColor2>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Feather</fleck>
+            <count>8</count>
+            <speed>1</speed>
+            <scale>0.5</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Desire</castSound>
+        <impactSound>AA_Impact_Desire</impactSound>
+        <style>Desire</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_KissOfLife</defName>
+    <label>kiss of life</label>
+    <description>Kiss a fallen ally back onto their feet. For thirty seconds pain does not reach them at all, which is enough to stand up and get clear if it was only the pain that dropped them; they also heal 12 and think fondly of you (+12 opinion for ten days). When the kiss fades, the pain returns.</description>
+    <iconPath>ArcanumAscendant/Spells/KissOfLife</iconPath>
+    <cooldownTicksRange>3600</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>3.9</range>
+      <warmupTime>1</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>30</manaCost>
+        <tags>
+          <li>Desire</li>
+          <li>Healing</li>
+        </tags>
+        <tier>2</tier>
+        <role>Heal</role>
+        <autocastByDefault>true</autocastByDefault>
+        <aiHealthThreshold>0.3</aiHealthThreshold>
+        <aiAllowedUndrafted>true</aiAllowedUndrafted>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_KissOfLife</hediff>
+            <severity>1</severity>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Heal">
+            <amount>12</amount>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Thought">
+            <thought>AA_KissOfLifeOpinion</thought>
+            <toCaster>true</toCaster>
+          </li>
+        </effects>
+        <color>(1, 0.373, 0.635, 1)</color>
+        <color2>(1, 0.82, 0.91, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Petal</fleck>
+            <count>12</count>
+            <speed>1.5</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.4</scaleEnd>
+            <ticks>30</ticks>
+          </li>
+          <li>
+            <type>Flash</type>
+            <scale>1.8</scale>
+            <scaleEnd>2.16</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Desire</castSound>
+        <impactSound>AA_Impact_Desire</impactSound>
+        <style>Desire</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_Enthrall</defName>
     <label>enthrall</label>
     <description>Hold an enemy's gaze until it forgets everything else: transfixed for six seconds, and three stacks of Infatuation.</description>
@@ -3534,6 +4401,286 @@
     <targetRequired>false</targetRequired>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_HoneyedWords</defName>
+    <label>honeyed words</label>
+    <description>Flirt shamelessly with a visitor, a trader or even a captive: their faction warms to the colony (+8 goodwill, except with factions that will never make peace), and for six hours you drive a harder bargain: +12% trade prices, +30% negotiation ability and +20% social impact.</description>
+    <iconPath>ArcanumAscendant/Spells/HoneyedWords</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>12</range>
+      <warmupTime>2</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>40</manaCost>
+        <tags>
+          <li>Desire</li>
+          <li>Charm</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+        <flavor>'For you? Half price.' He has no idea why he said it.</flavor>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>AllButSelf</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Goodwill">
+            <amount>8</amount>
+          </li>
+        </effects>
+        <casterEffects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_SweetTalking</hediff>
+            <severity>1</severity>
+          </li>
+        </casterEffects>
+        <color>(1, 0.478, 0.722, 1)</color>
+        <color2>(1, 0.941, 0.965, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Petal</fleck>
+            <count>12</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.4</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>30</ticks>
+            <useColor2>true</useColor2>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Desire</castSound>
+        <impactSound>AA_Impact_Desire</impactSound>
+        <style>Desire</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_GentlemenCallers</defName>
+    <label>gentlemen callers</label>
+    <description>Let word of your beauty slip beyond the colony. Within moments admirers come calling: a trade caravan or a group of friendly visitors arrives at the edge of the map, if any faction is willing to send one.</description>
+    <iconPath>ArcanumAscendant/Spells/GentlemenCallers</iconPath>
+    <cooldownTicksRange>180000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>0</range>
+      <warmupTime>4</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <drawAimPie>false</drawAimPie>
+      <targetable>false</targetable>
+      <nonInterruptingSelfCast>false</nonInterruptingSelfCast>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>70</manaCost>
+        <tags>
+          <li>Desire</li>
+          <li>Charm</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+        <flavor>They always bring flowers. And silver.</flavor>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Self</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Incident">
+            <options>
+              <li>TraderCaravanArrival</li>
+              <li>VisitorGroup</li>
+            </options>
+          </li>
+        </effects>
+        <color>(1, 0.478, 0.722, 1)</color>
+        <color2>(1, 0.941, 0.965, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.2</scale>
+            <scaleEnd>1.2</scaleEnd>
+            <ticks>40</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Petal</fleck>
+            <count>24</count>
+            <speed>2.5</speed>
+            <scale>0.6</scale>
+          </li>
+          <li>
+            <type>Pillar</type>
+            <scale>1.2</scale>
+            <ticks>40</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Desire</castSound>
+        <impactSound>AA_Impact_Desire</impactSound>
+        <style>Desire</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+    <targetRequired>false</targetRequired>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_HomewardHeart</defName>
+    <label>homeward heart</label>
+    <description>Remind every smitten enemy within nine cells of the sweetheart waiting at home. Each one with at least two stacks of Infatuation (all spent) loses the will to fight: people give up the raid and flee the map, while beasts and machines just run from you for eight seconds. Bosses are unmoved.</description>
+    <iconPath>ArcanumAscendant/Spells/HomewardHeart</iconPath>
+    <cooldownTicksRange>3600</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>0</range>
+      <warmupTime>1.2</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <drawAimPie>false</drawAimPie>
+      <targetable>false</targetable>
+      <nonInterruptingSelfCast>false</nonInterruptingSelfCast>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>60</manaCost>
+        <tags>
+          <li>Desire</li>
+          <li>Charm</li>
+        </tags>
+        <tier>3</tier>
+        <role>Control</role>
+        <flavor>Go home. She's waiting. She always was.</flavor>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Nova</delivery>
+        <affects>Enemies</affects>
+        <radius>9</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_SuccubusHeartsDue">
+            <stackHediff>AA_Infatuation</stackHediff>
+            <minStacks>2</minStacks>
+            <effects>
+              <li Class="ArcanumAscendant.Effect_MentalState">
+                <state>PanicFlee</state>
+                <humanlikeOnly>true</humanlikeOnly>
+              </li>
+              <li Class="ArcanumAscendant.Effect_Hediff">
+                <hediff>AA_Heartsick</hediff>
+                <severity>1</severity>
+              </li>
+            </effects>
+          </li>
+        </effects>
+        <color>(1, 0.478, 0.722, 1)</color>
+        <color2>(1, 0.941, 0.965, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.1</scale>
+            <scaleEnd>1.2</scaleEnd>
+            <ticks>40</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Petal</fleck>
+            <count>30</count>
+            <speed>3</speed>
+            <scale>0.6</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+        </impactVfx>
+        <castSound>AA_Heartbeat</castSound>
+        <impactSound>AA_Impact_Desire</impactSound>
+        <style>Desire</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+    <targetRequired>false</targetRequired>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_WitheringKiss</defName>
     <label>withering kiss</label>
     <description>A long, cold kiss: the target ages five years, may develop the ailments of old age, and very old enemies crumble. You grow a year younger.</description>
@@ -4130,6 +5277,301 @@
     <targetRequired>false</targetRequired>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_BorrowedMonths</defName>
+    <label>borrowed months</label>
+    <description>Spend some of your stolen time on an expectant mother, person or animal: her pregnancy jumps five days ahead (more with greater healing power, never past the birth itself). The time comes out of your own hoard: you age half a year.</description>
+    <iconPath>ArcanumAscendant/Spells/BorrowedMonths</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>6</range>
+      <warmupTime>2</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>45</manaCost>
+        <tags>
+          <li>Desire</li>
+          <li>Time</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Gestate">
+            <days>5</days>
+          </li>
+        </effects>
+        <casterEffects>
+          <li Class="ArcanumAscendant.Effect_AgeShift">
+            <years>0.5</years>
+            <scaleWithPower>false</scaleWithPower>
+          </li>
+        </casterEffects>
+        <color>(1, 0.69, 0.816, 1)</color>
+        <color2>(0.541, 0.125, 0.314, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Petal</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Clock</fleck>
+            <count>10</count>
+            <speed>1.2</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Petal</fleck>
+            <count>8</count>
+            <speed>1.2</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.4</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>30</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Desire</castSound>
+        <impactSound>AA_Impact_Desire</impactSound>
+        <style>Time</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_StolenSummers</defName>
+    <label>stolen summers</label>
+    <description>Pour summers stolen from your enemies into the children around a point: every child within four cells gains 8 growth points (more with greater healing power) and half a bar of learning, and babies get to play (Biotech).</description>
+    <iconPath>ArcanumAscendant/Spells/StolenSummers</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>24</range>
+      <warmupTime>2</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>50</manaCost>
+        <tags>
+          <li>Desire</li>
+          <li>Time</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <radius>4</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_ChildGrowth">
+            <points>8</points>
+            <learning>0.5</learning>
+          </li>
+        </effects>
+        <color>(1, 0.69, 0.816, 1)</color>
+        <color2>(0.541, 0.125, 0.314, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Petal</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.2</scale>
+            <scaleEnd>1</scaleEnd>
+            <ticks>30</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Clock</fleck>
+            <count>14</count>
+            <speed>1.5</speed>
+            <scale>0.5</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>10</count>
+            <speed>1.2</speed>
+            <scale>0.5</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Desire</castSound>
+        <impactSound>AA_Impact_Desire</impactSound>
+        <style>Time</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_TimesRuin</defName>
+    <label>time's ruin</label>
+    <description>Let a century pass over an area in a heartbeat. Walls, sandbags, turrets and every other building there that is not your colony's take heavy damage (180) as they crumble with age, and every enemy inside ages two years and takes a little damage. Cover does not last forever.</description>
+    <iconPath>ArcanumAscendant/Spells/TimesRuin</iconPath>
+    <cooldownTicksRange>2100</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>28</range>
+      <warmupTime>1</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>50</manaCost>
+        <tags>
+          <li>Desire</li>
+          <li>Time</li>
+        </tags>
+        <tier>3</tier>
+        <role>Attack</role>
+        <autocastByDefault>true</autocastByDefault>
+        <aiMinEnemiesInRadius>2</aiMinEnemiesInRadius>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <radius>3</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Damage">
+            <amount>6</amount>
+            <damageBuildings>true</damageBuildings>
+            <buildingFactor>30</buildingFactor>
+          </li>
+          <li Class="ArcanumAscendant.Effect_AgeShift">
+            <years>2</years>
+            <ailmentChance>0.1</ailmentChance>
+          </li>
+        </effects>
+        <color>(1, 0.69, 0.816, 1)</color>
+        <color2>(0.541, 0.125, 0.314, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Petal</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.2</scale>
+            <scaleEnd>1</scaleEnd>
+            <ticks>30</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Clock</fleck>
+            <count>18</count>
+            <speed>1.6</speed>
+            <scale>0.6</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Smoke</type>
+            <count>5</count>
+            <scale>1.2</scale>
+            <speed>1</speed>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Desire</castSound>
+        <impactSound>AA_Impact_Desire</impactSound>
+        <style>Time</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_Sleepsong</defName>
     <label>sleepsong</label>
     <description>Sing a lullaby over an area. Enemies inside fall into a dream for ten seconds and stand where they are until something hurts them.</description>
@@ -4724,6 +6166,310 @@
     <warmupStartSound>AA_Charge</warmupStartSound>
     <targetRequired>false</targetRequired>
   </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_BelovedDream</defName>
+    <label>dream of the beloved</label>
+    <description>Breathe a sweet dream over everyone within three cells who sleeps in the next day. After at least four hours of sleep they wake glowing: +8 mood for a day, +15% rest and +25% recreation, and if they have a lover, +15 opinion of them for five days. Cast it over a couple's bed and they wake up thinking only of each other.</description>
+    <iconPath>ArcanumAscendant/Spells/BelovedDream</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>30</range>
+      <warmupTime>1.5</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>35</manaCost>
+        <tags>
+          <li>Desire</li>
+          <li>Dream</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+        <flavor>Sleep, sweethearts. I'll keep the bad dreams for myself.</flavor>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <radius>3</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_BelovedDream</hediff>
+            <severity>1</severity>
+          </li>
+        </effects>
+        <color>(0.69, 0.478, 1, 1)</color>
+        <color2>(1, 0.612, 0.878, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Mote</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.2</scale>
+            <scaleEnd>1</scaleEnd>
+            <ticks>30</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>14</count>
+            <speed>1</speed>
+            <scale>0.5</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Petal</fleck>
+            <count>10</count>
+            <speed>1</speed>
+            <scale>0.5</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Desire</castSound>
+        <impactSound>AA_Impact_Desire</impactSound>
+        <style>Desire</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_SweetOblivion</defName>
+    <label>sweet oblivion</label>
+    <description>Sing someone out of a mental break, even a violent one: the break ends at once, they lie down where they stand and fall asleep, and wake up feeling lighter (+5 mood for a day). It works just as well on a colonist who simply needs to sleep right now.</description>
+    <iconPath>ArcanumAscendant/Spells/SweetOblivion</iconPath>
+    <cooldownTicksRange>30000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>24</range>
+      <warmupTime>1</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>40</manaCost>
+        <tags>
+          <li>Desire</li>
+          <li>Dream</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>All</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Calm">
+            <violent>true</violent>
+            <thought>AA_SweetOblivionMood</thought>
+          </li>
+          <li Class="ArcanumAscendant.Effect_SleepNow">
+            <inBed>false</inBed>
+          </li>
+        </effects>
+        <color>(0.69, 0.478, 1, 1)</color>
+        <color2>(1, 0.612, 0.878, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Mote</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>12</count>
+            <speed>1</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.6</scaleEnd>
+            <ticks>40</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Note</fleck>
+            <count>6</count>
+            <speed>1</speed>
+            <scale>0.5</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Desire</castSound>
+        <impactSound>AA_Impact_Desire</impactSound>
+        <style>Desire</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_StolenSleep</defName>
+    <label>stolen sleep</label>
+    <description>Steal every last scrap of sleep out of an enemy: its rest is emptied and it turns drowsy for thirty seconds (25% slower, 30% slower to aim, a little dazed). An enemy left on empty for long collapses asleep where it stands. The stolen sleep refreshes every ally within five cells of it (+25% rest).</description>
+    <iconPath>ArcanumAscendant/Spells/StolenSleep</iconPath>
+    <cooldownTicksRange>1200</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>26</range>
+      <warmupTime>0.6</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>30</manaCost>
+        <tags>
+          <li>Desire</li>
+          <li>Dream</li>
+        </tags>
+        <tier>2</tier>
+        <role>Control</role>
+        <autocastByDefault>true</autocastByDefault>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Need">
+            <need>Rest</need>
+            <amount>-1</amount>
+            <affects>Enemies</affects>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_Drowsy</hediff>
+            <severity>1</severity>
+            <affects>Enemies</affects>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Need">
+            <need>Rest</need>
+            <amount>0.25</amount>
+            <affects>Allies</affects>
+            <radius>5</radius>
+          </li>
+        </effects>
+        <color>(0.69, 0.478, 1, 1)</color>
+        <color2>(1, 0.612, 0.878, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Mote</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Flash</type>
+            <scale>1.8</scale>
+            <scaleEnd>2.16</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Petal</fleck>
+            <count>6</count>
+            <speed>2</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1</scale>
+            <scaleEnd>2</scaleEnd>
+            <ticks>18</ticks>
+            <useColor2>true</useColor2>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>10</count>
+            <speed>1.2</speed>
+            <scale>0.5</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Desire</castSound>
+        <impactSound>AA_Impact_Desire</impactSound>
+        <style>Desire</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
   <HediffDef>
     <defName>AA_Infatuation</defName>
     <label>infatuation</label>
@@ -5168,4 +6914,398 @@
       </li>
     </stages>
   </HediffDef>
+  <HediffDef>
+    <defName>AA_Swooning</defName>
+    <label>swooning</label>
+    <description>Fainted dead away from sheer longing. It lies where it fell, unhurt and quite unable to fight, until the swoon passes: long enough to be carried off and taken prisoner.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>true</isBad>
+    <defaultLabelColor>(1, 0.373, 0.635, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>5400~5400</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(1, 0.373, 0.635, 0.9)</color>
+        <texPath></texPath>
+        <emitter>Charm</emitter>
+        <emitInterval>16</emitInterval>
+        <overlayTex>ArcanumAscendant/Vfx/Heart</overlayTex>
+        <overlaySize>0.4</overlaySize>
+        <overlayZ>0.9</overlayZ>
+        <overlayPulse>true</overlayPulse>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.1</setMax>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_KissOfLife</defName>
+    <label>kiss of life</label>
+    <description>Kissed back onto their feet: for half a minute pain simply does not reach them. When the kiss fades, the pain comes back.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(1, 0.82, 0.91, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>1800~1800</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(1, 0.82, 0.91, 0.9)</color>
+        <texPath></texPath>
+        <emitter>Charm</emitter>
+        <emitInterval>12</emitInterval>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <PainShockThreshold>0.5</PainShockThreshold>
+        </statOffsets>
+        <painFactor>0</painFactor>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_TwinBlessing</defName>
+    <label>blessing of twins</label>
+    <description>A succubus has blessed this womb. The next birth brings twins or triplets (for an animal, one or two extra litters), and until then she is more fertile.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(1, 0.373, 0.635, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>1800000~1800000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_MultipleBirth">
+        <extraMin>1</extraMin>
+        <extraMax>2</extraMax>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(1, 0.373, 0.635, 0.9)</color>
+        <texPath></texPath>
+        <emitter>Charm</emitter>
+        <emitInterval>90</emitInterval>
+      </li>
+    </comps>
+    <stages>
+      <li />
+    </stages>
+    <modExtensions>
+      <li Class="ArcanumAscendant.DlcStatModifiers">
+        <entries>
+          <li>
+            <stat>Fertility</stat>
+            <factor>true</factor>
+            <value>1.5</value>
+          </li>
+        </entries>
+      </li>
+    </modExtensions>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_Fecund</defName>
+    <label>fecund</label>
+    <description>Near a succubus, life wants to make more of itself: more fertile for a while (Biotech).</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(1, 0.82, 0.91, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>5000~5000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <stages>
+      <li />
+    </stages>
+    <modExtensions>
+      <li Class="ArcanumAscendant.DlcStatModifiers">
+        <entries>
+          <li>
+            <stat>Fertility</stat>
+            <factor>true</factor>
+            <value>1.5</value>
+          </li>
+        </entries>
+      </li>
+    </modExtensions>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_SweetTalking</defName>
+    <label>sweet-talking</label>
+    <description>Still glowing from a shameless flirt: a harder bargain, a sweeter tongue.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(1, 0.82, 0.91, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>15000~15000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(1, 0.82, 0.91, 0.9)</color>
+        <texPath></texPath>
+        <emitter>Charm</emitter>
+        <emitInterval>60</emitInterval>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <TradePriceImprovement>0.12</TradePriceImprovement>
+          <NegotiationAbility>0.3</NegotiationAbility>
+          <SocialImpact>0.2</SocialImpact>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_Heartsick</defName>
+    <label>heartsick</label>
+    <description>Thinking only of the one waiting at home. It wants nothing more to do with this fight.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>true</isBad>
+    <defaultLabelColor>(1, 0.373, 0.635, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>480~480</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_Compel">
+        <mode>Flee</mode>
+        <affectsMechs>true</affectsMechs>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(1, 0.373, 0.635, 0.9)</color>
+        <texPath></texPath>
+        <emitter>Charm</emitter>
+        <emitInterval>10</emitInterval>
+      </li>
+    </comps>
+    <stages>
+      <li />
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_BelovedDream</defName>
+    <label>dream of the beloved</label>
+    <description>Tonight this sleeper will dream of the one they love. After at least four hours of sleep they wake glowing, rested and thinking only of their beloved.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(0.69, 0.478, 1, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>60000~60000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_WakeThought">
+        <thought>AA_BelovedDreamMood</thought>
+        <socialThought>AA_BelovedDreamOpinion</socialThought>
+        <subject>Lover</subject>
+        <minSleepHours>4</minSleepHours>
+        <rest>0.15</rest>
+        <joy>0.25</joy>
+        <textKey>AA_SuccubusWokeInLove</textKey>
+        <color>(1, 0.612, 0.878, 1)</color>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(0.69, 0.478, 1, 0.9)</color>
+        <texPath></texPath>
+        <emitter>Dream</emitter>
+        <emitInterval>45</emitInterval>
+      </li>
+    </comps>
+    <stages>
+      <li />
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_Drowsy</defName>
+    <label>drowsy</label>
+    <description>Its sleep has been stolen: eyelids drooping, it moves and aims like a sleepwalker.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>true</isBad>
+    <defaultLabelColor>(0.69, 0.478, 1, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>1800~1800</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(0.69, 0.478, 1, 0.9)</color>
+        <texPath></texPath>
+        <emitter>Dream</emitter>
+        <emitInterval>14</emitInterval>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statFactors>
+          <MoveSpeed>0.75</MoveSpeed>
+          <AimingDelayFactor>1.3</AimingDelayFactor>
+        </statFactors>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.15</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>AA_MoonlitRest</defName>
+    <label>moonlit rest</label>
+    <description>Sleeping near a Nightmare Muse, who keeps the bad dreams away: rest comes faster and the mind is steadier.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(0.69, 0.478, 1, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>2500~2500</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <MentalBreakThreshold>-0.03</MentalBreakThreshold>
+        </statOffsets>
+        <statFactors>
+          <RestRateMultiplier>1.3</RestRateMultiplier>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+  <ThoughtDef>
+    <defName>AA_RedThreadOpinion</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>10</durationDays>
+    <stackLimit>10</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>red thread of fate</label>
+        <description>A red thread ties my heart to theirs.</description>
+        <baseOpinionOffset>20</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>AA_RedThreadMood</defName>
+    <durationDays>2</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>red thread of fate</label>
+        <description>A succubus tied a red thread between my heart and someone else's. I can feel it tug.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>AA_MadeUpOpinion</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>10</durationDays>
+    <stackLimit>10</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>kissed and made up</label>
+        <description>We fought for so long. I can't even remember why any more.</description>
+        <baseOpinionOffset>35</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>AA_MadeUpMood</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>made up with an old rival</label>
+        <description>An old feud is over. It feels like putting down something heavy.</description>
+        <baseMoodEffect>4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>AA_KissOfLifeOpinion</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>10</durationDays>
+    <stackLimit>10</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>kissed me back to life</label>
+        <description>I was down, and she kissed me back onto my feet.</description>
+        <baseOpinionOffset>12</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>AA_BelovedDreamMood</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>dreamt of love</label>
+        <description>I dreamt of love all night long, and I woke up smiling.</description>
+        <baseMoodEffect>8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>AA_BelovedDreamOpinion</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>5</durationDays>
+    <stackLimit>10</stackLimit>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+    <stages>
+      <li>
+        <label>dreamt of them</label>
+        <description>I dreamt of them all night. I can't stop thinking about them.</description>
+        <baseOpinionOffset>15</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>AA_SweetOblivionMood</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>slept it off</label>
+        <description>Whatever came over me, I slept it off. I feel strangely light.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
 </Defs>

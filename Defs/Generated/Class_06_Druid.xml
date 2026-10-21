@@ -617,6 +617,117 @@
     <unlockSpell>AA_Spell_HornetSwarm</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Druid_GatherSimples</defName>
+    <tree>AA_Class_Druid</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>1</y>
+    <prerequisites>
+      <li>AA_Node_Druid_Greenward</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_GatherSimples</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Druid_HarvestHome</defName>
+    <tree>AA_Class_Druid</tree>
+    <kind>Spell</kind>
+    <x>4</x>
+    <y>3</y>
+    <requiredLevel>3</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>5</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Druid_Bloom</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_HarvestHome</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Druid_GreenThumb</defName>
+    <label>green thumb</label>
+    <description>Things grow where you walk. Every hour, every plant within 8 cells of you grows 1.2% of the way to maturity (a little more with healing power), drafted or not.</description>
+    <tree>AA_Class_Druid</tree>
+    <kind>Notable</kind>
+    <x>3</x>
+    <y>4</y>
+    <requiredLevel>5</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>6</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Druid_Oakheart</li>
+      <li>AA_Node_Druid_HarvestHome</li>
+    </prerequisites>
+    <passives>
+      <li Class="ArcanumAscendant.P_Aura">
+        <radius>8</radius>
+        <interval>2500</interval>
+        <affects>Allies</affects>
+        <color>(0.5, 0.88, 0.35, 1)</color>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_PlantGrowth">
+            <growth>0.012</growth>
+          </li>
+        </effects>
+      </li>
+    </passives>
+    <iconPath>ArcanumAscendant/Nodes/Druid_GreenThumb</iconPath>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Druid_GreeningRite</defName>
+    <tree>AA_Class_Druid</tree>
+    <kind>Spell</kind>
+    <x>5</x>
+    <y>4</y>
+    <requiredLevel>5</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>6</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Druid_FertileGround</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_GreeningRite</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Druid_ForestBreath</defName>
+    <tree>AA_Class_Druid</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>5</y>
+    <requiredLevel>7</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Druid_Wildheart</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_ForestBreath</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Druid_FloweringArbor</defName>
+    <tree>AA_Class_Druid</tree>
+    <kind>Spell</kind>
+    <x>5</x>
+    <y>6</y>
+    <requiredLevel>9</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>9</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Druid_SpiritBond</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_FloweringArbor</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Druid_ReturnToEarth</defName>
+    <tree>AA_Class_Druid</tree>
+    <kind>Spell</kind>
+    <x>1</x>
+    <y>6</y>
+    <requiredLevel>9</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>9</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Druid_Verdance</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_ReturnToEarth</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Beastmaster_SummonBear</defName>
     <tree>AA_Class_Beastmaster</tree>
     <kind>Spell</kind>
@@ -954,6 +1065,75 @@
     <unlockSpell>AA_Spell_AlphasCall</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Beastmaster_BeastLore</defName>
+    <tree>AA_Class_Beastmaster</tree>
+    <kind>Spell</kind>
+    <x>4</x>
+    <y>1</y>
+    <requiredLevel>8</requiredLevel>
+    <prerequisites>
+      <li>AA_Node_Beastmaster_Packbond</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_BeastLore</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Beastmaster_UnleashThePack</defName>
+    <tree>AA_Class_Beastmaster</tree>
+    <kind>Spell</kind>
+    <x>2</x>
+    <y>4</y>
+    <requiredLevel>14</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>10</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Beastmaster_Grizzly</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_UnleashThePack</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Beastmaster_Herdsong</defName>
+    <label>herdsong</label>
+    <description>The herd settles when you hum. Every hour, tame animals within 10 cells of you fill an extra 0.5% of their milk and wool and come 0.5% closer to their next egg (12% a day), drafted or not.</description>
+    <tree>AA_Class_Beastmaster</tree>
+    <kind>Notable</kind>
+    <x>4</x>
+    <y>4</y>
+    <requiredLevel>14</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>10</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Beastmaster_Whisperer</li>
+    </prerequisites>
+    <passives>
+      <li Class="ArcanumAscendant.P_Aura">
+        <radius>10</radius>
+        <interval>2500</interval>
+        <affects>Allies</affects>
+        <color>(0.85, 0.63, 0.31, 1)</color>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_AnimalProduce">
+            <fraction>0.005</fraction>
+          </li>
+        </effects>
+      </li>
+    </passives>
+    <iconPath>ArcanumAscendant/Nodes/Beastmaster_Herdsong</iconPath>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Beastmaster_CallOfTheHerds</defName>
+    <tree>AA_Class_Beastmaster</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>3</y>
+    <requiredLevel>12</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>9</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Beastmaster_AlphasCall</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_CallOfTheHerds</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_VerdantWarden_HealingGrove</defName>
     <tree>AA_Class_VerdantWarden</tree>
     <kind>Spell</kind>
@@ -1289,6 +1469,78 @@
     <unlockSpell>AA_Spell_VerdantSurge</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_VerdantWarden_StranglerFig</defName>
+    <tree>AA_Class_VerdantWarden</tree>
+    <kind>Spell</kind>
+    <x>0</x>
+    <y>3</y>
+    <requiredLevel>12</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>9</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_VerdantWarden_Briar</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_StranglerFig</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_VerdantWarden_WardensMercy</defName>
+    <tree>AA_Class_VerdantWarden</tree>
+    <kind>Spell</kind>
+    <x>4</x>
+    <y>2</y>
+    <requiredLevel>10</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_VerdantWarden_Canopy</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_WardensMercy</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_VerdantWarden_Mossheart</defName>
+    <tree>AA_Class_VerdantWarden</tree>
+    <kind>Spell</kind>
+    <x>5</x>
+    <y>3</y>
+    <requiredLevel>12</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>9</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_VerdantWarden_Sporecap</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_Mossheart</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_VerdantWarden_Sickroom</defName>
+    <label>green infirmary</label>
+    <description>The sick mend in your shade. Every hour, allies within 8 cells of you (prisoners and animals too) gain 1.2% immunity against every disease they are fighting (a little more with healing power), drafted or not.</description>
+    <tree>AA_Class_VerdantWarden</tree>
+    <kind>Notable</kind>
+    <x>4</x>
+    <y>4</y>
+    <requiredLevel>14</requiredLevel>
+    <requiredAttribute>AA_Focus</requiredAttribute>
+    <requiredAttributeValue>10</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_VerdantWarden_Heartwood</li>
+      <li>AA_Node_VerdantWarden_Mossheart</li>
+    </prerequisites>
+    <passives>
+      <li Class="ArcanumAscendant.P_Aura">
+        <radius>8</radius>
+        <interval>2500</interval>
+        <affects>Allies</affects>
+        <color>(0.25, 0.85, 0.56, 1)</color>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Immunize">
+            <amount>0.012</amount>
+          </li>
+        </effects>
+      </li>
+    </passives>
+    <iconPath>ArcanumAscendant/Nodes/VerdantWarden_Sickroom</iconPath>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
     <defName>AA_Node_Shapeshifter_BearForm</defName>
     <tree>AA_Class_Shapeshifter</tree>
     <kind>Spell</kind>
@@ -1622,6 +1874,44 @@
       <li>AA_Node_Shapeshifter_Maul</li>
     </prerequisites>
     <unlockSpell>AA_Spell_Pounce</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Shapeshifter_TheLongSleep</defName>
+    <tree>AA_Class_Shapeshifter</tree>
+    <kind>Spell</kind>
+    <x>2</x>
+    <y>1</y>
+    <requiredLevel>8</requiredLevel>
+    <prerequisites>
+      <li>AA_Node_Shapeshifter_BearForm</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_TheLongSleep</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Shapeshifter_OxForm</defName>
+    <tree>AA_Class_Shapeshifter</tree>
+    <kind>Spell</kind>
+    <x>4</x>
+    <y>1</y>
+    <requiredLevel>8</requiredLevel>
+    <prerequisites>
+      <li>AA_Node_Shapeshifter_Hide</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_OxForm</unlockSpell>
+  </ArcanumAscendant.ArcaneNodeDef>
+  <ArcanumAscendant.ArcaneNodeDef>
+    <defName>AA_Node_Shapeshifter_CubsPlay</defName>
+    <tree>AA_Class_Shapeshifter</tree>
+    <kind>Spell</kind>
+    <x>6</x>
+    <y>2</y>
+    <requiredLevel>10</requiredLevel>
+    <requiredAttribute>AA_Resilience</requiredAttribute>
+    <requiredAttributeValue>8</requiredAttributeValue>
+    <prerequisites>
+      <li>AA_Node_Shapeshifter_WolfForm</li>
+    </prerequisites>
+    <unlockSpell>AA_Spell_CubsPlay</unlockSpell>
   </ArcanumAscendant.ArcaneNodeDef>
   <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_ThornVolley</defName>
@@ -2698,6 +2988,594 @@
     <warmupStartSound>AA_Charge</warmupStartSound>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_GatherSimples</defName>
+    <label>gather simples</label>
+    <description>Walk the wild margins in your mind and come back with an armful of healroot: 3 to 5 herbal medicine appear at the target spot. Once a day.</description>
+    <iconPath>ArcanumAscendant/Spells/GatherSimples</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>12</range>
+      <warmupTime>4</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetItems>true</canTargetItems>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>30</manaCost>
+        <tags>
+          <li>Nature</li>
+          <li>Healing</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_SpawnItems">
+            <thing>MedicineHerbal</thing>
+            <count>3~5</count>
+          </li>
+        </effects>
+        <color>(0.498, 0.878, 0.353, 1)</color>
+        <color2>(0.894, 1, 0.784, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Petal</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Leaf</fleck>
+            <count>14</count>
+            <speed>1.5</speed>
+            <scale>0.6</scale>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Petal</fleck>
+            <count>8</count>
+            <speed>1</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.2</scale>
+            <scaleEnd>2</scaleEnd>
+            <ticks>30</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Nature</castSound>
+        <impactSound>AA_Impact_Nature</impactSound>
+        <style>Nature</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_HarvestHome</defName>
+    <label>harvest home</label>
+    <description>Sing the harvest in. Every ripe crop in your growing zones within 7 cells is reaped at once with 25% more yield, and every bare cell of those zones is sown again with the zone's crop, already 15% grown. Bring the fields in before the cold snap. Once a day.</description>
+    <iconPath>ArcanumAscendant/Spells/HarvestHome</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>30</range>
+      <warmupTime>5</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetItems>true</canTargetItems>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>45</manaCost>
+        <tags>
+          <li>Nature</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <radius>7</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Harvest">
+            <yieldFactor>1.25</yieldFactor>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Sow">
+            <growth>0.15</growth>
+          </li>
+        </effects>
+        <color>(0.498, 0.878, 0.353, 1)</color>
+        <color2>(0.894, 1, 0.784, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Petal</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.1</scale>
+            <scaleEnd>1</scaleEnd>
+            <ticks>60</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Leaf</fleck>
+            <count>30</count>
+            <speed>1.8</speed>
+            <scale>0.6</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Petal</fleck>
+            <count>16</count>
+            <speed>1.2</speed>
+            <scale>0.5</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Nature</castSound>
+        <impactSound>AA_Impact_Nature</impactSound>
+        <style>Nature</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_GreeningRite</defName>
+    <label>greening rite</label>
+    <description>Walk barefoot in the soil with someone until something green wakes up in them. Their Plants passion is kindled (none becomes interested, interested becomes burning), they gain 2000 Plants experience and a good memory (+5 mood for 3 days). With Biotech, a child also gains 6 growth points and learning. Once every five days.</description>
+    <iconPath>ArcanumAscendant/Spells/GreeningRite</iconPath>
+    <cooldownTicksRange>300000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>4</range>
+      <warmupTime>6</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>60</manaCost>
+        <tags>
+          <li>Nature</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Buff</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Passion">
+            <mode>Upgrade</mode>
+            <skill>Plants</skill>
+          </li>
+          <li Class="ArcanumAscendant.Effect_SkillXp">
+            <skill>Plants</skill>
+            <xp>2000</xp>
+          </li>
+          <li Class="ArcanumAscendant.Effect_ChildGrowth">
+            <points>6</points>
+            <learning>0.5</learning>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Thought">
+            <thought>AA_DruidGreeningRite</thought>
+          </li>
+        </effects>
+        <color>(0.498, 0.878, 0.353, 1)</color>
+        <color2>(0.894, 1, 0.784, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Petal</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Pillar</type>
+            <scale>1</scale>
+            <ticks>50</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Leaf</fleck>
+            <count>20</count>
+            <speed>1.2</speed>
+            <scale>0.6</scale>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Petal</fleck>
+            <count>10</count>
+            <speed>1</speed>
+            <scale>0.5</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Nature</castSound>
+        <impactSound>AA_Impact_Nature</impactSound>
+        <style>Nature</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_ForestBreath</defName>
+    <label>breath of the forest</label>
+    <description>Bring the smell of pine and rain indoors. Everyone within 6 cells of the target has their need for the outdoors filled completely (an end to cabin fever in mountain halls, prison cells and long winters) and feels refreshed (+6 mood for a day).</description>
+    <iconPath>ArcanumAscendant/Spells/ForestBreath</iconPath>
+    <cooldownTicksRange>30000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>24</range>
+      <warmupTime>3</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>30</manaCost>
+        <tags>
+          <li>Nature</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Buff</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <radius>6</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Need">
+            <need>Outdoors</need>
+            <amount>1</amount>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Thought">
+            <thought>AA_DruidForestBreath</thought>
+          </li>
+        </effects>
+        <color>(0.498, 0.878, 0.353, 1)</color>
+        <color2>(0.894, 1, 0.784, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Petal</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.1</scale>
+            <scaleEnd>1</scaleEnd>
+            <ticks>50</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Leaf</fleck>
+            <count>24</count>
+            <speed>2</speed>
+            <scale>0.6</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>2</scale>
+            <scaleEnd>4</scaleEnd>
+            <ticks>40</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Nature</castSound>
+        <impactSound>AA_Impact_Nature</impactSound>
+        <style>Nature</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_FloweringArbor</defName>
+    <label>flowering arbor</label>
+    <description>Grow a living arbor heavy with blossom for three days. It is a thing of great beauty (+40 beauty, enough to lift a whole room's impressiveness) and everyone within 4 cells of it regains 3% recreation every hour. Grow it in the dining hall before a wedding.</description>
+    <iconPath>ArcanumAscendant/Spells/FloweringArbor</iconPath>
+    <cooldownTicksRange>180000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>20</range>
+      <warmupTime>5</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetItems>true</canTargetItems>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>50</manaCost>
+        <tags>
+          <li>Nature</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_SpawnThing">
+            <thing>AA_Construct_DruidArbor</thing>
+            <count>1</count>
+            <lifetimeTicks>180000</lifetimeTicks>
+          </li>
+        </effects>
+        <color>(0.498, 0.878, 0.353, 1)</color>
+        <color2>(0.894, 1, 0.784, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Petal</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Pillar</type>
+            <scale>1.2</scale>
+            <ticks>50</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Petal</fleck>
+            <count>30</count>
+            <speed>1.6</speed>
+            <scale>0.6</scale>
+          </li>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.2</scale>
+            <scaleEnd>0.8</scaleEnd>
+            <ticks>30</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Nature</castSound>
+        <impactSound>AA_Impact_Nature</impactSound>
+        <style>Nature</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_ReturnToEarth</defName>
+    <label>return to the earth</label>
+    <description>Give the dead back to the land. Up to 8 corpses within 5 cells sink into the ground; whatever they wore or carried stays on the surface. Natural soil within 1.5 cells of each becomes rich soil (wider for big animals), plants there grow 20%, and every ally within 4 cells of a corpse is healed for 6. Your own people's bodies are left for a proper grave; mechanoids have nothing to give.</description>
+    <iconPath>ArcanumAscendant/Spells/ReturnToEarth</iconPath>
+    <cooldownTicksRange>30000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>26</range>
+      <warmupTime>3</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetItems>true</canTargetItems>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>40</manaCost>
+        <tags>
+          <li>Nature</li>
+          <li>Healing</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Corpses</affects>
+        <radius>5</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_DruidReturnToEarth">
+            <maxCorpses>8</maxCorpses>
+            <healPerCorpse>6</healPerCorpse>
+            <growth>0.2</growth>
+          </li>
+        </effects>
+        <color>(0.498, 0.878, 0.353, 1)</color>
+        <color2>(0.894, 1, 0.784, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Petal</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Rune</type>
+            <scale>1</scale>
+            <scaleEnd>1.05</scaleEnd>
+            <ticks>80</ticks>
+            <scaleByRadius>true</scaleByRadius>
+            <tex>ArcanumAscendant/Vfx/Roots</tex>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Leaf</fleck>
+            <count>24</count>
+            <speed>1.5</speed>
+            <scale>0.6</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Smoke</type>
+            <count>3</count>
+            <scale>1</scale>
+            <speed>1</speed>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Nature</castSound>
+        <impactSound>AA_Impact_Nature</impactSound>
+        <style>Nature</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_SummonBear</defName>
     <label>summon bear</label>
     <description>A grizzly bear lumbers out of the wilderness to fight for you for two minutes.</description>
@@ -3262,6 +4140,284 @@
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
     <targetRequired>false</targetRequired>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_BeastLore</defName>
+    <label>beast lore</label>
+    <description>Teach a tame animal in its own tongue. It advances three steps of training at once (whatever its training settings allow next) and becomes bonded to you, with you as its master. Twice a day.</description>
+    <iconPath>ArcanumAscendant/Spells/BeastLore</iconPath>
+    <cooldownTicksRange>30000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>8</range>
+      <warmupTime>4</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>30</manaCost>
+        <tags>
+          <li>Nature</li>
+          <li>Beast</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_TrainAnimal">
+            <steps>3</steps>
+          </li>
+          <li Class="ArcanumAscendant.Effect_BondAnimal" />
+        </effects>
+        <color>(0.847, 0.627, 0.314, 1)</color>
+        <color2>(1, 0.941, 0.816, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Mote</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Leaf</fleck>
+            <count>12</count>
+            <speed>1.2</speed>
+            <scale>0.5</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.2</scale>
+            <scaleEnd>2</scaleEnd>
+            <ticks>30</ticks>
+          </li>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.2</scale>
+            <scaleEnd>0.6</scaleEnd>
+            <ticks>24</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Nature</castSound>
+        <impactSound>AA_Impact_Nature</impactSound>
+        <style>Nature</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_CallOfTheHerds</defName>
+    <label>call of the herds</label>
+    <description>Sound the old herding call past the edge of the map. Something answers: a migrating herd crosses your land (good hunting), a few farm animals wander in to join you, or a thrumbo passes by. Once every three days.</description>
+    <iconPath>ArcanumAscendant/Spells/CallOfTheHerds</iconPath>
+    <cooldownTicksRange>180000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>0</range>
+      <warmupTime>5</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <drawAimPie>false</drawAimPie>
+      <targetable>false</targetable>
+      <nonInterruptingSelfCast>false</nonInterruptingSelfCast>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>70</manaCost>
+        <tags>
+          <li>Nature</li>
+          <li>Beast</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Self</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Incident">
+            <options>
+              <li>HerdMigration</li>
+              <li>FarmAnimalsWanderIn</li>
+              <li>ThrumboPasses</li>
+            </options>
+          </li>
+        </effects>
+        <color>(0.847, 0.627, 0.314, 1)</color>
+        <color2>(1, 0.941, 0.816, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Mote</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.1</scale>
+            <scaleEnd>2</scaleEnd>
+            <ticks>60</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Leaf</fleck>
+            <count>24</count>
+            <speed>3</speed>
+            <scale>0.6</scale>
+          </li>
+          <li>
+            <type>Flash</type>
+            <scale>2.5</scale>
+            <scaleEnd>3</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Nature</castSound>
+        <impactSound>AA_Impact_Nature</impactSound>
+        <style>Nature</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+    <targetRequired>false</targetRequired>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_UnleashThePack</defName>
+    <label>unleash the pack</label>
+    <description>Point, and your own animals answer. Every tame animal of yours within 20 cells that has learned Release (or is bonded to you) turns feral and charges the target, attacking it for up to 25 seconds or until it falls. Babies, the downed, roped animals and conjured beasts stay put. Train your huskies and bears for this.</description>
+    <iconPath>ArcanumAscendant/Spells/UnleashThePack</iconPath>
+    <cooldownTicksRange>1800</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>30</range>
+      <warmupTime>0.4</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>30</manaCost>
+        <tags>
+          <li>Nature</li>
+          <li>Beast</li>
+        </tags>
+        <tier>1</tier>
+        <role>Attack</role>
+        <autocastByDefault>true</autocastByDefault>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_DruidUnleashPack">
+            <callRadius>20</callRadius>
+            <attackTicks>1500</attackTicks>
+            <animalEffects>
+              <li Class="ArcanumAscendant.Effect_Hediff">
+                <hediff>AA_Feral</hediff>
+                <severity>1</severity>
+                <durationTicks>1500</durationTicks>
+              </li>
+            </animalEffects>
+          </li>
+        </effects>
+        <color>(0.847, 0.627, 0.314, 1)</color>
+        <color2>(1, 0.941, 0.816, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Mote</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.1</scale>
+            <scaleEnd>1</scaleEnd>
+            <ticks>24</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Leaf</fleck>
+            <count>10</count>
+            <speed>2</speed>
+            <scale>0.5</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Nature</castSound>
+        <impactSound>AA_Impact_Nature</impactSound>
+        <style>Nature</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_ThornWall</defName>
@@ -3867,6 +5023,322 @@
     <warmupStartSound>AA_Charge</warmupStartSound>
   </AbilityDef>
   <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_WardensMercy</defName>
+    <label>warden's mercy</label>
+    <description>Roots bind the wounds of the fallen, friend and foe. Everyone within 8 cells of the target (raiders, strangers, prisoners, colonists and animals) has every wound and illness that needs it tended at 70% quality, without medicine, so the downed live long enough to be rescued or captured. Enemies are also held by the roots (90% slower) for an hour.</description>
+    <iconPath>ArcanumAscendant/Spells/WardensMercy</iconPath>
+    <cooldownTicksRange>15000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>30</range>
+      <warmupTime>3</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetItems>true</canTargetItems>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>40</manaCost>
+        <tags>
+          <li>Nature</li>
+          <li>Healing</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>AllButSelf</affects>
+        <radius>8</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Tend">
+            <quality>0.7</quality>
+            <affects>AllButSelf</affects>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_Entangled</hediff>
+            <severity>1</severity>
+            <durationTicks>2500</durationTicks>
+            <affects>Enemies</affects>
+          </li>
+        </effects>
+        <color>(0.247, 0.847, 0.565, 1)</color>
+        <color2>(0.816, 1, 0.91, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Leaf</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Rune</type>
+            <scale>1</scale>
+            <scaleEnd>1.05</scaleEnd>
+            <ticks>80</ticks>
+            <scaleByRadius>true</scaleByRadius>
+            <tex>ArcanumAscendant/Vfx/Roots</tex>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Leaf</fleck>
+            <count>24</count>
+            <speed>1.5</speed>
+            <scale>0.6</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Nature</castSound>
+        <impactSound>AA_Impact_Nature</impactSound>
+        <style>Nature</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_Mossheart</defName>
+    <label>mossheart</label>
+    <description>Plant a mossheart: a squat green stump that eats filth. When it lands, and every hour for the next two days, all filth within 5.5 cells is consumed (a spotless infirmary or kitchen) and, with Biotech, polluted ground there is purified.</description>
+    <iconPath>ArcanumAscendant/Spells/Mossheart</iconPath>
+    <cooldownTicksRange>120000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>20</range>
+      <warmupTime>3</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetItems>true</canTargetItems>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>45</manaCost>
+        <tags>
+          <li>Nature</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <radius>5.5</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Clean">
+            <pollution>true</pollution>
+          </li>
+          <li Class="ArcanumAscendant.Effect_SpawnThing">
+            <thing>AA_Construct_DruidMossheart</thing>
+            <count>1</count>
+            <lifetimeTicks>120000</lifetimeTicks>
+          </li>
+        </effects>
+        <color>(0.247, 0.847, 0.565, 1)</color>
+        <color2>(0.816, 1, 0.91, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Leaf</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.1</scale>
+            <scaleEnd>1</scaleEnd>
+            <ticks>50</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Leaf</fleck>
+            <count>20</count>
+            <speed>1.5</speed>
+            <scale>0.6</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.5</scale>
+            <scaleEnd>3</scaleEnd>
+            <ticks>40</ticks>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Nature</castSound>
+        <impactSound>AA_Impact_Nature</impactSound>
+        <style>Nature</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_StranglerFig</defName>
+    <label>strangler fig</label>
+    <description>Seed a strangler fig among the enemy's works. For 20 seconds its roots tear through a 3.5-cell circle: every structure there that your colony did not build (turrets, mortars, barricades, walls, even bare rock) takes 40 damage a second, and enemies inside take 5 thorn damage a second and are often rooted in place. Break a siege camp before the shells fly.</description>
+    <iconPath>ArcanumAscendant/Spells/StranglerFig</iconPath>
+    <cooldownTicksRange>2700</cooldownTicksRange>
+    <hostile>true</hostile>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>30</range>
+      <warmupTime>1.2</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetItems>true</canTargetItems>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>45</manaCost>
+        <tags>
+          <li>Nature</li>
+        </tags>
+        <tier>1</tier>
+        <role>Attack</role>
+        <autocastByDefault>true</autocastByDefault>
+        <aiMinEnemiesInRadius>2</aiMinEnemiesInRadius>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Enemies</affects>
+        <radius>3.5</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Field">
+            <fieldRadius>3.5</fieldRadius>
+            <durationTicks>1200</durationTicks>
+            <pulseInterval>60</pulseInterval>
+            <pulseEffects>
+              <li Class="ArcanumAscendant.Effect_Damage">
+                <amount>5</amount>
+                <damageDef>AA_Thorn</damageDef>
+                <damageBuildings>true</damageBuildings>
+                <buildingFactor>8</buildingFactor>
+              </li>
+              <li Class="ArcanumAscendant.Effect_Hediff">
+                <hediff>AA_Entangled</hediff>
+                <severity>1</severity>
+                <durationTicks>90</durationTicks>
+                <chance>0.3</chance>
+              </li>
+            </pulseEffects>
+            <groundTex>ArcanumAscendant/Vfx/Roots</groundTex>
+            <groundAlpha>0.5</groundAlpha>
+            <ambientFleck>AA_Fleck_Leaf</ambientFleck>
+            <ambientDensity>1.5</ambientDensity>
+            <ambientSpeed>0.3</ambientSpeed>
+            <ambientScale>0.7</ambientScale>
+          </li>
+        </effects>
+        <color>(0.247, 0.847, 0.565, 1)</color>
+        <color2>(0.816, 1, 0.91, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Leaf</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Rune</type>
+            <scale>1</scale>
+            <scaleEnd>1.05</scaleEnd>
+            <ticks>60</ticks>
+            <scaleByRadius>true</scaleByRadius>
+            <tex>ArcanumAscendant/Vfx/Roots</tex>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Leaf</fleck>
+            <count>20</count>
+            <speed>2</speed>
+            <scale>0.6</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Smoke</type>
+            <count>4</count>
+            <scale>1.2</scale>
+            <speed>1</speed>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Nature</castSound>
+        <impactSound>AA_Impact_Nature</impactSound>
+        <style>Nature</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
     <defName>AA_Spell_BearForm</defName>
     <label>bear form</label>
     <description>Become a great bear for a minute: thick hide, crushing blows.</description>
@@ -4452,6 +5924,299 @@
     </comps>
     <warmupStartSound>AA_Charge</warmupStartSound>
   </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_TheLongSleep</defName>
+    <label>the long sleep</label>
+    <description>Sing someone into a bear's winter sleep. They lie down in their bed at once; until they wake after at least 6 hours asleep (12 hours at most) they need a quarter of the food, heal wounds three times as fast, fight off disease 50% faster and shrug off 20 C of cold. They wake whole (+20% rest, +5 mood for a day). Works on colonists, prisoners and tame animals.</description>
+    <iconPath>ArcanumAscendant/Spells/TheLongSleep</iconPath>
+    <cooldownTicksRange>5000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>12</range>
+      <warmupTime>3</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <drawAimPie>true</drawAimPie>
+      <targetParams>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>25</manaCost>
+        <tags>
+          <li>Nature</li>
+          <li>Shapeshift</li>
+          <li>Healing</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Utility</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Allies</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_DruidLongSleep</hediff>
+            <severity>1</severity>
+          </li>
+          <li Class="ArcanumAscendant.Effect_SleepNow" />
+        </effects>
+        <color>(0.784, 0.541, 0.353, 1)</color>
+        <color2>(1, 0.878, 0.753, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Leaf</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Star</fleck>
+            <count>10</count>
+            <speed>0.6</speed>
+            <scale>0.4</scale>
+          </li>
+          <li>
+            <type>Glow</type>
+            <scale>1.2</scale>
+            <scaleEnd>2</scaleEnd>
+            <ticks>40</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Leaf</fleck>
+            <count>8</count>
+            <speed>0.8</speed>
+            <scale>0.5</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Blood</castSound>
+        <impactSound>AA_Impact_Blood</impactSound>
+        <style>Nature</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_OxForm</defName>
+    <label>ox form</label>
+    <description>Become a great musk ox for 6 hours: carry three times as much when hauling, move 10% faster and shrug off 15 C of cold. Haul the steel home, then the harvest.</description>
+    <iconPath>ArcanumAscendant/Spells/OxForm</iconPath>
+    <cooldownTicksRange>7500</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>0</range>
+      <warmupTime>1</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <drawAimPie>false</drawAimPie>
+      <targetable>false</targetable>
+      <nonInterruptingSelfCast>false</nonInterruptingSelfCast>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>20</manaCost>
+        <tags>
+          <li>Nature</li>
+          <li>Shapeshift</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Buff</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Instant</delivery>
+        <affects>Self</affects>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Hediff">
+            <hediff>AA_DruidOxForm</hediff>
+            <severity>1</severity>
+          </li>
+        </effects>
+        <color>(0.784, 0.541, 0.353, 1)</color>
+        <color2>(1, 0.878, 0.753, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Leaf</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Smoke</type>
+            <count>3</count>
+            <scale>1</scale>
+            <speed>1</speed>
+          </li>
+          <li>
+            <type>Flash</type>
+            <scale>2</scale>
+            <scaleEnd>2.4</scaleEnd>
+            <ticks>12</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Leaf</fleck>
+            <count>10</count>
+            <speed>1.5</speed>
+            <scale>0.5</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Blood</castSound>
+        <impactSound>AA_Impact_Blood</impactSound>
+        <style>Nature</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+    <targetRequired>false</targetRequired>
+  </AbilityDef>
+  <AbilityDef ParentName="AA_SpellBase">
+    <defName>AA_Spell_CubsPlay</defName>
+    <label>cub's play</label>
+    <description>Turn into a great clumsy cub and romp with everyone within 7 cells: they regain 30% recreation and laugh about it for a day (+5 mood). With Biotech, children gain 4 growth points and 40% learning, and babies get to play.</description>
+    <iconPath>ArcanumAscendant/Spells/CubsPlay</iconPath>
+    <cooldownTicksRange>30000</cooldownTicksRange>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <verbProperties>
+      <verbClass>ArcanumAscendant.Verb_ArcaneCast</verbClass>
+      <range>0</range>
+      <warmupTime>2</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <drawAimPie>false</drawAimPie>
+      <targetable>false</targetable>
+      <nonInterruptingSelfCast>false</nonInterruptingSelfCast>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <modExtensions>
+      <li Class="ArcanumAscendant.SpellExtension">
+        <manaCost>35</manaCost>
+        <tags>
+          <li>Nature</li>
+          <li>Shapeshift</li>
+          <li>Utility</li>
+        </tags>
+        <tier>1</tier>
+        <role>Buff</role>
+        <quirky>true</quirky>
+      </li>
+    </modExtensions>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneSpell">
+        <delivery>Nova</delivery>
+        <affects>AlliesNotSelf</affects>
+        <radius>7</radius>
+        <effects>
+          <li Class="ArcanumAscendant.Effect_Need">
+            <need>Joy</need>
+            <amount>0.3</amount>
+          </li>
+          <li Class="ArcanumAscendant.Effect_ChildGrowth">
+            <points>4</points>
+            <learning>0.4</learning>
+          </li>
+          <li Class="ArcanumAscendant.Effect_Thought">
+            <thought>AA_DruidCubsPlay</thought>
+          </li>
+        </effects>
+        <color>(0.784, 0.541, 0.353, 1)</color>
+        <color2>(1, 0.878, 0.753, 1)</color2>
+        <castVfx>
+          <li>
+            <type>Glow</type>
+            <scale>1.6</scale>
+            <scaleEnd>2.2</scaleEnd>
+            <ticks>18</ticks>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Leaf</fleck>
+            <count>6</count>
+            <speed>1.4</speed>
+            <scale>0.5</scale>
+          </li>
+        </castVfx>
+        <impactVfx>
+          <li>
+            <type>Smoke</type>
+            <count>3</count>
+            <scale>1</scale>
+            <speed>1</speed>
+          </li>
+          <li>
+            <type>Shockwave</type>
+            <scale>0.1</scale>
+            <scaleEnd>1</scaleEnd>
+            <ticks>40</ticks>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Petal</fleck>
+            <count>20</count>
+            <speed>2</speed>
+            <scale>0.5</scale>
+            <scaleByRadius>true</scaleByRadius>
+          </li>
+          <li>
+            <type>Particles</type>
+            <fleck>AA_Fleck_Leaf</fleck>
+            <count>10</count>
+            <speed>1.5</speed>
+            <scale>0.5</scale>
+          </li>
+        </impactVfx>
+        <castSound>AA_Cast_Blood</castSound>
+        <impactSound>AA_Impact_Blood</impactSound>
+        <style>Nature</style>
+      </li>
+    </comps>
+    <warmupStartSound>AA_Charge</warmupStartSound>
+    <targetRequired>false</targetRequired>
+  </AbilityDef>
   <HediffDef>
     <defName>AA_Feral</defName>
     <label>feral</label>
@@ -4649,4 +6414,221 @@
       </li>
     </comps>
   </ThingDef>
+  <ThoughtDef>
+    <defName>AA_DruidGreeningRite</defName>
+    <durationDays>3</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>greening rite</label>
+        <description>I walked barefoot in the soil with the druid, and something green woke up in me.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>AA_DruidForestBreath</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>breath of the forest</label>
+        <description>The druid brought the smell of pine and rain inside. I can breathe again.</description>
+        <baseMoodEffect>6</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThingDef>
+    <defName>AA_Construct_DruidArbor</defName>
+    <label>flowering arbor</label>
+    <description>A living arbor heavy with blossom, grown by a druid. It is beautiful to behold, and resting near it is a small joy.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>false</rotatable>
+    <passability>PassThroughOnly</passability>
+    <pathCost>30</pathCost>
+    <fillPercent>0.35</fillPercent>
+    <graphicData>
+      <texPath>ArcanumAscendant/Things/Construct_DruidArbor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.4</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Beauty>40</Beauty>
+    </statBases>
+    <building>
+      <claimable>false</claimable>
+      <destroySound>AA_Construct_Break</destroySound>
+    </building>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneConstruct">
+        <defaultLifetimeTicks>180000</defaultLifetimeTicks>
+        <glowColor>(1, 0.624, 0.816, 1)</glowColor>
+        <glowSize>1.6</glowSize>
+        <pulseEffects>
+          <li Class="ArcanumAscendant.Effect_Need">
+            <need>Joy</need>
+            <amount>0.03</amount>
+          </li>
+        </pulseEffects>
+        <pulseInterval>2500</pulseInterval>
+        <pulseRadius>4</pulseRadius>
+        <pulseAffects>Allies</pulseAffects>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>4</glowRadius>
+        <glowColor>(255,159,208,0)</glowColor>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef>
+    <defName>AA_Construct_DruidMossheart</defName>
+    <label>mossheart</label>
+    <description>A squat, glowing green stump grown by a verdant warden. It slowly eats the filth (and, with Biotech, the pollution) around it.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Building</altitudeLayer>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <selectable>true</selectable>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>false</rotatable>
+    <passability>PassThroughOnly</passability>
+    <pathCost>30</pathCost>
+    <fillPercent>0.35</fillPercent>
+    <graphicData>
+      <texPath>ArcanumAscendant/Things/Construct_DruidMossheart</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.1</drawSize>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Beauty>5</Beauty>
+    </statBases>
+    <building>
+      <claimable>false</claimable>
+      <destroySound>AA_Construct_Break</destroySound>
+    </building>
+    <comps>
+      <li Class="ArcanumAscendant.CompProperties_ArcaneConstruct">
+        <defaultLifetimeTicks>120000</defaultLifetimeTicks>
+        <glowColor>(0.247, 0.847, 0.565, 1)</glowColor>
+        <glowSize>1.4</glowSize>
+        <pulseEffects>
+          <li Class="ArcanumAscendant.Effect_Clean">
+            <pollution>true</pollution>
+          </li>
+        </pulseEffects>
+        <pulseInterval>2500</pulseInterval>
+        <pulseRadius>5.5</pulseRadius>
+        <pulseAffects>Allies</pulseAffects>
+      </li>
+    </comps>
+  </ThingDef>
+  <HediffDef>
+    <defName>AA_DruidLongSleep</defName>
+    <label>the long sleep</label>
+    <description>Sunk into a bear's winter sleep: hunger barely stirs, wounds knit three times as fast and the cold matters less. Ends on waking after six hours of sleep.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(0.784, 0.627, 0.439, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>30000~30000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_WakeThought">
+        <thought>AA_DruidWokeFromLongSleep</thought>
+        <minSleepHours>6</minSleepHours>
+        <rest>0.2</rest>
+        <textKey>AA_DruidLongSleepWoke</textKey>
+        <color>(0.878, 0.753, 0.565, 1)</color>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(0.784, 0.627, 0.439, 0.9)</color>
+        <texPath></texPath>
+        <emitter>Dream</emitter>
+        <emitInterval>45</emitInterval>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <ComfyTemperatureMin>-20</ComfyTemperatureMin>
+        </statOffsets>
+        <statFactors>
+          <InjuryHealingFactor>3</InjuryHealingFactor>
+          <ImmunityGainSpeed>1.5</ImmunityGainSpeed>
+        </statFactors>
+        <hungerRateFactor>0.25</hungerRateFactor>
+      </li>
+    </stages>
+  </HediffDef>
+  <ThoughtDef>
+    <defName>AA_DruidWokeFromLongSleep</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>woke from the long sleep</label>
+        <description>I slept like a bear in winter. I feel whole again.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <HediffDef>
+    <defName>AA_DruidOxForm</defName>
+    <label>ox form</label>
+    <description>Shaped like a great musk ox: built to haul, hard to chill.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <defaultLabelColor>(0.784, 0.541, 0.353, 1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+    <everCurableByItem>false</everCurableByItem>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>15000~15000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
+        <color>(0.784, 0.541, 0.353, 0.9)</color>
+        <texPath></texPath>
+        <emitter>Stone</emitter>
+        <emitInterval>60</emitInterval>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <ComfyTemperatureMin>-15</ComfyTemperatureMin>
+        </statOffsets>
+        <statFactors>
+          <CarryingCapacity>3</CarryingCapacity>
+          <MoveSpeed>1.1</MoveSpeed>
+        </statFactors>
+      </li>
+    </stages>
+  </HediffDef>
+  <ThoughtDef>
+    <defName>AA_DruidCubsPlay</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>played with the cub</label>
+        <description>A shapeshifter turned into a great clumsy cub and played with us. I haven't laughed like that in years.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
 </Defs>

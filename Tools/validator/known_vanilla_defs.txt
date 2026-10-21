@@ -75,3 +75,8 @@ Pawn_Melee_BigBash_HitPawn
 Pawn_Melee_BigBash_Miss
 Animal
 AnimalConstant
+FastLearner
+Gourmand
+QuickSleeper
+TooSmart
+Tough

@@ -466,11 +466,30 @@ def pen_mask(size, fn):
     return p.img.resize((size, size), Image.LANCZOS)
 
 
+KNOWN_THING_KINDS = {"totem", "brazier", "coil_top", "coil_base", "crystal_base", "crystal_top", "icewall", "bonewall", "thornwall", "runewall",
+                     "sentry_top", "sentry_base", "spire_base", "spire_top", "titan_base", "titan_top", "turret_top", "turret_base", "tree", "worldtree"}
+
+
 def make_thing(path, kind, c1h, c2h):
     c1, c2 = hexc(c1h), hexc(c2h)
     stone = np.array([78, 74, 88], np.float32)
     metal = np.array([120, 118, 128], np.float32)
-    if kind == "brazier":
+    if kind not in KNOWN_THING_KINDS:
+        print("  (no drawing for thing shape %r at %s: drawing a totem)" % (kind, path))
+        kind = "totem"
+    if kind == "totem":
+        # a carved standing stone seen from above, its rune glowing in the school's colours
+        S = 128
+        body = pen_mask(S, lambda p: [p.circle(0, 0, 0.62), p.poly([(0.0, 0.92), (0.5, 0.5), (0.0, 0.62), (-0.5, 0.5)]),
+                                      p.poly([(0.0, -0.92), (0.5, -0.5), (0.0, -0.62), (-0.5, -0.5)])])
+        img = sprite(body, stone, S, outline=3)
+        rim = pen_mask(S, lambda p: p.ring(0, 0, 0.5, 0.06))
+        img = over(img, solid(S, mix(c1, stone, 0.4), rim))
+        glyph = pen_mask(S, lambda p: [p.rect(-0.05, -0.36, 0.05, 0.36), p.poly([(-0.3, 0.1), (0.0, 0.32), (0.3, 0.1), (0.3, 0.2), (0.0, 0.42), (-0.3, 0.2)]),
+                                       p.rect(-0.26, -0.22, 0.26, -0.14)])
+        img = over(img, solid(S, c2, blur(glyph, 4)))
+        img = over(img, solid(S, mix(c1, WHITE, 0.45), glyph))
+    elif kind == "brazier":
         S = 128
         bowl = pen_mask(S, lambda p: p.circle(0, 0, 0.82))
         inner = pen_mask(S, lambda p: p.circle(0, 0, 0.6))
