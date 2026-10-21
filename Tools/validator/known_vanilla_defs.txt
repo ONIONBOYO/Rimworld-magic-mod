@@ -80,3 +80,4 @@ Gourmand
 QuickSleeper
 TooSmart
 Tough
+AteLavishMeal
