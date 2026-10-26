@@ -706,21 +706,39 @@ namespace ArcanumAscendant
         public float perStack = 0.1f;
         public float maxBonus = 4f;
         public bool consume = true;
+        /// <summary>Spend at most this many stacks (0 = all of them); the rest stay banked.</summary>
+        public float maxSpend;
+        /// <summary>Power multiplier when there are no stacks at all to spend.</summary>
+        public float withoutFactor = 1f;
 
         public override void ApplyToPawn(SpellContext ctx, Pawn p, ImpactInfo info)
         {
             if (hediff == null || p != ctx.caster) return;
             var h = p.health?.hediffSet?.GetFirstHediffOfDef(hediff);
-            if (h == null) return;
-            float bonus = Mathf.Min(maxBonus, perStack * h.Severity);
+            float have = h?.Severity ?? 0f;
+            if (have < 0.5f)
+            {
+                ctx.basePower *= withoutFactor;
+                if (withoutFactor < 0.99f && p.Spawned) ArcaneFx.Text(p, "AA_EmpowerEmpty".Translate(hediff.label), ctx.Color);
+                return;
+            }
+            float spent = maxSpend > 0f ? Mathf.Min(have, maxSpend) : have;
+            float bonus = Mathf.Min(maxBonus, perStack * spent);
             ctx.basePower *= 1f + bonus;
-            if (consume) p.health.RemoveHediff(h);
+            if (consume)
+            {
+                if (have - spent < 0.5f) p.health.RemoveHediff(h);
+                else h.Severity = have - spent;
+            }
             if (p.Spawned && bonus > 0.01f) ArcaneFx.Text(p, "AA_EmpowerText".Translate(bonus.ToStringPercent("F0")), ctx.Color);
         }
 
         public override IEnumerable<string> Describe(SpellContext ctx)
         {
-            if (hediff != null) yield return (consume ? "AA_Desc_EmpowerConsume" : "AA_Desc_Empower").Translate(hediff.label, perStack.ToStringPercent("F0"), maxBonus.ToStringPercent("F0"));
+            if (hediff == null) yield break;
+            if (maxSpend > 0f && consume) yield return "AA_Desc_EmpowerSpend".Translate(hediff.label, perStack.ToStringPercent("F0"), maxSpend.ToString("0.#"));
+            else yield return (consume ? "AA_Desc_EmpowerConsume" : "AA_Desc_Empower").Translate(hediff.label, perStack.ToStringPercent("F0"), maxBonus.ToStringPercent("F0"));
+            if (withoutFactor < 0.99f) yield return "AA_Desc_EmpowerWithout".Translate(hediff.label, withoutFactor.ToStringPercent("F0"));
         }
     }
 

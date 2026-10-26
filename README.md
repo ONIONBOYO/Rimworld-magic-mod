@@ -2,7 +2,7 @@
 
 ![Arcanum Ascendant](About/Preview.png)
 
-A magic and class system for RimWorld with **14 classes, 42 subclasses, 424 spells and 1170 skill tree nodes**. Every class and every subclass has its own skill tree, and it doesn't depend on any other mod (not even Harmony).
+A magic and class system for RimWorld with **14 classes, 42 subclasses, 513 spells and 1277 skill tree nodes**. Every class and every subclass has its own skill tree, and it doesn't depend on any other mod (not even Harmony).
 
 - **Five attributes**: Potency, Focus, Celerity, Resilience and Attunement. They power your spells and gate the deeper rows of every tree.
 - **Branching skill trees**: spells, augments that change how a spell behaves, multi-rank passives, mutually exclusive keystones and a subclass ultimate.

@@ -144,9 +144,11 @@ def sequence(*steps, **kw):
     return O("Effect_Sequence", steps=list(steps), **kw)
 
 
-def empower(h, perStack=0.1, maxBonus=4.0, consume=True, **kw):
-    """Caster effect: this cast gains power per stack of h on the caster (spending them)."""
-    return O("Effect_Empower", hediff=h, perStack=float(perStack), maxBonus=float(maxBonus), consume=consume, **kw)
+def empower(h, perStack=0.1, maxBonus=4.0, consume=True, maxSpend=0.0, withoutFactor=1.0, **kw):
+    """Caster effect: this cast gains power per stack of h on the caster (spending them). maxSpend caps the stacks spent (the
+    rest stay banked); withoutFactor scales the spell when there is nothing to spend."""
+    return O("Effect_Empower", hediff=h, perStack=float(perStack), maxBonus=float(maxBonus), consume=consume,
+             maxSpend=float(maxSpend) if maxSpend else None, withoutFactor=float(withoutFactor) if withoutFactor != 1.0 else None, **kw)
 
 
 def copy_pawn(duration, maxBodySize=None, maxCopies=None, **kw):

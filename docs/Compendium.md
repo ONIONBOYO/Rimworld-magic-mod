@@ -2,7 +2,7 @@
 
 Every class, subclass, spell and keystone in the mod. Generated from `Tools/gen/classes/*.py` - do not edit by hand.
 
-**14 classes - 42 subclasses - 514 spells - 1278 skill tree nodes**
+**14 classes - 42 subclasses - 513 spells - 1277 skill tree nodes**
 
 ## Contents
 
@@ -1036,11 +1036,11 @@ Skywardens stand between their friends and the guns, and the guns lose.
 
 ## Succubus
 
-*Win every fight by making the enemy fall in love. Infatuate, enthrall, and let their own army do the killing.*
+*Make the enemy fall in love, then decide what their hearts are worth. At home, make the colony fall in love with each other.*
 
-Succubi are demons of desire, or simply very persuasive mages. The difference matters little to the raiders who switch sides mid-battle.
+Succubi are demons of desire, or simply very persuasive mages. The difference matters little to the raiders who switch sides mid-battle, or to the colonists who suddenly find themselves married with twins on the way.
 
-**Playstyle:** Stack Infatuation with kisses, charms and the Siren's Call. At five stacks a target is Enthralled and fights for you for twenty seconds; bosses are stunned instead. Heartbreak spends the stacks for damage, Lovers' Quarrel turns a crowd against itself, and Kiss of Youth keeps you young forever. Only women can take this path. Wants Attunement and Focus.
+**Playstyle:** Everything turns on Infatuation. Kisses, charms, songs and a glamour that makes attackers fall for your bodyguard lay it; at five stacks a target is Enthralled and fights for you. Fickle Heart pulls a crowd's stacks onto one target, Heartbreak, Swoon and Lovers' Quarrel spend them three different ways, and Last Embrace detonates a thrall into a burst of new hearts. At home she ties couples, mends feuds, makes babies happen and doubles them. Only women can take this path. Wants Attunement and Focus.
 
 **Key attributes:** Attunement, Focus
 
@@ -1052,87 +1052,86 @@ Succubi are demons of desire, or simply very persuasive mages. The difference ma
 | Captivate | 20 | 12s | control | Captivate an enemy completely: for eight seconds it walks to your side and will not fight unless badly hurt. Two stacks of Infatuation. |
 | Siren Song | 26 | 20s | control | Sing a note no one can resist. Every enemy within six cells drops what it is doing and walks toward you, dazed, and gains Infatuation. A hard blow wakes them. |
 | Heartbreak | 24 | 10s | attack | Break a heart that is already yours: heartbreak damage, +50% for every stack of Infatuation on the target. The stacks are spent. |
-| Kiss of Youth | 30 | 30s | attack | Steal a kiss and the years that come with it. The target ages several years and is hurt; you grow a little younger. |
-| Glamour | 24 | 35s | buff | Weave a glamour around yourself or an ally for thirty seconds. Enemies can hardly bring themselves to hurt the wearer: a quarter of all attacks simply fail. |
-| Ardor | 22 | 30s | buff | Fill an ally with burning ardor for forty seconds: harder blows, steadier aim, no fear of pain. |
-| Lovers' Quarrel | 40 | 35s | control | Whisper a terrible rumour into a crowd. Enemies in the area fly into a jealous rage and attack whoever is nearest. |
-| Essence Feast | 40 | 30s | attack | Drink from every heart around you. Enemies within eight cells take heartbreak damage, two and a half times as much if they are infatuated, and you are healed for half of it. |
-| Stolen Heartbeat | 50 | 40s | attack | Reach into an enemy's chest and stop its heart for a moment: heartbreak damage, a share of its vitality, more for every stack of Infatuation (spent), and a long stun. |
+| Glamour | 24 | 35s | buff | Weave a glamour around yourself or an ally for thirty seconds. One attack in seven simply fails, and every enemy that lands a blow on the wearer anyway gains a stack of Infatuation (once a second each). Glamour your toughest fighter and let the raid fall in love while it shoots. |
+| Fickle Heart | 30 | 25s | control | Every heart is fickle. All the Infatuation on enemies within seven cells of the target flies to it and piles up there, plus one more stack: enthrall the captain of a crowd you have been flirting with, or build the nine stacks a boss needs. |
+| Lovers' Quarrel | 40 | 35s | control | Whisper a terrible rumour into a crowd. Every enemy in the area carrying at least two stacks of Infatuation spends them and flies into a jealous rage, attacking whoever is nearest. |
+| Last Embrace | 25 | 15s | attack | Take an Enthralled thrall in your arms one last time. It is given back to its own side for a heartbeat and then bursts: 40 heartbreak damage and two stacks of Infatuation to every enemy within four cells, enough to enthrall the next ones. |
+| Swoon | 30 | 25s | control | Whisper something to an enemy that is already yours. With at least three stacks of Infatuation (all spent) it swoons, fainting dead away for a minute and a half, unhurt and helpless: long enough to carry it off as a prisoner. Bosses, machines and creatures much bigger than a person are unmoved. |
+| Kiss of Life | 30 | 1.4 h | heal | Kiss a fallen ally back onto their feet. For thirty seconds pain does not reach them at all, which is enough to stand up and get clear if it was only the pain that dropped them; they also heal 12 and think fondly of you (+12 opinion for ten days). When the kiss fades, the pain returns. |
 | Irresistible * | 80 | 3 days | utility | Turn the full force of your charm on a downed enemy or a prisoner. They fall hopelessly in love and join the colony. |
 | Red Thread of Fate * | 50 | 2 days | utility | Tie a red thread between a colonist and the one fate meant for them: their partner if they have one, otherwise their best match on the map. Both gain +20 opinion of each other for ten days and a +6 mood memory for two; if both are single adults who could love each other, they become lovers. |
 | Kiss and Make Up * | 40 | 1 day | utility | Kiss a colonist on the cheek and the feud they nurse against their worst rival in the colony is over: both gain +35 opinion of each other for ten days and +4 mood for a day. One time in three, if both are single adults who could love each other, the old enemies fall in love instead. |
-| Quickening * | 60 | 2 days | utility | Lay a hand on a woman, her partner or a tame animal and bless them with a child. The woman and her partner conceive at once (Biotech), or the animal and the nearest mate of its kind within twenty cells do; an egg-layer's next eggs are fertile. The usual rules still apply: the sterile, the too young and the too old cannot be helped. |
-| Blessing of Twins * | 80 | 5 days | utility | Bless a woman or a female animal, pregnant or not: her next birth within thirty days brings twins or triplets (even odds), or for an animal one or two extra litters. Until then she is half again as fertile (Biotech). |
-| Swoon | 30 | 25s | control | Whisper something to an enemy that is already yours. With at least three stacks of Infatuation (all spent) it swoons, fainting dead away for a minute and a half, unhurt and helpless: long enough to carry it off as a prisoner. Bosses, machines and creatures much bigger than a person are unmoved. |
-| Kiss of Life | 30 | 1.4 h | heal | Kiss a fallen ally back onto their feet. For thirty seconds pain does not reach them at all, which is enough to stand up and get clear if it was only the pain that dropped them; they also heal 12 and think fondly of you (+12 opinion for ten days). When the kiss fades, the pain returns. |
+| Quickening * | 60 | 2 days | utility | Lay a hand on a woman, her partner or a tame animal and bless them with a child. The woman and her partner conceive at once (Biotech), or the animal and the nearest mate of its kind within twenty cells do; an egg-layer's next eggs are fertile. The sterile, the too young and the too old cannot be helped. |
+| Blessing of Twins * | 80 | 5 days | utility | Bless a woman or a female animal, pregnant or not: her next birth within thirty days brings twins or triplets (even odds), or for an animal one or two extra litters. Pairs beautifully with Quickening. |
 
-**Keystones:** *Femme Fatale* - Love kills. Heartbreak and Stolen Heartbeat come back far sooner and all your desire hits harder.; *Beloved of All* - Everyone falls for you. Most of your spells lay an extra stack of Infatuation, and your charms last longer.; *Queen of Hearts* - Hearts flutter wherever you walk: enemies near you steadily become infatuated.
+**Keystones:** *Femme Fatale* - Love kills. Heartbreak and Last Embrace come back far sooner and all your desire hits harder.; *Beloved of All* - Everyone falls for you. Most of your spells lay an extra stack of Infatuation, and your charms last longer.; *Queen of Hearts* - Hearts flutter wherever you walk: enemies near you steadily become infatuated.
 
 ### Temptress (subclass)
 
-*Make them yours. Enthral single targets, seduce whole squads, and lead an army of the damned.*
+*Not for twenty seconds: for good. Hold court on the battlefield and take your favourites home.*
 
-A Temptress does not win battles; she collects them.
+A Temptress does not win battles; she collects them. The base succubus borrows an enemy's heart for a moment. The Temptress keeps it.
 
-**Playstyle:** The domination specialist. Enthrall and Heartstrings pile on Infatuation, Mass Seduction turns an area into a trap of hearts, Kiss of Betrayal takes an enemy for your own outright, and the Harem of the Damned enthralls every enemy around you at once. Wants Attunement and Celerity.
+**Playstyle:** A court of three. Beckon makes an enemy your favourite (Infatuation it carried is a head start). Favourites fight half-heartedly and court you every second they are near you or your Champion; at 100% they defect for good. Betray the ones who are halfway there, Cast Aside the ones you are done with (the more they adored you, the harder they fall), Decree that the whole court lays down arms, or send them home to warm their faction to the colony. At home she plays the diplomat: harder bargains, callers at the gate, softer prisoners and polished manners. Wants Attunement and Celerity.
 
 | Spell | Mana | Cooldown | Role | Description |
 |---|---|---|---|---|
-| Enthrall | 30 | 16s | control | Hold an enemy's gaze until it forgets everything else: transfixed for six seconds, and three stacks of Infatuation. |
-| Heartstrings | 28 | 12s | attack | Pluck the heartstrings of seven enemies in a chain: each one is stung and grows more infatuated. |
-| Jealousy | 26 | 22s | control | Plant jealousy in one enemy's heart: it flies into a rage against its own side and grows more infatuated with you. |
-| Mass Seduction | 50 | 1.1 h | control | Turn an area into a garden of temptation for fifteen seconds: every enemy inside gains Infatuation every two seconds. |
-| Kiss of Betrayal | 60 | 1.4 h | control | A kiss that rewrites loyalty. For fifteen seconds an enemy (not too large, and never a boss) fights for you. |
-| Harem of the Damned (ultimate) | 220 | 7.2 h | attack | Reveal your true face. Every enemy within twelve cells is overwhelmed with five stacks of Infatuation: all but the mightiest are enthralled and fight for you. |
+| Beckon | 30 | 8s | control | Crook a finger at an enemy: it becomes one of your favourites (5% courted, plus 8% for every stack of Infatuation it carried, which is spent). Favourites fight half-heartedly and court you every second they are within nine cells of you or your Champion; at 100% they change sides for good. Your court has three seats: beckon a fourth and the least devoted loses interest. Machines cannot love; bosses can only be humbled. |
+| Kiss of Betrayal | 40 | 30s | control | Kiss a favourite who is at least halfway won. It does not wait for the rest of the courtship: it changes sides on the spot. |
+| Cast Aside | 25 | 12s | attack | Throw a favourite over. It takes heartbreak damage (20, up to 80 for one who was fully won) and collapses for two to ten seconds, longer the more it adored you, and its seat is free again. |
+| Champion's Favour | 30 | 7.2 h | buff | Name a colonist your champion for twelve hours: they fight a little harder, work a little faster, break less easily and speak more sweetly, and your favourites court you just as fast when they are near your champion as when they are near you, so you can hold court from the back line. |
+| Royal Decree | 50 | 1.1 h | control | Speak, and your court obeys. Every favourite on the map lays down its arms and stands still for eight seconds, and courts you 15% more on the spot. |
+| Homeward Heart | 40 | 1.4 h | control | Remind every favourite within twelve cells of the sweetheart waiting at home. They leave your court, give up the raid and flee the map, and their people think a little better of your colony for it (+2 goodwill each). Beasts just freeze for four seconds. |
 | Honeyed Words * | 40 | 1 day | utility | Flirt shamelessly with a visitor, a trader or even a captive: their faction warms to the colony (+8 goodwill, except with factions that will never make peace), and for six hours you drive a harder bargain: +12% trade prices, +30% negotiation ability and +20% social impact. |
 | Gentlemen Callers * | 70 | 3 days | utility | Let word of your beauty slip beyond the colony. Within moments admirers come calling: a trade caravan or a group of friendly visitors arrives at the edge of the map, if any faction is willing to send one. |
-| Homeward Heart | 60 | 1.4 h | control | Remind every smitten enemy within nine cells of the sweetheart waiting at home. Each one with at least two stacks of Infatuation (all spent) loses the will to fight: people give up the raid and flee the map, while beasts and machines just run from you for eight seconds. Bosses are unmoved. |
+| Finishing School * | 50 | 2 days | utility | Take a colonist in hand for an afternoon of posture, conversation and devastating smiles. They gain 3000 Social experience and their passion for Social deepens one step (none to interested, interested to burning). |
+| Queen's Court (ultimate) | 220 | 7.2 h | attack | Hold court over the whole battlefield. Every enemy within twelve cells becomes your favourite at 40% courted, seats or no seats, and for a minute every favourite courts you twice as fast. |
 
-**Keystones:** *Siren Queen* - Your charms last half again as long and reach farther.; *Heartless* - When your lovers die, their broken hearts burst and wound everyone nearby.
+**Keystones:** *Siren Queen* - Your court grows: one more seat, and every favourite courts you half again as fast.; *Heartless* - Love is a weapon. Cast Aside and Kiss of Betrayal come back twice as fast, and the hearts of those you kill burst and wound everyone nearby.
 
 ### Thief of Years (subclass)
 
-*Beauty is eternal if someone else pays for it. Steal years from enemies, give them to friends, never grow old.*
+*Every year she gives away was stolen from someone. Bank the years of your enemies and spend them on the people you love.*
 
-Thieves of Years drink time itself. Their enemies wither into grey old men in a single battle; their friends grow young again.
+Thieves of Years drink time itself. Only they can take years from one body and put them in another, and they keep the difference.
 
-**Playstyle:** A drain-and-sustain mage. Withering Kiss and Time's Toll age enemies until their bodies fail, Decay keeps aging them for fifteen seconds, and the stolen years heal and rejuvenate your allies. Eternal Beauty ages a whole battlefield by a decade and makes you deathless. Wants Focus and Resilience.
+**Playstyle:** A banker of time. Withering Kiss and Twilight Years take years from enemies and Unlived Years harvests them from the fresh dead, filling your Hoard of Years (thirty at most; every kill adds one with Hoarder). Everything else spends it: Stolen Youth, Borrowed Months for mothers, Stolen Summers for children, Fast Forward over the workshop and fields, Time's Ruin over enemy walls, and Eternal Beauty drinks the whole hoard at once. Spells cast on an empty hoard are much weaker. Wants Focus and Resilience.
 
 | Spell | Mana | Cooldown | Role | Description |
 |---|---|---|---|---|
-| Withering Kiss | 34 | 20s | attack | A long, cold kiss: the target ages five years, may develop the ailments of old age, and very old enemies crumble. You grow a year younger. |
-| Stolen Youth | 40 | 1.4 h | heal | Pour stolen years into an ally: they grow three years younger, an old ailment may lift, scars fade and wounds close. |
-| Time's Toll | 44 | 30s | attack | Collect what time is owed from an area: everyone inside ages three years, slows to a crawl and takes heartbreak damage. |
-| Decay | 36 | 30s | control | Set an enemy's years running: for fifteen seconds it ages a year every three seconds, and the years hurt. |
-| Spring of Youth | 45 | 1.1 h | heal | Spend stolen youth on everyone around you: allies within four cells heal, regenerate and lose a scar. |
-| Eternal Beauty (ultimate) | 220 | 7.2 h | attack | Drink a whole battlefield's worth of youth. Every enemy within ten cells ages twelve years (the old simply crumble) and takes heartbreak damage; you grow five years younger and cannot die for a minute. |
-| Borrowed Months * | 45 | 1 day | utility | Spend some of your stolen time on an expectant mother, person or animal: her pregnancy jumps five days ahead (more with greater healing power, never past the birth itself). The time comes out of your own hoard: you age half a year. |
-| Stolen Summers * | 50 | 1 day | utility | Pour summers stolen from your enemies into the children around a point: every child within four cells gains 8 growth points (more with greater healing power) and half a bar of learning, and babies get to play (Biotech). |
-| Time's Ruin | 50 | 35s | attack | Let a century pass over an area in a heartbeat. Walls, sandbags, turrets and every other building there that is not your colony's take heavy damage (180) as they crumble with age, and every enemy inside ages two years and takes a little damage. Cover does not last forever. |
+| Withering Kiss | 34 | 20s | attack | A long, cold kiss: the target ages five years, may develop the ailments of old age, takes heartbreak damage, and very old enemies crumble. You bank three years in your hoard. |
+| Unlived Years * | 15 | 10s | utility | Every body that died young still owes the years it never lived. Collect them: the fresh corpse at the target crumbles to dust (any gear stays behind) and you bank four years. The colony's grave diggers will thank you. |
+| Twilight Years | 40 | 30s | control | Lend everyone in an area thirty years for twenty seconds: they move 40% slower, shake as they aim and stumble in melee, then get their youth back. You bank two years for the trouble. |
+| Stolen Youth | 40 | 1.4 h | heal | Pour stolen years into an ally. Spends up to ten years from your hoard: they grow younger (two years, up to six with a full spend), an old ailment may lift, scars fade and 25 damage heals. On an empty hoard it barely works. |
+| Borrowed Months * | 45 | 1 day | utility | Lend an expectant mother, person or animal some of your hoard. Spends up to three years: her pregnancy jumps four days ahead, up to about six with a full spend (never past the birth itself). |
+| Stolen Summers * | 50 | 1 day | utility | Pour summers stolen from your enemies into the children around a point. Spends up to four years: every child within four cells gains six growth points (more with a bigger spend) and half a bar of learning, and babies get to play (Biotech). |
+| Fast Forward * | 60 | 1.5 days | utility | Let a week pass in a heartbeat over one corner of the colony. Spends up to five years: within four cells, crops grow, bills in progress lose 800 work and construction frames with their materials gain 400 work, all more with a bigger spend. |
+| Time's Ruin | 50 | 35s | attack | Let a century pass over an area. Spends up to four years: walls, sandbags, turrets and every other building there that is not your colony's take 180 damage (up to about 360 with a full spend) as they crumble with age. Cover does not last forever. |
+| Eternal Beauty (ultimate) | 220 | 7.2 h | attack | Drink a whole battlefield's worth of youth and spend your entire hoard on it. Every enemy within ten cells ages twelve years (the old simply crumble) and takes heartbreak damage, 4% more for every banked year spent; you grow five years younger and cannot die for a minute. |
 
 **Keystones:** *Methuselah* - You have outlived death before. Once a day, when you would die, you rise again young and whole.; *Graverobber* - You take far more than years. Heavy lifesteal and more damage.
 
 ### Nightmare Muse (subclass)
 
-*Sweet dreams and night terrors. Sing enemies to sleep, feed on their dreams, wake their nightmares.*
+*Sleep is her battlefield. Put them under, then decide what they dream.*
 
-A Nightmare Muse visits people in their sleep. Since she started doing it on the battlefield, nobody gets much sleep there.
+A Nightmare Muse visits people in their sleep. Since she started doing it on the battlefield, nobody gets much sleep there. At home she is the one who keeps the bad dreams away.
 
-**Playstyle:** Control through sleep. Sleepsong and Endless Night put enemies into a dream that only pain can break; Dream Eater deals triple damage to dreamers, Dread Dream sends them fleeing while the nightmare eats them, and Sleepwalk sets them wandering. Wants Attunement and Focus.
+**Playstyle:** Sleep first, then work on the sleepers. Sleepsong puts an area to sleep (pain wakes them). Sleepwalk turns sleepers into wanderers who do not wake when shot, Dream Eater wakes every sleeper in a small area screaming for heavy damage, Dread Dream and Stolen Sleep work on the waking, and Endless Night does it to the whole map. At home: dreams of the beloved, singing a breakdown to sleep, and a dreamcatcher over the barracks. Wants Attunement and Focus.
 
 | Spell | Mana | Cooldown | Role | Description |
 |---|---|---|---|---|
 | Sleepsong | 30 | 20s | control | Sing a lullaby over an area. Enemies inside fall into a dream for ten seconds and stand where they are until something hurts them. |
-| Dream Eater | 26 | 10s | attack | Feed on an enemy's dreams: heartbreak damage, tripled against a dreamer, healing you for half and restoring mana. |
-| Dread Dream | 28 | 16s | control | Wake the worst nightmare an enemy has ever had. It flees in terror for six seconds while the dream eats at it. |
-| Sleepwalk | 34 | 25s | control | Enemies in an area fall into a walking sleep for eight seconds and wander off, unaware of the battle. |
-| Lucid Dream | 26 | 35s | buff | Let an ally fight as if in a lucid dream for thirty seconds: time slows, aim sharpens and pain becomes just an idea. |
-| Endless Night (ultimate) | 220 | 7.2 h | attack | Every enemy on the map falls into a deep dream. Five seconds later you feast on every dream at once: heartbreak damage, tripled against those still dreaming. |
+| Dream Eater | 30 | 12s | attack | Feast on every dream in a small area. Each sleeper within two and a half cells wakes screaming: 45 heartbreak damage and a second and a half of stun. Those already awake are ignored. You regain 10 mana. |
+| Sleepwalk | 30 | 25s | control | Get the sleepers in an area up without waking them: every dreaming enemy there wanders off in its sleep for twelve seconds, and pain no longer wakes it. Shoot them in peace. |
+| Dread Dream | 28 | 16s | control | Wake the worst nightmare a waking enemy has ever had. It flees in terror for six seconds while the dream eats at it. |
+| Stolen Sleep | 30 | 20s | control | Steal every last scrap of sleep out of an enemy: its rest is emptied and it turns drowsy for thirty seconds (25% slower, 30% slower to aim, a little dazed). An enemy left on empty for long collapses asleep where it stands. The stolen sleep refreshes every ally within five cells of it (+25% rest). |
 | Dream of the Beloved * | 35 | 1 day | utility | Breathe a sweet dream over everyone within three cells who sleeps in the next day. After at least four hours of sleep they wake glowing: +8 mood for a day, +15% rest and +25% recreation, and if they have a lover, +15 opinion of them for five days. Cast it over a couple's bed and they wake up thinking only of each other. |
 | Sweet Oblivion * | 40 | 12 h | utility | Sing someone out of a mental break, even a violent one: the break ends at once, they lie down where they stand and fall asleep, and wake up feeling lighter (+5 mood for a day). It works just as well on a colonist who simply needs to sleep right now. |
-| Stolen Sleep | 30 | 20s | control | Steal every last scrap of sleep out of an enemy: its rest is emptied and it turns drowsy for thirty seconds (25% slower, 30% slower to aim, a little dazed). An enemy left on empty for long collapses asleep where it stands. The stolen sleep refreshes every ally within five cells of it (+25% rest). |
+| Dreamcatcher * | 50 | 2 days | utility | Hang a dreamcatcher of moonlit thread for three days. Every hour it ends any non-violent breakdown within six cells and leaves everyone there untroubled for two hours (rest 15% faster, mental break threshold 5% lower). Hang it in the barracks before a hard winter. |
+| Endless Night (ultimate) | 220 | 7.2 h | attack | Every enemy on the map falls into a deep dream. Five seconds later you feast on every dream at once: heartbreak damage, tripled against those still dreaming. |
 
-**Keystones:** *Sandman's Song* - Your lullabies carry much farther and come back sooner.; *Nightmare Queen* - Dream Eater feasts on three dreamers at once, and every dream you touch bites harder.
+**Keystones:** *Sandman's Song* - Your lullabies carry much farther and come back sooner.; *Nightmare Queen* - Dream Eater feasts on a much wider area and comes back sooner, and every dream you touch bites harder.
 
 ## Incubus
 

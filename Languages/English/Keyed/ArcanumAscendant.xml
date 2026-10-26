@@ -499,6 +499,9 @@ Chance of a wild surge when overchannelling: {2}</AA_StrainTip>
   <AA_Desc_Sequence>Unfolds in {0} stages over {1}</AA_Desc_Sequence>
   <AA_EmpowerText>+{0} power</AA_EmpowerText>
   <AA_Desc_EmpowerConsume>Spends your {0}: +{1} power per stack (up to +{2})</AA_Desc_EmpowerConsume>
+  <AA_Desc_EmpowerSpend>Spends up to {2} of your {0}: +{1} power for each one spent</AA_Desc_EmpowerSpend>
+  <AA_Desc_EmpowerWithout>With no {0} to spend it works at {1} power</AA_Desc_EmpowerWithout>
+  <AA_EmpowerEmpty>No {0} to spend</AA_EmpowerEmpty>
   <AA_Desc_Empower>+{1} power per stack of {0} you carry (up to +{2})</AA_Desc_Empower>
   <AA_SkinStolen>Skin stolen</AA_SkinStolen>
   <AA_Desc_CopyPawn>Creates a copy of the target that fights for you for {0}</AA_Desc_CopyPawn>

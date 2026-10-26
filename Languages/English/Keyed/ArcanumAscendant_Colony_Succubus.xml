@@ -11,4 +11,22 @@
   <AA_Desc_SuccubusHeartsDueSpent>Only affects targets with at least {0} stacks of {1}, and spends them all:</AA_Desc_SuccubusHeartsDueSpent>
   <AA_SuccubusNotSmitten>Not smitten enough ({0}/{1})</AA_SuccubusNotSmitten>
   <AA_SuccubusUnmoved>Unmoved</AA_SuccubusUnmoved>
+  <!-- Redesign: Fickle Heart, Last Embrace and the Temptress's court -->
+  <AA_SuccubusHeartsGathered>{0} hearts gathered</AA_SuccubusHeartsGathered>
+  <AA_Desc_SuccubusGather>Every stack of {0} on enemies within {1} cells flies to the target, plus {2} more</AA_Desc_SuccubusGather>
+  <AA_SuccubusNotThrall>Not enthralled</AA_SuccubusNotThrall>
+  <AA_Desc_SuccubusLastEmbrace>An enthralled thrall bursts: {0} damage and {2} stacks of Infatuation to enemies within {1} cells. The thrall dies.</AA_Desc_SuccubusLastEmbrace>
+  <AA_SuccubusHumbled>Humbled</AA_SuccubusHumbled>
+  <AA_SuccubusNotReady>Only {0} courted (needs {1})</AA_SuccubusNotReady>
+  <AA_SuccubusNotFavoured>Not one of her favourites</AA_SuccubusNotFavoured>
+  <AA_SuccubusCastAside>Cast aside!</AA_SuccubusCastAside>
+  <AA_SuccubusDismissed>Going home</AA_SuccubusDismissed>
+  <AA_SuccubusLostInterest>Lost interest</AA_SuccubusLostInterest>
+  <AA_SuccubusBeckoned>Favoured ({0} courted)</AA_SuccubusBeckoned>
+  <AA_Desc_SuccubusBeckon>The target becomes a favourite, {0} courted; favourites court her while near her or her champion and defect at 100% (seats: {1})</AA_Desc_SuccubusBeckon>
+  <AA_Desc_SuccubusHeadStart>Each stack of {0} it carries (spent) adds {1}</AA_Desc_SuccubusHeadStart>
+  <AA_Desc_SuccubusBetray>A favourite courted at least {0} defects at once</AA_Desc_SuccubusBetray>
+  <AA_Desc_SuccubusCastAside>Ends a favour: {0} to {1} heartbreak damage and a stun of up to {2} s, more the more it was courted</AA_Desc_SuccubusCastAside>
+  <AA_Desc_SuccubusDecree>Every favourite on the map lays down its arms and gains {0} courtship</AA_Desc_SuccubusDecree>
+  <AA_Desc_SuccubusDismiss>Favourites in range leave the court and flee the map ({0} goodwill each with their faction)</AA_Desc_SuccubusDismiss>
 </LanguageData>
