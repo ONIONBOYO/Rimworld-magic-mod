@@ -118,7 +118,7 @@
   <ThingDef>
     <defName>AA_ArcaneAltar</defName>
     <label>arcane lectern</label>
-    <description>A lectern inscribed with glowing runes. Scholars use it to scribe grimoires, sigils, tomes and mana draughts.\n\nPawns attuning to the arcane study here until their magic awakens, and mages study here to gain experience. They do both in their free time, or you can order them to study.</description>
+    <description>A lectern inscribed with glowing runes. Scholars use it to scribe grimoires, sigils, tomes, treatises and mana draughts (the Arcana work type).\n\nPawns attuning to the arcane study here until their magic awakens, and mages study here to gain experience: in their free time, as Arcana work, or when ordered. Study is faster in an impressive room with bookcases nearby, the first four hours each day count double, and a mage at least three levels higher standing nearby teaches half again as fast.</description>
     <thingClass>Building_WorkTable</thingClass>
     <category>Building</category>
     <graphicData>

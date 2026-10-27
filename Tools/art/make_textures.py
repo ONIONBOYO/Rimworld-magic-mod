@@ -635,6 +635,7 @@ def make_items_ui():
 
     save(book(np.array([90, 50, 140], np.float32), hexc("#ffd36b"), hexc("#c9a0ff")), "Items/Grimoire")
     save(book(np.array([45, 40, 55], np.float32), np.array([150, 150, 160], np.float32), hexc("#ff5a5a"), cracked=True), "Items/TomeOfUnmaking")
+    save(book(np.array([120, 80, 45], np.float32), hexc("#e8d8b0"), hexc("#7fd6ff")), "Items/ArcaneTreatise")
 
     def potion(liquid, tall=False):
         if tall:

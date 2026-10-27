@@ -33,7 +33,37 @@ namespace ArcanumAscendant
         public static readonly int[] CircleLevelCap = { 0, 6, 12, 18, 24, 30 };
         /// <summary>Hours of study at a lectern needed to finish attuning, for an average pawn.</summary>
         public const float AttunementHours = 16f;
-        public const float StudyXpPerHour = 60f;
+        /// <summary>Hours of study each day that count double (a fresh mind learns fastest).</summary>
+        public const float FreshStudyHours = 4f;
+        /// <summary>Share of a study hour's experience a mage gains from an hour of ordinary research.</summary>
+        public const float ResearchXpShare = 0.3f;
+
+        /// <summary>Experience an hour of study is worth at this level, before the pawn's own study factor.</summary>
+        public static float StudyXpPerHour(int lvl) => 40f + 18f * Mathf.Clamp(lvl, 1, MaxLevel);
+
+        private int studyDay = -1;
+        private int studyTicksToday;
+
+        /// <summary>True while today's first few hours of study have not been used up.</summary>
+        public bool FreshMind
+        {
+            get
+            {
+                if (studyDay != GenDate.DaysPassed) return true;
+                return studyTicksToday < FreshStudyHours * GenDate.TicksPerHour;
+            }
+        }
+
+        public void Notify_Studied(int ticks)
+        {
+            int day = GenDate.DaysPassed;
+            if (studyDay != day)
+            {
+                studyDay = day;
+                studyTicksToday = 0;
+            }
+            studyTicksToday += ticks;
+        }
 
         public ArcaneClassDef classDef;
         public ArcaneClassDef subclassDef;
@@ -790,6 +820,9 @@ namespace ArcanumAscendant
                 UpdateStrainHediff();
             }
             if (familiar != null) Familiars.Tick(this, elapsed);
+            // mages learn something from every hour of ordinary research too
+            if (p.CurJobDef == JobDefOf.Research && !ReadyToAscend && level < MaxLevel)
+                GainXp(StudyXpPerHour(level) * ResearchXpShare * StudyFactor(p) * elapsed / GenDate.TicksPerHour);
 
             float wmax = WardMax;
             if (ward > wmax) ward = Mathf.Max(wmax, ward - (0.5f + (ward - wmax) * 0.04f) * seconds);
@@ -1078,6 +1111,8 @@ namespace ArcanumAscendant
             Scribe_Defs.Look(ref subclassDef, "subclassDef");
             Scribe_Values.Look(ref level, "level", 1);
             Scribe_Values.Look(ref xp, "xp");
+            Scribe_Values.Look(ref studyDay, "studyDay", -1);
+            Scribe_Values.Look(ref studyTicksToday, "studyTicksToday");
             Scribe_Values.Look(ref paragon, "paragon");
             Scribe_Values.Look(ref perkPoints, "perkPoints");
             Scribe_Values.Look(ref attributePoints, "attributePoints");

@@ -138,7 +138,9 @@ namespace ArcanumAscendant
                 StartCooldown(AdjustedCooldown(def.cooldownTicksRange.RandomInRange));
             if (c != null && c.IsMage)
             {
-                c.GainXp((4f + cost * 0.6f) * Ext.xpFactor);
+                // rare spells teach more: a spell with a long cooldown is worth up to four times as much to cast
+                float rarity = 1f + Mathf.Clamp(def.cooldownTicksRange.max / (float)GenDate.TicksPerHour, 0f, 12f) * 0.25f;
+                c.GainXp((4f + cost * 0.6f) * Ext.xpFactor * rarity);
                 c.GainMastery(def, Mastery.PointsPerCast(def));
                 if (strainOwed > 0f) c.AddStrain(strainOwed);
             }

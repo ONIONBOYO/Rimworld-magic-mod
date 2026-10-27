@@ -390,4 +390,113 @@
     <letterDef>PositiveEvent</letterDef>
   </IncidentDef>
 
+  <!-- ===================== Arcana work: lectern bills and study ===================== -->
+  <WorkTypeDef>
+    <defName>AA_Arcana</defName>
+    <labelShort>arcana</labelShort>
+    <pawnLabel>scholar</pawnLabel>
+    <gerundLabel>studying the arcane</gerundLabel>
+    <description>Scribe grimoires, sigils, tomes, treatises and mana draughts at an arcane lectern, and (for mages and those attuning) study there to gain experience.</description>
+    <verb>Study</verb>
+    <naturalPriority>450</naturalPriority>
+    <workTags>
+      <li>Intellectual</li>
+    </workTags>
+    <relevantSkills>
+      <li>Intellectual</li>
+    </relevantSkills>
+  </WorkTypeDef>
+
+  <WorkGiverDef>
+    <defName>AA_DoBillsArcaneLectern</defName>
+    <label>scribe at arcane lectern</label>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>AA_Arcana</workType>
+    <priorityInType>100</priorityInType>
+    <fixedBillGiverDefs>
+      <li>AA_ArcaneAltar</li>
+    </fixedBillGiverDefs>
+    <verb>scribe</verb>
+    <gerund>scribing at</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+      <li>Sight</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+
+  <WorkGiverDef>
+    <defName>AA_StudyAtLectern</defName>
+    <label>study at arcane lectern</label>
+    <giverClass>ArcanumAscendant.WorkGiver_ArcaneStudy</giverClass>
+    <workType>AA_Arcana</workType>
+    <priorityInType>50</priorityInType>
+    <verb>study at</verb>
+    <gerund>studying at</gerund>
+    <requiredCapacities>
+      <li>Sight</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+
+  <!-- ===================== Arcane treatise ===================== -->
+  <ThingDef ParentName="AA_ArcaneItemBase">
+    <defName>AA_ArcaneTreatise</defName>
+    <label>arcane treatise</label>
+    <description>A scholar's annotated notes on the arcane: worked examples, mistakes to avoid, the shortcuts nobody writes down. A mage who reads it gains experience worth 60% of their next level (it cannot carry them past their circle's limit).</description>
+    <graphicData>
+      <texPath>ArcanumAscendant/Items/ArcaneTreatise</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stackLimit>10</stackLimit>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <MarketValue>450</MarketValue>
+      <Mass>0.6</Mass>
+      <Flammability>1</Flammability>
+      <Beauty>1</Beauty>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <useJob>UseItem</useJob>
+        <useLabel>Read {0_label}</useLabel>
+        <useDuration>900</useDuration>
+      </li>
+      <li Class="ArcanumAscendant.CompProperties_UseEffectTreatise">
+        <levelFraction>0.6</levelFraction>
+      </li>
+      <li Class="CompProperties_UseEffectDestroySelf" />
+    </comps>
+  </ThingDef>
+
+  <RecipeDef ParentName="AA_ArcaneRecipeBase">
+    <defName>AA_Make_ArcaneTreatise</defName>
+    <label>write arcane treatise</label>
+    <description>Write down what you know of the arcane, so another mage can learn it faster.</description>
+    <jobString>Writing an arcane treatise.</jobString>
+    <workAmount>4500</workAmount>
+    <ingredients>
+      <li>
+        <filter><thingDefs><li>AA_ArcaneCrystal</li></thingDefs></filter>
+        <count>3</count>
+      </li>
+      <li>
+        <filter><thingDefs><li>Cloth</li></thingDefs></filter>
+        <count>15</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>AA_ArcaneCrystal</li>
+        <li>Cloth</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <AA_ArcaneTreatise>1</AA_ArcaneTreatise>
+    </products>
+    <skillRequirements>
+      <Intellectual>8</Intellectual>
+    </skillRequirements>
+    <researchPrerequisite>AA_Arcanology</researchPrerequisite>
+  </RecipeDef>
 </Defs>

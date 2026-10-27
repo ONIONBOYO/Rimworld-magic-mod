@@ -359,6 +359,42 @@ namespace ArcanumAscendant
         }
     }
 
+    public class CompProperties_UseEffectTreatise : CompProperties_UseEffect
+    {
+        /// <summary>Share of the reader's next level the treatise is worth.</summary>
+        public float levelFraction = 0.6f;
+
+        public CompProperties_UseEffectTreatise()
+        {
+            compClass = typeof(CompUseEffect_Treatise);
+        }
+    }
+
+    /// <summary>Arcane treatise: a scholar's notes, worth a good part of a level to the mage who reads them.</summary>
+    public class CompUseEffect_Treatise : CompUseEffect
+    {
+        public CompProperties_UseEffectTreatise Props => (CompProperties_UseEffectTreatise)props;
+
+        public override void DoEffect(Pawn usedBy)
+        {
+            base.DoEffect(usedBy);
+            var c = usedBy.TryGetComp<CompArcane>();
+            if (c == null || !c.IsMage) return;
+            float amount = c.XpToNextLevel * Props.levelFraction;
+            c.GainXp(amount, false);
+            if (usedBy.Spawned) ArcaneFx.LevelUpBurst(usedBy, c.DisplayClass.color, false);
+            Messages.Message("AA_TreatiseRead".Translate(usedBy.LabelShort, amount.ToString("F0"), usedBy.Named("PAWN")), usedBy, MessageTypeDefOf.PositiveEvent);
+        }
+
+        public override AcceptanceReport CanBeUsedBy(Pawn p)
+        {
+            var c = p.TryGetComp<CompArcane>();
+            if (c == null || !c.IsMage) return "AA_NotAMage".Translate();
+            if (c.ReadyToAscend) return "AA_StudyCapped".Translate(CompArcane.CircleLabel(c.circle + 1));
+            return base.CanBeUsedBy(p);
+        }
+    }
+
     /// <summary>Mana potion: restores mana when ingested.</summary>
     public class IngestionOutcomeDoer_RestoreMana : IngestionOutcomeDoer
     {

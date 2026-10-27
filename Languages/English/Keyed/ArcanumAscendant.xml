@@ -384,6 +384,10 @@ Etch a {2} at an arcane lectern (or buy one from an exotic trader), then have {0
   <AA_StudyCapped>must ascend to the {0} first</AA_StudyCapped>
   <AA_StudyMaxed>nothing left to learn</AA_StudyMaxed>
   <AA_StudyReport>studying the arcane.</AA_StudyReport>
+  <AA_StudyReportXp>studying the arcane ({0} XP/hour)</AA_StudyReportXp>
+  <AA_StudyReportFresh>(fresh mind: double)</AA_StudyReportFresh>
+  <AA_StudyReportMentor>(taught by {0})</AA_StudyReportMentor>
+  <AA_TreatiseRead>{0} read an arcane treatise and gained {1} experience.</AA_TreatiseRead>
   <AA_StudyReportAttune>attuning to the arcane ({0}).</AA_StudyReportAttune>
   <AA_CuredX>cured {0}</AA_CuredX>
   <AA_ScarsFaded>{0} scar(s) faded</AA_ScarsFaded>

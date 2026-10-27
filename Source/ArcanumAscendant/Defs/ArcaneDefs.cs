@@ -298,6 +298,8 @@ namespace ArcanumAscendant
         public static HediffDef AA_Haste;
         public static JobDef AA_ArcaneChannel;
         public static JobDef AA_ArcaneStudy;
+        public static ThingDef AA_ArcaneAltar;
+        public static ThingDef AA_ArcaneTreatise;
         public static HediffDef AA_Summoned;
         public static HediffDef AA_Polymorphed;
         public static HediffDef AA_Dominated;
