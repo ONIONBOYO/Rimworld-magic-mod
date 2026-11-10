@@ -109,7 +109,8 @@ namespace ArcanumAscendant
 
         public static readonly int Glow, Spark, Streak, Ember, Mote, Smoke, SmokeDark, Dust, Shard, Snow, Leaf, Petal, Feather, Note, Rune, Skull, Bone,
             Bolt, Star, Ring, Clock, Debris, Debris2, Shadow, Blood, BloodAlpha, Wisp, Flame, Bubble, Gear, Flare, Ash, IceChunk, Gold, Heart, Crystal,
-            Gust, Glitch, Eye, Seal, Crow, FeatherDark, Kiss, Smile, Tube, Confetti;
+            Gust, Glitch, Eye, Seal, Crow, FeatherDark, Kiss, Smile, Tube, Confetti,
+            StarSpike, Stardust, Nebula, Scale, Shell, WyrmFlame, Coin;
 
         static PMat()
         {
@@ -159,6 +160,13 @@ namespace ArcanumAscendant
             Smile = Register("ArcanumAscendant/Vfx/Smile", true);
             Tube = Register("ArcanumAscendant/Vfx/Tube", true);
             Confetti = Register("ArcanumAscendant/Vfx/Confetti", false);
+            StarSpike = Register("ArcanumAscendant/Vfx/StarSpike", true);
+            Stardust = Register("ArcanumAscendant/Vfx/Stardust", true);
+            Nebula = Register("ArcanumAscendant/Vfx/Nebula", true);
+            Scale = Register("ArcanumAscendant/Vfx/WyrmScale", false);
+            Shell = Register("ArcanumAscendant/Vfx/EggShell", false);
+            WyrmFlame = Register("ArcanumAscendant/Vfx/WyrmFlame", true);
+            Coin = Register("ArcanumAscendant/Vfx/Coin", false);
         }
 
         public static int Register(string path, bool additive)

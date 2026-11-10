@@ -125,6 +125,8 @@ namespace ArcanumAscendant
         Doom,
         Desire,
         Liminal,
+        Astral,
+        Draconic,
     }
 
     public enum VfxType

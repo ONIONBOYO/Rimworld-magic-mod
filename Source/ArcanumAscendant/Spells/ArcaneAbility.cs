@@ -37,7 +37,8 @@ namespace ArcanumAscendant
 
         public SpellExtension Ext => extInt ??= def.GetModExtension<SpellExtension>() ?? new SpellExtension();
         public CompArcane Arcane => pawn?.TryGetComp<CompArcane>();
-        public CompProperties_ArcaneSpell SpellProps => def.comps?.OfType<CompProperties_ArcaneSpell>().FirstOrDefault();
+        private CompProperties_ArcaneSpell spellProps;
+        public CompProperties_ArcaneSpell SpellProps => spellProps ??= def.comps?.OfType<CompProperties_ArcaneSpell>().FirstOrDefault();
 
         public float ManaCost
         {
@@ -86,6 +87,9 @@ namespace ArcanumAscendant
                 var c = Arcane;
                 if (c != null && c.mana + 0.01f < ManaCost && !CanPayWithHealth(out _) && !c.CanOverchannel) return "AA_NotEnoughMana".Translate();
                 if (SilencedDef != null && pawn.health.hediffSet.HasHediff(SilencedDef)) return "AA_SilencedReason".Translate();
+                var sp = SpellProps;
+                if (sp != null && sp.fromCompanion && Wyrm.Of(pawn) == null) return "AA_NoWyrm".Translate();
+                if (sp != null && sp.requiresNoCompanion && Wyrm.Anywhere(pawn) != null) return "AA_WyrmAlreadyBonded".Translate();
                 return true;
             }
         }
@@ -107,6 +111,17 @@ namespace ArcanumAscendant
             if (SilencedDef != null && pawn.health.hediffSet.HasHediff(SilencedDef))
             {
                 reason = "AA_SilencedReason".Translate();
+                return true;
+            }
+            var sp = SpellProps;
+            if (sp != null && sp.fromCompanion && Wyrm.Of(pawn) == null)
+            {
+                reason = "AA_NoWyrm".Translate();
+                return true;
+            }
+            if (sp != null && sp.requiresNoCompanion && Wyrm.Anywhere(pawn) != null)
+            {
+                reason = "AA_WyrmAlreadyBonded".Translate();
                 return true;
             }
             return false;

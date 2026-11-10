@@ -30,7 +30,20 @@ namespace ArcanumAscendant
             if (target.Thing is Pawn aimed && aimed != caster && (props.affects == TargetFilter.Enemies || props.affects == TargetFilter.Inherit))
                 ctx.forcedTarget = aimed;
 
-            Vector3 origin = caster.DrawPos;
+            Thing from = caster;
+            if (props.fromCompanion)
+            {
+                var wyrm = Wyrm.Of(caster);
+                if (wyrm == null || !wyrm.Spawned || wyrm.Map != map || wyrm.Downed)
+                {
+                    ArcaneFx.Text(caster, "AA_NoWyrm".Translate(), ctx.Color);
+                    return;
+                }
+                from = wyrm;
+                ctx.originThing = wyrm;
+                if (target.IsValid && target.Cell != wyrm.Position) wyrm.rotationTracker?.FaceCell(target.Cell);
+            }
+            Vector3 origin = from.DrawPos;
             ArcaneFx.PlayAll(props.castVfx, map, origin, ctx, 0f);
             props.castSound?.PlayOneShot(new TargetInfo(caster.PositionHeld, map));
 
@@ -58,7 +71,7 @@ namespace ArcanumAscendant
 
                 case DeliveryType.Self:
                 case DeliveryType.Nova:
-                    Impact(ctx, new ImpactInfo { cell = caster.Position, pos = caster.DrawPos, primary = caster, radius = radius, sourcePos = origin });
+                    Impact(ctx, new ImpactInfo { cell = from.Position, pos = from.DrawPos, primary = from, radius = radius, sourcePos = origin });
                     break;
 
                 case DeliveryType.Projectile:
@@ -109,6 +122,8 @@ namespace ArcanumAscendant
 
                 case DeliveryType.Cone:
                     DoCone(ctx, target, origin);
+                    // a mage in draconic aspect breathes along with her wyrm
+                    if (props.fromCompanion && Wyrm.TwinBreath(caster)) DoCone(ctx, target, caster.DrawPos);
                     break;
 
                 case DeliveryType.Barrage:
@@ -375,12 +390,13 @@ namespace ArcanumAscendant
             if (dir.sqrMagnitude < 0.01f) dir = Vector3.forward;
             float baseAngle = dir.AngleFlat();
             var cells = new List<IntVec3>();
-            foreach (var c in GenRadial.RadialCellsAround(ctx.caster.Position, Mathf.Min(range, GenRadial.MaxRadialPatternRadius - 1f), false))
+            IntVec3 from = origin.ToIntVec3();
+            foreach (var c in GenRadial.RadialCellsAround(from, Mathf.Min(range, GenRadial.MaxRadialPatternRadius - 1f), false))
             {
                 if (!c.InBounds(map)) continue;
                 Vector3 v = (c.ToVector3Shifted() - origin).Yto0();
                 float a = Mathf.Abs(Mathf.DeltaAngle(baseAngle, v.AngleFlat()));
-                if (a <= props.coneAngle * 0.5f && GenSight.LineOfSight(ctx.caster.Position, c, map, true)) cells.Add(c);
+                if (a <= props.coneAngle * 0.5f && GenSight.LineOfSight(from, c, map, true)) cells.Add(c);
             }
             var info = new ImpactInfo { cell = target.Cell, pos = target.CenterVector3, primary = target.Thing, radius = 0.001f, areaCells = cells, sourcePos = origin };
             Impact(ctx, info, playVfx: false);

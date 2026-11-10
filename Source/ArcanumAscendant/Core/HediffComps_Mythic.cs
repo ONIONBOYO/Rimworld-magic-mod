@@ -836,6 +836,11 @@ namespace ArcanumAscendant
         /// <summary>Applied around the bearer each pulse (never to the bearer itself).</summary>
         public List<SpellEffect> areaEffects = new List<SpellEffect>();
         public float areaRadius = 3f;
+        /// <summary>Applied to the nearest enemies of the bearer each pulse (a bolt flies from the bearer to each).</summary>
+        public List<SpellEffect> targetEffects = new List<SpellEffect>();
+        public float targetRange = 14f;
+        public int targetCount = 1;
+        public string targetTex = "ArcanumAscendant/Vfx/Orb";
         public List<VfxSpec> vfx = new List<VfxSpec>();
         public Color color = Color.white;
 
@@ -890,6 +895,25 @@ namespace ArcanumAscendant
             if (!pr.areaEffects.NullOrEmpty() && !p.Dead && p.Spawned)
                 SpellRunner.Impact(ctx, new ImpactInfo { cell = p.Position, pos = pos, radius = pr.areaRadius * ctx.RadiusFactor, sourcePos = pos, exclude = p },
                     pr.areaEffects, playVfx: false);
+            if (!pr.targetEffects.NullOrEmpty() && !p.Dead && p.Spawned)
+            {
+                var foes = GenRadial.RadialDistinctThingsAround(p.Position, map, Mathf.Min(pr.targetRange, GenRadial.MaxRadialPatternRadius - 1f), true).OfType<Pawn>()
+                    .Where(o => o != p && !o.Dead && !o.Downed && o.HostileTo(p) && GenSight.LineOfSight(p.Position, o.Position, map, true))
+                    .OrderBy(o => o.Position.DistanceToSquared(p.Position)).Take(pr.targetCount).ToList();
+                var mgr = ArcaneVfxManager.For(map);
+                foreach (var foe in foes)
+                {
+                    var victim = foe;
+                    int ticks = Mathf.Max(4, Mathf.RoundToInt((victim.DrawPos - pos).MagnitudeHorizontal() / 30f * 60f));
+                    if (map == Find.CurrentMap)
+                        mgr.Add(new VfxProjectile(pos, victim.DrawPos, ticks, ArcaneMats.Get(pr.targetTex), ctx.Color, ctx.Color2, 0.6f, 0f, false, false) { style = StyleFx.Resolve(ctx) });
+                    mgr.Schedule(ticks, () =>
+                    {
+                        if (victim.Dead || !victim.Spawned || victim.Map != map) return;
+                        SpellRunner.Impact(ctx, new ImpactInfo { cell = victim.Position, pos = victim.DrawPos, primary = victim, radius = 0f, sourcePos = pos }, pr.targetEffects, playVfx: true);
+                    });
+                }
+            }
         }
 
         public override void CompExposeData()

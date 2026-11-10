@@ -53,6 +53,10 @@ namespace ArcanumAscendant
         public float radius;
         public List<SpellEffect> effects = new List<SpellEffect>();
         public List<SpellEffect> casterEffects = new List<SpellEffect>();
+        /// <summary>The spell is carried out by the caster's bonded wyrm: it starts from the wyrm, and cannot be cast without one on the map.</summary>
+        public bool fromCompanion;
+        /// <summary>Only castable while the caster has no bonded wyrm anywhere (hatching a new one).</summary>
+        public bool requiresNoCompanion;
 
         // projectile / meteor
         public string projectileTex = "ArcanumAscendant/Vfx/Orb";
@@ -182,6 +186,8 @@ namespace ArcanumAscendant
         /// <summary>The pawn the caster deliberately aimed an offensive spell at. It counts as an enemy even when it isn't
         /// hostile (hunting a wild animal, punishing a colonist), the same way a forced attack works in vanilla.</summary>
         public Pawn forcedTarget;
+        /// <summary>Where the spell starts when it isn't the caster (a wyrm's breath starts at the wyrm).</summary>
+        public Thing originThing;
         public Faction Faction => caster?.Faction;
 
         public float DamageFactor => basePower * Mathf.Max(0.1f, 1f + mods.damage);

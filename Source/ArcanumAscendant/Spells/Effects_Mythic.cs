@@ -29,6 +29,8 @@ namespace ArcanumAscendant
         AwayFromImpact,
         /// <summary>Thrown toward the centre of the impact.</summary>
         TowardImpact,
+        /// <summary>The caster's bonded wyrm flies to the target cell.</summary>
+        CompanionToTarget,
     }
 
     /// <summary>
@@ -52,12 +54,12 @@ namespace ArcanumAscendant
         /// <summary>Downed pawns can be carried too (for lifting a fallen ally out of danger).</summary>
         public bool allowDowned;
 
-        public override bool AppliesToPawns => mode != LaunchMode.CasterToTarget;
+        public override bool AppliesToPawns => mode != LaunchMode.CasterToTarget && mode != LaunchMode.CompanionToTarget;
 
         public override void ApplyAtCell(SpellContext ctx, ImpactInfo info)
         {
-            if (mode != LaunchMode.CasterToTarget) return;
-            var caster = ctx.caster;
+            if (mode != LaunchMode.CasterToTarget && mode != LaunchMode.CompanionToTarget) return;
+            var caster = mode == LaunchMode.CompanionToTarget ? Wyrm.Of(ctx.caster) : ctx.caster;
             if (caster == null || !caster.Spawned || caster.Downed) return;
             var map = caster.Map;
             IntVec3 dest = info.cell;
