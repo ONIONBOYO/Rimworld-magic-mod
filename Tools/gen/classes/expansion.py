@@ -177,7 +177,7 @@ def paladin(t, extra):
         spell_node("HeavensLance", (0, 5), ["Steadfast"]),
     )
     extra.append(status("AA_DivineIntervention", "divine intervention", "Held in the hand of the divine. Immune to all harm.", HOLY, bad=False, ticks=480,
-        comps=[shell(0.0, color=HOLY), aura(HOLY, "ArcanumAscendant/Vfx/Shield", 2.0, "AA_Fleck_Feather", 20)]))
+        comps=[shell(0.0, color=HOLY), aura(HOLY, "ArcanumAscendant/Vfx/HexShield", 2.0, "AA_Fleck_Feather", 20)]))
     t["Templar"].add_spells(
         Spell("UnbreakableVow", "unbreakable vow", "Swear to stand your ground. For fifteen seconds you take far less damage and a third of every blow is turned back on the attacker.",
               icon=("shield", "crown"), mana=45, cd=60, warmup=0.0, tags=["Holy"], role="Buff", target="self", tier=3,
@@ -186,7 +186,7 @@ def paladin(t, extra):
     )
     t["Templar"].add_nodes(spell_node("UnbreakableVow", (6, 3), ["Bastion"]))
     extra.append(status("AA_UnbreakableVow", "unbreakable vow", "Sworn not to fall. Takes 60% less damage and reflects a third of every blow.", HOLY, bad=False, ticks=900,
-        comps=[shell(0.4, 0.33, color="#ffcf5a", reflectDef="AA_Holy"), aura("#ffcf5a", "ArcanumAscendant/Vfx/Shield", 1.8)]))
+        comps=[shell(0.4, 0.33, color="#ffcf5a", reflectDef="AA_Holy"), aura("#ffcf5a", "ArcanumAscendant/Vfx/HexShield", 1.8)]))
     t["Cleric"].add_spells(
         Spell("GreaterRestoration", "greater restoration", "A long, exhausting prayer that makes the body whole: every chronic illness cured, every scar erased, every lost limb and organ regrown, every addiction broken.",
               icon=("cross", "star"), mana=140, cd=DAY / SEC, range=3, warmup=12.0, tags=["Holy", "Healing"], role="Heal", target="ally", tier=4, ai_hp=0.0, autocast=False,

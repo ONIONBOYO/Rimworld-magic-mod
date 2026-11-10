@@ -7,6 +7,7 @@ props3d.py instead.
 """
 import math
 import random
+import zlib
 
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
@@ -204,7 +205,7 @@ def signs():
             d.line([P(pts[i]), P(pts[j])], fill=150, width=max(1, int(n * 0.012)))
         line = shrink(img, S)
         a = line * 0.75 + arr(blur(Image.fromarray((line * 255).astype(np.uint8)), 2.5)) * 0.5
-        rng = random.Random(hash(name) % 1000)
+        rng = random.Random(zlib.crc32(name.encode()) % 1000)
         for k, p in enumerate(pts):
             sc = 0.2 if k % 3 == 0 else 0.13
             a += star_field((x - p[0] * 0.84) / sc, (y - p[1] * 0.84) / sc, 0.42, 0.42, 0.1, 0.035, 0.06)

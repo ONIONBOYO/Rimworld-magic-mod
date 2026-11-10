@@ -10,7 +10,7 @@
   </supportedVersions>
   <description>A deep magic and class system for RimWorld. No other mods required (no Harmony needed).
 
-[ 14 CLASSES · 42 SUBCLASSES · 513 SPELLS · 1277 SKILL TREE NODES ]
+[ 16 CLASSES · 48 SUBCLASSES · 586 SPELLS · 1451 SKILL TREE NODES ]
 
 Awaken a colonist's magic and choose a path. Awakening works like gaining a psylink: scribe a grimoire from arcane crystals, then study at an arcane lectern until the gift wakes.
  - Pyromancer: Inferno Lord, Ashen Phoenix, Forgeheart
@@ -27,6 +27,8 @@ Awaken a colonist's magic and choose a path. Awakening works like gaining a psyl
  - Succubus (women): Temptress, Thief of Years, Nightmare Muse
  - Incubus (men): Pactbinder, Dreamlord, Hellprince
  - Noclipper (the Backrooms): Level Keeper, Entity Handler, Archivist
+ - Starcaller (stars you place and cast through): Constellar, Moonsworn, Signbearer
+ - Wyrmcaller (a bonded dragon that grows with you): Soulbound, Hoardkeeper, Broodmother
 
 FEATURES
  - Five attributes (Potency, Focus, Celerity, Resilience, Attunement) that gate deeper skill tree rows.

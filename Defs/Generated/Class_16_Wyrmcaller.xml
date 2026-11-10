@@ -5213,6 +5213,7 @@
           <texPath>ArcanumAscendant/Pawns/Wyrm_Spirit_Hatchling</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.5</drawSize>
+          <shaderType>Transparent</shaderType>
           <shadowData>
             <volume>(0.375, 0.3, 0.3)</volume>
             <offset>(0, 0, -0.12)</offset>
@@ -5229,6 +5230,7 @@
           <texPath>ArcanumAscendant/Pawns/Wyrm_Spirit_Drake</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>2.9</drawSize>
+          <shaderType>Transparent</shaderType>
           <shadowData>
             <volume>(0.725, 0.3, 0.58)</volume>
             <offset>(0, 0, -0.232)</offset>
@@ -5245,6 +5247,7 @@
           <texPath>ArcanumAscendant/Pawns/Wyrm_Spirit_Elder</texPath>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>4.6</drawSize>
+          <shaderType>Transparent</shaderType>
           <shadowData>
             <volume>(1.15, 0.3, 0.92)</volume>
             <offset>(0, 0, -0.368)</offset>

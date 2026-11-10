@@ -6698,7 +6698,7 @@
       </li>
       <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
         <color>(1, 0.886, 0.541, 0.9)</color>
-        <texPath>ArcanumAscendant/Vfx/Shield</texPath>
+        <texPath>ArcanumAscendant/Vfx/HexShield</texPath>
         <size>2</size>
         <fleck>AA_Fleck_Feather</fleck>
         <fleckInterval>20</fleckInterval>
@@ -6735,7 +6735,7 @@
       </li>
       <li Class="ArcanumAscendant.HediffCompProperties_AuraVisual">
         <color>(1, 0.812, 0.353, 0.9)</color>
-        <texPath>ArcanumAscendant/Vfx/Shield</texPath>
+        <texPath>ArcanumAscendant/Vfx/HexShield</texPath>
         <size>1.8</size>
         <fleckInterval>20</fleckInterval>
         <overlayTex>ArcanumAscendant/Vfx/HexShield</overlayTex>

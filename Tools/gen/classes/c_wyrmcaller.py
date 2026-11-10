@@ -91,6 +91,7 @@ def race_defs():
     out.append(td.replace("<ThingDef>", '<ThingDef ParentName="AnimalThingBase">', 1).replace("<def_>", "<def>").replace("</def_>", "</def>"))
     for kind, breed, label, _ in BREEDS:
         stages = [O(None, bodyGraphicData=O(None, texPath="ArcanumAscendant/Pawns/Wyrm_%s_%s" % (breed, st), graphicClass="Graphic_Multi", drawSize=float(sz),
+                                            shaderType="Transparent" if breed == "Spirit" else None,
                                             shadowData=O(None, volume=(0.25 * sz, 0.3, 0.2 * sz), offset=(0.0, 0.0, -0.08 * sz))),
                     dessicatedBodyGraphicData=O(None, texPath="Things/Pawn/Animal/Dessicated/CritterDessicatedMedium", graphicClass="Graphic_Multi",
                                                 drawSize=float(sz) * 0.8)) for st, _, sz in STAGES]

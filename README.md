@@ -2,7 +2,7 @@
 
 ![Arcanum Ascendant](About/Preview.png)
 
-A magic and class system for RimWorld with **14 classes, 42 subclasses, 513 spells and 1277 skill tree nodes**. Every class and every subclass has its own skill tree, and it doesn't depend on any other mod (not even Harmony).
+A magic and class system for RimWorld with **16 classes, 48 subclasses, 586 spells and 1451 skill tree nodes**. Every class and every subclass has its own skill tree, and it doesn't depend on any other mod (not even Harmony).
 
 - **Five attributes**: Potency, Focus, Celerity, Resilience and Attunement. They power your spells and gate the deeper rows of every tree.
 - **Branching skill trees**: spells, augments that change how a spell behaves, multi-rank passives, mutually exclusive keystones and a subclass ultimate.
@@ -141,6 +141,8 @@ Craft a **familiar vessel** at the arcane lectern (15 arcane crystals and 10 gol
 | **Succubus** (women) | Infatuation, enthralment, stolen youth | Temptress (domination), Thief of Years (age drain and rejuvenation), Nightmare Muse (sleep and dreams) |
 | **Incubus** (men) | Debt, contracts, hellfire | Pactbinder (usury and foreclosure), Dreamlord (possession and nightmares), Hellprince (infernal form and hellgates) |
 | **Noclipper** | The Backrooms | Level Keeper (mazes, rooms and the Poolrooms), Entity Handler (Hounds, Partygoers, Smilers, Skin-Stealers), Archivist (cursed tape, rewinds, exit signs) |
+| **Starcaller** | Stars you place, then cast through | Constellar (triangles, pulsars, walls of light), Moonsworn (spells that change with the moon's phase), Signbearer (zodiac stances and horoscopes) |
+| **Wyrmcaller** | One bonded dragon that grows with you | Soulbound (a spirit wyrm that shares your life), Hoardkeeper (a gold wyrm powered by colony wealth), Broodmother (eggs, drakelings and a nest) |
 
 See the [Compendium](docs/Compendium.md) for every spell, its cost, cooldown and description.
 
@@ -155,6 +157,30 @@ Each of the five newest classes is built around a stacking mechanic that pays of
 | **Succubus** | **Infatuation** | At five stacks the target is **Enthralled** and fights for her for twenty seconds. Bosses are stunned instead. *Heartbreak* and *Stolen Heartbeat* spend stacks for damage, and *Kiss of Youth* keeps her young. |
 | **Incubus** | **Debt** | At five Debts he **collects**: hellfire, a share of the victim's vitality and the weapon out of its hands. *Devil's Due* calls in every Debt on the map at once. *Infernal Contracts* make an ally monstrously strong, if they deliver two kills in time. |
 | **Noclipper** | **Lost** | At four stacks the target **noclips out of reality** for six seconds and comes back wandering. *Level 0* raises a maze of yellow wallpaper around a whole squad, the *Door to Nowhere* swallows anyone who walks past, and *Bleed Through* sends every enemy on the map into the Backrooms. |
+
+### The flagship classes
+
+The two newest classes are the deepest in the mod. Each has 36 or 37 spells, its own mechanics in the engine, its own sounds, and art that is modelled in 3D instead of painted.
+
+**Starcaller.** A Starcaller does not throw spells so much as arrange the sky and then use it.
+
+- **Stars are things on the map.** *Kindle Star* hangs a star that lasts five minutes and lights up enemies near it. She can hold four at first and more with talents. Almost every other spell is a verb that acts on her stars.
+- **Constellation** draws a line of starfire between every pair of stars in range, and three linked stars close a triangle that burns everything inside. Where you put the stars decides what the spell does.
+- **Shooting Star** tears a star loose and sends it across the field. **Starstep** teleports her to any star. **Twinkle** makes them all flare, **Star's Grace** heals around each, and **Stellar Collapse** detonates every one at once.
+- **Constellar** turns the geometry up: *Polaris* (a great star), *Summer Triangle* (three at once), *Pulsar* (sweeping beams), *Wall of Heaven* (the constellation becomes real walls), *Convergence* (every star fires on one target) and *Grand Conjunction*.
+- **Moonsworn** follows the moon. The phase turns with the days of each quadrum (new, waxing, full, waning) and every Moonsworn spell does something different in each. *Turn the Moon* lets her move her own phase when she needs a different spell.
+- **Signbearer** wears one of five zodiac signs at a time (Archer, Bull, Scales, Water-Bearer, Lion), can spread her sign to the squad, and reads *Horoscopes*: every colonist was born under a sign and gets its blessing.
+- **In the colony:** *Night of Falling Stars* (a mood event for everyone), *Wish Upon a Star*, an *Astral Orrery* that speeds up nearby mages' study, *Astral Survey* (reveals the map), *Star Metal* (burnt-out stars leave plasteel), *Night Watch* and *Once in a Blue Moon*.
+
+**Wyrmcaller.** One dragon, for life.
+
+- **Hatch Wyrm** gives her a bonded wyrm: a real colony animal that eats, hauls, can be trained and has a name. It is a hatchling at first, a **drake at the Second Circle** and a **great wyrm at the Fourth**, and its health and damage follow her level the whole way.
+- **Most of her spells are cast through the wyrm.** *Wyrmfire* is breathed from wherever the wyrm is standing. *Hunt* sends it at a target, *Heel* flies it back, *Stoop* drops it on a point, *Devour* has it eat a corpse to heal, and with *Dragonflight* she rides it over walls.
+- If the wyrm dies she grieves, and the bond has to be made again from an egg.
+- **Soulbound** (spirit wyrm): the two split every wound between them, trade places, and can breathe fire from both ends at once. She can bring it back from the dead, and with the right keystone it returns the favour once a day.
+- **Hoardkeeper** (gold wyrm): spell power scales with **colony wealth**. The wyrm sniffs out hidden ore, sits on a *Dragon's Hoard* that pays out silver every day, and breathes molten gold: whatever dies coated in it leaves real gold behind.
+- **Broodmother** (brood wyrm): lays clutches of eggs that hatch into **drakelings**, throws eggs as bombs, builds a *Wyrm Nest* that produces edible eggs, sends the brood out to hunt for the colony, and can cull the brood to feed the mother.
+- **In the colony:** hauling runs, scouting flights, dragon rides (recreation and mood for everyone, growth for children with Biotech), warming every egg and animal pregnancy in range, and shed scales to tailor into armour.
 
 ---
 
@@ -220,7 +246,7 @@ You only need this if you want to change the mod. The repository already contain
 
 - **C# assembly:** `Source/ArcanumAscendant/` compiles against `Krafs.Rimworld.Ref` (NuGet) with the .NET SDK and writes to `1.6/Assemblies/`.
 - **Content:** classes, spells and skill trees are written in compact Python in `Tools/gen/classes/*.py`. `python3 Tools/gen/build.py` turns them into XML in `Defs/Generated/` and regenerates `docs/Compendium.md`.
-- **Art:** `python3 Tools/art/make_textures.py` renders every icon, sprite and effect texture procedurally (needs numpy and pillow).
+- **Art:** `python3 Tools/art/make_textures.py` renders every icon, sprite and effect texture procedurally (needs numpy and pillow). The wyrm and its props are modelled and raymarched by `Tools/art/dragon3d.py` and `Tools/art/props3d.py` (signed distance fields, `sdf3d.py`); a full run takes a few minutes, and `--missing-only` skips them when they already exist.
 - **Audio:** `python3 Tools/audio/make_sounds.py` synthesizes every sound effect.
 - **Validation:** `Tools/validator` loads the compiled assembly and RimWorld's reference assemblies through reflection. It checks every XML field name, class, enum value and def reference.
 - `Tools/build_all.sh` runs all of the above in order.

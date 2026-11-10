@@ -559,6 +559,103 @@ def impact_liminal(rng):
     return reverb(mixdown(S(crushed * gate) * 0.8, thump), rng, 0.9, 0.4, 0.5)
 
 
+# ---- Starcaller and Wyrmcaller
+
+def _glass(freq, dur, rng, tau=0.7):
+    """A struck glass: a pure tone and its octave, two voices a hair apart so that it shimmers."""
+    n = int(SR * dur)
+    y = osc(freq, dur) + 0.8 * osc(freq * rng.uniform(1.003, 1.006), dur) + 0.35 * osc(freq * 2.0, dur) + 0.15 * osc(freq * 3.01, dur)
+    return y * expdecay(n, tau) * env(n, 0.004, 0.05, 0.9, 0.1)
+
+
+def cast_astral(rng):
+    d = 1.5
+    n = int(SR * d)
+    root = rng.choice([783.99, 880.0, 987.77])
+    y = np.zeros(n)
+    for i, ratio in enumerate([1.0, 1.25, 1.5, 1.875, 2.5, 3.0]):
+        start = int(SR * (0.07 * i + rng.uniform(0, 0.015)))
+        g = np.asarray(_glass(root * ratio, d - start / SR, rng, 0.5)) * (0.9 - 0.08 * i)
+        y[start:start + len(g)] += g[: n - start]
+    air = np.asarray(highpass(noise(d, rng), 5000)) * np.sin(np.linspace(0, np.pi, n)) ** 2 * 0.25
+    pad = np.asarray(osc(root / 4, d) * env(n, 0.3, 0.3, 0.6, 0.6)) * 0.35
+    return reverb(S(y + air + pad), rng, 1.6, 0.42, 0.5)
+
+
+def impact_astral(rng):
+    d = 1.2
+    n = int(SR * d)
+    y = np.zeros(n)
+    root = rng.choice([1046.5, 1174.66, 1318.5])
+    for ratio, a in ((1, 1.0), (1.5, 0.7), (2.0, 0.6), (2.67, 0.4)):
+        y += np.asarray(_glass(root * ratio, d, rng, 0.35)) * a
+    for _ in range(26):                                          # the sparkle falling away afterwards
+        start = int(SR * rng.uniform(0.02, 0.75))
+        L = 0.12
+        ping = np.asarray(osc(rng.uniform(2500, 7000), L) * expdecay(int(SR * L), 0.025)) * rng.uniform(0.1, 0.35) * (1 - start / n)
+        y[start:start + len(ping)] += ping[: n - start]
+    thump = np.asarray(boom(0.5, rng, 130, 55)) * 0.55
+    y[: len(thump)] += thump
+    return reverb(S(y), rng, 1.4, 0.38, 0.45)
+
+
+def star_chime(rng):
+    d = 1.4
+    n = int(SR * d)
+    f = rng.choice([1318.5, 1568.0, 1760.0])
+    rise = np.asarray(osc(sweep(f * 0.5, f, 0.16, 0.6), 0.16) * env(int(SR * 0.16), 0.05, 0.05, 0.8, 0.03)) * 0.35
+    y = np.zeros(n)
+    y[: len(rise)] += rise
+    g = np.asarray(_glass(f, d - 0.14, rng, 0.8)) + 0.5 * np.asarray(_glass(f * 1.5, d - 0.14, rng, 0.5))
+    y[int(SR * 0.14):] += g[: n - int(SR * 0.14)]
+    return reverb(S(y), rng, 1.6, 0.45, 0.55)
+
+
+def _growl(dur, rng, f0, f1, f2, rasp_hz, lo=180, hi=1700):
+    """A throat: a harsh buzz whose pitch rises and falls, roughened by a slower flutter, pushed through a mouth-shaped filter."""
+    n = int(SR * dur)
+    t = np.linspace(0, 1, n)
+    f = np.where(t < 0.35, f0 + (f1 - f0) * (t / 0.35), f1 + (f2 - f1) * ((t - 0.35) / 0.65))
+    f = f * (1 + 0.03 * np.sin(2 * np.pi * 6 * t * dur + rng.uniform(0, 6)))
+    src = osc(f, dur, "saw") * 0.6 + osc(f * 0.5, dur, "square") * 0.3 + osc(f * 1.51, dur, "saw") * 0.25
+    flutter = 0.55 + 0.45 * np.sign(np.sin(2 * np.pi * rasp_hz * t * dur + 2 * np.sin(2 * np.pi * 3 * t * dur))) * (0.6 + 0.4 * rng.uniform(0, 1, n))
+    voiced = fft_filter(S(np.asarray(src) * flutter), lo, hi)
+    breath = fft_filter(noise(dur, rng), 600, 4500) * 0.35
+    return (voiced + breath)
+
+
+def wyrm_roar(rng):
+    d = 1.7
+    n = int(SR * d)
+    y = _growl(d, rng, rng.uniform(85, 100), rng.uniform(150, 175), rng.uniform(70, 85), rng.uniform(34, 44)) * env(n, 0.12, 0.3, 0.85, 0.6)
+    sub = osc(sweep(60, 38, d, 0.6), d) * env(n, 0.1, 0.4, 0.6, 0.6) * 0.8
+    return reverb(mixdown(y * 1.3, sub), rng, 1.4, 0.36, 0.45)
+
+
+def wyrm_breath(rng):
+    d = 1.6
+    n = int(SR * d)
+    roar_ = whoosh(d, rng, 350, 2400) * 1.4
+    rumble = lowpass(noise(d, rng), 240) * env(n, 0.1, 0.2, 0.9, 0.5) * 1.6
+    snap = crackle(d, rng, 110) * 0.45 * env(n, 0.1, 0.3, 0.7, 0.4)
+    throat = _growl(0.5, rng, 80, 120, 90, 38) * env(int(SR * 0.5), 0.05, 0.1, 0.7, 0.3) * 0.5
+    return reverb(mixdown(roar_, rumble, snap, throat), rng, 0.9, 0.25)
+
+
+def cast_draconic(rng):
+    d = 1.0
+    n = int(SR * d)
+    y = _growl(d, rng, rng.uniform(70, 80), rng.uniform(110, 125), rng.uniform(95, 105), rng.uniform(30, 38), 150, 1300) * env(n, 0.08, 0.2, 0.8, 0.35)
+    return reverb(mixdown(y, whoosh(d, rng, 250, 2200) * 0.8, crackle(d, rng, 50) * 0.3), rng, 0.8, 0.26)
+
+
+def impact_draconic(rng):
+    d = 1.2
+    snarl = _growl(0.45, rng, 140, 170, 90, 46) * env(int(SR * 0.45), 0.01, 0.1, 0.7, 0.3) * 0.6
+    return reverb(mixdown(boom(d, rng, 100, 34) * 1.2, crackle(d, rng, 130) * 0.6 * expdecay(int(SR * d), 0.45), whoosh(0.6, rng, 2400, 300) * 0.7, snarl),
+                  rng, 0.9, 0.28)
+
+
 RECIPES = {
     "Charge": charge, "Turret_Shot": turret_shot, "Construct_Break": construct_break, "LevelUp": level_up, "Awaken": awaken, "NodeUnlock": node_unlock,
     "Cast_Fire": cast_fire, "Impact_Fire": impact_fire, "Cast_Holy": cast_holy, "Impact_Holy": impact_holy, "Cast_Rune": cast_rune, "Impact_Rune": impact_rune,
@@ -569,6 +666,8 @@ RECIPES = {
     "Cast_Wind": cast_wind, "Impact_Wind": impact_wind, "Cast_Doom": cast_doom, "Impact_Doom": impact_doom, "Cast_Desire": cast_desire,
     "Impact_Desire": impact_desire, "Cast_Liminal": cast_liminal, "Impact_Liminal": impact_liminal,
     "Bell": toll, "Caw": caw, "Heartbeat": heartbeat, "Buzz": buzz, "Gust": gust,
+    "Cast_Astral": cast_astral, "Impact_Astral": impact_astral, "Cast_Draconic": cast_draconic, "Impact_Draconic": impact_draconic,
+    "StarChime": star_chime, "WyrmRoar": wyrm_roar, "WyrmBreath": wyrm_breath,
 }
 
 
