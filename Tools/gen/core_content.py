@@ -26,6 +26,8 @@ DAMAGES = [
     ("AA_Heartbreak", "heartbreak", "AA_Heartache", "heartache", None, 0.0, "#ff5fa2", "Desire", 0.0, "{0} died of a broken heart."),
     ("AA_Hellfire", "hellfire", "AA_Hellburn", "hellfire burn", "Heat", 0.4, "#c060ff", "Fire", 0.0, "{0} was dragged screaming into hellfire."),
     ("AA_Static", "static", "AA_StaticBurn", "static burn", "Heat", 0.3, "#f2e27a", "Liminal", 0.0, "{0} glitched out of existence."),
+    ("AA_Starfire", "starfire", "AA_Starburn", "starlight burn", "Heat", 0.4, "#9ab0ff", "Astral", 0.0, "{0} was unmade by starlight."),
+    ("AA_Wyrmfire", "wyrmfire", "AA_Wyrmburn", "wyrmfire burn", "Heat", 0.35, "#3fd6a0", "Draconic", 0.0, "{0} was burned to ash by wyrmfire."),
 ]
 
 

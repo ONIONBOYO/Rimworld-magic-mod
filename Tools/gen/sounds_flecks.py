@@ -2,13 +2,14 @@
 from arcgen import O, to_xml
 
 SCHOOLS = ["Fire", "Holy", "Rune", "Frost", "Storm", "Necro", "Shadow", "Arcane", "Blood", "Nature", "Song", "Void", "Time",
-           "Wind", "Doom", "Desire", "Liminal"]
+           "Wind", "Doom", "Desire", "Liminal", "Astral", "Draconic"]
 
 # name -> (volume range, pitch range, on camera)
 SOUNDS = {"AA_Charge": ("18~24", "0.9~1.1", False), "AA_Turret_Shot": ("14~20", "0.85~1.15", False), "AA_Construct_Break": ("25~30", "0.9~1.1", False),
           "AA_LevelUp": ("35~40", "1~1", False), "AA_Awaken": ("40~45", "1~1", False), "AA_NodeUnlock": ("30~35", "0.95~1.05", True),
           "AA_Bell": ("38~44", "0.95~1.05", False), "AA_Caw": ("26~32", "0.9~1.15", False), "AA_Heartbeat": ("34~40", "0.95~1.05", False),
-          "AA_Buzz": ("24~30", "0.97~1.03", False), "AA_Gust": ("30~36", "0.9~1.1", False)}
+          "AA_Buzz": ("24~30", "0.97~1.03", False), "AA_Gust": ("30~36", "0.9~1.1", False),
+          "AA_StarChime": ("30~36", "0.92~1.08", False), "AA_WyrmRoar": ("40~48", "0.9~1.08", False), "AA_WyrmBreath": ("34~40", "0.92~1.08", False)}
 for s in SCHOOLS:
     SOUNDS["AA_Cast_" + s] = ("22~30", "0.9~1.1", False)
     SOUNDS["AA_Impact_" + s] = ("30~38", "0.88~1.12", False)
@@ -46,6 +47,10 @@ FLECKS = {
     "Petal": ("Petal", 0.1, 0.6, 0.8, 0.0, "Mote"),
     "Clock": ("Clock", 0.1, 0.4, 0.6, 0.1, "MoteGlow"),
     "Bolt": ("Bolt", 0.01, 0.1, 0.2, 0.0, "MoteGlow"),
+    "Stardust": ("Stardust", 0.05, 0.3, 0.7, -0.3, "MoteGlow"),
+    "Scale": ("WyrmScale", 0.05, 0.5, 0.6, 0.0, "Mote"),
+    "WyrmFlame": ("WyrmFlame", 0.03, 0.15, 0.4, 0.8, "MoteGlow"),
+    "Coin": ("Coin", 0.03, 0.5, 0.5, 0.0, "Mote"),
 }
 
 

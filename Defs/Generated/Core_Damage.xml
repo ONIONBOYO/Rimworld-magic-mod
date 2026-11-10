@@ -990,4 +990,108 @@
     <combatLogRules>Damage_Bomb</combatLogRules>
     <buildingDamageFactor>1</buildingDamageFactor>
   </DamageDef>
+  <HediffDef>
+    <defName>AA_Starburn</defName>
+    <label>starlight burn</label>
+    <labelNoun>a starlight burn</labelNoun>
+    <description>A wound left by starfire magic.</description>
+    <hediffClass>Hediff_Injury</hediffClass>
+    <tendable>true</tendable>
+    <displayWound>true</displayWound>
+    <labelNounPretty>{0} in the {1}</labelNounPretty>
+    <defaultLabelColor>(0.604, 0.69, 1, 1)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_TendDuration">
+        <labelTendedWell>bandaged</labelTendedWell>
+        <labelTendedWellInner>tended</labelTendedWellInner>
+        <labelSolidTendedWell>set</labelSolidTendedWell>
+      </li>
+      <li Class="HediffCompProperties_Infecter">
+        <infectionChance>0.1</infectionChance>
+      </li>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>starlight burn scar</permanentLabel>
+      </li>
+    </comps>
+    <injuryProps>
+      <painPerSeverity>0.0125</painPerSeverity>
+      <averagePainPerSeverityPermanent>0.0063</averagePainPerSeverityPermanent>
+      <canMerge>true</canMerge>
+      <destroyedLabel>Destroyed by starfire</destroyedLabel>
+      <destroyedOutLabel>Destroyed by starfire</destroyedOutLabel>
+    </injuryProps>
+  </HediffDef>
+  <DamageDef>
+    <defName>AA_Starfire</defName>
+    <label>starfire</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} was unmade by starlight.</deathMessage>
+    <hediff>AA_Starburn</hediff>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <armorCategory>Heat</armorCategory>
+    <defaultDamage>10</defaultDamage>
+    <defaultArmorPenetration>0.4</defaultArmorPenetration>
+    <defaultStoppingPower>0.5</defaultStoppingPower>
+    <minDamageToFragment>12</minDamageToFragment>
+    <makesBlood>false</makesBlood>
+    <explosionCellFleck>AA_Fleck_Glow</explosionCellFleck>
+    <explosionColorCenter>(0.8248, 0.928, 1, 1)</explosionColorCenter>
+    <explosionColorEdge>(0.604, 0.69, 1, 1)</explosionColorEdge>
+    <soundExplosion>AA_Impact_Astral</soundExplosion>
+    <combatLogRules>Damage_Bomb</combatLogRules>
+    <buildingDamageFactor>1</buildingDamageFactor>
+  </DamageDef>
+  <HediffDef>
+    <defName>AA_Wyrmburn</defName>
+    <label>wyrmfire burn</label>
+    <labelNoun>a wyrmfire burn</labelNoun>
+    <description>A wound left by wyrmfire magic.</description>
+    <hediffClass>Hediff_Injury</hediffClass>
+    <tendable>true</tendable>
+    <displayWound>true</displayWound>
+    <labelNounPretty>{0} in the {1}</labelNounPretty>
+    <defaultLabelColor>(0.247, 0.839, 0.627, 1)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_TendDuration">
+        <labelTendedWell>bandaged</labelTendedWell>
+        <labelTendedWellInner>tended</labelTendedWellInner>
+        <labelSolidTendedWell>set</labelSolidTendedWell>
+      </li>
+      <li Class="HediffCompProperties_Infecter">
+        <infectionChance>0.1</infectionChance>
+      </li>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>wyrmfire burn scar</permanentLabel>
+      </li>
+    </comps>
+    <injuryProps>
+      <painPerSeverity>0.0125</painPerSeverity>
+      <averagePainPerSeverityPermanent>0.0063</averagePainPerSeverityPermanent>
+      <canMerge>true</canMerge>
+      <destroyedLabel>Destroyed by wyrmfire</destroyedLabel>
+      <destroyedOutLabel>Destroyed by wyrmfire</destroyedOutLabel>
+    </injuryProps>
+  </HediffDef>
+  <DamageDef>
+    <defName>AA_Wyrmfire</defName>
+    <label>wyrmfire</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} was burned to ash by wyrmfire.</deathMessage>
+    <hediff>AA_Wyrmburn</hediff>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <armorCategory>Heat</armorCategory>
+    <defaultDamage>10</defaultDamage>
+    <defaultArmorPenetration>0.35</defaultArmorPenetration>
+    <defaultStoppingPower>0.5</defaultStoppingPower>
+    <minDamageToFragment>12</minDamageToFragment>
+    <makesBlood>false</makesBlood>
+    <explosionCellFleck>AA_Fleck_Glow</explosionCellFleck>
+    <explosionColorCenter>(0.3964, 1, 0.8524, 1)</explosionColorCenter>
+    <explosionColorEdge>(0.247, 0.839, 0.627, 1)</explosionColorEdge>
+    <soundExplosion>AA_Impact_Draconic</soundExplosion>
+    <combatLogRules>Damage_Bomb</combatLogRules>
+    <buildingDamageFactor>1</buildingDamageFactor>
+  </DamageDef>
 </Defs>

@@ -14,6 +14,10 @@
   <AA_IncubusVisitWake>What a dream...</AA_IncubusVisitWake>
   <AA_LevelFun>=)</AA_LevelFun>
   <AA_LostInBackrooms>Lost in the Backrooms</AA_LostInBackrooms>
+  <AA_Moon_0>New moon</AA_Moon_0>
+  <AA_Moon_1>Waxing moon</AA_Moon_1>
+  <AA_Moon_2>Full moon</AA_Moon_2>
+  <AA_Moon_3>Waning moon</AA_Moon_3>
   <AA_NoteComesDue>The note comes due</AA_NoteComesDue>
   <AA_ProphecyFulfilled>As it was foretold</AA_ProphecyFulfilled>
   <AA_ReplayingFootage>Replaying footage</AA_ReplayingFootage>
@@ -29,4 +33,5 @@
   <AA_SkaldVerseLabel>a verse for the saga!</AA_SkaldVerseLabel>
   <AA_SuccubusNotDreaming>Not dreaming</AA_SuccubusNotDreaming>
   <AA_SuccubusWokeInLove>Dreamt of love</AA_SuccubusWokeInLove>
+  <AA_WyrmGoldDrop>Solid gold</AA_WyrmGoldDrop>
 </LanguageData>

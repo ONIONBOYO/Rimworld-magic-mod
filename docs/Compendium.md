@@ -2,7 +2,7 @@
 
 Every class, subclass, spell and keystone in the mod. Generated from `Tools/gen/classes/*.py` - do not edit by hand.
 
-**14 classes - 42 subclasses - 513 spells - 1277 skill tree nodes**
+**16 classes - 48 subclasses - 586 spells - 1451 skill tree nodes**
 
 ## Contents
 
@@ -20,6 +20,8 @@ Every class, subclass, spell and keystone in the mod. Generated from `Tools/gen/
 - [Succubus](#succubus): Temptress, Thief of Years, Nightmare Muse
 - [Incubus](#incubus): Pactbinder, Dreamlord, Hellprince
 - [Noclipper](#noclipper): Level Keeper, Entity Handler, Archivist
+- [Starcaller](#starcaller): Constellar, Moonsworn, Signbearer
+- [Wyrmcaller](#wyrmcaller): Soulbound, Hoardkeeper, Broodmother
 
 ## Pyromancer
 
@@ -1317,6 +1319,191 @@ Archivists document the Backrooms on old camcorders. The tapes remember more tha
 | Lost Footage (ultimate) | 220 | 7.2 h | attack | Record an entire battlefield on cursed tape. Every enemy within twelve cells is recorded for ten seconds; when the tape runs out, everything that happened to each of them happens again, half as bad again. |
 
 **Keystones:** *Director's Cut* - Film everything. Camcorder returns twice as fast and records two more enemies.; *Rewinder* - Your own tape can be rewound. Once a day, when you would die, you are rewound instead.
+
+## Starcaller
+
+*Hang stars over the battlefield and draw the lines between them. Whatever stands inside your constellation is already dead.*
+
+Starcallers read the sky and then rearrange it. Their stars are small, cold and exactly where they want them.
+
+**Playstyle:** Everything acts through your stars. Kindle up to four (Falling Star leaves one too). Each lights enemies near it so they cannot dodge and starfire hurts them more. Constellation draws burning lines between stars and stuns everything inside a triangle; Shooting Star drags one across the field; Twinkle, Star's Grace and Stellar Collapse make every star blind, heal or explode; Starstep walks you to one. Stronger at night and under open sky. Wants Focus and Potency.
+
+**Key attributes:** Focus, Potency
+
+### Starcaller spells
+
+| Spell | Mana | Cooldown | Role | Description |
+|---|---|---|---|---|
+| Star Dart | 8 | 1.5s | attack | Throw a splinter of starlight. It hits half again as hard against anything lit by one of your stars. |
+| Kindle Star | 12 | 5s | utility | Hang a star in the air for five minutes. It lights enemies within four cells (they dodge badly and take a quarter more from starfire) and your other spells act through it. You can keep four; a fifth burns out the oldest. |
+| Constellation | 30 | 14s | attack | Draw lines of starlight between every pair of your stars within fourteen cells of each other. Enemies on a line take 26 starfire and are dazzled. Enemies inside a triangle of three linked stars also take 30 more and are stunned for two and a half seconds. Needs two stars; three make a killing ground. |
+| Shooting Star | 18 | 8s | attack | Your star nearest the target streaks there and stays. Everything along its path takes 22 starfire, and where it stops it bursts for 18 more and a short stun. |
+| Twinkle | 22 | 18s | control | Every one of your stars flares at once. Enemies within three and a half cells of any star are dazzled for six seconds and stunned for one and a half. |
+| Star's Grace | 30 | 30s | heal | Starlight is kind to its own. Allies within four cells of any of your stars heal 18 and regenerate for twenty seconds. |
+| Starstep | 14 | 12s | mobility | Step through starlight to your star nearest the target point, however far. The star flares as you arrive and dazzles enemies within three cells. |
+| Falling Star | 40 | 22s | attack | Call a star down out of the sky. It strikes the area for 60 starfire (less toward the edge), staggers everything there, and stays where it fell as a new star of yours. |
+| Stellar Collapse | 60 | 40s | attack | Every one of your stars dies at once, the way stars do. Each explodes for 70 starfire within three and a half cells (less toward the edge) and dazzles what is left. The stars are spent. |
+| Night of Falling Stars * | 60 | 4 days | utility | Fill the sky with falling stars for everyone to see. Every colonist on the map gains +6 mood for two days and a third of a bar of recreation. |
+| Wish Upon a Star * | 40 | 3 days | utility | Hang a star for one colonist and let them wish on it. They gain +4 mood for three days, and the star grants one thing at random: an inspiration, 5000 experience in a skill, a full night's rest, or 60 healing. |
+| Astral Orrery * | 60 | 3 days | utility | Conjure an orrery of brass and starlight for three days. Mages within six cells of it gain experience 30% faster and recover mana sooner; it lights the room and is beautiful enough to lift it a rank. |
+| Astral Survey * | 45 | 2 days | utility | Look down on the land the way the stars do. The map is revealed within thirty-five cells of the target, and what you learn of the heavens adds 200 research to the colony's current project. |
+
+**Keystones:** *Firmament* - A sky of your own: two more stars at a time, and kindled stars last twice as long.; *Dying Light* - Stars burn brightest at the end. Stellar Collapse and Shooting Star come back far sooner and all starfire hits harder.; *Music of the Spheres* - The sky arranges itself for you: in battle, every eight seconds a star kindles by itself beside a nearby enemy.
+
+### Constellar (subclass)
+
+*Geometry is a weapon. More stars, a great star, walls of light along every line, and a pulsar that sweeps the field.*
+
+A Constellar thinks in angles. Give her three points and she will give you a place nobody can stand.
+
+**Playstyle:** The star architect. Summer Triangle drops three stars at once, Polaris is a great star that never burns out, Pulsar turns a star into two sweeping beams, Wall of Heaven builds hard light along every line of your constellation, Convergence fires a lance from every star at one target, and the Grand Conjunction brings them all to one point. Wants Focus and Celerity.
+
+| Spell | Mana | Cooldown | Role | Description |
+|---|---|---|---|---|
+| Polaris | 40 | 1.4 h | utility | Kindle Polaris, a great star, for ten minutes. It counts as a star for every spell (flaring half again as strong and firing two lances), never burns out to make room, lights enemies within six cells and steadies the aim of allies there. Only one at a time. |
+| Summer Triangle | 34 | 30s | utility | Three stars at once, in a triangle four cells wide around the target: a constellation waiting to be drawn. |
+| Pulsar | 36 | 28s | attack | Your star nearest the target becomes a pulsar for ten seconds: two beams sweep around it out to seven cells, and every enemy a beam passes over takes 20 starfire and is left starlit. |
+| Wall of Heaven | 40 | 35s | control | Draw your constellation in hard light. Every line between stars within fourteen cells becomes a wall for eight seconds: nothing walks or sees through it. Enemies caught on a line take 12 starfire. Cut a raid in half, or shut a door. |
+| Convergence | 34 | 14s | attack | Every star within sixteen cells of the target fires a lance of light at it: 24 starfire each, piercing armour. Six stars around a boss is a very bad place to be a boss. |
+| Nebula | 30 | 30s | control | Every one of your stars breathes out a cloud of glowing dust three cells wide for twelve seconds. Enemies inside are half blind and slowed by a third. |
+| Star Metal * | 50 | 3 days | utility | Let your stars fall the rest of the way. Every star you have burns out and leaves behind 3 to 5 plasteel: what is left when a small star cools. |
+| Grand Conjunction (ultimate) | 220 | 7.2 h | attack | Every star you have streaks to one point, burning its path (40 starfire). Where they meet they become one in a blast of 90 starfire within five cells, half again as strong for each star beyond the first, and a four-second stun. One star remains. |
+
+**Keystones:** *Great Square* - A bigger sky: two more stars at a time, and Constellation links stars 30% farther apart.; *Occultation* - Sharper light. Pulsar and Convergence come back much sooner and all starfire bites deeper into armour.
+
+### Moonsworn (subclass)
+
+*The moon has four faces and so does every one of her spells. Learn the calendar, or turn the moon yourself.*
+
+The Moonsworn made a promise to the moon, which keeps its promises on a schedule.
+
+**Playstyle:** The moon runs through four phases every quadrum (new, waxing, full, waning: about four days each) and every Moonsworn spell does something different under each. New moon is stealth and silence, waxing feeds you, the full moon is raw power and healing, and waning slows and weakens. Take the Moon Oath to wear the phase's own gifts, and Turn the Moon to run a phase ahead of the sky for half a day. Wants Focus and Attunement.
+
+| Spell | Mana | Cooldown | Role | Description |
+|---|---|---|---|---|
+| Moonbeam | 34 | 16s | attack | Hold a beam of moonlight on a target for four seconds, striking about three times a second. New moon: it also silences. Waxing: you are healed for 40% of the damage. Full: it hits half again as hard and dazzles. Waning: it slows to a crawl. |
+| Lunar Tide | 32 | 20s | control | The moon pulls on everything. Under a waxing or full moon the tide comes in: enemies within six cells are thrown seven cells away from you. Under a waning or new moon it goes out: they are dragged to your feet and stunned. Either way they take 14 damage. |
+| Crescent | 24 | 9s | attack | Throw a crescent of moonlight out to the target point. It cuts everything in its path for 24, then comes back to your hand and cuts them again for 30. |
+| Turn the Moon * | 30 | 6 h | buff | Turn your own moon one phase onward for twelve hours. Your Moonsworn spells and your Moon Oath follow your moon, not the sky's, until it slips back. Cast it again to turn it further. |
+| Silver Light | 30 | 20s | heal | Bathe an ally in moonlight: 30 healing. New moon: they also vanish from sight for five seconds. Waxing: they regenerate for twenty seconds. Full: twice the healing and poisons are lifted. Waning: a ward of 25 as well. |
+| Night Watch * | 45 | 2 days | utility | Touch the colonists around a point with moonlight. For a day they tire half as fast and move 8% quicker: a night shift that costs nobody their sleep. |
+| Once in a Blue Moon * | 90 | 15 days | utility | Ask the moon for a favour it grants very rarely. Something good arrives: resource pods, a wanderer, a passing thrumbo herd, ambrosia, a ship chunk or an orbital trader, whichever the world can manage. |
+| Moonfall (ultimate) | 220 | 7.2 h | attack | Ask the moon to come closer. After a long breath it does: 120 starfire within seven cells (less toward the edge) and a five-second stun. Under a full moon it hits half again as hard; under a new moon it also blinds for ten seconds. |
+
+**Keystones:** *Syzygy* - Everything lines up. All Moon spells hit 20% harder and come back 15% sooner.; *Dark Side* - There is a side of the moon nobody sees. One blow in eight finds only moonlight where you stood, and Moon spells crit far more often.
+
+### Signbearer (subclass)
+
+*Wear the constellations. The Archer, the Bull, the Scales, the Water-Bearer and the Lion: one at a time, each a different fight.*
+
+A Signbearer does not look up at the zodiac. It looks down at her.
+
+**Playstyle:** A stance fighter. Each Sign lasts a minute and only one can be worn: the Archer shoots star-arrows by itself, the Bull makes you a wall that gores, the Scales send damage back, the Water-Bearer pours mana into your whole party and the Lion breaks enemy nerve. Ascendant lends your sign to every ally near you, and the Wheel of Heaven wears all five. At home she reads horoscopes: every colonist was born under one of six stars, and she can wake its gift. Wants Attunement and Resilience.
+
+| Spell | Mana | Cooldown | Role | Description |
+|---|---|---|---|---|
+| Sign of the Archer | 28 | 20s | buff | Take the sign of the Archer for a minute. Every two seconds a star-arrow flies from you to the nearest enemy within sixteen cells for 14 starfire, and your own aim is 15% better. Replaces any other sign. |
+| Sign of the Bull | 28 | 20s | buff | Take the sign of the Bull for a minute: +35% armour, far more pain before you fall, 15% less damage taken, and every three seconds enemies within two and a half cells are gored for 10 and thrown back. Replaces any other sign. |
+| Sign of the Scales | 28 | 20s | buff | Take the sign of the Scales for a minute. You take 15% less damage, and 40% of every blow is dealt back to whoever struck it as starfire. Replaces any other sign. |
+| Sign of the Water-bearer | 10 | 20s | buff | Take the sign of the Water-Bearer for a minute. Your mana returns 2.5 a second faster, and every three seconds allied mages within six cells regain 6 mana. Replaces any other sign. |
+| Sign of the Lion | 28 | 20s | buff | Take the sign of the Lion for a minute: +20% melee damage and a steadier mind. Every four seconds each enemy within five cells has a one-in-three chance to lose its nerve and run, and allies there take heart. Replaces any other sign. |
+| Ascendant | 40 | 1.1 h | buff | Your sign rises over everyone. Allies within eight cells take on whatever sign you are wearing for twenty seconds. |
+| Horoscope * | 30 | 12 h | utility | Read a colonist's stars. Everyone was born under one of six signs (it depends on their birthday): the Smith (labour and construction), the Reaper (plant work and yield), the Scholar (research and learning), the Hunter (aim, stealth and speed), the Lover (social, negotiation and trade) or the Hearth (immunity, tending and surgery). For two days their sign's gift is awake. |
+| Wheel of Heaven (ultimate) | 220 | 7.2 h | buff | The whole zodiac turns over you. For thirty seconds you wear all five signs at once: the Archer's arrows, the Bull's hide, the Scales' justice, the Water-Bearer's flood and the Lion's roar. |
+
+**Keystones:** *Fixed Sign* - Hold your sign. Every sign lasts twice as long, and you carry a stronger ward.; *Mutable Sign* - Flow between signs. Every sign comes back twice as fast and costs 30% less.
+
+## Wyrmcaller
+
+*Hatch a dragon. Raise it. It grows when you do, and most of your spells are things it does.*
+
+A Wyrmcaller is one half of a pair. The other half starts the size of a cat and ends the size of a barn, and every bit of it is hers: its fire, its hunger, its temper and its absolute certainty that she is the most important thing in the world.
+
+**Playstyle:** You begin with an egg. The wyrm is a colony animal you can zone, train to haul and rescue and load for caravans, and it is a hatchling until you reach the Second Circle (drake) and the Fourth (great wyrm); every level you gain makes it stronger. Most spells start from the wyrm, so where it stands matters: Wyrmfire is a cone from its jaws, Stoop drops it on a target, Terrible Roar scatters whatever is near it, Hunt sets it on one enemy and Heel calls it back. At home it sheds scales to tailor, hauls, scouts and gives rides. If it dies you may hatch another after three days. Wants Attunement and Resilience.
+
+**Key attributes:** Attunement, Resilience
+
+### Wyrmcaller spells
+
+| Spell | Mana | Cooldown | Role | Description |
+|---|---|---|---|---|
+| Hatch Wyrm * | 20 | 3 days | summon | Hatch your wyrm: a bonded dragon for life. It arrives as a hatchling, fully trained, and grows into a drake at the Second Circle and a great wyrm at the Fourth. Only one at a time; if it dies you can hatch another when this spell returns. |
+| Wyrmfire | 20 | 7s | attack | Your wyrm breathes a cone of fire toward the target: 22 wyrmfire and a clinging burn that stacks, eight cells long from wherever the wyrm is standing. It sets the ground alight. |
+| Hunt | 12 | 6s | control | Point. Your wyrm drops whatever it is doing and goes for that enemy, a third faster and striking far more often for ten seconds. |
+| Heel | 8 | 10s | utility | Call your wyrm back. It takes wing and lands at your side. |
+| Stoop | 30 | 16s | attack | Your wyrm takes wing and comes down on the target point like a falling wall: 45 damage within three cells, a two-second stun, and everything there set burning. |
+| Terrible Roar | 30 | 30s | control | Your wyrm roars. Enemies within seven cells of it run in terror for four seconds, shooting and striking badly; allies there are emboldened for fifteen. |
+| Dragonscale | 22 | 30s | buff | Press a freshly shed scale over an ally's heart. For a minute blades skid off (+40% armour), fire does nothing to them and they cannot be set alight. |
+| Devour * | 14 | 20s | utility | Feed your wyrm a corpse. It flies to it and eats it whole (gear is left behind): 60 healing for every point of the body's size, a full belly, and half a minute of fast healing and harder blows. The colony's own dead are not on the menu. |
+| Dragonflight | 28 | 25s | mobility | Climb on. You and your wyrm fly to the target point together and land hard: 30 damage and a stagger to enemies within two and a half cells. |
+| Molt * | 30 | 4 days | utility | Help your wyrm shed. It leaves 12 to 20 wyrm scales where it stands: tailor them like leather into armour that turns blades, ignores fire and keeps its wearer comfortable in any weather. |
+| Hoard Run * | 24 | 12 h | utility | Send your wyrm to fetch. Up to forty things lying within seven cells of the target point are snatched up and carried straight to wherever they are stored. |
+| Skyward Scout * | 30 | 1 day | utility | Your wyrm climbs until it is a dot and looks down. The map is revealed within forty cells of it. |
+| Dragon Rides * | 35 | 2 days | utility | Everyone gets a turn. Colonists within six cells of your wyrm gain 40% recreation and +8 mood for three days; with Biotech, children also gain 5 growth points and half a bar of learning. |
+
+**Keystones:** *Dragonlord* - It fights as you think. Wyrmfire and Stoop come back far sooner and everything draconic hits harder.; *Wyrmfriend* - More pet than weapon. Molt, Dragon Rides, Hoard Run, Skyward Scout and Hatch Wyrm come back twice as fast.; *Heart of the Wyrm* - It knows who you are angry at. A quarter of your Draconic hits also set the wyrm on that enemy.
+
+### Soulbound (subclass)
+
+*Two bodies, one life. Share wounds, trade places, grow scales of your own, and burn the field from wyrmback.*
+
+The Soulbound stopped being able to tell where she ends and the wyrm begins. Neither of them minds.
+
+**Playstyle:** Your wyrm becomes a pale spirit wyrm that shrugs off blows and heals fast. Shared Heart halves the wounds either of you takes, Trade Places swaps you in an instant, Blood Offering spends your blood to mend it, and Rekindle brings it back from the dead. Draconic Aspect gives you scales, claws and a breath of your own (Wyrmfire then comes from both of you), Fury of Two makes the wyrm spit fire by itself, and Skyfire is a strafing run with you on its back. Wants Attunement and Resilience.
+
+| Spell | Mana | Cooldown | Role | Description |
+|---|---|---|---|---|
+| Shared Heart | 30 | 1.4 h | buff | For a minute you and your wyrm share one life: each of you takes half of every wound, and a quarter of it is felt by the other. |
+| Trade Places | 16 | 14s | mobility | You and your wyrm swap places in the blink of an eye, wherever each of you is on the map. |
+| Blood Offering | 14 | 20s | heal | Open a vein for your wyrm. It heals 120 at once; you pay for it with your own blood. |
+| Draconic Aspect | 40 | 1.8 h | buff | Take on the dragon for forty-five seconds: scales (+50% armour), claws (+60% melee damage), no fear of fire, and a breath of your own. While it lasts, Wyrmfire comes from you as well as from your wyrm. |
+| Fury of Two | 34 | 40s | attack | Your anger becomes its anger. For fifteen seconds your wyrm spits a bolt of wyrmfire at the nearest enemy every second (16 damage and a burn), on top of whatever else it is doing. |
+| Rekindle * | 120 | 1 day | utility | Refuse to let it go. Target your wyrm's body: it lives again, and the bond with it. |
+| Under the Wing * | 50 | 3 days | utility | Let the whole colony feel what you feel: something enormous is watching over them. Every colonist on the map gains +5 mood for two days. |
+| Skyfire (ultimate) | 220 | 7.2 h | attack | Mount up and burn the field. You and your wyrm fly to the target point, and everything within two and a half cells of the line you fly takes 70 wyrmfire, burns hard and has the ground set alight under it. You land with a blast of 60 more. |
+
+**Keystones:** *Undying Bond* - It will not let you go either. Once a day, when you would die, you rise again in a burst of wyrmfire; and Rekindle returns twice as fast.; *Dragonheart* - More dragon than mage. Draconic Aspect lasts twice as long, everything draconic hits harder, and fire barely touches you.
+
+### Hoardkeeper (subclass)
+
+*A dragon is as strong as its hoard. Get rich, and let the gold wyrm show the raiders what your wealth is for.*
+
+Hoardkeepers understand what every dragon understands: that there is no such thing as enough.
+
+**Playstyle:** Your wyrm turns gold, armoured like a vault. Its power is the colony's wealth: Dragon's Greed gives spell power for every 100,000 silver the colony is worth. It smells out hidden ore, sits on a hoard that pays silver every day, and breathes molten gold that slows, burns and leaves real gold behind when the victim dies. Coin Storm, Plunder and the Golden Age round out a class that pays for itself. Wants Attunement and Focus.
+
+| Spell | Mana | Cooldown | Role | Description |
+|---|---|---|---|---|
+| Molten Gold | 28 | 12s | attack | Your wyrm breathes a cone of molten gold seven cells long: 26 wyrmfire, and everything it coats is gold-clad for ten seconds (half speed, slow to strike, still burning). Whatever dies gold-clad leaves 4 to 10 gold behind. |
+| Sniff Out Treasure * | 40 | 2 days | utility | Your wyrm lifts its head and smells metal. The two nearest undiscovered veins of valuable ore (gold, jade, plasteel, uranium, components) are revealed on the map. |
+| Dragon's Hoard * | 60 | 5 days | utility | Heap up a hoard for your wyrm for fifteen days. Once a day it yields silver in proportion to the colony's wealth (15 to 180), as long as your wyrm lives, and it is beautiful enough to lift any room. |
+| Coin Storm | 40 | 24s | attack | Your wyrm shakes out its hoard over the enemy: ten strikes of flung coin and plate across the area, 22 damage each. One strike in three leaves a few silver on the ground afterwards. |
+| Plunder | 36 | 40s | control | Your wyrm covets. Every enemy within five cells of it has its weapon torn from its hands and dropped at your feet; machines and beasts are battered instead. |
+| Golden Age * | 70 | 6 days | utility | Declare a golden age. For a day every colonist on the map works 10% faster, trades a little sharper, is steadier in mind and gains +6 mood. |
+| Hoard's Wrath (ultimate) | 220 | 7.2 h | attack | Everything the dragon owns, as fire. Your wyrm breathes a river of molten gold twelve cells long: 110 wyrmfire, harder the richer the colony (+12% for every 100,000 silver of wealth, up to +120%), and everything it touches is gold-clad. |
+
+**Keystones:** *King Under the Mountain* - Sit on it. A further +4% spell power per 100,000 silver of colony wealth (up to +20%) and a stronger ward.; *The Golden Touch* - Everything you burn is gilded: Draconic hits often leave their target gold-clad, and Molten Gold and Coin Storm return sooner.
+
+### Broodmother (subclass)
+
+*One dragon is a weapon. A brood is a problem. Clutches of drakelings, egg bombs, and a nest that feeds the colony.*
+
+A Broodmother's wyrm lays. Constantly. What hatches is small, fast, furious and fiercely loyal to its grandmother.
+
+**Playstyle:** Your wyrm becomes a red brood wyrm, quick and savage. Clutch lays eggs that hatch into drakelings, Egg Bomb throws one that explodes into fire and another drakeling, Pounce sends the whole brood onto one target, and Culling feeds them back to the wyrm to heal it and make it stronger. At home a Nest lays eggs for the kitchen, the Brood Hunts for meat, and Brooding hatches every fertilized egg in the barn. Wants Attunement and Celerity.
+
+| Spell | Mana | Cooldown | Role | Description |
+|---|---|---|---|---|
+| Clutch | 34 | 30s | summon | Your wyrm's brood lays three eggs at the target. Five seconds later they hatch into drakelings that fight for you for ninety seconds. |
+| Egg Bomb | 24 | 10s | attack | Lob an egg that was never going to hatch properly. It bursts for 34 wyrmfire within two and a half cells, leaves everything burning, and one very angry drakeling climbs out of the wreckage for a minute. |
+| Pounce | 20 | 12s | attack | Every drakeling you have leaps onto the target point at once. Each lands for 14 damage on whatever is within a cell and a half of it. |
+| Culling | 18 | 30s | buff | The wyrm eats its young. Every drakeling you have is consumed: each heals the wyrm for 40 and makes it 12% stronger and faster for thirty seconds (stacking eight times). |
+| Wyrm Nest * | 50 | 4 days | utility | Scrape out a nest for five days. Twice a day your wyrm leaves two eggs in it, each a meal for six once cooked, and the nest keeps the room warm. |
+| The Brood Hunts * | 45 | 2 days | utility | Let them off the leash. Drakelings bring down the four nearest wild animals on the map (nothing much bigger than a deer) and leave the bodies for the butcher. |
+| Brooding * | 35 | 2 days | utility | Your wyrm settles over the eggs around a point and warms them. Every fertilized egg within five cells moves halfway to hatching, and any that are ready hatch on the spot: chickens, ducks, anything that lays. |
+| Queen's Clutch (ultimate) | 220 | 7.2 h | attack | It rains eggs. Nine egg bombs fall across the area: each bursts for 55 wyrmfire, sets everything burning and hatches a drakeling that fights for a minute. |
+
+**Keystones:** *Legion* - There are always more. Two more eggs in every clutch, and drakelings last half again as long.; *Devourer* - The brood exists to feed the mother. Culling returns twice as fast and heals half again as much, and everything draconic hits harder.
 
 
 Spells marked * are utility or quirky spells.

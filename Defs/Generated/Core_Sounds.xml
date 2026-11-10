@@ -189,6 +189,57 @@
     </subSounds>
   </SoundDef>
   <SoundDef>
+    <defName>AA_StarChime</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>4</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArcanumAscendant/StarChime</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>30~36</volumeRange>
+        <pitchRange>0.92~1.08</pitchRange>
+        <distRange>25~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>AA_WyrmRoar</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>4</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArcanumAscendant/WyrmRoar</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>40~48</volumeRange>
+        <pitchRange>0.9~1.08</pitchRange>
+        <distRange>25~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>AA_WyrmBreath</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>4</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArcanumAscendant/WyrmBreath</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>34~40</volumeRange>
+        <pitchRange>0.92~1.08</pitchRange>
+        <distRange>25~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
     <defName>AA_Cast_Fire</defName>
     <context>MapOnly</context>
     <maxSimultaneous>4</maxSimultaneous>
@@ -758,6 +809,74 @@
         <grains>
           <li Class="AudioGrain_Folder">
             <clipFolderPath>ArcanumAscendant/Impact_Liminal</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>30~38</volumeRange>
+        <pitchRange>0.88~1.12</pitchRange>
+        <distRange>25~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>AA_Cast_Astral</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>4</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArcanumAscendant/Cast_Astral</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>22~30</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <distRange>25~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>AA_Impact_Astral</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>4</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArcanumAscendant/Impact_Astral</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>30~38</volumeRange>
+        <pitchRange>0.88~1.12</pitchRange>
+        <distRange>25~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>AA_Cast_Draconic</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>4</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArcanumAscendant/Cast_Draconic</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>22~30</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <distRange>25~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>AA_Impact_Draconic</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>4</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>ArcanumAscendant/Impact_Draconic</clipFolderPath>
           </li>
         </grains>
         <volumeRange>30~38</volumeRange>

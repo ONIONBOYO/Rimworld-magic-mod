@@ -21,6 +21,7 @@ CLASS_MODULES = [
     "c_pyromancer", "c_tempest", "c_necromancer", "c_paladin", "c_chronomancer",
     "c_druid", "c_runesmith", "c_shadow", "c_bard",
     "c_harbinger", "c_windmage", "c_succubus", "c_incubus", "c_noclipper",
+    "c_starcaller", "c_wyrmcaller",
 ]
 
 STAT_MOTIF = {

@@ -260,6 +260,7 @@ FLECK = {
     "rune": "AA_Fleck_Rune", "ring": "AA_Fleck_Ring", "snow": "AA_Fleck_Snow", "bone": "AA_Fleck_Bone",
     "feather": "AA_Fleck_Feather", "blood": "AA_Fleck_Blood", "gear": "AA_Fleck_Gear", "star": "AA_Fleck_Star",
     "skull": "AA_Fleck_Skull", "petal": "AA_Fleck_Petal", "clock": "AA_Fleck_Clock", "bolt": "AA_Fleck_Bolt",
+    "stardust": "AA_Fleck_Stardust", "scale": "AA_Fleck_Scale", "flame": "AA_Fleck_WyrmFlame", "coin": "AA_Fleck_Coin",
 }
 
 
@@ -328,10 +329,11 @@ ROLE_UNDRAFTED = {"Heal", "Buff", "Utility", "Summon", "Mobility"}
 STYLE_TAGS = [("Plague", "Plague"), ("Frost", "Frost"), ("Fire", "Fire"), ("Storm", "Storm"), ("Holy", "Holy"), ("Time", "Time"),
               ("Void", "Void"), ("Space", "Void"), ("Blood", "Blood"), ("Song", "Song"), ("Chaos", "Song"), ("Necromancy", "Necro"),
               ("Nature", "Nature"), ("Beast", "Nature"), ("Rune", "Rune"), ("Gun", "Rune"), ("Shadow", "Shadow"), ("Hex", "Shadow"),
-              ("Wind", "Wind"), ("Doom", "Doom"), ("Desire", "Desire"), ("Charm", "Desire"), ("Liminal", "Liminal")]
+              ("Wind", "Wind"), ("Doom", "Doom"), ("Desire", "Desire"), ("Charm", "Desire"), ("Liminal", "Liminal"),
+              ("Astral", "Astral"), ("Moon", "Astral"), ("Draconic", "Draconic")]
 STYLE_SCHOOLS = {"Fire": "Fire", "Frost": "Frost", "Storm": "Storm", "Necro": "Necro", "Holy": "Holy", "Time": "Time", "Void": "Void",
                  "Nature": "Nature", "Rune": "Rune", "Shadow": "Shadow", "Blood": "Blood", "Song": "Song",
-                 "Wind": "Wind", "Doom": "Doom", "Desire": "Desire", "Liminal": "Liminal"}
+                 "Wind": "Wind", "Doom": "Doom", "Desire": "Desire", "Liminal": "Liminal", "Astral": "Astral", "Draconic": "Draconic"}
 
 
 def style_for(spell):
