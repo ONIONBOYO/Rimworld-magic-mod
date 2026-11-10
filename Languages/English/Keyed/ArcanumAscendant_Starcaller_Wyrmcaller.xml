@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Wyrmcaller -->
+  <AA_NoWyrm>No wyrm at your side</AA_NoWyrm>
+  <AA_WyrmAlreadyBonded>You already have a wyrm</AA_WyrmAlreadyBonded>
+  <AA_WyrmGrewLabel>{0} has grown</AA_WyrmGrewLabel>
+  <AA_WyrmGrew>{0} has shed its old skin overnight. As {1} has grown in the art, so has the wyrm bound to {MAGE_objective}: it is a {2} now, larger, stronger and harder to kill, and its fire burns hotter.\n\nA wyrm's strength follows its mage's level, and it grows again when {MAGE_pronoun} reaches a new circle.</AA_WyrmGrew>
+  <AA_WyrmBreed>{0} has taken the colours of a {1}.</AA_WyrmBreed>
+  <AA_WyrmDiedLabel>{0} is dead</AA_WyrmDiedLabel>
+  <AA_WyrmDied>{0}, the wyrm bonded to {1}, has died. {MAGE_pronoun} felt it go.\n\nThe bond is broken. A new egg can be hatched in time, but it will not be the same wyrm.</AA_WyrmDied>
+  <AA_WyrmHatchedLabel>A wyrm hatches: {0}</AA_WyrmHatchedLabel>
+  <AA_WyrmHatched>The egg cracked in {1}'s hands and {0} climbed out, already hungry. It is small for now. It will follow {MAGE_objective}, fight for {MAGE_objective}, and grow as {MAGE_pronoun} does: a drake at the second circle and a great wyrm at the fourth.\n\nIt is a colony animal like any other. It eats meat, it can be trained and it can haul. Most of {1}'s spells are cast through it, so keep it close and keep it alive.</AA_WyrmHatched>
+  <AA_Desc_WyrmHatch>Hatches your bonded wyrm. It grows with your circle and its strength follows your level. You can only have one.</AA_Desc_WyrmHatch>
+  <AA_Desc_Wyrm_Attack>Your wyrm drops what it is doing and attacks the target</AA_Desc_Wyrm_Attack>
+  <AA_Desc_Wyrm_Recall>Your wyrm flies to your side from anywhere on the map</AA_Desc_Wyrm_Recall>
+  <AA_Desc_Wyrm_Devour>Your wyrm eats the corpse whole: it heals {0} per point of body size and its hunger is sated. It will not eat your own people.</AA_Desc_Wyrm_Devour>
+  <AA_Desc_Wyrm_Swap>You and your wyrm trade places</AA_Desc_Wyrm_Swap>
+  <AA_Desc_Wyrm_Ride>You ride your wyrm through the air to the target point. Walls do not stop you.</AA_Desc_Wyrm_Ride>
+  <AA_Desc_Wyrm_Strafe>You ride your wyrm in a straight pass to the target point. Everything under its flight path is hit:</AA_Desc_Wyrm_Strafe>
+  <AA_Desc_Wyrm_Empower>Needs your wyrm on the map</AA_Desc_Wyrm_Empower>
+  <AA_Desc_WyrmHediff>Your wyrm gains {0}</AA_Desc_WyrmHediff>
+  <AA_Desc_WyrmLanding>Where it lands:</AA_Desc_WyrmLanding>
+  <AA_NoBrood>No drakelings to command</AA_NoBrood>
+  <AA_BroodCulled>{0} devoured</AA_BroodCulled>
+  <AA_Desc_BroodPounce>Every drakeling leaps to the target point and lands for {0} damage on enemies within a cell</AA_Desc_BroodPounce>
+  <AA_Desc_BroodCull>Your wyrm eats every drakeling you have. It heals {0} for each and gains a stack of {1}.</AA_Desc_BroodCull>
+  <AA_NoPrey>Nothing worth hunting</AA_NoPrey>
+  <AA_BroodHunted>The brood has marked {0} wild animals and gone after them.</AA_BroodHunted>
+  <AA_Desc_WyrmHunt>Your wyrm and brood hunt up to {0} wild animals of body size {1} or less, and the kills are marked for hauling</AA_Desc_WyrmHunt>
+  <AA_NoTreasure>The wyrm sniffs the air and finds nothing worth digging for.</AA_NoTreasure>
+  <AA_TreasureFound>The wyrm has scented {0} veins of something valuable.</AA_TreasureFound>
+  <AA_Desc_WyrmProspect>Reveals the {0} most valuable hidden ore veins on the map and marks them for mining</AA_Desc_WyrmProspect>
+  <AA_EggsWarmed>{0} warmed</AA_EggsWarmed>
+  <AA_Desc_WyrmBrooding>Eggs in range come {0} closer to hatching, and pregnant animals as much closer to birth</AA_Desc_WyrmBrooding>
+  <AA_Desc_WyrmWealth>+{0} spell power per 100,000 colony wealth, up to +{1}</AA_Desc_WyrmWealth>
+  <AA_P_WyrmHoard>+{0} spell power for every 100,000 of colony wealth, up to +{1}.</AA_P_WyrmHoard>
+  <AA_HoardGrew>The hoard has grown: {0} {1}.</AA_HoardGrew>
+  <AA_HoardInspect>Next tribute in {0}. The richer the colony, the more it gives.</AA_HoardInspect>
+
+  <!-- Starcaller -->
+  <AA_NeedStars>Needs {0} stars</AA_NeedStars>
+  <AA_NoStars>No star kindled</AA_NoStars>
+  <AA_Desc_StarKindle>Hangs a {0} at the target point for {1}. You can hold {2} at once; the oldest burns out to make room. Your other spells work through your stars.</AA_Desc_StarKindle>
+  <AA_Desc_StarTriangle>Kindles three {0}s in a triangle around the target point for {1}. You can hold {2} at once.</AA_Desc_StarTriangle>
+  <AA_StarsTooFar>Stars too far apart</AA_StarsTooFar>
+  <AA_Desc_StarWeb>Draws lines of light between every pair of your stars within {0} cells of each other. Everything on a line is hit:</AA_Desc_StarWeb>
+  <AA_Desc_StarWebInside>Three linked stars close a triangle. Everything inside one is also hit:</AA_Desc_StarWebInside>
+  <AA_Desc_StarWebLinger>The lines stay lit for {0}, striking again at {1} strength</AA_Desc_StarWebLinger>
+  <AA_Desc_StarWebWall>Each line hardens into a {0} for {1}</AA_Desc_StarWebWall>
+  <AA_Desc_AtStars>At each of your stars, within {0} cells:</AA_Desc_AtStars>
+  <AA_Desc_AtStarsSpent>Each of your stars burns out, and within {0} cells of each:</AA_Desc_AtStarsSpent>
+  <AA_Desc_StarShoot>Your nearest star tears loose and flies to the target point, then hangs there. +{0} damage for every star you hold.</AA_Desc_StarShoot>
+  <AA_Desc_StarShootAll>Every star you hold flies to the target point at once. +{0} damage for every star you hold.</AA_Desc_StarShootAll>
+  <AA_Desc_StarShootPath>Along its path:</AA_Desc_StarShootPath>
+  <AA_Desc_StarShootArrive>Where it arrives, within {0} cells:</AA_Desc_StarShootArrive>
+  <AA_Desc_StarStep>You step into the star nearest the target point and out of the light there</AA_Desc_StarStep>
+  <AA_Desc_StarStepFlare>The star flares as you arrive, within {0} cells:</AA_Desc_StarStepFlare>
+  <AA_Desc_StarVolley>Every star within {0} cells of the target fires on it:</AA_Desc_StarVolley>
+  <AA_Desc_StarPulsar>For {0}, each of your stars sweeps a beam {1} cells long in a slow circle. Whatever a beam crosses:</AA_Desc_StarPulsar>
+  <AA_Desc_MoonNow>Under the {0} (now):</AA_Desc_MoonNow>
+  <AA_Desc_MoonThen>Under the {0}:</AA_Desc_MoonThen>
+  <AA_Desc_TurnMoon>Turns your own moon to the next phase for {0}. The sky does not change; your spells do.</AA_Desc_TurnMoon>
+  <AA_P_StarcallerMoon>You carry the phase of the moon. It turns with the days of the quadrum: new, waxing, full, waning. Your lunar spells change with it.</AA_P_StarcallerMoon>
+  <AA_P_StarcallerNight>+{0} spell power at night, and +{1} more under open sky.</AA_P_StarcallerNight>
+  <AA_Desc_Crescent>A crescent of moonlight flies out to the target point and comes back to your hand. On the way out:</AA_Desc_Crescent>
+  <AA_Desc_CrescentBack>On the way back:</AA_Desc_CrescentBack>
+  <AA_Desc_SignExclusive>You can stand under one sign at a time. Taking this one ends the last.</AA_Desc_SignExclusive>
+  <AA_BornUnder>Born under the {0}</AA_BornUnder>
+  <AA_Desc_Horoscope>Reads each ally's birth sign from the day of the year they were born, and gives them its blessing for {0}</AA_Desc_Horoscope>
+  <AA_Desc_ShareSign>Allies in range take up the sign you are standing under for {0}</AA_Desc_ShareSign>
+</LanguageData>

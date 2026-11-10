@@ -81,4 +81,4 @@ QuickSleeper
 TooSmart
 Tough
 AteLavishMeal
-BodyPartGroupDef:HeadAttackTool
+HeadAttackTool

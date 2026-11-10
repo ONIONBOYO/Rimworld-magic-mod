@@ -792,6 +792,16 @@ def main(missing_only=False):
     print("Rendering Harbinger, Wind Mage, Succubus, Incubus and Noclipper textures...")
     import mythic_art
     mythic_art.make_all()
+    print("Rendering Starcaller and Wyrmcaller textures...")
+    import astral_art
+    astral_art.make_all()
+    # the modelled pieces are slow to march, so they are only rebuilt on a full run or when they are missing
+    if not missing_only or not os.path.exists(os.path.join(TEX, "Pawns", "Wyrm_Jade_Elder_south.png")):
+        import dragon3d
+        dragon3d.make_all()
+    if not missing_only or not os.path.exists(os.path.join(TEX, "Things", "Orrery.png")):
+        import props3d
+        props3d.make_all()
     print("Rendering %d icons/things..." % len(manifest))
     class_paths = []
     for i, e in enumerate(manifest):
